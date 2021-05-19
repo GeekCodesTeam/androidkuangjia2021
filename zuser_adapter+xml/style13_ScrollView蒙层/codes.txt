@@ -1,0 +1,16 @@
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/fpy_175"
+        style="@style/family_members_content.scroll">
+
+        <include layout="@layout/include_family_members_index_content"/>
+
+    </ScrollView>
+
+
+
+  <style name="family_members_content.scroll">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:overScrollMode">never</item>
+    </style>

@@ -1,0 +1,21 @@
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    private void exchageChoose(TextView view, int level) {
+        int volumeResId = mContext.getResources().getIdentifier(
+                "nld" + level + "en", "drawable",
+                mContext.getPackageName());
+        Drawable drawable = mContext.getResources().getDrawable(volumeResId);//R.drawable.nld1en
+        drawable.setBounds(0, 0, 100,
+                100);
+        view.setCompoundDrawables(null, drawable, null, null);
+    }
+
+
+
+
+
+    private void select_useful(TextView tv, int drawabless) {
+        Drawable drawable = context.getResources().getDrawable(drawabless);
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+                drawable.getMinimumHeight());
+        tv.setCompoundDrawables(drawable, null, null, null);
+    }

@@ -1,0 +1,191 @@
+ext {
+
+    compileSdkVersion = 30
+    buildToolsVersion = '30.0.3'
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    supportLibVersion = '30.0.0'
+
+    // 灯塔版本号
+    dengtaversionCode = 10000
+    dengtaversionName = "1.0.0.0"
+
+    // 大屏版本号
+    dapingversionCode = 10000
+    dapingversionName = "1.0.0.0"
+
+//    applicationId = "com.fosung.lighthouse"
+    appversionCode = 1000
+    appversionName = "1.0.0.0"
+
+    versionNamePrefixT = "_T_V"
+    versionNamePrefixY = "_Y_V"
+    versionNamePrefixO = "_O_V"
+//    versionNameSuffix = "_0000"
+    versionNameSuffix = appversionName
+//    appNameSuffix = "-v" + versionCode
+    /**support:BXNT_101_NATION*/
+//    versionName = versionNamePrefixO + versionCode + versionNameSuffix
+//    versionName = versionCode + versionNameSuffix
+    versionName = appversionName
+
+
+    dependencies = [
+// ------------- AndroidX -------------
+supportV4                         : "androidx.legacy:legacy-support-v4:1.0.0",
+appcompatV7                       : "androidx.appcompat:appcompat:1.2.0",
+supportannotations                : "androidx.annotation:annotation:1.2.0",
+design                            : "com.google.android.material:material:1.3.0",
+cardviewv7                        : "androidx.cardview:cardview:1.0.0",
+recyclerviewv7                    : "androidx.recyclerview:recyclerview:1.2.0",
+percent                           : "androidx.percentlayout:percentlayout:1.0.0",
+constraintlayout                  : "androidx.constraintlayout:constraintlayout:2.0.4",
+multidexVersion                   : "androidx.multidex:multidex:2.0.1",
+swiperefreshlayout                : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+viewpager2                        : "androidx.viewpager2:viewpager2:1.0.0",
+// ------------- Android老版本 -------------
+s2upportV4                        : "com.android.support:support-v4:${supportLibVersion}",
+a2ppcompatV7                      : "com.android.support:appcompat-v7:${supportLibVersion}",
+s2upportannotations               : "com.android.support:support-annotations:${supportLibVersion}",
+d2esign                           : "com.android.support:design:${supportLibVersion}",
+c2ardviewv7                       : "com.android.support:cardview-v7:${supportLibVersion}",
+r2ecyclerviewv7                   : "com.android.support:recyclerview-v7:${supportLibVersion}",
+p2ercent                          : "com.android.support:percent:$supportLibVersion",
+m2ultidexVersion                  : "com.android.support:multidex:1.0.3",
+c2onstraintlayout                 : "com.android.support.constraint:constraint-layout:1.1.3",
+
+junit                             : "junit:junit:4.12",
+//------------- 测试 -------------
+espresso                          : "com.android.support.test.espresso:espresso-core:2.2.2",
+
+// ------------- 网络请求 -------------
+okhttpVersion                     : "com.squareup.okhttp3:okhttp:3.9.1",
+okhttploggerinter                 : "com.squareup.okhttp3:logging-interceptor:3.9.1",
+okioVersion                       : "com.squareup.okio:okio:2.6.0",
+//okhttpVersion                     : "com.squareup.okhttp3:okhttp:4.5.0",
+//okhttploggerinter                 : "com.squareup.okhttp3:logging-interceptor:4.5.0",
+//okioVersion                       : "com.squareup.okio:okio:2.6.0",
+
+retrofit                          : "com.squareup.retrofit2:retrofit:2.3.0",
+retrofitconverters                : "com.squareup.retrofit2:retrofit-converters:2.3.0",
+retrofitgconverter                : "com.squareup.retrofit2:converter-gson:2.3.0",
+retrofitgconverterscalars         : "com.squareup.retrofit2:converter-scalars:2.0.0",
+
+// ------------- 图片加载 -------------
+fresco                            : "com.facebook.fresco:fresco:0.11.0",
+animatedGif                       : "com.facebook.fresco:animated-gif:0.12.0",
+picasso                           : "com.squareup.picasso:picasso:2.5.2",
+photoView                         : "com.github.chrisbanes:PhotoView:2.1.3",
+nineoldandroids                   : "com.nineoldandroids:library:2.4.0",
+zxing                             : "com.google.zxing:core:3.2.1",
+glide37                           : "com.github.bumptech.glide:glide:3.8.0",
+glide37okhttp3                    : "com.github.bumptech.glide:okhttp3-integration:1.5.0",
+
+glide47                           : "com.github.bumptech.glide:glide:4.11.0",
+glide47AnnProcessor               : "com.github.bumptech.glide:annotations:4.11.0",
+annotationProcessorglide47compiler: "com.github.bumptech.glide:compiler:4.11.0",
+glide47okhttp3integration         : "com.github.bumptech.glide:okhttp3-integration:4.11.0",
+
+// ------------- RxAndroid -------------
+rxAndroid                         : "io.reactivex:rxandroid:1.2.1",
+rxJava                            : "io.reactivex:rxjava:1.2.2",
+adapterrxjava                     : "com.squareup.retrofit2:adapter-rxjava:2.1.0",
+
+// ------------- json解析 -------------
+fastJson                          : "com.alibaba:fastjson:1.2.70",
+gsonJson                          : "com.google.code.gson:gson:2.8.6",
+
+// ------------- log打印工具 -------------
+logger                            : "com.orhanobut:logger:1.15",
+
+// ------------- 数据库工具 -------------
+greendao                          : "org.greenrobot:greendao:3.2.2",
+generator                         : "org.greenrobot:greendao-generator:3.2.2",
+
+// ------------- ButterKnife -------------
+//butterknife          : "com.jakewharton:butterknife:8.4.0",
+//butterknife          : "com.jakewharton:butterknife:7.0.1",
+//butterknifeCompiler  : "com.jakewharton:butterknife-compiler:7.0.1",
+//butterknifeCompiler  : "com.jakewharton:butterknife-compiler:8.4.0",
+
+// ------------- LeakCanary -------------
+leakcanaryAndroid                 : "com.squareup.leakcanary:leakcanary-android:1.6.3",
+leakcanaryAndroidNoOp             : "com.squareup.leakcanary:leakcanary-android-no-op:1.5",
+
+// ------------- 高德地图 -------------
+gaode3d                           : 'com.amap.api:3dmap:latest.integration',
+gaode2d                           : 'com.amap.api:map2d:latest.integration',
+//定位功能
+gaodelocation                     : 'com.amap.api:location:latest.integration',
+//搜索功能
+gaodesearch                       : 'com.amap.api:search:latest.integration',
+// ------------- BaseRecyclerViewAdapterHelper -------------
+baseadapter                       : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40',
+
+//buglycollect                      : 'com.tencent.bugly:crashreport:3.1.0',
+tagsoup                           : 'org.ccil.cowan.tagsoup:tagsoup:1.2',
+//---------------组件通信--------------------
+otto                              : 'com.squareup:otto:1.3.8',
+eventbus                          : 'org.greenrobot:eventbus:3.1.1',
+
+//-------------------------------通用的 RecyclerView 的分割线
+yanyusong                         : 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0',
+
+//---------------------------------jsoup抓取网页HTML解析数据------------https://www.jianshu.com/p/54d100829913
+jsoup                             : 'org.jsoup:jsoup:1.12.1',
+//--------------------------------
+//blankj                            : 'com.blankj:utilcode:1.27.2',
+blankj                            : 'com.blankj:utilcodex:1.30.6',
+//--------------------------------
+//MMKV
+mmkv                              : 'com.tencent:mmkv-static:1.2.7',
+//--------------------------------
+thecheeselibrary                  : 'com.inthecheesefactory.thecheeselibrary:stated-fragment-support-v4:0.10.0',
+//--------------------------------集成框架
+xutils                            : 'org.xutils:xutils:3.5.0',
+//---------------------------------
+mqttv3                            : 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1',
+rabbitmq                          : 'com.rabbitmq:amqp-client:4.4.1',
+filedownloader                    : 'com.liulishuo.filedownloader:library:1.7.5',
+supmultidex                       : 'com.android.support:multidex:1.0.3',
+//-----------------bugly--热更新----渠道打包
+tinkerlib                         : 'com.tencent.tinker:tinker-android-lib:1.9.9',
+tinkeranno                        : 'com.tencent.tinker:tinker-android-anno:1.9.9',
+tinker19132                       : 'com.tencent.tinker:tinker-android-lib:1.9.13.2',
+wallelibrary                      : 'com.meituan.android.walle:library:1.1.7',
+crashreport_upgrade               : 'com.tencent.bugly:crashreport_upgrade:1.4.5',
+nativecrashreport                 : 'com.tencent.bugly:nativecrashreport:3.7.1',
+
+
+johnkilprint                      : 'com.github.johnkil.print:print:1.2.2',
+//---------------------Tree树结构-----------------------------
+bmelnychuk                        : 'com.github.bmelnychuk:atv:1.2.9',
+//---------------------EasyPermissions高效处理权限-------------------------
+easypermissions                   : 'pub.devrel:easypermissions:2.0.1',
+//--------------------------七牛云sdk------------------------------
+qiniu                             : 'com.qiniu:qiniu-android-sdk:7.2.3',
+//--------------------------使用EasyRecyclerView列表实现复杂布局的刷新与加载--------------------------
+easyrecyclerview                  : 'com.jude:easyrecyclerview:4.4.2',
+//--------------------------实现圆角图片-----------------------------------------
+roundedimageview                  : 'com.makeramen:roundedimageview:2.3.0',
+//--------------------屏幕适配-------------------------
+autosize                          : 'me.jessyan:autosize:1.2.1',
+//--------------------刷新框架-------------------------
+SmartRefreshLayout                : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3',
+//------------------友盟----------------------
+analytics                         : 'com.umeng.analytics:analytics:latest.integration',
+//---------------------可修改字体大小和指示器长度的XTabLayout-------------------------------
+XTabLayout                        : 'com.androidkun:XTabLayout:1.1.3',
+//-----------------------轻量的Android版本更新库--------------------------------
+appupdate                         : 'com.azhon:appupdate:2.6.0',
+//--------------------------------百家云-----------------------------------
+//VideoplayerUI                     : 'com.baijia.player:VideoplayerUI:2.0.8',
+VideoplayerUI                     : 'com.baijia.player:VideoplayerUI:2.1.1',
+//liveplayerui                      : 'com.baijiayun.live:liveplayer-sdk-ui:2.1.6',
+liveplayerui                      : 'com.baijiayun.live:liveplayer-sdk-ui:2.2.2',
+//liveplayercore                    : 'com.baijiayun.live:liveplayer-sdk-core:2.2.2',
+liveplayercore                    : 'com.baijiayun.live:liveplayer-sdk-core:2.3.1',
+
+    ]
+
+}

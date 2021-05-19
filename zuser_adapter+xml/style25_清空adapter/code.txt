@@ -1,0 +1,13 @@
+    /**
+     * 清除content适配器的数据bufen
+     */
+    private void getAdapterclear() {
+        if (list_content == null) {
+            list_content = new ArrayList<>();
+        }
+        int start = 0;
+        int size = list_content.size();
+        if (size == 0) return;
+        list_content.clear();
+        mAdapter_content.notifyItemRangeRemoved(start, size);
+    }

@@ -1,0 +1,25 @@
+// 广播方法
+						// sendBroadcast(new Intent("fuckyou"));
+
+						// GerenziliaoActivity.this.finish();
+
+// 广播
+	private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			finish();
+		}
+	};
+						
+                                                
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("fuckyou");
+		registerReceiver(broadcastReceiver, intentFilter);
+	}

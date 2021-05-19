@@ -1,0 +1,3 @@
+getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_FULLSCREEN);
+getSupportActionBar().hide();

@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:hunheku:libretrofit')
+    implementation project(':commonlibs:hunheku:librararyforfileprovdider')
+    implementation librarys.filedownloader
+//    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
+//    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.5'
+}
+

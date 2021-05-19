@@ -1,0 +1,11 @@
+        //ÍøÒ×ÔÆÒôÀÖService³õÊ¼»¯
+        Intent intent = new Intent(mContext, NetsService.class);
+        mContext.startService(intent);
+
+
+
+        <!-- ÍøÒ×ÔÆÒôÀÖservice×¢²á -->
+        <service
+            android:name=".service.NetsService"
+            android:enabled="true"
+            android:exported="true" />

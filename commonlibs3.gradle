@@ -1,0 +1,48 @@
+def config = rootProject.ext //配置
+def librarys = config.dependencies //
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.appversionCode
+        versionName config.appversionName
+        multiDexEnabled true
+        renderscriptTargetApi 30
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+//        signingConfig signingConfigs.debug
+
+//        ndk {
+//            moduleName "aaaa,bbb"
+//            ldLibs "log", "z", "m", "android", "c"
+//            abiFilters "armeabi", "armeabi-v7a", "x86"
+//        }
+        sourceSets.main {
+            jni.srcDirs = []
+            //LOCAL_LDFLAGS += -fuse-ld=bfd
+            //jni.srcDirs 'src/main/jni'
+            jniLibs.srcDir '../../otherjar'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+//            outputFileName = "${variant.name}-${variant.versionName}.apk"
+//            outputFileName = "${project.name}.aar"
+            outputFileName = "${project.name}.aar"
+        }
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+}

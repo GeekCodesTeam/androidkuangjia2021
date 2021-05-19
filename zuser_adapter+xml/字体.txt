@@ -1,0 +1,5 @@
+TextView text=(TextView)findViewById(R.id.text1);
+Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/gillsans.ttf");
+text.setTypeface(tf);
+
+https://ask.csdn.net/questions/165

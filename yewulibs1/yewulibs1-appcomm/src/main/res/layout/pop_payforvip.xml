@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:clipChildren="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll23"
+        android:layout_width="334mm"
+        android:layout_height="296mm"
+        android:layout_centerInParent="true"
+        android:background="@drawable/slb_popup_shidu3"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40mm"
+            android:layout_marginTop="80mm"
+            android:layout_marginRight="40mm"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/readbooks_tips2"
+            android:textColor="@color/color4F4B21"
+            android:textSize="14mm" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40mm"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="wrap_content"
+                android:layout_height="100mm"
+                android:layout_marginLeft="20mm"
+                android:layout_marginRight="20mm"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="70mm"
+                    android:layout_height="76mm"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/slb_tobe_vip3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8mm"
+                    android:text="开通会员"
+                    android:textColor="@color/black_000"
+                    android:textSize="12mm" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="wrap_content"
+                android:layout_height="100mm"
+                android:layout_marginLeft="20mm"
+                android:layout_marginRight="20mm"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="70mm"
+                    android:layout_height="76mm"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/slb_tobuy_book3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8mm"
+                    android:text="购买"
+                    android:textColor="@color/black_000"
+                    android:textSize="12mm" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="60mm"
+        android:layout_height="60mm"
+        android:layout_above="@+id/ll23"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10mm"
+        android:layout_marginBottom="-60mm"
+        android:background="@drawable/slb_m_delete3"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

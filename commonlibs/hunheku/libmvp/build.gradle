@@ -1,0 +1,9 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    compile(name: 'libnet', ext: 'aar')
+}

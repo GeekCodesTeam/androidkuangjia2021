@@ -1,0 +1,85 @@
+ List<String> detailList = new ArrayList<>();
+        String imgStr = ratings.getT_pic();
+        String imgUrl = "";
+        if (!TextUtils.isEmpty(imgStr)) {
+            String[] str = imgStr.split(",");
+            detailList = Arrays.asList(str);
+            imgUrl = detailList.get(0);
+        }
+
+
+
+       tv1 = findViewById(R.id.tv1);
+        List<String> detailList = new ArrayList<>();
+        String imgStr = "a,b,c,d,e,f,g,h";
+        String url = "";
+        if (!TextUtils.isEmpty(imgStr)) {
+            String[] str = imgStr.split(",");
+            detailList = Arrays.asList(str);
+        }
+        for (int i = 0; i < detailList.size(); i++) {
+            url += detailList.get(i)+" ";
+        }
+        tv1.setText(url);// a b c d e f g h
+
+
+
+
+String str="http://sina.com/live/img/201805/21/img-gr34725678.jpg";
+		
+String[]strs=str.split("/");
+		
+System.out.println(strs[strs.length-1]);
+
+
+Stinng currentItemOriginPathUrl = "http://img3.16fan.com/live/origin/201805/21/14C5e483e7583.jpg";
+String name = currentItemOriginPathUrl.substring(currentItemOriginPathUrl.lastIndexOf("/"));
+String name2 = name.substring(1,name.length());
+
+Stinng currentItemOriginPathUrl = "http://img3.16fan.com/live/origin/201805/21/14C5e483e7583.jpg";
+String name = currentItemOriginPathUrl.substring(currentItemOriginPathUrl.lastIndexOf("/") + 1, currentItemOriginPathUrl.length());
+
+
+
+
+
+            for (int i =0;i<img_list.size();i++){
+                File img_file = img_list.get(i);//Í¼Æ¬file
+                String currentItemOriginPathUrl = img_list.get(i).getAbsolutePath();//Í¼Æ¬Â·¾¶
+                String img_name1 = img_list.get(i).getName();
+                // Í¼Æ¬Ãû×Ö
+                String img_name2 = currentItemOriginPathUrl.substring(currentItemOriginPathUrl.lastIndexOf("/") + 1, currentItemOriginPathUrl.length());
+                MyLogUtil.e("ssssssss",img_file.toString());
+                MyLogUtil.e("ssssssss",currentItemOriginPathUrl);
+                MyLogUtil.e("ssssssss",img_name1);
+                MyLogUtil.e("ssssssss",img_name2);
+            }
+
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: /storage/emulated/0/slbappgen/img/1540437944518.jpeg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: /storage/emulated/0/slbappgen/img/1540437944518.jpeg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: 1540437944518.jpeg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: 1540437944518.jpeg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: /storage/emulated/0/slbappgen/img/14C5e483e7583.jpg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: /storage/emulated/0/slbappgen/img/14C5e483e7583.jpg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: 14C5e483e7583.jpg
+2018-10-25 13:38:45.743 30458-30458/com.example.slbapp E/ssssssss: 14C5e483e7583.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       

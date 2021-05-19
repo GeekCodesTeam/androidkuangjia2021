@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+
+android {
+
+    defaultConfig {
+//        applicationId "com.hyphenate.easeim"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+
+        manifestPlaceholders = [
+                EASEMOB_APPKEY       : "1103210511180397#comfosunglighthousetest",
+                VIVO_PUSH_APPKEY     : "1103210511180397#comfosunglighthousetest",
+                VIVO_PUSH_APPID      : "1103210511180397#comfosunglighthousetest",
+                BAIDU_LOCATION_APPKEY: "gjGglolWK0fChENXu56x9BI4WAdlGxgL"
+        ]
+    }
+
+    //use legacy for android 6.0，SDK3.6.8后移除
+    //useLibrary 'org.apache.http.legacy'
+    //自3.6.0开始需要java8的支持
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+//    packagingOptions {//加上这写代码
+//        pickFirst 'lib/x86/libsqlite.so'
+//        pickFirst 'lib/x86_64/libsqlite.so'
+//        pickFirst 'lib/armeabi-v7a/libsqlite.so'
+//        pickFirst 'lib/arm64-v8a/libsqlite.so'
+//        pickFirst 'lib/x86/libhyphenate.so'
+//        pickFirst 'lib/x86_64/libhyphenate.so'
+//        pickFirst 'lib/armeabi-v7a/libhyphenate.so'
+//        pickFirst 'lib/arm64-v8a/libhyphenate.so'
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    // fresh and load more
+//    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    // https://github.com/scwang90/SmartRefreshLayout
+    api project(':commonlibs:smartrefreshlayout:refresh-footer')
+    api project(':commonlibs:smartrefreshlayout:refresh-header')
+    api project(':commonlibs:smartrefreshlayout:refresh-layout')
+    // room
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+    // parse
+    implementation 'com.parse:parse-android:1.13.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    // google bottom navigation bar
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    // bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    // glide
+    implementation librarys.glide47
+    implementation librarys.glide47AnnProcessor
+    annotationProcessor librarys.annotationProcessorglide47compiler
+    implementation librarys.glide47okhttp3integration
+    // base
+    implementation 'io.hyphenate:hyphenate-chat:3.8.1'
+    // 视频
+    implementation 'io.hyphenate:ease-call-kit:3.8.1.1'
+//    implementation project(':commonlibs:huanxin:ease-call-kit')
+    // 文字
+    implementation 'io.hyphenate:ease-im-kit:3.8.1'
+//    implementation project(':commonlibs:huanxin:ease-im-kit')
+}
+
+// mob
+apply from: './../../hunheku/libappmob/MobSDK.gradle'
+

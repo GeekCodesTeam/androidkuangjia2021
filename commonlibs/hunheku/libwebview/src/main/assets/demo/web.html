@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+    <script type="text/javascript">
+        // 无参方法
+        function actionFromNative() {
+            document.getElementById("log_msg").innerHTML += "<br\>Android调用了js函数";
+        }
+        //有参方法
+        function actionFromNativeWithParam(arg) {
+            document.getElementById("log_msg").innerHTML += ("<br\>Android调用了js函数并传递参数：" + arg);
+
+        }
+
+    </script>
+    <title>测试页面</title>
+</head>
+<body>
+<p>WebView与Javascript交互</p>
+<div>
+    <button onClick="window.android.actionFromJs()">点击调用Android代码</button>
+</div>
+<br/>
+<div>
+    <button onClick="window.android.actionFromJsWithParam(' data come from Js')">
+        点击调用Android代码并传递参数
+    </button>
+</div>
+<br/>
+<!--<div>-->
+<!--    <button onClick="hios://com.haier.cellarette.libwebview.activity.NoHiosMainActivity?act={i}1&sku_id={s}2a&category_id={s}3a">-->
+<!--        点击调用Android代码并传递参数-HIOS协议跳转-->
+<!--    </button>-->
+<!--</div>-->
+<!--<br/>-->
+<div>
+    <button onClick="window.android.userId()">
+        模拟Android调用js方法并且回调给js参数
+    </button>
+</div>
+<br/>
+<div id="hios_url"><a href="hios://com.haier.cellarette.libwebview.activity.NoHiosMainActivity?act={i}1&sku_id={s}2a&category_id={s}3a" target="_blank">点击调用Android代码并传递参数-HIOS协议跳转</a></div>
+<br/>
+<div id="log_msg">调用打印信息</div>
+<br/>
+
+</body>
+</html>

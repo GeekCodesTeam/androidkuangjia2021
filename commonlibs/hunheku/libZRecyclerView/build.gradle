@@ -1,0 +1,10 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    implementation 'com.google.android:flexbox:2.0.1'
+}

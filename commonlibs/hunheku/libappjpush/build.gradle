@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def config = rootProject.ext //
+def librarys = rootProject.ext.dependencies //
+//android {
+//    defaultConfig {
+//        manifestPlaceholders = [
+//                JPUSH_PKGNAME: config.applicationId,
+//                JPUSH_APPKEY : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 Appkey.
+//                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//        ]
+//    }
+//}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonlibs:hunheku:libutils')
+    api 'cn.jiguang.sdk:jcore:2.7.2'  // 此处以JCore 2.6.0 版本为例。
+    api 'cn.jiguang.sdk:jpush:4.0.0'  // 此处以JPush 3.8.6 版本为例。
+    api 'cn.jiguang.sdk.plugin:xiaomi:4.0.0'//版本号和对应的JPush版本号相同
+    api 'com.huawei.hms:push:5.0.2.300'
+    //引入极光-华为插件，如果采用此配置，无需拷贝jpush-android-plugin-huawei-v3.x.x.jar文件，也无需配置cn.jpush.android.service.PluginHuaweiPlatformsService组件
+    api 'cn.jiguang.sdk.plugin:huawei:4.0.0'
+    //jar aar
+    //rep /**rep*/
+//    /**rep*/implementation (name:'biz-identification_bxn_nation', ext:'aar')
+}
+apply plugin: 'com.huawei.agconnect'

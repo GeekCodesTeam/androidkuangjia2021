@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.jianshu.com/p/17ec9bd6ca8a -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+  <!-- Start of Baidu Transcode -->
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="mobile-agent" content="format=html5;url=https://www.jianshu.com/p/17ec9bd6ca8a">
+  <!-- End of Baidu Transcode -->
+
+    <meta name="description" content="目录 1.介绍 2.为什么要用ConstraintLayout 3.如何使用ConstraintLayout3.1 添加依赖3.2 相对定位3.3 角度定位3.4 边距3.5 居中和偏移3.6 尺寸约束3.7 链 4.辅助工具4.1 Optimizer4.2 Barrier4.3 Group4.4 Placeholder4.5.Guideline 5.总结 1.介绍 约束布局Constrai...">
+
+  <meta name="360-site-verification" content="604a14b53c6b871206001285921e81d8">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb">
+  <meta property="qc:admins" content="104102651453316562112116375">
+  <meta property="qc:admins" content="11635613706305617">
+  <meta property="qc:admins" content="1163561616621163056375">
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4">
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI">
+  <meta http-equiv="mobile-agent" content="format=html5; url=https://www.jianshu.com/p/17ec9bd6ca8a">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="简书">
+
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/33722738">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="约束布局ConstraintLayout看这一篇就够了" property="twitter:title">
+  <meta content="目录 1.介绍 2.为什么要用ConstraintLayout 3.如何使用ConstraintLayout3.1 添加依赖3.2 相对定位3.3 角度定位3.4 边距3.5..." property="twitter:description">
+  <meta content="https://www.jianshu.com/p/17ec9bd6ca8a" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="约束布局ConstraintLayout看这一篇就够了">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jianshu.com/p/17ec9bd6ca8a">
+  <meta property="og:description" content="目录 1.介绍 2.为什么要用ConstraintLayout 3.如何使用ConstraintLayout3.1 添加依赖3.2 相对定位3.3 角度定位3.4 边距3.5 居中和偏移3.6 ...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/33722738">
+  <meta property="al:ios:app_store_id" content="888237539">
+  <meta property="al:ios:app_name" content="简书">
+
+  <meta property="al:android:url" content="jianshu://notes/33722738">
+  <meta property="al:android:package" content="com.jianshu.haruki">
+  <meta property="al:android:app_name" content="简书">
+  <!-- End -->
+
+
+    <title>约束布局ConstraintLayout看这一篇就够了 - 简书</title>
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="cHMXye2yBxxYm1+GIFXPThD0ofVZrerktTYIn5K3KCzWqNkikuMZ9Xb+g1x3pumcvnsikec3fMXakKHkZK+kcg==">
+
+  <link rel="stylesheet" media="all" href="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/web-274d6a76417c1f7a7da5.css">
+  
+  <link rel="stylesheet" media="all" href="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/entry-aa75deb505b1b600256a.css">
+
+  <link href="https://cdn2.jianshu.io/assets/favicons/favicon-e743bfb1821442341c3ab15bdbe804f7ad97676bd07a770ccc9483473aa76f06.ico" rel="shortcut icon" type="image/x-icon">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/57-a6f1f1ee62ace44f6dc2f6a08575abd3c3b163288881c78dd8d75247682a4b27.png" sizes="57x57">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/72-fb9834bcfce738fd7b9c5e31363e79443e09a81a8e931170b58bc815387c1562.png" sizes="72x72">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/76-49d88e539ff2489475d603994988d871219141ecaa0b1a7a9a1914f4fe3182d6.png" sizes="76x76">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/114-24252fe693524ed3a9d0905e49bff3cbd0228f25a320aa09053c2ebb4955de97.png" sizes="114x114">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/120-1bb7371f5e87f93ce780a5f1a05ff1b176828ee0d1d130e768575918a2e05834.png" sizes="120x120">
+      <link rel="apple-touch-icon-precomposed" href="https://cdn2.jianshu.io/assets/apple-touch-icons/152-bf209460fc1c17bfd3e2b84c8e758bc11ca3e570fd411c3bbd84149b97453b99.png" sizes="152x152">
+
+  <!-- Start of 访问统计 -->
+    <script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/push.js"></script><script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/hm.js"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0c0e9d9b1e7d617b3e6842e85b9fb068";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <!-- End of 访问统计 -->
+<style type="text/css">@charset "UTF-8";.image-package .image-container{position:relative;z-index:2;background-color:#eee;-webkit-transition:background-color .1s linear;-o-transition:background-color .1s linear;transition:background-color .1s linear;margin:0 auto}body.reader-night-mode .image-package .image-container{background-color:#545454}.image-package .image-container-fill{z-index:1}.image-package .image-container .image-view{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden}.image-package .image-container .image-view-error:after{content:"图片获取失败，请点击重试";position:absolute;top:50%;left:50%;width:100%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);color:#888;font-size:14px}.image-package .image-container .image-view img.image-loading{opacity:.3}.image-package .image-container .image-view img{-webkit-transition:all .15s linear;-o-transition:all .15s linear;transition:all .15s linear;z-index:2;opacity:1}</style><style type="text/css">fieldset[disabled] .multiselect {
+  pointer-events: none;
+}
+
+.multiselect__spinner {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 48px;
+  height: 35px;
+  background: #fff;
+  display: block;
+}
+
+.multiselect__spinner:after,
+.multiselect__spinner:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border-color: #41b883 transparent transparent;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 0 1px transparent;
+}
+
+.multiselect__spinner:before {
+  animation: a 2.4s cubic-bezier(.41,.26,.2,.62);
+  animation-iteration-count: infinite;
+}
+
+.multiselect__spinner:after {
+  animation: a 2.4s cubic-bezier(.51,.09,.21,.8);
+  animation-iteration-count: infinite;
+}
+
+.multiselect__loading-enter-active,
+.multiselect__loading-leave-active {
+  transition: opacity .4s ease-in-out;
+  opacity: 1;
+}
+
+.multiselect__loading-enter,
+.multiselect__loading-leave-active {
+  opacity: 0;
+}
+
+.multiselect,
+.multiselect__input,
+.multiselect__single {
+  font-family: inherit;
+  font-size: 14px;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.multiselect {
+  box-sizing: content-box;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  text-align: left;
+  color: #35495e;
+}
+
+.multiselect * {
+  box-sizing: border-box;
+}
+
+.multiselect:focus {
+  outline: none;
+}
+
+.multiselect--disabled {
+  opacity: .6;
+}
+
+.multiselect--active {
+  z-index: 1;
+}
+
+.multiselect--active:not(.multiselect--above) .multiselect__current,
+.multiselect--active:not(.multiselect--above) .multiselect__input,
+.multiselect--active:not(.multiselect--above) .multiselect__tags {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.multiselect--active .multiselect__select {
+  transform: rotate(180deg);
+}
+
+.multiselect--above.multiselect--active .multiselect__current,
+.multiselect--above.multiselect--active .multiselect__input,
+.multiselect--above.multiselect--active .multiselect__tags {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.multiselect__input,
+.multiselect__single {
+  position: relative;
+  display: inline-block;
+  min-height: 20px;
+  line-height: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 0 0 5px;
+  width: 100%;
+  transition: border .1s ease;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  vertical-align: top;
+}
+
+.multiselect__tag~.multiselect__input,
+.multiselect__tag~.multiselect__single {
+  width: auto;
+}
+
+.multiselect__input:hover,
+.multiselect__single:hover {
+  border-color: #cfcfcf;
+}
+
+.multiselect__input:focus,
+.multiselect__single:focus {
+  border-color: #a8a8a8;
+  outline: none;
+}
+
+.multiselect__single {
+  padding-left: 6px;
+  margin-bottom: 8px;
+}
+
+.multiselect__tags-wrap {
+  display: inline;
+}
+
+.multiselect__tags {
+  min-height: 40px;
+  display: block;
+  padding: 8px 40px 0 8px;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.multiselect__tag {
+  position: relative;
+  display: inline-block;
+  padding: 4px 26px 4px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #fff;
+  line-height: 1;
+  background: #41b883;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+.multiselect__tag-icon {
+  cursor: pointer;
+  margin-left: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-weight: 700;
+  font-style: normal;
+  width: 22px;
+  text-align: center;
+  line-height: 22px;
+  transition: all .2s ease;
+  border-radius: 5px;
+}
+
+.multiselect__tag-icon:after {
+  content: "\D7";
+  color: #266d4d;
+  font-size: 14px;
+}
+
+.multiselect__tag-icon:focus,
+.multiselect__tag-icon:hover {
+  background: #369a6e;
+}
+
+.multiselect__tag-icon:focus:after,
+.multiselect__tag-icon:hover:after {
+  color: #fff;
+}
+
+.multiselect__current {
+  min-height: 40px;
+  overflow: hidden;
+  padding: 8px 12px 0;
+  padding-right: 30px;
+  white-space: nowrap;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+}
+
+.multiselect__current,
+.multiselect__select {
+  line-height: 16px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.multiselect__select {
+  position: absolute;
+  width: 40px;
+  height: 38px;
+  right: 1px;
+  top: 1px;
+  padding: 4px 8px;
+  text-align: center;
+  transition: transform .2s ease;
+}
+
+.multiselect__select:before {
+  position: relative;
+  right: 0;
+  top: 65%;
+  color: #999;
+  margin-top: 4px;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  border-color: #999 transparent transparent;
+  content: "";
+}
+
+.multiselect__placeholder {
+  color: #adadad;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-top: 2px;
+}
+
+.multiselect--active .multiselect__placeholder {
+  display: none;
+}
+
+.multiselect__content-wrapper {
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 100%;
+  max-height: 240px;
+  overflow: auto;
+  border: 1px solid #e8e8e8;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.multiselect__content {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  vertical-align: top;
+}
+
+.multiselect--above .multiselect__content-wrapper {
+  bottom: 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+  border-top: 1px solid #e8e8e8;
+}
+
+.multiselect__content::webkit-scrollbar {
+  display: none;
+}
+
+.multiselect__element {
+  display: block;
+}
+
+.multiselect__option {
+  display: block;
+  padding: 12px;
+  min-height: 40px;
+  line-height: 16px;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.multiselect__option:after {
+  top: 0;
+  right: 0;
+  position: absolute;
+  line-height: 40px;
+  padding-right: 12px;
+  padding-left: 20px;
+}
+
+.multiselect__option--highlight {
+  background: #41b883;
+  outline: none;
+  color: #fff;
+}
+
+.multiselect__option--highlight:after {
+  content: attr(data-select);
+  background: #41b883;
+  color: #fff;
+}
+
+.multiselect__option--selected {
+  background: #f3f3f3;
+  color: #35495e;
+  font-weight: 700;
+}
+
+.multiselect__option--selected:after {
+  content: attr(data-selected);
+  color: silver;
+}
+
+.multiselect__option--selected.multiselect__option--highlight {
+  background: #ff6a6a;
+  color: #fff;
+}
+
+.multiselect__option--selected.multiselect__option--highlight:after {
+  background: #ff6a6a;
+  content: attr(data-deselect);
+  color: #fff;
+}
+
+.multiselect--disabled {
+  background: #ededed;
+  pointer-events: none;
+}
+
+.multiselect--disabled .multiselect__current,
+.multiselect--disabled .multiselect__select,
+.multiselect__option--disabled {
+  background: #ededed;
+  color: #a6a6a6;
+}
+
+.multiselect__option--disabled {
+  cursor: text;
+  pointer-events: none;
+}
+
+.multiselect__option--disabled.multiselect__option--highlight {
+  background: #dedede!important;
+}
+
+.multiselect-enter-active,
+.multiselect-leave-active {
+  transition: all .15s ease;
+}
+
+.multiselect-enter,
+.multiselect-leave-active {
+  opacity: 0;
+}
+
+.multiselect__strong {
+  margin-bottom: 8px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+[dir=rtl] .multiselect {
+  text-align: right;
+}
+
+[dir=rtl] .multiselect__select {
+  right: auto;
+  left: 1px;
+}
+
+[dir=rtl] .multiselect__tags {
+  padding: 8px 8px 0 40px;
+}
+
+[dir=rtl] .multiselect__content {
+  text-align: right;
+}
+
+[dir=rtl] .multiselect__option:after {
+  right: auto;
+  left: 0;
+}
+
+[dir=rtl] .multiselect__clear {
+  right: auto;
+  left: 12px;
+}
+
+[dir=rtl] .multiselect__spinner {
+  right: auto;
+  left: 1px;
+}
+
+@keyframes a {
+  0% {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(2turn);
+  }
+}</style><style type="text/css">
+#free-reward-panel .reward-users-modal main {
+  padding: 0;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.reward-note-modal .v-modal {
+  width: 620px;
+  text-align: center;
+}
+.reward-note-modal .v-modal form {
+    margin: 0 auto 25px auto;
+    padding: 0 40px;
+}
+.reward-note-modal .v-modal .reward-intro {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.reward-note-modal .v-modal .reward-intro .avatar {
+      cursor: default !important;
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      display: inline-block;
+}
+.reward-note-modal .v-modal .reward-intro .intro {
+      margin-right: 5px;
+      font-weight: bold;
+      vertical-align: middle;
+}
+.reward-note-modal .v-modal .reward-intro i {
+      color: #EA6F5A;
+      vertical-align: middle;
+}
+.reward-note-modal .v-modal .main-inputs {
+    margin: 25px 0;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group {
+      margin: 0 -5px;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group input {
+        display: none;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group input:checked + .option {
+        color: #EA6F5A;
+        border-color: #EA6F5A;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .custom-amount:checked + .option .custom-text {
+        opacity: 0;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .custom-amount:checked + .option .custom-amount-input {
+        opacity: 1;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option {
+        position: relative;
+        margin: 0 5px 15px;
+        width: 156px;
+        height: 56px;
+        line-height: 54px;
+        border: 1px solid #E6E6E6;
+        border-radius: 4px;
+        font-weight: normal;
+        color: #999999;
+        cursor: pointer;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option i {
+          font-size: 16px;
+          vertical-align: middle;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .amount {
+          font-size: 28px;
+          vertical-align: middle;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .piece {
+          font-size: 13px;
+          vertical-align: sub;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input {
+          position: absolute;
+          top: 0;
+          z-index: -1;
+          width: 100%;
+          opacity: 0;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input i {
+            position: absolute;
+            top: 0;
+            left: 10px;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input .piece {
+            position: absolute;
+            top: 4px;
+            right: 10px;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input {
+            display: block;
+            margin: 0 auto;
+            width: 80px;
+            height: 54px;
+            line-height: 54px;
+            border: none;
+            font-size: 28px;
+            text-align: center;
+            background: transparent;
+            -moz-appearance: textfield;
+}
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input::-webkit-outer-spin-button, .reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input::-webkit-inner-spin-button {
+              -webkit-appearance: none !important;
+}
+.reward-note-modal .v-modal .main-inputs .message {
+      padding: 15px 20px;
+      margin-bottom: 0;
+      font-size: 14px;
+      border: 1px solid #E6E6E6;
+      color: #333333;
+      border-radius: 4px;
+      background-color: rgba(180, 180, 180, 0.1);
+}
+.reward-note-modal .v-modal .main-inputs .message textarea {
+        width: 100%;
+        height: 44px;
+        padding: 0;
+        margin: 0;
+        resize: none;
+        background: none !important;
+        border: none !important;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+}
+.reward-note-modal .v-modal .main-inputs .message textarea:focus {
+          outline: none;
+}
+.reward-note-modal .v-modal .reward-info .amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #EA6F5A;
+}
+.reward-note-modal .v-modal .reward-info .pay-method {
+    font-size: 14px;
+}
+.reward-note-modal .v-modal .reward-info .pay-method a {
+      color: #3194D0;
+}
+.reward-note-modal .v-modal .choose-pay {
+    margin: 0 -5px;
+}
+.reward-note-modal .v-modal .choose-pay input {
+      display: none;
+}
+.reward-note-modal .v-modal .choose-pay input:checked + .option {
+      color: #EA6F5A;
+      border-color: #EA6F5A;
+}
+.reward-note-modal .v-modal .choose-pay .option {
+      margin: 20px 5px 10px;
+      width: 156px;
+      height: 56px;
+      line-height: 54px;
+      text-align: center;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      cursor: pointer;
+}
+.reward-note-modal .v-modal .choose-pay .option img {
+        height: 30px;
+}
+.reward-note-modal .v-modal .choose-pay .option img.day.alipay, .reward-note-modal .v-modal .choose-pay .option img.night.alipay {
+        min-width: 85px;
+}
+.reward-note-modal .v-modal .choose-pay .option img.day.wechat, .reward-note-modal .v-modal .choose-pay .option img.night.wechat {
+        min-width: 112px;
+}
+.reward-note-modal .v-modal .choose-pay .option img.night {
+        display: none;
+}
+body.reader-night-mode .reward-note-modal .v-modal .choose-pay .option img.night {
+        display: inline-block;
+}
+body.reader-night-mode .reward-note-modal .v-modal .choose-pay .option img.day {
+        display: none;
+}
+.reward-note-modal .v-modal .choose-pay .tooltip {
+      width: 230px;
+}
+.reward-note-modal .v-modal .modal-footer {
+    padding: 0 15px 20px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+}
+.reward-note-modal .v-modal .modal-footer .btn {
+      padding: 8px 45px;
+      font-size: 24px;
+}
+.reward-note-modal .v-modal .btn-pay {
+    padding: 8px 25px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #F5A623;
+}
+.weixin-pay, .success-pay {
+  text-align: center;
+}
+.weixin-pay .v-modal, .success-pay .v-modal {
+    width: 350px;
+}
+.weixin-pay .ic-successed, .success-pay .ic-successed {
+    font-size: 60px;
+    color: #3db922;
+}
+.weixin-pay h2, .weixin-pay h3, .success-pay h2, .success-pay h3 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+.weixin-pay h2, .success-pay h2 {
+    margin: 0 0 40px 0;
+    font-size: 24px;
+}
+.weixin-pay .bind-text, .success-pay .bind-text {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #999999;
+}
+.weixin-pay .bind-text:before, .weixin-pay .bind-text:after, .success-pay .bind-text:before, .success-pay .bind-text:after {
+      content: "";
+      border-top: 1px solid #999;
+      display: block;
+      position: absolute;
+      width: 40px;
+      top: 8px;
+}
+.weixin-pay .bind-text:before, .success-pay .bind-text:before {
+      left: 30px;
+}
+.weixin-pay .bind-text:after, .success-pay .bind-text:after {
+      right: 30px;
+}
+.weixin-pay .share-bind, .success-pay .share-bind {
+    display: block;
+    margin-bottom: 30px;
+}
+.weixin-pay .share-bind i, .success-pay .share-bind i {
+      margin-right: 4px;
+      font-size: 22px;
+      vertical-align: middle;
+}
+.weixin-pay .share-bind.wechat i, .success-pay .share-bind.wechat i {
+      color: #00BB29;
+}
+.weixin-pay .share-bind.weibo i, .success-pay .share-bind.weibo i {
+      color: #E05244;
+}
+.weixin-pay .wx-qr-code, .success-pay .wx-qr-code {
+    display: inline-block;
+}
+.weixin-pay .wx-qr-code img, .success-pay .wx-qr-code img {
+      margin: 0 auto;
+      padding: 10px;
+      width: 200px;
+      background-color: #ffffff;
+}
+.weixin-pay .pay-amount, .success-pay .pay-amount {
+    margin: 20px 0;
+    color: #787878;
+}
+.weixin-pay .pay-amount span, .success-pay .pay-amount span {
+      color: #F5A623;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.v-modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: transparent;
+}
+.v-modal-wrap.modal-leave-active {
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+.v-modal-wrap.modal-enter-active .v-modal-mask, .v-modal-wrap.modal-leave-active .v-modal-mask {
+    opacity: 0;
+}
+.v-modal-wrap.modal-enter-active .v-modal, .v-modal-wrap.modal-leave-active .v-modal {
+    -webkit-transform: translate(-50%, -70%);
+        -ms-transform: translate(-50%, -70%);
+            transform: translate(-50%, -70%);
+    opacity: 0;
+}
+.v-modal-wrap .v-modal-mask {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+.v-modal-wrap .v-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s;
+    -o-transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+    opacity: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+}
+.v-modal-wrap .v-modal > header:before, .v-modal-wrap .v-modal > header:after, .v-modal-wrap .v-modal > main:before, .v-modal-wrap .v-modal > main:after, .v-modal-wrap .v-modal > footer:before, .v-modal-wrap .v-modal > footer:after {
+      content: '';
+      clear: both;
+      display: table;
+}
+.v-modal-wrap .v-modal > header {
+      padding: 20px;
+      border-bottom: 1px solid #F0F0F0;
+}
+.v-modal-wrap .v-modal > header h4 {
+        margin: 0;
+        color: #333;
+        text-align: left;
+}
+.v-modal-wrap .v-modal .close {
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      font-size: 26px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.8);
+}
+.v-modal-wrap .v-modal .close:hover {
+        color: #000000;
+}
+.v-modal-wrap .v-modal > main {
+      padding: 20px 20px 20px 20px;
+      font-size: 15px;
+      color: #333;
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+}
+.v-modal-wrap .v-modal > footer {
+      padding: 20px;
+      background-color: #fff;
+}
+.v-modal-wrap .v-modal > footer button {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border: 0;
+        float: right;
+}
+.v-modal-wrap .v-modal > footer button:focus {
+          outline: 0;
+}
+.v-modal-wrap .v-modal > footer .submit {
+        padding: 4px 12px;
+        border: 1px solid;
+        border-radius: 20px;
+}
+.v-modal-wrap .v-modal > footer .cancel {
+        margin-top: 5px;
+}
+.v-modal-wrap .v-modal > footer .cancel:hover {
+          color: #333333;
+}
+.reader-night-mode .v-modal-wrap .v-modal-mask {
+  background-color: rgba(63, 63, 63, 0.7);
+}
+.reader-night-mode .v-modal-wrap .v-modal {
+  background-color: #3f3f3f;
+}
+.reader-night-mode .v-modal-wrap .v-modal header {
+    border-color: #2F2F2F;
+}
+.reader-night-mode .v-modal-wrap .v-modal header h4 {
+      color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal .close {
+    color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal .close:hover {
+      color: #ffffff;
+}
+.reader-night-mode .v-modal-wrap .v-modal main {
+    color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal footer {
+    background-color: #3f3f3f;
+}
+.reader-night-mode .v-modal-wrap .v-modal footer .cancel:hover {
+      color: #C8C8C8;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.youdao-fixed-ad {
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.youdao-fixed-ad .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.youdao-fixed-ad .ad-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    font-size: 12px;
+    padding: 2px 5px 0 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+}
+</style><style type="text/css">
+.yuxi-fixed-ad {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.yuxi-fixed-ad .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(//cdn2.jianshu.io/assets/web/yuxi-ads-d73b364baf42dfeca32d518c819a0136.jpg);
+}
+.yuxi-fixed-ad .ad-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    font-size: 12px;
+    padding: 2px 5px 0 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.like[data-v-6ddd02c6] {
+  display: inline-block;
+}
+.like .like-group[data-v-6ddd02c6] {
+    position: relative;
+    padding: 13px 0 15px 0;
+    font-size: 0;
+    border: 1px solid #EA6F5A;
+    border-radius: 40px;
+}
+.like .like-group[data-v-6ddd02c6]:hover {
+      background-color: rgba(236, 97, 73, 0.05);
+}
+.like .like-group .btn-like[data-v-6ddd02c6] {
+      display: inline-block;
+      font-size: 19px;
+}
+.like .like-group .btn-like[data-v-6ddd02c6]:before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 2px;
+        width: 50px;
+        height: 50px;
+        background-image: url(//cdn2.jianshu.io/assets/web/like_animation_steps-62a00a7b52377d3069927cdb8e61fd34.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 1000px 50px;
+}
+.like .like-group .btn-like a[data-v-6ddd02c6] {
+        position: relative;
+        padding: 18px 30px 18px 55px;
+        color: #EA6F5A;
+}
+.like .like-group .modal-wrap[data-v-6ddd02c6] {
+      font-size: 18px;
+      border-left: 1px solid rgba(236, 97, 73, 0.4);
+      display: inline-block;
+      margin-left: -15px;
+}
+.like .like-group .modal-wrap a[data-v-6ddd02c6] {
+        color: #EA6F5A;
+        padding: 18px 26px 18px 18px;
+}
+.like .like-group.like-animation[data-v-6ddd02c6], .like .like-group.active[data-v-6ddd02c6] {
+      background-color: #EA6F5A;
+}
+.like .like-group.like-animation .btn-like a[data-v-6ddd02c6], .like .like-group.active .btn-like a[data-v-6ddd02c6] {
+        color: white;
+}
+.like .like-group.like-animation .modal-wrap[data-v-6ddd02c6], .like .like-group.active .modal-wrap[data-v-6ddd02c6] {
+        border-left: 1px solid white;
+}
+.like .like-group.like-animation .modal-wrap a[data-v-6ddd02c6], .like .like-group.active .modal-wrap a[data-v-6ddd02c6] {
+          color: white;
+}
+.like .like-group.like-animation .btn-like[data-v-6ddd02c6]:before {
+      -webkit-animation: likeBlast-data-v-6ddd02c6 0.6s 1 steps(19);
+              animation: likeBlast-data-v-6ddd02c6 0.6s 1 steps(19);
+      background-position: right;
+}
+@-webkit-keyframes likeBlast {
+0% {
+    background-position: left;
+}
+100% {
+    background-position: right;
+}
+}
+@keyframes likeBlast-data-v-6ddd02c6 {
+0% {
+    background-position: left;
+}
+100% {
+    background-position: right;
+}
+}
+.like .like-group.active .btn-like[data-v-6ddd02c6]:before {
+      background-position: right;
+}
+</style><style type="text/css">
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.main {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 30px 0;
+  width: 620px;
+}
+.main .title {
+    padding-left: 8px;
+    border-left: 3px solid #EA6F5A;
+    line-height: 1;
+    font-size: 15px;
+}
+.main .collection-settings {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    font-size: 13px;
+    color: #A0A0A0;
+}
+.main .collection-settings span {
+      padding-left: 4px;
+}
+.main .include-collection {
+    width: 100%;
+    padding-top: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+.main .include-collection .item {
+      display: inline-block;
+      margin: 0 12px 12px 0;
+      min-height: 32px;
+      background-color: white;
+      border: 1px solid #DCDCDC;
+      border-radius: 4px;
+      vertical-align: top;
+      overflow: hidden;
+}
+.main .include-collection .item img {
+        width: 32px;
+        height: 32px;
+}
+.main .include-collection .item .name {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 14px;
+}
+.main .include-collection .add-collection-wrap {
+      margin: 0 12px 12px 0;
+}
+.main .include-collection .add-collection {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1px solid #DCDCDC;
+      border-radius: 4px;
+}
+.main .include-collection .add-collection i {
+        margin-right: 4px;
+        color: #969696;
+}
+.main .recommend-note a {
+    position: relative;
+    margin: 20px 2px 0 0;
+    width: 200px;
+    height: 160px;
+    display: inline-block;
+}
+.main .recommend-note a:after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 160px;
+      border-radius: 0 0 4px 4px;
+      -webkit-box-shadow: inset 0px -80px 50px -22px rgba(0, 0, 0, 0.6);
+              box-shadow: inset 0px -80px 50px -22px rgba(0, 0, 0, 0.6);
+      top: 0;
+      left: 0;
+      z-index: 1;
+}
+.main .recommend-note .name {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    right: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 2;
+}
+.main .recommend-note .author {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 2;
+}
+.main .recommend-note .avatar {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.main .recommend-note .avatar img {
+      border-radius: 50%;
+}
+.main .recommend-note .author-name {
+    font-size: 12px;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: -1px;
+}
+.main .show-more {
+    margin: 0 12px 12px 0;
+    font-size: 14px;
+    color: #A0A0A0;
+}
+</style></head>
+
+  <!-- 只给10%的用户添加代码 -->
+  <!-- ###第四范式-智能推荐：代码直接复制 无需修改参数### -->
+  <!-- ###功能：上报内容并反馈用户行为### -->
+  <!--
+  -->
+  <body lang="zh-CN" class="reader-black-font">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="https://www.jianshu.com/"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" alt="Nav logo"></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="https://www.jianshu.com/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" id="sign_up" href="https://www.jianshu.com/sign_up">注册</a>
+      <a class="btn log-in" id="sign_in" href="https://www.jianshu.com/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div class="style-mode"><a class="style-mode-btn"><i class="iconfont ic-navigation-mode"></i></a> <div class="popover-modal" style="left: 0px; display: none;"><div class="meta"><i class="iconfont ic-navigation-night"></i><span>夜间模式</span></div> <div class="switch day-night-group"><a class="switch-btn">开</a> <a class="switch-btn active">关</a></div> <hr> <div class="switch font-family-group"><a class="switch-btn font-song">宋体</a> <a class="switch-btn font-hei active">黑体</a></div> <div class="switch"><a class="switch-btn active">简</a> <a class="switch-btn">繁</a></div></div></div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="tab ">
+              <a href="https://www.jianshu.com/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="tab ">
+              <a id="web-nav-app-download-btn" class="app-download-btn" href="https://www.jianshu.com/apps?utm_medium=desktop&amp;utm_source=navbar-apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="https://www.jianshu.com/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="q" id="q" value="" autocomplete="off" placeholder="搜索" class="search-input">
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div id="note-fixed-ad-container">
+    <div id="fixed-ad-container">
+      <div style="display: block;"><a target="_blank" href="https://www.jianshu.com/apps/redirect?utm_source=side-banner-click" id="web-note-ad-fixed"><span class="close">×</span></a></div>
+      <a href="https://dsp-click.youdao.com/clk/request.s?slot=30edd91dd8637d9f645baa8448ba90b3&amp;k=%2FCIg7cLHpNL31urp2YEyTuffZNsftOcmnvPSIPGjMrXXxo%2BoRxcJpjjAgKuViCqvIxCHqA9N%2F2c%2F9Be%2FcwcSrytzsXtwWLcKWfmEr%2F%2BaTNSI7DpwTkWmAb7ogIE0SS%2BwLHqNmkIdH03iYZ5YcSIgjeCzttwg6XUNVwEsaOY8A2qssOVAl6voFwV9pTpbrO%2F6i2faePbJWLeZCuIhNg1nXWjP5J0X9ZpwOah4Q%2BM5laZ7letCAn1AfW8Ci%2FDYA8sksd08FvJsiJRCeelU9YDneLRn9bkHJqibZHrNgIaDHD%2BFBUEHgRtu0vtNhy9pOT7ydncis3nSJ7MBpctBU0AqtpALYMrhEQUbfLHW6EKNdGs5T9zMvaWtKN%2BQ1DnQEkVYbSWVuJTEYqp8h2z25j8qBpb4Y%2Fb%2FlZxENP5KLMX2CzhRrY22H%2FSVVysGuCJkGI2Uxvx9cSch3ajakNCMIiefwvErv84cbHk6vjRdkJKFMoeuRRC3%2BG%2BnXeuPYUj09Fs43iruTVmVftroE8YEJxmMQdjeI1HOxMOJNxegAI4AwZDQ0xrTBfYM%2Bf8dFHUBLgcmKj4lk0K1uJYjCt2GRLwBQXoHmlrE6CrjvH2KCNj1d7ocWYFqk8nGY6q2mH9Q0wCcN6ngK%2BhJH4%2FPQRQGb3MfwejKr6N3FdRxEt7p0LW%2B7zjkXEjvsguWrehPObjxp%2FhWtObOmjMOmvsImg4FeoUkSyIx4fMH%2F8ZbweBNklpMTmweZhWez%2BCxqKCiOJl3Z1vX6rk47LEhd2CX%2BVX60gRgaAq5K19hC9w7A2DJKqusnqUPXG%2B6qmVKifGHnfLJWOmSxren7PPm7QLTJCvMX1UvBRn8WguaBx25Il7sLGFl2SZfinrYyeXby6%2F8FFCXjwjwxGPrkpwVKJalWdeo4swwQ97LM2rL7wPH%2BY2QBvfIeCBegJwNw4dX4G8DWd7KQqlik7S73YUmhAOppGbc3BdwwSevgZTOK3OTS0aq1od7sFY%2BlLf0LpA48kLMzgup8twwnki7cxojSXweq8oOokWdi6SJvlDzACvyfVI3Pv94Rh77Y64HsinK1J1OTtAj8hi%2F3XMcFuSyX%2Bw0EFdHcAcrDzqc2DAoire3LVbaquWH0wzNs7Cy8v8KsUe9nTwqsWVR18aPqEcXCaY4wICrlYgqr9fGj6hHFwmmOMCAq5WIKq%2FXxo%2BoRxcJpjjAgKuViCqv2ZMLBQGN2VBVfGcxusyNng%3D%3D&amp;youdao_bid=cc6541b3-70e9-4ec0-8585-b610a167dfc5&amp;iid=%7B%22-1175185902748692053%22%3A4%7D&amp;sid=17024" target="_blank" class="youdao-fixed-ad"><div class="img" style="background-image: url(&quot;https://oimageb5.ydstatic.com/image?id=-1175185902748692053&amp;product=adpublish&amp;w=360&amp;h=360&amp;sc=0&amp;rm=2&amp;gsb=0&amp;gsbd=60&quot;);"></div> <span class="ad-badge">广告</span></a>
+      <a href="http://e.cn.miaozhen.com/r/k=2110413&amp;p=7L9Gn&amp;dx=__IPDX__&amp;rt=2&amp;ns=__IP__&amp;ni=__IESID__&amp;v=__LOC__&amp;xa=__ADPLATFORM__&amp;tr=__REQUESTID__&amp;mo=__OS__&amp;m0=__OPENUDID__&amp;m0a=__DUID__&amp;m1=__ANDROIDID1__&amp;m1a=__ANDROIDID__&amp;m2=__IMEI__&amp;m4=__AAID__&amp;m5=__IDFA__&amp;m6=__MAC1__&amp;m6a=__MAC__&amp;vo=3f2e070eb&amp;vr=2&amp;o=https%3A%2F%2Fwww.jianshu.com%2Fp%2Fee05f7eff678" target="_blank" class="yuxi-fixed-ad" style="display: none;"><div class="img"></div> <span class="ad-badge">广告</span></a>
+      <div id="_so_pdsBy_0"></div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="article">
+        <h1 class="title">约束布局ConstraintLayout看这一篇就够了</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="https://www.jianshu.com/u/93d79e3e9d56">
+            <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/52c41ba9-d5f2-43ea-878e-41e526a82e8d.jpg" alt="96">
+</a>          <div class="info">
+            <span class="name"><a href="https://www.jianshu.com/u/93d79e3e9d56">四会歌神陈子豪</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 简书钻 -->
+                <span class="jsd-meta">
+                  <i class="iconfont ic-paid1"></i> 2.6
+                </span>
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="最后编辑于 2019.02.25 15:58">2018.09.27 15:44*</span>
+              <span class="wordage">字数 2790</span>
+            <span class="views-count">阅读 8013</span><span class="comments-count">评论 6</span><span class="likes-count">喜欢 32</span></div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+
+
+        <!-- 文章内容 -->
+        <div data-note-content="" class="show-content">
+          <div class="show-content-free" deep="4">
+            <h2>目录</h2>
+<ul>
+<li>1.介绍</li>
+<li>2.为什么要用ConstraintLayout</li>
+<li>3.如何使用ConstraintLayout<br data-filtered="filtered">
+3.1 添加依赖<br data-filtered="filtered">
+3.2 相对定位<br data-filtered="filtered">
+3.3 角度定位<br data-filtered="filtered">
+3.4 边距<br data-filtered="filtered">
+3.5 居中和偏移<br data-filtered="filtered">
+3.6 尺寸约束<br data-filtered="filtered">
+3.7 链</li>
+<li>4.辅助工具<br data-filtered="filtered">
+4.1 Optimizer<br data-filtered="filtered">
+4.2 Barrier<br data-filtered="filtered">
+4.3 Group<br data-filtered="filtered">
+4.4 Placeholder<br data-filtered="filtered">
+4.5.Guideline</li>
+<li>5.总结</li>
+</ul>
+<hr>
+<h2>1.介绍</h2>
+<p><strong>约束布局ConstraintLayout</strong> 是一个ViewGroup，可以在Api9以上的Android系统使用它，它的出现主要是为了解决布局嵌套过多的问题，以灵活的方式定位和调整小部件。从 <strong>Android Studio 2.3</strong> 起，官方的模板默认使用 <strong>ConstraintLayout</strong>。</p>
+<p><a href="https://developer.android.google.cn/reference/android/support/constraint/ConstraintLayout" target="_blank" rel="nofollow">ConstraintLayout 官方文档</a></p>
+<hr>
+<h2>2.为什么要用ConstraintLayout</h2>
+<p>在开发过程中经常能遇到一些复杂的UI，可能会出现布局嵌套过多的问题，嵌套得越多，设备绘制视图所需的时间和计算功耗也就越多。简单举个例子：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 217px; max-height: 83px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 38.25%;"></div>
+<div class="image-view" data-width="217" data-height="83"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-b5e910f1c786ac4b.png" data-original-width="217" data-original-height="83" data-original-format="image/png" data-original-filesize="2163" class="" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-b5e910f1c786ac4b.png" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>假设现在要写一个这样的布局，可能有人会这么写：<br data-filtered="filtered">
+首先是一个垂直的LinearLayout，里面放两个水平的LinearLayout，然后在水平的LinearLayout里面放TextView。这样的写法就嵌套了两层LinearLayout。</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 296px; max-height: 38px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 12.839999999999998%;"></div>
+<div class="image-view" data-width="296" data-height="38"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-09649fba48add621.png" data-original-width="296" data-original-height="38" data-original-format="image/png" data-original-filesize="2541" class="" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-09649fba48add621.png" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>有些人考虑到了嵌套布局带来的风险，所以用一个RelativeLayout来装下所有的控件。那么问题来了，既然用RelativeLayout可以解决问题，为什么还要使用ConstraintLayout呢？因为ConstraintLayout使用起来比RelativeLayout更灵活，性能更出色！还有一点就是ConstraintLayout可以按照比例约束控件位置和尺寸，能够更好地适配屏幕大小不同的机型。</p>
+<hr>
+<h2>3.如何使用ConstraintLayout</h2>
+<h4>3.1 添加依赖</h4>
+<p>首先我们需要在app/build.gradle文件中添加ConstraintLayout的依赖，如下所示。</p>
+<pre class="hljs bash"><code class="bash"> implementation <span class="hljs-string">'com.android.support.constraint:constraint-layout:1.1.3'</span>
+</code></pre>
+<h4>3.2 相对定位</h4>
+<p>相对定位是部件对于另一个位置的约束，这么说可能有点抽象，举个例子：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 171px; max-height: 69px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 40.35%;"></div>
+<div class="image-view" data-width="171" data-height="69"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-ff2d4c4b39b9e98b.png" data-original-width="171" data-original-height="69" data-original-format="image/png" data-original-filesize="2847" class="" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-ff2d4c4b39b9e98b.png" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>如图所示，TextView2在TextView1的右边，TextView3在TextView1的下面，这个时候在布局文件里面应该这样写：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        ...
+        android:text=<span class="hljs-string">"TextView1"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        ...
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView1"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView3"</span>
+        ...
+        app:layout_constraintTop_toBottomOf=<span class="hljs-string">"@+id/TextView1"</span> /&gt;
+</code></pre>
+<p>上面代码中在TextView2里用到了app:layout_constraintLeft_toRightOf="@+id/TextView1"这个属性，他的意思是把TextView2的左边约束到TextView1的右边，如下图所示：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 175px; max-height: 45px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 25.71%;"></div>
+<div class="image-view" data-width="175" data-height="45"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-8087344ad8a0d40c.png" data-original-width="175" data-original-height="45" data-original-format="image/png" data-original-filesize="2009" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-8087344ad8a0d40c.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>同理TextView3在TextView1的下面，就需要用到app:layout_constraintTop_toBottomOf="@+id/TextView1"，即把TextView3的上面约束到TextView1的下面。</p>
+<p>下面来看看相对定位的常用属性：<br data-filtered="filtered">
+layout_constraintLeft_toLeftOf<br data-filtered="filtered">
+layout_constraintLeft_toRightOf<br data-filtered="filtered">
+layout_constraintRight_toLeftOf<br data-filtered="filtered">
+layout_constraintRight_toRightOf<br data-filtered="filtered">
+layout_constraintTop_toTopOf<br data-filtered="filtered">
+layout_constraintTop_toBottomOf<br data-filtered="filtered">
+layout_constraintBottom_toTopOf<br data-filtered="filtered">
+layout_constraintBottom_toBottomOf<br data-filtered="filtered">
+layout_constraintBaseline_toBaselineOf<br data-filtered="filtered">
+layout_constraintStart_toEndOf<br data-filtered="filtered">
+layout_constraintStart_toStartOf<br data-filtered="filtered">
+layout_constraintEnd_toStartOf<br data-filtered="filtered">
+layout_constraintEnd_toEndOf</p>
+<p>上面属性中有一个比较有趣的layout_constraintBaseline_toBaselineOf<br data-filtered="filtered">
+<strong>Baseline</strong>指的是文本基线，举个例子：<br data-filtered="filtered">
+</p><div class="image-package">
+<div class="image-container" style="max-width: 177px; max-height: 62px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 35.03%;"></div>
+<div class="image-view" data-width="177" data-height="62"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-815cc21cdfaa018c.png" data-original-width="177" data-original-height="62" data-original-format="image/png" data-original-filesize="2425" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-815cc21cdfaa018c.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div><p></p>
+<p>如图所示，两个TextView的高度不一致，但是又希望他们文本对齐，这个时候就可以使用layout_constraintBaseline_toBaselineOf，代码如下：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        .../&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        ...
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView1"</span> 
+        app:layout_constraintBaseline_toBaselineOf=<span class="hljs-string">"@+id/TextView1"</span>/&gt;
+</code></pre>
+<p>效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 213px; max-height: 61px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 28.64%;"></div>
+<div class="image-view" data-width="213" data-height="61"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-aebcad66710f4d48.png" data-original-width="213" data-original-height="61" data-original-format="image/png" data-original-filesize="2357" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-aebcad66710f4d48.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>ConstraintLayout相对定位的用法跟RelativeLayout还是比较相似的，下面用一个图来总结相对定位：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 395px; max-height: 176px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 44.56%;"></div>
+<div class="image-view" data-width="395" data-height="176"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-76a3c17fa604a7bf.png" data-original-width="395" data-original-height="176" data-original-format="image/png" data-original-filesize="12396" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-76a3c17fa604a7bf.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<h4>3.3 角度定位</h4>
+<p>角度定位指的是可以用一个角度和一个距离来约束两个空间的中心。举个例子：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintCircle=<span class="hljs-string">"@+id/TextView1"</span>
+        app:layout_constraintCircleAngle=<span class="hljs-string">"120"</span>
+        app:layout_constraintCircleRadius=<span class="hljs-string">"150dp"</span> /&gt;
+</code></pre>
+<p>上面例子中的TextView2用到了3个属性：<br data-filtered="filtered">
+app:layout_constraintCircle="@+id/TextView1"<br data-filtered="filtered">
+app:layout_constraintCircleAngle="120"（角度）<br data-filtered="filtered">
+app:layout_constraintCircleRadius="150dp"（距离）<br data-filtered="filtered">
+指的是TextView2的中心在TextView1的中心的120度，距离为150dp，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 221px; max-height: 172px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 77.83%;"></div>
+<div class="image-view" data-width="221" data-height="172"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-8e87f3b229af0add.png" data-original-width="221" data-original-height="172" data-original-format="image/png" data-original-filesize="6995" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-8e87f3b229af0add.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<h4>3.4 边距</h4>
+<ul>
+<li>3.4.1 常用margin</li>
+</ul>
+<p>ConstraintLayout的边距常用属性如下：<br data-filtered="filtered">
+android:layout_marginStart<br data-filtered="filtered">
+android:layout_marginEnd<br data-filtered="filtered">
+android:layout_marginLeft<br data-filtered="filtered">
+android:layout_marginTop<br data-filtered="filtered">
+android:layout_marginRight<br data-filtered="filtered">
+android:layout_marginBottom</p>
+<p>看起来跟别的布局没有什么差别，但实际上控件在ConstraintLayout里面要实现margin，必须先约束该控件在ConstraintLayout里的位置，举个例子：</p>
+<pre class="hljs xml"><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> 
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_marginLeft</span>=<span class="hljs-string">"10dp"</span>
+        <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">"10dp"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+</code></pre>
+<p>如果在别的布局里，TextView1的位置应该是距离边框的左边和上面有一个10dp的边距，但是在ConstraintLayout里，是不生效的，因为没有约束TextView1在布局里的位置。正确的写法如下：</p>
+<pre class="hljs xml"><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> 
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_marginLeft</span>=<span class="hljs-string">"10dp"</span>
+        <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">"10dp"</span> 
+        <span class="hljs-attr">app:layout_constraintLeft_toLeftOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">"parent"</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+</code></pre>
+<p>把TextView1的左边和上边约束到parent的左边和上边，这样margin就会生效，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 129px; max-height: 63px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 48.84%;"></div>
+<div class="image-view" data-width="129" data-height="63"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-39397d6075ee9ea6.png" data-original-width="129" data-original-height="63" data-original-format="image/png" data-original-filesize="1432" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-39397d6075ee9ea6.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>在使用margin的时候要注意两点：<br data-filtered="filtered">
+控件必须在布局里约束一个相对位置<br data-filtered="filtered">
+margin只能大于等于0</p>
+<ul>
+<li>3.4.2 goneMargin</li>
+</ul>
+<p>goneMargin主要用于约束的控件可见性被设置为gone的时候使用的margin值，属性如下：<br data-filtered="filtered">
+layout_goneMarginStart<br data-filtered="filtered">
+layout_goneMarginEnd<br data-filtered="filtered">
+layout_goneMarginLeft<br data-filtered="filtered">
+layout_goneMarginTop<br data-filtered="filtered">
+layout_goneMarginRight<br data-filtered="filtered">
+layout_goneMarginBottom</p>
+<p>举个例子：<br data-filtered="filtered">
+假设TextView2的左边约束在TextView1的右边，并给TextView2设一个app:layout_goneMarginLeft="10dp"，代码如下：</p>
+<pre class="hljs xml"><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> 
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        <span class="hljs-attr">...</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        <span class="hljs-attr">...</span>
+        <span class="hljs-attr">app:layout_constraintLeft_toRightOf</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        <span class="hljs-attr">app:layout_goneMarginLeft</span>=<span class="hljs-string">"10dp"</span>
+        /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+</code></pre>
+<p>效果如下，TextView2在TextView1的右边，且没有边距。</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 205px; max-height: 36px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 17.560000000000002%;"></div>
+<div class="image-view" data-width="205" data-height="36"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-70c5cdeb5790fe23.png" data-original-width="205" data-original-height="36" data-original-format="image/png" data-original-filesize="2186" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-70c5cdeb5790fe23.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>这个时候把TextView1的可见性设为gone，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 143px; max-height: 38px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 26.57%;"></div>
+<div class="image-view" data-width="143" data-height="38"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-e6276e3d70792670.png" data-original-width="143" data-original-height="38" data-original-format="image/png" data-original-filesize="1340" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-e6276e3d70792670.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>TextView1消失后，TextView2有一个距离左边10dp的边距。</p>
+<h4>3.5 居中和偏移</h4>
+<p>在RelativeLayout中，把控件放在布局中间的方法是把layout_centerInParent设为true，而在ConstraintLayout中的写法是：</p>
+<pre class="hljs bash"><code class="bash">app:layout_constraintBottom_toBottomOf=<span class="hljs-string">"parent"</span>
+app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span>
+app:layout_constraintTop_toTopOf=<span class="hljs-string">"parent"</span>
+</code></pre>
+<p>意思是把控件的上下左右约束在布局的上下左右，这样就能把控件放在布局的中间了。同理RelativeLayout中的水平居中layout_centerHorizontal相当于在ConstraintLayout约束控件的左右为parent的左右；RelativeLayout中的垂直居中layout_centerVertical相当于在ConstraintLayout约束控件的上下为parent的上下。<br data-filtered="filtered">
+由于ConstraintLayout中的居中已经为控件约束了一个相对位置，所以可以使用margin，如下所示：</p>
+<pre class="hljs objectivec"><code class="objectivec">&lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        ...
+        android:layout_marginLeft=<span class="hljs-string">"100dp"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span> /&gt;
+</code></pre>
+<p>效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 412px; max-height: 44px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 10.68%;"></div>
+<div class="image-view" data-width="412" data-height="44"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-873d51f267e9a522.png" data-original-width="412" data-original-height="44" data-original-format="image/png" data-original-filesize="3130" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-873d51f267e9a522.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>上面TextView1在水平居中后使用layout_marginLeft="100dp"向右偏移了100dp。除了这种偏移外，ConstraintLayout还提供了另外一种偏移的属性：<br data-filtered="filtered">
+layout_constraintHorizontal_bias  水平偏移<br data-filtered="filtered">
+layout_constraintVertical_bias  垂直偏移</p>
+<p>举个例子：</p>
+<pre class="hljs objectivec"><code class="objectivec">&lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        ...
+        app:layout_constraintHorizontal_bias=<span class="hljs-string">"0.3"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span> /&gt;
+</code></pre>
+<p>效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 410px; max-height: 38px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 9.27%;"></div>
+<div class="image-view" data-width="410" data-height="38"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-7bf04a9426419338.png" data-original-width="410" data-original-height="38" data-original-format="image/png" data-original-filesize="2353" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-7bf04a9426419338.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>假如现在要实现水平偏移，给TextView1的layout_constraintHorizontal_bias赋一个范围为 0-1 的值，假如赋值为0，则TextView1在布局的最左侧，假如赋值为1，则TextView1在布局的最右侧，假如假如赋值为0.5，则水平居中，假如假如赋值为0.3，则更倾向于左侧。<br data-filtered="filtered">
+垂直偏移同理。</p>
+<h4>3.6 尺寸约束</h4>
+<p>控件的尺寸可以通过四种不同方式指定：</p>
+<ul>
+<li><p>使用指定的尺寸</p></li>
+<li><p>使用wrap_content，让控件自己计算大小<br data-filtered="filtered">
+当控件的高度或宽度为wrap_content时，可以使用下列属性来控制最大、最小的高度或宽度：<br data-filtered="filtered">
+android:minWidth 最小的宽度<br data-filtered="filtered">
+android:minHeight 最小的高度<br data-filtered="filtered">
+android:maxWidth 最大的宽度<br data-filtered="filtered">
+android:maxHeight 最大的高度<br data-filtered="filtered">
+注意！当ConstraintLayout为1.1版本以下时，使用这些属性需要加上强制约束，如下所示：<br data-filtered="filtered">
+app:constrainedWidth=”true”<br data-filtered="filtered">
+app:constrainedHeight=”true”</p></li>
+<li><p>使用 0dp (MATCH_CONSTRAINT)<br data-filtered="filtered">
+官方不推荐在ConstraintLayout中使用match_parent，可以设置 0dp (MATCH_CONSTRAINT) 配合约束代替match_parent，举个例子：</p></li>
+</ul>
+<pre class="hljs objectivec"><code class="objectivec">&lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"0dp"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        android:layout_marginLeft=<span class="hljs-string">"50dp"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span>
+        android:visibility=<span class="hljs-string">"visible"</span> /&gt;
+</code></pre>
+<p>宽度设为0dp，左右两边约束parent的左右两边，并设置左边边距为50dp，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 408px; max-height: 40px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 9.8%;"></div>
+<div class="image-view" data-width="408" data-height="40"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-12b8f6492831ba1c.png" data-original-width="408" data-original-height="40" data-original-format="image/png" data-original-filesize="1578" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-12b8f6492831ba1c.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<ul>
+<li>宽高比<br data-filtered="filtered">
+当宽或高至少有一个尺寸被设置为0dp时，可以通过属性layout_constraintDimensionRatio设置宽高比，举个例子：</li>
+</ul>
+<pre class="hljs objectivec"><code class="objectivec">&lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"0dp"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintDimensionRatio=<span class="hljs-string">"1:1"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span> /&gt;
+</code></pre>
+<p>宽设置为0dp，宽高比设置为1:1，这个时候TextView1是一个正方形，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 147px; max-height: 91px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 61.9%;"></div>
+<div class="image-view" data-width="147" data-height="91"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-a0f8950a52341b11.png" data-original-width="147" data-original-height="91" data-original-format="image/png" data-original-filesize="3921" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-a0f8950a52341b11.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>除此之外，在设置宽高比的值的时候，还可以在前面加W或H，分别指定宽度或高度限制。 例如：<br data-filtered="filtered">
+app:layout_constraintDimensionRatio="H,2:3"指的是  高:宽=2:3<br data-filtered="filtered">
+app:layout_constraintDimensionRatio="W,2:3"指的是  宽:高=2:3</p>
+<h4>3.7 链</h4>
+<p>如果两个或以上控件通过下图的方式约束在一起，就可以认为是他们是一条链（图为横向的链，纵向同理）。</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 398px; max-height: 92px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 23.119999999999997%;"></div>
+<div class="image-view" data-width="398" data-height="92"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-b3b5a73715891a53.png" data-original-width="398" data-original-height="92" data-original-format="image/png" data-original-filesize="8122" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-b3b5a73715891a53.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>用代码表示：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toLeftOf=<span class="hljs-string">"@+id/TextView2"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView1"</span>
+        app:layout_constraintRight_toLeftOf=<span class="hljs-string">"@+id/TextView3"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView3"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView2"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span> /&gt;
+</code></pre>
+<p>3个TextView相互约束，两端两个TextView分别与parent约束，成为一条链，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 344px; max-height: 31px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 9.01%;"></div>
+<div class="image-view" data-width="344" data-height="31"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-c601cf02c45dfb3a.png" data-original-width="344" data-original-height="31" data-original-format="image/png" data-original-filesize="4912" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-c601cf02c45dfb3a.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>一条链的第一个控件是这条链的链头，我们可以在链头中设置 layout_constraintHorizontal_chainStyle来改变整条链的样式。chains提供了3种样式，分别是：<br data-filtered="filtered">
+CHAIN_SPREAD —— 展开元素 (默认)；<br data-filtered="filtered">
+CHAIN_SPREAD_INSIDE —— 展开元素，但链的两端贴近parent；<br data-filtered="filtered">
+CHAIN_PACKED —— 链的元素将被打包在一起。<br data-filtered="filtered">
+如图所示：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 477px; max-height: 121px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 25.369999999999997%;"></div>
+<div class="image-view" data-width="477" data-height="121"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-6d3fd9ce0f0cfd75.png" data-original-width="477" data-original-height="121" data-original-format="image/png" data-original-filesize="15248" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-6d3fd9ce0f0cfd75.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>上面的例子创建了一个样式链，除了样式链外，还可以创建一个权重链。<br data-filtered="filtered">
+可以留意到上面所用到的3个TextView宽度都为wrap_content，如果我们把宽度都设为0dp，这个时候可以在每个TextView中设置横向权重layout_constraintHorizontal_weight(constraintVertical为纵向)来创建一个权重链，如下所示：</p>
+<pre class="hljs objectivec"><code class="objectivec"> &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"0dp"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintRight_toLeftOf=<span class="hljs-string">"@+id/TextView2"</span>
+        app:layout_constraintHorizontal_weight=<span class="hljs-string">"2"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        android:layout_width=<span class="hljs-string">"0dp"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView1"</span>
+        app:layout_constraintRight_toLeftOf=<span class="hljs-string">"@+id/TextView3"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintHorizontal_weight=<span class="hljs-string">"3"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView3"</span>
+        android:layout_width=<span class="hljs-string">"0dp"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView2"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintHorizontal_weight=<span class="hljs-string">"4"</span> /&gt;
+</code></pre>
+<p>效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 320px; max-height: 27px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 8.44%;"></div>
+<div class="image-view" data-width="320" data-height="27"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-58cfdd300086a125.png" data-original-width="320" data-original-height="27" data-original-format="image/png" data-original-filesize="4222" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-58cfdd300086a125.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<hr>
+<h2>4.辅助工具</h2>
+<h4>4.1 Optimizer</h4>
+<p>当我们使用 MATCH_CONSTRAINT 时，ConstraintLayout 将对控件进行 2 次测量，ConstraintLayout在1.1中可以通过设置 <strong>layout_optimizationLevel</strong> 进行优化，可设置的值有：<br data-filtered="filtered">
+none：无优化<br data-filtered="filtered">
+standard：仅优化直接约束和屏障约束（默认）<br data-filtered="filtered">
+direct：优化直接约束<br data-filtered="filtered">
+barrier：优化屏障约束<br data-filtered="filtered">
+chain：优化链约束<br data-filtered="filtered">
+dimensions：优化尺寸测量</p>
+<h4>4.2 Barrier</h4>
+<div class="image-package">
+<div class="image-container" style="max-width: 278px; max-height: 122px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 43.88%;"></div>
+<div class="image-view" data-width="278" data-height="122"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-d8ef7a9da9ced277.png" data-original-width="278" data-original-height="122" data-original-format="image/png" data-original-filesize="2847" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-d8ef7a9da9ced277.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p></p>
+<p></p>
+假设有3个控件ABC，C在AB的右边，但是AB的宽是不固定的，这个时候C无论约束在A的右边或者B的右边都不对。当出现这种情况可以用Barrier来解决。Barrier可以在多个控件的一侧建立一个屏障，如下所示：<div class="image-package">
+<div class="image-container" style="max-width: 354px; max-height: 199px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 56.21000000000001%;"></div>
+<div class="image-view" data-width="354" data-height="199"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-5792b4a2839fa7e9.png" data-original-width="354" data-original-height="199" data-original-format="image/png" data-original-filesize="5150" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-5792b4a2839fa7e9.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>这个时候C只要约束在Barrier的右边就可以了，代码如下：</p>
+<pre class="hljs objectivec"><code class="objectivec">&lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintTop_toBottomOf=<span class="hljs-string">"@+id/TextView1"</span> /&gt;
+
+    &lt;android.support.constraint.Barrier
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/barrier"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:barrierDirection=<span class="hljs-string">"right"</span>
+        app:constraint_referenced_ids=<span class="hljs-string">"TextView1,TextView2"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView3"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/barrier"</span> /&gt;
+</code></pre>
+<p>app:barrierDirection为屏障所在的位置，可设置的值有：bottom、end、left、right、start、top<br data-filtered="filtered">
+app:constraint_referenced_ids为屏障引用的控件，可设置多个(用“,”隔开)</p>
+<h4>4.3 Group</h4>
+<p>Group可以把多个控件归为一组，方便隐藏或显示一组控件，举个例子：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView1"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView2"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@+id/TextView1"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/TextView3"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:layout_constraintLeft_toRightOf=<span class="hljs-string">"@id/TextView2"</span> /&gt;
+</code></pre>
+<div class="image-package">
+<div class="image-container" style="max-width: 273px; max-height: 43px; background-color: transparent;">
+<div class="image-container-fill" style="padding-bottom: 15.75%;"></div>
+<div class="image-view" data-width="273" data-height="43"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-50070bd874fbfbf4.png" data-original-width="273" data-original-height="43" data-original-format="image/png" data-original-filesize="4110" class="" style="cursor: zoom-in;" src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2787721-50070bd874fbfbf4.png"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<p>现在有3个并排的TextView，用Group把TextView1和TextView3归为一组，再设置这组控件的可见性，如下所示：</p>
+<pre class="hljs objectivec"><code class="objectivec">   &lt;android.support.constraint.Group
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/group"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        android:visibility=<span class="hljs-string">"invisible"</span>
+        app:constraint_referenced_ids=<span class="hljs-string">"TextView1,TextView3"</span> /&gt;
+</code></pre>
+<p></p>
+<p></p>
+效果如下：<div class="image-package">
+<div class="image-container" style="max-width: 339px; max-height: 47px;">
+<div class="image-container-fill" style="padding-bottom: 13.86%;"></div>
+<div class="image-view" data-width="339" data-height="47"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-99d23bdc50679804.png" data-original-width="339" data-original-height="47" data-original-format="image/png" data-original-filesize="1742" class="image-loading" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<h4>4.4 Placeholder</h4>
+<p>Placeholder指的是占位符。在Placeholder中可使用setContent()设置另一个控件的id，使这个控件移动到占位符的位置。举个例子：</p>
+<pre class="hljs objectivec"><code class="objectivec">&lt;android.support.constraint.Placeholder
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/placeholder"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        app:content=<span class="hljs-string">"@+id/textview"</span>
+        app:layout_constraintLeft_toLeftOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintTop_toTopOf=<span class="hljs-string">"parent"</span> /&gt;
+
+    &lt;TextView
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/textview"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        android:background=<span class="hljs-string">"#cccccc"</span>
+        android:padding=<span class="hljs-string">"16dp"</span>
+        android:text=<span class="hljs-string">"TextView"</span>
+        android:textColor=<span class="hljs-string">"#000000"</span>
+        app:layout_constraintRight_toRightOf=<span class="hljs-string">"parent"</span>
+        app:layout_constraintTop_toTopOf=<span class="hljs-string">"parent"</span> /&gt;
+</code></pre>
+<p></p>
+<p></p>
+新建一个Placeholder约束在屏幕的左上角，新建一个TextView约束在屏幕的右上角，在Placeholder中设置 app:content="@+id/textview"，这时TextView会跑到屏幕的左上角。效果如下：<div class="image-package">
+<div class="image-container" style="max-width: 338px; max-height: 47px;">
+<div class="image-container-fill" style="padding-bottom: 13.91%;"></div>
+<div class="image-view" data-width="338" data-height="47"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-6406fe760390e2f8.png" data-original-width="338" data-original-height="47" data-original-format="image/png" data-original-filesize="1623" class="image-loading" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<h4>4.5 Guideline</h4>
+<p>Guildline像辅助线一样，在预览的时候帮助你完成布局（不会显示在界面上）。<br data-filtered="filtered">
+Guildline的主要属性：<br data-filtered="filtered">
+android:orientation 垂直vertical，水平horizontal<br data-filtered="filtered">
+layout_constraintGuide_begin 开始位置<br data-filtered="filtered">
+layout_constraintGuide_end 结束位置<br data-filtered="filtered">
+layout_constraintGuide_percent 距离顶部的百分比(orientation = horizontal时则为距离左边)<br data-filtered="filtered">
+举个例子：</p>
+<pre class="hljs objectivec"><code class="objectivec">    &lt;android.support.constraint.Guideline
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/guideline1"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        android:orientation=<span class="hljs-string">"horizontal"</span>
+        app:layout_constraintGuide_begin=<span class="hljs-string">"50dp"</span> /&gt;
+
+    &lt;android.support.constraint.Guideline
+        android:<span class="hljs-keyword">id</span>=<span class="hljs-string">"@+id/guideline2"</span>
+        android:layout_width=<span class="hljs-string">"wrap_content"</span>
+        android:layout_height=<span class="hljs-string">"wrap_content"</span>
+        android:orientation=<span class="hljs-string">"vertical"</span>
+        app:layout_constraintGuide_percent=<span class="hljs-string">"0.5"</span> /&gt;
+</code></pre>
+<p>guideline1为水平辅助线，开始位置是距离顶部50dp，guideline2位垂直辅助线，开始位置为屏幕宽的0.5(中点位置)，效果如下：</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 404px; max-height: 184px;">
+<div class="image-container-fill" style="padding-bottom: 45.540000000000006%;"></div>
+<div class="image-view" data-width="404" data-height="184"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-870080d070c12e91.png" data-original-width="404" data-original-height="184" data-original-format="image/png" data-original-filesize="9162" class="image-loading" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div>
+<hr>
+<h2>5.总结</h2>
+<p>本篇文章主要介绍了ConstraintLayout和它在布局文件里的用法，和一些辅助ConstraintLayout布局的工具，跟着敲一遍就能学会ConstraintLayout。除此之外，ConstraintLayout还有一个独立的编辑器，只需要托拉拽就可以完成整个布局，但我个人比较喜欢直接用代码写，就不介绍了，有兴趣的可以参考<a href="https://blog.csdn.net/guolin_blog/article/details/53122387" target="_blank" rel="nofollow">https://blog.csdn.net/guolin_blog/article/details/53122387</a></p>
+<p>微信扫描下方二维码关注微信公众号"<strong>AndroidCzh</strong>"一起学习<strong>ConstraintLayout</strong>吧！这里将长期为您分享原创文章、Android开发经验等！<br data-filtered="filtered">
+</p><div class="image-package">
+<div class="image-container" style="max-width: 344px; max-height: 344px;">
+<div class="image-container-fill" style="padding-bottom: 100.0%;"></div>
+<div class="image-view" data-width="344" data-height="344"><img data-original-src="//upload-images.jianshu.io/upload_images/2787721-ff17d8050d05aabd.jpg" data-original-width="344" data-original-height="344" data-original-format="" data-original-filesize="8740" class="image-loading" style="cursor: zoom-in;"></div>
+</div>
+<div class="image-caption" data-filtered="filtered"></div>
+</div><br data-filtered="filtered">
+另外还有Android开发QQ交流群： 705929135<p></p>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- 如果是付费文章，未购买，则显示购买按钮 -->
+
+    <!-- 连载目录项 -->
+
+    <!-- 如果是付费文章 -->
+      <!-- 如果是付费连载，已购买，且作者允许赞赏，则显示付费信息和赞赏 -->
+        <div id="free-reward-panel" class="support-author"><p>小礼物走一走，来简书关注我</p> <div class="btn btn-pay">赞赏支持</div> <div class="supporter"><ul class="support-list"></ul> <!----></div> <!----> <!----></div>
+
+      <div class="show-foot">
+        <a class="notebook" href="https://www.jianshu.com/nb/5763369">
+          <i class="iconfont ic-search-notebook"></i>
+          <span>日记本</span>
+</a>        <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+          © 著作权归作者所有
+        </div>
+        <div class="modal-wrap" data-report-note="">
+          <a id="report-modal">举报文章</a>
+        </div>
+      </div>
+
+      <!-- 文章底部作者信息 -->
+        <div class="follow-detail">
+          <div class="info">
+            <a class="avatar" href="https://www.jianshu.com/u/93d79e3e9d56">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/52c41ba9-d5f2-43ea-878e-41e526a82e8d.jpg" alt="96">
+</a>            <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <a class="title" href="https://www.jianshu.com/u/93d79e3e9d56">四会歌神陈子豪</a>
+          <p>写了 25780 字，被 187 人关注，获得了 345 个喜欢</p></div>
+        </div>
+
+    <div class="meta-bottom">
+      <div data-v-6ddd02c6="" class="like"><div data-v-6ddd02c6="" class="btn like-group"><div data-v-6ddd02c6="" class="btn-like"><a data-v-6ddd02c6="">喜欢</a></div> <div data-v-6ddd02c6="" class="modal-wrap"><a data-v-6ddd02c6="">32</a></div></div> <!----></div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;&#39;, &#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》（ 分享自 @简书 ）&#39;,&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+        <a class="share-circle" data-toggle="tooltip" id="longshare" target="_blank" data-original-title="" title="">
+            <div class="qrcode" id="qrcode">
+             <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png" alt="Download index side qrcode">
+             <p>下载app生成长微博图片</p>
+             </div>
+          <i class="iconfont ic-picture"></i>
+        </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;约束布局ConstraintLayout看这一篇就够了&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title="">更多分享</a>
+      </div>
+    </div>
+
+      <a id="web-note-ad-1" target="_blank" href="https://www.jianshu.com/apps/redirect?utm_source=note-bottom-click"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/web-note-ad-1-c2e1746859dbf03abe49248893c9bea4.png" alt="Web note ad 1"></a>
+
+    <!--
+    <div id="note-comment-above-ad-container">
+      <span id="youdao-comment-ad" class="ad-badge">广告</span>
+    </div>
+    -->
+    <div id="vue_comment"></div>
+  </div>
+
+  <div class="side-tool"><ul><li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部"><a class="function-button"><i class="iconfont ic-backtop"></i></a></li> <!----> <!----> <!----> <!----> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="分享文章" id="share"><a tabindex="0" role="button" data-toggle="popover" data-placement="left" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="&lt;ul class=&#39;share-list&#39; style=&quot;width:220px&quot;&gt;
+                  &lt;li&gt;&lt;a class=&quot;weixin-share&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-weixin&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到微信&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;&#39;, &#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》（ 分享自 @简书 ）&#39;,&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-weibo&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到微博&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  
+                  &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-zone&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 四会歌神陈子豪 的文章《约束布局ConstraintLayout看这一篇就够了》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-twitter&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-facebook&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-google&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;https://www.jianshu.com/p/17ec9bd6ca8a?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;约束布局ConstraintLayout看这一篇就够了&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-douban&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;" data-original-title="" title="" class="function-button"><i class="iconfont ic-share"></i></a> <!----></li> <!----></ul></div>
+</div>
+<div class="note-bottom">
+  <div><div class="main"><div class="title">被以下专题收入，发现更多相似内容</div> <!----> <div class="include-collection"><!----> <a href="https://www.jianshu.com/c/58b4c20abf2f?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/android.graphics.Bitmap_1329dce8.jpeg"><div class="name">Android...</div></a><a href="https://www.jianshu.com/c/5139d555c94d?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/1416528891_3612.png"><div class="name">Android...</div></a><a href="https://www.jianshu.com/c/d1591c322c89?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/android.graphics.Bitmap_15f127c2.jpeg"><div class="name">Android开发</div></a><a href="https://www.jianshu.com/c/0dc880a2c73c?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/ff55916a6a0c2db84ebb1ffdcef539dd.png"><div class="name">Android开发</div></a><a href="https://www.jianshu.com/c/b414bd967f55?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/crop1536840928708.jpg"><div class="name">需要使用</div></a><a href="https://www.jianshu.com/c/213e4391dc6b?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/APP主图.png"><div class="name">android</div></a><a href="https://www.jianshu.com/c/3e5db31e79a1?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/images.png"><div class="name">我收藏的And...</div></a> <a class="show-more">
+        展开更多
+        <i class="iconfont ic-show"></i></a></div></div> <!----> <!----></div>
+  <div data-vcomp="recommended-notes" data-note-id="33722738"></div>
+  <!-- 相关文章 -->
+    <!-- 未登录用户 -->
+    <div class="seo-recommended-notes">
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/f110b4fcfe93?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/1355123-ad3ce15e4989f13b" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/f110b4fcfe93?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">ConstraintLayout在项目中实践与总结</a>
+            <p class="description">ConstraintLayout，让布局更优雅。 一、为什么要用ConstraintLayout 上图是网易100分的选课首页，在Banner图的下部是推荐类目模块，其中数学、语言、小低和小高分别是推荐类目Item。可见每个类目的子类目个数是不确定的，根据个数的不同，子类目...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/04d328e48fb5?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/c917de68e35f.jpg" alt="48">
+              </div>
+              <span class="name">宇是我</span>
+</a>          </div>
+
+          <div class="note ">
+                        <a class="title" target="_blank" href="https://www.jianshu.com/p/73e36529cf7c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">Android - 收藏集</a>
+            <p class="description">用两张图告诉你，为什么你的 App 会卡顿? - Android - 掘金 Cover 有什么料？ 从这篇文章中你能获得这些料： 知道setContentView()之后发生了什么？ ... Android 获取 View 宽高的常用正确方式，避免为零 - 掘金 相信有很多...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/4031c6d0bd2b?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/8-a356878e44b45ab268a3b0bbaaadeeb7.jpg" alt="48">
+              </div>
+              <span class="name">hw1212</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/d51cf0fcdb8f?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/4179925-929ddcbf1221bc00.png" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/d51cf0fcdb8f?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">ConstraintLayout</a>
+            <p class="description">网传constraintLayout（约束布局）的布局，性能和功能性相当优越，虽然RelativeLayout用的飞起来，也得与时俱进。 本文主要分为以下几个部分： catalog.png 1. 背景介绍 在面试的时候经常会被问到有没有做过布局优化，都通过什么方式优化布局界...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/a72427e40388?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/1-04bbeead395d74921af6a4e8214b4f61.jpg" alt="48">
+              </div>
+              <span class="name">才华横溢的王小白</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/50debc330e91?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/1696338-0ca0b0616cd8f9cf.png" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/50debc330e91?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">ConstraintLayout 属性详解 和Chain的使用</a>
+            <p class="description">想看我更多文章:【张旭童的博客】http://www.jianshu.com/p/9b6e12d8eea0 概述 小伙伴们好久不见，我又回来啦。说实话这篇文章写的算是比较晚了，距离ConstraintLayout出现至今已经有一年了。且自AS2.3起创建新的Activity...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/8e91ff99b072?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/af1bf78e6aa4.jpg" alt="48">
+              </div>
+              <span class="name">张旭童</span>
+</a>          </div>
+
+          <div class="note ">
+                        <a class="title" target="_blank" href="https://www.jianshu.com/p/7b448c47d7a3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">龙族5第六章</a>
+            <p class="description">路明非把资料放进包里进了图书馆，赫尔佐伯所留下的关于黑天鹅港的东西路明非十分在意，他想去那个地方，去了解真相，但赫尔佐伯关于黑天鹅港的具体位置并没有描述，所以路明非想借助各种地图去寻找到黑天鹅港的大概位置。 “铃铃铃，铃铃铃。”路明非的手机响了，但他并不想接，但电话却一直在...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/dbcace7ff754?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2af18dc9-e9bc-4683-aab9-9a8f14ecb45d.jpg" alt="48">
+              </div>
+              <span class="name">云曦乱</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/352131dfdb9d?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/848363-6aa050aa7008b4d2.jpg" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/352131dfdb9d?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">不敢叹风尘</a>
+            <p class="description">作者｜五花马 尊前慈母在，浪子不觉寒。 这些年和父母聚少离多，但只要和母亲在一起，看电视，她会优先选央视11频道，因为我爱听京剧；买水果，一定带几个火龙果，因为这是我最爱吃的水果；家常菜，总是有炒白菜，因为有一次我说最喜欢大白菜…… 你看，母亲的心意就在这似水流年一针一线一...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/bc0ef124fd93?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/10a06e5b-f512-49e2-af65-0956811777b2.jpg" alt="48">
+              </div>
+              <span class="name">五花马</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/38342c6278cb?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/7811908-70fffe42bddb15bc.jpg" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/38342c6278cb?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">一身阿迪，算不算真•中产阶级？</a>
+            <p class="description">1 近日，辽宁阜新某川菜馆，一位女子大吃大喝后称没带钱，店员几番询问无果，无奈只能放行。店员嘲讽了她几句吃霸王餐，谁知该女子愤怒推人并称：我穿阿迪达斯的！怎么会缺你这几个钱。 这应该是阿迪被黑的最惨的一次，据我掐指推测，这名女子应该是收了耐克的公关费，事件是精心策划的行为艺...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/25b9916e332e?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/bf132519-a931-4b4d-a17b-03b6fe54b745.jpg" alt="48">
+              </div>
+              <span class="name">脱口岳</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/e618e20c1342?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2624862-b473fcdccde5fa44.jpg" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/e618e20c1342?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">安利几个毕业旅行打卡地，附带穿搭教程</a>
+            <p class="description">毕业了，开启一次毕业旅行，将会成为你生命难忘的记忆，为校园生活画上完美的句号。毕业旅行，想好去哪里玩吗？没有的话，CO君就安利几个国内必须打卡地，附带穿搭教程，让你留下最美的回忆，刷爆朋友圈。 第一站成都 让我掉下眼泪的，不止昨夜的酒” “让我依依不舍的，不止你的温柔” -...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/523e171008f7?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/1f4d1ef6b755" alt="48">
+              </div>
+              <span class="name">琪言琪语</span>
+</a>          </div>
+
+          <div class="note have-img">
+            <a class="cover" target="_blank" href="https://www.jianshu.com/p/c01d52ff0468?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/2181612-aed0fc26b4bd556b.jpg" alt="240">
+</a>            <a class="title" target="_blank" href="https://www.jianshu.com/p/c01d52ff0468?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">无言的蔷薇</a>
+            <p class="description">   最近，常常做梦，梦里有他，有她，有他们。欣喜若狂的梦里行走自己的另一个故事，那种感觉真好。说不出，道不明。每每醒来，揉揉双眼，还有种意犹未尽的爽感。此时，一缕强烈的光照进房间，华丽丽的洒在自己睁不开眼的脸上，ohno，原来只是一场梦。瞬间，会很不情愿的确信，真的只是梦...</p>
+            <a class="author" target="_blank" href="https://www.jianshu.com/u/8462dcc94e13?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+              <div class="avatar">
+                <img src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/6b0a1ada42f6" alt="48">
+              </div>
+              <span class="name">我是葉子</span>
+</a>          </div>
+    </div>
+</div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"windows","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"follow_state":0,"uuid":"83a12bd1-c83a-4b06-beac-b192addbf7b7"},"note":{"id":33722738,"slug":"17ec9bd6ca8a","user_id":2787721,"notebook_id":5763369,"commentable":true,"likes_count":32,"views_count":8013,"public_wordage":2790,"comments_count":6,"featured_comments_count":0,"total_rewards_count":0,"is_author":false,"paid_type":"free","paid":false,"paid_content_accessible":false,"author":{"nickname":"四会歌神陈子豪","total_wordage":25780,"followers_count":187,"total_likes_count":345}}}</script>
+    
+    <script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/babel-polyfill-6cd2d6b53fe3184b71cc.js" crossorigin="anonymous"></script>
+    <script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/web-base-53fc41124d211e36c165.js" crossorigin="anonymous"></script>
+<script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/web-0fc5f65844afbf86f503.js" crossorigin="anonymous"></script>
+    
+    <script src="./约束布局ConstraintLayout看这一篇就够了 - 简书_files/entry-82e44627b2e2d73431d6.js" crossorigin="anonymous"></script>
+    <script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+
+<!----><!----></body></html>

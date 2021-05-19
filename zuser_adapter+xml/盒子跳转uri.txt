@@ -1,0 +1,42 @@
+﻿
+scheme跳转协议:
+阿里app魔盒版：
+tv_child://home          首页
+阿里app第三方版：
+km_child://home          首页
+
+otherapp:
+otherapp://package=com.zhongyou.launcher&activity=com.zhongyou.launcher.activity.MainActiv
+
+
+课程教案：
+kcja://home                                             首页
+kcja://home?classTypeId=141                             首页分类
+kcja://course?courseId=146?courseName=国学教育           二级页面
+kcja://lesson?lessonId=204?lessonName=父母呼 应勿缓      三级页面
+
+名师课堂：
+mskt://home                                              首页
+mskt://mscourse?courseId=7?courseName=名师示范课           二级页面
+mskt://play?videoUrl=http://magic-genie.oss-cn-hangzhou.aliyuncs.com/video/20181208/20181208143732_ed4e.mp4                             点播
+mskt://live?roomNum=150640167?password=2222?title=ssss           直播间 
+mskt://h5?h5url=https://www.baidu.com                      h5直播页
+
+双师课堂：
+sskt://home                                         首页
+
+
+课程包：
+hb://home?packagecode=tvPictureBook?title=绘本                                         绘本首页  
+hb://home?packagecode=chineseLiterature?title=国学                                    国学首页
+
+hb://normal?bookid=136                                                                  普通绘本课程
+hb://ppt?lessonId=168                                                                    ppt课程
+hb://url?playurl=http://edu-cloud-oss-cdn.sairobo.cn/video/20190426/20190426094119_ouuh.swf         url或者flash课程
+hb://url?playurl=mskt://home                                                                        url或者flash课程
+
+flash：
+flash://home?flashUrl=http://edu-cloud-oss-cdn.sairobo.cn/video/20190426/20190426094119_ouuh.swf
+
+h5:
+h5://home?h5url=http://10.0.0.224/package/test.html

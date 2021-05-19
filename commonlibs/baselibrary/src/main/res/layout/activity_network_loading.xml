@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/network_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:visibility="visible"
+    tools:visibility="visible">
+
+    <!--android:background="@drawable/iv_loading_animationlist"-->
+    <!--android:src="@drawable/network_loading"-->
+    <ImageView
+        android:id="@id/loading_iv"
+        android:layout_width="100mm"
+        android:layout_height="100mm"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@id/loading_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loading_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="小象正奔向故事里..."
+        android:textColor="@color/color999999"
+        android:textSize="20sp" />
+</RelativeLayout>

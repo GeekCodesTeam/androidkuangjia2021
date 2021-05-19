@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">slbota</string>
+    <string name="system_info">系统信息</string>
+    <string name="app_dqrom">当前ROM&#160;：</string>
+    <string name="app_dqbb">当前版本&#160;：</string>
+    <string name="app_dqbbm">当前版本名&#160;：</string>
+    <string name="app_fxxbb">发现新版本&#160;：</string>
+    <string name="app_bbsm">版本说明&#160;：</string>
+    <string name="app_gxxt">更新系统</string>
+    <string name="app_gxxt2">更新APP</string>
+    <string name="app_dqyszxbb">当前已是最新版本</string>
+    <string name="app_yxz">已下载</string>
+    <string name="app_zdx">总大小</string>
+
+</resources>

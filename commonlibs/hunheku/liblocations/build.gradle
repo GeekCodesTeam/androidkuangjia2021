@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonlibs:hunheku:libutils')
+    //3D地图so及jar
+    api 'com.amap.api:3dmap:latest.integration'
+    //定位功能
+    api 'com.amap.api:location:latest.integration'
+    //搜索功能
+    api 'com.amap.api:search:latest.integration'
+    implementation 'com.hjq:xxpermissions:9.6'
+}

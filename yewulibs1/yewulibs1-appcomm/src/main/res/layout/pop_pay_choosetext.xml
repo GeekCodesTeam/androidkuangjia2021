@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:clipChildren="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll23"
+        android:layout_width="334mm"
+        android:layout_height="390mm"
+        android:layout_centerInParent="true"
+        android:background="@drawable/slb_popup_parent2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50mm"
+            android:text="请按顺序输入下列数字"
+            android:textColor="@color/black_000"
+            android:textSize="16mm" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0mm"
+                android:layout_height="62mm"
+                android:layout_margin="8mm"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv1_poppay1"
+                    android:layout_width="62mm"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/slb_login_pay"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black_000"
+                    android:textSize="20mm" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0mm"
+                android:layout_height="62mm"
+                android:layout_margin="8mm"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv1_poppay2"
+                    android:layout_width="62mm"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/slb_login_pay"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black_000"
+                    android:textSize="20mm" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0mm"
+                android:layout_height="62mm"
+                android:layout_margin="8mm"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv1_poppay3"
+                    android:layout_width="62mm"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/slb_login_pay"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black_000"
+                    android:textSize="20mm" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0mm"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_del32"
+        android:layout_width="60mm"
+        android:layout_height="60mm"
+        android:layout_above="@+id/ll23"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10mm"
+        android:layout_marginBottom="-60mm"
+        android:background="@drawable/slb_m_delete3" />
+
+
+</RelativeLayout>

@@ -1,0 +1,120 @@
+ if (IsEqual(defaultList, bannerBeanList)) {
+                    getView().onIHomeBannerViewDefault(defaultList);
+                    return;
+                }
+
+
+
+
+ public boolean IsEqual(List<VideoBannerBean> defaultList1, List<BannerBean.DataBean> bannerBeanList1) {
+        if (defaultList1.size() != bannerBeanList1.size()) {
+            return false;
+        }
+        List<String> a = new ArrayList<>();
+        List<String> b = new ArrayList<>();
+        for (int i = 0; i <= defaultList1.size() - 1; i++) {
+            a.add(defaultList1.get(i).getPicture());
+        }
+        for (int j = 0; j <= bannerBeanList1.size() - 1; j++) {
+            b.add(bannerBeanList1.get(j).getImgUrl());
+        }
+        return compare(a, b);
+    }
+
+    public static <T extends Comparable<T>> boolean compare(List<T> a, List<T> b) {
+        if (a.size() != b.size())
+            return false;
+        Collections.sort(a);
+        Collections.sort(b);
+        for (int i = 0; i < a.size(); i++) {
+            if (!a.get(i).equals(b.get(i)))
+                return false;
+        }
+        return true;
+    }
+
+
+
+
+ /**
+     * @param requMin      最小值
+     * @param requMax      最大值
+     * @param targetLength 获取随机数个数
+     * @return
+     */
+    public List<PopYanzhengPayBeanInt> getRandomNum(int requMin, int requMax, int targetLength) {
+        if (requMax - requMin < 1) {
+            System.out.print("最小值和最大值数据有误");
+            return null;
+        } else if (requMax - requMin < targetLength) {
+            System.out.print("指定随机个数超过范围");
+            return null;
+        }
+        int target = targetLength;
+        List<PopYanzhengPayBeanInt> list = new ArrayList<>();
+
+        List<PopYanzhengPayBeanInt> requList = new ArrayList<>();
+        for (int i = requMin; i <= requMax; i++) {
+            requList.add(new PopYanzhengPayBeanInt(i));
+        }
+
+        for (int i = 0; i < targetLength; i++) {
+
+            // 取出一个随机角标
+            int r = (int) (Math.random() * requList.size());
+            list.add(requList.get(r));
+
+            // 移除已经取过的值
+            requList.remove(r);
+
+
+        }
+
+        return list;
+    }
+
+
+
+
+
+/**
+     * 去除同名WIFI
+     *
+     * 需要去除同名的列表
+     * @return 返回不包含同命的列表
+     */
+    public List<Biaoge_listBean> noSameName(List<Biaoge_listBean> oldSr)
+    {
+        List<Biaoge_listBean> newSr = new ArrayList<Biaoge_listBean>();
+        for (Biaoge_listBean result : oldSr)
+        {
+            if (!TextUtils.isEmpty(result.getText_content1()) && !containName(newSr, result.getText_content1()))
+                newSr.add(result);
+        }
+        return newSr;
+    }
+
+    /**
+     * 判断一个扫描结果中，是否包含了某个名称的WIFI
+     *
+     * @param sr
+     * 扫描结果
+     * @param name
+     * 要查询的名称
+     * @return 返回true表示包含了该名称的WIFI，返回false表示不包含
+     */
+    public boolean containName(List<Biaoge_listBean> sr, String name)
+    {
+        for (Biaoge_listBean result : sr)
+        {
+            if (!TextUtils.isEmpty(result.getText_content1()) && result.getText_content1().equals(name))
+                return true;
+        }
+        return false;
+    }
+
+
+
+
+
+

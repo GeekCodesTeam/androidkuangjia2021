@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- 字体 -->
+    <dimen name="f6">16sp</dimen>
+
+    <!-- 间距 -->
+    <dimen name="d4">12dp</dimen>
+    <dimen name="d5">16dp</dimen>
+
+    <!-- 宽高 -->
+
+</resources>

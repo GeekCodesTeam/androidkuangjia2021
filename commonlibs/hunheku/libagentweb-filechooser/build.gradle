@@ -1,0 +1,11 @@
+plugins {
+    id 'com.android.library'
+}
+//apply from: '../../mobsdk.gradle'
+apply from: './../../../commonlibs1.gradle'
+def config = rootProject.ext //配置
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonlibs:hunheku:libagentweb-core')
+}

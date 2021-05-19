@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/web_white"
+        android:orientation="horizontal"
+        tools:ignore="MissingDefaultResource">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shouyef3_tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:layout_marginBottom="12mm"
+                android:gravity="center"
+                android:text="ces"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="recycleview-yewu1"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="recycleview-yewu2"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="recycleview-yewu3"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="模块化fragment"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="偷偷拍照"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="搜索组件"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="保利威直播"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="饺子播放器"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="GSY播放器"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="环信IM"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="TencentIM"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/tv12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16mm"
+                android:layout_marginTop="12mm"
+                android:layout_marginRight="16mm"
+                android:gravity="center"
+                android:text="RongCloudIM"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

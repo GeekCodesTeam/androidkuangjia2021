@@ -1,0 +1,5 @@
+Html
+					.fromHtml("<font color='#000000'><big>"
+							+ listItem.getSpecialistName() + "</big></font>"
+							+ " " + listItem.getDepartmentStr() + " "
+							+ listItem.getTitle())

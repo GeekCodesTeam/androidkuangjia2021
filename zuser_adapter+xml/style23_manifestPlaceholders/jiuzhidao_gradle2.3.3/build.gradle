@@ -1,0 +1,587 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'fastdex.app'
+
+def nation_num = '0000';//全国版
+def restaurant_num = '0001';//餐厅版
+
+def int minSdk = 17;
+def int targetSdk = 25;
+def String appId = 'com.haier.cellarette';
+
+def int vCode = 1166;//版本号
+def String vNameCode = "310" + "_" + vCode + "_";
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+    }
+    /**
+     * 配置Java编译参数
+     */
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    defaultConfig {
+        minSdkVersion minSdk
+        applicationId appId
+        targetSdkVersion targetSdk
+        versionCode vCode
+        versionName "JCT_310_1189_0001"
+        ndk {
+            moduleName "native-powerctl-jni"
+            abiFilters "armeabi-v7a", "x86" // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+        }
+        sourceSets.main {
+            jni.srcDirs = []
+            jniLibs.srcDir 'src/main/libs'
+        }
+        // Enabling multidex support.
+        multiDexEnabled true
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        signingConfig signingConfigs.debug
+
+    }
+
+    productFlavors {
+        //酒知道
+        //线上
+        //全国版酒知道 线上
+        NATION_310 {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JC_' + vNameCode + nation_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+        //餐厅版酒知道 线上
+        RESTAURANT_310 {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JC_' + vNameCode + restaurant_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+        //测试
+        //全国版酒知道 测试
+        NATION_310_TEST {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JCT_' + vNameCode + nation_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+        //餐厅版酒知道 测试
+        RESTAURANT_310_TEST {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JCT_' + vNameCode + restaurant_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+        //预生产
+        //全国版酒知道 预生产
+        NATION_310_YSC {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JCY_' + vNameCode + nation_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+        //餐厅版酒知道 预生产
+        RESTAURANT_310_YSC {
+            minSdkVersion minSdk
+            applicationId appId
+            targetSdkVersion targetSdk
+            versionCode vCode
+            //版本名字
+            versionName 'JCY_' + vNameCode + restaurant_num
+            ndk {
+                moduleName "native-powerctl-jni"
+                abiFilters "armeabi-v7a", "x86"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+            }
+            sourceSets.main {
+                jni.srcDirs = []
+                jniLibs.srcDir 'src/main/libs'
+            }
+            // Enabling multidex support.
+            multiDexEnabled true
+            renderscriptTargetApi 19
+            renderscriptSupportModeEnabled true
+            vectorDrawables.useSupportLibrary = true
+            signingConfig signingConfigs.debug
+        }
+
+        // E侍酒
+//        // 线上
+//        //全国版E侍酒 线上
+//        NATION_310_E {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJC_' + vNameCode + nation_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+//        //餐厅版E侍酒 线上
+//        RESTAURANT_310_E {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJC_' + vNameCode + restaurant_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+//        //测试
+//        //全国版E侍酒 测试
+//        NATION_310_E_TEST {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJCT_' + vNameCode + nation_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+//        //餐厅版E侍酒 测试
+//        RESTAURANT_310_E_TEST {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJCT_' + vNameCode + restaurant_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+//        //预生产
+//        //全国版E侍酒 预生产
+//        NATION_310_E_YSC {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJCY_' + vNameCode + nation_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+//        //餐厅版E侍酒 预生产
+//        RESTAURANT_310_E_YSC {
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            //版本名字
+//            versionName 'EJCY_' + vNameCode + restaurant_num
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            renderscriptTargetApi 19
+//            renderscriptSupportModeEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//            signingConfig signingConfigs.debug
+//        }
+    }
+
+    // 自定义输出配置
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                def fileName = "UerbT_v${variant.versionName}_${releaseTime()}_${variant.flavorName}.apk"
+                def fileName = "${variant.versionName}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+    productFlavors.all { flavor ->
+        //BXNT_256_0118_0003
+        def currentMode = flavor.versionName.split("_")[3]
+        def currentEnvironment = flavor.versionName.split("_")[0]
+        def stValue = ".ceshi"
+        // t == currentEnvironment 以前的判断条件
+        if (currentEnvironment.endsWith("T")) {//判断是否为测试版 是否以T结尾
+            stValue = ".ceshi"
+        }
+        if (currentEnvironment.endsWith("Y")) {//判断是否为预生产 是否以Y结尾
+            stValue = ".yushengchan"
+        }
+        if (currentEnvironment.endsWith("C")) {
+            stValue = ".xianshang"
+        }
+        //E侍酒
+        if (currentEnvironment.startsWith("E") && currentEnvironment.endsWith("T")) {
+            stValue = "e.xianshang"
+        }
+        if (currentEnvironment.startsWith("E") && currentEnvironment.endsWith("C")) {
+            stValue = "e.xianshang"
+        }
+        if (currentEnvironment.startsWith("E") && currentEnvironment.endsWith("C")) {
+            stValue = "e.xianshang"
+        }
+
+        if (currentMode == nation_num) {
+            flavor.manifestPlaceholders = [INDEX_CONFIG_VALUE: ".activity.index.factorys.NationFactory",INDEX_HOME_VALUE: ".activity.indexnew.factorys.NationFactory", ST_DATA_VALUE: stValue]
+
+        } else if (currentMode == restaurant_num) {
+            flavor.manifestPlaceholders = [INDEX_CONFIG_VALUE: ".activity.index.factorys.RestaurantFactory",INDEX_HOME_VALUE: ".activity.indexnew.factorys.RestaurantFactory", ST_DATA_VALUE: stValue]
+
+        } else {
+            flavor.manifestPlaceholders = [INDEX_CONFIG_VALUE: ".activity.index.factorys.NationFactory",INDEX_HOME_VALUE: ".activity.indexnew.factorys.NationFactory", ST_DATA_VALUE: stValue]
+
+        }
+
+    }
+
+//
+//    // 自定义输出配置 classpath 'com.android.tools.build:gradle:3.0.0'
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.all {
+////            outputFileName = "${variant.name}-${variant.versionName}.apk"
+//            outputFileName = "${variant.versionName}.apk"
+//        }
+//    }
+//    // Specifies two flavor dimensions.
+//    flavorDimensions "keep", "change"
+//    productFlavors {
+//        BanBen {
+//            dimension "keep"
+//            minSdkVersion minSdk
+//            applicationId appId
+//            targetSdkVersion targetSdk
+//            versionCode vCode
+//            ndk {
+//                moduleName "native-powerctl-jni"
+//                abiFilters "armeabi-v7a", "x86"
+//                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,armeabi,arm-v8之类的so会被过滤掉)
+//            }
+//            sourceSets.main {
+//                jni.srcDirs = []
+//                jniLibs.srcDir 'src/main/libs'
+//            }
+//            // Enabling multidex support.
+//            multiDexEnabled true
+//            vectorDrawables.useSupportLibrary = true
+//        }
+//        NATION_310 {
+//            dimension "change"
+//            //JCY_310_1157_0001
+//            versionName "JC" + "_" + vNameCode + nation_num
+////            versionName "JCY" + "_" + vNameCode + nation_num
+////            versionName "JCT" + "_" + vNameCode + nation_num
+//
+//        }
+//        RESTAURANT_310 {
+//            dimension "change"
+//            versionName "JC" + "_" + vNameCode + restaurant_num
+////            versionName "JCY" + "_" + vNameCode + nation_num
+////            versionName "JCT" + "_" + vNameCode + nation_num
+//        }
+//
+//    }
+
+    /**
+     * 配置测试debug版和release版签名文件
+     */
+    signingConfigs {
+        debug {
+//            try {
+//                storeFile file('xxxxxx')
+//                keyAlias 'xxxxxx'
+//                keyPassword 'xxxxxx'
+//                storePassword 'xxxxxx'
+//            } catch (ex) {
+//                throw new InvalidUserDataException(ex.toString())
+//            }
+            try {
+                storeFile file('keystore/haier_cellarette.keystore')
+                keyAlias '123456'
+                keyPassword '123456'
+                storePassword '123456'
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+        release {
+            try {
+                storeFile file('keystore/haier_cellarette.keystore')
+                keyAlias '123456'
+                keyPassword '123456'
+                storePassword '123456'
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            //是否启用混淆
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //是否清理无用资源（将删除所有那些在项目中不会使用的资源）
+//            shrinkResources true
+            //是否启用zipAlign压缩
+            zipAlignEnabled true
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    def outputFile = output.outputFile
+//                    def fileName = "JGT_JC310AU1_${defaultConfig.versionName}_${releaseTime()}_code_${defaultConfig.versionCode}.apk"
+//                    output.outputFile = new File(outputFile.parent, fileName)
+//                }
+//            }
+            signingConfig signingConfigs.debug
+        }
+        release {
+            //是否启用混淆
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //是否清理无用资源（将删除所有那些在项目中不会使用的资源）
+//            shrinkResources true
+            //是否启用zipAlign压缩
+            zipAlignEnabled true
+            signingConfig signingConfigs.debug
+        }
+    }
+
+}
+
+def releaseTime() {
+    return new Date().format("yyyy_MM_dd", TimeZone.getTimeZone("UTC"))
+}
+
+repositories {
+    flatDir {
+        dirs '../libs/' //this way we can find the .aar file in libs folder
+        mavenCentral()
+    }
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.gongwen:marqueelibrary:1.0.4'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //引用aar文件
+    //    compile(name: 'universalvideoview', ext: 'aar')
+    //U+统计SDK
+    //    compile(name: 'uAnalytics3.0.02_android', ext: 'aar')
+    //引用modules
+    compile project(':libraries:wine_identification')
+    compile project(':libraries:rfidlibrary')
+    compile project(':libraries:wine_commen')
+    compile project(':libraries:order')
+    compile project(':libraries:location')
+    compile project(':libraries:statistics')
+    compile project(':libraries:universalvideoview')
+    compile project(':libraries:zxing')
+    compile project(':libraries:controler')
+    compile 'com.github.dongjunkun:DropDownMenu:1.0.4'
+    compile project(path: ':commonlibs:libwebview')
+    compile 'com.android.support:cardview-v7:25.3.1'
+}
+

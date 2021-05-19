@@ -1,0 +1,24 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+android{
+    //自3.6.0开始需要java8的支持
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    implementation 'io.hyphenate:hyphenate-chat:3.8.1'
+    implementation librarys.glide47
+    implementation librarys.glide47AnnProcessor
+    annotationProcessor librarys.annotationProcessorglide47compiler
+    implementation librarys.glide47okhttp3integration
+    api files('libs/BaiduLBS_Android.jar')
+}
+
+

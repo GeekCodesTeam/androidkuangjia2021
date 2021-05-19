@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //依赖
+//repositories { flatDir { dirs 'libs' } }
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    implementation librarys.glide47
+    implementation librarys.annotationProcessorglide47compiler
+    //
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-material:2.0.1'
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+    //
+    api 'cn.jzvd:jiaozivideoplayer:7.5.0'
+    api 'com.github.wseemann:FFmpegMediaMetadataRetriever-core:1.0.15'
+    api 'com.github.wseemann:FFmpegMediaMetadataRetriever-native:1.0.15'
+    api 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+    api 'com.aliyun.sdk.android:AliyunPlayer:4.5.0-full'
+    api 'com.alivc.conan:AlivcConan:0.9.5'
+    //
+    api 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    api 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.3-jitpack') {
+        exclude module: 'gsyVideoPlayer-armv5'
+        exclude module: 'gsyVideoPlayer-armv7a'
+        exclude module: 'gsyVideoPlayer-armv64'
+        exclude module: 'gsyVideoPlayer-x86'
+        exclude module: 'gsyVideoPlayer-x86_64'
+    }
+}

@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def config = rootProject.ext //
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonlibs:hunheku:libutils')
+    api 'cn.jiguang.sdk:jcore:2.7.2' //
+    api 'cn.jiguang.sdk:janalytics:2.1.3' //
+//    api 'cn.jiguang.sdk:jmlink:1.2.0'  // 此处以JMlink 1.2.0 版本为例。
+    //jar aar
+//    /**rep*/implementation (name:'biz-identification_bxn_nation', ext:'aar')
+}

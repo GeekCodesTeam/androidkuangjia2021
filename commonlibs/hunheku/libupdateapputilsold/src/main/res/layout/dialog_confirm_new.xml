@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="288mm"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10mm">
+
+        <TextView
+            android:id="@+id/dialog_confirm_cancle"
+            android:layout_width="40mm"
+            android:layout_height="40mm"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/slblogin_delete2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="300mm"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="288mm"
+            android:layout_height="375mm"
+            android:layout_centerInParent="true"
+            android:background="@drawable/slb_sj32"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/dialog_confirm_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="120mm"
+                android:layout_marginRight="24dp"
+                android:gravity="center_vertical"
+                android:text="@string/app_xbbyzbh"
+                android:textColor="@color/color2F3D57"
+                android:textSize="18mm"
+                android:visibility="invisible" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25mm"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/dialog_confirm_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5mm"
+                    android:text=""
+                    android:textColor="@color/text_dark_grey2"
+                    android:textSize="15mm" />
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44mm"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="35mm"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!--<View-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/dialog_confirm_cancle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:clickable="true"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:text="@string/app_shaz"-->
+                <!--android:textColor="@color/text_light_blue"-->
+                <!--android:textSize="14sp" />-->
+
+                <TextView
+                    android:id="@+id/dialog_confirm_sure"
+                    android:layout_width="170mm"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_ljsj"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/app_lkaz"
+                    android:textColor="@color/colorwhiteFFFFFF"
+                    android:textSize="18mm" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+hios://hs.ac.NoHiosMainActivity{act}?act={i}1&sku_id={s}2a&category_id={s}3a
+
+附：需要登录就加这个condition=login 例如：hios://hs.act.slbapp2.BooksListActivity{act}?id={s}2&name={s}geek&condition=login
+
+1.绘本列表（BookId）："hios://hs.act.slbapp2.BooksListActivity{act}?id={s}2&name={s}geek"
+
+
+2.绘本播放页面（BookItemId）："hios://hs.act.slbapp2.ReadBookActivity{act}?id={s}2&name={s}geek"
+
+
+3.听书列表一级页面："hios://hs.act.slbapp2.ListenBooksListActivity{act}?id={s}2&name={s}geek&bookId={s}22"
+ 
+  听书列表一级页面new1："hios://hs.act.slbapp2.ListenBooksListActivity{act}?id1={s}2&name1={s}geek&id2={s}22&type1={s}geek"	
+
+
+4.听书列表二级页面："hios://hs.act.slbapp2.ListenBooksListActivity2{act}?id={s}2&name={s}geek&bookId={s}22"
+
+
+5.听书播放页面："hios://hs.act.slbapp2.ListenMusicActivity{act}?id={s}2&name={s}geek&bookId={s}22"
+
+
+6.VIP充值页面："hios://hs.act.slbapp2.VipActivity{act}"
+
+
+7.VIP充值页面需要登录："hios://hs.act.slbapp2.VipActivity{act}?condition=login"  
+
+
+8.首页绘本分类列表跳转到绘本分类详情列表："hios://hs.act.slbapp2.CategoryBooksListActivity{act}?id={s}2&name={s}geek"
+
+
+9.首页听书分类列表跳转到听书分类详情列表："hios://hs.act.slbapp2.ListenBooksListActivity{act}?id1={s}2&name1={s}geek&id2={s}22&type1={s}geek"
+
+
+10.首页分类列表全部分类跳转到全部分类详情列表："hios://hs.act.slbapp2.CategoryActivityAll{act}?type={s}2&name={s}geek"
+

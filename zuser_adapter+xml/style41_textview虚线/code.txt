@@ -1,0 +1,6 @@
+
+            <View
+                android:layout_width="78mm"
+                android:layout_height="10mm"
+                android:background="@drawable/slb_xuxian_comm"
+                android:layerType="software" />

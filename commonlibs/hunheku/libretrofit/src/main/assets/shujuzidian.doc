@@ -1,0 +1,312 @@
+﻿
+        <html xmlns:v="urn:schemas-microsoft-com:vml"
+        xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta http-equiv=Content-Type content="text/html;  
+        charset=utf-8">
+        <meta name=ProgId content=Word.Document>
+        <meta name=Generator content="Microsoft Word 11">
+        <meta name=Originator content="Microsoft Word 11">
+        <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+        <body><h1>1、1.数据字典</h1><div style="margin-left:20px;"><h2>1.1、1.1-数据字典</h2><div style="margin-left:20px;"><h4><strong>公共请求实体结构展现位置，请求头部body体</strong></h4>
+<h4><strong>接口对接：</strong></h4>
+<h2><code>相关人员：向寒</code></h2>
+<h4><strong>公共请求实体JSON结构示例</strong></h4>
+<pre><code>{
+    &quot;verify_info&quot;:{
+        &quot;app&quot;:{
+            &quot;app_id&quot;:&quot;2e263d60-2d48-43d9-b699-6f3bdb38eff8&quot;,
+            &quot;version&quot;:&quot;1.0.0&quot;,
+            &quot;api_version&quot;:160815,
+            &quot;user_id&quot;:&quot;201605131806550245&quot;,
+            &quot;business_district&quot;:&quot;4&quot;
+        },
+        &quot;token_check&quot;:{
+            &quot;access_token&quot;:&quot;3420d0e0-ed77-45e1-8370-2b55af0a62e8&quot;,
+            &quot;timestamp&quot;:&quot;1453116822556&quot;,
+            &quot;sign&quot;:&quot;fac5ff3fce1c5890a6bae11e7670dc1f&quot;,
+            &quot;client_id&quot;:&quot;356877020056553-08002700DC94&quot;,
+            &quot;sequence_id&quot;:&quot;08002700DC94-15110519074300001&quot;,
+            &quot;language&quot;:&quot;zh-cn&quot;,
+            &quot;timezone&quot;:&quot;8&quot;
+        }   &quot;device&quot;:{
+            &quot;platform&quot;:&quot;XiaoMi Note2&quot;,
+            &quot;model&quot;:&quot;Android 4.4.2&quot;,
+            &quot;factory&quot;:&quot;XiaoMi&quot;,
+            &quot;screen_size&quot;:&quot;1920*1080&quot;,
+            &quot;denstiy&quot;:2,
+            &quot;imei&quot;:&quot;352105068965016/01&quot;,
+            &quot;mac&quot;:&quot;50-8D-4F-4S-55-5D&quot;,
+            &quot;gprs&quot;:&quot;4G&quot;,
+            &quot;latitude&quot;:39.972907,
+            &quot;longitude&quot;:116.503154
+        },
+    },
+    &quot;data&quot;:{
+        &quot;user_id&quot;:&quot;201605131806550245&quot;
+    }
+}</code></pre>
+<h4><strong>公共请求参数：</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">必须</th>
+<th style="text-align: left;">可空</th>
+<th style="text-align: left;">说明</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>- verify_info</strong></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">jsonObject</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>- - app </strong></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">jsonObject</td>
+</tr>
+<tr>
+<td style="text-align: left;">user_id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">用户id</td>
+<td style="text-align: left;">100001</td>
+</tr>
+<tr>
+<td style="text-align: left;">app_id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">各个平台预先定义的AppId</td>
+<td style="text-align: left;">fd5dd454-b943-45f8</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">软件版本</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">api_version</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">接口版本</td>
+<td style="text-align: left;">160815</td>
+</tr>
+<tr>
+<td style="text-align: left;">business_district</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">所属商圈</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>- - device</strong></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">jsonObject</td>
+</tr>
+<tr>
+<td style="text-align: left;">platform</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">设备型号</td>
+<td style="text-align: left;">XiaoMi Note2</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">系统版本号</td>
+<td style="text-align: left;">Android 4.4.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">factory</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">设备厂家</td>
+<td style="text-align: left;">XiaoMi</td>
+</tr>
+<tr>
+<td style="text-align: left;">screen_size</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">屏幕分辨率</td>
+<td style="text-align: left;">1920*1080</td>
+</tr>
+<tr>
+<td style="text-align: left;">denstiy</td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">像素密度</td>
+<td style="text-align: left;">2.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">imei</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">IMEI</td>
+<td style="text-align: left;">352105068965016/01</td>
+</tr>
+<tr>
+<td style="text-align: left;">mac</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">MAC地址</td>
+<td style="text-align: left;">50-8D-4F-4S-55-5D</td>
+</tr>
+<tr>
+<td style="text-align: left;">gprs</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">移动网络</td>
+<td style="text-align: left;">4G</td>
+</tr>
+<tr>
+<td style="text-align: left;">latitude</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">纬度</td>
+<td style="text-align: left;">39.972907</td>
+</tr>
+<tr>
+<td style="text-align: left;">longitude</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">经度</td>
+<td style="text-align: left;">116.503154</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>- - token_check</strong></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">jsonObject</td>
+</tr>
+<tr>
+<td style="text-align: left;">access_token</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">安全令牌 token，30 位字符</td>
+<td style="text-align: left;">TGTAILABA12BA3S2D7NK5HLHKX6P00</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">Unix时间戳，精确到毫秒。</td>
+<td style="text-align: left;">1470229339559</td>
+</tr>
+<tr>
+<td style="text-align: left;">sign</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">对请求进行签名运算产生的签名，签名规则详见签名认证。</td>
+<td style="text-align: left;">fac5ff3fce1c5890a6bae11e7670dc1f</td>
+</tr>
+<tr>
+<td style="text-align: left;">client_id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">客户端ID，28 位字符, 主要用途为唯一标识客户端：客户端机编码(15 位)、中横线“-”、客户 端 MAC 地址(12 位)</td>
+<td style="text-align: left;">356877020056553-08002700DC94</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequence_id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">报文流水(客户端唯一)客户端交易流水号。6-32 位。由客户端自行定义，自行生成。建议使用日期+顺序编号的方式</td>
+<td style="text-align: left;">08002700DC94-15110519074300001</td>
+</tr>
+<tr>
+<td style="text-align: left;">language</td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">为国际化预留字段，代表客户端使用的语言。openapi暂不支持国际化，填写zh-cn即可。</td>
+<td style="text-align: left;">zh-cn</td>
+</tr>
+<tr>
+<td style="text-align: left;">timezone</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">不可空</td>
+<td style="text-align: left;">为国际化预留字段，代表客户端使用的时区，openapi暂不支持国际化，填写8即可。</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>- data </strong></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">可空</td>
+<td style="text-align: left;">请求数据内容，json数据</td>
+<td style="text-align: left;">jsonObject</td>
+</tr>
+</tbody>
+</table></div><h2>1.2、1.2-接口签名</h2><div style="margin-left:20px;"><h4><strong>签名认证：</strong></h4>
+<p><code>相关人员：丁海云</code></p>
+<h4><strong>接入申请：</strong></h4>
+<p>已有的客户端须将海极网的appid和appkey发送给服务器开发人员，我们将信息保存在我们的缓存服务器里，接口不在直接调用uhome的接口，统一通过该api服务器去透传请求到uhome。</p>
+<h4><strong>说明：</strong></h4>
+<p>应用需要对发送到api服务器的请求进行签名，执行签名计算的签名值需要赋值到Body体中的token_check里的sign属性（见[公共请求数据字典](<a href="http://101.201.65.12/api/index.php/17?page_id=672">http://101.201.65.12/api/index.php/17?page_id=672</a> "")），以便服务端进行签名验证。</p>
+<h4><strong>参数介绍：</strong></h4>
+<p>待签名字符串为：Body去除空白字符后的完整JSON字符串+appId+appKey+timestamp；其中：</p>
+<p>Body，就是应用发送的HTTPS请求的BODY，没有BODY时为空字符串（不是null），但需要去除所有的空白字符，
+可参考如下代码：</p>
+<p>body=body.replaceAll("","");</p>
+<p>body=body.replaceAll("\t","");</p>
+<p>body=body.replaceAll("\r","");</p>
+<p>body=body.replaceAll("\n","");</p>
+<p>appId，Body体中的属性（见公共部分说明）；</p>
+<p>appKey，平台分配给应用的appKey，不能明文发送；</p>
+<p>timestamp，Body体中的属性（见公共部分说明）；</p>
+<h4><strong>算法：</strong></h4>
+<p>签名算法就是对待签名字符串计算32位小写MD5值。</p>
+<h4><strong>签名示例：</strong></h4>
+<p>参数：
+appKey: e8a1e19058c0928d7690cfd59c6b062d</p>
+<p>appId: SV-ABC-0000</p>
+<p>timestamp: 1234567890</p>
+<p>Body:</p>
+<p>{</p>
+<p>"userId":"u12",</p>
+<p>"deviceType":"101c120024000810e2010540000044"</p>
+<p>}</p>
+<p>待签名字符串:</p>
+<p>{"userId":"u12","deviceType":"101c120024000810e2010540000044"}SV-ABC-0000e8a1e19058c0928d7690cfd59c6b062d1234567890</p>
+<p>签名字符串：
+bd4495183b97e8133aeab2f1916fed41</p></div></div><h1>2、2.商品</h1><div style="margin-left:20px;"></div></body></ht

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/web_white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="44mm"
+        android:layout_marginLeft="16mm"
+        android:layout_marginRight="16mm"
+        android:layout_marginBottom="36mm"
+        android:gravity="center"
+        android:text="ces"
+        android:textColor="@color/gray4A4A4A"
+        android:textSize="16mm" />
+</LinearLayout>

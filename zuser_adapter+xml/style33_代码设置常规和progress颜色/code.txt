@@ -1,0 +1,45 @@
+setTextColor(0xFF0000FF);  
+//0xFF0000FF是int类型的数据，分组一下0x|FF|0000FF，0x是代表颜色整 数的标记，ff是表示透明度，0000FF表示颜色，
+
+注意：这里0xFF0000FF必须是8个的颜色表示，不接受0000FF这种6个的颜色表示。
+
+setTextColor(Color.rgb(255, 255, 255));
+
+setTextColor(Color.parseColor("#FFFFFF"));
+
+//还有就是使用资源文件进行设置
+setTextColor(this.getResources().getColor(R.color.blue));
+
+setTextColor(this.ContextCompat.getColor(R.color.blue));
+
+//通过获得资源文件进行设置。根据不同的情况R.color.blue也可以是R.string.blue或者
+//另外还可以使用系统自带的颜色类
+
+setTextColor(android.graphics.Color.BLUE); 
+
+
+
+setProgresss(70, "f25252");
+
+    public void setProgresss(int progress, String colors) {
+        int color = Integer.parseInt(colors, 16);//tag.getCoupon_color().substring(1)  FF5001  ratings.getTag_color().substring(1)
+        color = 0xFF000000 + color;
+//            viewHolder.pb.getProgressDrawable().setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+        LayerDrawable drawable = (LayerDrawable) progressBar.getProgressDrawable();
+        drawable.getDrawable(1).setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+        progressBar.setProgress(progress);
+        if (progress == 100) {
+//            this.dismiss();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+https://www.aliyun.com/jiaocheng/18444.html
+
+
+   webView = (WebView) findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);//启用js
+        webView.getSettings().setBlockNetworkImage(false);//解决图片不显示
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+        webView.loadUrl("https://zybuluo.com/bolex/note/329731");
+//        webView.loadUrl("https://mp.weixin.qq.com/s/aFsWE5OpJ93YNzXLi44awA");
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                //返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
+                view.loadUrl(url);
+                return false;
+            }
+        });

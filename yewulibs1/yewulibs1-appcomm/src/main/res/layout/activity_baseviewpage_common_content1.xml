@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <com.haier.cellarette.baselibrary.emptyview.EmptyViewNew1
+        android:id="@id/baserecycleview_emptyview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:errornet_layout="@layout/empty_error"
+        app:loading_layout="@layout/empty_loading"
+        app:nodata_layout="@layout/empty_nodata"
+        app:unreachable_layout="@layout/empty_error" />
+
+    <LinearLayout
+        android:id="@id/baserecycleview_ll_refresh1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@id/baserecycleview_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="40mm"
+                android:layout_marginLeft="10mm"
+                android:layout_marginTop="0mm"
+                android:layout_marginRight="10mm"
+                app:tabBackground="@null"
+                app:tabIndicator="@drawable/baseviewpage_common_bg1"
+                app:tabIndicatorColor="@color/blue55AAFF"
+                app:tabIndicatorHeight="4mm"
+                app:tabMaxWidth="100mm"
+                app:tabMinWidth="100mm"
+                app:tabMode="scrollable"
+                app:tabPaddingEnd="50mm"
+                app:tabPaddingStart="50mm"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/color_333333"
+                app:tabTextAppearance="@style/baseviewpage_common_tab"
+                app:tabTextColor="@color/color_999999" />
+        </LinearLayout>
+
+        <com.haier.cellarette.baselibrary.tablayout.ViewPagerSlide
+            android:id="@+id/baserecycleview_viewpager1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</LinearLayout>

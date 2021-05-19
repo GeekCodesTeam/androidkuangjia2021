@@ -1,0 +1,43 @@
+
+
+GlideUtil.display(context, viewHolder.iv_imgurl, ratings.getSku_image(), GlideOptionsFactory.get(GlideOptionsFactory.Type.RADIUS));
+
+
+
+
+Glide.with(context).load(ratings.getSku_image()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(viewHolder.iv_imgurl);
+
+
+GlideOptions glideOptions = new GlideOptions(R.drawable.ic_def_loading, R.drawable.ic_def_loading, 300);
+
+GlideUtil.display(context, viewHolder.iv1, ratings.getImg_url(), glideOptions);
+
+
+
+RequestOptions options = new RequestOptions()
+                .signature(new ObjectKey(UUID.randomUUID().toString()))  // 重点在这行
+                .skipMemoryCache(false)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                .placeholder(R.drawable.head_moren)
+                .error(R.drawable.head_moren)
+                .fallback(R.drawable.head_moren); //url为空的时候,显示的图片;
+        if (FileUtils.isFileExists(CommonUtils.img_file_url + CommonUtils.img_file_name)) {
+            File file = new File(CommonUtils.img_file_url + CommonUtils.img_file_name);
+            Glide.with(mContext).load(file)
+                    .apply(options)
+                    .into(iv1);
+        } else {
+            Glide.with(mContext).load(SPUtils.getInstance().getString(CommonUtils.USER_NAME))
+                    .apply(options)
+                    .into(iv1);
+        }
+                 
+
+// 圆角
+Glide.with(this).load(url1).apply(new RequestOptions().placeholder(R.mipmap.ic_launcher_round).override(Target.SIZE_ORIGINAL).transform(new RoundedCorners(50))).into(image1);
+   
+ //1. 加载图片, 由于ImageView是centerCrop，必须指定Target.SIZE_ORIGINAL，禁止Glide裁剪图片；
+            // 这样我就能拿到原始图片的Matrix，才能有完美的过渡效果
+            Glide.with(imageView).load(s).apply(new RequestOptions().placeholder(R.mipmap.ic_launcher_round)
+                    .override(Target.SIZE_ORIGINAL))
+                    .into(imageView);

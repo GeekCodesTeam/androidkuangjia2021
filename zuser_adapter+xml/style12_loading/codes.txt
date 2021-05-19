@@ -1,0 +1,43 @@
+       TextView tvLoadingMessage = (TextView) contentView.findViewById(R.id.tv_loading_message);
+        ImageView ivLoadingIc = (ImageView) contentView.findViewById(R.id.iv_loading_ic);
+
+        CharSequence msg = builder.getMessage();
+        if (!TextUtils.isEmpty(msg)) {
+            tvLoadingMessage.setText(msg);
+        }
+
+        RotateAnimation rotateAnimation = new RotateAnimation(0, 360,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnimation.setDuration(1000);
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        rotateAnimation.setRepeatCount(-1);
+        ivLoadingIc.setAnimation(rotateAnimation);
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:gravity="center"
+    android:padding="40dp">
+
+    <ImageView
+        android:id="@+id/iv_loading_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_16"
+        android:src="@drawable/ic_dialog_loading" />
+
+    <TextView
+        android:id="@+id/tv_loading_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="loading..."
+        android:textColor="@color/black_light"
+        android:textSize="@dimen/font_32" />
+
+</LinearLayout>

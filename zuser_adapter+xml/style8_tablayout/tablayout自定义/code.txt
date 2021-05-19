@@ -1,0 +1,34 @@
+ mCateTabLayout.addOnTabSelectedListener(new TabSelectAdapter() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TabUtils.tabSelect(mCateTabLayout, tab);
+                int tag = (int) tab.getTag();
+                if (tag == -1) {
+                    return;
+                }
+                if (!once_footer) {
+                    once_footer = true;
+                    return;
+                }
+                footer_id = tag;
+                //请求数据bufen
+                set_refresh_data();
+            }
+        });
+        mCateTabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                TabUtils.setIndicator(mCateTabLayout, 80, 80);
+            }
+        });
+
+
+// 初始化
+
+ tab_add.removeAllTabs();
+
+for (FmNewFoodFenleiBean item : list_tab_add) {
+            tab_add.addTab(tab_add.newTab()
+                    .setTag(item.getFood_category_id()).setText(item.getFood_category_name()));
+        }
+

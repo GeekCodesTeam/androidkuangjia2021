@@ -1,0 +1,19 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def config = rootProject.ext //
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //common url
+    implementation librarys.glide47
+    implementation project(':commonlibs:hunheku:libutils')
+    api 'cn.jiguang.sdk:jcore:2.7.2'  //
+    api 'cn.jiguang.sdk:jshare:1.8.0'  //
+    api 'cn.jiguang.sdk:jshare-qqmodel:1.8.0'  //
+    api 'cn.jiguang.sdk:jshare-wechatmodel:1.8.0'  //
+//    api 'cn.jiguang.sdk:jshare-sinamodel:1.8.0'  //
+    //jar aar
+    //    /**rep*/implementation (name:'biz-identification_bxn_nation', ext:'aar')
+}

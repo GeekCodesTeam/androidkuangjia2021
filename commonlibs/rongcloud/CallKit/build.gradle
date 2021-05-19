@@ -1,0 +1,19 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    api project(':commonlibs:rongcloud:IMKit')
+    api project(':commonlibs:rongcloud:CallLib')
+//    //call_kit、call_lib、im_kit、im_lib的版本号码必须一致
+//    api 'cn.rongcloud.sdk:call_kit:4.0.0'
+//    api 'cn.rongcloud.sdk:call_lib:4.0.0'
+//    api 'cn.rongcloud.sdk:im_kit:4.0.0'
+//    api 'cn.rongcloud.sdk:im_lib:4.0.0'
+    api 'com.github.bumptech.glide:glide:4.11.0'
+}
+
+

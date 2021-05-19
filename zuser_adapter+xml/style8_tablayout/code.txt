@@ -1,0 +1,42 @@
+ <com.haiersmart.sfnation630.ui.widget.UnAnimTabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:clipToPadding="false"
+                android:paddingLeft="5dp"
+                app:tabBackground="@drawable/tab_selector_green"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="0dp"
+                app:tabMinWidth="0dp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/tab_text_size"
+                app:tabTextColor="@color/black_common" />
+
+
+
+    <style name="tab_text_size">
+        <item name="android:textSize">28dp</item>
+    </style>
+
+
+
+ <com.haiersmart.sfnation.widget.UnAnimTabLayout
+                android:id="@+id/tab_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                app:tabIndicatorColor="@color/blue3"
+                app:tabIndicatorHeight="@dimen/x3"
+                app:tabMaxWidth="0dp"
+                app:tabMinWidth="0dp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/blue3"
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.ShopTabTextAppearance.add"
+                app:tabTextColor="@color/black_common" />
+
+

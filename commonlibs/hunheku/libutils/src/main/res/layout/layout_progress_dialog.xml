@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_toast_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="25mm"
+    android:paddingTop="16mm"
+    android:paddingRight="25mm"
+    android:paddingBottom="16mm"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/spinnerImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/progress_dialog" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10mm"
+        android:text="正在加载中"
+        android:textColor="#ffffff"
+        android:textSize="16mm" />
+</LinearLayout>

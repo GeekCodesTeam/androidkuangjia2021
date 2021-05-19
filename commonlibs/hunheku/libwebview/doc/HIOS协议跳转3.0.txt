@@ -1,0 +1,12 @@
+hios://com.sairobo.hexiangketang.hs.ac.NoHiosMainActivity{act}?act={i}1&sku_id={s}2a&category_id={s}3a
+
+
+附：需要登录就加这个condition=login 例如：hios://com.sairobo.hexiangketang.hs.act.slbapp.BooksListActivity{act}?id={s}2&name={s}geek&condition=login
+
+1.首页->选课->课程详情（courseId）："hios://com.sairobo.hexiangketang.hs.act.slbapp.ClassDetailFromMainActivity{act}?id={s}2&name={s}geek"
+
+
+2.提交作业（itemId）："hios://com.sairobo.hexiangketang.hs.act.slbapp.ClassTest1Act{act}?id={s}2&name={s}geek"
+
+
+3.获取作业信息（itemId）："hios://com.sairobo.hexiangketang.hs.act.slbapp.ClassTest2Act{act}?id={s}2&name={s}geek"

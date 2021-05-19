@@ -1,0 +1,43 @@
+//apply plugin: 'com.android.library'
+//
+//android {
+//    compileSdkVersion 30
+//
+//    defaultConfig {
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 20210420
+//        versionName "5.1.1.1"
+//    }
+//
+//    sourceSets {
+//        main {
+//            manifest.srcFile 'AndroidManifest.xml'
+//            res.srcDirs = ['res']
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+//}
+//
+//dependencies {
+//    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+//    api 'com.google.code.gson:gson:2.8.6'
+//}
+plugins {
+    id 'com.android.library'
+}
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+android {
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = ['res']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation project(':commonlibs:hunheku:libutils')
+}

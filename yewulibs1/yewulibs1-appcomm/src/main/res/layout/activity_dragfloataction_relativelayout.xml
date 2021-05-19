@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <com.example.slbappcomm.playermusic.floatbutton.floatbutton3.DragFloatActionButton
+        android:id="@+id/mybtn2"
+        android:layout_width="80mm"
+        android:layout_height="96mm"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="0mm"
+        android:layout_marginBottom="200mm"
+        android:clickable="true"
+        android:src="@drawable/slb_playgif2"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</RelativeLayout>

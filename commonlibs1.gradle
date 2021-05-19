@@ -1,0 +1,48 @@
+def config = rootProject.ext //配置
+def librarys = config.dependencies //
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.appversionCode
+        versionName config.appversionName
+        multiDexEnabled true
+        renderscriptTargetApi 30
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+//        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+//            outputFileName = "${variant.name}-${variant.versionName}.apk"
+            outputFileName = "${project.name}.aar"
+        }
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+    //    dataBinding {
+//        enabled = true
+//    }
+//    viewBinding.enabled = true
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+}

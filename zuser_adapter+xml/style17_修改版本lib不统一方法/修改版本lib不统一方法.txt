@@ -1,0 +1,13 @@
+在你的 build.gradle:
+
+dependencies {
+    compile 'me.drakeet.multitype:multitype:3.3.0'
+}
+注：MultiType 内部引用了 recyclerview-v7:25.3.1，如果你不想使用这个版本，可以使用 exclude 将它排除掉，再自行引入你选择的版本。示例如下：
+dependencies {
+    compile('me.drakeet.multitype:multitype:3.3.0', {
+       exclude group: 'com.android.support'
+    })
+    compile 'com.android.support:recyclerview-v7:你选择的版本'
+}
+Note: MultiType does not support RecyclerView below version 23.0.0.

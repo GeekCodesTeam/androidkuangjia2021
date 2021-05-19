@@ -1,0 +1,40 @@
+List<String> detailList = new ArrayList<>();
+        String imgStr = mShopTodayShopModel.getS_pic();
+        String url = "";
+        if (!TextUtils.isEmpty(imgStr)) {
+            String[] str = imgStr.split(",");
+            detailList = Arrays.asList(str);
+            url = detailList.get(0);
+        }
+
+
+
+
+public boolean IsEqual(List<VideoBannerBean> defaultList1, List<BannerBean.DataBean> bannerBeanList1) {
+        if (defaultList1.size() != bannerBeanList1.size()) {
+            return false;
+        }
+        List<String> a = new ArrayList<>();
+        List<String> b = new ArrayList<>();
+        for (int i = 0; i <= defaultList1.size() - 1; i++) {
+            a.add(defaultList1.get(i).getPicture());
+        }
+        for (int j = 0; j <= bannerBeanList1.size() - 1; j++) {
+            b.add(bannerBeanList1.get(j).getImgUrl());
+        }
+        return compare(a, b);
+    }
+
+    public static <T extends Comparable<T>> boolean compare(List<T> a, List<T> b) {
+        if (a.size() != b.size())
+            return false;
+        Collections.sort(a);
+        Collections.sort(b);
+        for (int i = 0; i < a.size(); i++) {
+            if (!a.get(i).equals(b.get(i)))
+                return false;
+        }
+        return true;
+    }
+
+https://www.cnblogs.com/80dream/p/9772804.html

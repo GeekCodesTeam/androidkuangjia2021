@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: '../../assemble_dolast.gradle'
+apply from: './../../commonlibs2.gradle'
+def librarys = rootProject.ext.dependencies
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:hunheku:libmvp')
+    implementation project(':commonlibs:hunheku:libretrofit')
+//    bxnt_nationImplementation(name: 'libvariants_bxnt_nation', ext: 'aar')
+//    bxny_nationImplementation(name: 'libvariants_bxny_nation', ext: 'aar')
+//    bxn_nationImplementation(name: 'libvariants_bxn_nation', ext: 'aar')
+    bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
+    bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
+    bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
+}

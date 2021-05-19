@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+}
+//apply from: '../../mobsdk.gradle'
+apply from: './../../../commonlibs1.gradle'
+def config = rootProject.ext //配置
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api librarys.design
+    api librarys.appcompatV7
+    api librarys.supportannotations
+    api librarys.recyclerviewv7
+    api librarys.swiperefreshlayout
+    api librarys.cardviewv7
+    api librarys.constraintlayout
+    api librarys.fastJson
+    api librarys.gsonJson
+    api librarys.multidexVersion
+    api librarys.blankj
+    api librarys.jsoup
+    api librarys.eventbus
+    api librarys.autosize
+    api librarys.mmkv
+    api librarys.viewpager2
+
+//    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+//    implementation "androidx.appcompat:appcompat:1.2.0"
+//    implementation "androidx.annotation:annotation:1.2.0"
+//    implementation "com.google.android.material:material:1.3.0"
+//    implementation "androidx.cardview:cardview:1.0.0"
+//    implementation "androidx.recyclerview:recyclerview:1.2.0"
+//    implementation "androidx.percentlayout:percentlayout:1.0.0"
+//    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+//    implementation "androidx.multidex:multidex:2.0.1"
+//    implementation "com.alibaba:fastjson:1.2.70"
+//    implementation "com.google.code.gson:gson:2.8.6"
+//    implementation "com.blankj:utilcodex:1.30.6"
+//    implementation "org.greenrobot:eventbus:3.1.1"
+//    implementation "me.jessyan:autosize:1.2.1"
+//    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+}

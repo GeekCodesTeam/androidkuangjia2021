@@ -1,0 +1,139 @@
+// start aar
+include ':libsCenter', ':biz-libs'
+// end aar
+
+// start aar
+include ':libsCenterNew',
+        ':libsCenterNew:alipaysdk',
+        ':libsCenterNew:hooklistenerlib2',
+        ':libsCenterNew:opendroid2'
+// end aar
+
+//include ':yewulibs3',
+//        ':yewulibs3:app',
+//        ':yewulibs3:slbdoodle',
+//        ':yewulibs3:slbMZBannerViewLibrary',
+//        ':yewulibs3:slbpicturelibrary',
+//        ':yewulibs3:slbpicturelibraryucrop',
+//        ':yewulibs3:slbpictureviewerlibrary',
+//        ':yewulibs3:slbdachshundtablayout',
+//        ':yewulibs3:slbcalendarlibrary',
+//        ':yewulibs3:slbxpopuplibrary',
+//        ':yewulibs3:updateapputils',
+//        ':yewulibs3:slbfloatwindow',
+//        ':yewulibs3:slbbaselibrary'
+// start app
+include ':yewulibs1',
+        ':yewulibs1:yewulibs1-bizyewu1',
+        ':yewulibs1:yewulibs1-bizyewu2',
+        ':yewulibs1:yewulibs1-app',
+        ':yewulibs1:yewulibs1-appcomm',
+        ':yewulibs1:yewulibs1-appindex',
+        ':yewulibs1:yewulibs1-appsplash',
+        ':yewulibs1:yewulibs1-applogin',
+        ':yewulibs1:yewulibs1-appsearch',
+        ':yewulibs1:yewulibs1-libvariants'
+// end app
+
+//include ':commonbiz',
+//        ':commonbiz:bizfxzteachercomm'
+
+// commonlibs
+include ':commonlibs',
+        ':commonlibs:baselibrary',
+        ':commonlibs:hunheku:libagentweb-core',
+        ':commonlibs:hunheku:libagentweb-filechooser',
+//        ':commonlibs:hunheku:libappjpush',
+        ':commonlibs:hunheku:libappmob',
+        ':commonlibs:hunheku:libpdf',
+        ':commonlibs:hunheku:liblocations',
+        ':commonlibs:hunheku:libapppay',
+        ':commonlibs:hunheku:libappjpushshare',
+//        ':commonlibs:hunheku:libappjpushstatistics',
+        ':commonlibs:hunheku:libappumengstatistics',
+        ':commonlibs:hunheku:libglide47',
+        ':commonlibs:hunheku:libmvp',
+        ':commonlibs:hunheku:libretrofit',
+        ':commonlibs:hunheku:libupdateapputilsold',
+        ':commonlibs:hunheku:libutils',
+        ':commonlibs:hunheku:libwebview',
+        ':commonlibs:hunheku:libZRecyclerView',
+        ':commonlibs:hunheku:librararyforfileprovdider',
+        ':commonlibs:smartrefreshlayout:refresh-footer',
+        ':commonlibs:smartrefreshlayout:refresh-header',
+        ':commonlibs:smartrefreshlayout:refresh-layout',
+        ':commonlibs:zhibopolyv:polyvLiveCloudClassScene',
+        ':commonlibs:zhibopolyv:polyvLiveCommonModul',
+        ':commonlibs:zhibopolyv:polyvLiveEcommerceScene',
+        ':commonlibs:zhibopolyv:polyvLiveStreamerScene',
+        ':commonlibs:zhibopolyv:demo',
+//        ':commonlibs:huanxin:huanxinim',
+//        ':commonlibs:huanxin:ease-im-kit',
+//        ':commonlibs:huanxin:ease-call-kit',
+        ':commonlibs:rongcloud:rongcloudim',
+//        ':commonlibs:rongcloud:CallKit',
+//        ':commonlibs:rongcloud:CallLib',
+//        ':commonlibs:rongcloud:IMKit',
+//        ':commonlibs:rongcloud:IMLib',
+        ':commonlibs:tencent:tencentim',
+        ':commonlibs:yewulibs:slbcitypickerview',
+        ':commonlibs:yewulibs:slbbluetooth',
+        ':commonlibs:yewulibs:slbimagepicker',
+//        ':commonlibs:yewulibs:slbjiaozivideoplayer',
+        ':commonlibs:yewulibs:slbjiaozvideonew',
+        ':commonlibs:yewulibs:slbgsyvideonew',
+        ':commonlibs:yewulibs:slbncalendar',
+        ':commonlibs:yewulibs:slbota',
+        ':commonlibs:yewulibs:slbwifi',
+        ':commonlibs:yewulibs:slbswipebacklayout',
+        ':commonlibs:zxinglibs:zxinglibs1',
+        ':commonlibs:zxinglibs:zxinglibs2',
+        ':commonlibs:zxinglibs:zxinglibs3'
+// commonlibs
+
+// fsjxcommonlibs
+//include ':fsjxcommonlibs',
+//        ':fsjxcommonlibs:libGui',
+//        ':fsjxcommonlibs:MediaCompressLib',
+//        ':fsjxcommonlibs:commonui',
+//        ':fsjxcommonlibs:libIjkPlayer',
+//        ':fsjxcommonlibs:polyvapp',
+//        ':fsjxcommonlibs:libFosungFrame',
+//        ':fsjxcommonlibs:libappservices',
+//        ':fsjxcommonlibs:recyclertreeview-lib'
+// fsjxcommonlibs
+
+// start app1
+//include ':yewulibsdengta',
+//        ':yewulibsdengta:yewulibs-appdengta',
+//        ':yewulibsdengta:yewulibs-biz-dengta1',
+//        ':yewulibsdengta:yewulibs-commonlibvariants'
+// end app1
+
+// start app2
+//include ':yewulibs1-dangjiantongxinping',
+//        ':yewulibs1-dangjiantongxinping:yewulibs-biz-daping1',
+//        ':yewulibs1-dangjiantongxinping:yewulibs-commonlibvariants',
+//        ':yewulibs1-dangjiantongxinping:yewulibs-common:libIjkPlayer',
+//        ':yewulibs1-dangjiantongxinping:tv',
+//        ':yewulibs1-dangjiantongxinping:mobile'
+// end app2
+
+// start app3
+//include ':fsjxapp1',
+//        ':fsjxapp1:yewulibs-appdengta1',
+//        ':fsjxapp1:yewulibs-biz-dengta1',
+//        ':fsjxapp1:yewulibs-commonlibvariants'
+// end app3
+
+// start app4
+//include ':yewulibs1-yitihuazhihuipingtai',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-bizyewu1',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-bizyewu2',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-app',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-appcomm',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-appindex',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-appsplash',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-applogin',
+//        ':yewulibs1-yitihuazhihuipingtai:yewulibs1-libvariants'
+// end app4

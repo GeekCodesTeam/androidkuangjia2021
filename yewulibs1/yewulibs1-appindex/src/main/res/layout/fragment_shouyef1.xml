@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redFEEFEE"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shouyef1_tv101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="QuanxianActivity权限申请"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="LiandongDemoAct分类列表"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="LikeButtonActivity点击动画"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="handler线程大全"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="EmptyViewMainActivity界面状态"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="NetEmptyViewMainActivity布局"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="RecycleViewMainActivity列表大全"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="CarAct点击动画效果"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="BaeRecycleViewActivity多样列表"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="DemoZuniScrollViewActivity阻尼"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="RingActivity系统音效"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ChangeLanActivity选择语言"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ScrollViewAct隐私协议"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ANROOMCrashActivity制造信息"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="MusicActivity音乐播放器"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ExpandableAct显隐列表"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="AssetsMainActivity系统文件处理用法"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ShoppingCarActivity购物车动效"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="BtnActivity按钮动效"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="MnMainActivity常用dialog"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="BannerViewDemoActivity轮播图"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="AdCommActivity弹窗广告"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="AdCommImgActivity弹窗广告2"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shouyef1_tv23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="RiliActDemo日历"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="SaomaActDemo扫码"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="UploadImgMainActivity上传图片"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="UploadPicActivity上传图片2"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="VideoPlayActivity播放器"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ViewPage1MainActivity分类"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ViewPage1TabActivity分类2"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="BannerDemoActivity轮播图2"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="滚轮选择器"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/shouyef1_tv32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="轮播图汇总"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="12mm" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+

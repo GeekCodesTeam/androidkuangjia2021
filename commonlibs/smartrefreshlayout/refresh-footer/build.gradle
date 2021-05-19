@@ -1,0 +1,20 @@
+plugins {
+    id 'com.android.library'
+}
+//apply plugin: 'com.novoda.bintray-release'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlibs:hunheku:libutils')
+    compileOnly project(':commonlibs:smartrefreshlayout:refresh-layout')
+}
+
+//publish {
+//    userOrg = 'scwang90'
+//    groupId = 'com.scwang.smartrefresh'
+//    artifactId = 'SmartRefreshFooter'
+//    version = '1.0.0-alpha-1'
+//    description = 'Some delicate footers of SmartRefreshLayout'
+//    website = "https://github.com/scwang90/${rootProject.name}"
+//}

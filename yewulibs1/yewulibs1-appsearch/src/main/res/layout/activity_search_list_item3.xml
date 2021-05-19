@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="28mm"
+    android:layout_marginRight="28mm"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="90mm"
+            android:layout_height="120mm"
+            android:layout_marginTop="10mm"
+            android:layout_marginBottom="10mm"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/item_bg"
+            card_view:cardCornerRadius="8mm"
+            card_view:cardElevation="6mm"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.geek.libglide47.base.GlideImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/animation_img1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.geek.libglide47.base.GlideImageView
+                        android:id="@+id/iv_bktt1"
+                        android:layout_width="40mm"
+                        android:layout_height="40mm"
+                        android:layout_marginTop="0mm" />
+                    <!--android:src="@drawable/slb_bktt_icon"-->
+
+                    <com.geek.libglide47.base.GlideImageView
+                        android:id="@+id/iv_bktt2"
+                        android:layout_width="40mm"
+                        android:layout_height="40mm"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="0mm"
+                        android:layout_marginRight="2mm" />
+                    <!--android:src="@drawable/slb_xm_icon"-->
+
+                    <com.geek.libglide47.base.GlideImageView
+                        android:id="@+id/iv_bktt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="0mm" />
+
+                    <TextView
+                        android:id="@+id/tv_ji11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="4mm"
+                        android:layout_marginBottom="4mm"
+                        android:background="@drawable/btn_lb_tranff"
+                        android:gravity="center"
+                        android:paddingLeft="8mm"
+                        android:paddingTop="2mm"
+                        android:paddingRight="8mm"
+                        android:paddingBottom="2mm"
+                        android:text="16集"
+                        android:textColor="@color/white"
+                        android:textSize="12mm"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                    <!--android:src="@drawable/slb_vip_icon22"-->
+                    <com.geek.libglide47.base.GlideImageView
+                        android:id="@+id/iv_bktt4"
+                        android:layout_width="20mm"
+                        android:layout_height="20mm"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="0mm" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10mm"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv1"
+                style="@style/logincommtextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="彼得兔和他的朋友们"
+                android:textColor="@color/black_000"
+                android:textSize="20mm" />
+
+            <TextView
+                android:id="@+id/tv2"
+                style="@style/logincommtextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingTop="10mm"
+                android:paddingBottom="10mm"
+                android:singleLine="true"
+                android:text="儿童文学中的圣经"
+                android:textColor="@color/black"
+                android:textSize="14mm" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv3"
+                    style="@style/logincommtextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/slb_wjj"
+                    android:drawablePadding="6mm"
+                    android:gravity="center_vertical"
+                    android:text="共10集"
+                    android:textColor="@color/color_979797"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/tv4"
+                    style="@style/logincommtextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20mm"
+                    android:drawableLeft="@drawable/slb_sp"
+                    android:drawablePadding="6mm"
+                    android:gravity="center_vertical"
+                    android:text="379.4万"
+                    android:textColor="@color/color_979797"
+                    android:textSize="12mm" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1mm"
+        android:layout_marginLeft="6mm"
+        android:layout_marginRight="6mm"
+        android:background="@color/view_line_color" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+
+
+ed_content.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    scl1.requestDisallowInterceptTouchEvent(false);
+                } else {
+                    scl1.requestDisallowInterceptTouchEvent(true);
+                }
+                return false;
+            }
+        });
+
+
+

@@ -1,0 +1,43 @@
+def config = rootProject.ext //配置
+def librarys = config.dependencies //
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.appversionCode
+        versionName config.appversionName
+        multiDexEnabled true
+        renderscriptTargetApi 30
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+//        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    flavorDimensions "keep"
+    productFlavors {
+        bxnt_nation { dimension "keep" }
+        bxny_nation { dimension "keep" }
+        bxn_nation { dimension "keep" }
+    }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+//            outputFileName = "${project.name}_${variant.flavorName}.aar"
+            outputFileName = "${project.name}_${variant.flavorName}.aar"
+        }
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+}
+// mob
+//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'

@@ -1,0 +1,98 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haier.cellarette.libwebview">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--android:theme="@style/AppThemewebview"-->
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity
+            android:name=".DemoWebviewMainActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.webview.DemoWebviewMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--1.0-->
+        <activity
+            android:name=".base.WebViewMainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="${applicationId}.ad.web.page" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.WebViewMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".base.WebViewPartActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent">
+
+            <intent-filter>
+                <action android:name="${applicationId}.ad.web.page.part" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".base.WebViewPartActivity2"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent">
+
+            <intent-filter>
+                <action android:name="${applicationId}.ad.web.page.part2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".base.AdCommPart1Activity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent">
+
+            <intent-filter>
+                <action android:name="${applicationId}.ad.web.page.AdCommPart1Activity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--2.0-->
+        <activity
+            android:name=".base.WebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="${applicationId}.web.page" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.HiosMainActivity"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.TwoMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NoHiosMainActivity"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.NoHiosMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
