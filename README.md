@@ -41,31 +41,31 @@
 ### 19.ShowLoadingUtil：自定义loading
 ### 
 ### 20.LobsterPicker：根据颜色变化的进度条
- <com.haier.cellarette.baselibrary.lobsterpicker.sliders.LobsterShadeSlider
-                    android:id="@+id/shadeslider"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-shadeslider = rootView.findViewById(R.id.shadeslider);
-        shadeslider.setColorAdapter(new BitmapColorAdapter(getActivity(), R.drawable.default_shader_pallete4));
-        shadeslider.setShadePosition(5);
-//        shadeslider.setColor(R.drawable.default_shader_pallete11);
-        shadeslider.addOnColorListener(new OnColorListener() {
-            @Override
-            public void onColorChanged(@ColorInt int color) {
-                MyLogUtil.e("geek111111", "" + color);
-                MyLogUtil.e("geek111111", "" + adjustAlpha(color, 1.0f));
-//                if (TextUtils.equals(f5_tv11_content, adjustAlpha(color, 1.0f) + "")) {
-//                    Toasty.normal(getActivity(), f5_tv11.getText().toString().trim()).show();
-//                } else if (TextUtils.equals(f5_tv22_content, adjustAlpha(color, 1.0f) + "")) {
-//                    Toasty.normal(getActivity(), f5_tv22.getText().toString().trim()).show();
-//                } else if (TextUtils.equals(f5_tv33_content, adjustAlpha(color, 1.0f) + "")) {
-//                    Toasty.normal(getActivity(), f5_tv33.getText().toString().trim()).show();
-//                } else if (TextUtils.equals(f5_tv44_content, adjustAlpha(color, 1.0f) + "")) {
-//                    Toasty.normal(getActivity(), f5_tv44.getText().toString().trim()).show();
-//                } else if (TextUtils.equals(f5_tv55_content, adjustAlpha(color, 1.0f) + "")) {
-//                    Toasty.normal(getActivity(), f5_tv55.getText().toString().trim()).show();
-//                }
-            }
+     <com.haier.cellarette.baselibrary.lobsterpicker.sliders.LobsterShadeSlider
+                        android:id="@+id/shadeslider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                        shadeslider = rootView.findViewById(R.id.shadeslider);
+                        shadeslider.setColorAdapter(new BitmapColorAdapter(getActivity(), R.drawable.default_shader_pallete4));
+                        shadeslider.setShadePosition(5);
+                //        shadeslider.setColor(R.drawable.default_shader_pallete11);
+                        shadeslider.addOnColorListener(new OnColorListener() {
+                            @Override
+                            public void onColorChanged(@ColorInt int color) {
+                                MyLogUtil.e("geek111111", "" + color);
+                                MyLogUtil.e("geek111111", "" + adjustAlpha(color, 1.0f));
+                //                if (TextUtils.equals(f5_tv11_content, adjustAlpha(color, 1.0f) + "")) {
+                //                    Toasty.normal(getActivity(), f5_tv11.getText().toString().trim()).show();
+                //                } else if (TextUtils.equals(f5_tv22_content, adjustAlpha(color, 1.0f) + "")) {
+                //                    Toasty.normal(getActivity(), f5_tv22.getText().toString().trim()).show();
+                //                } else if (TextUtils.equals(f5_tv33_content, adjustAlpha(color, 1.0f) + "")) {
+                //                    Toasty.normal(getActivity(), f5_tv33.getText().toString().trim()).show();
+                //                } else if (TextUtils.equals(f5_tv44_content, adjustAlpha(color, 1.0f) + "")) {
+                //                    Toasty.normal(getActivity(), f5_tv44.getText().toString().trim()).show();
+                //                } else if (TextUtils.equals(f5_tv55_content, adjustAlpha(color, 1.0f) + "")) {
+                //                    Toasty.normal(getActivity(), f5_tv55.getText().toString().trim()).show();
+                //                }
+                            }
 
             @Override
             public void onColorSelected(@ColorInt int color) {
