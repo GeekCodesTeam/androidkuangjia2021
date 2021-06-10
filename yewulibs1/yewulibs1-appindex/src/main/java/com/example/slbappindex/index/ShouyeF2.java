@@ -179,7 +179,7 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef2_tv11) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PayDemoActivity"));
         } else if (id == R.id.shouyef2_tv12) {
-            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivity"));
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.ac.github.DemoUpdateAppMainActivity"));
         } else if (id == R.id.shouyef2_tv13) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShareIndexActivity"));
         } else if (id == R.id.shouyef2_tv14) {
