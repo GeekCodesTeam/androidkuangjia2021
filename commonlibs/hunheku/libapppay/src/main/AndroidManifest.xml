@@ -14,12 +14,12 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namelibapppay"
         android:supportsRtl="true">
         <activity
             android:name=".zfb.news.PayDemoActivity"
             android:icon="@drawable/msp_icon"
-            android:label="@string/app_name">
+            android:label="@string/app_namelibapppay">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.PayDemoActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

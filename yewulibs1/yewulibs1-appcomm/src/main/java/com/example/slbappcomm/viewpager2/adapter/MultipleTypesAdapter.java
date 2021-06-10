@@ -13,7 +13,7 @@ import com.example.slbappcomm.R;
 import com.example.slbappcomm.viewpager2.bean.DataBean;
 import com.example.slbappcomm.viewpager2.viewholder.ImageHolder;
 import com.example.slbappcomm.viewpager2.viewholder.TitleHolder;
-import com.example.slbappcomm.viewpager2.viewholder.VideoHolder;
+//import com.example.slbappcomm.viewpager2.viewholder.VideoHolder;
 import com.youth.banner.adapter.BannerAdapter;
 import com.youth.banner.util.BannerUtils;
 
@@ -36,8 +36,8 @@ public class MultipleTypesAdapter extends BannerAdapter<DataBean, RecyclerView.V
         switch (viewType) {
             case 1:
                 return new ImageHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_image));
-            case 2:
-                return new VideoHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_video));
+//            case 2:
+//                return new VideoHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_video));
             case 3:
                 return new TitleHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_title));
         }
@@ -59,16 +59,16 @@ public class MultipleTypesAdapter extends BannerAdapter<DataBean, RecyclerView.V
                 imageHolder.imageView.setImageResource(data.imageRes);
                 break;
             case 2:
-                VideoHolder videoHolder = (VideoHolder) holder;
-                mVHMap.append(position,videoHolder);
-                videoHolder.player.setUp(data.imageUrl, true, null);
-                videoHolder.player.getBackButton().setVisibility(View.GONE);
-                //增加封面
-                ImageView imageView = new ImageView(context);
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setImageResource(R.drawable.image8);
-                videoHolder.player.setThumbImageView(imageView);
-//                videoHolder.player.startPlayLogic();
+//                VideoHolder videoHolder = (VideoHolder) holder;
+//                mVHMap.append(position,videoHolder);
+//                videoHolder.player.setUp(data.imageUrl, true, null);
+//                videoHolder.player.getBackButton().setVisibility(View.GONE);
+//                //增加封面
+//                ImageView imageView = new ImageView(context);
+//                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//                imageView.setImageResource(R.drawable.image8);
+//                videoHolder.player.setThumbImageView(imageView);
+////                videoHolder.player.startPlayLogic();
                 break;
             case 3:
                 TitleHolder titleHolder = (TitleHolder) holder;

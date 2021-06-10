@@ -15,7 +15,6 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.haier.cellarette.baselibrary.R;
 
-
 /**
  * Created by Mikhael LOPEZ on 16/10/2015.
  * 引用：https://github.com/lopspower/CircularProgressBar

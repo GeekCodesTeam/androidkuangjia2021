@@ -22,7 +22,7 @@
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
 -keep public class * extends android.view.View
--keep public class com.android.vending.licensing.ILicensingService
+#-keep public class com.android.vending.licensing.ILicensingService
 -keep class android.support.** {*;}
 #-ignorewarnings -keep class * { public private *; }
 
@@ -68,25 +68,25 @@
     public static <fields>;
 }
 # 保留注解不被混淆
--keep public @interface * {
-    ** default (*);
-}
+#-keep public @interface * {
+#    ** default (*);
+#}
 -keepclassmembers class * {
     void *(**On*Event);
 }
 #----------------------------------------------------------------------------
 
 #---------------------------------webview------------------------------------
--keepclassmembers class fqcn.of.javascript.interface.for.Webview {
-   public *;
-}
+#-keepclassmembers class fqcn.of.javascript.interface.for.Webview {
+#   public *;
+#}
 -keepclassmembers class * extends android.webkit.WebViewClient {
     public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
     public boolean *(android.webkit.WebView, java.lang.String);
 }
--keepclassmembers class * extends android.webkit.WebViewClient {
-    public void *(android.webkit.WebView, jav.lang.String);
-}
+#-keepclassmembers class * extends android.webkit.WebViewClient {
+#    public void *(android.webkit.WebView, jav.lang.String);
+#}
 #----------------------------------------------------------------------------
 
 #sdk

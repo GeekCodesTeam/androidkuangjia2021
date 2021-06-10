@@ -27,7 +27,8 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
     private TextView shouyef2_tv0, shouyef2_tv2, shouyef2_tv3, shouyef2_tv4,
             shouyef2_tv5, shouyef2_tv6, shouyef2_tv7, shouyef2_tv8, shouyef2_tv9, shouyef2_tv10,
             shouyef2_tv11, shouyef2_tv12, shouyef2_tv13, shouyef2_tv14, shouyef2_tv15, shouyef2_tv16,
-            shouyef2_tv17, shouyef2_tv18, shouyef2_tv19, shouyef2_tv20;
+            shouyef2_tv17, shouyef2_tv18, shouyef2_tv19, shouyef2_tv20, shouyef2_tv21, shouyef2_tv22,
+            shouyef2_tv23;
     private MessageReceiverIndex mMessageReceiver;
 
 
@@ -117,6 +118,9 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv18 = rootView.findViewById(R.id.shouyef2_tv18);
         shouyef2_tv19 = rootView.findViewById(R.id.shouyef2_tv19);
         shouyef2_tv20 = rootView.findViewById(R.id.shouyef2_tv20);
+        shouyef2_tv21 = rootView.findViewById(R.id.shouyef2_tv21);
+        shouyef2_tv22 = rootView.findViewById(R.id.shouyef2_tv22);
+        shouyef2_tv23 = rootView.findViewById(R.id.shouyef2_tv23);
         shouyef2_tv2.setOnClickListener(this);
         shouyef2_tv3.setOnClickListener(this);
         shouyef2_tv4.setOnClickListener(this);
@@ -137,6 +141,9 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv18.setOnClickListener(this);
         shouyef2_tv19.setOnClickListener(this);
         shouyef2_tv20.setOnClickListener(this);
+        shouyef2_tv21.setOnClickListener(this);
+        shouyef2_tv22.setOnClickListener(this);
+        shouyef2_tv23.setOnClickListener(this);
         tv_center_content.setText("分类");
         mMessageReceiver = new MessageReceiverIndex();
         IntentFilter filter = new IntentFilter();
@@ -202,6 +209,12 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PDFMainActivity"));
         }else if (id == R.id.shouyef2_tv20) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LocActivity"));
+        }else if (id == R.id.shouyef2_tv21) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivityokhttputils"));
+        }else if (id == R.id.shouyef2_tv22) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenAct"));
+        }else if (id == R.id.shouyef2_tv23) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenActtivity"));
         }
     }
 

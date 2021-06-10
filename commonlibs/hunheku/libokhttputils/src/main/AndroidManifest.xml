@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhy.http.okhttp">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_namelibokhttputils"
+        android:supportsRtl="true">
+        <activity android:name=".demo.MainActivityokhttputils">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.MainActivityokhttputils" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

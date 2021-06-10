@@ -16,9 +16,62 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_nameslbgsyvideonew"
         android:supportsRtl="true">
         <activity android:name=".ViewPager2Activity"></activity>
+        <activity
+            android:name="com.example.gsydemo.updateview.HrMemberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HrMemberActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.gsydemo.banner.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Full">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.bannerVideoActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.gsydemo.SimplePlayer"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Full">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.gsydemo.SimplePlayer2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Full">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.gsydemo.SimplePlayer3"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Full">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer3" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".GSYMainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
@@ -152,7 +205,12 @@
         <activity
             android:name=".simple.SimpleDetailActivityMode1"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SimpleDetailActivityMode1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".simple.SimpleDetailActivityMode2"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"

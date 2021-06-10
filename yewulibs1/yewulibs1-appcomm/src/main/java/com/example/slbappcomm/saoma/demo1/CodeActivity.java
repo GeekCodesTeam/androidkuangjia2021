@@ -47,7 +47,7 @@ public class CodeActivity extends AppCompatActivity {
         boolean isQRCode = getIntent().getBooleanExtra(SaomaAct.KEY_IS_QR_CODE,false);
 
         if(isQRCode){
-            createQRCode(getString(R.string.app_name));
+            createQRCode(getString(R.string.app_nameslbappcomm));
         }else{
             createBarCode("1234567890");
         }

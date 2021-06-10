@@ -7,4 +7,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':commonlibs:hunheku:libutils')
     implementation 'com.google.android:flexbox:2.0.1'
+//    implementation 'com.google.android.flexbox:flexbox:3.0.0'
 }

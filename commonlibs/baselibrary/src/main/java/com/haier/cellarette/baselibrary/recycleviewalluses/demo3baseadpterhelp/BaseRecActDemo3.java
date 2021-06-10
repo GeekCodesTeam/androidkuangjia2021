@@ -1,17 +1,16 @@
 package com.haier.cellarette.baselibrary.recycleviewalluses.demo3baseadpterhelp;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,10 +77,10 @@ public class BaseRecActDemo3 extends AppCompatActivity {
                 BaseRecActDemo3BeanHead addressBean = mList.get(position);
                 if (addressBean.isHeader) {
                     //头部点击bufen
-                    Toasty.normal(BaseRecActDemo3.this, addressBean.header).show();
+                    ToastUtils.showLong(addressBean.header);
                 } else {
                     //内容item点击bufen
-                    Toasty.normal(BaseRecActDemo3.this, addressBean.t.getName() + " " + addressBean.t.getImg()).show();
+                    ToastUtils.showLong(addressBean.t.getName() + " " + addressBean.t.getImg());
                 }
             }
         });
@@ -91,9 +90,9 @@ public class BaseRecActDemo3 extends AppCompatActivity {
                 BaseRecActDemo3BeanHead addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.demo3more) {
-                    Toasty.normal(BaseRecActDemo3.this, "more>").show();
+                    ToastUtils.showLong("more>");
                 } else if (i == R.id.tv) {
-                    Toasty.normal(BaseRecActDemo3.this, addressBean.t.getName()).show();
+                    ToastUtils.showLong(addressBean.t.getName());
                 }
             }
         });

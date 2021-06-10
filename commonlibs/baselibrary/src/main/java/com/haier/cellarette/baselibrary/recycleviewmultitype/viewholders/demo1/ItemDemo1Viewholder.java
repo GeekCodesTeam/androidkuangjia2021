@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo1.ItemDemo1;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -44,7 +44,8 @@ public class ItemDemo1Viewholder extends ItemViewBinder<ItemDemo1, ItemDemo1View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toasty.normal(holder.itemView.getContext(), item.getContent2() + ", aValueFromOutside=" + aValueFromOutside).show();
+                ToastUtils.showLong(item.getContent2() + ", " +
+                        "aValueFromOutside=" + aValueFromOutside);
 //                Intent intent = new Intent(holder.itemView.getContext(), RecycleViewMainActivity.class);
 //                holder.itemView.getContext().startActivity(intent);
             }

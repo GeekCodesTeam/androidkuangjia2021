@@ -208,6 +208,13 @@ public class ShouyeF3 extends SlbBaseLazyFragmentNew {
                 startActivity(intent);
             }
         });
+        rootView.findViewById(R.id.tv91).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.DKMainActivity");
+                startActivity(intent);
+            }
+        });
         rootView.findViewById(R.id.tv10).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -226,6 +233,13 @@ public class ShouyeF3 extends SlbBaseLazyFragmentNew {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.RongCloudAct");
+                startActivity(intent);
+            }
+        });
+        rootView.findViewById(R.id.tv13).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PolyvActList1");
                 startActivity(intent);
             }
         });

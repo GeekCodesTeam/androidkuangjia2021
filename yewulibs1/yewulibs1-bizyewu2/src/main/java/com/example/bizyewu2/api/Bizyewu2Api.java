@@ -4,7 +4,10 @@ import com.example.bizyewu2.bean.HLoginBean;
 import com.example.bizyewu2.bean.HMobid2Bean;
 import com.example.bizyewu2.bean.HUserInfoBean;
 import com.example.bizyewu2.bean.SNew1SearchBean;
+import com.example.bizyewu2.bean.SPolyvList1Bean;
+import com.example.bizyewu2.bean.SPolyvList1Detail1Bean1;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean;
+import com.haier.cellarette.libretrofit.common.ResponseSlbBean1;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -57,5 +60,56 @@ public interface Bizyewu2Api {
     @POST()
     Call<ResponseSlbBean<SNew1SearchBean>> get_my_search_new1(@Url String path, @Header("version") String version,
                                                               @Header("imei") String imei, @Header("token") String token, @Body RequestBody body);
+
+    // 保利威直播分类列表
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean1<SPolyvList1Bean>> get_polyv_list1(@Url String path,
+                                                            @Header("version") String version,
+                                                            @Header("imei") String imei,
+                                                            @Header("token") String token,
+                                                            @Body RequestBody body);
+
+    // 保利威直播分类列表详情
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean<SPolyvList1Detail1Bean1>> get_polyvList1Detail1(@Url String path,
+                                                                         @Header("version") String version,
+                                                                         @Header("imei") String imei,
+                                                                         @Header("token") String token,
+                                                                         @Body RequestBody body);
+
+    // 保利威直播用户进入统计start
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean<Object>> get_PolyvUserIn(@Url String path,
+                                                  @Header("version") String version,
+                                                  @Header("imei") String imei,
+                                                  @Header("token") String token,
+                                                  @Header("latitude") String latitude,
+                                                  @Header("longitude") String longitude,
+                                                  @Body RequestBody body);
+
+    // 保利威直播用户出来统计end
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean<Object>> get_PolyvUserOut(@Url String path,
+                                                   @Header("version") String version,
+                                                   @Header("imei") String imei,
+                                                   @Header("token") String token,
+                                                   @Header("latitude") String latitude,
+                                                   @Header("longitude") String longitude,
+                                                   @Body RequestBody body);
+
+    // 保利威直播用户心跳统计
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean<Object>> get_PolyvUserHeart(@Url String path,
+                                                   @Header("version") String version,
+                                                   @Header("imei") String imei,
+                                                   @Header("token") String token,
+                                                   @Header("latitude") String latitude,
+                                                   @Header("longitude") String longitude,
+                                                   @Body RequestBody body);
 
 }

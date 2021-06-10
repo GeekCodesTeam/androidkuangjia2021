@@ -7,6 +7,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.bolex.pressscan.ScanTools;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -14,8 +15,6 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.Hashtable;
 
@@ -77,9 +76,9 @@ public class QrCodeUtil {
                     });
                 } catch (WriterException e) {
                     e.printStackTrace();
-                    Toasty.normal(BaseApp.get(), "creat code err").show();
+                    ToastUtils.showLong("creat code err");
                 } catch (InterruptedException e) {
-                    Toasty.normal(BaseApp.get(), "creat code err").show();
+                    ToastUtils.showLong("creat code err");
                     e.printStackTrace();
                 }
             }
@@ -260,7 +259,7 @@ public class QrCodeUtil {
         return !((strParm == null) || (strParm.equals("")));
     }
 
-    public static void scan_webview_code(WebView webView){
+    public static void scan_webview_code(WebView webView) {
         webView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -270,7 +269,7 @@ public class QrCodeUtil {
                 ScanTools.scanCode(v, new ScanTools.ScanCall() {
                     @Override
                     public void getCode(String code) {
-//                        Toast.makeText(MainActivity.this, code, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivity.this, code, Toast.LENGTH_SHORT);
                     }
                 });
                 return true;

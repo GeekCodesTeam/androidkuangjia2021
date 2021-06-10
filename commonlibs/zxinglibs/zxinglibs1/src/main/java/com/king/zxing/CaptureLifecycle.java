@@ -24,21 +24,21 @@ import android.os.Bundle;
 public interface CaptureLifecycle {
 
     /**
-     * {@link Activity#onCreate(Bundle)}
+     * {@link Activity #onCreate(Bundle)}
      */
     void onCreate();
     /**
-     * {@link Activity#onResume()}
+     * {@link Activity #onResume()}
      */
     void onResume();
 
     /**
-     * {@link Activity#onPause()}
+     * {@link Activity #onPause()}
      */
     void onPause();
 
     /**
-     * {@link Activity#onDestroy()}
+     * {@link Activity# onDestroy()}
      */
     void onDestroy();
 

@@ -12,5 +12,5 @@ dependencies {
     api 'com.amap.api:location:latest.integration'
     //搜索功能
     api 'com.amap.api:search:latest.integration'
-    implementation 'com.hjq:xxpermissions:9.6'
+    implementation 'com.github.getActivity:XXPermissions:11.0'
 }

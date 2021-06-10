@@ -8,10 +8,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.example.slbapplogin.msg.YanzhengUtil;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 
 public class ZhuceActivity extends SlbBaseActivity {
@@ -202,12 +204,12 @@ public class ZhuceActivity extends SlbBaseActivity {
             return;
         }
         if (!cb1.isChecked()) {
-            Toasty.normal(this, "请先同意注册服务协议").show();
+            ToastUtils.showLong("请先同意注册服务协议");
             return;
         }
         tv_error.setText("");
         //接口bufen
-        Toasty.normal(this, "接口部分").show();
+        ToastUtils.showLong("接口部分");
     }
 
     /**

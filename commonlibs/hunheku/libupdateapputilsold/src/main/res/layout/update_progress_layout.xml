@@ -9,7 +9,7 @@
     android:minWidth="260dp"
     android:orientation="vertical">
 
-    <com.github.commonlibs.libupdateapputils.view.NumberProgressBar
+    <com.github.commonlibs.libupdateapputilsold.view.NumberProgressBar
         android:id="@+id/number_progress"
         android:layout_width="240dp"
         android:layout_height="150dp" />

@@ -19,12 +19,12 @@ import androidx.core.content.ContextCompat;
 
 import com.aigestudio.wheelpicker.widgets.WheelDatePicker;
 import com.blankj.utilcode.util.TimeUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.example.slbapplogin.R;
 import com.geek.libutils.SlbLoginUtil;
-import com.geek.libutils.etc.DateUtil;
 import com.geek.libutils.app.BaseAppManager;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.geek.libutils.etc.DateUtil;
 import com.haier.cellarette.baselibrary.zothers.AutoHideInputMethodFrameLayout;
 import com.umeng.analytics.MobclickAgent;
 
@@ -280,11 +280,11 @@ public class SlbLoginInfoActivity extends SlbBaseActivity implements View.OnClic
 
     private boolean is_yanzheng() {
         if (TextUtils.isEmpty(edt1.getText().toString().trim())) {
-            Toasty.normal(this, "请输入宝宝小名").show();
+            ToastUtils.showLong("请输入宝宝小名");
             return false;
         }
         if (TextUtils.isEmpty(tv_birthday2.getText().toString().trim())) {
-            Toasty.normal(this, "请选择出生日期").show();
+            ToastUtils.showLong("请选择出生日期");
             return false;
         }
         return true;
@@ -344,12 +344,12 @@ public class SlbLoginInfoActivity extends SlbBaseActivity implements View.OnClic
 //
 //    @Override
 //    public void OnUpdateUserInfoNodata(String s) {
-//        Toasty.normal(this, s).show();
+//        ToastUtils.showLong(s);
 //    }
 //
 //    @Override
 //    public void OnUpdateUserInfoFail(String s) {
-//        Toasty.normal(this, s).show();
+//        ToastUtils.showLong(s);
 //    }
 //
 //    // 获取数据bufen

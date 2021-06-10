@@ -1,19 +1,19 @@
 package com.haier.cellarette.baselibrary.expandableview.eximageview;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.expandableview.SimplePaddingDecoration;
 import com.haier.cellarette.baselibrary.expandableview.eximageview.adapter.ImageViewAdapter;
 import com.haier.cellarette.baselibrary.expandableview.eximageview.bean.ImageViewChildBean;
 import com.haier.cellarette.baselibrary.expandableview.eximageview.bean.ImageViewGroupBean;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,14 +70,14 @@ public class ImageViewAct extends AppCompatActivity {
             public void onGroupItemClick(int position, int groupPosition, View view) {
                 //点击group bufen
                 ImageViewGroupBean group = (ImageViewGroupBean) mDatas.get(groupPosition).getGroupData();
-                Toasty.normal(ImageViewAct.this, "groupPos:" + groupPosition + " group:" + group.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " group:" + group.getName());
             }
 
             @Override
             public void onChildItemClick(int position, int groupPosition, int childPosition, View view) {
                 //点击child bufen
                 ImageViewChildBean bean = (ImageViewChildBean) mDatas.get(groupPosition).getChild(childPosition);
-                Toasty.normal(ImageViewAct.this, "groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName());
             }
         });
 

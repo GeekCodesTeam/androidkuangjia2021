@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.example.gsyvideoplayer.R;
-import com.google.android.exoplayer2.text.CaptionStyleCompat;
 import com.google.android.exoplayer2.ui.SubtitleView;
 import com.shuyu.gsyvideoplayer.utils.Debuger;
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
@@ -43,7 +42,7 @@ public class GSYExoSubTitleVideoView extends NormalGSYVideoPlayer {
         mSubtitleView = findViewById(R.id.sub_title_view);
 
 
-        mSubtitleView.setStyle(new CaptionStyleCompat(Color.RED, Color.TRANSPARENT, Color.TRANSPARENT, CaptionStyleCompat.EDGE_TYPE_NONE, CaptionStyleCompat.EDGE_TYPE_NONE, null));
+//        mSubtitleView.setStyle(new CaptionStyleCompat(Color.RED, Color.TRANSPARENT, Color.TRANSPARENT, CaptionStyleCompat.EDGE_TYPE_NONE, CaptionStyleCompat.EDGE_TYPE_NONE, null));
         mSubtitleView.setFixedTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
     }
 

@@ -16,6 +16,7 @@ import com.example.slbappcomm.baserecycleview.SlbBaseActivityYewuList;
 import com.example.slbappcomm.playermusic.floatbutton.floatbutton2.DisplayUtil;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbappcomm.widgets.recyclerviewnice.GridSpacingItemDecoration;
+import com.example.swipebacklayout.SwipeBack;
 import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
@@ -23,6 +24,7 @@ import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+@SwipeBack(value = true)
 public class ActYewuList1 extends SlbBaseActivityYewuList implements View.OnClickListener {
 
     //    private HMyorderPresenter presenter1;

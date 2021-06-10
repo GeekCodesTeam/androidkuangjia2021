@@ -2,20 +2,20 @@ package com.haier.cellarette.baselibrary.expandableview.extextview;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.expandableview.SimplePaddingDecoration;
 import com.haier.cellarette.baselibrary.expandableview.extextview.adapter.TextViewAdapter;
 import com.haier.cellarette.baselibrary.expandableview.extextview.bean.TextViewChildBean;
 import com.haier.cellarette.baselibrary.expandableview.extextview.bean.TextViewGroupBean;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,28 +106,28 @@ public class TextViewAct extends AppCompatActivity {
             public void onGroupItemClick(int position, int groupPosition, View view) {
                 //点击group bufen
                 TextViewGroupBean group = (TextViewGroupBean) mDatas.get(groupPosition).getGroupData();
-                Toasty.normal(TextViewAct.this, "groupPos:" + groupPosition + " group:" + group.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " group:" + group.getName());
             }
 
             @Override
             public void onChildItemClick(int position, int groupPosition, int childPosition, View view) {
                 //点击child bufen
                 TextViewChildBean bean = (TextViewChildBean) mDatas.get(groupPosition).getChild(childPosition);
-                Toasty.normal(TextViewAct.this, "groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName());
             }
         });
         mAdapter.setOnItemLongClickListener(new OnRecyclerViewListener.OnItemLongClickListener() {
             @Override
             public void onGroupItemLongClick(int position, int groupPosition, View view) {
                 TextViewGroupBean group = (TextViewGroupBean) mDatas.get(groupPosition).getGroupData();
-                Toasty.normal(TextViewAct.this, "groupPos:" + groupPosition + " group:" + group.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " group:" + group.getName());
                 showDeleteDialog(position, groupPosition, 0, true);
             }
 
             @Override
             public void onChildItemLongClick(int position, int groupPosition, int childPosition, View view) {
                 TextViewChildBean bean = (TextViewChildBean) mDatas.get(groupPosition).getChild(childPosition);
-                Toasty.normal(TextViewAct.this, "groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName()).show();
+                ToastUtils.showLong("groupPos:" + groupPosition + " childPos:" + childPosition + " child:" + bean.getName());
                 showDeleteDialog(position, groupPosition, childPosition, false);
             }
         });

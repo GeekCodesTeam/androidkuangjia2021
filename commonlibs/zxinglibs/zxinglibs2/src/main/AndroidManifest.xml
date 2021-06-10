@@ -17,7 +17,7 @@
     <!--suppress AndroidUnknownAttribute -->
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namezxinglibs2"
         android:supportsRtl="true">
         <activity
             android:name=".android.CaptureActivity"

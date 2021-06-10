@@ -25,7 +25,7 @@ public class HMobID2Presenter extends Presenter<HMobID2View> {
         requestData.put("receiveUserId", receiveUserId);//
         requestData.put("code", code);//
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), requestData.toString());
-        RetrofitNetNew.build(Bizyewu2Api.class, getIdentifier()).get_mob_id2("http://t-ums.ireign.cn:8380/api/ums/manage/queryPage", requestBody).enqueue(new Callback<HMobid2Bean>() {
+        RetrofitNetNew.build(Bizyewu2Api.class, getIdentifier()).get_mob_id2("http://t-ums.ireign.cn:8380/api/ums/manage/querypage", requestBody).enqueue(new Callback<HMobid2Bean>() {
             @Override
             public void onResponse(Call<HMobid2Bean> call, Response<HMobid2Bean> response) {
                 if (!hasView()) {

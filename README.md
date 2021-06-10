@@ -1,6 +1,6 @@
 # hunheappkuangjia
 
-混合移动应用框架APP-Android16
+混合移动应用框架APP-Android19
 
 ### 1.ANROOMCrashActivity：验证APP压力测试
 ### 
@@ -328,7 +328,7 @@
 <br/>    // For developers using AndroidX in their applications
 <br/>    // api 'pub.devrel:easypermissions:3.0.0'                权限        
 <br/>    // For developers using the Android Support Library
-<br/>    api 'pub.devrel:easypermissions:2.0.1'
+<br/>    api 'pub.devrel:easypermissions:3.0.0'
 <br/>    // https://github.com/getActivity/XXPermissions         权限
 <br/>    api 'com.hjq:xxpermissions:9.6'
 <br/>    // https://github.com/yanzhenjie/AndPermission          权限
@@ -433,10 +433,22 @@
 ### 97.tencent：tencentim：腾讯云IM
 ### 
 ### 98.rongcloud：rongcloudim：融云IM
+### 
+### 99.commonlibs：dkplayer：DK播放器支持推流
+### 
+### 100.slbyanzheng：指纹登录组件
 
 
 
-
+已知问题：
+1.融云问题：
+D:\code\lib7\bumenyanfa\fsjxappkuangjia-android\yewulibs1\yewulibs1-app\build\
+intermediates\merged_native_libs\bxn_nationRelease\out\lib\armeabi-v7a\libRongIMLib.so
+ because of non-zero exit value from objcopy.
+D:\code\android-studio-ide-201.6953283-windows\sdk\ndk\22.1.7171670\toolchains\
+llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has 
+a sh_offset (0x19c80) + sh_size (0xb61b8) that is greater than the file size 
+(0x86214)
 
 
 

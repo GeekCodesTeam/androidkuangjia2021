@@ -115,7 +115,7 @@ public final class Intents {
 
     /**
      * If a barcode is found, Barcodes returns {@link android.app.Activity#RESULT_OK} to
-     * {@link android.app.Activity#onActivityResult(int, int, android.content.Intent)}
+     * {@link android.app.Activity #onActivityResult(int, int, android.content.Intent)}
      * of the app which requested the scan via
      * {@link android.app.Activity#startActivityForResult(android.content.Intent, int)}
      * The barcodes contents can be retrieved with
@@ -199,7 +199,7 @@ public final class Intents {
 
     /**
      * The type of data being supplied if the format is QR Code. Use
-     * {@link android.content.Intent#putExtra(String, String)} with one of {@link Contents.Type}.
+     * {@link android.content.Intent#putExtra(String, String)} with one of {@linkContents.Type}.
      */
     public static final String TYPE = "ENCODE_TYPE";
 

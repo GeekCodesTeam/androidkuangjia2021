@@ -4,6 +4,7 @@ public class ResponseSlbBean<T> {
     private int code;
     private String msg;
     private T data;
+    private boolean success;
 
     public ResponseSlbBean() {
     }
@@ -32,11 +33,20 @@ public class ResponseSlbBean<T> {
         this.data = data;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("code: ").append(this.code).append("\n");
         sb.append("msg: ").append(this.msg).append("\n");
         sb.append("data: ").append(this.data).append("\n");
+        sb.append("success: ").append(this.success).append("\n");
         return sb.toString();
     }
 }

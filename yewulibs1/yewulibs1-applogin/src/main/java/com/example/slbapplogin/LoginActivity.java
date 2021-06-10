@@ -15,18 +15,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
+
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.example.slbappjpushshare.denglu.JPushDengluUtils;
 import com.example.slbappjpushshare.denglu.OnResultInfoLitener;
 import com.example.slbappjpushshare.fenxiang.JPushShareUtils;
 import com.example.slbappjpushshare.fenxiang.beans.WeixinBeanParam;
 import com.geek.libutils.SlbLoginUtil;
-import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 import com.haier.cellarette.baselibrary.widget.CustomImageView;
 import com.haier.cellarette.baselibrary.widget.SmoothCheckBox;
+
 import java.io.BufferedInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -144,7 +146,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
             if (scb_left.isChecked()) {
                 //设置取消
                 if (scb_right.isChecked()) {
-                    Toasty.normal(this, "请先取消自动登录!").show();
+                    ToastUtils.showLong("请先取消自动登录!");
                     return;
                 }
                 scb_left.setChecked(false, true);
@@ -207,11 +209,11 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
         String a = edt1.getText().toString().trim();
         String b = edt2.getText().toString().trim();
         if (TextUtils.isEmpty(a)) {
-            Toasty.normal(this, "请输入您的账号").show();
+            ToastUtils.showLong("请输入您的账号");
             return false;
         }
         if (TextUtils.isEmpty(b)) {
-            Toasty.normal(this, "请输入您的密码").show();
+            ToastUtils.showLong("请输入您的密码");
             return false;
         }
         return true;
@@ -229,7 +231,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 记住密码 选中业务
      */
     private void jzmm_xuanzhong() {
-        Toasty.normal(this, "scb_cen_degree: checked").show();
+        ToastUtils.showLong("scb_cen_degree: checked");
 
     }
 
@@ -237,7 +239,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 记住密码 取消业务
      */
     private void jzmm_quxiao() {
-        Toasty.normal(this, "scb_cen_degree: unchecked").show();
+        ToastUtils.showLong("scb_cen_degree: unchecked");
 
     }
 
@@ -245,7 +247,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 自动登录 选中业务
      */
     private void zddl_xuanzhong() {
-        Toasty.normal(this, "scb_fah_degree: checked").show();
+        ToastUtils.showLong("scb_fah_degree: checked");
 
     }
 
@@ -253,7 +255,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 自动登录 取消业务
      */
     private void zddl_quxiao() {
-        Toasty.normal(this, "scb_fah_degree: unchecked").show();
+        ToastUtils.showLong("scb_fah_degree: unchecked");
 
     }
 
@@ -261,7 +263,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 登录
      */
     private void denglu() {
-        Toasty.normal(this, "登录").show();
+        ToastUtils.showLong("登录");
         donetlogin();
 //        startActivity(new Intent("hs.act.slbapp.index"));
 
@@ -271,7 +273,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 临时访问
      */
     private void linshifangwen() {
-        Toasty.normal(this, "临时访问").show();
+        ToastUtils.showLong("临时访问");
 
     }
 
@@ -294,7 +296,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
      * 其他方式登录 - 微信
      */
     private void qita_wx_login() {
-        Toasty.normal(this, "微信").show();
+        ToastUtils.showLong("微信");
         JPushDengluUtils JPushDengluUtils = new JPushDengluUtils(this);
         JPushDengluUtils.shezhi_shouquan_getinfo("Wechat");
     }
@@ -302,7 +304,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
 
     @Override
     public void onResults(String platform, String toastMsg, String data) {
-        Toasty.normal(BaseApp.get(), platform + "---" + toastMsg + "---" + data).show();
+        ToastUtils.showLong(platform + "---" + toastMsg + "---" + data);
     }
 
     /**
@@ -364,7 +366,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "分享成功", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "分享成功", Toast.LENGTH_LONG);
 
                 }
             });
@@ -377,7 +379,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "分享失败:" + error.getMessage() + "---" + errorCode, Toast.LENGTH_LONG).show();//41020
+                    Toast.makeText(getApplicationContext(), "分享失败:" + error.getMessage() + "---" + errorCode, Toast.LENGTH_LONG);//41020
                 }
             });
         }
@@ -387,7 +389,7 @@ public class LoginActivity extends SlbBaseActivity implements View.OnClickListen
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "分享取消", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "分享取消", Toast.LENGTH_LONG);
                 }
             });
 

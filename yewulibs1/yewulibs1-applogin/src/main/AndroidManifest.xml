@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namelogin"
         android:supportsRtl="true">
 
         <activity
@@ -73,7 +73,7 @@
                 <data
                     android:host="cs.znclass.com"
                     android:path="/${applicationId}.hs.act.slbapp.SlbLoginActivity"
-                    android:scheme="app" />
+                    android:scheme="dataability" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />

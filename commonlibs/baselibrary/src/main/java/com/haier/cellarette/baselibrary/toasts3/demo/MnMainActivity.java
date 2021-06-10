@@ -97,13 +97,6 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
         int id = view.getId();
         if (id == R.id.btn01) {
             MProgressDialog.showProgress(this);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    MProgressDialog.showProgress(MnMainActivity.this, "");
-                }
-            }, 1000);
-            MProgressDialog.showProgress(this);
             //延时关闭
             delayDismissProgressDialog();
         } else if (id == R.id.btn02) {
@@ -111,7 +104,7 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
             //延时关闭
             delayDismissProgressDialog();
         } else if (id == R.id.btn03) {
-            MProgressDialog.showProgress(this, "");
+            MProgressDialog.showProgress(this, "加载中...");
             //延时关闭
             delayDismissProgressDialog();
         } else if (id == R.id.btn04) {

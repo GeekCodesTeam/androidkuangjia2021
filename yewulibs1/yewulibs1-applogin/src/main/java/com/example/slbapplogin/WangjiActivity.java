@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
+
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.example.slbapplogin.msg.YanzhengUtil;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 public class WangjiActivity extends SlbBaseActivity implements View.OnClickListener {
 
@@ -83,14 +85,14 @@ public class WangjiActivity extends SlbBaseActivity implements View.OnClickListe
         String aaa = edt1.getText().toString().trim();
         String bbb = edt2.getText().toString().trim();
         if (TextUtils.isEmpty(aaa)) {
-            Toasty.normal(this, getResources().getString(R.string.yhzc_tip4)).show();
+            ToastUtils.showLong(getResources().getString(R.string.yhzc_tip4));
             return false;
         }
         if (ccc == -1) {
             return true;
         }
         if (TextUtils.isEmpty(bbb)) {
-            Toasty.normal(this, getResources().getString(R.string.yhzc_tip41)).show();
+            ToastUtils.showLong(getResources().getString(R.string.yhzc_tip41));
             return false;
         }
         return true;
@@ -121,7 +123,7 @@ public class WangjiActivity extends SlbBaseActivity implements View.OnClickListe
             return;
         }
         //接口bufen
-        Toasty.normal(this, "接口部分").show();
+        ToastUtils.showLong("接口部分");
         startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ChongzhiActivity"));
         finish();
     }

@@ -60,6 +60,10 @@ MobSDK {
                 appId "100371282"
                 appKey "aed9b0303e3ed1e27bae87c33761161d"
             }
+            QQ {
+                appId "100371282"
+                appKey "aed9b0303e3ed1e27bae87c33761161d"
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ public class UrlManager {
 //    public static String PREPROD_SERVER_ISERVICE_NEW1 = "http://dtdjzx.fosung.com";
 //    public static String PREPROD_SERVER_ISERVICE_NEW2 = "http://49.4.1.81:7799";
     //线上
-    public static String OL_SERVER_ISERVICE_NEW1 = SPUtils.getInstance().getString(default_url1key, "https://xianshang1");
+    public static String OL_SERVER_ISERVICE_NEW1 = SPUtils.getInstance().getString(default_url1key, "http://10.254.23.64/apiLive");
     public static String OL_SERVER_ISERVICE_NEW2 = SPUtils.getInstance().getString(default_url2key, "https://xianshang2");
     public static final String OOO = "线上";
 //    public static String OL_SERVER_ISERVICE_NEW1 = "https://app.dtdjzx.gov.cn";

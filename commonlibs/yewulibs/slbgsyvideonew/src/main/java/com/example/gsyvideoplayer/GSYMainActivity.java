@@ -19,12 +19,19 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.upstream.TransferListener;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
+import com.shuyu.gsyvideoplayer.cache.ProxyCacheManager;
 import com.shuyu.gsyvideoplayer.player.IjkPlayerManager;
 import com.shuyu.gsyvideoplayer.player.PlayerFactory;
 import com.shuyu.gsyvideoplayer.player.SystemPlayerManager;
 import com.shuyu.gsyvideoplayer.utils.Debuger;
 
 import java.io.File;
+import java.security.cert.CertificateException;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import permissions.dispatcher.PermissionUtils;
 import tv.danmaku.ijk.media.exo2.Exo2PlayerManager;
@@ -151,26 +158,50 @@ public class GSYMainActivity extends AppCompatActivity implements View.OnClickLi
             String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
             requestPermissions(permissions, 1110);
         }
-        //
-        ExoSourceManager.setExoMediaSourceInterceptListener(new ExoMediaSourceInterceptListener() {
-            @Override
-            public MediaSource getMediaSource(String dataSource, boolean preview, boolean cacheEnable, boolean isLooping, File cacheDir) {
-                //如果返回 null，就使用默认的
-                return null;
-            }
-
-            /**
-             * 通过自定义的 HttpDataSource ，可以设置自签证书或者忽略证书
-             * demo 里的 GSYExoHttpDataSourceFactory 使用的是忽略证书
-             * */
-            @Override
-            public HttpDataSource.BaseFactory getHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener, int connectTimeoutMillis, int readTimeoutMillis, boolean allowCrossProtocolRedirects) {
-                //如果返回 null，就使用默认的
-                return new GSYExoHttpDataSourceFactory(userAgent, listener,
-                        connectTimeoutMillis,
-                        readTimeoutMillis, allowCrossProtocolRedirects);
-            }
-        });
+        // GSY applicationbufen
+//        ExoSourceManager.setExoMediaSourceInterceptListener(new ExoMediaSourceInterceptListener() {
+//            @Override
+//            public MediaSource getMediaSource(String dataSource, boolean preview, boolean cacheEnable, boolean isLooping, File cacheDir) {
+//                //如果返回 null，就使用默认的
+//                return null;
+//            }
+//
+//            /**
+//             * 通过自定义的 HttpDataSource ，可以设置自签证书或者忽略证书
+//             * demo 里的 GSYExoHttpDataSourceFactory 使用的是忽略证书
+//             * */
+//            @Override
+//            public HttpDataSource.BaseFactory getHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener, int connectTimeoutMillis, int readTimeoutMillis, boolean allowCrossProtocolRedirects) {
+//                //如果返回 null，就使用默认的
+//                return new GSYExoHttpDataSourceFactory(userAgent, listener,
+//                        connectTimeoutMillis,
+//                        readTimeoutMillis, allowCrossProtocolRedirects);
+//            }
+//        });
+        // 代理缓存bufen
+//        ProxyCacheManager.instance().setHostnameVerifier(new HostnameVerifier() {
+//            @Override
+//            public boolean verify(String hostname, SSLSession session) {
+//                return true;
+//            }
+//        });
+//        final TrustManager[] trustAllCerts = new TrustManager[]{
+//                new X509TrustManager() {
+//                    @Override
+//                    public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+//                    }
+//
+//                    @Override
+//                    public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+//                    }
+//
+//                    @Override
+//                    public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+//                        return null;
+//                    }
+//                }
+//        };
+//        ProxyCacheManager.instance().setTrustAllCerts(trustAllCerts);
     }
 
     @Override

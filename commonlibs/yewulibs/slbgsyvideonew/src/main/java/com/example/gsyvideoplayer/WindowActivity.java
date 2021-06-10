@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.gsyvideoplayer.utils.floatUtil.FloatWindow;
 import com.example.gsyvideoplayer.utils.floatUtil.MoveType;
 import com.example.gsyvideoplayer.utils.floatUtil.Screen;
-import com.example.gsyvideoplayer.utils.floatUtil.Util;
+import com.example.gsyvideoplayer.utils.floatUtil.UtilGSY;
 import com.example.gsyvideoplayer.view.FloatPlayerView;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
@@ -37,7 +37,7 @@ public class WindowActivity extends AppCompatActivity implements View.OnClickLis
         jumpOther.setOnClickListener(this);
 
         if (Build.VERSION.SDK_INT >= 23) {
-            if (!Util.hasPermission(this)) {
+            if (!UtilGSY.hasPermission(this)) {
                 requestAlertWindowPermission();
             }
         }
@@ -66,7 +66,7 @@ public class WindowActivity extends AppCompatActivity implements View.OnClickLis
         super.onActivityResult(requestCode, resultCode, data);
         if (Build.VERSION.SDK_INT >= 23) {
             //todo 用23以上编译即可出现canDrawOverlays
-            if (Util.hasPermission(this)) {
+            if (UtilGSY.hasPermission(this)) {
 
             } else {
                 this.finish();

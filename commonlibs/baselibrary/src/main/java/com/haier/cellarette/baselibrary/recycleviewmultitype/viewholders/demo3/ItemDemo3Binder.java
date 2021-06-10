@@ -8,10 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
-import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo3.ItemDemo3;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.List;
 
@@ -63,13 +62,13 @@ public class ItemDemo3Binder extends ItemViewBinder<ItemDemo3, ItemDemo3Binder.V
 
         @Override
         public void onClick(View v) {
-            Toasty.normal(BaseApp.get(), "Update with a payload").show();
+            ToastUtils.showLong("Update with a payload");
             getAdapter().notifyItemChanged(getAdapterPosition(), "la la la (payload)");
         }
 
         @Override
         public boolean onLongClick(View v) {
-            Toasty.normal(BaseApp.get(), "Full update").show();
+            ToastUtils.showLong("Full update");
             item.setContent1("full full full");
             getAdapter().notifyItemChanged(getAdapterPosition());
             return true;

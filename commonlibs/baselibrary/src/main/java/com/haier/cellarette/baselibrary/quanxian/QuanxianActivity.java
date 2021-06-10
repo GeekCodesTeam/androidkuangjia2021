@@ -8,11 +8,13 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.blankj.utilcode.util.ToastUtils;
+import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.R;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
+import com.hjq.toast.ToastUtils;
+import com.hjq.toast.style.WhiteToastStyle;
 
 import java.util.List;
 
@@ -28,6 +30,16 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quanxian);
+        //
+        // 初始化吐司工具类
+        ToastUtils.init(BaseApp.get(), new WhiteToastStyle());
+
+        // 设置权限申请拦截器
+        XXPermissions.setInterceptor(new PermissionInterceptor());
+
+        // 告诉框架，当前项目已适配分区存储特性
+        //XXPermissions.setScopedStorage(true);
+        //
         findViewById(R.id.btn_main_request_1).setOnClickListener(this);
         findViewById(R.id.btn_main_request_2).setOnClickListener(this);
         findViewById(R.id.btn_main_request_3).setOnClickListener(this);
@@ -41,8 +53,9 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.btn_main_request_1) {
+        int viewId = view.getId();
+        if (viewId == R.id.btn_main_request_1) {
+
             XXPermissions.with(this)
                     .permission(Permission.CAMERA)
                     .request(new OnPermissionCallback() {
@@ -53,19 +66,10 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                                 toast("获取拍照权限成功");
                             }
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            if (never) {
-                                toast("被永久拒绝授权，请手动授予拍照权限");
-                                // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                                XXPermissions.startPermissionActivity(QuanxianActivity.this, permissions);
-                            } else {
-                                toast("获取拍照权限失败");
-                            }
-                        }
                     });
-        } else if (id == R.id.btn_main_request_2) {
+
+        } else if (viewId == R.id.btn_main_request_2) {
+
             XXPermissions.with(this)
                     .permission(Permission.RECORD_AUDIO)
                     .permission(Permission.Group.CALENDAR)
@@ -75,25 +79,16 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                         public void onGranted(List<String> permissions, boolean all) {
                             if (all) {
                                 toast("获取录音和日历权限成功");
-                            } else {
-                                toast("获取部分权限成功，但是部分权限未正常授予");
-                            }
-                        }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            if (never) {
-                                toast("被永久拒绝授权，请手动授予录音和日历权限");
-                                // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                                XXPermissions.startPermissionActivity(QuanxianActivity.this, permissions);
-                            } else {
-                                toast("获取权限失败");
                             }
                         }
                     });
-        } else if (id == R.id.btn_main_request_3) {
+
+        } else if (viewId == R.id.btn_main_request_3) {
+
             XXPermissions.with(this)
-                    .permission(Permission.Group.LOCATION)
+                    .permission(Permission.ACCESS_COARSE_LOCATION)
+                    .permission(Permission.ACCESS_FINE_LOCATION)
+                    .permission(Permission.ACCESS_BACKGROUND_LOCATION)
                     .request(new OnPermissionCallback() {
 
                         @Override
@@ -102,24 +97,10 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                                 toast("获取定位权限成功");
                             }
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            if (never) {
-                                toast("被永久拒绝授权，请手动授予定位权限");
-                                // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                                XXPermissions.startPermissionActivity(QuanxianActivity.this, permissions);
-                                return;
-                            }
-
-                            if (permissions.size() == 1 && Permission.ACCESS_BACKGROUND_LOCATION.equals(permissions.get(0))) {
-                                toast("没有授予后台定位权限，请您选择\"始终允许\"");
-                            } else {
-                                toast("获取定位权限失败");
-                            }
-                        }
                     });
-        } else if (id == R.id.btn_main_request_4) {
+
+        } else if (viewId == R.id.btn_main_request_4) {
+
             long delayMillis = 0;
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
                 delayMillis = 2000;
@@ -143,21 +124,12 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                                         toast("获取存储权限成功");
                                     }
                                 }
-
-                                @Override
-                                public void onDenied(List<String> permissions, boolean never) {
-                                    if (never) {
-                                        toast("被永久拒绝授权，请手动授予存储权限");
-                                        // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                                        XXPermissions.startPermissionActivity(QuanxianActivity.this, permissions);
-                                    } else {
-                                        toast("获取存储权限失败");
-                                    }
-                                }
                             });
                 }
             }, delayMillis);
-        } else if (id == R.id.btn_main_request_5) {
+
+        } else if (viewId == R.id.btn_main_request_5) {
+
             XXPermissions.with(this)
                     .permission(Permission.REQUEST_INSTALL_PACKAGES)
                     .request(new OnPermissionCallback() {
@@ -166,13 +138,10 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                         public void onGranted(List<String> permissions, boolean all) {
                             toast("获取安装包权限成功");
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            toast("获取安装包权限失败，请手动授予权限");
-                        }
                     });
-        } else if (id == R.id.btn_main_request_6) {
+
+        } else if (viewId == R.id.btn_main_request_6) {
+
             XXPermissions.with(this)
                     .permission(Permission.SYSTEM_ALERT_WINDOW)
                     .request(new OnPermissionCallback() {
@@ -181,13 +150,10 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                         public void onGranted(List<String> permissions, boolean all) {
                             toast("获取悬浮窗权限成功");
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            toast("获取悬浮窗权限失败，请手动授予权限");
-                        }
                     });
-        } else if (id == R.id.btn_main_request_7) {
+
+        } else if (viewId == R.id.btn_main_request_7) {
+
             XXPermissions.with(this)
                     .permission(Permission.NOTIFICATION_SERVICE)
                     .request(new OnPermissionCallback() {
@@ -196,13 +162,10 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                         public void onGranted(List<String> permissions, boolean all) {
                             toast("获取通知栏权限成功");
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            toast("获取通知栏权限失败，请手动授予权限");
-                        }
                     });
-        } else if (id == R.id.btn_main_request_8) {
+
+        } else if (viewId == R.id.btn_main_request_8) {
+
             XXPermissions.with(this)
                     .permission(Permission.WRITE_SETTINGS)
                     .request(new OnPermissionCallback() {
@@ -211,14 +174,11 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                         public void onGranted(List<String> permissions, boolean all) {
                             toast("获取系统设置权限成功");
                         }
-
-                        @Override
-                        public void onDenied(List<String> permissions, boolean never) {
-                            toast("获取系统设置权限失败，请手动授予权限");
-                        }
                     });
-        } else if (id == R.id.btn_main_app_details) {
-            XXPermissions.startApplicationDetails(this);
+
+        } else if (viewId == R.id.btn_main_app_details) {
+
+            XXPermissions.startPermissionActivity(this);
         }
     }
 
@@ -231,6 +191,6 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void toast(CharSequence text) {
-        ToastUtils.showLong(text);
+        ToastUtils.show(text);
     }
 }

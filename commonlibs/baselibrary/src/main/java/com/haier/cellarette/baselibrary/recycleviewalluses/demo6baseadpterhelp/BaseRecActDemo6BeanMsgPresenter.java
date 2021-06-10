@@ -2,7 +2,7 @@ package com.haier.cellarette.baselibrary.recycleviewalluses.demo6baseadpterhelp;
 
 import android.view.View;
 
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.blankj.utilcode.util.ToastUtils;
 
 public class BaseRecActDemo6BeanMsgPresenter {
 
@@ -24,10 +24,10 @@ public class BaseRecActDemo6BeanMsgPresenter {
     }
 
     public void onClickCar(View view, BaseRecActDemo6BeanMsg movie) {
-        Toasty.normal(view.getContext(), movie.content).show();
+        ToastUtils.showLong(movie.content);
     }
 
     public void onClickName(View view, BaseRecActDemo6BeanMsg movie) {
-        Toasty.normal(view.getContext(), movie.name).show();
+        ToastUtils.showLong(movie.name);
     }
 }

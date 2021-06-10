@@ -36,7 +36,7 @@ public interface RefreshKernel {
 
     /**
      * 移动视图到指定位置
-     * moveSpinner 的取名来自 谷歌官方的 @{@link android.support.v4.widget.SwipeRefreshLayout#moveSpinner(float)}
+     * moveSpinner 的取名来自 谷歌官方的 @{@linkandroid.support.v4.widget.SwipeRefreshLayout#moveSpinner(float)}
      * @param spinner 位置 (px)
      * @param isAnimator 标记是否是动画执行
      */
@@ -44,7 +44,7 @@ public interface RefreshKernel {
 
     /**
      * 执行动画使视图位移到指定的 位置
-     * moveSpinner 的取名来自 谷歌官方的 @{@link android.support.v4.widget.SwipeRefreshLayout#moveSpinner(float)}
+     * moveSpinner 的取名来自 谷歌官方的 @{@linkandroid.support.v4.widget.SwipeRefreshLayout#moveSpinner(float)}
      * @param endSpinner 指定的结束位置 (px)
      */
     RefreshKernel animSpinner(int endSpinner);

@@ -57,7 +57,7 @@
                 android:textSize="12mm" />
         </RelativeLayout>
 
-        <com.zhy.view.flowlayout.TagFlowLayout
+        <com.haier.cellarette.baselibrary.flowlayout.TagFlowLayout
             android:id="@+id/id_flowlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

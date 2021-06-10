@@ -140,7 +140,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:background="@color/scan_bg"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_namezxinglibs3" />
 
         <ImageView
             android:id="@+id/right_mask"

@@ -1,21 +1,19 @@
 package com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.second;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haier.cellarette.baselibrary.R;
-import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.second.adapter.BaseRecActDemo42Adapter;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.second.bean.BaseRecActDemo42Bean;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.second.bean.BaseRecActDemo42ChildBean;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,7 +103,7 @@ public class BaseRecActDemo42 extends AppCompatActivity {
             @Override
             public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
                 Log.d(TAG, "onItemChildLongClick: ");
-                Toast.makeText(ItemClickActivity.this, "onItemChildLongClick" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ItemClickActivity.this, "onItemChildLongClick" + position, Toast.LENGTH_SHORT);
             }
         });*/
 //        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
@@ -120,13 +118,13 @@ public class BaseRecActDemo42 extends AppCompatActivity {
                 BaseRecActDemo42Bean addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.tv_provider2) {
-                    Toasty.normal(BaseApp.get(), position + "item click=" + addressBean.getmBean().getUserName()).show();
+                    ToastUtils.showLong(position + "item click=" + addressBean.getmBean().getUserName());
                 } else if (i == R.id.tv1_provider2) {
-                    Toasty.normal(BaseApp.get(), position + "item click=" + addressBean.getmBean().getText()).show();
+                    ToastUtils.showLong(position + "item click=" + addressBean.getmBean().getText());
                 } else if (i == R.id.iv_provider3) {
-                    Toasty.normal(BaseApp.get(), position + "item click=" + addressBean.getmBean().getUserAvatar()).show();
+                    ToastUtils.showLong(position + "item click=" + addressBean.getmBean().getUserAvatar());
                 } else if (i == R.id.tv_provider3) {
-                    Toasty.normal(BaseApp.get(), position + "item click=" + addressBean.getmBean().getUserName()).show();
+                    ToastUtils.showLong(position + "item click=" + addressBean.getmBean().getUserName());
                 } else {
                 }
             }

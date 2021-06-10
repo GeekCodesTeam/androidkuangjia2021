@@ -5,12 +5,10 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_nameappsplash"
         android:supportsRtl="true">
         <activity
             android:name=".welcome.WelComeActivity"
-            android:exported="true"
-            android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/HXKTThemeSplash">
             <intent-filter>
@@ -30,7 +28,7 @@
                 <data
                     android:host="cs.znclass.com"
                     android:path="/geek/welcome"
-                    android:scheme="app" />
+                    android:scheme="dataability" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />

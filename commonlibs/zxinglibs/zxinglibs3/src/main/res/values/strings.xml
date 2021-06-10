@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Scan2Code</string>
+    <string name="app_namezxinglibs3">Scan2Code</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="scan_barcode_title">条形码扫描</string>

@@ -1,4 +1,4 @@
-package com.sdzn.fzx.student.libutils;
+package com.geek.libutils;
 
 public class test {
 }

@@ -1,19 +1,19 @@
 package com.haier.cellarette.baselibrary.recycleviewalluses.demo1baseadpterhelp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CompoundButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.widget.CompoundButton;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.haier.cellarette.baselibrary.switchbutton.SwitchButtonksw;
 import com.jaredrummler.materialspinner.MaterialSpinner;
-import com.kyleduo.switchbutton.SwitchButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +61,7 @@ public class BaseRecActDemo1 extends AppCompatActivity {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //item click
-                Toasty.normal(BaseRecActDemo1.this, position + "item click").show();
+                ToastUtils.showLong(position + "item click");
             }
         });
         mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
@@ -70,11 +70,11 @@ public class BaseRecActDemo1 extends AppCompatActivity {
                 BaseRecActDemo1Bean addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.brademo1_img) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getUserAvatar() + "    " + position).show();
+                    ToastUtils.showLong(addressBean.getUserAvatar() + "    " + position);
                 } else if (i == R.id.brademo1_tweetName) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getUserName() + position).show();
-                }else if (i == R.id.brademo1_tweetText) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getText() + position).show();
+                    ToastUtils.showLong(addressBean.getUserName() + position);
+                } else if (i == R.id.brademo1_tweetText) {
+                    ToastUtils.showLong(addressBean.getText() + position);
                 } else {
                 }
             }
@@ -85,11 +85,11 @@ public class BaseRecActDemo1 extends AppCompatActivity {
                 BaseRecActDemo1Bean addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.brademo1_img) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getUserAvatar() + "长按    " + position).show();
+                    ToastUtils.showLong(addressBean.getUserAvatar() + "长按    " + position);
                 } else if (i == R.id.brademo1_tweetName) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getUserName() + position).show();
-                }else if (i == R.id.brademo1_tweetText) {
-                    Toasty.normal(BaseRecActDemo1.this, addressBean.getText() + position).show();
+                    ToastUtils.showLong(addressBean.getUserName() + position);
+                } else if (i == R.id.brademo1_tweetText) {
+                    ToastUtils.showLong(addressBean.getText() + position);
                 } else {
                 }
                 return true;
@@ -140,7 +140,7 @@ public class BaseRecActDemo1 extends AppCompatActivity {
             }
         });
         mAdapter.isFirstOnly(false);//init firstOnly state
-        SwitchButton switchButton = findViewById(R.id.switch_button);
+        SwitchButtonksw switchButton = findViewById(R.id.switch_button);
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {

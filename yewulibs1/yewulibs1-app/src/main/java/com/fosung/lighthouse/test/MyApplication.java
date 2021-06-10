@@ -11,6 +11,7 @@ import android.os.LocaleList;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
@@ -18,6 +19,7 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
 import com.example.slbappcomm.broadcastreceiver.PhoneService;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;
@@ -26,13 +28,15 @@ import com.example.slbappjpushshare.fenxiang.JPushShareUtils;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
+import com.google.android.exoplayer2.upstream.TransferListener;
 import com.haier.cellarette.baselibrary.changelanguage.LocalManageUtil;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import com.heytap.msp.push.HeytapPushManager;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.view.CropImageView;
-import com.meituan.android.walle.WalleChannelReader;
 import com.mob.MobSDK;
 import com.mob.OperationCallback;
 import com.mob.PrivacyPolicy;
@@ -43,7 +47,6 @@ import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.imsdk.v2.V2TIMCallback;
 import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.imsdk.v2.V2TIMMessage;
-import com.tencent.qcloud.tim.demo.SplashActivity;
 import com.tencent.qcloud.tim.demo.helper.ConfigHelper;
 import com.tencent.qcloud.tim.demo.signature.GenerateTestUserSig;
 import com.tencent.qcloud.tim.demo.thirdpush.HUAWEIHmsMessageService;
@@ -57,6 +60,7 @@ import com.tencent.rtmp.TXLiveBase;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -76,6 +80,8 @@ import cn.jiguang.share.android.api.PlatformConfig;
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
+import tv.danmaku.ijk.media.exo2.ExoMediaSourceInterceptListener;
+import tv.danmaku.ijk.media.exo2.ExoSourceManager;
 
 /**
  * 自定义ApplicationLike类.
@@ -110,9 +116,9 @@ public class MyApplication extends MultiDexApplication {
         //初始化极光分享
         configShare();
         //初始化极光统计
-        configTongji();
+//        configTongji();
         //初始化极光推送
-        configTuisong();
+//        configTuisong();
         //初始化mob
         configMob();
         // 初始化今日头条适配
@@ -120,7 +126,7 @@ public class MyApplication extends MultiDexApplication {
         // 播放听书
 //        startService(new Intent(BaseApp.get(), ListenMusicPlayerService.class));
         // 电话监听
-//        cofigPhone();
+        configPhone();
         //初始化Umeng统计
         configUmengTongji();
         // 为了横屏需求的toast
@@ -133,20 +139,50 @@ public class MyApplication extends MultiDexApplication {
 //        GenseeLive.initConfiguration(getApplicationContext());
         // 业务-> 上传多张图片
         initImagePicker();
-        //初始化G直播
-//        ApplicationUtil.init(this);
-//        监听前后台
+        // 监听前后台
         regActivityLife();
         // 环信IM
-        initHx();
-        initThrowableHandler();
-        closeAndroidPDialog();
+//        initHx();
         // TencentIM
         initTencentIM();
+        // polyv
+//        initpolyv();
+        // GSY
+        initGSY();
+    }
+
+    private void initGSY() {
+        ExoSourceManager.setExoMediaSourceInterceptListener(new ExoMediaSourceInterceptListener() {
+            @Override
+            public MediaSource getMediaSource(String dataSource, boolean preview, boolean cacheEnable, boolean isLooping, File cacheDir) {
+                //如果返回 null，就使用默认的
+                return null;
+            }
+
+            /**
+             * 通过自定义的 HttpDataSource ，可以设置自签证书或者忽略证书
+             * demo 里的 GSYExoHttpDataSourceFactory 使用的是忽略证书
+             * */
+            @Override
+            public HttpDataSource.BaseFactory getHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener, int connectTimeoutMillis, int readTimeoutMillis, boolean allowCrossProtocolRedirects) {
+                //如果返回 null，就使用默认的
+                return new GSYExoHttpDataSourceFactory(userAgent, listener,
+                        connectTimeoutMillis,
+                        readTimeoutMillis, allowCrossProtocolRedirects);
+            }
+        });
+    }
+
+    private void initpolyv() {
+//        PLVLiveSDKConfig.init(
+//                new PLVLiveSDKConfig.Parameter(this)
+//                        .isOpenDebugLog(true)
+//                        .isEnableHttpDns(true)
+//        );
     }
 
     private void initTencentIM() {
-        // bugly上报
+//        // bugly上报
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
         strategy.setAppVersion(V2TIMManager.getInstance().getVersion());
         CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
@@ -184,7 +220,8 @@ public class MyApplication extends MultiDexApplication {
                 DemoLog.i(TAG, "onActivityCreated bundle: " + bundle);
                 if (bundle != null) { // 若bundle不为空则程序异常结束
                     // 重启整个程序
-                    Intent intent = new Intent(activity, SplashActivity.class);
+//                    Intent intent = new Intent(activity, SplashActivity.class);
+                    Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.WelComeActivity");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
@@ -269,7 +306,8 @@ public class MyApplication extends MultiDexApplication {
 //            MyLogUtil.i("DemoApplication", "application initHx");
 //            DemoHelper.getInstance().init(this);
 //        }
-
+        initThrowableHandler();
+        closeAndroidPDialog();
     }
 
     private void initThrowableHandler() {
@@ -320,7 +358,7 @@ public class MyApplication extends MultiDexApplication {
                 MyLogUtil.e("MobPush", "RegistrationId:" + rid);
                 SPUtils.getInstance().put("MOBID", rid);
                 //TODO MOBID TEST
-                startService(new Intent(getApplicationContext(), MOBIDservices.class));
+                startService(new Intent(BaseApp.get(), MOBIDservices.class));
             }
         });
         //隐私协议
@@ -551,7 +589,8 @@ public class MyApplication extends MultiDexApplication {
         /**
          * 设置walle当前渠道
          */
-        String channel = WalleChannelReader.getChannel(this);
+//        String channel = WalleChannelReader.getChannel(this);
+        String channel = AppUtils.getAppVersionName();
         MyLogUtil.e("--版本--", channel);
         MyLogUtil.e("版本->", BanbenCommonUtils.banben_comm);
         if (TextUtils.equals(BanbenCommonUtils.banben_comm, "测试")) {
@@ -569,7 +608,7 @@ public class MyApplication extends MultiDexApplication {
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
     }
 
-    private void cofigPhone() {
+    private void configPhone() {
         Intent intent = new Intent(this, PhoneService.class);
         startService(intent);
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -585,10 +624,10 @@ public class MyApplication extends MultiDexApplication {
 //         Bugly.setAppChannel(getApplicationContext(), channel);
         // 这里实现SDK初始化，appId替换成你的在Bugly平台申请的appId
         // bugly上报
-        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
-        strategy.setAppVersion(AppUtils.getAppVersionName());
-//        CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
-        CrashReport.initCrashReport(getApplicationContext(), "3aeeb18e5e", true, strategy);
+//        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
+//        strategy.setAppVersion(AppUtils.getAppVersionName());
+////        CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
+//        CrashReport.initCrashReport(getApplicationContext(), "3aeeb18e5e", true, strategy);
 //        Bugly.init(this, "e0b1ba785f", true);
         if (TextUtils.equals(BanbenCommonUtils.banben_comm, "测试")) {
 //            CrashReport.initCrashReport(this, "068e7f32c3", true);// 测试

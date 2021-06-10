@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">slbota</string>
+    <string name="app_nameslbota">slbota</string>
     <string name="system_info">系统信息</string>
     <string name="app_dqrom">当前ROM&#160;：</string>
     <string name="app_dqbb">当前版本&#160;：</string>

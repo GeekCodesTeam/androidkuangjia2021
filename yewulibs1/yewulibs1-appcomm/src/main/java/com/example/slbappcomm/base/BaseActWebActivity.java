@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.slbappcomm.R;
+import com.example.slbappcomm.base.news.BaseAgentWebActivity;
 import com.geek.libutils.app.BaseAppManager;
 
 public abstract class BaseActWebActivity extends BaseAgentWebActivity {

@@ -14,13 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.LayoutInflaterCompat;
@@ -29,23 +29,26 @@ import androidx.core.view.LayoutInflaterFactory;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.SPUtils;
-import com.blankj.utilcode.util.ScreenUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.example.slbappcomm.R;
 import com.example.slbappcomm.huyan.Huyanservices;
-import com.example.swipebacklayout.activity.SwipeBackActivity;
+import com.example.swipebacklayout.SwipeBack;
+import com.example.swipebacklayout.SwipeBackLayout;
+import com.example.swipebacklayout.SwipeBackUtil;
+import com.example.swipebacklayout.activity.SwipeBackActivityBase;
+import com.example.swipebacklayout.activity.SwipeBackActivityHelper;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.BaseViewHelper;
 import com.haier.cellarette.baselibrary.networkview.NetState;
 import com.haier.cellarette.baselibrary.networkview.NetconListener2;
 import com.haier.cellarette.baselibrary.smartbar.IBaseAction;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 import com.umeng.analytics.MobclickAgent;
 
 import me.jessyan.autosize.AutoSizeCompat;
 
-public abstract class SlbBaseActivity extends SwipeBackActivity implements IBaseAction, NetconListener2 {
+public abstract class SlbBaseActivity extends AppCompatActivity implements SwipeBackActivityBase, IBaseAction, NetconListener2 {
 
     public static final String REQUEST_CODE = "request_code";
 
@@ -54,8 +57,9 @@ public abstract class SlbBaseActivity extends SwipeBackActivity implements IBase
     protected NetState netState;
     protected Typeface tfLight;
     protected Typeface tfLight2;
-//    private JPluginPlatformInterface jPluginPlatformInterface;
-
+    //    private JPluginPlatformInterface jPluginPlatformInterface;
+    private SwipeBackActivityHelper mHelper;
+    protected boolean enableSwipeBack;
 
     @Override
     public Resources getResources() {
@@ -68,12 +72,14 @@ public abstract class SlbBaseActivity extends SwipeBackActivity implements IBase
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 //        ScreenUtils.setNonFullScreen(this);
-        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.web_white));
-        if (BarUtils.isStatusBarLightMode(this)) {
-            BarUtils.setStatusBarLightMode(this, false);
-        } else {
-            BarUtils.setStatusBarLightMode(this, true);
-        }
+//        BarUtils.setStatusBarLightMode(this, false);
+//        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.black_000));
+
+//        if (BarUtils.isStatusBarLightMode(this)) {
+//            BarUtils.setStatusBarLightMode(this, false);
+//        } else {
+//            BarUtils.setStatusBarLightMode(this, true);
+//        }
         // 截屏
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         // 另一种写法
@@ -86,8 +92,25 @@ public abstract class SlbBaseActivity extends SwipeBackActivity implements IBase
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         super.onCreate(savedInstanceState);
+        // 加载注解bufen
+        SwipeBack swipeBack = getClass().getAnnotation(SwipeBack.class);
+        if (swipeBack != null) {
+            enableSwipeBack = swipeBack.value();
+        }
+        if (enableSwipeBack) mHelper = new SwipeBackActivityHelper(this);
+        try {
+            if (enableSwipeBack) {
+                mHelper.onActivityCreate();
+                setSwipeBackEnable(enableSwipeBack);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //
         BaseAppManager.getInstance().add(this);
         setContentView(getLayoutId());
+        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.black_000));
+        BarUtils.setStatusBarLightMode(this, false);
         setup(savedInstanceState);
         //网络监听
         netState = new NetState();
@@ -213,7 +236,7 @@ public abstract class SlbBaseActivity extends SwipeBackActivity implements IBase
 
     @Override
     public void net_con_none() {
-        Toasty.normal(this, "网络异常，请检查网络连接！").show();
+        ToastUtils.showLong("网络异常，请检查网络连接！");
     }
 
     @Override
@@ -321,6 +344,29 @@ public abstract class SlbBaseActivity extends SwipeBackActivity implements IBase
 //        AppUtils.unregisterAppStatusChangedListener(baseAppStatusChangedListener);
         super.onDestroy();
 
+    }
+
+    //以下不用管系列————
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (enableSwipeBack) mHelper.onPostCreate();
+    }
+
+    @Override
+    public SwipeBackLayout getSwipeBackLayout() {
+        return enableSwipeBack ? mHelper.getSwipeBackLayout() : null;
+    }
+
+    @Override
+    public void setSwipeBackEnable(boolean enable) {
+        getSwipeBackLayout().setEnableGesture(enable);
+    }
+
+    @Override
+    public void scrollToFinishActivity() {
+        SwipeBackUtil.convertActivityToTranslucent(this);
+        getSwipeBackLayout().scrollToFinishActivity();
     }
 
     @Override

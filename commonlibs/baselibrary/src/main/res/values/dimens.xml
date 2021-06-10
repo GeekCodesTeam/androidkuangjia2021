@@ -35,4 +35,14 @@
     <dimen name="color_slider_pointer_radius">11dp</dimen>
     <dimen name="color_slider_pointer_shadow_radius">14dp</dimen>
 
+    <dimen name="ksw_md_thumb_ripple_size">42dp</dimen>
+    <dimen name="ksw_md_thumb_solid_inset">11dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset">11dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset_top">11dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset_bottom">10dp</dimen>
+
+    <dimen name="ksw_md_thumb_solid_size">20dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_size">21dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_offset">2dp</dimen>
+
 </resources>

@@ -5,4 +5,6 @@
     <color name="select_color">#2e2e32</color>
     <color name="color_1A70AE">#1A70AE</color>
     <color name="color_FB6215">#FB6215</color>
+    <color name="colorProgressGradientStart">#f75acb</color>
+    <color name="colorProgressGradientEnd">#1ae8ff</color>
 </resources>

@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
@@ -23,7 +24,6 @@ import com.example.slbappcomm.viewpager2.ui.GalleryActivity;
 import com.example.slbappcomm.viewpager2.ui.RecyclerViewBannerActivity;
 import com.example.slbappcomm.viewpager2.ui.TVActivity;
 import com.example.slbappcomm.viewpager2.ui.TouTiaoActivity;
-import com.example.slbappcomm.viewpager2.ui.VideoActivity;
 import com.example.slbappcomm.viewpager2.ui.Vp2FragmentRecyclerviewActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.youth.banner.Banner;
@@ -193,7 +193,7 @@ public class LunboMainActivity extends AppCompatActivity implements View.OnClick
         } else if (id == R.id.vp_banner) {
             startActivity(new Intent(this, Vp2FragmentRecyclerviewActivity.class));
         } else if (id == R.id.banner_video) {
-            startActivity(new Intent(this, VideoActivity.class));
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.bannerVideoActivity"));
         } else if (id == R.id.banner_tv) {
             startActivity(new Intent(this, TVActivity.class));
         } else if (id == R.id.topLine) {

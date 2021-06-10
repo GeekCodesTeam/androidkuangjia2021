@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">slbappcomm</string>
+    <string name="app_nameslbappcomm" translatable="false">slbappcomm</string>
     <string name="initStr" translatable="false">this is a init sentence</string>
     <string name="readbooks_tips1" translatable="false">小朋友，恭喜你完成了每日阅读任务一，奖励已经放到你的从无背包里了，快去看看吧</string>
     <string name="readbooks_tips2" translatable="false">付费内容需要妈妈购买才能听阅哦</string>

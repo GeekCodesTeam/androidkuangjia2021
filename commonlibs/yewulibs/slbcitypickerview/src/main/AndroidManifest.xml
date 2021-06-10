@@ -14,7 +14,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_nameCityPicker"
         android:supportsRtl="true">
         <activity android:name=".demo.CityPickerCustomeDataActivity"/>
         <activity

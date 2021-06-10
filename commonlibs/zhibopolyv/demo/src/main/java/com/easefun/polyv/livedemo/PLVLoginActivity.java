@@ -258,13 +258,13 @@ public class PLVLoginActivity extends PLVBaseActivity {
         etLiveAppId.setText("fdhjtb97mj");
         etLiveAppSecert.setText("1ec091fc12c94109afbd8ed47c81f78c");
         etLiveUserId.setText("496bff1348");
-        etLiveChannelId.setText("2163376");
+        etLiveChannelId.setText("2369411");
 
         etPlaybackAppId.setText("fdhjtb97mj");
         etPlaybackAppSecret.setText("1ec091fc12c94109afbd8ed47c81f78c");
         etPlaybackUserId.setText("496bff1348");
-        etPlaybackChannelId.setText("2163376");
-        etPlaybackVideoId.setText("fweoutuu11");
+        etPlaybackChannelId.setText("2369411");
+        etPlaybackVideoId.setText("75f9747396fc4f517a6b0f9bf3b4e600_7");
     }
     // </editor-fold>
 
@@ -274,7 +274,8 @@ public class PLVLoginActivity extends PLVBaseActivity {
         final String appSecret = etLiveAppSecert.getText().toString();
         final String userId = etLiveUserId.getText().toString();
         final String channelId = etLiveChannelId.getText().toString();
-        loginManager.loginLive(appId, appSecret, userId, channelId, new IPLVSceneLoginManager.OnLoginListener<PolyvLiveLoginResult>() {
+        loginManager.loginLive(appId, appSecret, userId, channelId,
+                new IPLVSceneLoginManager.OnLoginListener<PolyvLiveLoginResult>() {
             @Override
             public void onLoginSuccess(PolyvLiveLoginResult polyvLiveLoginResult) {
                 loginProgressDialog.dismiss();

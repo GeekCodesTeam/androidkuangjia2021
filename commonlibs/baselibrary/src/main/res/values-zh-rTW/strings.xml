@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="baselibraryappname" translatable="false">baselibrary</string>
     <string name="cancel">取消</string>
     <string name="ok">确认</string>
     <string name="retry_text">重试</string>

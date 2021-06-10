@@ -2321,7 +2321,7 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
      * 单独设置加载监听器
      */
     @Override
-    public SmartRefreshLayout setOnLoadmoreListener(OnLoadMoreListener listener) {
+    public SmartRefreshLayout setOnLoadMoreListener(OnLoadMoreListener listener) {
         this.mLoadmoreListener = listener;
         this.mEnableLoadmore = mEnableLoadmore || (!mManualLoadmore && listener != null);
         return this;

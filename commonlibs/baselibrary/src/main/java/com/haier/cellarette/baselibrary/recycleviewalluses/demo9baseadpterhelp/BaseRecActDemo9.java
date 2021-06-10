@@ -3,23 +3,20 @@ package com.haier.cellarette.baselibrary.recycleviewalluses.demo9baseadpterhelp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-//import android.support.annotation.Nullable;
-//import androidx.core.widget.SwipeRefreshLayout;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-//import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +65,7 @@ public class BaseRecActDemo9 extends AppCompatActivity {
                 mAdapter.setNewData(null);
                 mAdapter.setLoadMoreView(new CustomLoadMoreView());
                 mRecyclerView.setAdapter(mAdapter);
-                Toasty.normal(BaseRecActDemo9.this, "change complete!").show();
+                ToastUtils.showLong("change complete!");
 
                 mSwipeRefreshLayout.setRefreshing(true);
                 refresh();
@@ -84,7 +81,7 @@ public class BaseRecActDemo9 extends AppCompatActivity {
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(final BaseQuickAdapter adapter, final View view, final int position) {
-                Toasty.normal(BaseRecActDemo9.this, Integer.toString(position)).show();
+                ToastUtils.showLong(Integer.toString(position));
             }
         });
     }
@@ -121,7 +118,7 @@ public class BaseRecActDemo9 extends AppCompatActivity {
 
             @Override
             public void fail(Exception e) {
-                Toasty.normal(BaseRecActDemo9.this, "网络连接失败!").show();
+                ToastUtils.showLong("网络连接失败!");
                 mAdapter.setEnableLoadMore(true);
                 mSwipeRefreshLayout.setRefreshing(false);
             }
@@ -138,7 +135,7 @@ public class BaseRecActDemo9 extends AppCompatActivity {
             @Override
             public void fail(Exception e) {
                 mAdapter.loadMoreFail();
-                Toasty.normal(BaseRecActDemo9.this, "网络连接失败!").show();
+                ToastUtils.showLong("网络连接失败!");
             }
         }).start();
     }
@@ -156,7 +153,7 @@ public class BaseRecActDemo9 extends AppCompatActivity {
         if (size < PAGE_SIZE) {
             //第一页如果不够一页就不显示没有更多数据布局
             mAdapter.loadMoreEnd(isRefresh);
-            Toasty.normal(BaseRecActDemo9.this, "no more data").show();
+            ToastUtils.showLong("no more data");
         } else {
             mAdapter.loadMoreComplete();
         }

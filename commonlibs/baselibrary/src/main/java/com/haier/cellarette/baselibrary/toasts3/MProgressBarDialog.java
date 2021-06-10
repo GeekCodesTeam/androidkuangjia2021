@@ -1,18 +1,19 @@
 package com.haier.cellarette.baselibrary.toasts3;
 
 import android.animation.ValueAnimator;
-import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -22,8 +23,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 
 import com.haier.cellarette.baselibrary.R;
+import com.haier.cellarette.baselibrary.toasts3.base.BaseDialog;
 import com.haier.cellarette.baselibrary.toasts3.utils.MSizeUtils;
 import com.haier.cellarette.baselibrary.toasts3.view.MNHudCircularProgressBar;
+
 
 /**
  * Created by maning on 2017/12/29.
@@ -42,9 +45,9 @@ public class MProgressBarDialog {
 
 
     private Context mContext;
-    private Dialog mDialog;
+    private BaseDialog mDialog;
 
-    private MProgressBarDialog.Builder mBuilder;
+    private Builder mBuilder;
 
     private RelativeLayout dialog_window_background;
     private RelativeLayout dialog_view_bg;
@@ -53,36 +56,33 @@ public class MProgressBarDialog {
     private MNHudCircularProgressBar circularProgressBar;
 
     public MProgressBarDialog(Context context) {
-        this(context, new MProgressBarDialog.Builder(context));
+        this(context, new Builder(context));
     }
 
-    public MProgressBarDialog(Context context, MProgressBarDialog.Builder builder) {
+    public MProgressBarDialog(Context context, Builder builder) {
         mContext = context;
         mBuilder = builder;
         if (mBuilder == null) {
-            mBuilder = new MProgressBarDialog.Builder(mContext);
+            mBuilder = new Builder(mContext);
         }
         //初始化
         initDialog();
     }
 
     private void initDialog() {
-
+        checkDialogConfig();
         try {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             View mProgressDialogView = inflater.inflate(R.layout.mn_progress_bar_dialog_layout, null);
-            mDialog = new Dialog(mContext, R.style.MNCustomDialog);
-            mDialog.setCancelable(false);
-            mDialog.setCanceledOnTouchOutside(false);
+            mDialog = new BaseDialog(mContext, R.style.MNCustomDialog);
             mDialog.setContentView(mProgressDialogView);
-
-            //设置整个Dialog的宽高
-            WindowManager.LayoutParams layoutParams = mDialog.getWindow().getAttributes();
-            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.gravity = Gravity.CENTER;
-            mDialog.getWindow().setAttributes(layoutParams);
-
+            mDialog.initStatusBar(mBuilder.windowFullscreen);
+            mDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    releaseDialog();
+                }
+            });
             //获取布局
             dialog_window_background = (RelativeLayout) mProgressDialogView.findViewById(R.id.dialog_window_background);
             dialog_view_bg = (RelativeLayout) mProgressDialogView.findViewById(R.id.dialog_view_bg);
@@ -108,13 +108,11 @@ public class MProgressBarDialog {
 
     private void checkDialogConfig() {
         if (mBuilder == null) {
-            mBuilder = new MProgressBarDialog.Builder(mContext);
+            mBuilder = new Builder(mContext);
         }
     }
 
     private void configView() {
-        checkDialogConfig();
-
         try {
             //设置动画
             if (mBuilder != null && mBuilder.animationID != 0 && mDialog.getWindow() != null) {
@@ -168,14 +166,6 @@ public class MProgressBarDialog {
         circularProgressBar.setColor(mBuilder.progressColor);
         circularProgressBar.setProgressBarWidth(MSizeUtils.dp2px(mContext, mBuilder.circleProgressBarWidth));
         circularProgressBar.setBackgroundProgressBarWidth(MSizeUtils.dp2px(mContext, mBuilder.circleProgressBarBackgroundWidth));
-
-        //全屏模式
-        if (mBuilder.windowFullscreen) {
-            mDialog.getWindow().setFlags(
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-
     }
 
     public void showProgress(int progress, String message) {
@@ -264,21 +254,27 @@ public class MProgressBarDialog {
         try {
             if (mDialog != null && mDialog.isShowing()) {
                 mDialog.dismiss();
-                mDialog = null;
-                mContext = null;
-                mBuilder = null;
-                dialog_window_background = null;
-                dialog_view_bg = null;
-                tvShow = null;
-                horizontalProgressBar = null;
-                circularProgressBar = null;
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
+            Log.e(">>>MProgress>>>", "MProgressBarDialog-dismiss异常:" + e.toString());
+        } finally {
+            releaseDialog();
         }
     }
 
-    public void refreshBuilder(MProgressBarDialog.Builder builder) {
+    private void releaseDialog() {
+        mDialog = null;
+        mContext = null;
+        mBuilder = null;
+        dialog_window_background = null;
+        dialog_view_bg = null;
+        tvShow = null;
+        horizontalProgressBar = null;
+        circularProgressBar = null;
+    }
+
+    public void refreshBuilder(Builder builder) {
         mBuilder = builder;
         configView();
     }
@@ -288,7 +284,7 @@ public class MProgressBarDialog {
         private Context mContext;
 
         //全屏模式隐藏状态栏
-        public boolean windowFullscreen;
+        boolean windowFullscreen;
         //窗体背景色
         int backgroundWindowColor;
         //View背景色
@@ -320,7 +316,7 @@ public class MProgressBarDialog {
         public Builder(Context context) {
             mContext = context;
             //默认配置
-            backgroundWindowColor = mContext.getResources().getColor(R.color.mn_colorDialogWindowBg);
+            backgroundWindowColor = Color.TRANSPARENT;
             backgroundViewColor = mContext.getResources().getColor(R.color.mn_colorDialogViewBg);
             strokeColor = mContext.getResources().getColor(R.color.mn_colorDialogTrans);
             textColor = mContext.getResources().getColor(R.color.mn_colorDialogTextColor);

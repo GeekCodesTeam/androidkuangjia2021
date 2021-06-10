@@ -108,8 +108,8 @@ public class IFloatWindowImpl extends IFloatWindow {
     public void updateX(int screenType, float ratio) {
         checkMoveType();
         mB.xOffset = (int) ((screenType == Screen.width ?
-                Util.getScreenWidth(mB.mApplicationContext) :
-                Util.getScreenHeight(mB.mApplicationContext)) * ratio);
+                UtilGSY.getScreenWidth(mB.mApplicationContext) :
+                UtilGSY.getScreenHeight(mB.mApplicationContext)) * ratio);
         mFloatView.updateX(mB.xOffset);
 
     }
@@ -118,8 +118,8 @@ public class IFloatWindowImpl extends IFloatWindow {
     public void updateY(int screenType, float ratio) {
         checkMoveType();
         mB.yOffset = (int) ((screenType == Screen.width ?
-                Util.getScreenWidth(mB.mApplicationContext) :
-                Util.getScreenHeight(mB.mApplicationContext)) * ratio);
+                UtilGSY.getScreenWidth(mB.mApplicationContext) :
+                UtilGSY.getScreenHeight(mB.mApplicationContext)) * ratio);
         mFloatView.updateY(mB.yOffset);
 
     }
@@ -189,8 +189,8 @@ public class IFloatWindowImpl extends IFloatWindow {
                                     case MoveType.slide:
                                         int startX = mFloatView.getX();
                                         int endX = (startX * 2 + v.getWidth() >
-                                                Util.getScreenWidth(mB.mApplicationContext)) ?
-                                                Util.getScreenWidth(mB.mApplicationContext) - v.getWidth() : 0;
+                                                UtilGSY.getScreenWidth(mB.mApplicationContext)) ?
+                                                UtilGSY.getScreenWidth(mB.mApplicationContext) - v.getWidth() : 0;
                                         mAnimator = ObjectAnimator.ofInt(startX, endX);
                                         mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                                             @Override

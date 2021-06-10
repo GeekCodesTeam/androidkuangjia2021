@@ -1,6 +1,9 @@
 package com.example.slbappcomm.agentwebview.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -53,7 +56,7 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
             @Override
             public boolean canRefresh(View content) {
                 //webview滚动到顶部才可以下拉刷新
-                MyLogUtil.e("ssssss",""+mAgentWeb.getWebCreator().getWebView().getScrollY());
+                MyLogUtil.e("ssssss", "" + mAgentWeb.getWebCreator().getWebView().getScrollY());
                 return mAgentWeb.getWebCreator().getWebView().getScrollY() > 0;
             }
 
@@ -73,6 +76,26 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
 
     @Override
     public String getUrl() {
-        return "https://www.baidu.com";
+//        Bundle bundle = this.getArguments();
+//        String target = bundle.getString("url_key");
+        String target = "";
+        //1
+        // 根据HIOS协议三方平台跳转
+        // ATTENTION: This was auto-generated to handle app links.
+        Intent appLinkIntent = getIntent();
+        if (appLinkIntent != null) {
+            String appLinkAction = appLinkIntent.getAction();
+//            if (appLinkAction != null) {
+            Uri appLinkData = appLinkIntent.getData();
+            if (appLinkData != null) {
+                target = appLinkData.getQueryParameter("query1");
+            }
+//            }
+        }
+        MyLogUtil.e("targetaaaaaaa=" + target);
+        if (TextUtils.isEmpty(target)) {
+            target = "http://www.jd.com/";
+        }
+        return target;
     }
 }

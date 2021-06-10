@@ -62,8 +62,8 @@ public class SplashView extends FrameLayout {
 
     private OnSplashViewActionListener mOnSplashViewActionListener = null;
 
-    private final Handler handler = new Handler(Looper.getMainLooper());
-    private final Runnable timerRunnable = new Runnable() {
+    private Handler handler = new Handler(Looper.getMainLooper());
+    private Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
             if (0 == duration) {
@@ -177,49 +177,49 @@ public class SplashView extends FrameLayout {
      * @param listener         splash view listener contains onImageClick and onDismiss
      */
     @SuppressLint("RestrictedApi")
-    public static void showSplashView(Activity activity,
-                                      Integer durationTime,
-                                      Integer defaultBitmapRes,
-                                      OnSplashViewActionListener listener) {
+    public void showSplashView(Activity activity,
+                               Integer durationTime,
+                               Integer defaultBitmapRes,
+                               OnSplashViewActionListener listener) {
 
         ViewGroup contentView = (ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content);
         if (null == contentView || 0 == contentView.getChildCount()) {
             throw new IllegalStateException("You should call showSplashView() after setContentView() in Activity instance");
         }
         IMG_PATH = activity.getFilesDir().getAbsolutePath().toString() + "/splash_img.jpg";
-        SplashView splashView = new SplashView(activity);
+//        SplashView splashView = new SplashView(activity);
         RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        splashView.setOnSplashImageClickListener(listener);
-        if (null != durationTime) splashView.setDuration(durationTime);
+        this.setOnSplashImageClickListener(listener);
+        if (null != durationTime) this.setDuration(durationTime);
         Bitmap bitmapToShow = null;
 
         if (isExistsLocalSplashData(activity)) {
             bitmapToShow = BitmapFactory.decodeFile(IMG_PATH);
             SharedPreferences sp = activity.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
-            splashView.setImgUrl(sp.getString(IMG_URL, null));
-            splashView.setActUrl(sp.getString(ACT_URL, null));
+            this.setImgUrl(sp.getString(IMG_URL, null));
+            this.setActUrl(sp.getString(ACT_URL, null));
         } else if (null != defaultBitmapRes) {
             bitmapToShow = BitmapFactory.decodeResource(activity.getResources(), defaultBitmapRes);
         }
 
         if (null == bitmapToShow) return;
-        splashView.setImage(bitmapToShow);
+        this.setImage(bitmapToShow);
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         if (activity instanceof AppCompatActivity) {
             ActionBar supportActionBar = ((AppCompatActivity) activity).getSupportActionBar();
             if (null != supportActionBar) {
                 supportActionBar.setShowHideAnimationEnabled(false);
-                splashView.isActionBarShowing = supportActionBar.isShowing();
+                this.isActionBarShowing = supportActionBar.isShowing();
                 supportActionBar.hide();
             }
         } else if (activity instanceof Activity) {
             android.app.ActionBar actionBar = activity.getActionBar();
             if (null != actionBar) {
-                splashView.isActionBarShowing = actionBar.isShowing();
+                this.isActionBarShowing = actionBar.isShowing();
                 actionBar.hide();
             }
         }
-        contentView.addView(splashView, param);
+        contentView.addView(this, param);
     }
 
     /**
@@ -227,7 +227,7 @@ public class SplashView extends FrameLayout {
      *
      * @param activity
      */
-    public static void simpleShowSplashView(Activity activity) {
+    public void simpleShowSplashView(Activity activity) {
         showSplashView(activity, null, null, null);
     }
 
@@ -235,7 +235,7 @@ public class SplashView extends FrameLayout {
         if (null != mOnSplashViewActionListener)
             mOnSplashViewActionListener.onSplashViewDismiss(initiativeDismiss);
 
-        if (handler!=null){
+        if (handler != null) {
             handler.removeCallbacks(timerRunnable);
         }
         final ViewGroup parent = (ViewGroup) this.getParent();
@@ -260,12 +260,14 @@ public class SplashView extends FrameLayout {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     parent.removeView(SplashView.this);
+                    animator.cancel();
                     showSystemUi();
                 }
 
                 @Override
                 public void onAnimationCancel(Animator animation) {
                     parent.removeView(SplashView.this);
+                    animator.cancel();
                     showSystemUi();
                 }
 
@@ -292,7 +294,7 @@ public class SplashView extends FrameLayout {
         }
     }
 
-    private static boolean isExistsLocalSplashData(Activity activity) {
+    private boolean isExistsLocalSplashData(Activity activity) {
         SharedPreferences sp = activity.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
         String imgUrl = sp.getString(IMG_URL, null);
         return !TextUtils.isEmpty(imgUrl) && isFileExist(IMG_PATH);
@@ -304,7 +306,7 @@ public class SplashView extends FrameLayout {
      * @param imgUrl    - url of image which you want to set as splash image
      * @param actionUrl - related action url, such as webView etc.
      */
-    public static void updateSplashData(Activity activity, String imgUrl, String actionUrl) {
+    public void updateSplashData(Activity activity, String imgUrl, String actionUrl) {
         IMG_PATH = activity.getFilesDir().getAbsolutePath().toString() + "/splash_img.jpg";
 
         SharedPreferences.Editor editor = activity.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE).edit();
@@ -321,7 +323,7 @@ public class SplashView extends FrameLayout {
         void onSplashViewDismiss(boolean initiativeDismiss);
     }
 
-    private static void getAndSaveNetWorkBitmap(final String urlString) {
+    private void getAndSaveNetWorkBitmap(final String urlString) {
         Runnable getAndSaveImageRunnable = new Runnable() {
             @Override
             public void run() {
@@ -346,7 +348,7 @@ public class SplashView extends FrameLayout {
         new Thread(getAndSaveImageRunnable).start();
     }
 
-    private static void saveBitmapFile(Bitmap bm, String filePath) throws IOException {
+    private void saveBitmapFile(Bitmap bm, String filePath) throws IOException {
         File myCaptureFile = new File(filePath);
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
         bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
@@ -354,7 +356,7 @@ public class SplashView extends FrameLayout {
         bos.close();
     }
 
-    public static boolean isFileExist(String filePath) {
+    public boolean isFileExist(String filePath) {
         if (TextUtils.isEmpty(filePath)) {
             return false;
         } else {

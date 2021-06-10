@@ -1,18 +1,18 @@
 package com.haier.cellarette.baselibrary.recycleviewalluses.demo2baseadpterhelp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class BaseRecActDemo2 extends AppCompatActivity {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //item click
-                Toasty.normal(BaseRecActDemo2.this, position + "item click").show();
+                ToastUtils.showLong(position + "item click");
             }
         });
         mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
@@ -68,11 +68,11 @@ public class BaseRecActDemo2 extends AppCompatActivity {
                 BaseRecActDemo2Bean addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.brademo1_img) {
-                    Toasty.normal(BaseRecActDemo2.this, addressBean.getUserAvatar() + "    " + position).show();
+                    ToastUtils.showLong(addressBean.getUserAvatar() + "    " + position);
                 } else if (i == R.id.brademo1_tweetName) {
-                    Toasty.normal(BaseRecActDemo2.this, addressBean.getUserName() + position).show();
+                    ToastUtils.showLong(addressBean.getUserName() + position);
                 } else if (i == R.id.brademo1_tweetText) {
-                    Toasty.normal(BaseRecActDemo2.this, addressBean.getText() + position).show();
+                    ToastUtils.showLong(addressBean.getText() + position);
                 } else {
                 }
             }

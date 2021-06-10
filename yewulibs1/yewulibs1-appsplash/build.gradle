@@ -3,7 +3,7 @@ plugins {
 }
 apply from: './../../commonlibs2.gradle'
 // mob
-//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
+apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')

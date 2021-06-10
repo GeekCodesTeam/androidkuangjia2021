@@ -122,7 +122,7 @@ public abstract class SlbBaseFragment extends Fragment implements NetconListener
 
     public void startActivity(String action) {
         Intent intent = new Intent(action);
-        if (intent.resolveActivity(Objects.requireNonNull(getActivity()).getPackageManager()) != null) {
+        if (intent.resolveActivity(requireActivity().getPackageManager()) != null) {
             startActivity(intent);
         }
     }
@@ -133,7 +133,7 @@ public abstract class SlbBaseFragment extends Fragment implements NetconListener
 
     public void startActivityForResult(String action, int requestCode) {
         Intent intent = new Intent(action);
-        if (intent.resolveActivity(Objects.requireNonNull(getActivity()).getPackageManager()) != null) {
+        if (intent.resolveActivity(requireActivity().getPackageManager()) != null) {
             startActivityForResult(intent, requestCode);
         }
     }

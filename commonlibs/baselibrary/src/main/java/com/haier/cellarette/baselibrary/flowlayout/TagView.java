@@ -5,27 +5,25 @@ import android.view.View;
 import android.widget.Checkable;
 import android.widget.FrameLayout;
 
-public class TagView extends FrameLayout implements Checkable
-{
+/**
+ * Created by zhy on 15/9/10.
+ */
+public class TagView extends FrameLayout implements Checkable {
     private boolean isChecked;
     private static final int[] CHECK_STATE = new int[]{android.R.attr.state_checked};
 
-    public TagView(Context context)
-    {
+    public TagView(Context context) {
         super(context);
     }
 
-    public View getTagView()
-    {
+    public View getTagView() {
         return getChildAt(0);
     }
 
     @Override
-    public int[] onCreateDrawableState(int extraSpace)
-    {
+    public int[] onCreateDrawableState(int extraSpace) {
         int[] states = super.onCreateDrawableState(extraSpace + 1);
-        if (isChecked())
-        {
+        if (isChecked()) {
             mergeDrawableStates(states, CHECK_STATE);
         }
         return states;
@@ -38,10 +36,8 @@ public class TagView extends FrameLayout implements Checkable
      * @param checked The new checked state
      */
     @Override
-    public void setChecked(boolean checked)
-    {
-        if (this.isChecked != checked)
-        {
+    public void setChecked(boolean checked) {
+        if (this.isChecked != checked) {
             this.isChecked = checked;
             refreshDrawableState();
         }
@@ -51,8 +47,7 @@ public class TagView extends FrameLayout implements Checkable
      * @return The current checked state of the view
      */
     @Override
-    public boolean isChecked()
-    {
+    public boolean isChecked() {
         return isChecked;
     }
 
@@ -60,8 +55,7 @@ public class TagView extends FrameLayout implements Checkable
      * Change the checked state of the view to the inverse of its current state
      */
     @Override
-    public void toggle()
-    {
+    public void toggle() {
         setChecked(!isChecked);
     }
 

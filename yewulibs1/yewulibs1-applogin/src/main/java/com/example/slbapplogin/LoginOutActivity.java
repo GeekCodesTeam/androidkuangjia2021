@@ -11,8 +11,6 @@ import com.blankj.utilcode.util.SPUtils;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
 
-import util.SPUtil;
-
 public class LoginOutActivity extends SlbBaseActivity {
 
     private LinearLayout btn_cancel;

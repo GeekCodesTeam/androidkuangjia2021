@@ -184,7 +184,7 @@ public interface RefreshLayout {
     /**
      * 单独设置加载监听器
      */
-    RefreshLayout setOnLoadmoreListener(OnLoadMoreListener listener);
+    RefreshLayout setOnLoadMoreListener(OnLoadMoreListener listener);
 
     /**
      * 同时设置刷新和加载监听器

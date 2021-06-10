@@ -39,12 +39,12 @@ public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        ScreenUtils.setNonFullScreen(this);
-        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.web_white));
-        if (BarUtils.isStatusBarLightMode(this)) {
-            BarUtils.setStatusBarLightMode(this, false);
-        } else {
-            BarUtils.setStatusBarLightMode(this, true);
-        }
+//        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.web_white));
+//        if (BarUtils.isStatusBarLightMode(this)) {
+//            BarUtils.setStatusBarLightMode(this, false);
+//        } else {
+//            BarUtils.setStatusBarLightMode(this, true);
+//        }
         //虚拟键
         if (NavigationBarUtil.hasNavigationBar(this)) {
 //            NavigationBarUtil.initActivity(getWindow().getDecorView());

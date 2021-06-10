@@ -19,7 +19,9 @@ public class SimpleDetailActivityMode1 extends GSYBaseActivityDetail<StandardGSY
     StandardGSYVideoPlayer detailPlayer;
 
 //    private String url = "http://7xjmzj.com1.z0.glb.clouddn.com/20171026175005_JObCxCE2.mp4";
-    private String url = "http://alvideo.ippzone.com/zyvd/98/90/b753-55fe-11e9-b0d8-00163e0c0248";
+//    private String url = "http://alvideo.ippzone.com/zyvd/98/90/b753-55fe-11e9-b0d8-00163e0c0248";
+//    private String url = "https://media6.smartstudy.com/ae/07/3997/2/dest.m3u8";
+    private String url = "http://o-pull.xczx-jn.com/live/test2/playlist.m3u8";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class SimpleDetailActivityMode1 extends GSYBaseActivityDetail<StandardGSY
         detailPlayer.getBackButton().setVisibility(View.GONE);
 
         initVideoBuilderMode();
+        //
+        detailPlayer.startPlayLogic();
 
     }
 

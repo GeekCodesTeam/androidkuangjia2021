@@ -3,6 +3,7 @@ package com.haier.cellarette.baselibrary.flowlayout;
 import android.util.Log;
 import android.view.View;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -15,8 +16,6 @@ public abstract class TagAdapter<T> {
     @Deprecated
     private HashSet<Integer> mCheckedPosList = new HashSet<Integer>();
 
-    public TagAdapter() {}
-
     public TagAdapter(List<T> datas) {
         mTagDatas = datas;
     }
@@ -24,20 +23,6 @@ public abstract class TagAdapter<T> {
     @Deprecated
     public TagAdapter(T[] datas) {
         mTagDatas = new ArrayList<T>(Arrays.asList(datas));
-    }
-
-    public void addData(List<T> datas) {
-        mTagDatas = datas;
-    }
-
-    public void clearData() {
-        if (mTagDatas != null) {
-            mTagDatas.clear();
-        }
-    }
-
-    public List<T> getDataList() {
-        return mTagDatas;
     }
 
     interface OnDataChangedListener {

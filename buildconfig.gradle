@@ -66,10 +66,10 @@ okioVersion                       : "com.squareup.okio:okio:2.6.0",
 //okhttploggerinter                 : "com.squareup.okhttp3:logging-interceptor:4.5.0",
 //okioVersion                       : "com.squareup.okio:okio:2.6.0",
 
-retrofit                          : "com.squareup.retrofit2:retrofit:2.3.0",
-retrofitconverters                : "com.squareup.retrofit2:retrofit-converters:2.3.0",
-retrofitgconverter                : "com.squareup.retrofit2:converter-gson:2.3.0",
-retrofitgconverterscalars         : "com.squareup.retrofit2:converter-scalars:2.0.0",
+retrofit                          : "com.squareup.retrofit2:retrofit:2.4.0",
+retrofitconverters                : "com.squareup.retrofit2:retrofit-converters:2.4.0",
+retrofitgconvertergson            : "com.squareup.retrofit2:converter-gson:2.4.0",
+retrofitgconverterscalars         : "com.squareup.retrofit2:converter-scalars:2.4.0",
 
 // ------------- 图片加载 -------------
 fresco                            : "com.facebook.fresco:fresco:0.11.0",
@@ -87,9 +87,13 @@ annotationProcessorglide47compiler: "com.github.bumptech.glide:compiler:4.11.0",
 glide47okhttp3integration         : "com.github.bumptech.glide:okhttp3-integration:4.11.0",
 
 // ------------- RxAndroid -------------
-rxAndroid                         : "io.reactivex:rxandroid:1.2.1",
-rxJava                            : "io.reactivex:rxjava:1.2.2",
-adapterrxjava                     : "com.squareup.retrofit2:adapter-rxjava:2.1.0",
+//rxJava                            : "io.reactivex:rxjava:1.2.2",
+//rxAndroid                         : "io.reactivex:rxandroid:1.2.1",
+//adapterrxjava                     : "com.squareup.retrofit2:adapter-rxjava:2.1.0",
+rxJava2                           : "io.reactivex.rxjava2:rxjava:2.2.5",
+rxandroid2                        : "io.reactivex.rxjava2:rxandroid:2.1.0",
+adapterrxjava2                    : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+
 
 // ------------- json解析 -------------
 fastJson                          : "com.alibaba:fastjson:1.2.70",
@@ -138,7 +142,7 @@ jsoup                             : 'org.jsoup:jsoup:1.12.1',
 blankj                            : 'com.blankj:utilcodex:1.30.6',
 //--------------------------------
 //MMKV
-mmkv                              : 'com.tencent:mmkv-static:1.2.7',
+mmkv                              : 'com.tencent:mmkv-static:1.2.9',
 //--------------------------------
 thecheeselibrary                  : 'com.inthecheesefactory.thecheeselibrary:stated-fragment-support-v4:0.10.0',
 //--------------------------------集成框架
@@ -161,7 +165,7 @@ johnkilprint                      : 'com.github.johnkil.print:print:1.2.2',
 //---------------------Tree树结构-----------------------------
 bmelnychuk                        : 'com.github.bmelnychuk:atv:1.2.9',
 //---------------------EasyPermissions高效处理权限-------------------------
-easypermissions                   : 'pub.devrel:easypermissions:2.0.1',
+easypermissions                   : 'pub.devrel:easypermissions:3.0.0',
 //--------------------------七牛云sdk------------------------------
 qiniu                             : 'com.qiniu:qiniu-android-sdk:7.2.3',
 //--------------------------使用EasyRecyclerView列表实现复杂布局的刷新与加载--------------------------

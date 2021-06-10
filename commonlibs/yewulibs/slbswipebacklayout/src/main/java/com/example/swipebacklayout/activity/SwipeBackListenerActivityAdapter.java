@@ -3,7 +3,7 @@ package com.example.swipebacklayout.activity;
 import android.app.Activity;
 import androidx.annotation.NonNull;
 import com.example.swipebacklayout.SwipeBackLayout;
-import com.example.swipebacklayout.Utils;
+import com.example.swipebacklayout.SwipeBackUtil;
 import java.lang.ref.WeakReference;
 
 /**
@@ -25,7 +25,7 @@ public class SwipeBackListenerActivityAdapter implements SwipeBackLayout.SwipeLi
     public void onEdgeTouch(int edgeFlag) {
         Activity activity = mActivity.get();
         if (null != activity) {
-            Utils.convertActivityToTranslucent(activity);
+            SwipeBackUtil.convertActivityToTranslucent(activity);
         }
     }
 

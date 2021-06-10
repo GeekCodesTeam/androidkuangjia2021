@@ -19,15 +19,16 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.haier.cellarette.baselibrary.R;
+import androidx.core.app.ActivityCompat;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.haier.cellarette.baselibrary.R;
 import com.zhy.base.fileprovider.AndroidFileUtil;
 
 import java.io.File;
@@ -338,7 +339,7 @@ public class UpdateManager {
                         mHandler.sendEmptyMessage(DOWNLOAD);
                         if (numread <= 0) {
                             // 下载完成
-                            Toasty.success(BaseApp.get(), "酒知道下载完成.");
+                            ToastUtils.showLong("酒知道下载完成.");
                             mHandler.sendEmptyMessage(DOWNLOAD_FINISH);
                             break;
                         }

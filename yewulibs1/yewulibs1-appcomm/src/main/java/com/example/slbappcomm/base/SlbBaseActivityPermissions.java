@@ -2,6 +2,8 @@ package com.example.slbappcomm.base;
 
 import android.Manifest;
 
+import com.example.slbappcomm.base.news.SlbBaseActivityPermissionsBase;
+
 public class SlbBaseActivityPermissions extends SlbBaseActivityPermissionsBase {
     /**
      * 需要进行检测的权限数组

@@ -25,7 +25,9 @@ import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeAddress;
 import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
+import com.blankj.utilcode.util.PhoneUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.geek.libutils.data.LocationUtils;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
@@ -48,16 +50,28 @@ public class LocActivity extends AppCompatActivity {
         setContentView(R.layout.activity_loc);
         findview(savedInstanceState);
         onclick();
-        donetwork();
         //
         XXPermissions.with(this)
-                .permission(Permission.Group.LOCATION)
+                .permission(Permission.ACCESS_COARSE_LOCATION)
+                .permission(Permission.ACCESS_FINE_LOCATION)
+                .permission(Permission.ACCESS_BACKGROUND_LOCATION)
                 .request(new OnPermissionCallback() {
 
                     @Override
                     public void onGranted(List<String> permissions, boolean all) {
                         if (all) {
-                            ToastUtils.showLong("获取定位权限成功");
+//                            ToastUtils.showLong("获取定位权限成功");
+//                            if (!PhoneUtils.isSimCardReady()) {
+//                                // 如果没有sim卡就开启GPS，否则拿不到定位
+//                                if (!LocationUtils.isGpsEnabled()) {
+//                                    LocationUtils.openGpsSettings();
+//                                }
+//                            }
+//                            if (!LocationUtils.isGpsEnabled()) {
+//                                LocationUtils.openGpsSettings();
+//                            }else {
+//                                donetwork();
+//                            }
                         }
                     }
 
@@ -85,7 +99,7 @@ public class LocActivity extends AppCompatActivity {
             @Override
             public void success(LocationBean model) {
                 bean = model;
-                setPos(model.getLatitude(),model.getLongitude(),model.getAddress());
+                setPos(model.getLatitude(), model.getLongitude(), model.getAddress());
 
             }
 
@@ -100,16 +114,16 @@ public class LocActivity extends AppCompatActivity {
         findViewById(R.id.tv2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (marker!=null){
+                if (marker != null) {
                     marker.destroy();
-                    marker=null;
+                    marker = null;
                 }
                 //定位
                 LocUtil.getLocation(LocActivity.this, new LocListenerAdapter() {
                     @Override
                     public void success(LocationBean model) {
                         bean = model;
-                        setPos(model.getLatitude(),model.getLongitude(),model.getAddress());
+                        setPos(model.getLatitude(), model.getLongitude(), model.getAddress());
                     }
                 });
             }
@@ -123,12 +137,13 @@ public class LocActivity extends AppCompatActivity {
         });
         aMap.setOnMapClickListener(new AMap.OnMapClickListener() {
             private RegeocodeAddress model;
+
             @Override
             public void onMapClick(LatLng latLng) {
                 //根据经纬度获取model
                 GeocodeSearch geocodeSearch = new GeocodeSearch(LocActivity.this);
                 geocodeSearch.setOnGeocodeSearchListener(geocodeSearchListener);
-                RegeocodeQuery regeocodeQuery=new RegeocodeQuery(new LatLonPoint(latLng.latitude,latLng.longitude),1000,GeocodeSearch.AMAP);
+                RegeocodeQuery regeocodeQuery = new RegeocodeQuery(new LatLonPoint(latLng.latitude, latLng.longitude), 1000, GeocodeSearch.AMAP);
                 geocodeSearch.getFromLocationAsyn(regeocodeQuery);
 //                Animation animation = new RotateAnimation(marker.getRotateAngle(),marker.getRotateAngle()+180,0,0,0);
 //                long duration = 1000L;
@@ -170,12 +185,12 @@ public class LocActivity extends AppCompatActivity {
             double b = regeocodeResult.getRegeocodeQuery().getPoint().getLongitude();
             String c = regeocodeResult.getRegeocodeAddress().getFormatAddress();
             //绘制单个marker
-            if (marker!=null){
+            if (marker != null) {
                 marker.destroy();
-                marker=null;
+                marker = null;
             }
             marker = aMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(a,b))
+                    .position(new LatLng(a, b))
                     .icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
                             .decodeResource(getResources(), R.drawable.marker)))
                     .title("定位：")
@@ -183,7 +198,7 @@ public class LocActivity extends AppCompatActivity {
                     .draggable(true));
             marker.showInfoWindow();
 
-            setPos(a+"",b+"",c);
+            setPos(a + "", b + "", c);
         }
 
         @Override
@@ -192,14 +207,14 @@ public class LocActivity extends AppCompatActivity {
         }
     };
 
-    private void setPos(String la,String lo,String add){
-        tv1.setText(la+"     "+lo+"     "+add);
+    private void setPos(String la, String lo, String add) {
+        tv1.setText(la + "     " + lo + "     " + add);
         //参数依次是：视角调整区域的中心点坐标、希望调整到的缩放级别、俯仰角0°~45°（垂直与地图时为0）、偏航角 0~360° (正北方为0)
 //        CameraUpdate mCameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(Double.valueOf(la),Double.valueOf(lo)),18,30,0));
 //        aMap.moveCamera(mCameraUpdate);
 
         //带动画
-        changeCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(Double.valueOf(la),Double.valueOf(lo)),18,30,0)), null);
+        changeCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(Double.valueOf(la), Double.valueOf(lo)), 18, 30, 0)), null);
 //        aMap.clear();
 //        aMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(la),Double.valueOf(lo)))
 //                .icon(BitmapDescriptorFactory
@@ -226,6 +241,12 @@ public class LocActivity extends AppCompatActivity {
      */
     @Override
     protected void onResume() {
+        //
+        if (!LocationUtils.isGpsEnabled()) {
+            LocationUtils.openGpsSettings();
+        }else {
+            donetwork();
+        }
         super.onResume();
         mapView.onResume();
     }

@@ -9,15 +9,16 @@
         <!--        <item name="windowActionBar">false</item>-->
         <!--        <item name="windowNoTitle">true</item>-->
 
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--        <item name="android:navigationBarColor">@android:color/transparent</item>-->
+        <!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
         <!--windowTranslucentNavigation这个属性设置成true，则navigationBarColor设置会失效-->
         <!--<item name="android:windowTranslucentNavigation">true</item>-->
         <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/default_img</item>
-<!--        <item name="android:windowIsTranslucent">false</item>-->
-<!--        <item name="android:windowDisablePreview">true</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--        <item name="android:windowDisablePreview">true</item>-->
     </style>
 
     <style name="HXKTThemeSplash2" parent="Theme.AppCompat.Light.NoActionBar">

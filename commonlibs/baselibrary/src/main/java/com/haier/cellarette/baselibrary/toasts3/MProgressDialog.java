@@ -1,33 +1,31 @@
 package com.haier.cellarette.baselibrary.toasts3;
 
-import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.text.TextUtils;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.haier.cellarette.baselibrary.R;
+import com.haier.cellarette.baselibrary.toasts3.base.BaseDialog;
 import com.haier.cellarette.baselibrary.toasts3.config.MDialogConfig;
 import com.haier.cellarette.baselibrary.toasts3.utils.MSizeUtils;
 import com.haier.cellarette.baselibrary.toasts3.view.MNHudProgressWheel;
 
 /**
  * Created by maning on 2017/8/9.
- * 进度Dialog
+ * LoadingDialog
  */
 
 public class MProgressDialog {
 
-    private static final String LoadingDefaultMsg = "加载中";
-
-    private static Dialog mDialog;
+    private static BaseDialog mDialog;
     private static MDialogConfig mDialogConfig;
 
     //布局
@@ -38,20 +36,23 @@ public class MProgressDialog {
 
 
     private static void initDialog(Context mContext) {
+        checkDialogConfig();
         try {
-            LayoutInflater inflater = LayoutInflater.from(mContext);
-            View mProgressDialogView = inflater.inflate(R.layout.mn_progress_dialog_layout, null);
-            mDialog = new Dialog(mContext, R.style.MNCustomDialog);
-            mDialog.setCancelable(false);
-            mDialog.setCanceledOnTouchOutside(false);
+            View mProgressDialogView = LayoutInflater.from(mContext).inflate(R.layout.mn_progress_dialog_layout, null);
+            mDialog = new BaseDialog(mContext, R.style.MNCustomDialog);
             mDialog.setContentView(mProgressDialogView);
-
-            //设置整个Dialog的宽高
-            WindowManager.LayoutParams layoutParams = mDialog.getWindow().getAttributes();
-            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.gravity = Gravity.CENTER;
-            mDialog.getWindow().setAttributes(layoutParams);
+            mDialog.initStatusBar(mDialogConfig.windowFullscreen);
+            mDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    //判断是不是有监听
+                    if (mDialogConfig != null && mDialogConfig.onDialogDismissListener != null) {
+                        mDialogConfig.onDialogDismissListener.onDismiss();
+                        mDialogConfig.onDialogDismissListener = null;
+                    }
+                    releaseDialog();
+                }
+            });
 
             //布局相关
             dialog_window_background = (RelativeLayout) mProgressDialogView.findViewById(R.id.dialog_window_background);
@@ -60,9 +61,11 @@ public class MProgressDialog {
             tv_show = (TextView) mProgressDialogView.findViewById(R.id.tv_show);
             progress_wheel.spin();
 
+            //配置相关
             configView(mContext);
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e(">>>MProgressDialog>>>", "MProgressDialog-initDialog异常:" + e.toString());
         }
     }
 
@@ -73,14 +76,9 @@ public class MProgressDialog {
     }
 
     private static void configView(Context mContext) {
-        checkDialogConfig();
-        try {
-            //设置动画
-            if (mDialogConfig != null && mDialogConfig.animationID != 0 && mDialog.getWindow() != null) {
-                mDialog.getWindow().setWindowAnimations(mDialogConfig.animationID);
-            }
-        } catch (Exception e) {
-
+        //设置动画
+        if (mDialogConfig != null && mDialogConfig.animationID != 0 && mDialog.getWindow() != null) {
+            mDialog.getWindow().setWindowAnimations(mDialogConfig.animationID);
         }
 
         //点击外部可以取消
@@ -105,6 +103,10 @@ public class MProgressDialog {
                 MSizeUtils.dp2px(mContext, mDialogConfig.paddingRight),
                 MSizeUtils.dp2px(mContext, mDialogConfig.paddingBottom)
         );
+        if (mDialogConfig.minWidth > 0 && mDialogConfig.minHeight > 0) {
+            dialog_view_bg.setMinimumWidth(MSizeUtils.dp2px(mContext, mDialogConfig.minWidth));
+            dialog_view_bg.setMinimumHeight(MSizeUtils.dp2px(mContext, mDialogConfig.minHeight));
+        }
 
         //Progress设置
         progress_wheel.setBarColor(mDialogConfig.progressColor);
@@ -129,30 +131,23 @@ public class MProgressDialog {
                 }
             }
         });
-
-        //全屏模式
-        if (mDialogConfig.windowFullscreen) {
-            mDialog.getWindow().setFlags(
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
     }
 
     public static void showProgress(Context context) {
-        showProgress(context, LoadingDefaultMsg);
+        showProgress(context, null,null);
     }
 
-    public static void showProgress(Context context, String msg) {
+    public static void showProgress(Context context, CharSequence msg) {
         showProgress(context, msg, null);
     }
 
     public static void showProgress(Context context, MDialogConfig mDialogConfig) {
-        showProgress(context, LoadingDefaultMsg, mDialogConfig);
+        showProgress(context, null, mDialogConfig);
     }
 
-    public static void showProgress(Context context, String msg, MDialogConfig dialogConfig) {
+    public static void showProgress(Context context, CharSequence msg, MDialogConfig dialogConfig) {
+        dismissProgress();
         try {
-            dismissProgress();
             //设置配置
             if (dialogConfig == null) {
                 dialogConfig = new MDialogConfig.Builder().build();
@@ -170,7 +165,7 @@ public class MProgressDialog {
                 mDialog.show();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(">>>MProgressDialog>>>", "MProgressDialog-showProgress异常:" + e.toString());
         }
     }
 
@@ -178,21 +173,26 @@ public class MProgressDialog {
         try {
             if (mDialog != null && mDialog.isShowing()) {
                 //判断是不是有监听
-                if (mDialogConfig.onDialogDismissListener != null) {
+                if (mDialogConfig != null && mDialogConfig.onDialogDismissListener != null) {
                     mDialogConfig.onDialogDismissListener.onDismiss();
                     mDialogConfig.onDialogDismissListener = null;
                 }
-                mDialogConfig = null;
-                dialog_window_background = null;
-                dialog_view_bg = null;
-                progress_wheel = null;
-                tv_show = null;
                 mDialog.dismiss();
-                mDialog = null;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(">>>MProgressDialog>>>", "MProgressDialog-dismissProgress异常:" + e.toString());
+        } finally {
+            releaseDialog();
         }
+    }
+
+    private static void releaseDialog() {
+        mDialogConfig = null;
+        mDialog = null;
+        dialog_window_background = null;
+        dialog_view_bg = null;
+        progress_wheel = null;
+        tv_show = null;
     }
 
     public static boolean isShowing() {
@@ -201,5 +201,4 @@ public class MProgressDialog {
         }
         return false;
     }
-
 }

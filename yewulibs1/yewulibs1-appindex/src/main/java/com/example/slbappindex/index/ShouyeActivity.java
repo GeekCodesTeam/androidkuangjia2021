@@ -24,8 +24,8 @@ import com.example.bizyewu1.view.CheckverionView;
 import com.example.slbappcomm.base.SlbBaseActivity;
 import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
-import com.github.commonlibs.libupdateapputils.util.UpdateAppReceiver;
-import com.github.commonlibs.libupdateapputils.util.UpdateAppUtils;
+import com.github.commonlibs.libupdateapputilsold.util.UpdateAppReceiver;
+import com.github.commonlibs.libupdateapputilsold.util.UpdateAppUtils;
 import com.geek.libutils.app.BaseAppManager;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 
@@ -327,14 +327,6 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
             }
         }
     }
-
-//    @Override
-//    public Resources getResources() {
-//        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
-//        AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
-//        AutoSizeCompat.autoConvertDensity((super.getResources()), 375, true);//如果有自定义需求就用这个方法
-//        return super.getResources();
-//    }
 
     @Override
     public void OnUpdateVersionSuccess(VersionInfoBean versionInfoBean) {

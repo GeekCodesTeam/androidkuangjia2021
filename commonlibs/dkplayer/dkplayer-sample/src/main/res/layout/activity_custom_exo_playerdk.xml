@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.extend.CustomExoPlayerActivityDk">
+
+    <xyz.doikki.dkplayer.widget.videoview.ExoVideoViewDk
+        android:id="@+id/vv"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"/>
+
+    <Button
+        android:id="@+id/btn_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="边播边存"/>
+
+    <Button
+        android:id="@+id/btn_concat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:textAllCaps="false"
+        android:text="ConcatenatingMediaSource"/>
+
+    <Button
+        android:id="@+id/btn_clip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:textAllCaps="false"
+        android:text="ClippingMediaSource"/>
+
+    <Button
+        android:id="@+id/btn_dash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="dash"/>
+
+    <Button
+        android:id="@+id/btn_rtsp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="rtsp"/>
+
+</LinearLayout>

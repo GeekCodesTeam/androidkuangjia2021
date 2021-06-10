@@ -1,22 +1,20 @@
 package com.haier.cellarette.baselibrary.toasts3;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.haier.cellarette.baselibrary.R;
+import com.haier.cellarette.baselibrary.toasts3.base.BaseDialog;
 import com.haier.cellarette.baselibrary.toasts3.config.MDialogConfig;
 import com.haier.cellarette.baselibrary.toasts3.utils.MSizeUtils;
 
@@ -28,7 +26,7 @@ public class MStatusDialog {
 
     private Handler mHandler;
     private Context mContext;
-    private Dialog mDialog;
+    private BaseDialog mDialog;
 
     private MDialogConfig mDialogConfig;
 
@@ -50,22 +48,13 @@ public class MStatusDialog {
     }
 
     private void initDialog() {
+        checkDialogConfig();
         try {
-
             LayoutInflater inflater = LayoutInflater.from(mContext);
             View mProgressDialogView = inflater.inflate(R.layout.mn_status_dialog_layout, null);
-            mDialog = new Dialog(mContext, R.style.MNCustomDialog);
-            mDialog.setCancelable(false);
-            mDialog.setCanceledOnTouchOutside(false);
+            mDialog = new BaseDialog(mContext, R.style.MNCustomDialog);
             mDialog.setContentView(mProgressDialogView);
-
-            //设置整个Dialog的宽高
-            WindowManager.LayoutParams layoutParams = mDialog.getWindow().getAttributes();
-            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.gravity = Gravity.CENTER;
-            mDialog.getWindow().setAttributes(layoutParams);
-
+            mDialog.initStatusBar(mDialogConfig.windowFullscreen);
             //获取布局
             dialog_window_background = (RelativeLayout) mProgressDialogView.findViewById(R.id.dialog_window_background);
             dialog_view_bg = (RelativeLayout) mProgressDialogView.findViewById(R.id.dialog_view_bg);
@@ -88,7 +77,6 @@ public class MStatusDialog {
     }
 
     private void configView() {
-        checkDialogConfig();
         //window背景
         dialog_window_background.setBackgroundColor(mDialogConfig.backgroundWindowColor);
 
@@ -129,14 +117,6 @@ public class MStatusDialog {
             layoutParams.height = MSizeUtils.dp2px(mContext, mDialogConfig.imgHeight);
             imageStatus.setLayoutParams(layoutParams);
         }
-
-        //全屏模式
-        if (mDialogConfig.windowFullscreen) {
-            mDialog.getWindow().setFlags(
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-
     }
 
     public void show(String msg, Drawable drawable) {
@@ -147,6 +127,9 @@ public class MStatusDialog {
         try {
             if (mDialog == null) {
                 return;
+            }
+            if (mDialog.isShowing()) {
+                mDialog.dismiss();
             }
             imageStatus.setImageDrawable(drawable);
             tvShow.setText(msg);

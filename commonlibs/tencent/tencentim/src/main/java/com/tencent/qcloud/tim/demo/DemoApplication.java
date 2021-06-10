@@ -110,7 +110,7 @@
 //
 //        registerActivityLifecycleCallbacks(new StatisticActivityLifecycleCallback());
 //
-////        if (BuildConfig.DEBUG) {
+////        if (true) {
 ////            if (LeakCanary.isInAnalyzerProcess(this)) {
 ////                return;
 ////            }

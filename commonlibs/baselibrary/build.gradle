@@ -22,7 +22,8 @@ dependencies {
     // app升级
     api project(':commonlibs:hunheku:libupdateapputilsold')
     // https://github.com/teprinciple/UpdateAppUtils
-    api 'com.teprinciple:updateapputilsx:2.3.0'
+//    api 'com.teprinciple:updateapputilsx:2.3.0'
+    api project(':commonlibs:hunheku:libupdateapputilsnew')
     // https://github.com/jd-alexander/LikeButton
     api 'com.mikepenz:iconics-core:2.9.1@aar'
     api 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
@@ -33,9 +34,10 @@ dependencies {
     // https://github.com/jaredrummler/MaterialSpinner
     api 'com.jaredrummler:material-spinner:1.2.5'
     // https://github.com/kyleduo/SwitchButton
-    api 'com.kyleduo.switchbutton:library:2.0.3'
+//    api 'com.kyleduo.switchbutton:library:2.0.3'
     // https://github.com/drawthink/ExpandableRecyclerView
-    api 'com.drawthink:expandable-recyclerview:0.0.3'
+//    api 'com.drawthink:expandable-recyclerview:0.0.3'
+    api project(':commonlibs:hunheku:libexpandablerecyclerview')
     // https://github.com/BolexLiu/AutoEx
 //    api 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.8'
     // https://github.com/Jzvd/JZVideo
@@ -47,23 +49,23 @@ dependencies {
     // https://github.com/greenrobot/EventBus
     api 'org.greenrobot:eventbus:3.1.1'
     // https://github.com/Meituan-Dianping/walle
-    api 'com.meituan.android.walle:library:1.1.7'
+//    api 'com.meituan.android.walle:library:1.1.7'
+//    api 'com.github.GeekCodesTeam:walle:1.1.7'
     // https://github.com/BolexLiu/PressScanCode
     api 'com.github.BolexLiu:PressScanCode:v1.0.0'
     // https://github.com/ethanhua/Skeleton
-    api 'com.ethanhua:skeleton:1.1.2'
+//    api 'com.ethanhua:skeleton:1.1.2'
     // https://github.com/team-supercharge/ShimmerLayout
-    api 'io.supercharge:shimmerlayout:2.1.0'
+//    api 'io.supercharge:shimmerlayout:2.1.0'
+    api project(':commonlibs:hunheku:libskeleton')
 //    api 'com.larswerkman:lobsterpicker:1.0.1'
     // https://github.com/square/leakcanary
     api librarys.leakcanaryAndroid
     // https://github.com/gongwen/MarqueeViewLibrary
-    api 'com.gongwen:marqueelibrary:1.1.3'
-    //
-    api 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
-    api 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+//    api 'com.gongwen:marqueelibrary:1.1.3'
     // https://github.com/KunMinX/Linkage-RecyclerView
-    api 'com.kunminx.linkage:linkage-recyclerview:2.3.5'
+//    api 'com.kunminx.linkage:linkage-recyclerview:2.3.5'
+    api project(':commonlibs:hunheku:liblinkagerecyclerview')
     // https://github.com/LuckSiege/PictureSelector
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.1'
     // https://github.com/dongjunkun/DropDownMenu
@@ -73,11 +75,13 @@ dependencies {
     // https://github.com/koral--/android-gif-drawable
     api 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
     // https://github.com/hongyangAndroid/FlowLayout
-    api 'com.hyman:flowlayout-lib:1.1.2'
+//    api 'com.hyman:flowlayout-lib:1.1.2'
     // https://github.com/AigeStudio/WheelPicker
-    api 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+//    api 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    api project(':commonlibs:hunheku:libwheelpicker')
     // https://github.com/shaohui10086/BottomDialog
-    api 'me.shaohui:bottomdialog:1.1.9'
+//    api 'me.shaohui:bottomdialog:1.1.9'
+    api project(':commonlibs:hunheku:llibbottomdialog')
     // https://github.com/yhaolpz/FloatWindow
     api 'com.github.yhaolpz:FloatWindow:1.0.9'
     // https://github.com/dfqin/PermissionGrantor
@@ -85,19 +89,20 @@ dependencies {
     // For developers using AndroidX in their applications
 //    api 'pub.devrel:easypermissions:3.0.0'
     // For developers using the Android Support Library
-    api 'pub.devrel:easypermissions:2.0.1'
+    api 'pub.devrel:easypermissions:3.0.0'
     // https://github.com/getActivity/XXPermissions
-    api 'com.hjq:xxpermissions:9.6'
+    api 'com.github.getActivity:XXPermissions:11.0'
     // https://github.com/yanzhenjie/AndPermission
-    api 'com.yanzhenjie:permission:2.0.3'
+//    api 'com.yanzhenjie:permission:2.0.3'
+    api project(':commonlibs:hunheku:libyanzhenjieandpermission')
     // https://github.com/yshrsmz/KeyboardVisibilityEvent
     api 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'
     // https://github.com/getActivity/ToastUtils
-    api 'com.hjq:toast:5.8'
+    api 'com.github.getActivity:ToastUtils:9.2'
     // https://github.com/everhad/AndroidRatingStar
     api 'com.github.everhad:AndroidRatingStar:v1.0.4'
     // https://github.com/li-xiaojun/XPopup
-    api 'com.lxj:xpopup:1.8.4'
+    api 'com.github.li-xiaojun:XPopup:2.3.4'
     // https://github.com/meetsl/SCardView-master
     api 'io.github.meetsl:SCardView:1.1'
     // https://github.com/nanchen2251/BankCardUtils
@@ -107,12 +112,12 @@ dependencies {
     // https://github.com/zzhoujay/RichText/
     api 'com.zzhoujay.richtext:richtext:3.0.7'
     // https://github.com/maning0303/MNProgressHUD
-    api 'com.github.maning0303:MNProgressHUD:V1.1.8X'
+//    api 'com.github.maning0303:MNProgressHUD:V1.1.8X'
     // https://github.com/MZCretin/ExpandableTextView
     api 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
     // https://github.com/Manabu-GT/ExpandableTextView
     api 'com.ms-square:expandableTextView:0.1.4'
     // https://github.com/yanzhenjie/NoFragment
-    api 'com.yanzhenjie:fragment:1.0.1'
-
+//    api 'com.yanzhenjie:fragment:1.0.1'
+    api project(':commonlibs:hunheku:libyanzhenjiebase')
 }

@@ -3,7 +3,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namelibappmob"
         android:supportsRtl="true">
         <meta-data
             android:name="com.mob.mobpush.debugLevel"
@@ -32,7 +32,7 @@
                 <data
                     android:host="cs.znclass.com"
                     android:path="/geek/test"
-                    android:scheme="app" />
+                    android:scheme="dataability" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />

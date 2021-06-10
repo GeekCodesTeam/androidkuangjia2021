@@ -10,18 +10,16 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.example.gsydemo.JumpVideoPlayUtils;
+import com.example.gsydemo.SimplePlayer;
 import com.example.slbappcomm.R;
 import com.example.slbappcomm.base.SlbBaseActivity;
-import com.example.slbappcomm.videoplay.gsy.JumpVideoPlayUtils;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.interfaces.OnConfirmListener;
-import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
-//import android.support.annotation.Nullable;
 
 public class VideoPlayActivity extends SlbBaseActivity implements View.OnClickListener {
 
-    StandardGSYVideoPlayer videoPlayer;
     TextView tv1;
     TextView tv2;
     TextView tv3;
@@ -104,7 +102,6 @@ public class VideoPlayActivity extends SlbBaseActivity implements View.OnClickLi
     private void setvideoplay1() {
         //简单的播放
         JumpVideoPlayUtils.goToPlayEmptyControlActivity(this, tv1);
-//        startActivity(new Intent(this, SimplePlayer.class));
     }
 
     private void setxpop() {

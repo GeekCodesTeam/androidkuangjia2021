@@ -9,7 +9,7 @@
     <!--android:theme="@style/AppThemewebview"-->
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namelibwebview"
         android:supportsRtl="true">
         <activity
             android:name=".DemoWebviewMainActivity"
@@ -73,6 +73,39 @@
             <intent-filter>
                 <action android:name="${applicationId}.web.page" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.WebViewActivity"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.WebViewActivity"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.WebViewActivity"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
 

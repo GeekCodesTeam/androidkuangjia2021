@@ -43,14 +43,15 @@ import com.example.slbappjpushshare.fenxiang.OnShareResultInfoLitener;
 import com.example.slbappjpushshare.fenxiang.beans.WeixinBeanParam;
 import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.btnonclick.view.BounceView;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXMiniProgramObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.umeng.analytics.MobclickAgent;
+
 import java.lang.reflect.Method;
+
 import cn.jiguang.share.android.api.JShareInterface;
 
 // 分享弹窗
@@ -454,7 +455,7 @@ public class PopForShare extends PopupWindow implements OnShareResultInfoLitener
 
     @Override
     public void onResults(String platform, String toastMsg, String data) {
-        Toasty.normal(activity, toastMsg).show();
+        ToastUtils.showLong(toastMsg);
         jPushShareUtils.ondes();
         dismiss();
     }

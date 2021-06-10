@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">yewulibs-demo1-appsplash</string>
+    <string name="app_nameappsplash" translatable="false">yewulibs-demo1-appsplash</string>
     <string name="appsplash_djs" translatable="false">跳过(%s)</string>
 </resources>

@@ -1,22 +1,19 @@
 package com.haier.cellarette.baselibrary.recycleviewmultitype.activitys;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-//import androidx.appcompat.widget.GridLayoutManager;
-//import androidx.appcompat.widget.OrientationHelper;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.OrientationHelper;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo4.ItemDemo4;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo4.ItemHeadDemo4;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo4.ItemDemo4Binder;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo4.ItemDemo4HeadBinder;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +29,7 @@ public class RecDemo4Activity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private Button btn1;
     Items items = new Items();
-//    private TreeSet<ItemDemo4> selectedSet = new TreeSet<>();
+    //    private TreeSet<ItemDemo4> selectedSet = new TreeSet<>();
     private List<ItemDemo4> selectedList = new ArrayList<>();
 
     @Override
@@ -74,7 +71,7 @@ public class RecDemo4Activity extends AppCompatActivity {
                     content.append(number.getContent1()).append(" ");
                 }
 //                ToastUtil.showToastCenter("Selected items: " + content);
-                Toasty.normal(RecDemo4Activity.this,"Selected items: " + content).show();
+                ToastUtils.showLong("Selected items: " + content);
             }
         });
 

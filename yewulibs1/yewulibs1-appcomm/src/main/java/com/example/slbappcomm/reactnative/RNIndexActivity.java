@@ -24,7 +24,7 @@
 //                .setBundleAssetName("index.android.bundle")
 //                .setJSMainModulePath("index.android")
 //                .addPackage(new MainReactPackage())
-//                .setUseDeveloperSupport(BuildConfig.DEBUG)
+//                .setUseDeveloperSupport(true)
 //                .setInitialLifecycleState(LifecycleState.RESUMED)
 //                .build();
 //

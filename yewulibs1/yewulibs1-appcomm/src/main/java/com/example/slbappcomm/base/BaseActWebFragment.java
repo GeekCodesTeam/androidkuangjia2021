@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
+import com.example.slbappcomm.base.news.BaseAgentWebFragment;
+
 public abstract class BaseActWebFragment extends BaseAgentWebFragment {
 
     @Nullable

@@ -40,7 +40,7 @@
                 android:textColor="@color/new_text_color"
                 android:textSize="16sp" />
 
-            <com.kyleduo.switchbutton.SwitchButton
+            <com.haier.cellarette.baselibrary.switchbutton.SwitchButtonksw
                 android:id="@+id/switch_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

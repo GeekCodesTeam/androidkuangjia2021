@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Alipay SDK Demo</string>
+    <string name="app_namelibapppay">Alipay SDK Demo</string>
     <string name="demo_info_text">Warning: \n\nFor demonstration purpose, the assembling and signing of the request parameters are done on the client side.\nHowever, in practice, both assembling and signing MUST BE carried out on the server side.</string>
     <string name="pay_with_alipay">Pay with Alipay</string>
     <string name="pay_with_alipay_hk">Pay with AlipayHK</string>

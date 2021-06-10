@@ -93,12 +93,17 @@ dependencies {
     // 高德地图
     api project(':commonlibs:hunheku:liblocations')
     // viewpager2 轮播图 https://github.com/youth5201314/banner
-    api 'com.youth.banner:banner:2.1.0'
+    api 'io.github.youth5201314:banner:2.2.2'
     // https://github.com/CarGuo/GSYIjkJava
     api project(':commonlibs:yewulibs:slbgsyvideonew')
-    // jiaozivideoplayer
+    // https://github.com/Jzvd/JZVideo
     api project(':commonlibs:yewulibs:slbjiaozvideonew')
-    // 保利威直播
+    // https://github.com/Doikki/DKVideoPlayer
+    api project(':commonlibs:dkplayer:dkplayer-sample')
+    //
+//    api 'com.shuyu:GSYVideoPlayer:7.1.5'
+//    api project(':commonlibs:yewulibs:slbjiaozivideoplayer')
+    // 保利威直播1
     api project(':commonlibs:zhibopolyv:demo')
     // 环信IM
     // api project(':commonlibs:huanxin:huanxinim')
@@ -106,7 +111,14 @@ dependencies {
     api project(':commonlibs:tencent:tencentim')
     // RongCloudIM
     api project(':commonlibs:rongcloud:rongcloudim')
+    //
+    api project(':commonlibs:hunheku:libokhttputils')
+    // 指纹验证
+    api project(':commonlibs:yewulibs:slbyanzheng')
     //TODO aar
 //    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
-
+    // test
+    bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
+    bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
+    bxn_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
 }

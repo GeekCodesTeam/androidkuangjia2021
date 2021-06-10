@@ -12,6 +12,7 @@ import com.example.slbappcomm.R;
 import com.example.slbappcomm.baserecycleview.SlbBaseActivityViewPage;
 import com.example.slbappcomm.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.example.slbappcomm.utils.CommonUtils;
+import com.example.swipebacklayout.SwipeBack;
 import com.geek.libutils.app.FragmentHelper;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
@@ -19,6 +20,7 @@ import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+@SwipeBack(value = false)
 public class ActViewPageYewuList1 extends SlbBaseActivityViewPage implements View.OnClickListener {
 
 //    private HCategoryPresenter presenter1;
@@ -82,7 +84,7 @@ public class ActViewPageYewuList1 extends SlbBaseActivityViewPage implements Vie
     @Override
     protected void findviewAdd() {
         tv_right.setVisibility(View.VISIBLE);
-        select_useful(tv_right, R.drawable.icon_jiantou4);
+        select_useful(tv_right, R.drawable.ic_zhaoliying);
         tv_right.setText("说明");
     }
 

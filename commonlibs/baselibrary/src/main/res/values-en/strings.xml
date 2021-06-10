@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="baselibraryappname" translatable="false">baselibrary</string>
     <string name="cancel">cancel</string>
     <string name="ok">sure</string>
     <string name="retry_text">try</string>

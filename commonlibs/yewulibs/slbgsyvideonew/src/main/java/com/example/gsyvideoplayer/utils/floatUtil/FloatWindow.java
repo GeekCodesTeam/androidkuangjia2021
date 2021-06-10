@@ -101,16 +101,16 @@ public class FloatWindow {
 
         public B setWidth(@Screen.screenType int screenType, float ratio) {
             mWidth = (int) ((screenType == Screen.width ?
-                    Util.getScreenWidth(mApplicationContext) :
-                    Util.getScreenHeight(mApplicationContext)) * ratio);
+                    UtilGSY.getScreenWidth(mApplicationContext) :
+                    UtilGSY.getScreenHeight(mApplicationContext)) * ratio);
             return this;
         }
 
 
         public B setHeight(@Screen.screenType int screenType, float ratio) {
             mHeight = (int) ((screenType == Screen.width ?
-                    Util.getScreenWidth(mApplicationContext) :
-                    Util.getScreenHeight(mApplicationContext)) * ratio);
+                    UtilGSY.getScreenWidth(mApplicationContext) :
+                    UtilGSY.getScreenHeight(mApplicationContext)) * ratio);
             return this;
         }
 
@@ -127,15 +127,15 @@ public class FloatWindow {
 
         public B setX(@Screen.screenType int screenType, float ratio) {
             xOffset = (int) ((screenType == Screen.width ?
-                    Util.getScreenWidth(mApplicationContext) :
-                    Util.getScreenHeight(mApplicationContext)) * ratio);
+                    UtilGSY.getScreenWidth(mApplicationContext) :
+                    UtilGSY.getScreenHeight(mApplicationContext)) * ratio);
             return this;
         }
 
         public B setY(@Screen.screenType int screenType, float ratio) {
             yOffset = (int) ((screenType == Screen.width ?
-                    Util.getScreenWidth(mApplicationContext) :
-                    Util.getScreenHeight(mApplicationContext)) * ratio);
+                    UtilGSY.getScreenWidth(mApplicationContext) :
+                    UtilGSY.getScreenHeight(mApplicationContext)) * ratio);
             return this;
         }
 
@@ -180,7 +180,7 @@ public class FloatWindow {
                 throw new IllegalArgumentException("View has not been set!");
             }
             if (mView == null) {
-                mView = Util.inflate(mApplicationContext, mLayoutId);
+                mView = UtilGSY.inflate(mApplicationContext, mLayoutId);
             }
             IFloatWindow floatWindowImpl = new IFloatWindowImpl(this);
             mFloatWindowMap.put(mTag, floatWindowImpl);

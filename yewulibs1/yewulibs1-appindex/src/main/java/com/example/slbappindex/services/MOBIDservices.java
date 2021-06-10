@@ -13,6 +13,8 @@ import android.os.Message;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ActivityUtils;
+import com.blankj.utilcode.util.GsonUtils;
 import com.example.bizyewu2.bean.HMobid2Bean;
 import com.example.bizyewu2.presenter.HMobID2Presenter;
 import com.example.bizyewu2.presenter.HMobIDPresenter;
@@ -24,6 +26,11 @@ import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCustomMessage;
 import com.mob.pushsdk.MobPushNotifyMessage;
 import com.mob.pushsdk.MobPushReceiver;
+import com.mob.pushsdk.MobPushUtils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -157,11 +164,22 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
             @Override
             public boolean handleMessage(@NonNull Message msg) {
                 if (msg.what == 1) {
-                    System.out.println("MobPush Callback Data1:" + msg.obj);
-                    presenter_mobid2.get_mob_id2(1, 1, "1", "DT");
+                    System.out.println("MobPush Callback Data1:" + msg.obj.toString());
+                    //
+                    presenter_mobid2.get_mob_id2(1, 1, "1", "APP_MOB");
                 }
                 if (msg.what == 2) {
-                    System.out.println("MobPush Callback Data2:" + msg.obj);
+                    System.out.println("MobPush Callback Data2:" + msg.obj.toString());
+//                    Intent intent2 = ActivityUtils.getTopActivity().getIntent();
+//                    JSONArray jsonArray =  MobPushUtils.parseMainPluginPushIntent(intent2);
+//                    System.out.println("-------MobPush------JsonPushData打印查看："+jsonArray);
+//                    try {
+//                        JSONObject jsonObject = new JSONObject(msg.obj.toString());
+////                        GsonUtils.fromJson();
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+
                 }
                 // activity获取信息
 //                Intent intent2 = ActivityUtils.getTopActivity().getIntent();

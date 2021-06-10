@@ -17,7 +17,7 @@ import com.haier.cellarette.baselibrary.splash.AlphaView;
 
 public class SplshActivity extends SlbBaseActivityPermissions implements View.OnClickListener {
     /**
-     * 加载图片ViewPager
+     * 加载图片ViewPager1
      */
 //    布局设置
     private Integer[] Layouts = {/*R.layout.splash_activity_lay1,*/ R.layout.splash_activity_lay2, R.layout.splash_activity_lay3, R.layout.splash_activity_lay4};
@@ -33,13 +33,13 @@ public class SplshActivity extends SlbBaseActivityPermissions implements View.On
         super.setup(savedInstanceState);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        ScreenUtils.setNonFullScreen(this);
-        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.web_white));
-        if (BarUtils.isStatusBarLightMode(this)) {
-            BarUtils.setStatusBarLightMode(this, false);
-        } else {
-            BarUtils.setStatusBarLightMode(this, true);
-        }
+//        ScreenUtils.setNonFullScreen(this);
+//        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.web_white));
+//        if (BarUtils.isStatusBarLightMode(this)) {
+//            BarUtils.setStatusBarLightMode(this, false);
+//        } else {
+//            BarUtils.setStatusBarLightMode(this, true);
+//        }
         setContentView(R.layout.activity_splash_index);
         AlphaView alphaview = findViewById(R.id.alphaview);
         alphaview.setPointGravity(Gravity.END);

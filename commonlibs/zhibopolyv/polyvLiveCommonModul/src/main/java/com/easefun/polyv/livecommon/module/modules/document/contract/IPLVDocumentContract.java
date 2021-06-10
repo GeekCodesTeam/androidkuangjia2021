@@ -240,7 +240,7 @@ public interface IPLVDocumentContract {
          * 回调 用户选择上传的PPT文件
          *
          * @param fileUri PPT文件Uri
-         * @see #uploadFile(Uri, String)
+         * @see#uploadFile(Uri, String)
          */
         void onSelectUploadFile(Uri fileUri);
 

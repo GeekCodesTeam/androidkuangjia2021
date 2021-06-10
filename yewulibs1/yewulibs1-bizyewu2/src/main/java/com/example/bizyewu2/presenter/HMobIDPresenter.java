@@ -21,14 +21,14 @@ public class HMobIDPresenter extends Presenter<HMobIDView> {
         JSONObject requestData = new JSONObject();
         requestData.put("userName", "小明");//
         requestData.put("userId", "1");//
-        requestData.put("terminalCode", "DT");//
+        requestData.put("terminalCode", "APP_MOB");//
         requestData.put("terminalUniqueId", SPUtils.getInstance().getString("MOBID"));//
         requestData.put("terminalBrand", "HUAIWEI");//
         requestData.put("terminalModel", "P30");//
         requestData.put("orgId", "1");//
         requestData.put("orgCode", "aaa");//
         requestData.put("orgName", "测试组织名称");//
-        requestData.put("channelCode", "MOBPUSH");//MOBPUSH JPUSH
+        requestData.put("channelCode", "APP_MOB");//MOBPUSH JPUSH
         requestData.put("appKey", "ak");//
         requestData.put("appSecret", "as");//
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), requestData.toString());

@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="au.com.example.READ_CONTENT" />
     <uses-permission android:name="au.com.example.WRITE_CONTENT" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
@@ -33,7 +34,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_nameslbappcomm"
         android:supportsRtl="true">
         <activity
             android:name=".agentwebview.activity.BasicsDisplayWebActDemo"
@@ -49,6 +50,39 @@
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
@@ -113,60 +147,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.VideoPlayActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".videoplay.gsy.SimplePlayer"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Full">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".videoplay.gsy.SimplePlayer2"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Full">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer2" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".videoplay.gsy.SimplePlayer3"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Full">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.SimplePlayer3" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <!--饺子视频-->
-<!--        android:theme="@style/FULL"-->
-        <activity
-            android:name=".videoplay.jiaozi.JiaoZiVideoActivity2"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.JiaoZiVideoActivity2" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".videoplay.updateview.HrMemberActivity"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.HrMemberActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -287,7 +267,8 @@
         </activity>
         <activity
             android:name=".baserecycleview.yewu2.ActYewuList1"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeCommon">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ActYewuList1" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -364,7 +345,6 @@
         <activity android:name=".viewpager2.ui.TVActivity" />
         <activity android:name=".viewpager2.ui.RecyclerViewBannerActivity" />
         <activity android:name=".viewpager2.ui.ConstraintLayoutBannerActivity" />
-        <activity android:name=".viewpager2.ui.VideoActivity" />
         <activity
             android:name=".viewpager2.ui.Vp2FragmentRecyclerviewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -407,6 +387,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".polyv.PolyvActList1">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.PolyvActList1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".zhiwen.ZhiwenAct">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <!--services部分-->
         <service
             android:name="com.example.slbappcomm.huyan.Huyanservices"
@@ -429,11 +421,11 @@
         <!--        <service android:name=".playermusic.ListenMusicPlayerServicesBg" />-->
 
         <service
-            android:name=".videoplay.bt.BleService"
+            android:name="com.example.gsydemo.bt.BleService"
             android:enabled="true"
             android:exported="false" />
         <service
-            android:name=".videoplay.bt.BleServicesBg"
+            android:name="com.example.gsydemo.bt.BleServicesBg"
             android:enabled="true"
             android:exported="false" />
 

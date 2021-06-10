@@ -237,6 +237,36 @@
                 android:text="高德地图"
                 android:textColor="@color/gray4A4A4A"
                 android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/shouyef2_tv21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="libokhttputils"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/shouyef2_tv22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="ZhiwenAct指纹识别"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
+
+            <TextView
+                android:id="@+id/shouyef2_tv23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12mm"
+                android:gravity="center"
+                android:text="指纹识别quan"
+                android:textColor="@color/gray4A4A4A"
+                android:textSize="16mm" />
         </LinearLayout>
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">支付宝 SDK Demo</string>
+    <string name="app_namelibapppay">支付宝 SDK Demo</string>
     <string name="demo_info_text">重要说明: \n\n本 Demo 为了方便向商户展示支付宝的支付流程，所以订单信息的加签过程放在客户端完成。\n在商户的真实App内，为了防止商户私密数据泄露，引发资金损失和身份冒用等各种安全风险，商户私钥 RSA_PRIVATE 等数据严禁放在客户端，订单信息的加签过程也务必放在服务端完成。\n若商户接入时不遵照此说明而造成损失，需自行承担。</string>
     <string name="pay_with_alipay">支付宝支付 Demo</string>
     <string name="pay_with_alipay_hk">HK 支付宝支付 Demo</string>

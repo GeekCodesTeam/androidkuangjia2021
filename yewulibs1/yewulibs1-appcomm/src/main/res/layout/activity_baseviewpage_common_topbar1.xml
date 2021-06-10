@@ -54,6 +54,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_margin="16mm"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18mm"
             android:visibility="gone"
             tools:visibility="visible" />
     </RelativeLayout>

@@ -1,7 +1,5 @@
 package com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo7;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +7,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo7.ItemDemo7;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo7.ItemDemo7ContentTextImgCommon;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -46,7 +47,7 @@ public abstract class ItemDemo7FrameBinder<Content extends ItemDemo7ContentTextI
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Toasty.normal(v.getContext(), "Position: " + getPosition(holder)).show();
+//                ToastUtils.showLong("Position: " + getPosition(holder));
 //            }
 //        });
 //        holder.close.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +89,7 @@ public abstract class ItemDemo7FrameBinder<Content extends ItemDemo7ContentTextI
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toasty.normal(v.getContext(), "Position: " + getAdapterPosition()).show();
+                    ToastUtils.showLong("Position: " + getAdapterPosition());
                 }
             });
 

@@ -1,8 +1,9 @@
+//noinspection DuplicatePlatformClasses
 plugins {
     id 'com.android.application'
 }
 def config = rootProject.ext //
-def librarys = rootProject.ext.dependencies //
+//def library s = rootProject.ext.dependencies //
 android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,28 +38,7 @@ android {
         pickFirst 'lib/x86/librsjni_androidx.so'
         pickFirst 'lib/x86/libRSSupport.so'
         pickFirst 'lib/x86/librsjni.so'
-        //
-//        pickFirst 'lib/arm64-v8a/libBaiduMapSDK_util_v4_0_0.so'
-//        pickFirst 'lib/arm64-v8a/libBaiduMapSDK_map_v4_0_0.so'
-//        pickFirst 'lib/arm64-v8a/libBaiduMapSDK_util_v4_0_0.so'
-//        pickFirst 'lib/arm64-v8a/libBaiduMapSDK_base_v4_0_0.so'
-//        pickFirst 'lib/arm64-v8a/liblocSDK7.so'
-        //
-//        pickFirst 'lib/armeabi/libijkplayer.so'
-//        pickFirst 'lib/armeabi/libijkffmpeg.so'
-//        pickFirst 'lib/armeabi/libijksdl.so'
-//        pickFirst 'lib/armeabi-v7a/libijkplayer.so'
-//        pickFirst 'lib/armeabi-v7a/libijkffmpeg.so'
-//        pickFirst 'lib/armeabi-v7a/libijksdl.so'
-//        pickFirst 'lib/arm64-v8a/libijkplayer.so'
-//        pickFirst 'lib/arm64-v8a/libijkffmpeg.so'
-//        pickFirst 'lib/arm64-v8a/libijksdl.so'
-//        pickFirst 'lib/x86_64/libijkplayer.so'
-//        pickFirst 'lib/x86_64/libijkffmpeg.so'
-//        pickFirst 'lib/x86_64/libijksdl.so'
-//        pickFirst 'lib/x86/libijkplayer.so'
-//        pickFirst 'lib/x86/libijkffmpeg.so'
-//        pickFirst 'lib/x86/libijksdl.so'
+
     }
 
     lintOptions {
@@ -112,10 +92,10 @@ android {
 //            jni.srcDirs = []
 //            //LOCAL_LDFLAGS += -fuse-ld=bfd
 //            //jni.srcDirs 'src/main/jni'
-//            jniLibs.srcDir './../../otherjar'
-////            jniLibs.srcDir(['libs', './../../otherjar'])
+//            jniLibs.srcDir './../../other jar'
+////            jniLibs.srcDir(['libs', './../../other jar'])
 ////            jniLibs.srcDir(['libs'])
-////            jniLibs.srcDirs = ['src/main/jni', './../../otherjar']
+////            jniLibs.srcDirs = ['src/main/jni', './../../other jar']
 //        }
 
 //        sourceSets {
@@ -140,11 +120,11 @@ android {
             manifestPlaceholders = [
                     JSHARE_PKGNAME: "com.fosung.lighthouse.test",
                     JPUSH_PKGNAME : "com.fosung.lighthouse.test",
-                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
                     JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
                     // 设置manifest.xml中的变量
-                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的appkey,注意不要将前缀去掉 MI-appkey
-                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的appid，注意不要将前缀去掉 MI-appid
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
@@ -158,11 +138,11 @@ android {
             manifestPlaceholders = [
                     JSHARE_PKGNAME: "com.fosung.lighthouse.test1",
                     JPUSH_PKGNAME : "com.fosung.lighthouse.test1",
-                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
                     JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
                     // 设置manifest.xml中的变量
-                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的appkey,注意不要将前缀去掉 MI-appkey
-                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的appid，注意不要将前缀去掉 MI-appid
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
@@ -176,11 +156,11 @@ android {
             manifestPlaceholders = [
                     JSHARE_PKGNAME: "com.fosung.lighthouse.test2",
                     JPUSH_PKGNAME : "com.fosung.lighthouse.test2",
-                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
                     JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
                     // 设置manifest.xml中的变量
-                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的appkey,注意不要将前缀去掉 MI-appkey
-                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的appid，注意不要将前缀去掉 MI-appid
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
@@ -234,19 +214,19 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    // common
+    // TODO common库
     implementation project(':commonlibs:baselibrary')
     implementation project(':yewulibs1:yewulibs1-appcomm')
-    // yewu
+    // TODO 业务
     implementation project(':yewulibs1:yewulibs1-appindex')
     implementation project(':yewulibs1:yewulibs1-appsplash')
     implementation project(':yewulibs1:yewulibs1-applogin')
     implementation project(':yewulibs1:yewulibs1-appsearch')
-    // 接口
+    // TODO 接口
 
 }
 
-// walle
-apply from: './multiple-channel.gradle'
-// mob
+// TODO Wallet打包
+//apply from: './multiple-channel.gradle'
+// TODO mob
 apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'

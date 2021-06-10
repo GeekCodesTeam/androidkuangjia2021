@@ -15,10 +15,10 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.StringUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbapplogin.R;
-import com.google.android.material.textfield.TextInputLayout;
 import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class YanzhengUtil {
 
@@ -30,7 +30,7 @@ public class YanzhengUtil {
         }
         if (!TextUtils.isDigitsOnly(phone)) {
             view.setText("手机号格式错误，仅支持纯数字");
-            Toasty.normal(BaseApp.get(), "手机号格式错误，仅支持纯数字").show();
+            ToastUtils.showLong("手机号格式错误，仅支持纯数字");
 
             return false;
         }
@@ -133,7 +133,7 @@ public class YanzhengUtil {
      * @param account
      * @return
      */
-    public static boolean validateAccount(TextInputLayout til_account, String account,String content) {
+    public static boolean validateAccount(TextInputLayout til_account, String account, String content) {
         if (StringUtils.isEmpty(account)) {
             showError(til_account, content);// "用户名不能为空"
             return false;

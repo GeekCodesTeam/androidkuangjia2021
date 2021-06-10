@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.haier.cellarette.baselibrary.R;
 
@@ -16,7 +15,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-
+/**
+ * Created by zhy on 15/9/10.
+ */
 public class TagFlowLayout extends FlowLayout
         implements TagAdapter.OnDataChangedListener {
 
@@ -101,16 +102,16 @@ public class TagFlowLayout extends FlowLayout
 
 
             } else {
-                ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                MarginLayoutParams lp = new MarginLayoutParams(
+                        LayoutParams.WRAP_CONTENT,
+                        LayoutParams.WRAP_CONTENT);
                 lp.setMargins(dip2px(getContext(), 5),
                         dip2px(getContext(), 5),
                         dip2px(getContext(), 5),
                         dip2px(getContext(), 5));
                 tagViewContainer.setLayoutParams(lp);
             }
-            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             tagView.setLayoutParams(lp);
             tagViewContainer.addView(tagView);
             addView(tagViewContainer);
@@ -125,7 +126,7 @@ public class TagFlowLayout extends FlowLayout
             tagView.setClickable(false);
             final TagView finalTagViewContainer = tagViewContainer;
             final int position = i;
-            tagViewContainer.setOnClickListener(new View.OnClickListener() {
+            tagViewContainer.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     doSelect(finalTagViewContainer, position);

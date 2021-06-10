@@ -17,7 +17,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_namerongcloudim"
         android:supportsRtl="true">
         <!--        <activity android:name=".view.StatusBarBaseActivity"></activity>-->
         <activity

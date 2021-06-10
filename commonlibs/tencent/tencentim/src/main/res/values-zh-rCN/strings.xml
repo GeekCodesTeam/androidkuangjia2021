@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">云通信IM</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_nameim">云通信IM</string>
 
     // 云通信
     <string name="chat_top">置顶聊天</string>
@@ -75,7 +75,7 @@
     <string name="live_scenes_live_room">视频直播</string>
     <string name="live_scenes_voice_room">语音聊天室</string>
     <string name="live_voice_room_room_title" formatted="false">房间号: %d</string>
-    <string name="live_voice_room_numer_format" formatted="false" >%d人在看</string>
+    <string name="live_voice_room_numer_format" formatted="false">%d人在看</string>
     <string name="live_voice_room_agree">同意</string>
     <string name="live_voice_room_warning_not_empty">"输入不能为空!"</string>
     <string name="live_voice_room_send">发送</string>

@@ -13,10 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.slbjiaozvideonew.Tab_3_List.ListView.adapter.RecyclerViewLoadMoreAdapter;
 import com.example.slbjiaozvideonew.UrlsKt;
 import com.example.slbjiaozvideonew.utils.VideoEntity;
-import com.scwang.smart.refresh.layout.SmartRefreshLayout;
-import com.scwang.smart.refresh.layout.api.RefreshLayout;
-import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 
 
 import java.util.ArrayList;
@@ -24,6 +20,10 @@ import java.util.Collections;
 
 import cn.jzvd.Jzvd;
 import com.example.slbjiaozvideonew.R;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 /**
  * Created by yujunkui on 16/8/29.

@@ -31,14 +31,15 @@ import com.example.slbappsearch.part1.SearchBean;
 import com.example.slbappsearch.part1.searchhuancun.SearchCommManager;
 import com.example.slbappsearch.part2.SearchKeyListAdapter;
 import com.example.slbappsearch.part3.SearchListAdapter;
-import com.gongwen.marqueen.SimpleMarqueeView;
 import com.haier.cellarette.baselibrary.emptyview.NiubiEmptyView;
+import com.haier.cellarette.baselibrary.flowlayout.FlowLayout;
+import com.haier.cellarette.baselibrary.flowlayout.TagAdapter;
+import com.haier.cellarette.baselibrary.flowlayout.TagFlowLayout;
+import com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView;
 import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import com.umeng.analytics.MobclickAgent;
-import com.zhy.view.flowlayout.FlowLayout;
-import com.zhy.view.flowlayout.TagAdapter;
-import com.zhy.view.flowlayout.TagFlowLayout;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;

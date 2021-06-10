@@ -1,4 +1,4 @@
-package com.example.slbappcomm.search;//package com.example.slbappindex.search;
+//package com.example.slbappindex.search;
 //
 //import android.content.Intent;
 //import android.os.Build;

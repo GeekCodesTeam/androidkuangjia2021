@@ -6,8 +6,9 @@ def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api librarys.retrofit
-    api librarys.retrofitgconverter
     api librarys.retrofitconverters
+    api librarys.retrofitgconvertergson
+    api librarys.retrofitgconverterscalars
     api librarys.okhttpVersion
     api librarys.okioVersion
     api librarys.okhttploggerinter

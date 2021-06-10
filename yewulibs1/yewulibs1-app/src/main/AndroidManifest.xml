@@ -38,6 +38,7 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="false"
+        android:allowNativeHeapPointerTagging="false"
         android:debuggable="false"
         android:hardwareAccelerated="true"
         android:icon="${app_icon}"
@@ -104,9 +105,6 @@
         <meta-data
             android:name="design_height_in_dp"
             android:value="667" />
-        <meta-data
-            android:name="android.max_aspect"
-            android:value="2.4" />
         <!--适配华为刘海屏-->
         <meta-data
             android:name="android.notch_support"
@@ -115,6 +113,9 @@
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" />
-
+        <!--允许绘制到oppo、vivo刘海屏机型的刘海区域 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.8" />
     </application>
 </manifest>

@@ -3,23 +3,23 @@ package com.haier.cellarette.baselibrary.recycleviewalluses.demo5baseadpterhelp;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemDragListener;
 import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +60,9 @@ public class BaseRecActDemo5 extends AppCompatActivity {
                 BaseRecActDemo5Bean bean = (BaseRecActDemo5Bean) adapter.getData().get(position);
                 int i = view.getId();
                 if (i == R.id.tv) {
-                    Toasty.normal(BaseRecActDemo5.this, bean.getUserName()).show();
+                    ToastUtils.showLong(bean.getUserName());
                 } else if (i == R.id.email) {
-                    Toasty.normal(BaseRecActDemo5.this, bean.getText()).show();
+                    ToastUtils.showLong(bean.getText());
                 } else {
                 }
             }
@@ -115,7 +115,7 @@ public class BaseRecActDemo5 extends AppCompatActivity {
         final Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setTextSize(40);
-        paint.setColor(ContextCompat.getColor(BaseRecActDemo5.this,R.color.white));
+        paint.setColor(ContextCompat.getColor(BaseRecActDemo5.this, R.color.white));
         onItemSwipeListener = new OnItemSwipeListener() {
             @Override
             public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {

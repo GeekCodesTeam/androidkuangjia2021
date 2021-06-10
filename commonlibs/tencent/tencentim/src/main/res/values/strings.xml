@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Instant Messaging (IM)</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_nameim">Instant Messaging (IM)</string>
 
     // 云通信
     <string name="chat_top">Sticky on Top</string>
@@ -75,7 +75,7 @@
     <string name="live_scenes_live_room">Video Live Stream</string>
     <string name="live_scenes_voice_room">Voice Chat Room</string>
     <string name="live_voice_room_room_title" formatted="false">Room ID: %d</string>
-    <string name="live_voice_room_numer_format" formatted="false" >%d viewers</string>
+    <string name="live_voice_room_numer_format" formatted="false">%d viewers</string>
     <string name="live_voice_room_agree">Agree</string>
     <string name="live_voice_room_warning_not_empty">"Content can't be empty."</string>
     <string name="live_voice_room_send">Send</string>

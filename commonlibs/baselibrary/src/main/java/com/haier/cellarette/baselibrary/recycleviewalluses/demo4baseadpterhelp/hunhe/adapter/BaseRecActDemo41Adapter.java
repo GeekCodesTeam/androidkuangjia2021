@@ -3,20 +3,21 @@ package com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.
 //import androidx.appcompat.widget.GridLayoutManager;
 //import androidx.appcompat.widget.LinearSnapHelper;
 //import androidx.appcompat.widget.OrientationHelper;
+
+import android.view.View;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.haier.cellarette.baselibrary.R;
-import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.hunhe.bean.BaseRecActDemo41Bean;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo4baseadpterhelp.hunhe.bean.BaseRecActDemo41ChildBean;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +94,7 @@ public class BaseRecActDemo41Adapter extends BaseMultiItemQuickAdapter<BaseRecAc
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //item click
-                Toasty.normal(BaseApp.get(), position + "item click").show();
+                ToastUtils.showLong(position + "item click");
             }
         });
         mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
@@ -102,11 +103,11 @@ public class BaseRecActDemo41Adapter extends BaseMultiItemQuickAdapter<BaseRecAc
                 BaseRecActDemo41ChildBean addressBean = mList.get(position);
                 int i = view.getId();
                 if (i == R.id.brademo1_img) {
-                    Toasty.normal(BaseApp.get(), addressBean.getUserAvatar() + "    " + position).show();
+                    ToastUtils.showLong(addressBean.getUserAvatar() + "    " + position);
                 } else if (i == R.id.brademo1_tweetName) {
-                    Toasty.normal(BaseApp.get(), addressBean.getUserName() + position).show();
+                    ToastUtils.showLong(addressBean.getUserName() + position);
                 } else if (i == R.id.brademo1_tweetText) {
-                    Toasty.normal(BaseApp.get(), addressBean.getText() + position).show();
+                    ToastUtils.showLong(addressBean.getText() + position);
                 } else {
                 }
             }

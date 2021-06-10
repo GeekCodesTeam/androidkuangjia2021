@@ -11,8 +11,6 @@ import android.text.TextUtils;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.blankj.utilcode.util.TouchUtils;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.io.File;
 import java.io.FileInputStream;

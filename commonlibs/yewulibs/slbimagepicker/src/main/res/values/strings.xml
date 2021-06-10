@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">slbimagepicker</string>
+    <string name="app_nameslbimagepicker">slbimagepicker</string>
     <string name="ip_all_images">所有图片</string>
     <string name="ip_folder_image_count">共%1$d张</string>
     <string name="ip_preview_image_count">%1$d/%2$d</string>

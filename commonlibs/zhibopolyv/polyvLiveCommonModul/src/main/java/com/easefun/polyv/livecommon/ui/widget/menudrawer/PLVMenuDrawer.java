@@ -1343,7 +1343,7 @@ public abstract class PLVMenuDrawer extends ViewGroup {
     /**
      * Sets the drawable used as the drawer indicator.
      *
-     * @param drawable The drawable used as the drawer indicator.
+     * @paramdrawable The drawable used as the drawer indicator.
      */
     public void setSlideDrawable(int drawableRes) {
         setSlideDrawable(getResources().getDrawable(drawableRes));

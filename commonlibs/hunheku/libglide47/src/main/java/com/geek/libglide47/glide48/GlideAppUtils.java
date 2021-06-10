@@ -25,15 +25,13 @@ import com.bumptech.glide.signature.ObjectKey;
 import com.geek.libglide47.R;
 import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libutils.app.MyLogUtil;
-import com.lxj.xpermission.PermissionConstants;
-import com.lxj.xpermission.XPermission;
+import com.hjq.permissions.OnPermissionCallback;
+import com.hjq.permissions.Permission;
+import com.hjq.permissions.XXPermissions;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
-
-//import android.support.annotation.NonNull;
-//import android.support.annotation.Nullable;
-//import android.support.annotation.RequiresApi;
 
 public class GlideAppUtils {
 
@@ -219,19 +217,35 @@ public class GlideAppUtils {
         glide48ImageLoaderUtils.loadImg(context, lxImageLoader, imageView, url);
         //check permission
         final Object finalUrl = url;
-        XPermission.create(context, PermissionConstants.STORAGE)
-                .callback(new XPermission.SimpleCallback() {
-                    @Override
-                    public void onGranted() {
-                        //save bitmap to album.
-                        glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
-                    }
+        XXPermissions.with(context)
+                // 不适配 Android 11 可以这样写
+                //.permission(Permission.Group.STORAGE)
+                // 适配 Android 11 需要这样写，这里无需再写 Permission.Group.STORAGE
+                .permission(Permission.MANAGE_EXTERNAL_STORAGE)
+                .request(new OnPermissionCallback() {
 
                     @Override
-                    public void onDenied() {
-                        Toast.makeText(context, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
+                    public void onGranted(List<String> permissions, boolean all) {
+                        if (all) {
+//                            toast("获取存储权限成功");
+                            //save bitmap to album.
+                            glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
+                        }
                     }
-                }).request();
+                });
+//        XPermission.create(context, PermissionConstants.STORAGE)
+//                .callback(new XPermission.SimpleCallback() {
+//                    @Override
+//                    public void onGranted() {
+//                        //save bitmap to album.
+//                        glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
+//                    }
+//
+//                    @Override
+//                    public void onDenied() {
+//                        Toast.makeText(context, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
+//                    }
+//                }).request();
     }
 
     public void setglide11(final Context context, Object url) {
@@ -240,19 +254,35 @@ public class GlideAppUtils {
             final LxImageLoader lxImageLoader = new LxImageLoader();
             //check permission
             final Object finalUrl = url;
-            XPermission.create(context.getApplicationContext(), PermissionConstants.STORAGE)
-                    .callback(new XPermission.SimpleCallback() {
-                        @Override
-                        public void onGranted() {
-                            //save bitmap to album.
-                            glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
-                        }
+            XXPermissions.with(context)
+                    // 不适配 Android 11 可以这样写
+                    //.permission(Permission.Group.STORAGE)
+                    // 适配 Android 11 需要这样写，这里无需再写 Permission.Group.STORAGE
+                    .permission(Permission.MANAGE_EXTERNAL_STORAGE)
+                    .request(new OnPermissionCallback() {
 
                         @Override
-                        public void onDenied() {
-                            Toast.makeText(context, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
+                        public void onGranted(List<String> permissions, boolean all) {
+                            if (all) {
+//                            toast("获取存储权限成功");
+                                //save bitmap to album.
+                                glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
+                            }
                         }
-                    }).request();
+                    });
+//            XPermission.create(context.getApplicationContext(), PermissionConstants.STORAGE)
+//                    .callback(new XPermission.SimpleCallback() {
+//                        @Override
+//                        public void onGranted() {
+//                            //save bitmap to album.
+//                            glide48ImageLoaderUtils.saveBmpToAlbum(context, lxImageLoader, finalUrl);// 保存
+//                        }
+//
+//                        @Override
+//                        public void onDenied() {
+//                            Toast.makeText(context, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }).request();
         } else {
             Toast.makeText(context, "保存失败！", Toast.LENGTH_SHORT).show();
         }

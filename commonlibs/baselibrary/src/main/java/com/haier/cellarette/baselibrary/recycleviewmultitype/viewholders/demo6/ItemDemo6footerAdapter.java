@@ -1,17 +1,17 @@
 package com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo6;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.recycleviewmultitype.models.demo6.ItemDemo621;
-import com.haier.cellarette.baselibrary.toasts2.Toasty;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,14 +20,14 @@ import java.util.List;
  * Created by shining on 2018/3/26.
  */
 
-public class ItemDemo6footerAdapter extends RecyclerView.Adapter<ItemDemo6footerAdapter.ViewHolder>{
+public class ItemDemo6footerAdapter extends RecyclerView.Adapter<ItemDemo6footerAdapter.ViewHolder> {
 
     private List<ItemDemo621> itemDemo621s = Collections.emptyList();
 
     public void setData(@NonNull List<ItemDemo621> itemDemo621s) {
         this.itemDemo621s = itemDemo621s;
     }
-    
+
     @Override
     public int getItemCount() {
         return itemDemo621s.size();
@@ -47,13 +47,13 @@ public class ItemDemo6footerAdapter extends RecyclerView.Adapter<ItemDemo6footer
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toasty.normal(v.getContext(),String.valueOf(position)).show();
+                ToastUtils.showLong(String.valueOf(position));
             }
         });
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-        
+    class ViewHolder extends RecyclerView.ViewHolder {
+
         private ImageView iv1;
         private TextView tv1;
 
@@ -61,7 +61,7 @@ public class ItemDemo6footerAdapter extends RecyclerView.Adapter<ItemDemo6footer
             super(itemView);
             iv1 = itemView.findViewById(R.id.iv1);
             tv1 = itemView.findViewById(R.id.tv1);
-//            Toasty.normal(v.getContext(),String.valueOf(getAdapterPosition())).show();
+//            ToastUtils.showLong(String.valueOf(getAdapterPosition()));
         }
     }
 }

@@ -65,7 +65,19 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         setUp();
         mUrl = getIntent().getStringExtra("url");
         AppToken = getIntent().getStringExtra("AppToken");
-
+        // 根据HIOS协议三方平台跳转
+        // ATTENTION: This was auto-generated to handle app links.
+        Intent appLinkIntent = getIntent();
+        if (appLinkIntent != null) {
+            String appLinkAction = appLinkIntent.getAction();
+//            if (appLinkAction != null) {
+            Uri appLinkData = appLinkIntent.getData();
+            if (appLinkData != null) {
+                mUrl = appLinkData.getQueryParameter("query1");
+                AppToken = appLinkData.getQueryParameter("query2");
+            }
+//            }
+        }
         loadUrl(mUrl);
     }
 

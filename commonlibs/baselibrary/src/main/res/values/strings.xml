@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="baselibraryappname" translatable="false">baselibrary</string>
     <string name="cancel" translatable="false">取消</string>
     <string name="ok" translatable="false">确认</string>
     <string name="retry_text" translatable="false">重试</string>
@@ -93,5 +94,36 @@
     <string name="hint_good_comment" translatable="false">月售10008 好评率100%</string>
     <string name="test_title" translatable="false">我是新来的</string>
     <string name="test_content" translatable="false">You are so good</string>
+
+
+    <string name="common_permission_hint" translatable="false">授权提示</string>
+    <string name="common_permission_message" translatable="false">使用此功能需要先授予权限</string>
+    <string name="common_permission_granted" translatable="false">授予</string>
+    <string name="common_permission_denied" translatable="false">取消</string>
+
+    <string name="common_permission_alert" translatable="false">授权提醒</string>
+    <string name="common_permission_fail_1" translatable="false">授权失败，请正确授予权限</string>
+    <string name="common_permission_fail_2" translatable="false">获取权限失败，请手动授予权限</string>
+    <string name="common_permission_fail_3" translatable="false">获取权限失败，请手动授予%s</string>
+    <string name="common_permission_fail_4" translatable="false">没有授予后台定位权限，请您选择"始终允许"</string>
+    <string name="common_permission_goto" translatable="false">前往授权</string>
+
+    <string name="common_permission_calendar" translatable="false">日历权限</string>
+    <string name="common_permission_camera" translatable="false">相机权限</string>
+    <string name="common_permission_contacts" translatable="false">通讯录权限</string>
+    <string name="common_permission_location" translatable="false">定位权限</string>
+    <string name="common_permission_location_background" translatable="false">后台定位权限</string>
+    <string name="common_permission_microphone" translatable="false">麦克风权限</string>
+    <string name="common_permission_phone" translatable="false">电话权限</string>
+    <string name="common_permission_call_log" translatable="false">通话记录权限</string>
+    <string name="common_permission_sensors" translatable="false">身体传感器权限</string>
+    <string name="common_permission_activity_recognition" translatable="false">健身运动权限</string>
+    <string name="common_permission_sms" translatable="false">短信权限</string>
+    <string name="common_permission_storage" translatable="false">存储权限</string>
+
+    <string name="common_permission_install" translatable="false">安装应用权限</string>
+    <string name="common_permission_notification" translatable="false">通知栏权限</string>
+    <string name="common_permission_window" translatable="false">悬浮窗权限</string>
+    <string name="common_permission_setting" translatable="false">系统设置权限</string>
 
 </resources>

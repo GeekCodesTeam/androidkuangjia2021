@@ -23,7 +23,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:singleLine="true"
-        android:text="@string/app_name"
+        android:text="@string/app_nameslbappcomm"
         android:textColor="@color/white"
         android:textSize="18mm" />
 
