@@ -1,6 +1,6 @@
 package com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo6;
 
-//import android.support.annotation.NonNull;
+//
 //import androidx.appcompat.widget.LinearLayoutManager;
 //import androidx.appcompat.widget.LinearSnapHelper;
 //import androidx.appcompat.widget.OrientationHelper;
@@ -56,7 +56,7 @@ public class ItemDemo6footerHorizontalBinder extends ItemViewBinder<ItemDemo62, 
             super(itemView);
             recyclerView = itemView.findViewById(R.id.list1);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(itemView.getContext());
-            linearLayoutManager.setOrientation(OrientationHelper.HORIZONTAL);
+            linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
             recyclerView.setLayoutManager(linearLayoutManager);
             new LinearSnapHelper().attachToRecyclerView(recyclerView);
             adapter = new ItemDemo6footerAdapter();

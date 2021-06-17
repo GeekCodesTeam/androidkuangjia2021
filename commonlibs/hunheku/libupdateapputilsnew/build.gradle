@@ -6,8 +6,8 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
-    implementation project(':commonlibs:hunheku:librararyforfileprovdider')
+    implementation project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:librararyforfileprovdider')
     implementation librarys.filedownloader
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"

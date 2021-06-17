@@ -15,7 +15,7 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     implementation librarys.retrofit
     implementation librarys.retrofitconverters
     implementation librarys.retrofitgconvertergson

@@ -1,7 +1,7 @@
 package com.haier.cellarette.baselibrary.recycleviewmultitype.viewholders.demo6;
 
 import android.graphics.Rect;
-//import android.support.annotation.NonNull;
+//
 //import androidx.appcompat.widget.GridLayoutManager.SpanSizeLookup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;

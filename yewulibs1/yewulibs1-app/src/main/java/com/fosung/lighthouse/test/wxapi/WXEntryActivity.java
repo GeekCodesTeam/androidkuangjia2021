@@ -7,23 +7,22 @@
  */
 package com.fosung.lighthouse.test.wxapi;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
-import cn.jiguang.share.wechat.WeChatHandleActivity;
-
 /**
  * 微信客户端分享回调activity示例 WeChatHandleActivity
  */
-public class WXEntryActivity extends WeChatHandleActivity implements IWXAPIEventHandler {
+public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +56,7 @@ public class WXEntryActivity extends WeChatHandleActivity implements IWXAPIEvent
             // 回调
             WXLaunchMiniProgram.Resp launchMiniProResp = (WXLaunchMiniProgram.Resp) baseResp;
             String extraData = launchMiniProResp.extMsg; //对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
-            Toast.makeText(this, extraData + "进入了", Toast.LENGTH_LONG).show();
+            ToastUtils.showLong("进入了");
         }
     }
 

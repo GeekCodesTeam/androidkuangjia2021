@@ -30,7 +30,7 @@ public class NiubiEmptyView {
         this.context = context;
         this.mAdapter = mAdapter;
 //        loadingView = ((Activity) context).getLayoutInflater().inflate(R.layout.activity_recycleviewallsuses_demo8_viewloading, (ViewGroup) mRecyclerView.getParent(), false);
-        loadingView = ((Activity) context).getLayoutInflater().inflate(R.layout.activity_network_loading, (ViewGroup) mRecyclerView.getParent(), false);
+        loadingView = ((Activity) context).getLayoutInflater().inflate(R.layout.activity_network_loading1, (ViewGroup) mRecyclerView.getParent(), false);
         loadingView_content = loadingView.findViewById(R.id.loading_notice);
         imageView = loadingView.findViewById(R.id.loading_iv);
         noDataView = ((Activity) context).getLayoutInflater().inflate(R.layout.activity_recycleviewallsuses_demo8_viewnodata, (ViewGroup) mRecyclerView.getParent(), false);

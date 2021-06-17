@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_oval_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/speaker" />
+
+            <com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView
+                android:id="@+id/marqueeView1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:smvTextColor="@color/white"
+                app:smvTextEllipsize="end"
+                app:smvTextGravity="center_vertical"
+                app:smvTextSingleLine="true"
+                app:smvTextSize="15sp"></com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_oval_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/yellowSpeaker"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/speaker" />
+
+            <com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView
+                android:id="@+id/marqueeView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inAnimation="@anim/in_top"
+                android:outAnimation="@anim/out_bottom"
+                app:smvTextColor="@color/yellow"
+                app:smvTextGravity="center_vertical"
+                app:smvTextSize="15sp"></com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_oval_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/redSpeaker"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/speaker" />
+
+            <com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView
+                android:id="@+id/marqueeView3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:animateFirstView="true"
+                android:autoStart="true"
+                android:flipInterval="2500"
+                android:inAnimation="@anim/in_top"
+                android:outAnimation="@anim/out_bottom"
+                app:marqueeAnimDuration="500"
+                app:smvTextColor="@color/white"
+                app:smvTextGravity="center_vertical"
+                app:smvTextSize="15sp"></com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView>
+        </LinearLayout>
+
+        <com.haier.cellarette.baselibrary.marqueelibrary.MarqueeView
+            android:id="@+id/marqueeView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_large_oval_radius"></com.haier.cellarette.baselibrary.marqueelibrary.MarqueeView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_oval_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/speaker" />
+
+            <com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView
+                android:id="@+id/marqueeView5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:flipInterval="2500"
+                android:inAnimation="@anim/in_left"
+                android:outAnimation="@anim/out_right"
+                app:marqueeAnimDuration="2000"
+                app:smvTextColor="@color/white"
+                app:smvTextGravity="center_vertical"
+                app:smvTextSize="15sp"></com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_oval_radius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/speaker" />
+
+            <com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView
+                android:id="@+id/marqueeView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:flipInterval="2500"
+                android:inAnimation="@anim/in_right"
+                android:outAnimation="@anim/out_left"
+                app:marqueeAnimDuration="2000"
+                app:smvTextColor="@color/white"
+                app:smvTextGravity="center_vertical"
+                app:smvTextSize="15sp"></com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

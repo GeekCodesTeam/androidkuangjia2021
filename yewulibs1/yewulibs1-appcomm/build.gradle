@@ -45,24 +45,14 @@ dependencies {
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
-    // jpush推送
-    // api project(':commonlibs:hunheku:libappjpush')
-    // jpush分享
-    api project(':commonlibs:hunheku:libappjpushshare')
-    // jpush统计
-    // api project(':commonlibs:hunheku:libappjpushstatistics')
     // Umeng统计
     api project(':commonlibs:hunheku:libappumengstatistics')
     // mob分享
     api project(':commonlibs:hunheku:libappmob')
     // 支付
     api project(':commonlibs:hunheku:libapppay')
-    // Glide 4.0以上
-    api librarys.glide47
-    api project(':commonlibs:hunheku:libglide47')
-    //TODO other libs
     // https://github.com/crazyandcoder/citypicker
-    // pi 'liji.library.dev:citypickerview:4.3.2'
+    // api 'liji.library.dev:citypickerview:4.3.2'
     api project(':commonlibs:yewulibs:slbcitypickerview')
     // slbbluetooth
     api project(':commonlibs:yewulibs:slbbluetooth')
@@ -72,13 +62,9 @@ dependencies {
     api project(':commonlibs:yewulibs:slbota')
     // https://github.com/ikew0ng/SwipeBackLayout
     // api 'me.imid.swipebacklayout.lib:library:1.1.0'
-    api project(':commonlibs:yewulibs:slbswipebacklayout')
+    api project(':commonlibs:common:libswipebacklayout')
     // slbwifi
     api project(':commonlibs:yewulibs:slbwifi')
-    // https://github.com/scwang90/SmartRefreshLayout
-    api project(':commonlibs:smartrefreshlayout:refresh-footer')
-    api project(':commonlibs:smartrefreshlayout:refresh-header')
-    api project(':commonlibs:smartrefreshlayout:refresh-layout')
     // uploadpic
     api project(':commonlibs:yewulibs:slbimagepicker')
     // https://github.com/jenly1314/ZXingLite
@@ -100,13 +86,10 @@ dependencies {
     api project(':commonlibs:yewulibs:slbjiaozvideonew')
     // https://github.com/Doikki/DKVideoPlayer
     api project(':commonlibs:dkplayer:dkplayer-sample')
-    //
-//    api 'com.shuyu:GSYVideoPlayer:7.1.5'
-//    api project(':commonlibs:yewulibs:slbjiaozivideoplayer')
-    // 保利威直播1
-    api project(':commonlibs:zhibopolyv:demo')
     // 环信IM
     // api project(':commonlibs:huanxin:huanxinim')
+    // 保利威直播1
+    api project(':commonlibs:zhibopolyv:demo')
     // TencentIm
     api project(':commonlibs:tencent:tencentim')
     // RongCloudIM

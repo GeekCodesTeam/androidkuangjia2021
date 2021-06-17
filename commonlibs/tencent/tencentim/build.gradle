@@ -5,7 +5,7 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     implementation librarys.okhttpVersion
     api 'com.tencent.liteav:LiteAVSDK_TRTC:8.0.9639'
     api 'com.tencent.imsdk:tuikit-live:5.1.50'

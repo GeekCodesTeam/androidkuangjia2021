@@ -4,7 +4,7 @@ package com.example.slbappcomm.fragmentsgeek.demo4.factorys;
 import androidx.collection.SparseArrayCompat;
 
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseFragment;
+import com.example.libbase.base.SlbBaseFragment;
 import com.example.slbappcomm.fragmentsgeek.demo4.configs.MkDemo4Config;
 import com.example.slbappcomm.fragmentsgeek.demo4.fragments.MkDemo4Fragment10;
 import com.example.slbappcomm.fragmentsgeek.demo4.fragments.MkDemo4Fragment11;

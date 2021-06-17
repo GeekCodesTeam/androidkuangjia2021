@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbapplogin.msg.YanzhengUtil;
 
 public class ChongzhiActivity extends SlbBaseActivity implements View.OnClickListener {

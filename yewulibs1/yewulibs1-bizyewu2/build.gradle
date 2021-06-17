@@ -6,9 +6,9 @@ apply from: './../../commonlibs2.gradle'
 def librarys = rootProject.ext.dependencies
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
-    implementation project(':commonlibs:hunheku:libmvp')
-    implementation project(':commonlibs:hunheku:libretrofit')
+    implementation project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:libmvp')
+    implementation project(':commonlibs:common:libretrofit')
 //    bxnt_nationImplementation(name: 'libvariants_bxnt_nation', ext: 'aar')
 //    bxny_nationImplementation(name: 'libvariants_bxny_nation', ext: 'aar')
 //    bxn_nationImplementation(name: 'libvariants_bxn_nation', ext: 'aar')

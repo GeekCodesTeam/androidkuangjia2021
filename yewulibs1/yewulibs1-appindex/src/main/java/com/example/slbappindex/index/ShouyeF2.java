@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,8 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.PermissionUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
+import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
@@ -28,7 +31,8 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
             shouyef2_tv5, shouyef2_tv6, shouyef2_tv7, shouyef2_tv8, shouyef2_tv9, shouyef2_tv10,
             shouyef2_tv11, shouyef2_tv12, shouyef2_tv13, shouyef2_tv14, shouyef2_tv15, shouyef2_tv16,
             shouyef2_tv17, shouyef2_tv18, shouyef2_tv19, shouyef2_tv20, shouyef2_tv21, shouyef2_tv22,
-            shouyef2_tv23;
+            shouyef2_tv23, shouyef2_tv24, shouyef2_tv25, shouyef2_tv26, shouyef2_tv27, shouyef2_tv28,
+            shouyef2_tv29, shouyef2_tv30, shouyef2_tv31, shouyef2_tv32;
     private MessageReceiverIndex mMessageReceiver;
 
 
@@ -121,6 +125,15 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv21 = rootView.findViewById(R.id.shouyef2_tv21);
         shouyef2_tv22 = rootView.findViewById(R.id.shouyef2_tv22);
         shouyef2_tv23 = rootView.findViewById(R.id.shouyef2_tv23);
+        shouyef2_tv24 = rootView.findViewById(R.id.shouyef2_tv24);
+        shouyef2_tv25 = rootView.findViewById(R.id.shouyef2_tv25);
+        shouyef2_tv26 = rootView.findViewById(R.id.shouyef2_tv26);
+        shouyef2_tv27 = rootView.findViewById(R.id.shouyef2_tv27);
+        shouyef2_tv28 = rootView.findViewById(R.id.shouyef2_tv28);
+        shouyef2_tv29 = rootView.findViewById(R.id.shouyef2_tv29);
+        shouyef2_tv30 = rootView.findViewById(R.id.shouyef2_tv30);
+        shouyef2_tv31 = rootView.findViewById(R.id.shouyef2_tv31);
+        shouyef2_tv32 = rootView.findViewById(R.id.shouyef2_tv32);
         shouyef2_tv2.setOnClickListener(this);
         shouyef2_tv3.setOnClickListener(this);
         shouyef2_tv4.setOnClickListener(this);
@@ -144,6 +157,15 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv21.setOnClickListener(this);
         shouyef2_tv22.setOnClickListener(this);
         shouyef2_tv23.setOnClickListener(this);
+        shouyef2_tv24.setOnClickListener(this);
+        shouyef2_tv25.setOnClickListener(this);
+        shouyef2_tv26.setOnClickListener(this);
+        shouyef2_tv27.setOnClickListener(this);
+        shouyef2_tv28.setOnClickListener(this);
+        shouyef2_tv29.setOnClickListener(this);
+        shouyef2_tv30.setOnClickListener(this);
+        shouyef2_tv31.setOnClickListener(this);
+        shouyef2_tv32.setOnClickListener(this);
         tv_center_content.setText("分类");
         mMessageReceiver = new MessageReceiverIndex();
         IntentFilter filter = new IntentFilter();
@@ -205,16 +227,34 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.CityMainActivity"));
         } else if (id == R.id.shouyef2_tv18) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.JpushActivity"));
-        }else if (id == R.id.shouyef2_tv19) {
+        } else if (id == R.id.shouyef2_tv19) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PDFMainActivity"));
-        }else if (id == R.id.shouyef2_tv20) {
+        } else if (id == R.id.shouyef2_tv20) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LocActivity"));
-        }else if (id == R.id.shouyef2_tv21) {
+        } else if (id == R.id.shouyef2_tv21) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivityokhttputils"));
-        }else if (id == R.id.shouyef2_tv22) {
+        } else if (id == R.id.shouyef2_tv22) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenAct"));
-        }else if (id == R.id.shouyef2_tv23) {
+        } else if (id == R.id.shouyef2_tv23) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenActtivity"));
+        } else if (id == R.id.shouyef2_tv24) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.HuxiAct"));
+        } else if (id == R.id.shouyef2_tv25) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.PingfenMainActivity"));
+        } else if (id == R.id.shouyef2_tv26) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.MarqueeViewLibraryAct"));
+        } else if (id == R.id.shouyef2_tv27) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LXCoolMainActivity"));
+        } else if (id == R.id.shouyef2_tv28) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PictureSelectorSimpleActivity"));
+        } else if (id == R.id.shouyef2_tv29) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.SCardViewAct"));
+        } else if (id == R.id.shouyef2_tv30) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.BigImageViewPagerAct"));
+        } else if (id == R.id.shouyef2_tv31) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.ExpandableTextViewAct"));
+        } else if (id == R.id.shouyef2_tv32) {
+
         }
     }
 

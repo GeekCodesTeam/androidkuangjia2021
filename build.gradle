@@ -6,10 +6,11 @@ buildscript {
         google()
         mavenLocal()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "http://mvn.mob.com/android" }
-        maven {url  "http://maven.rongcloud.cn/repository/maven-releases/"}
+        maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
+        maven { url 'https://gitee.com/pgyer2020/analytics/raw/master' }  // 备用仓库
         maven { url 'http://developer.huawei.com/repo/' }
     }
     dependencies {
@@ -31,10 +32,11 @@ allprojects {
         google()
         mavenLocal()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "http://mvn.mob.com/android" }
-        maven {url  "http://maven.rongcloud.cn/repository/maven-releases/"}
+        maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
+        maven { url 'https://gitee.com/pgyer2020/analytics/raw/master' }  // 备用仓库
         maven { url 'http://developer.huawei.com/repo/' }
 
 //        flatDir {

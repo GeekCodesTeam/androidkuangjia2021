@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_namelibbase" translatable="false">libwebview</string>
+
+    <string name="retry_text" translatable="false">重试</string>
+
+
+</resources>

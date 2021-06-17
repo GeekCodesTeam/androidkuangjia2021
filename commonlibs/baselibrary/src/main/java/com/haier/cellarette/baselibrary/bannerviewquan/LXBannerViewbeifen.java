@@ -41,8 +41,8 @@ import java.util.List;
 
 //import android.support.annotation.AttrRes;
 //import android.support.annotation.DrawableRes;
-//import android.support.annotation.NonNull;
-//import android.support.annotation.Nullable;
+//
+//
 //import android.support.annotation.RequiresApi;
 //import android.support.annotation.StyleRes;
 //import androidx.core.view.PagerAdapter;

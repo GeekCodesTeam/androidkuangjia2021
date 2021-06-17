@@ -5,7 +5,7 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     //3D地图so及jar
     api 'com.amap.api:3dmap:latest.integration'
     //定位功能

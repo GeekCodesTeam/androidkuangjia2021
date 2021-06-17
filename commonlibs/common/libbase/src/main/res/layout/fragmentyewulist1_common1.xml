@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:id="@id/baserecycleview_ll_refresh1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.libbase.emptyview.EmptyViewNewNew
+            android:id="@id/baserecycleview_emptyview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:errornet_layout="@layout/empty_error"
+            app:loading_layout="@layout/empty_loading"
+            app:nodata_layout="@layout/empty_nodata"
+            app:unreachable_layout="@layout/empty_error" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/baserecycleview_refreshLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnablePreviewInEditMode="false">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:id="@id/baserecycleview_smart_header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0mm"
+                app:layout_srlBackgroundColor="@color/white"
+                app:srlAccentColor="@color/black_000"
+                app:srlPrimaryColor="@color/white" />
+
+            <com.example.libbase.widgets.XRecyclerView
+                android:id="@id/baserecycleview_recycler_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0mm" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,7 +1,7 @@
 package com.haier.cellarette.baselibrary.tablayout;
 
 import android.content.Context;
-//import android.support.annotation.NonNull;
+//
 //import android.support.design.widget.TabLayout;
 import android.util.AttributeSet;
 

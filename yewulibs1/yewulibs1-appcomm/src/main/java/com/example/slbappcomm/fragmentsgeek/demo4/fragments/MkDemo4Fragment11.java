@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
+import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo4.MkDemo4Activity;
 
 /**

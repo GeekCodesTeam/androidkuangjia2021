@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.slbappindex">
 
     <application
@@ -8,8 +9,8 @@
         <activity
             android:name="com.example.slbappindex.index.ShouyeActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeCommon">
             <!--            android:windowSoftInputMode="stateVisible|adjustPan"-->
             <intent-filter>

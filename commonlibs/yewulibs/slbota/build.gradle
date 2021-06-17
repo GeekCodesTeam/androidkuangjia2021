@@ -5,9 +5,9 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:hunheku:libutils')
-    implementation project(':commonlibs:hunheku:libretrofit')
-    implementation project(':commonlibs:hunheku:librararyforfileprovdider')
+    implementation project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:libretrofit')
+    implementation project(':commonlibs:common:librararyforfileprovdider')
     implementation librarys.filedownloader
 
 }

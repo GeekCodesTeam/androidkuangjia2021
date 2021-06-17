@@ -5,7 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import androidx.collection.SparseArrayCompat;
-import com.example.slbappcomm.base.SlbBaseFragment;
+import com.example.libbase.base.SlbBaseFragment;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
 

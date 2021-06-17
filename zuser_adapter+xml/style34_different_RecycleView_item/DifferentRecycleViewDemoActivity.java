@@ -14,7 +14,7 @@ package com.haiersmart.sfnation.demo;
 
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;

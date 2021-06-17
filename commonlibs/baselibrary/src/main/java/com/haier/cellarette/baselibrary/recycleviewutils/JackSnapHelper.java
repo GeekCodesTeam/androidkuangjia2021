@@ -1,7 +1,7 @@
 package com.haier.cellarette.baselibrary.recycleviewutils;
 
-//import android.support.annotation.NonNull;
-//import android.support.annotation.Nullable;
+//
+//
 //import androidx.appcompat.widget.LinearLayoutManager;
 //import androidx.appcompat.widget.LinearSnapHelper;
 //import androidx.appcompat.widget.OrientationHelper;

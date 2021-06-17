@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
+import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo2.MkDemo2Activity;
 
 public class MkDemo2Fragment1 extends SlbBaseLazyFragmentNew {

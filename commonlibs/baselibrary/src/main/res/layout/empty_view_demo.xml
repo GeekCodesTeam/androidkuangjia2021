@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:visibility="gone"
-    app:errornet_layout="@layout/empty_error"
-    app:loading_layout="@layout/empty_loading"
-    app:nodata_layout="@layout/empty_nodata"
-    app:unreachable_layout="@layout/empty_nodata"
+    app:errornet_layout="@layout/empty_error1"
+    app:loading_layout="@layout/empty_loading1"
+    app:nodata_layout="@layout/empty_nodata1"
+    app:unreachable_layout="@layout/empty_nodata1"
     tools:visibility="visible" />

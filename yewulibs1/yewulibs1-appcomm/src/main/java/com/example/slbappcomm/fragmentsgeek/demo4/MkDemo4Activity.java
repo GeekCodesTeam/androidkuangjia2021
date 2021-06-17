@@ -18,8 +18,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseFragment;
-import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
+import com.example.libbase.base.SlbBaseFragment;
+import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo4.configs.IWithViewPager;
 import com.example.slbappcomm.fragmentsgeek.demo4.configs.MkDemo4Config;
 import com.example.slbappcomm.fragmentsgeek.demo4.fragments.MkDemo4Fragment10;

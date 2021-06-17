@@ -23,7 +23,7 @@ def librarys = rootProject.ext.dependencies //
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     // test aar jar
 //    implementation(name: 'opendroid', ext: 'aar')
     implementation project(path: ':libsCenterNew:opendroid2')

@@ -13,8 +13,6 @@ import androidx.core.content.ContextCompat;
 
 import com.example.libskeleton.R;
 
-import io.supercharge.shimmerlayout.ShimmerLayout;
-
 /**
  * Created by ethanhua on 2017/7/29.
  */
@@ -40,7 +38,7 @@ public class ViewSkeletonScreen implements SkeletonScreen {
     }
 
     private ShimmerLayout generateShimmerContainerLayout(ViewGroup parentView) {
-        final ShimmerLayout shimmerLayout = (ShimmerLayout) LayoutInflater.from(mActualView.getContext()).inflate(R.layout.layout_shimmer, parentView, false);
+        final ShimmerLayout shimmerLayout = (ShimmerLayout) LayoutInflater.from(mActualView.getContext()).inflate(R.layout.layout_shimmerhuxi2, parentView, false);
         shimmerLayout.setShimmerColor(mShimmerColor);
         shimmerLayout.setShimmerAngle(mShimmerAngle);
         shimmerLayout.setShimmerAnimationDuration(mShimmerDuration);

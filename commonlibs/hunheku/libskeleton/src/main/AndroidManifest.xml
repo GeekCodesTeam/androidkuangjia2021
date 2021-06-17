@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.libskeleton">
+
     <application
         android:allowBackup="true"
         android:label="@string/app_namelibskeleton"
         android:supportsRtl="true">
-
+        <activity android:name="com.ethanhua.skeleton.sample.Huxi2MainActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.Huxi2MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ethanhua.skeleton.sample.Huxi2RecyclerViewActivity" />
+        <activity
+            android:name="com.ethanhua.skeleton.sample.Huxi2ViewActivity"
+            android:hardwareAccelerated="false" />
+        <activity android:name="com.ethanhua.skeleton.sample.Huxi2StatusViewActivity" />
     </application>
 </manifest>

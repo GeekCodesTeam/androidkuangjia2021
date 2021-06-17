@@ -1,4 +1,4 @@
-//package com.example.slbappcomm.baserecycleview.yewu3;
+package com.example.slbappcomm.baserecycleview.yewu3;//package com.example.slbappcomm.baserecycleview.yewu3;
 //
 //public class ActYewu3readme {
 ////    usage

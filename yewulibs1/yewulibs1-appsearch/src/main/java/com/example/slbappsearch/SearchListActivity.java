@@ -14,24 +14,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.blankj.utilcode.util.BarUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.bizyewu2.bean.SNew1SearchBean;
 import com.example.bizyewu2.bean.SNew1SearchBean1;
 import com.example.bizyewu2.bean.SNew1SearchBean2;
 import com.example.bizyewu2.presenter.SNew1SearchPresenter;
 import com.example.bizyewu2.view.SNew1SearchView;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
+import com.example.libbase.emptyview.NiubiEmptyViewNew;
 import com.example.slbappcomm.widgets.recyclerviewnice.XRecyclerView;
 import com.example.slbappsearch.part1.SearchBean;
 import com.example.slbappsearch.part1.searchhuancun.SearchCommManager;
 import com.example.slbappsearch.part2.SearchKeyListAdapter;
 import com.example.slbappsearch.part3.SearchListAdapter;
-import com.haier.cellarette.baselibrary.emptyview.NiubiEmptyView;
 import com.haier.cellarette.baselibrary.flowlayout.FlowLayout;
 import com.haier.cellarette.baselibrary.flowlayout.TagAdapter;
 import com.haier.cellarette.baselibrary.flowlayout.TagFlowLayout;
@@ -39,7 +37,6 @@ import com.haier.cellarette.baselibrary.marqueelibrary.SimpleMarqueeView;
 import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import com.umeng.analytics.MobclickAgent;
-
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -68,7 +65,7 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
     private LinearLayout ll3;
     private XRecyclerView recyclerView3;
     private SearchListAdapter mAdapter3;
-    private NiubiEmptyView niubiEmptyView3;
+    private NiubiEmptyViewNew niubiEmptyView3;
 
     //
     private String search_key;
@@ -289,7 +286,7 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
             }
         });
 
-        niubiEmptyView3.setRetry(new NiubiEmptyView.RetryListener() {
+        niubiEmptyView3.setRetry(new NiubiEmptyViewNew.RetryListener() {
             @Override
             public void retry() {
                 if (!TextUtils.isEmpty(edit_query1.getText().toString().trim())) {
@@ -340,7 +337,7 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
         recyclerView3.setLayoutManager(new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false));
         mAdapter3 = new SearchListAdapter(R.layout.activity_search_list_item3);
         recyclerView3.setAdapter(mAdapter3);
-        niubiEmptyView3 = new NiubiEmptyView();
+        niubiEmptyView3 = new NiubiEmptyViewNew();
         niubiEmptyView3.bind(this, recyclerView3, mAdapter3);
 
     }

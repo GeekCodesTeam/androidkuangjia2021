@@ -37,6 +37,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     api project(':commonlibs:zhibopolyv:polyvLiveCommonModul')
 }

@@ -6,7 +6,7 @@ def librarys = rootProject.ext.dependencies //依赖
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     implementation project(':commonlibs:hunheku:libyanzhenjieandpermission')
 //    implementation 'com.yanzhenjie:permission:2.0.3'
     implementation librarys.glide47

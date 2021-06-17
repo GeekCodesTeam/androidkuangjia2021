@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.libbase.baserecycleview.SlbBaseActivityViewPage;
+import com.example.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.baserecycleview.SlbBaseActivityViewPage;
-import com.example.slbappcomm.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.geek.libutils.app.FragmentHelper;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;

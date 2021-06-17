@@ -30,7 +30,7 @@ android {
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     api project(':commonlibs:zhibopolyv:polyvLiveCommonModul')
     implementation project(':commonlibs:zhibopolyv:polyvLiveEcommerceScene')
     implementation project(':commonlibs:zhibopolyv:polyvLiveCloudClassScene')

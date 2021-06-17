@@ -22,7 +22,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
+
 import android.text.TextUtils;
 
 import com.haiersmart.commonbizlib.netease.NeteaseNet;

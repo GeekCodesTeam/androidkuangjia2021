@@ -1,6 +1,7 @@
 package com.haier.cellarette.baselibrary.networkview;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -68,6 +69,7 @@ public class NetStateUtils {
     /**
      * wifi是否打开
      */
+    @SuppressLint("MissingPermission")
     public static boolean isWifiEnabled(Context context) {
         ConnectivityManager mgrConn = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);

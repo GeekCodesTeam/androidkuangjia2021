@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -21,19 +22,21 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.example.bizyewu1.bean.VersionInfoBean;
 import com.example.bizyewu1.presenter.CheckverionPresenter;
 import com.example.bizyewu1.view.CheckverionView;
-import com.example.slbappcomm.base.SlbBaseActivity;
-import com.example.slbappcomm.base.SlbBaseLazyFragmentNew;
+import com.example.libbase.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libutils.app.BaseAppManager;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppReceiver;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppUtils;
-import com.geek.libutils.app.BaseAppManager;
 import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
+import com.pgyer.pgyersdk.PgyerSDKManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
 
+    private ImageView iv1;
     private RecyclerView recyclerView;
     private ShouyeFooterAdapter mAdapter;
     private int current_pos = 0;
@@ -87,6 +90,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     @Override
     protected void onResume() {
         updateAppReceiver.setBr(this);
+        PgyerSDKManager.checkSoftwareUpdate(this);
         super.onResume();
     }
 
@@ -164,6 +168,8 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     }
 
     private void findview() {
+        iv1 = findViewById(R.id.iv1);
+
         recyclerView = findViewById(R.id.recycler_view1);
         mAdapter = new ShouyeFooterAdapter(this);
         // 动态设置首页bufen

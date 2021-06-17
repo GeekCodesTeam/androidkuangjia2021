@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServerAddr version='4'>
+    <Connector>
+        <server>
+            <host>app.yomeeting.com</host>
+            <port>8085</port>
+        </server>
+    </Connector>
+    <LVS>
+        <server>
+            <host>app.yomeeting.com</host>
+            <port>8888</port>
+        </server>
+    </LVS>
+    <FileServer>
+        <server>
+            <host>app.yomeeting.com</host>
+            <port>8090</port>
+        </server>
+    </FileServer>
+</ServerAddr>
+

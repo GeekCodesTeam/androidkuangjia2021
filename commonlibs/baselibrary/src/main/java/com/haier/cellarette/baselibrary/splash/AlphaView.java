@@ -2,7 +2,7 @@ package com.haier.cellarette.baselibrary.splash;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-//import android.support.annotation.Nullable;
+//
 //import androidx.core.view.PagerAdapter;
 import androidx.annotation.Nullable;
 //import androidx.core.view.ViewPager;

@@ -24,7 +24,7 @@ def librarys = rootProject.ext.dependencies //
 //}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
 //    implementation project(':commonlibs:rongcloud:CallKit')
     //call_kit、call_lib、im_kit、im_lib的版本号码必须一致
 //    implementation 'cn.rongcloud.sdk:call_kit:4.0.0'

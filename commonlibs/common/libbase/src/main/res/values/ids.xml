@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="list" type="id"/>
+    <item name="refresh" type="id" />
+
+    <item name="empty_nodata_notice" type="id" />
+    <item name="empty_errnet_notice" type="id" />
+    <item name="empty_errnet_btn" type="id" />
+    <item name="loading_notice" type="id" />
+    <item name="loading_iv" type="id" />
+    <item name="empty_unreachable_notice" type="id" />
+    <item name="empty_unreachable_btn" type="id" />
+
+    <item name="home" type="id" />
+    <item name="back" type="id" />
+
+
+    <item type="id" name="statusbarutil_fake_status_bar_view" />
+    <item type="id" name="statusbarutil_translucent_view" />
+
+    <item name="baserecycleview_iv_back1" type="id" />
+    <item name="baserecycleview_iv_x1" type="id" />
+    <item name="baserecycleview_tv_center_content1" type="id" />
+    <item name="baserecycleview_tv_right1" type="id" />
+    <item name="baserecycleview_emptyview1" type="id" />
+    <item name="baserecycleview_emptyview2" type="id" />
+    <item name="baserecycleview_ll_refresh1" type="id" />
+    <item name="baserecycleview_tab1" type="id" />
+    <item name="baserecycleview_viewpager1" type="id" />
+    <item name="baserecycleview_refreshLayout1" type="id" />
+    <item name="baserecycleview_smart_header1" type="id" />
+    <item name="baserecycleview_smart_footer1" type="id" />
+    <item name="baserecycleview_scroll_view1" type="id" />
+    <item name="baserecycleview_recycler_view1" type="id" />
+
+</resources>

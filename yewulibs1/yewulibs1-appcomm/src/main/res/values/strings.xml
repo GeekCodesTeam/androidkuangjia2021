@@ -15,4 +15,18 @@
     <string name="viewpager1_title_knowledgesystem" translatable="false">知识体系</string>
     <string name="viewpager1_title_project" translatable="false">项目</string>
     <string name="viewpager1_title_navigation" translatable="false">导航</string>
+
+    <!-- Main activity strings -->
+    <string name="hello">Hello! Press one of the following buttons to crash the app:</string>
+    <string name="crash_main_thread">Crash main thread</string>
+    <string name="crash_background_thread">Crash background thread</string>
+    <string name="crash_with_delay">Crash with delay (5s)</string>
+
+    <!-- These strings are only for our CUSTOM error activity, if you are using the default activity, they are not needed! -->
+    <string name="error_title">Something went wrong!</string>
+    <string name="error_occurred">An error occurred. We\'re deeply sorry.</string>
+    <string name="error_details">Error details:</string>
+    <string name="unknown_exception">Unknown exception</string>
+    <string name="restart_app">Restart app</string>
+    <string name="close_app">Close app</string>
 </resources>

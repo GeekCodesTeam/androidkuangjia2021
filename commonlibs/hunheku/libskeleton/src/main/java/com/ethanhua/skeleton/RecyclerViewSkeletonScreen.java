@@ -53,7 +53,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         private final RecyclerView mRecyclerView;
         private boolean mShimmer = true;
         private int mItemCount = 10;
-        private int mItemResID = R.layout.layout_default_item_skeleton;
+        private int mItemResID = R.layout.layout_default_item_skeletonhuxi2;
         private int[] mItemsResIDArray;
         private int mShimmerColor;
         private int mShimmerDuration = 1000;

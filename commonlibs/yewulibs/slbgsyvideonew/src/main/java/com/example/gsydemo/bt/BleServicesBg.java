@@ -13,7 +13,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.geek.libutils.app.BaseApp;
 
-//import android.support.annotation.Nullable;
+//
 
 public class BleServicesBg extends Service {
 

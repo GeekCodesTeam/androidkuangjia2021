@@ -9,15 +9,15 @@
         android:label="@string/app_namelogin"
         android:supportsRtl="true">
 
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.LoginActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+<!--        <activity-->
+<!--            android:name=".LoginActivity"-->
+<!--            android:exported="false"-->
+<!--            android:screenOrientation="portrait">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="${applicationId}.hs.act.slbapp.LoginActivity" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".LoginOutActivity"
             android:exported="false"

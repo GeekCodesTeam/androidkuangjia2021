@@ -1,4 +1,4 @@
-///*
+package com.example.slbappcomm.baserecycleview.yewu3;///*
 // * *********************************************************
 // *   author   colin
 // *   company  fosung

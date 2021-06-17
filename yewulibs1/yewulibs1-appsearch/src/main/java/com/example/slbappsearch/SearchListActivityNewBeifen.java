@@ -3,7 +3,7 @@
 //import android.content.Intent;
 //import android.os.Build;
 //import android.os.Bundle;
-//import android.support.annotation.Nullable;
+//
 //import android.support.annotation.RequiresApi;
 //import android.support.v7.widget.GridLayoutManager;
 //import android.support.v7.widget.OrientationHelper;
@@ -27,7 +27,7 @@
 //import com.example.biz3slbappusercenter.presenter.SSearchPresenter;
 //import com.example.biz3slbappusercenter.view.SSearchView;
 //import com.haier.cellarette.libutils.CommonUtils;
-//import com.example.slbappcomm.base.SlbBaseActivity;
+//import com.example.libbase.base.SlbBaseActivity;
 //import com.example.slbappindex.R;
 //import com.example.slbappindex.search.part1.SearchBean;
 //import com.example.slbappindex.search.part1.searchhuancun.SearchCommManager;

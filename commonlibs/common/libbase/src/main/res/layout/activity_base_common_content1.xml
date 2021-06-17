@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/baserecycleview_refreshLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:id="@+id/baserecycleview_smart_header1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_srlBackgroundColor="#E6F1FF"
+            app:srlAccentColor="#4DA3FE"
+            app:srlPrimaryColor="#E6F1FF" />
+
+        <com.example.libbase.widgets.XRecyclerView
+            android:id="@+id/baserecycleview_recycler_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/baserecycleview_smart_footer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_srlBackgroundColor="#E6F1FF"
+            app:srlAccentColor="@color/white"
+            app:srlPrimaryColor="#E6F1FF" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

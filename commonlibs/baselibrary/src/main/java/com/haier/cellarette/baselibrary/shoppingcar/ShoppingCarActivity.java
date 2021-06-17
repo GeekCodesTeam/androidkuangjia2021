@@ -1,7 +1,7 @@
 package com.haier.cellarette.baselibrary.shoppingcar;
 
 import android.os.Bundle;
-//import android.support.annotation.Nullable;
+//
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;

@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.nativendk.JNIUtils2;
 import com.example.slbappcomm.nativendk.KeyReflectUtils;
 import com.example.slbappcomm.utils.CommonUtils;

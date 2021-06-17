@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#C43535"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="300dip">
+
+            <SurfaceView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/action_bar_color"
+                android:src="@mipmap/face_cam" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/face_operate_gradient"
+                android:text="拍摄"
+                android:textColor="@color/white" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="300dip"
+            android:layout_marginLeft="@dimen/dimens_large"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/dimens_small"
+            android:paddingRight="@dimen/dimens_large">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓  名："
+                    android:paddingTop="@dimen/dimens_mid"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_big" />
+
+                <TextView
+                    android:id="@+id/tv_identify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dimens_mid"
+                    android:text="身份证："
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_big" />
+
+                <TextView
+                    android:id="@+id/tv_org_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="党组织："
+                    android:paddingTop="@dimen/dimens_mid"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_big" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dimens_mid">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/face_show_head" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="待拍摄"
+                    android:textColor="#F1C3C3"
+                    android:textSize="@dimen/textsize_small" />
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pre_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dimens_mid"
+            android:background="@drawable/face_pre_step_gradient"
+            android:text="上一步"
+            android:textColor="#D02B2F" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_mid"
+            android:background="@drawable/face_operate_gradient"
+            android:text="保    存"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

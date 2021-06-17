@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.videoplay.quxiantu.bean.SpView4Bean;
 import com.example.slbappcomm.xclchart.SplineView;
 import com.haier.cellarette.baselibrary.assetsfitandroid.fileassets.GetAssetsFileMP3TXTJSONAPKUtil;

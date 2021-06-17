@@ -5,7 +5,7 @@ import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
 import android.graphics.PointF;
 import android.os.Build;
-//import android.support.annotation.NonNull;
+//
 //import android.support.design.widget.AppBarLayout;
 //import android.support.design.widget.CoordinatorLayout;
 //import android.support.v4.view.NestedScrollingChild;

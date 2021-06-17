@@ -74,7 +74,7 @@ public class BaseRecActDemo41Adapter extends BaseMultiItemQuickAdapter<BaseRecAc
                 break;
             case BaseRecActDemo41Bean.style4:
                 final RecyclerView mRecyclerView = helper.getView(R.id.rvlist);
-                mRecyclerView.setLayoutManager(new GridLayoutManager(helper.itemView.getContext(), 1, OrientationHelper.HORIZONTAL, false));
+                mRecyclerView.setLayoutManager(new GridLayoutManager(helper.itemView.getContext(), 1, RecyclerView.HORIZONTAL, false));
                 mRecyclerView.setHasFixedSize(true);
                 mRecyclerView.setOnFlingListener(null);
                 mLinearSnapHelper = new LinearSnapHelper();

@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.BaseActWebActivity;
+import com.example.libbase.agentwebview.activity.BaseActWebActivity;
 
 public class ClickEffectDemo extends BaseActWebActivity {
 

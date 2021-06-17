@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_checked="true"><shape>
+
+        <!-- 这个是选中的  设为true -->
+        <solid android:color="@color/them_red" />
+        <!-- 这个是按压的颜色 -->
+        <stroke android:width="0.5dp" android:color="@color/them_red" />
+
+        <corners android:radius="4dp" />
+        <!-- 四角的弧度 -->
+    </shape></item>
+    <!-- 这个是未选中的状态   -->
+    <item android:state_checked="false"><shape>
+
+        <!-- 这个是按压状态的  设为true -->
+        <solid android:color="#FDE7E5" />
+        <!-- 这个是按压的颜色 -->
+        <stroke android:width="0.5dp" android:color="@color/them_red" />
+        <corners android:radius="4dp" />
+        <!-- 四角的弧度 -->
+    </shape></item>
+
+
+</selector>

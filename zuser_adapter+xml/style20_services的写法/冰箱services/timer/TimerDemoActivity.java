@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
+
 import android.support.design.widget.TabLayout;
 import android.text.TextUtils;
 import android.util.Log;

@@ -1,7 +1,7 @@
 //package com.example.slbappcomm.pop.bottompay;
 //
 //import android.os.Bundle;
-////import android.support.annotation.Nullable;
+////
 //import android.text.TextUtils;
 //import android.view.View;
 //import android.widget.ImageView;
@@ -17,7 +17,7 @@
 //import com.example.biz3slbappcomm.view.SPaySuccessView;
 //import com.haier.cellarette.libutils.CommonUtils;
 //import com.example.slbappcomm.R;
-//import com.example.slbappcomm.base.SlbBaseActivity;
+//import com.example.libbase.base.SlbBaseActivity;
 //import com.example.slbappcomm.utils.LoginImgUtils;
 //import com.geek.libglide47.base.GlideImageView;
 //

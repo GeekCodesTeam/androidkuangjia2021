@@ -10,7 +10,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 //import android.support.annotation.ColorInt;
-//import android.support.annotation.Nullable;
+//
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;

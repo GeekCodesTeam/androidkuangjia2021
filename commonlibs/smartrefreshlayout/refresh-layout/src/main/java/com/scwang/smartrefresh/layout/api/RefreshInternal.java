@@ -1,7 +1,7 @@
 package com.scwang.smartrefresh.layout.api;
 
 //import android.support.annotation.ColorInt;
-//import android.support.annotation.NonNull;
+//
 //import android.support.annotation.RestrictTo;
 import android.annotation.SuppressLint;
 import android.view.View;

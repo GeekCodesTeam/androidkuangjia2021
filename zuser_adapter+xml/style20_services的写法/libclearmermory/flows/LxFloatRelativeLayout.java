@@ -1,7 +1,7 @@
 package com.example.shining.libclearmermory.flows;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;

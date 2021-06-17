@@ -6,8 +6,6 @@ import android.view.ViewGroup;
 import androidx.annotation.IntRange;
 import androidx.recyclerview.widget.RecyclerView;
 
-import io.supercharge.shimmerlayout.ShimmerLayout;
-
 /**
  * Created by ethanhua on 2017/7/29.
  */

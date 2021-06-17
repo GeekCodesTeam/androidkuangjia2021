@@ -1,6 +1,6 @@
 # hunheappkuangjia
 
-混合移动应用框架APP-Android20
+混合移动应用框架APP-Android21
 
 ### 1.ANROOMCrashActivity：验证APP压力测试
 ### 
@@ -337,7 +337,7 @@
 <br/>    api 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'       监听键盘弹出过程
 <br/>    // https://github.com/getActivity/ToastUtils
 <br/>    api 'com.hjq:toast:5.8'
-<br/>    // https://github.com/everhad/AndroidRatingStar         评论星星
+<br/>    // https://github.com/everhad/AndroidRatingStar         评论星星 PingfenMainActivity
 <br/>    api 'com.github.everhad:AndroidRatingStar:v1.0.4'
 <br/>    // https://github.com/li-xiaojun/XPopup                 弹出框
 <br/>    api 'com.lxj:xpopup:1.8.4'
@@ -380,7 +380,7 @@
 <br/>    api project(':commonlibs:hunheku:libapppay')
 <br/>    // Glide 4.0以上
 <br/>    api librarys.glide47
-<br/>    api project(':commonlibs:hunheku:libglide47')
+<br/>    api project(':commonlibs:common:libglide47')
 <br/>    //TODO other libs
 <br/>    // https://github.com/crazyandcoder/citypicker                      城市选择器
 <br/>    // pi 'liji.library.dev:citypickerview:4.3.2'
@@ -395,7 +395,7 @@
 <br/>    api project(':commonlibs:yewulibs:slbota')
 <br/>    // https://github.com/ikew0ng/SwipeBackLayout                       
 <br/>    // api 'me.imid.swipebacklayout.lib:library:1.1.0'                  关闭页面IOS效果
-<br/>    api project(':commonlibs:yewulibs:slbswipebacklayout')
+<br/>    api project(':commonlibs:common:libswipebacklayout')
 <br/>    // slbwifi                                                      WIFI选择器            
 <br/>    api project(':commonlibs:yewulibs:slbwifi') 
 <br/>    // https://github.com/scwang90/SmartRefreshLayout               下拉刷新上拉加载
@@ -437,6 +437,8 @@
 ### 99.commonlibs：dkplayer：DK播放器支持推流
 ### 
 ### 100.slbyanzheng：指纹登录组件
+### 
+### 101.HuxiAct：布局加载组件
 
 
 

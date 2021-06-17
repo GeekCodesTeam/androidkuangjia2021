@@ -6,12 +6,9 @@ import android.view.Gravity;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.BarUtils;
-import com.blankj.utilcode.util.ScreenUtils;
-import com.example.slbappcomm.base.SlbBaseActivityPermissions;
+import com.example.libbase.base.SlbBaseActivityPermissions;
 import com.example.slbappsplash.R;
 import com.haier.cellarette.baselibrary.splash.AlphaView;
 

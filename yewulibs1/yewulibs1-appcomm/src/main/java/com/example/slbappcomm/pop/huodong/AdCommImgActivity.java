@@ -2,7 +2,7 @@ package com.example.slbappcomm.pop.huodong;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-//import android.support.annotation.Nullable;
+//
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,7 +13,7 @@ import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
 import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;

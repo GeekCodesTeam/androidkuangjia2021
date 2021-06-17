@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:hunheku:libutils')
+    implementation project(':commonlibs:common:libutils')
     api project(':commonlibs:zhibopolyv:polyvLiveCommonModul')
     //下拉刷新&上拉加载更多控件
     api 'me.dkzwm.widget.srl:core:1.6.6.4'

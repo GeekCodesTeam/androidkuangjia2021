@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.bizyewu2.presenter.HTuichudengluPresenter;
 import com.example.bizyewu2.view.HTuichudengluView;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.geek.libutils.SlbLoginUtil;

@@ -10,11 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.example.slbappcomm.R;
 import com.example.slbappcomm.uploadimg.view.UploadImgClipViewLayout;
-import com.haier.cellarette.baselibrary.statusbar.StatusBarUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,7 +38,6 @@ public class ClipImageActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uploadimg_clip_image);
-        StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.color_4DA3FE), 30);
         type = getIntent().getIntExtra("type", 1);
         img_file_url = getIntent().getStringExtra("img_file_url");
         img_file_name = getIntent().getStringExtra("img_file_name");

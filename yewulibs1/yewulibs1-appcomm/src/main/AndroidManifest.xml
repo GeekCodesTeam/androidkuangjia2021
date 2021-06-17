@@ -37,72 +37,6 @@
         android:label="@string/app_nameslbappcomm"
         android:supportsRtl="true">
         <activity
-            android:name=".agentwebview.activity.BasicsDisplayWebActDemo"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.BasicsDisplayWebActDemo" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".agentwebview.activity.SmartRefreshWebActDemo"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="dataability" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="http" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".agentwebview.activity.JsWebActDemo"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.JsWebActDemo" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".agentwebview.activity.TablayouActDemo"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.TablayouActDemo" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".uploadimg.UploadImgMainActivity"
             android:exported="false">
             <intent-filter>
@@ -256,24 +190,6 @@
 
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".baserecycleview.yewu1.ActViewPageYewuList1"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.ActViewPageYewuList1" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".baserecycleview.yewu2.ActYewuList1"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeCommon">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.ActYewuList1" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".baserecycleview.yewu3.ActYewu3"
             android:screenOrientation="portrait">
@@ -399,6 +315,34 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".huxiview.HuxiAct">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HuxiAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".viewpager.ui.LXCoolMainActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.LXCoolMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".viewpager.ui.ActivityOrientation" />
+        <activity android:name=".viewpager.ui.ActivityEdgeEffectColor" />
+        <activity android:name=".viewpager.ui.EnableNotifyActivity" />
+        <activity android:name=".viewpager.ui.ActivityAutoScroll" />
+        <activity android:name=".viewpager.ui.ActivityPageTransformer"/>
+        <activity android:name=".viewpager.ui.SupportViewPagerActivity"/>
+        <activity
+            android:name=".viewpager.ui.CustomErrorActivity"
+            android:label="@string/error_title"
+            android:process=":error_activity">
+            <!-- You can also use this instead of using CustomActivityOnCrash.setErrorActivityClass(CustomErrorActivity.class); -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="cat.ereza.customactivityoncrash.ERROR" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <!--services部分-->
         <service
             android:name="com.example.slbappcomm.huyan.Huyanservices"
@@ -430,7 +374,7 @@
             android:exported="false" />
 
         <receiver
-            android:name=".broadcastreceiver.PhoneBroadcastReceiver"
+            android:name=".phonebroadcastreceiver.PhoneBroadcastReceiver"
             android:exported="false">
             <intent-filter android:priority="1000">
                 <!--主动打电话时,发送的广播-->
@@ -441,10 +385,10 @@
         </receiver>
 
         <service
-            android:name=".broadcastreceiver.PhoneService"
+            android:name=".phonebroadcastreceiver.PhoneService"
             android:enabled="true"
             android:exported="false" />
-        <service android:name=".broadcastreceiver.PhoneServiceBg" />
+        <service android:name=".phonebroadcastreceiver.PhoneServiceBg" />
         <!--        <service-->
         <!--            android:name=".services.UpdataCommonservices"-->
         <!--            android:enabled="true"-->

@@ -19,12 +19,12 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.easefun.polyv.livecommon.module.config.PLVLiveSDKConfig;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
-import com.example.slbappcomm.broadcastreceiver.PhoneService;
+import com.example.slbappcomm.phonebroadcastreceiver.PhoneService;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;
 import com.example.slbappindex.services.MOBIDservices;
-import com.example.slbappjpushshare.fenxiang.JPushShareUtils;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
@@ -42,6 +42,7 @@ import com.mob.OperationCallback;
 import com.mob.PrivacyPolicy;
 import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCallback;
+import com.pgyer.pgyersdk.PgyerSDKManager;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.imsdk.v2.V2TIMCallback;
@@ -75,8 +76,6 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import cn.jiguang.share.android.api.JShareInterface;
-import cn.jiguang.share.android.api.PlatformConfig;
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
@@ -114,7 +113,7 @@ public class MyApplication extends MultiDexApplication {
         configRetrofitNet();
         Utils.init(this);// com.blankj:utilcode:1.17.3
         //初始化极光分享
-        configShare();
+//        configShare();
         //初始化极光统计
 //        configTongji();
         //初始化极光推送
@@ -130,7 +129,7 @@ public class MyApplication extends MultiDexApplication {
         //初始化Umeng统计
         configUmengTongji();
         // 为了横屏需求的toast
-//        ToastUtils.init(this);
+        com.hjq.toast.ToastUtils.init(this);
         // ndk
         configNDK();
         // mmkv
@@ -142,13 +141,64 @@ public class MyApplication extends MultiDexApplication {
         // 监听前后台
         regActivityLife();
         // 环信IM
-//        initHx();
+        initHx();
         // TencentIM
         initTencentIM();
         // polyv
-//        initpolyv();
+        initpolyv();
         // GSY
         initGSY();
+        // pgyer
+        initpgyer();
+    }
+
+    private void initpgyer() {
+        new PgyerSDKManager.InitSdk()
+                .setContext(getApplicationContext()) //设置上下问对象
+                .build();
+        // 上报异常bufen
+//        try {
+//
+//        } catch (Exception e) {
+//            PgyerSDKManager.reportException(e);
+//        }
+        // 手动更新
+//        PgyerSDKManager.checkVersionUpdate((Activity) getApplicationContext(), new CheckoutCallBack() {
+//            @Override
+//            public void onNewVersionExist(CheckSoftModel model) {
+//                //检查版本成功（有新版本）
+//
+//                /**
+//                 *   CheckSoftModel 参数介绍
+//                 *
+//                 *    private int buildBuildVersion;//蒲公英生成的用于区分历史版本的build号
+//                 *     private String forceUpdateVersion;//强制更新版本号（未设置强置更新默认为空）
+//                 *     private String forceUpdateVersionNo;//强制更新的版本编号
+//                 *     private boolean needForceUpdate;//	是否强制更新
+//                 *     private boolean buildHaveNewVersion;//是否有新版本
+//                 *     private String downloadURL;//应用安装地址
+//                 *     private String buildVersionNo;//上传包的版本编号，默认为1 (即编译的版本号，一般来说，编译一次会
+//                 *    变动一次这个版本号, 在 Android 上叫 Version Code。对于 iOS 来说，是字符串类型；对于 Android 来
+//                 *    说是一个整数。例如：1001，28等。)
+//                 *     private String buildVersion;//版本号, 默认为1.0 (是应用向用户宣传时候用到的标识，例如：1.1、8.2.1等。)
+//                 *     private String buildShortcutUrl;//	应用短链接
+//                 *     private String buildUpdateDescription;//	应用更新说明
+//                 */
+//
+//            }
+//
+//            @Override
+//            public void onNonentityVersionExist(String string) {
+//                //无新版本
+//            }
+//
+//            @Override
+//            public void onFail(String error) {
+//                //请求异常
+//            }
+//        });
+        // 用户自定义数据(上传数据必须是JSON字符串格式 如：{"userId":"ceshi_001","userName":"ceshi"})
+//        PgyerSDKManager.setUserData("String str");
     }
 
     private void initGSY() {
@@ -174,11 +224,11 @@ public class MyApplication extends MultiDexApplication {
     }
 
     private void initpolyv() {
-//        PLVLiveSDKConfig.init(
-//                new PLVLiveSDKConfig.Parameter(this)
-//                        .isOpenDebugLog(true)
-//                        .isEnableHttpDns(true)
-//        );
+        PLVLiveSDKConfig.init(
+                new PLVLiveSDKConfig.Parameter(this)
+                        .isOpenDebugLog(true)
+                        .isEnableHttpDns(true)
+        );
     }
 
     private void initTencentIM() {
@@ -666,12 +716,12 @@ public class MyApplication extends MultiDexApplication {
     }
 
     private void configShare() {
-        JShareInterface.setDebugMode(true);
-        PlatformConfig platformConfig = new PlatformConfig()
-                .setWechat(JPushShareUtils.APP_ID, JPushShareUtils.APP_KEY)// wxa3fa50c49fcd271c 746c2cd0f414de2c256c4f2095316bd0
-                .setQQ("1106011004", "YIbPvONmBQBZUGaN")
-                .setSinaWeibo("374535501", "baccd12c166f1df96736b51ffbf600a2", "https://www.jiguang.cn");
-        JShareInterface.init(this, platformConfig);// android 10崩溃
+//        JShareInterface.setDebugMode(true);
+//        PlatformConfig platformConfig = new PlatformConfig()
+//                .setWechat(JPushShareUtils.APP_ID, JPushShareUtils.APP_KEY)// wxa3fa50c49fcd271c 746c2cd0f414de2c256c4f2095316bd0
+//                .setQQ("1106011004", "YIbPvONmBQBZUGaN")
+//                .setSinaWeibo("374535501", "baccd12c166f1df96736b51ffbf600a2", "https://www.jiguang.cn");
+//        JShareInterface.init(this, platformConfig);// android 10崩溃
     }
 
     private void configTongji() {

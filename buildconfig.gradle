@@ -7,16 +7,16 @@ ext {
     supportLibVersion = '30.0.0'
 
     // 灯塔版本号
-    dengtaversionCode = 10000
-    dengtaversionName = "1.0.0.0"
+    dengtaversionCode = 20000
+    dengtaversionName = "2.0.0.0"
 
     // 大屏版本号
-    dapingversionCode = 10000
-    dapingversionName = "1.0.0.0"
+    dapingversionCode = 20000
+    dapingversionName = "2.0.0.0"
 
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 1000
-    appversionName = "1.0.0.0"
+    appversionCode = 2000
+    appversionName = "2.0.0.0"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"
@@ -74,7 +74,7 @@ retrofitgconverterscalars         : "com.squareup.retrofit2:converter-scalars:2.
 // ------------- 图片加载 -------------
 fresco                            : "com.facebook.fresco:fresco:0.11.0",
 animatedGif                       : "com.facebook.fresco:animated-gif:0.12.0",
-picasso                           : "com.squareup.picasso:picasso:2.5.2",
+picasso                           : "com.squareup.picasso:picasso:2.71828",
 photoView                         : "com.github.chrisbanes:PhotoView:2.1.3",
 nineoldandroids                   : "com.nineoldandroids:library:2.4.0",
 zxing                             : "com.google.zxing:core:3.2.1",

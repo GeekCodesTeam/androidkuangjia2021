@@ -21,7 +21,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
 
-import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.RegexUtils;
@@ -36,19 +35,16 @@ import com.example.bizyewu2.presenter.HYonghudengluPresenter;
 import com.example.bizyewu2.view.HErweimaView;
 import com.example.bizyewu2.view.HUserInfoView;
 import com.example.bizyewu2.view.HYonghudengluView;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.example.slbapplogin.msg.AppPermissionUtil;
 import com.example.slbapplogin.msg.SMSBroadcastReceiver;
 import com.example.slbapplogin.msg.YanzhengUtil;
-import com.example.slbappjpushshare.denglu.JPushDengluUtils;
-import com.example.slbappjpushshare.denglu.OnResultInfoLitener;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.google.android.material.textfield.TextInputLayout;
-import com.haier.cellarette.baselibrary.btnonclick.view.BounceView;
 import com.haier.cellarette.baselibrary.loading.ShowLoadingUtil;
 import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
 import com.haier.cellarette.baselibrary.widget.AlertView;
@@ -79,7 +75,6 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
     private HErweimaPresenter presentercode;
     private HUserInfoPresenter userInfoPresenter;
     //
-    private JPushDengluUtils jPushDengluUtils;
     private String openid;
     private String unionid;
     private String gender;
@@ -211,23 +206,23 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
             }
         });
         tv1.setOnClickListener(this);
-        jPushDengluUtils = new JPushDengluUtils(new OnResultInfoLitener() {
-            @Override
-            public void onResults(String platform, String toastMsg, String data) {
-//                Toasty.normal(BaseApp.get(), platform + "---" + toastMsg + "---" + data).show();
-                // 微信登录成功bufen
-                JSONObject jsonObject = JSONObject.parseObject(data);
-                if (jsonObject == null) {
-                    return;
-                }
-                openid = (String) jsonObject.get("openid");
-                nickName = (String) jsonObject.get("nickname");
-                gender = (int) jsonObject.get("sex") + "";
-                avatar = (String) jsonObject.get("headimgurl");
-                unionid = (String) jsonObject.get("unionid");
-//                presenter.getWeChatLoginData(openid, unionid, gender, nickName, avatar);
-            }
-        });
+//        jPushDengluUtils = new JPushDengluUtils(new OnResultInfoLitener() {
+//            @Override
+//            public void onResults(String platform, String toastMsg, String data) {
+////                Toasty.normal(BaseApp.get(), platform + "---" + toastMsg + "---" + data).show();
+//                // 微信登录成功bufen
+//                JSONObject jsonObject = JSONObject.parseObject(data);
+//                if (jsonObject == null) {
+//                    return;
+//                }
+//                openid = (String) jsonObject.get("openid");
+//                nickName = (String) jsonObject.get("nickname");
+//                gender = (int) jsonObject.get("sex") + "";
+//                avatar = (String) jsonObject.get("headimgurl");
+//                unionid = (String) jsonObject.get("unionid");
+////                presenter.getWeChatLoginData(openid, unionid, gender, nickName, avatar);
+//            }
+//        });
         edt1.addTextChangedListener(textWatcher);
         edt2.addTextChangedListener(textWatcher);
     }
@@ -455,7 +450,6 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
         presentercode.onDestory();
         userInfoPresenter.onDestory();
         YanzhengUtil.timer_des();
-        jPushDengluUtils.ondes();
         SPUtils.getInstance().put(CommonUtils.APP_VERSION_CODE, AppUtils.getAppVersionCode());
         if (mHandler != null) {
             mHandlerThread.quit();
@@ -507,7 +501,6 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
     private void wxdl() {
 //        jPushDengluUtils.shouquan(other_login_name);
         ShowLoadingUtil.showLoading(SlbLoginActivity.this, "", null);
-        jPushDengluUtils.shezhi_shouquan_getinfo(other_login_name);
     }
 
     // 获取验证码bufen

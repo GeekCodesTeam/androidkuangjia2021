@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".xuanchuanlan.daketang.activity.DKTTopicDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.zplayer.library.ZPlayer
+            android:id="@+id/view_player"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            >
+        </com.zplayer.library.ZPlayer>
+
+        <RelativeLayout
+            android:id="@+id/rl_player_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/view_player"
+            android:layout_alignTop="@+id/view_player"
+            android:background="#30000000"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_video_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#30000000"
+                android:scaleType="centerCrop"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#50000000"/>
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/superplayer_ic_play_normal"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_below="@+id/rl_video"
+        android:background="@color/gray_disable"/>
+
+    <com.zcolin.gui.zrecyclerview.ZRecyclerView
+        android:id="@+id/recyclerview_course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/ll_bottom"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:paddingBottom="@dimen/dimens_big"-->
+<!--        android:paddingLeft="@dimen/dimens_large_large"-->
+<!--        android:paddingRight="@dimen/dimens_large_large"-->
+<!--        android:paddingTop="@dimen/dimens_big"-->
+<!--        android:visibility="gone">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/iv_finish"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:background="@drawable/icon_video_back"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/iv_collect"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:background="@drawable/icon_video_collect_selector"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/iv_share"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:background="@drawable/icon_video_share"/>-->
+
+<!--    </RelativeLayout>-->
+
+
+</RelativeLayout>

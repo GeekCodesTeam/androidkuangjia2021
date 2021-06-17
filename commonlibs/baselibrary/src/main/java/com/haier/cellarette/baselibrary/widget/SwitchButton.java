@@ -22,6 +22,7 @@ import com.haier.cellarette.baselibrary.R;
 
 /**
  * 自义定开关按钮
+ * https://github.com/kyleduo/SwitchButton
  */
 public class SwitchButton extends View implements Checkable {
     private static final int DEFAULT_WIDTH = dp2pxInt(58);

@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.slbappcomm.base.SlbBaseActivity;
+import com.example.libbase.base.SlbBaseActivity;
 import com.example.slbapplogin.msg.YanzhengUtil;
 
 public class WangjiActivity extends SlbBaseActivity implements View.OnClickListener {

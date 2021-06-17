@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.easefun.polyv.livedemo.PolyvUtils;
+//import com.easefun.polyv.livedemo.PolyvUtils;
 import com.example.bizyewu2.bean.SPolyvList1Bean;
 import com.example.bizyewu2.bean.SPolyvList1Bean1;
 import com.example.bizyewu2.presenter.HPolyvList1Presenter;
 import com.example.bizyewu2.view.HPolyvList1View;
+import com.example.libbase.baserecycleview.SlbBaseFragmentViewPageYewuList;
 import com.example.slbappcomm.R;
-import com.example.slbappcomm.baserecycleview.SlbBaseFragmentViewPageYewuList;
 import com.geek.libutils.app.MyLogUtil;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class PolyvFragmentList1 extends SlbBaseFragmentViewPageYewuList implemen
     private PolyvAdapter1 mAdapter1;
     private List<SPolyvList1Bean1> mList1;
     private String tablayoutId;
-    private PolyvUtils polyvUtils;
+//    private PolyvUtils polyvUtils;
     private String appId = "fdhjtb97mj";
     private String appSecret = "1ec091fc12c94109afbd8ed47c81f78c";
     private String userId = "496bff1348";
@@ -50,10 +50,10 @@ public class PolyvFragmentList1 extends SlbBaseFragmentViewPageYewuList implemen
             MyLogUtil.e("---tablayoutId----", tablayoutId);
         }
         // TODO 初始化polyv
-        polyvUtils = new PolyvUtils();
+//        polyvUtils = new PolyvUtils();
 //        polyvUtils.init(getActivity());
         // test
-        polyvUtils.init(getActivity(), appId, appSecret, userId);
+//        polyvUtils.init(getActivity(), appId, appSecret, userId);
     }
 
     @Override
@@ -125,7 +125,7 @@ public class PolyvFragmentList1 extends SlbBaseFragmentViewPageYewuList implemen
 //                    intent.putExtra("orderId", bean.getId());
 //                    startActivity(intent);
                     //TODO Polyv
-                    polyvUtils.into_local_liveback(getActivity());
+//                    polyvUtils.into_local_liveback(getActivity());
                 }
                 if (i == R.id.tv1) {
                     // 入学通知书
@@ -134,7 +134,7 @@ public class PolyvFragmentList1 extends SlbBaseFragmentViewPageYewuList implemen
 //                    intent.putExtra("orderId", bean.getId());
 //                    startActivity(intent);
                     //TODO Polyv
-                    polyvUtils.into_polyv(getActivity(), channelId);
+//                    polyvUtils.into_polyv(getActivity(), channelId);
                 }
 
 
