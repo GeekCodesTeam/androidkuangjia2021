@@ -2,6 +2,11 @@
 
 混合移动应用框架APP-Android21
 
+###
+![效果图](https://github.com/GeekCodesTeam/androidkuangjia2021/blob/main/zuser_adapter%2Bxml/111111.jpg "1")
+![效果图](https://github.com/GeekCodesTeam/androidkuangjia2021/blob/main/zuser_adapter%2Bxml/222222.jpg "2")
+![效果图](https://github.com/GeekCodesTeam/androidkuangjia2021/blob/main/zuser_adapter%2Bxml/3333333.jpg "3")
+
 ### 1.ANROOMCrashActivity：验证APP压力测试
 ### 
 ### 2.AssetsMainActivity：为APP申请访问文件，写入txt存储，copy到assets
