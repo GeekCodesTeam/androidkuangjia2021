@@ -25,7 +25,7 @@ import com.example.slbapplogin.R;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.etc.DateUtil;
-import com.haier.cellarette.baselibrary.zothers.AutoHideInputMethodFrameLayout;
+import com.haier.cellarette.baselibrary.jianpan.AutoHideInputMethodFrameLayout;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;

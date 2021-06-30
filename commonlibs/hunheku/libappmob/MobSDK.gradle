@@ -3,9 +3,12 @@ apply plugin: 'com.mob.sdk'
 MobSDK {
     appKey "m323eb200717e4"
     appSecret "66293d13de94c6389d110a876796af84"
+//    gui true
     apm false
+//    spEdition "fp" // 设定MobSDK为隐私协议适配版本
     //fp true
     MobPush {
+        debugLevel 4
         devInfo {
             HUAWEI {
                 appId "104144387"
@@ -52,10 +55,10 @@ MobSDK {
                 appId "wxa3fa50c49fcd271c"
                 appSecret "e8a93eed2ccd89b047f29d0aa62e1c95"
             }
-            WechatFavorite {
-                appId "wxa3fa50c49fcd271c"
-                appSecret "e8a93eed2ccd89b047f29d0aa62e1c95"
-            }
+//            WechatFavorite {
+//                appId "wxa3fa50c49fcd271c"
+//                appSecret "e8a93eed2ccd89b047f29d0aa62e1c95"
+//            }
             QZone {
                 appId "100371282"
                 appKey "aed9b0303e3ed1e27bae87c33761161d"

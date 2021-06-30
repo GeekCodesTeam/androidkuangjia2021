@@ -10,7 +10,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import com.blankj.utilcode.util.ServiceUtils;
 import com.example.slbappcomm.utils.CommonUtils;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
+import com.geek.libutils.app.LocalBroadcastManagers;
 
 /**
  * Description:

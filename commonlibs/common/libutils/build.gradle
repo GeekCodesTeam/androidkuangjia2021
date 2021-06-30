@@ -32,7 +32,8 @@ dependencies {
     // https://github.com/Meituan-Dianping/walle
     api 'com.meituan.android.walle:library:1.1.7'
     // https://www.pgyer.com/doc/view/android-sdk
-    api 'com.pgyer:analytics:4.1.16'
+//    api 'com.pgyer:analytics:4.1.16'
+    api 'com.pgyer:analytics:4.2.1'
 
 //    implementation "androidx.legacy:legacy-support-v4:1.0.0"
 //    implementation "androidx.appcompat:appcompat:1.2.0"

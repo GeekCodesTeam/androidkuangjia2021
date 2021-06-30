@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fosung.lighthouse.test"
     android:installLocation="internalOnly">
+    <!-- harmony-->
+    <uses-feature
+        android:name="zidane.software.ability"
+        android:required="false" />
+    <!-- harmony-->
     <!-- 必选-->
     <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
@@ -43,7 +48,7 @@
     <!--    android:name="com.sairobo.hexiangketang.MyApplication"-->
     <!--    android:theme="@style/AppThemeCommon"-->
     <application
-        android:name=".MyApplication"
+        android:name="com.fosung.lighthouse.test.MyApplication"
         android:allowBackup="false"
         android:allowNativeHeapPointerTagging="false"
         android:debuggable="false"
@@ -61,6 +66,14 @@
         tools:ignore="AllowBackup,HardcodedDebugMode"
         tools:replace="android:allowBackup,android:label"
         tools:targetApi="n">
+        <!--        harmonybufen-->
+        <meta-data
+            android:name="permZA"
+            android:value="true" />
+        <meta-data
+            android:name="multiFrameworkBundle"
+            android:value="true" />
+        <!--        应用自启-->
         <receiver
             android:name=".MyReceiver"
             android:enabled="true"
@@ -85,7 +98,10 @@
         <!-- Optional 微信分享回调,wxapi必须在包名路径下，否则回调不成功-->
         <activity
             android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.fosung.lighthouse.test"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

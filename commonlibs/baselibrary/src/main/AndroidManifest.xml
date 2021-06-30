@@ -13,36 +13,31 @@
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <!--    定位权限bufen-->
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-
-    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
-    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
-
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-
+    <!--    鸿蒙不支持bufen权限-->
+    <!--    <uses-permission android:name="android.permission.SEND_SMS" />-->
+    <!--    <uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+    <!--    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />-->
+    <!-- 短信验证登陆功能需要添加次权限来自动填充验证码，用不到可以去掉 -->
+<!--    <uses-permission android:name="android.permission.READ_SMS" />-->
+    <!--    鸿蒙不支持bufen权限-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
 
     <application
         android:allowBackup="true"
@@ -590,7 +585,56 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".jianpan.JianpanAct">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.JianpanAct" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".expandabletextview.ShowInRecyclerViewActivity" />
+
+        <activity
+            android:name=".switchbutton.MainActivitySwitchButtonK"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.MainActivitySwitchButtonK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".switchbutton.StyleActivitySwitchButtonK"
+            android:label="@string/title_activity_style"
+            android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".switchbutton.MainActivitySwitchButtonK" />
+        </activity>
+        <activity
+            android:name=".switchbutton.UseActivitySwitchButtonK"
+            android:label="@string/title_activity_use"
+            android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".switchbutton.MainActivitySwitchButtonK" />
+        </activity>
+        <activity
+            android:name=".switchbutton.StyleInCodeActivitySwitchButtonK"
+            android:label="@string/title_activity_style_in_code"
+            android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".switchbutton.MainActivitySwitchButtonK" />
+        </activity>
+        <activity
+            android:name=".switchbutton.RecyclerActivitySwitchButtonK"
+            android:label="@string/title_activity_recycler_view"
+            android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".switchbutton.MainActivitySwitchButtonK" />
+        </activity>
 
         <receiver android:name=".networkview.NetworkChangeListener" />
 

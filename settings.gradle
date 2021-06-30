@@ -105,13 +105,13 @@ include ':commonlibs',
 // commonlibs
 
 // fsjxcommonlibs
-include ':zfsjx-commonlibs',
-        ':zfsjx-commonlibs:libGui',
-        ':zfsjx-commonlibs:MediaCompressLib',
-        ':zfsjx-commonlibs:libIjkPlayer',
-        ':zfsjx-commonlibs:libFosungFrame',
-        ':zfsjx-commonlibs:libappservices',
-        ':zfsjx-commonlibs:recyclertreeview-lib'
+//include ':zfsjx-commonlibs',
+//        ':zfsjx-commonlibs:libGui',
+//        ':zfsjx-commonlibs:MediaCompressLib',
+//        ':zfsjx-commonlibs:libIjkPlayer',
+//        ':zfsjx-commonlibs:libFosungFrame',
+//        ':zfsjx-commonlibs:libappservices',
+//        ':zfsjx-commonlibs:recyclertreeview-lib'
 // fsjxcommonlibs
 
 // start app1
@@ -122,12 +122,12 @@ include ':zfsjx-commonlibs',
 // end app1
 
 // start app2
-include ':zfsjx-dangjiantongxinping',
-        ':zfsjx-dangjiantongxinping:yewulibs-biz-daping1',
-        ':zfsjx-dangjiantongxinping:yewulibs-commonlibvariants',
-        ':zfsjx-dangjiantongxinping:yewulibs-common:libIjkPlayer',
-        ':zfsjx-dangjiantongxinping:tv',
-        ':zfsjx-dangjiantongxinping:mobile'
+//include ':zfsjx-dangjiantongxinping',
+//        ':zfsjx-dangjiantongxinping:yewulibs-biz-daping1',
+//        ':zfsjx-dangjiantongxinping:yewulibs-commonlibvariants',
+//        ':zfsjx-dangjiantongxinping:yewulibs-common:libIjkPlayer',
+//        ':zfsjx-dangjiantongxinping:tv',
+//        ':zfsjx-dangjiantongxinping:mobile'
 // end app2
 
 // start app3

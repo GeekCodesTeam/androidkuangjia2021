@@ -5,9 +5,9 @@
         android:allowBackup="true"
         android:label="@string/app_namelibappmob"
         android:supportsRtl="true">
-        <meta-data
-            android:name="com.mob.mobpush.debugLevel"
-            android:value="4" />
+<!--        <meta-data-->
+<!--            android:name="com.mob.mobpush.debugLevel"-->
+<!--            android:value="4" />-->
 
         <activity android:name="com.example.libappmob.MobshareActivity">
             <intent-filter>

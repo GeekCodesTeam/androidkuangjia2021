@@ -15,7 +15,7 @@ import android.widget.SeekBar;
 
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
-import com.haier.cellarette.baselibrary.widget.SwitchButton;
+import com.haier.cellarette.baselibrary.switchbutton.SwitchButton;
 
 
 public class RingActivity extends AppCompatActivity {

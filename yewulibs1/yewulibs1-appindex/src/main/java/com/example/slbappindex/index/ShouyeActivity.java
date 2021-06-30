@@ -26,9 +26,9 @@ import com.example.libbase.base.SlbBaseActivity;
 import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.BaseAppManager;
+import com.geek.libutils.app.LocalBroadcastManagers;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppReceiver;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppUtils;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.pgyer.pgyersdk.PgyerSDKManager;
 
 import java.util.ArrayList;
@@ -45,10 +45,12 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     public static final String id1 = "11";
     public static final String id2 = "22";
     public static final String id3 = "33";
+    public static final String id4 = "44";
     private List<ShouyeFooterBean> mList;
     private static final String LIST_TAG1 = "list11";
     private static final String LIST_TAG2 = "list22";
     private static final String LIST_TAG3 = "list33";
+    private static final String LIST_TAG4 = "list44";
     //
     private UpdateAppReceiver updateAppReceiver;// 强制升级
     private CheckverionPresenter presenter;
@@ -63,6 +65,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     private ShouyeF1 mFragment1; //
     private ShouyeF2 mFragment2; //
     private ShouyeF3 mFragment3; //
+    private ShouyeF4 mFragment4; //
 
     private MessageReceiverIndex mMessageReceiver;
 
@@ -114,6 +117,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
             mFragment1 = (ShouyeF1) mFragmentManager.findFragmentByTag(LIST_TAG1);
             mFragment2 = (ShouyeF2) mFragmentManager.findFragmentByTag(LIST_TAG2);
             mFragment3 = (ShouyeF3) mFragmentManager.findFragmentByTag(LIST_TAG3);
+            mFragment4 = (ShouyeF4) mFragmentManager.findFragmentByTag(LIST_TAG4);
         }
         super.onCreate(savedInstanceState);
     }
@@ -245,7 +249,8 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     private void addList() {
         mList.add(new ShouyeFooterBean(id1, "首页", R.drawable.index_tab1_normal, R.drawable.index_tab1_select, false));
         mList.add(new ShouyeFooterBean(id2, "分类", R.drawable.index_tab2_normal, R.drawable.index_tab2_select, false));
-        mList.add(new ShouyeFooterBean(id3, "我的", R.drawable.index_tab3_normal, R.drawable.index_tab3__select, false));
+        mList.add(new ShouyeFooterBean(id3, "业务", R.drawable.index_tab3_normal, R.drawable.index_tab3__select, false));
+        mList.add(new ShouyeFooterBean(id4, "我的", R.drawable.index_tab3_normal, R.drawable.index_tab3__select, false));
     }
 
     private void initList() {
@@ -294,6 +299,17 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
                 transaction.show(mFragment3);
                 mFragment3.getCate(tag, isrefresh);
             }
+        }else if (tag.equalsIgnoreCase(id4)) {
+            if (mFragment4 == null) {
+                mFragment4 = new ShouyeF4();
+                Bundle args = new Bundle();
+                args.putString("tablayoutId", tag);
+                mFragment4.setArguments(args);
+                transaction.add(R.id.container, mFragment4, LIST_TAG4);
+            } else {
+                transaction.show(mFragment4);
+                mFragment4.getCate(tag, isrefresh);
+            }
         }
         transaction.commitAllowingStateLoss();
     }
@@ -310,6 +326,10 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
         if (mFragment3 != null) {
             transaction.hide(mFragment3);
             mFragment3.give_id(tag_ids);
+        }
+        if (mFragment4 != null) {
+            transaction.hide(mFragment4);
+            mFragment4.give_id(tag_ids);
         }
     }
 

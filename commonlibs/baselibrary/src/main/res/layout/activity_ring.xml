@@ -231,7 +231,7 @@
                     android:textColor="#212121"
                     android:textSize="@dimen/text_size_14" />
 
-                <com.haier.cellarette.baselibrary.widget.SwitchButton
+                <com.haier.cellarette.baselibrary.switchbutton.SwitchButton
                     android:id="@+id/sb_mute_mode"
                     android:layout_width="95dp"
                     android:layout_height="68dp"

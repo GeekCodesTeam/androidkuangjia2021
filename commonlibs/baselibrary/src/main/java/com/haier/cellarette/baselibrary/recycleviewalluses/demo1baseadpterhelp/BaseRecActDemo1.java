@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.switchbutton.SwitchButtonksw;
+import com.haier.cellarette.baselibrary.switchbutton.SwitchButtonK;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
@@ -23,6 +23,9 @@ public class BaseRecActDemo1 extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private BaseRecActDemo1Adapter mAdapter;
     private List<BaseRecActDemo1Bean> mList;
+    private SwitchButtonK switchButton;
+    private MaterialSpinner spinner;
+
 
     public static List<BaseRecActDemo1Bean> getSampleData(int lenth) {
         List<BaseRecActDemo1Bean> list = new ArrayList<>();
@@ -43,9 +46,9 @@ public class BaseRecActDemo1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycleviewallsuses_demo1);
         findview();
+        initMenu();
         onclicklistener();
         donetwork();
-        initMenu();
     }
 
     private void donetwork() {
@@ -108,7 +111,7 @@ public class BaseRecActDemo1 extends AppCompatActivity {
     }
 
     private void initMenu() {
-        MaterialSpinner spinner = findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
         spinner.setItems("AlphaIn", "ScaleIn", "SlideInBottom", "SlideInLeft", "SlideInRight", "Custom");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
@@ -140,7 +143,7 @@ public class BaseRecActDemo1 extends AppCompatActivity {
             }
         });
         mAdapter.isFirstOnly(false);//init firstOnly state
-        SwitchButtonksw switchButton = findViewById(R.id.switch_button);
+        switchButton = findViewById(R.id.switch_button1);
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {

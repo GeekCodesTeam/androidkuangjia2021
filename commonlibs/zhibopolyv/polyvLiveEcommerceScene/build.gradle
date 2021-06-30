@@ -1,12 +1,10 @@
 apply plugin: 'com.android.library'
-def config = rootProject.ext //配置
-def librarys = config.dependencies //
+
 android {
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         consumerProguardFiles "proguard-rules.pro"
     }
     buildTypes {

@@ -28,7 +28,10 @@
         <service android:name="com.amap.api.location.APSService" />
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="5a17ab9cc5aa0d74e090c37f3ecd5a15" />
+            android:value="d589a9e9273ebd4e739c33c38bd6dd19" />
+<!--        <meta-data-->
+<!--            android:name="com.amap.api.v2.apikey"-->
+<!--            android:value="5a17ab9cc5aa0d74e090c37f3ecd5a15" />-->
         <activity android:name=".LocActivity">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LocActivity" />

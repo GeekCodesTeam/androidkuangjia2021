@@ -10,12 +10,12 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "http://mvn.mob.com/android" }
         maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
-        maven { url 'https://gitee.com/pgyer2020/analytics/raw/master' }  // 备用仓库
+        maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
         maven { url 'http://developer.huawei.com/repo/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
-//        classpath 'com.meituan.android.walle:plugin:1.1.7'
+        classpath 'com.meituan.android.walle:plugin:1.1.7'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0' // add plugin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // 集成MobPush
@@ -36,7 +36,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "http://mvn.mob.com/android" }
         maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
-        maven { url 'https://gitee.com/pgyer2020/analytics/raw/master' }  // 备用仓库
+        maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
         maven { url 'http://developer.huawei.com/repo/' }
 
 //        flatDir {

@@ -7,8 +7,8 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.base.SlbBaseActivity;
@@ -47,6 +47,7 @@ public class WelComeActivity extends SlbBaseActivity {
             finish();
             return;
         }
+        MyLogUtil.e("ssssssssss", DeviceUtils.getAndroidID());
     }
 
     @Override

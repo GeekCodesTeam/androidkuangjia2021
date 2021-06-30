@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.geek.libutils.app.BaseApp;
-
 import com.tencent.qcloud.tim.demo.SplashActivity;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
-import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.mipush.sdk.MiPushClient;
 import com.xiaomi.mipush.sdk.MiPushCommandMessage;

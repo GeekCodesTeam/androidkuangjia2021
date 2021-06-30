@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,18 +15,21 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
+
+import java.lang.reflect.Method;
 
 public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickListener {
 
     private String tablayoutId;
-    private TextView tv_center_content101, tv_center_content1, tv_center_content2, tv_center_content3, tv_center_content4,
+    private TextView textView, tv_center_content101, tv_center_content1, tv_center_content2, tv_center_content3, tv_center_content4,
             tv_center_content5, tv_center_content6, tv_center_content7, tv_center_content8, tv_center_content9, tv_center_content10,
             tv_center_content11, tv_center_content12, tv_center_content13, tv_center_content14, tv_center_content15, tv_center_content16,
             tv_center_content17, tv_center_content18, tv_center_content19, tv_center_content20, tv_center_content21, tv_center_content22,
             tv_center_content23, tv_center_content24, tv_center_content25, tv_center_content26, tv_center_content27, tv_center_content28,
-            tv_center_content29, tv_center_content30, tv_center_content31, tv_center_content32;
+            tv_center_content29, tv_center_content30, tv_center_content31, tv_center_content32, tv_center_content33, tv_center_content34,
+            tv_center_content35, tv_center_content36;
     private MessageReceiverIndex mMessageReceiver;
 
 
@@ -81,6 +85,28 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         }
     }
 
+    private static final String HARMONY_OS = "harmony";
+
+    /**
+     * check the system is harmony os
+     *
+     * @return true if it is harmony os
+     */
+    public static boolean isHarmonyOS() {
+        try {
+            Class clz = Class.forName("com.huawei.system.BuildEx");
+            Method method = clz.getMethod("getOsBrand");
+            return HARMONY_OS.equals(method.invoke(clz));
+        } catch (ClassNotFoundException e) {
+            Log.e("TAG", "occured ClassNotFoundException");
+        } catch (NoSuchMethodException e) {
+            Log.e("TAG", "occured NoSuchMethodException");
+        } catch (Exception e) {
+            Log.e("TAG", "occur other problem");
+        }
+        return false;
+    }
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_shouyef1;
@@ -89,6 +115,14 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
     @Override
     protected void setup(final View rootView, @Nullable Bundle savedInstanceState) {
         super.setup(rootView, savedInstanceState);
+        //
+        textView = rootView.findViewById(R.id.textView);
+        if (!isHarmonyOS()) {
+            textView.setText("Android系统");
+        } else {
+            textView.setText("HarmonyOS系统");
+        }
+        //
         tv_center_content101 = rootView.findViewById(R.id.shouyef1_tv101);
         tv_center_content1 = rootView.findViewById(R.id.shouyef1_tv1);
         tv_center_content2 = rootView.findViewById(R.id.shouyef1_tv2);
@@ -122,6 +156,10 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         tv_center_content30 = rootView.findViewById(R.id.shouyef1_tv30);
         tv_center_content31 = rootView.findViewById(R.id.shouyef1_tv31);
         tv_center_content32 = rootView.findViewById(R.id.shouyef1_tv32);
+        tv_center_content33 = rootView.findViewById(R.id.shouyef1_tv33);
+        tv_center_content34 = rootView.findViewById(R.id.shouyef1_tv34);
+        tv_center_content35 = rootView.findViewById(R.id.shouyef1_tv35);
+        tv_center_content36 = rootView.findViewById(R.id.shouyef1_tv36);
         tv_center_content101.setOnClickListener(this);
         tv_center_content1.setOnClickListener(this);
         tv_center_content2.setOnClickListener(this);
@@ -156,6 +194,10 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         tv_center_content30.setOnClickListener(this);
         tv_center_content31.setOnClickListener(this);
         tv_center_content32.setOnClickListener(this);
+        tv_center_content33.setOnClickListener(this);
+        tv_center_content34.setOnClickListener(this);
+        tv_center_content35.setOnClickListener(this);
+        tv_center_content36.setOnClickListener(this);
 
         mMessageReceiver = new MessageReceiverIndex();
         IntentFilter filter = new IntentFilter();
@@ -233,10 +275,33 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ViewPage1TabActivity"));
         } else if (id == R.id.shouyef1_tv30) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.BannerDemoActivity"));
-        }else if (id == R.id.shouyef1_tv31) {
+        } else if (id == R.id.shouyef1_tv31) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.SlbLoginInfoActivity"));
-        }else if (id == R.id.shouyef1_tv32) {
+        } else if (id == R.id.shouyef1_tv32) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LunboMainActivity"));
+        } else if (id == R.id.shouyef1_tv33) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.JianpanAct"));
+        } else if (id == R.id.shouyef1_tv34) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.MainActivitySwitchButtonK"));
+        } else if (id == R.id.shouyef1_tv35) {
+            // 从Android启动鸿蒙组件
+//            Intent intent = new Intent();
+//            ComponentName componentName = new ComponentName("your harmony app's bundleName name","your ability's full name");
+//            intent.setComponent(componentName);
+//            intent.putExtras(bundle);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            AbilityUtils.startAbility(context, intent);
+        } else if (id == R.id.shouyef1_tv36) {
+            // 鸿蒙启动Android组件
+//            Intent intent = new Intent();
+//            Operation operation = new Intent.OperationBuilder()
+//                    .withDeviceId("")
+//                    .withBundleName("your android app’s packagename")
+//                    .withAbilityName("your android app’s activity fullname")
+//                    .withFlags(Intent.FLAG_NOT_OHOS_COMPONENT)
+//                    .build();
+//            intent.setOperation(operation);
+//            startAbility(intent);
         }
     }
 

@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,13 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.PermissionUtils;
-import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.mob.MobSDK;
 
 import cn.sharesdk.onekeyshare.OnekeyShare;

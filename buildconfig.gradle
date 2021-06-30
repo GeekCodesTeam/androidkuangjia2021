@@ -15,8 +15,8 @@ ext {
     dapingversionName = "2.0.0.0"
 
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 2000
-    appversionName = "2.0.0.0"
+    appversionCode = 3000
+    appversionName = "3.0.0.0"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"

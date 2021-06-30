@@ -16,6 +16,6 @@
         android:layout_marginBottom="36mm"
         android:gravity="center"
         android:text="ces"
-        android:textColor="@color/gray4A4A4A"
+        android:textColor="#4A4A4A"
         android:textSize="16mm" />
 </LinearLayout>

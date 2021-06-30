@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <declare-styleable name="EmptyView">
         <attr name="loading_layout_img_an" format="integer|reference" />
         <attr name="loading_layout" format="reference" />
@@ -145,31 +145,30 @@
     </declare-styleable>
 
 
-    <declare-styleable name="SwitchButtonksw" tools:ignore="ResourceName">
-        <attr name="kswThumbDrawable" format="reference"/>
-        <attr name="kswThumbColor" format="color|reference"/>
-        <attr name="kswThumbMargin" format="dimension|reference"/>
-        <attr name="kswThumbMarginTop" format="dimension|reference"/>
-        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
-        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
-        <attr name="kswThumbMarginRight" format="dimension|reference"/>
-        <attr name="kswThumbWidth" format="dimension|reference"/>
-        <attr name="kswThumbHeight" format="dimension|reference"/>
-        <attr name="kswThumbRadius" format="dimension|reference"/>
-        <attr name="kswBackRadius" format="dimension|reference"/>
-        <attr name="kswBackDrawable" format="reference"/>
-        <attr name="kswBackColor" format="color|reference"/>
-        <attr name="kswFadeBack" format="boolean"/>
-        <attr name="kswThumbRangeRatio" format="float"/>
-        <attr name="kswAnimationDuration" format="integer"/>
-        <attr name="kswTintColor" format="color|reference"/>
-        <attr name="kswTextOn" format="string"/>
-        <attr name="kswTextOff" format="string"/>
-        <attr name="kswTextThumbInset" format="dimension"/>
-        <attr name="kswTextExtra" format="dimension"/>
-        <attr name="kswTextAdjust" format="dimension"/>
+    <declare-styleable name="SwitchButtonK">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswThumbRangeRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextThumbInset" format="dimension" />
+        <attr name="kswTextExtra" format="dimension" />
+        <attr name="kswTextAdjust" format="dimension" />
     </declare-styleable>
-
 
 
     <declare-styleable name="AlphaView">
@@ -375,6 +374,60 @@
         <attr name="rsv_drawStrokeForHalfStar" format="boolean" />
         <attr name="rsv_enableSelectRating" format="boolean" />
         <attr name="rsv_onlyHalfStar" format="boolean" />
+    </declare-styleable>
+
+    <!-- 密码 验证码输入框-->
+    <declare-styleable name="SplitEditTextView">
+        <!--边框大小-->
+        <attr name="borderSize" format="dimension" />
+        <!--边框颜色-->
+        <attr name="borderColor" format="color|reference" />
+        <!--圆角大小-->
+        <attr name="corner_size" format="dimension" />
+        <!--分割线大小-->
+        <attr name="divisionLineSize" format="dimension" />
+        <!--分割线颜色-->
+        <attr name="divisionLineColor" format="reference|color" />
+        <!--内容显示为圆的半径-->
+        <attr name="circle_radius" format="dimension" />
+        <!--输入内容数量-->
+        <attr name="contentNumber" format="integer" />
+        <!--输入内容显示样式-->
+        <attr name="contentShowMode" format="enum">
+            <!--显示成密码圆-->
+            <enum name="password" value="1" />
+            <!--显示成文本-->
+            <enum name="text" value="2" />
+        </attr>
+        <!--单个输入框和下划线样式下,每个输入框之间的间距-->
+        <attr name="spaceSize" format="dimension" />
+        <!--输入框样式-->
+        <attr name="inputBoxStyle" format="enum">
+            <!--输入框整体相连的样式-->
+            <enum name="connectBox" value="1" />
+            <!--单个输入框样式-->
+            <enum name="singleBox" value="2" />
+            <!--下划线样式-->
+            <enum name="underline" value="3" />
+        </attr>
+        <!--密码字体颜色-->
+        <attr name="android:textColor" />
+        <!--密码字体大小-->
+        <attr name="android:textSize" />
+        <!--输入框是否是正方形-->
+        <attr name="inputBoxSquare" format="boolean" />
+        <!--光标宽度-->
+        <attr name="cursorWidth" format="dimension" />
+        <!--光标高度-->
+        <attr name="cursorHeight" format="dimension" />
+        <!--光标颜色-->
+        <attr name="cursorColor" format="color|reference" />
+        <!--光标闪烁时长-->
+        <attr name="cursorDuration" format="integer" />
+        <!--下划线输入框样式下,下划线正常的颜色-->
+        <attr name="underlineNormalColor" format="reference|color" />
+        <!--下划线输入框样式下,下划线获取焦点时颜色-->
+        <attr name="underlineFocusColor" format="reference|color" />
     </declare-styleable>
 
 </resources>

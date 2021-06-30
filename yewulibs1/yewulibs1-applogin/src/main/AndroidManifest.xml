@@ -1,9 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.slbapplogin">
 
-    <!-- 短信验证登陆功能需要添加次权限来自动填充验证码，用不到可以去掉 -->
-    <uses-permission android:name="android.permission.READ_SMS" />
-
     <application
         android:allowBackup="true"
         android:label="@string/app_namelogin"

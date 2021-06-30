@@ -126,4 +126,68 @@
     <string name="common_permission_window" translatable="false">悬浮窗权限</string>
     <string name="common_permission_setting" translatable="false">系统设置权限</string>
 
+
+    <!-- style title -->
+    <string name="style_default" translatable="false">Default Style</string>
+    <string name="style_default_measure" translatable="false"><b>Specific exact width.</b> \n1. 80dp width;\n2. 80dp width &amp; 20dp thumb width;\n3. 20dp width &amp; 20dp thumb width, no enough room so do NOT display and no event;\n4. 2nd line negative thumbMargin;\n5. 3rd line. with text.</string>
+    <string name="style_text" translatable="false">With Status Text</string>
+    <string name="style_nofade" translatable="false">Default Style without background fade effect.</string>
+    <string name="style_tint_color" translatable="false">Custom by tint color</string>
+    <string name="style_custom" translatable="false">Custom Style</string>
+    <string name="style_flyme" translatable="false">Flyme5 Style</string>
+    <string name="style_miui" translatable="false">MIUI7 Style</string>
+    <string name="style_md_ios" translatable="false">Material Design &#038; iOS Style</string>
+    <string name="style_disable" translatable="false">Disable state</string>
+    <string name="style_disable_opt" translatable="false">Toggle the others\' enable state</string>
+    <string name="enable_title" translatable="false">enable/disable other SwitchButtons</string>
+
+    <!-- use title -->
+    <string name="use_listener" translatable="false">Work with listener</string>
+    <string name="use_listener_distinguish_manually" translatable="false">Distinguish between manually and by code</string>
+    <string name="use_listener_distinguish_manually_hint" translatable="false">Use the SwitchButton above to control this one.</string>
+    <string name="use_delay" translatable="false">Work with delay</string>
+    <string name="use_check_in_check" translatable="false">call setChecked(boolean)/setCheckedImmediately(boolean) in OnCheckedChangeListener\nIf the second SwitchButton is checked, the first one was "locked" to checked state.</string>
+    <string name="use_listener_finish" translatable="false">You did it!</string>
+    <string name="use_trigger_manually" translatable="false">Manually</string>
+    <string name="use_trigger_by_code" translatable="false">By Code</string>
+    <string name="use_long" translatable="false">work with stuff takes long</string>
+    <string name="use_long_hint" translatable="false">Click "Start" button to kick it off.</string>
+    <string name="use_long_finish" translatable="false">Click "Start" button to kick it off.</string>
+    <string name="use_toggle" translatable="false">2 ways to TOGGLE</string>
+    <string name="use_checked" translatable="false">2 ways to SET_CHECKED</string>
+    <string name="toggle_animated" translatable="false">toggle();</string>
+    <string name="toggle_animated_no_event" translatable="false">toggleNoEvent();</string>
+    <string name="toggle_not_animated" translatable="false">toggleImmediately();</string>
+    <string name="toggle_not_animated_no_event" translatable="false">toggleImmediatelyNoEvent();</string>
+    <string name="checked_animated" translatable="false">setChecked(boolean);</string>
+    <string name="checked_animated_no_event" translatable="false">setCheckedNoEvent(boolean);</string>
+    <string name="checked_not_animated" translatable="false">setCheckedImmediately(boolean);</string>
+    <string name="checked_not_animated_no_event" translatable="false">setCheckedImmediatelyNoEvent(boolean);</string>
+    <string name="bt_start" translatable="false">Start</string>
+
+    <style name="style_in_code">Change properties in code.</style>
+
+    <!-- menu -->
+    <string name="action_github" translatable="false">view in github</string>
+    <string name="action_blog" translatable="false">my blog</string>
+
+    <!-- contents -->
+    <string-array name="contents">
+        <item>@string/title_activity_style</item>
+        <item>@string/title_activity_style_in_code</item>
+        <item>@string/title_activity_use</item>
+        <item>@string/title_activity_recycler_view</item>
+        <item>@string/copyright</item>
+        <item>@string/license</item>
+    </string-array>
+
+    <string name="copyright" translatable="false">version&#160;<b>2.0.3</b>\nby&#160;<b>kyleduo</b></string>
+    <string name="license" translatable="false">Apache License 2.0</string>
+    <string name="title_activity_style" translatable="false">Style in xml</string>
+    <string name="title_activity_use" translatable="false">Easy to use</string>
+    <string name="title_activity_style_in_code" translatable="false">Style in code</string>
+    <string name="title_activity_recycler_view" translatable="false">Used in RecyclerView</string>
+    <string name="disable_no_event" translatable="false">The right SwitchButton was checked in code using setCheckedImmediatelyNoEvent when first enter, so no effects there.</string>
+
+
 </resources>

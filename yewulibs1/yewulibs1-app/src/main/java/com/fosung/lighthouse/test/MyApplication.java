@@ -19,7 +19,6 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.easefun.polyv.livecommon.module.config.PLVLiveSDKConfig;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
 import com.example.slbappcomm.phonebroadcastreceiver.PhoneService;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
@@ -29,12 +28,12 @@ import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.upstream.TransferListener;
 import com.haier.cellarette.baselibrary.changelanguage.LocalManageUtil;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
-import com.heytap.msp.push.HeytapPushManager;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.view.CropImageView;
 import com.mob.MobSDK;
@@ -68,6 +67,7 @@ import java.lang.reflect.Method;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -153,9 +153,9 @@ public class MyApplication extends MultiDexApplication {
     }
 
     private void initpgyer() {
-        new PgyerSDKManager.InitSdk()
-                .setContext(getApplicationContext()) //设置上下问对象
-                .build();
+        new PgyerSDKManager.Init()
+                .setContext(this) //设置上下问对象
+                .start();
         // 上报异常bufen
 //        try {
 //
@@ -198,7 +198,7 @@ public class MyApplication extends MultiDexApplication {
 //            }
 //        });
         // 用户自定义数据(上传数据必须是JSON字符串格式 如：{"userId":"ceshi_001","userName":"ceshi"})
-//        PgyerSDKManager.setUserData("String str");
+        PgyerSDKManager.setUserData("{\"userId\":\"ceshi_001\",\"userName\":\"ceshi\"}");
     }
 
     private void initGSY() {
@@ -214,25 +214,28 @@ public class MyApplication extends MultiDexApplication {
              * demo 里的 GSYExoHttpDataSourceFactory 使用的是忽略证书
              * */
             @Override
-            public HttpDataSource.BaseFactory getHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener, int connectTimeoutMillis, int readTimeoutMillis, boolean allowCrossProtocolRedirects) {
+            public DataSource.Factory getHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener, int connectTimeoutMillis, int readTimeoutMillis,
+                                                               Map<String, String> mapHeadData, boolean allowCrossProtocolRedirects) {
                 //如果返回 null，就使用默认的
-                return new GSYExoHttpDataSourceFactory(userAgent, listener,
+                GSYExoHttpDataSourceFactory factory = new GSYExoHttpDataSourceFactory(userAgent, listener,
                         connectTimeoutMillis,
                         readTimeoutMillis, allowCrossProtocolRedirects);
+                factory.setDefaultRequestProperties(mapHeadData);
+                return factory;
             }
         });
     }
 
     private void initpolyv() {
-        PLVLiveSDKConfig.init(
-                new PLVLiveSDKConfig.Parameter(this)
-                        .isOpenDebugLog(true)
-                        .isEnableHttpDns(true)
-        );
+//        PLVLiveSDKConfig.init(
+//                new PLVLiveSDKConfig.Parameter(this)
+//                        .isOpenDebugLog(true)
+//                        .isEnableHttpDns(true)
+//        );
     }
 
     private void initTencentIM() {
-//        // bugly上报
+        // bugly上报
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
         strategy.setAppVersion(V2TIMManager.getInstance().getVersion());
         CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
@@ -245,7 +248,8 @@ public class MyApplication extends MultiDexApplication {
          * @param configs  TUIKit的相关配置项，一般使用默认即可，需特殊配置参考API文档
          */
         TUIKit.init(this, GenerateTestUserSig.SDKAPPID, new ConfigHelper().getConfigs());
-        HeytapPushManager.init(this, true);
+        // oppo
+//        HeytapPushManager.init(this, true);
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             private int foregroundActivities = 0;
             private boolean isChangingConfiguration;
@@ -400,6 +404,8 @@ public class MyApplication extends MultiDexApplication {
 
     private void configMob() {
         MobSDK.init(this);
+        //
+//        MobPush.setDeviceTokenByUser(DeviceUtils.getAndroidID());
         //防止多进程注册多次  可以在MainActivity或者其他页面注册MobPushReceiver
         MobPush.getRegistrationId(new MobPushCallback<String>() {
 
@@ -409,6 +415,12 @@ public class MyApplication extends MultiDexApplication {
                 SPUtils.getInstance().put("MOBID", rid);
                 //TODO MOBID TEST
                 startService(new Intent(BaseApp.get(), MOBIDservices.class));
+            }
+        });
+        MobPush.getDeviceToken(new MobPushCallback<String>() {
+            @Override
+            public void onCallback(String s) {
+                MyLogUtil.e("MobPush----getDeviceToken--", s);
             }
         });
         //隐私协议

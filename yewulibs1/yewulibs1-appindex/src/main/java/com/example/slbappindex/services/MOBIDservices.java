@@ -13,24 +13,17 @@ import android.os.Message;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.blankj.utilcode.util.ActivityUtils;
-import com.blankj.utilcode.util.GsonUtils;
 import com.example.bizyewu2.bean.HMobid2Bean;
 import com.example.bizyewu2.presenter.HMobID2Presenter;
 import com.example.bizyewu2.presenter.HMobIDPresenter;
 import com.example.bizyewu2.view.HMobID2View;
 import com.example.bizyewu2.view.HMobIDView;
+import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCustomMessage;
 import com.mob.pushsdk.MobPushNotifyMessage;
 import com.mob.pushsdk.MobPushReceiver;
-import com.mob.pushsdk.MobPushUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -49,7 +42,7 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
 
     @Override
     public void OnMobIDSuccess(String bean) {
-        MyLogUtil.e("MobPush","后台接口测试推送成功");
+        MyLogUtil.e("MobPush", "后台接口测试推送成功");
 
     }
 

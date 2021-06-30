@@ -13,6 +13,7 @@ import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.shuyu.gsyvideoplayer.utils.Debuger;
 
 import java.io.FileDescriptor;
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 import tv.danmaku.ijk.media.exo2.IjkExo2MediaPlayer;
 import tv.danmaku.ijk.media.exo2.demo.EventLogger;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
  * 自定义exo player，实现不同于库的exo 无缝切换效果

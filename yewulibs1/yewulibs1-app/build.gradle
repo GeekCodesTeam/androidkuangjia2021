@@ -164,7 +164,7 @@ android {
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
-                    app_name      : "Android框架-测试",
+                    app_name      : "Android框架-预生产",
                     app_icon      : "@drawable/icon"
             ]
         }
@@ -176,17 +176,30 @@ android {
         }
     }
     signingConfigs {
+//        release {
+//            storeFile file('./firebox_keystore.jks')
+//            keyAlias 'haier'
+//            keyPassword 'android'
+//            storePassword 'android'
+//        }
+//        debug {
+//            storeFile file('./firebox_keystore.jks')
+//            keyAlias 'haier'
+//            keyPassword 'android'
+//            storePassword 'android'
+//        }
+        //TODO harmonybufen
         release {
-            storeFile file('./firebox_keystore.jks')
-            keyAlias 'haier'
-            keyPassword 'android'
-            storePassword 'android'
+            storeFile file('./harmonyandroid.jks')
+            keyAlias 'harmonyandroid'
+            keyPassword 'HarmonyAndroid'
+            storePassword 'HarmonyAndroid'
         }
         debug {
-            storeFile file('./firebox_keystore.jks')
-            keyAlias 'haier'
-            keyPassword 'android'
-            storePassword 'android'
+            storeFile file('./harmonyandroid.jks')
+            keyAlias 'harmonyandroid'
+            keyPassword 'HarmonyAndroid'
+            storePassword 'HarmonyAndroid'
         }
     }
     buildTypes {
@@ -214,6 +227,10 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // TODO harmonybufen
+    compileOnly files('libs/abilityshell_ide_java.jar')
+    implementation project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:libbase')
     // TODO common库
     implementation project(':commonlibs:baselibrary')
     implementation project(':yewulibs1:yewulibs1-appcomm')
@@ -227,6 +244,6 @@ dependencies {
 }
 
 // TODO Wallet打包
-//apply from: './multiple-channel.gradle'
+apply from: './multiple-channel.gradle'
 // TODO mob
 apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'

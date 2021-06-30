@@ -14,9 +14,8 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.google.gson.Gson;
-import com.haier.cellarette.baselibrary.yanzheng.LocalBroadcastManagers;
 import com.haier.cellarette.baselibrary.zothers.ComeraAutomation;
 
 public class ShouyeF3 extends SlbBaseLazyFragmentNew {
@@ -88,7 +87,7 @@ public class ShouyeF3 extends SlbBaseLazyFragmentNew {
     protected void setup(final View rootView, @Nullable Bundle savedInstanceState) {
         super.setup(rootView, savedInstanceState);
         tv_center_content = rootView.findViewById(R.id.shouyef3_tv1);
-        tv_center_content.setText("我的");
+        tv_center_content.setText("业务");
         tv_center_content.setVisibility(View.GONE);
         test(rootView);
         mMessageReceiver = new MessageReceiverIndex();

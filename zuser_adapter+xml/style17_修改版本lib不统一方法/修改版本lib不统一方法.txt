@@ -11,3 +11,16 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:ÄãÑ¡ÔñµÄ°æ±¾'
 }
 Note: MultiType does not support RecyclerView below version 23.0.0.
+
+
+
+ api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
+        exclude module: 'gsyVideoPlayer-armv5'
+        exclude module: 'gsyVideoPlayer-armv7a'
+        exclude module: 'gsyVideoPlayer-armv64'
+        exclude module: 'gsyVideoPlayer-x86'
+        exclude module: 'gsyVideoPlayer-x86_64'
+        exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
+        exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
+        exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
+    }

@@ -16,17 +16,52 @@
         android:allowBackup="true"
         android:label="@string/AppThemelibupdateapputilsnew"
         android:supportsRtl="true">
-        <activity android:name="ui.JavaDemoActivity">
+        <activity
+            android:name="ui.JavaDemoActivity"
+            android:taskAffinity="${applicationId}.hs.act.slbapp.JavaDemoActivity">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.JavaDemoActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
             android:name="ui.UpdateAppActivity"
             android:launchMode="singleTask"
-            android:theme="@style/DialogActivityTheme"/>
+            android:theme="@style/DialogActivityTheme" />
 
-        <service android:name="update.UpdateAppService"/>
+        <service android:name="update.UpdateAppService" />
     </application>
 </manifest>

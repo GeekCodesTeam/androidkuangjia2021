@@ -49,7 +49,7 @@
                 app:tabRippleColor="@null"
                 app:tabSelectedTextColor="@color/color_333333"
                 app:tabTextAppearance="@style/baseviewpage_common_tab"
-                app:tabTextColor="@color/color_999999" />
+                app:tabTextColor="#999999" />
         </LinearLayout>
 
         <com.example.libbase.widgets.ViewPagerSlide

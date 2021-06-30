@@ -11,7 +11,7 @@ import android.widget.SeekBar;
 
 import com.haier.cellarette.baselibrary.R;
 import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.widget.SwitchButton;
+import com.haier.cellarette.baselibrary.switchbutton.SwitchButton;
 
 import java.util.ArrayList;
 import java.util.List;

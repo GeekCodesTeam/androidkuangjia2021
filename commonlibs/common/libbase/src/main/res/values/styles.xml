@@ -10,6 +10,10 @@
         <item name="android:windowActionBar">false</item>
     </style>
 
+    <style name="baseviewpage_common_tab">
+        <item name="android:textSize">16mm</item>
+        <!--        <item name="android:textStyle">bold</item>-->
+    </style>
 
     <style name="basenotice_dialog">
         <!-- 背景颜色及透明程度 -->

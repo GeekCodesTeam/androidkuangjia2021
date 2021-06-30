@@ -17,4 +17,4 @@ Intent.FLAG_ACTIVITY_SINGLE_TOP
 Intent.FLAG_ACTIVITY_NEW_TASK
 Intent.FLAG_ACTIVITY_CLEAR_TOP
 
-等等，具体看下源码吧。
+等等，具体看下源码吧。taskAffinity
