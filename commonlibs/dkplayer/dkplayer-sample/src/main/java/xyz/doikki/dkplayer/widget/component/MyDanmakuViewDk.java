@@ -195,7 +195,7 @@ public class MyDanmakuViewDk extends DanmakuView implements IControlComponent {
         }
         // for(int i=0;i<100;i++){
         // }
-        Drawable drawable = ContextCompat.getDrawable(getContext(), R.mipmap.ic_launcher_round);
+        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_tab_picture_in_picture);
         int size = PlayerUtils.dp2px(getContext(), 20);
         drawable.setBounds(0, 0, size, size);
 

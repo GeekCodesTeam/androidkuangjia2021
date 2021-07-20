@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
+import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.R;
 
 /**
@@ -80,6 +81,8 @@ public class MNHudCircularProgressBar extends View {
         super.onDraw(canvas);
         canvas.drawOval(rectF, backgroundPaint);
         float angle = 360 * progress / 100;
+        MyLogUtil.e("MProgressBarDialog4",progress+"");
+        MyLogUtil.e("MProgressBarDialog5",angle+"");
         canvas.drawArc(rectF, startAngle, angle, false, foregroundPaint);
     }
     //endregion
@@ -111,6 +114,7 @@ public class MNHudCircularProgressBar extends View {
             //开启动画
             startAnim();
             this.lastProgress = progress;
+            MyLogUtil.e("MProgressBarDialog3",lastProgress+"");
         } else {
             invalidate();
         }
@@ -119,7 +123,9 @@ public class MNHudCircularProgressBar extends View {
 
     //动画
     public void startAnim() {
-        ValueAnimator mAngleAnim = ValueAnimator.ofFloat(lastProgress, progress);
+        MyLogUtil.e("MProgressBarDialog1",lastProgress+"");
+        MyLogUtil.e("MProgressBarDialog2",progress+"");
+        ValueAnimator mAngleAnim = ValueAnimator.ofFloat(lastProgress+1, progress+1);
         mAngleAnim.setInterpolator(new AccelerateDecelerateInterpolator());
         mAngleAnim.setDuration(mDuration);
         mAngleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

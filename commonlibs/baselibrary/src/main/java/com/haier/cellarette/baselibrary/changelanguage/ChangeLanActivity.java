@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.geek.libutils.app.LocalManageUtil;
 import com.haier.cellarette.baselibrary.R;
 
 public class ChangeLanActivity extends AppCompatActivity {

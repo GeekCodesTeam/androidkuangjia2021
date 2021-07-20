@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -16,6 +17,7 @@ import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
+import com.geek.libutils.shortcut.ShortcutUtils;
 import com.mob.MobSDK;
 
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -29,7 +31,8 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
             shouyef2_tv11, shouyef2_tv12, shouyef2_tv13, shouyef2_tv14, shouyef2_tv15, shouyef2_tv16,
             shouyef2_tv17, shouyef2_tv18, shouyef2_tv19, shouyef2_tv20, shouyef2_tv21, shouyef2_tv22,
             shouyef2_tv23, shouyef2_tv24, shouyef2_tv25, shouyef2_tv26, shouyef2_tv27, shouyef2_tv28,
-            shouyef2_tv29, shouyef2_tv30, shouyef2_tv31, shouyef2_tv32;
+            shouyef2_tv29, shouyef2_tv30, shouyef2_tv31, shouyef2_tv32, shouyef2_tv33, shouyef2_tv34,
+            shouyef2_tv35;
     private MessageReceiverIndex mMessageReceiver;
 
 
@@ -131,6 +134,9 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv30 = rootView.findViewById(R.id.shouyef2_tv30);
         shouyef2_tv31 = rootView.findViewById(R.id.shouyef2_tv31);
         shouyef2_tv32 = rootView.findViewById(R.id.shouyef2_tv32);
+        shouyef2_tv33 = rootView.findViewById(R.id.shouyef2_tv33);
+        shouyef2_tv34 = rootView.findViewById(R.id.shouyef2_tv34);
+        shouyef2_tv35 = rootView.findViewById(R.id.shouyef2_tv35);
         shouyef2_tv2.setOnClickListener(this);
         shouyef2_tv3.setOnClickListener(this);
         shouyef2_tv4.setOnClickListener(this);
@@ -163,6 +169,9 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         shouyef2_tv30.setOnClickListener(this);
         shouyef2_tv31.setOnClickListener(this);
         shouyef2_tv32.setOnClickListener(this);
+        shouyef2_tv33.setOnClickListener(this);
+        shouyef2_tv34.setOnClickListener(this);
+        shouyef2_tv35.setOnClickListener(this);
         tv_center_content.setText("分类");
         mMessageReceiver = new MessageReceiverIndex();
         IntentFilter filter = new IntentFilter();
@@ -251,7 +260,43 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef2_tv31) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.ExpandableTextViewAct"));
         } else if (id == R.id.shouyef2_tv32) {
-
+//            /*
+//             *新加添加快捷方式代码
+//             */
+//            Intent shortcut = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
+//            //设置快捷方式名称
+//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "6.搜索组件");
+//            //设置是否允许重复添加
+//            shortcut.putExtra("duplicate", false);
+//            //设置快捷方式图标
+//            Intent.ShortcutIconResource iconRes = Intent.ShortcutIconResource.fromContext(getActivity(), R.drawable.mn_icon_staues_test);
+//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes);
+//            //设置快捷方式启动入口
+//            ComponentName comp = new ComponentName(AppUtils.getAppPackageName(), "com.example.libbase.baserecycleview.yewu1.ActViewPageYewuList1");
+//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Intent.ACTION_MAIN).setComponent(comp));
+            //发送广播，添加快捷方式
+//            getActivity().sendBroadcast(shortcut);
+            ShortcutUtils.addShortcut(getActivity(), false,
+                    "xyz.doikki.dkplayer.activity.DKMainActivity",
+                    "DK播放器",
+                    R.drawable.mn_icon_staues_test);
+        } else if (id == R.id.shouyef2_tv33) {
+            ShortcutUtils.addShortcut(getActivity(), false,
+                    "com.example.gsyvideoplayer.GSYMainActivity",
+                    "GSY播放器",
+                    R.drawable.mn_icon_staues_test);
+        } else if (id == R.id.shouyef2_tv34) {
+            ShortcutUtils.addIcon((AppCompatActivity) getActivity(),
+                    "xyz.doikki.dkplayer.activity.DKMainActivity",
+                    "11",
+                    "DK播放器2",
+                    R.drawable.mn_icon_staues_test);
+        } else if (id == R.id.shouyef2_tv35) {
+            ShortcutUtils.addIcon((AppCompatActivity) getActivity(),
+                    "com.example.gsyvideoplayer.GSYMainActivity",
+                    "22",
+                    "GSY播放器2",
+                    R.drawable.mn_icon_staues_test);
         }
     }
 

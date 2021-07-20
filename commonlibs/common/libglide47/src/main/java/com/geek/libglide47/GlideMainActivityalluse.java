@@ -3,13 +3,14 @@ package com.geek.libglide47;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
@@ -169,7 +170,7 @@ public class GlideMainActivityalluse extends AppCompatActivity {
 //        GlideApp.with(this).downloadOnly().centerCrop().dontAnimate().placeholder(R.drawable.ic_defs_loading).into(image31);
         image31.loadLocalImage(R.drawable.gif_robot_walk, R.drawable.ic_defs_loading);
 
-        image32.loadCircleImage(gif1, R.mipmap.ic_launcher).listener(new OnGlideImageViewListener() {
+        image32.loadCircleImage(gif1, R.drawable.ic_defs_loading).listener(new OnGlideImageViewListener() {
             @Override
             public void onProgress(int percent, boolean isDone, GlideException exception) {
                 Log.d("--->image32", "percent: " + percent + " isDone: " + isDone);

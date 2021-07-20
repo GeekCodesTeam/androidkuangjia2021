@@ -10,7 +10,7 @@ Java_com_fosung_lighthouse_test_JNIUtils_stringFromJNI(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_slbappcomm_nativendk_JNIUtils2_stringFromJNI(
+Java_com_example_libbase_nativendk_JNIUtils2_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     std::string hello = "Hello from C++";

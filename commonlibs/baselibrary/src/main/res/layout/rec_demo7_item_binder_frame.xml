@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/iv_c1"
         style="@style/Demo7.Avatar"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/slb_run1" />
 
     <TextView
         android:id="@+id/tv_c1"

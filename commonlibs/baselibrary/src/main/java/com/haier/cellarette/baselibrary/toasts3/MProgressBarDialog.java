@@ -22,6 +22,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 
+import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.toasts3.base.BaseDialog;
 import com.haier.cellarette.baselibrary.toasts3.utils.MSizeUtils;

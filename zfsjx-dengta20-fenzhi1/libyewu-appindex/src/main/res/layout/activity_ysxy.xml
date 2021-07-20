@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    app:cardBackgroundColor="@android:color/holo_blue_light"
+    app:cardCornerRadius="20mm"
+    app:cardElevation="8mm">
+
+    <LinearLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10mm"
+            android:text="ces"
+            android:textColor="@color/gray4A4A4A"
+            android:textSize="18mm" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100mm"
+            android:layout_marginLeft="30mm"
+            android:layout_marginTop="10mm"
+            android:layout_marginRight="30mm"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="14mm" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tv_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30mm"
+            android:layout_marginTop="20mm"
+            android:layout_marginRight="30mm"
+            android:background="@drawable/shape_red"
+            android:gravity="center"
+            android:padding="10mm"
+            android:text="同意"
+            android:textColor="@color/white"
+            android:textSize="14mm" />
+
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30mm"
+            android:layout_marginTop="5mm"
+            android:layout_marginRight="30mm"
+            android:layout_marginBottom="5mm"
+            android:padding="10mm"
+            android:text="不同意"
+            android:textColor="@color/gray4A4A4A"
+            android:textSize="14mm" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

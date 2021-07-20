@@ -1,0 +1,41 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.slbappindex">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="mi.LoginApplication"
+        android:allowBackup="true"
+        android:label="@string/app_nameappindex"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeBase"
+        tools:replace="android:label">
+        <activity android:name="mi.LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.slbappindex.index.ShouyeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppThemeBase2">
+            <!--            android:windowSoftInputMode="stateVisible|adjustPan"-->
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ShouyeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--MOBID TEST-->
+        <service
+            android:name="com.example.slbappindex.services.MOBIDservices"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name="com.example.slbappindex.services.MOBIDServicesBg" />
+    </application>
+</manifest>

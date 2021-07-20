@@ -6,9 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.SPUtils;
 import com.example.slbappcomm.R;
-import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
+import com.example.libbase.widgets.NavigationBarUtil;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
 
 import me.jessyan.autosize.AutoSizeCompat;

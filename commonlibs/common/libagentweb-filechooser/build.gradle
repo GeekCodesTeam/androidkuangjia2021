@@ -1,6 +1,4 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 //apply from: '../../mobsdk.gradle'
 apply from: './../../../commonlibs1.gradle'
 def config = rootProject.ext //配置

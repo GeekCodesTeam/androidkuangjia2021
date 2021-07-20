@@ -635,6 +635,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".switchbutton.MainActivitySwitchButtonK" />
         </activity>
+        <activity android:name=".choutipop.ChoutiActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.ChoutiActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".networkview.NetworkChangeListener" />
 

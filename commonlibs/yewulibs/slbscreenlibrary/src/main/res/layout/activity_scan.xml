@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:text="闪光灯"
+        android:visibility="gone" />
+
+    <!-- 我这里只是在大局下修改了一些样式，不过其实 扫描框中的 各种激光条，边框都可以改变，有兴趣的同学可以自己去搜一下 -->
+    <!-- 这个控件就是扫描的窗口了 -->
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/dbv_custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_switch"
+        app:zxing_framing_rect_height="300mm"
+        app:zxing_framing_rect_width="300mm"
+        app:zxing_preview_scaling_strategy="fitXY"
+        app:zxing_use_texture_view="true" />
+
+</RelativeLayout>

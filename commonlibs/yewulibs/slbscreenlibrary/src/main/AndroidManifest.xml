@@ -1,0 +1,104 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.ossrs.yasea">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".activity.ScreenAct">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.ScreenAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenAct"
+                    android:scheme="dataability" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenAct"
+                    android:scheme="http" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenAct"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CustomScanActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.CustomScanActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.CustomScanActivity"
+                    android:scheme="dataability" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.CustomScanActivity"
+                    android:scheme="http" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.CustomScanActivity"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ScreenConfigActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.ScreenConfigActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenConfigActivity"
+                    android:scheme="dataability" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenConfigActivity"
+                    android:scheme="http" />
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.ScreenConfigActivity"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.ScreenRecordService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".activity.FadeService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+    </application>
+
+</manifest>

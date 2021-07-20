@@ -1,4 +1,5 @@
-def librarys = rootProject.ext.dependencies //依赖
+def config = rootProject.ext //配置
+def librarys = config.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':commonlibs:common:libutils')
@@ -40,14 +41,22 @@ dependencies {
     api "com.google.android.exoplayer:exoplayer-rtsp:2.14.1"
     api "com.google.android.exoplayer:extension-rtmp:2.14.1"
     api "com.github.CarGuo:GSYIjkJava:1.0.0"
-    api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
-        exclude module: 'gsyVideoPlayer-armv5'
-        exclude module: 'gsyVideoPlayer-armv7a'
-        exclude module: 'gsyVideoPlayer-armv64'
-        exclude module: 'gsyVideoPlayer-x86'
-        exclude module: 'gsyVideoPlayer-x86_64'
-        exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
-        exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
-        exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
+    if (config.isMIMode.toBoolean()) {
+        api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
+            exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
+            exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
+            exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
+        }
+    } else {
+        api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
+            exclude module: 'gsyVideoPlayer-armv5'
+            exclude module: 'gsyVideoPlayer-armv7a'
+            exclude module: 'gsyVideoPlayer-armv64'
+            exclude module: 'gsyVideoPlayer-x86'
+            exclude module: 'gsyVideoPlayer-x86_64'
+            exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
+            exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
+            exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
+        }
     }
 }

@@ -6,17 +6,21 @@ ext {
     targetSdkVersion = 30
     supportLibVersion = '30.0.0'
 
-    // 灯塔版本号
-    dengtaversionCode = 20000
-    dengtaversionName = "2.0.0.0"
+    // 灯塔VPN版本号
+    isMIModeVPN = true
+    dengtaversionCode = 10006
+    dengtaversionName = "1.0.0.6"
 
     // 大屏版本号
     dapingversionCode = 20000
     dapingversionName = "2.0.0.0"
 
+//    # for MIM
+//    # is Model Independent Mode
+    isMIMode = false
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 3000
-    appversionName = "3.0.0.0"
+    appversionCode = 3006
+    appversionName = "3.0.0.6"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"

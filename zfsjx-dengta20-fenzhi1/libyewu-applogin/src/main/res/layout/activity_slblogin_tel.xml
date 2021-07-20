@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haier.cellarette.baselibrary.jianpan.AutoHideInputMethodFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/afl1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg33"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/activity_commtop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50mm"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16mm"
+            android:layout_marginTop="24mm"
+            android:layout_marginRight="16mm"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44mm"
+                android:background="@drawable/slb_login_tel"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edt1"
+                    style="@style/logincontentedit"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10mm"
+                    android:layout_marginRight="10mm"
+                    android:layout_toRightOf="@+id/tv_zh"
+                    android:hint="@string/yhzc_tip4"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:padding="10dp"
+                    android:textColor="@color/color45A5F8"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="16mm" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44mm"
+                android:layout_marginTop="22mm"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="230mm"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/slb_login_tel"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/edt2"
+                        style="@style/logincontentedit"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="10mm"
+                        android:layout_marginRight="10mm"
+                        android:layout_toRightOf="@+id/tv_zh"
+                        android:hint="@string/yhzc_tip41"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:padding="10dp"
+                        android:textColor="@color/color45A5F8"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="16mm" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/tv_hqyzm"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="104mm"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/slb_login_bg_wihte23"
+                    android:paddingLeft="4mm"
+                    android:paddingTop="12mm"
+                    android:paddingRight="4mm"
+                    android:paddingBottom="12mm"
+                    android:text="@string/yhzc_tip5"
+                    android:textColor="@color/color6592D3"
+                    android:textSize="12mm" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="56mm"
+            android:layout_below="@+id/ll1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16mm"
+            android:layout_marginTop="60mm"
+            android:layout_marginRight="16mm"
+            android:background="@drawable/slb_login_login_33" />
+
+    </RelativeLayout>
+</com.haier.cellarette.baselibrary.jianpan.AutoHideInputMethodFrameLayout>

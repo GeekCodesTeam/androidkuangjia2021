@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.view.WindowManager;
 
-import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
+import com.example.libbase.widgets.NavigationBarUtil;
 
 public class LoadingDialog extends Dialog {
     public LoadingDialog(Context context) {

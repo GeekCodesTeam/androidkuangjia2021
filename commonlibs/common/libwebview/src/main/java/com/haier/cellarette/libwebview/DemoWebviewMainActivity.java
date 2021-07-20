@@ -7,8 +7,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.haier.cellarette.libwebview.base.UrlEncodeUtils;
 import com.haier.cellarette.libwebview.hioscommon.HiosRegister;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
+
+import java.io.UnsupportedEncodingException;
 
 
 /**
@@ -134,6 +137,13 @@ public class DemoWebviewMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO 继承webviewactivity调用JS按钮
+//                String aaa = "file:////android_asset/nb_mobile_new_web/index.html#/article-details?id=3492645930992144658&userId=3423267925224588188&baseUrl=http://119.188.115.241:8061/__api";
+//                String aaa = "http://lzzhdj.com.cn:94/#/login";
+//                try {
+//                    HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, UrlEncodeUtils.encodeUrl(aaa));
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
                 HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "file:///android_asset/demo/web.html");
 //                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "file:///android_asset/demo/test11.html");
             }

@@ -2,7 +2,7 @@ package com.tencent.qcloud.tim.demo.contact;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 
 import android.text.TextUtils;
@@ -13,7 +13,7 @@ import com.tencent.qcloud.tim.demo.BaseActivity;
 
 import com.tencent.qcloud.tim.demo.R;
 import com.tencent.qcloud.tim.demo.chat.ChatActivity;
-import com.tencent.qcloud.tim.demo.main.MainActivity;
+import com.tencent.qcloud.tim.demo.main.IMMainActivity;
 import com.tencent.qcloud.tim.demo.utils.Constants;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.contact.ContactItemBean;
@@ -50,7 +50,7 @@ public class FriendProfileActivity extends BaseActivity {
 
             @Override
             public void onDeleteFriendClick(String id) {
-                Intent intent = new Intent(BaseApp.get(), MainActivity.class);
+                Intent intent = new Intent(BaseApp.get(), IMMainActivity.class);
                 startActivity(intent);
             }
         });

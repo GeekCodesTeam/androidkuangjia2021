@@ -1,13 +1,11 @@
-plugins {
-    id 'com.android.library'
-}
-apply from: './../../commonlibs2.gradle'
+apply from: './../../commonlibsapks.gradle'
 // mob
 apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':commonlibs:baselibrary')
+    implementation project(':commonlibs:common:libbase')
     implementation project(':yewulibs1:yewulibs1-appcomm')
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu1')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu1')

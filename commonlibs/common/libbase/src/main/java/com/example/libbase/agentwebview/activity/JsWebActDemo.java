@@ -12,9 +12,13 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.R;
+import com.haier.cellarette.libwebview.base.UrlEncodeUtils;
+import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import com.just.agentweb.AgentWeb;
 
 import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 
 public class JsWebActDemo extends BaseActWebActivity {
 
@@ -44,7 +48,14 @@ public class JsWebActDemo extends BaseActWebActivity {
     @Nullable
     @Override
     public String getUrl() {
-        return "file:///android_asset/html/hello.html";
+        String url = "file:///android_asset/html/hello.html";
+//        String url = "http://lzzhdj.com.cn:94/#/login";
+//        try {
+//            HiosHelper.resolveAd(JsWebActDemo.this, JsWebActDemo.this, UrlEncodeUtils.encodeUrl(url));
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+        return url;
     }
 
 

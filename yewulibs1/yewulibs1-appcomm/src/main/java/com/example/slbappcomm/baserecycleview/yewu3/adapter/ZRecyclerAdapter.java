@@ -40,7 +40,7 @@ public class ZRecyclerAdapter extends BaseRecyclerAdapter<String> {
     public void setUpData(CommonHolder holder, int position, int viewType, String data) {
         TextView textView = getView(holder, R.id.textView);
         ImageView imageView = getView(holder, R.id.imageView);
-        imageView.setImageResource(R.drawable.ic_launcher);
+        imageView.setImageResource(R.drawable.slb_poppay2);
         textView.setText(data);
     }
 }

@@ -18,12 +18,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import xyz.doikki.dkplayer.R;
-import xyz.doikki.dkplayer.widget.CenteredImageSpanDk;
-import xyz.doikki.dkplayer.widget.component.MyDanmakuViewDk;
-import xyz.doikki.videoplayer.player.VideoView;
-import xyz.doikki.videoplayer.util.PlayerUtils;
-
 import master.flame.danmaku.controller.IDanmakuView;
 import master.flame.danmaku.danmaku.model.BaseDanmaku;
 import master.flame.danmaku.danmaku.model.DanmakuTimer;
@@ -34,9 +28,15 @@ import master.flame.danmaku.danmaku.model.android.Danmakus;
 import master.flame.danmaku.danmaku.model.android.SpannedCacheStuffer;
 import master.flame.danmaku.danmaku.parser.BaseDanmakuParser;
 import master.flame.danmaku.ui.widget.DanmakuView;
+import xyz.doikki.dkplayer.R;
+import xyz.doikki.dkplayer.widget.CenteredImageSpanDk;
+import xyz.doikki.dkplayer.widget.component.MyDanmakuViewDk;
+import xyz.doikki.videoplayer.player.VideoView;
+import xyz.doikki.videoplayer.util.PlayerUtils;
 
 /**
  * 包含弹幕的播放器
+ *
  * @deprecated 推荐 {@link MyDanmakuViewDk}
  */
 @Deprecated
@@ -260,7 +260,7 @@ public class DanmukuVideoViewDk extends VideoView {
         }
         // for(int i=0;i<100;i++){
         // }
-        Drawable drawable = ContextCompat.getDrawable(getContext(), R.mipmap.ic_launcher_round);
+        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_tab_picture_in_picture);
         int size = PlayerUtils.dp2px(getContext(), 20);
         drawable.setBounds(0, 0, size, size);
 

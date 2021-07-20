@@ -1,16 +1,11 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //依赖
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:libbase')
     implementation project(':commonlibs:hunheku:libyanzhenjieandpermission')
-//    implementation 'com.yanzhenjie:permission:2.0.3'
-    implementation librarys.glide47
-    implementation librarys.annotationProcessorglide47compiler
     api project(':commonlibs:dkplayer:dkplayer-java')
     api project(':commonlibs:dkplayer:dkplayer-ui')
     api project(path: ':commonlibs:dkplayer:dkplayer-players:ijkexo')

@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.slbappcomm.R;
-import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
+import com.example.libbase.widgets.NavigationBarUtil;
 
 // 支付弹窗
 public class PopPayForVip2 extends PopupWindow {

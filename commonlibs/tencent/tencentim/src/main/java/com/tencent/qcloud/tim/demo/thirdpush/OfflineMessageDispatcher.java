@@ -16,7 +16,7 @@ import com.tencent.liteav.model.TRTCAVCallImpl;
 
 import com.tencent.qcloud.tim.demo.R;
 import com.tencent.qcloud.tim.demo.chat.ChatActivity;
-import com.tencent.qcloud.tim.demo.main.MainActivity;
+import com.tencent.qcloud.tim.demo.main.IMMainActivity;
 import com.tencent.qcloud.tim.demo.utils.BrandUtil;
 import com.tencent.qcloud.tim.demo.utils.Constants;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
@@ -175,7 +175,7 @@ public class OfflineMessageDispatcher {
                 }
             }
         }
-        Intent intent = new Intent(BaseApp.get(), MainActivity.class);
+        Intent intent = new Intent(BaseApp.get(), IMMainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         BaseApp.get().startActivity(intent);
         return true;

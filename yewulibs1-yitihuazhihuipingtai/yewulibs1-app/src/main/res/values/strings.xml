@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name1" translatable="false">Android混合端框架</string>
+    <string name="pay_result_callback_msgs" translatable="false">微信支付结果：%s</string>
+</resources>

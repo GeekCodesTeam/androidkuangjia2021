@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="language_cn" tools:ignore="ExtraTranslation">中文</string>
+    <string name="language_en" tools:ignore="ExtraTranslation">ENGLISH</string>
+    <string name="language_auto" tools:ignore="ExtraTranslation">自動</string>
+    <string name="language_traditional" tools:ignore="ExtraTranslation">繁体</string>
+    <string name="language_select" tools:ignore="ExtraTranslation">當前選擇的語言:  %s</string>
+    <string name="user_select_language" tools:ignore="ExtraTranslation">當前用戶選擇語言: %s</string>
+
+</resources>

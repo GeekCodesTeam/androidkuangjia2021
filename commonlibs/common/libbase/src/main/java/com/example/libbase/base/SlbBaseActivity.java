@@ -31,9 +31,9 @@ import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.example.libbase.R;
-import com.example.libbase.widgets.IBaseAction;
 import com.example.libbase.netstate.NetState;
 import com.example.libbase.netstate.NetconListener;
+import com.example.libbase.widgets.IBaseAction;
 import com.example.swipebacklayout.SwipeBack;
 import com.example.swipebacklayout.SwipeBackLayout;
 import com.example.swipebacklayout.SwipeBackUtil;
@@ -67,8 +67,9 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         return super.getResources();
     }
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
 //        ScreenUtils.setNonFullScreen(this);
 //        BarUtils.setStatusBarLightMode(this, false);
 //        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.black_000));
@@ -89,6 +90,8 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         //
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        // old
         super.onCreate(savedInstanceState);
         // 加载注解bufen
         SwipeBack swipeBack = getClass().getAnnotation(SwipeBack.class);
@@ -280,7 +283,7 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     }
 
     @Override
-    protected final void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public final void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //登录和未登录成功状态
         if (SlbLoginUtil.get().login_activity_result(requestCode, resultCode, data)) {

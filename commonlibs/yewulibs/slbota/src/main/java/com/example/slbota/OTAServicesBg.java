@@ -33,8 +33,8 @@ public class OTAServicesBg extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    public static final String Huyan_CHANNEL_ID = "PHONE_NOTIFY_ID";
-    public static final String Huyan_CHANNEL_NAME = "PHONE_NOTIFY_NAME";
+    public static final String Huyan_CHANNEL_ID = "OTA_NOTIFY_ID";
+    public static final String Huyan_CHANNEL_NAME = "OTA_NOTIFY_NAME";
 
     public static Notification she_notifichanged() {
         NotificationManager notificationManager = (NotificationManager) BaseApp.get().getSystemService(NOTIFICATION_SERVICE);

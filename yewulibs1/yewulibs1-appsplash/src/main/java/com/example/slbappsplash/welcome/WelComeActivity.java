@@ -8,13 +8,12 @@ import android.text.TextUtils;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.libbase.base.SlbBaseActivity;
-import com.example.slbappcomm.nativendk.JNIUtils2;
-import com.example.slbappcomm.nativendk.KeyReflectUtils;
-import com.example.slbappcomm.utils.CommonUtils;
+import com.example.libbase.nativendk.JNIUtils2;
+import com.example.libbase.nativendk.KeyReflectUtils;
+import com.example.libbase.utils.CommonUtils;
 import com.example.slbappsplash.R;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MobileUtils;
@@ -34,7 +33,7 @@ public class WelComeActivity extends SlbBaseActivity {
     private SplashView splashView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //虚拟键
 //        if (NavigationBarUtil.hasNavigationBar(this)) {
@@ -43,11 +42,11 @@ public class WelComeActivity extends SlbBaseActivity {
 //        }
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
-            finish();
-            return;
-        }
-        MyLogUtil.e("ssssssssss", DeviceUtils.getAndroidID());
+//        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+//            finish();
+//            return;
+//        }
+//        MyLogUtil.e("ssssssssss", DeviceUtils.getAndroidID());
     }
 
     @Override
@@ -65,7 +64,7 @@ public class WelComeActivity extends SlbBaseActivity {
         /** 调用此方法可以在任何地方更新闪屏视图数据 */
         /** 在 setContentView(R.layout.activity_sample) 后调用 */
         splashView = new SplashView(this);
-        splashView.showSplashView(this, 1, R.drawable.default_img, new SplashView.OnSplashViewActionListener() {
+        splashView.showSplashView(this, 3, R.drawable.default_img, new SplashView.OnSplashViewActionListener() {
             @Override
             public void onSplashImageClick(String actionUrl) {
                 MyLogUtil.e("SplashView", "img clicked. actionUrl: " + actionUrl);

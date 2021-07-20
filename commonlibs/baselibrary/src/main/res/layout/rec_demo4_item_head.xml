@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/slb_run1" />
 
     <Space
         android:layout_width="12dp"

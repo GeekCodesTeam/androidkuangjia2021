@@ -157,7 +157,7 @@ public class SaomaAct2 extends AppCompatActivity implements View.OnClickListener
                 return;
             }
 
-            Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+            Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.slb_poppay2);
             bitmap = CodeCreator.createQRCode(contentEtString, 400, 400, logo);
 
             if (bitmap != null) {

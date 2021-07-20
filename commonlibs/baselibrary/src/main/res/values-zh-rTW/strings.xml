@@ -4,7 +4,6 @@
     <string name="cancel">取消</string>
     <string name="ok">确认</string>
     <string name="retry_text">重试</string>
-    <string name="search">搜索</string>
 
     <string name="toast_message">Toast message</string>
 
@@ -40,11 +39,4 @@
         2013年，凭借古装剧《陆贞传奇》获得更多关注。2014年10月，在第10届金鹰电视艺术节举办的投票活动中被选为“金鹰女神”;
         12月，凭借都市爱情剧《杉杉来了》获得第5届国剧盛典内地最具人气女演员奖；同年，成立海润传媒赵丽颖工作室。\n\n
     </string>
-    <string name="language_cn">中文</string>
-    <string name="language_en">ENGLISH</string>
-    <string name="language_auto">自動</string>
-    <string name="language_traditional">繁体</string>
-    <string name="language_select">當前選擇的語言:  %s</string>
-    <string name="user_select_language">當前用戶選擇語言: %s</string>
-
 </resources>

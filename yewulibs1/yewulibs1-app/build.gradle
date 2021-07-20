@@ -1,9 +1,7 @@
 //noinspection DuplicatePlatformClasses
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
 def config = rootProject.ext //
-//def library s = rootProject.ext.dependencies //
+def library = rootProject.ext.dependencies //
 android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -79,7 +77,7 @@ android {
                         // arguments "-D变量名=参数1 参数2"
                         "-DANDROID_CPP_FEATURES=rtti exceptions"
                 // 指定ABI
-                abiFilters /*"armeabi-v7a" ,*/  "arm64-v8a"
+                abiFilters /*"armeabi-v7a" ,*/ "arm64-v8a"
             }
         }
 
@@ -129,7 +127,7 @@ android {
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
                     app_name      : "Android框架-线上",
-                    app_icon      : "@drawable/icon"
+                    app_icon      : "@mipmap/ic_launcher"
             ]
         }
         bxnt_nation {
@@ -147,7 +145,7 @@ android {
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
                     app_name      : "Android框架-测试",
-                    app_icon      : "@drawable/icon"
+                    app_icon      : "@mipmap/ic_launcher"
             ]
         }
         bxny_nation {
@@ -165,7 +163,7 @@ android {
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
                     app_name      : "Android框架-预生产",
-                    app_icon      : "@drawable/icon"
+                    app_icon      : "@mipmap/ic_launcher"
             ]
         }
     }
@@ -190,13 +188,13 @@ android {
 //        }
         //TODO harmonybufen
         release {
-            storeFile file('./harmonyandroid.jks')
+            storeFile file('./../../releasekey/harmonyandroid.jks')
             keyAlias 'harmonyandroid'
             keyPassword 'HarmonyAndroid'
             storePassword 'HarmonyAndroid'
         }
         debug {
-            storeFile file('./harmonyandroid.jks')
+            storeFile file('./../../releasekey/harmonyandroid.jks')
             keyAlias 'harmonyandroid'
             keyPassword 'HarmonyAndroid'
             storePassword 'HarmonyAndroid'
@@ -227,9 +225,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    // TODO harmonybufen
-    compileOnly files('libs/abilityshell_ide_java.jar')
-    implementation project(':commonlibs:common:libutils')
     implementation project(':commonlibs:common:libbase')
     // TODO common库
     implementation project(':commonlibs:baselibrary')

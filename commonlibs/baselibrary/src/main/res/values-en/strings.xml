@@ -4,7 +4,6 @@
     <string name="cancel">cancel</string>
     <string name="ok">sure</string>
     <string name="retry_text">try</string>
-    <string name="search">search</string>
 
     <string name="toast_message">Toast message</string>
 
@@ -23,11 +22,5 @@
     <!--<string name="remove">REMOVE</string>-->
     <!--<string name="clear">CLEAR</string>-->
     <string name="zly_tips">Li-ying zhao</string>
-    <string name="language_cn">中文</string>
-    <string name="language_en">ENGLISH</string>
-    <string name="language_auto">自动</string>
-    <string name="language_traditional">繁體</string>
-    <string name="language_select">Currently selected language:  %s</string>
-    <string name="user_select_language">Current user selects language: %s</string>
 
 </resources>

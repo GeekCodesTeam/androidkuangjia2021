@@ -170,22 +170,6 @@
         <attr name="kswTextAdjust" format="dimension" />
     </declare-styleable>
 
-
-    <declare-styleable name="AlphaView">
-        <attr name="pointvisbile">
-            <enum name="visible" value="0" />
-            <enum name="gone" value="8" />
-        </attr>
-
-        <attr name="pointgravity">
-            <enum name="left" value="8" />
-            <enum name="right" value="5" />
-            <enum name="center" value="17" />
-            <enum name="center_horizontal" value="1" />
-            <enum name="center_vertical" value="16" />
-        </attr>
-    </declare-styleable>
-
     <declare-styleable name="LikeButton">
         <attr name="icon_type" format="string" />
         <attr name="icon_size" format="dimension|reference" />

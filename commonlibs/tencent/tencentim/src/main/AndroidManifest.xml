@@ -121,7 +121,7 @@
 
         </activity>
         <activity
-            android:name="com.tencent.qcloud.tim.demo.main.MainActivity"
+            android:name="com.tencent.qcloud.tim.demo.main.IMMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

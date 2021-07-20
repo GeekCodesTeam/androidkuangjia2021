@@ -74,8 +74,8 @@ public class WhiteService extends Service {
                 .setContentTitle("进程保活")
                 .setContentText("我是运行中的APP的通知栏~")
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .setSmallIcon(R.drawable.slb_poppay2)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.slb_poppay2))
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .build();

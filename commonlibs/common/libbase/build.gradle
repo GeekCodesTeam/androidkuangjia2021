@@ -1,12 +1,16 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 必须依赖
-    implementation project(':commonlibs:common:libutils')
+    api project(':commonlibs:common:libutils')
+    // 鸿蒙bufen
+    api files('./libs/abilityshell_ide_java.jar')
+    // 网络请求
+    api project(':commonlibs:common:libmvp')
+    api project(':commonlibs:common:libretrofit')
+    //
     api project(':commonlibs:common:libswipebacklayout')
     // 挑选依赖
     api project(':commonlibs:common:libagentweb-core')
@@ -21,7 +25,6 @@ dependencies {
     api project(':commonlibs:smartrefreshlayout:refresh-footer')
     api project(':commonlibs:smartrefreshlayout:refresh-header')
     api project(':commonlibs:smartrefreshlayout:refresh-layout')
-
 
 
 }

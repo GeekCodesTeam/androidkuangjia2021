@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivTouping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20mm"
+        android:src="@mipmap/touping_icon" />
+
+    <EditText
+        android:id="@+id/tvTouping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="投屏微信观看test地址：http://o-pull.xczx-jn.com/live/test2/playlist.m3u8"
+        android:textColor="@color/black"
+        android:textSize="16mm" />
+</LinearLayout>

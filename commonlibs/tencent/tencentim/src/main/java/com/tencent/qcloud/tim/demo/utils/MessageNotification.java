@@ -21,7 +21,7 @@ import com.tencent.liteav.model.CallModel;
 
 import com.tencent.qcloud.tim.demo.R;
 import com.tencent.qcloud.tim.demo.chat.ChatActivity;
-import com.tencent.qcloud.tim.demo.main.MainActivity;
+import com.tencent.qcloud.tim.demo.main.IMMainActivity;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfo;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfoUtil;
@@ -152,7 +152,7 @@ public class MessageNotification {
         Intent launch;
         // 小米手机需要在设置里面把【云通信IM】的"后台弹出权限"打开才能点击Notification跳转。
         if (isDialing) {
-            launch = new Intent(mContext, MainActivity.class);
+            launch = new Intent(mContext, IMMainActivity.class);
             launch.putExtra(Constants.CHAT_INFO, callModel);
             launch.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         } else {

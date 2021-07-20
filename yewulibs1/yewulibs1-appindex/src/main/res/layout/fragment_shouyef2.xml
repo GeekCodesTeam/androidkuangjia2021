@@ -436,7 +436,43 @@
                     android:layout_marginTop="12mm"
                     android:layout_marginRight="12mm"
                     android:gravity="left"
-                    android:text="30.屏幕常亮时间："
+                    android:text="30.设置快捷方式1-DKPlayer"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef2_tv33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="31.设置快捷方式2-GSYPlayer"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef2_tv34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="32.设置快捷方式11-DKPlayer"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef2_tv35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="33.设置快捷方式22-GSYPlayer"
                     android:textColor="@color/gray4A4A4A"
                     android:textSize="12mm" />
             </LinearLayout>

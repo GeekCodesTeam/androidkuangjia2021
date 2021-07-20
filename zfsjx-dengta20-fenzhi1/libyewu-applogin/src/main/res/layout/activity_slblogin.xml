@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haier.cellarette.baselibrary.jianpan.AutoHideInputMethodFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/afl1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="15mm"
+            android:layout_height="15mm"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="33mm"
+            android:layout_marginTop="40mm"
+            android:src="@drawable/hxkt_icon_xxx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33mm"
+            android:layout_marginTop="40mm"
+            android:text="手机注册/登录"
+            android:textColor="@color/black_000"
+            android:textSize="28mm"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_bg1"
+            android:layout_width="290mm"
+            android:layout_height="228mm"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33mm"
+            android:layout_marginTop="60mm"
+            android:layout_marginRight="33mm"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号"
+                android:textColor="@color/color_333333"
+                android:textSize="15mm" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10mm"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/yhzc_tip4"
+                    android:orientation="vertical"
+                    android:textColorHint="@color/color_dcdcdc"
+                    app:errorEnabled="false"
+                    app:errorTextAppearance="@style/ErrorText"
+                    app:hintAnimationEnabled="false"
+                    app:hintTextAppearance="@style/ErrorText">
+
+                    <!--            android:fontFamily="sans-serif-light"-->
+                    <!--            android:textStyle="italic"-->
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt1"
+                        android:layout_width="200mm"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10mm"
+                        android:background="@null"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:paddingTop="10mm"
+                        android:paddingBottom="10mm"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="@color/black_000"
+                        android:textCursorDrawable="@drawable/common_ed_bg1"
+                        android:textSize="16mm" />
+
+                    <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                        android:id="@+id/edt1"-->
+                    <!--                        android:layout_width="200mm"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="10mm"-->
+                    <!--                        android:background="@null"-->
+                    <!--                        android:imeOptions="actionDone"-->
+                    <!--                        android:inputType="number"-->
+                    <!--                        android:maxLength="11"-->
+                    <!--                        android:maxLines="1"-->
+                    <!--                        android:paddingTop="10mm"-->
+                    <!--                        android:paddingBottom="10mm"-->
+                    <!--                        android:text=""-->
+                    <!--                        android:textAllCaps="true"-->
+                    <!--                        android:textColor="@color/black_000"-->
+                    <!--                        android:textCursorDrawable="@drawable/common_ed_bg1"-->
+                    <!--                        android:textSize="16mm" />-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5mm"
+                        android:background="#D8D8D8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/iv_xx"
+                    android:layout_width="20mm"
+                    android:layout_height="20mm"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20mm"
+                    android:src="@drawable/hxkt_icon_xx"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33mm"
+            android:layout_marginTop="20mm"
+            android:layout_marginRight="33mm"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验证码"
+                android:textColor="@color/color_333333"
+                android:textSize="15mm" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10mm"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/yhzc_tip41"
+                    android:orientation="vertical"
+                    android:textColorHint="@color/color_dcdcdc"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextAppearance="@style/ErrorText">
+
+                    <!--            android:fontFamily="sans-serif-light"-->
+                    <!--            android:textStyle="italic"-->
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt2"
+                        android:layout_width="200mm"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10mm"
+                        android:background="@null"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:paddingTop="10mm"
+                        android:paddingBottom="10mm"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="@color/black_000"
+                        android:textCursorDrawable="@drawable/common_ed_bg1"
+                        android:textSize="16mm" />
+
+                    <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                        android:id="@+id/edt2"-->
+                    <!--                        android:layout_width="200mm"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="10mm"-->
+                    <!--                        android:background="@null"-->
+                    <!--                        android:imeOptions="actionDone"-->
+                    <!--                        android:inputType="number"-->
+                    <!--                        android:maxLength="11"-->
+                    <!--                        android:maxLines="1"-->
+                    <!--                        android:paddingTop="10mm"-->
+                    <!--                        android:paddingBottom="10mm"-->
+                    <!--                        android:text=""-->
+                    <!--                        android:textAllCaps="true"-->
+                    <!--                        android:textColor="@color/black_000"-->
+                    <!--                        android:textCursorDrawable="@drawable/common_ed_bg1"-->
+                    <!--                        android:textSize="16mm" />-->
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5mm"
+                        android:background="#D8D8D8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/tv_hqyzm"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="104mm"
+                    android:layout_height="36mm"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5mm"
+                    android:background="@drawable/common_btn_bg1"
+                    android:text="@string/yhzc_tip5"
+                    android:textColor="#61A7FD"
+                    android:textSize="12mm" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/tv1"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="308mm"
+            android:layout_height="50mm"
+            android:layout_below="@+id/rl1"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32mm"
+            android:background="@drawable/btn_denglu2_enpressed"
+            android:text="注册/登录"
+            android:textColor="@color/tv_comm2"
+            android:textSize="16mm" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="0mm"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10mm"
+                android:layout_marginBottom="10mm"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_wx"
+                    android:layout_width="156mm"
+                    android:layout_height="44mm"
+                    android:src="@drawable/login_wechat33" />
+
+                <ImageView
+                    android:id="@+id/iv_wx2"
+                    android:layout_width="80mm"
+                    android:layout_height="80mm"
+                    android:padding="10mm"
+                    android:src="@drawable/share_wechat_solid"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0mm"
+                android:layout_marginBottom="10mm"
+                android:layout_marginLeft="30mm"
+                android:layout_marginRight="30mm"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tips12"
+                    style="@style/logincommtextview"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10mm"
+                    android:text=""
+                    android:textColor="@color/color999999"
+                    android:textSize="12mm" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.haier.cellarette.baselibrary.jianpan.AutoHideInputMethodFrameLayout>

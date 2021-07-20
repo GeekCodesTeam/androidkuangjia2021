@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50mm"
+    android:background="@color/color_4DA3FE">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50mm"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="30mm"
+            android:layout_height="30mm"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10mm"
+            android:background="@drawable/slb_left_back6"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_demo1"
+                android:layout_width="20mm"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_center" />
+
+            <TextView
+                android:id="@+id/tv_center"
+                style="@style/logintop"
+                android:text="设置"
+                android:textColor="@color/white"
+                android:textSize="20mm" />
+
+            <TextView
+                android:id="@+id/tv_demo2"
+                android:layout_width="20mm"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_center" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

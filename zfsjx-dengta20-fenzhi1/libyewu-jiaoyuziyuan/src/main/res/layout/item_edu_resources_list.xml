@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/eduresource_list_shape_white"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="117dp"
+            android:layout_height="88dp"
+            android:background="#f2f2f2" />
+
+        <ImageView
+            android:id="@+id/iv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_edu_list_type_audio" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_status"
+            android:layout_alignTop="@+id/iv_head"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_head"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="工作队工作推进会议工作队工作推进会工作推进会"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_time"
+            android:layout_alignLeft="@+id/tv_title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="审核节点：处室负责人审核"
+            android:textColor="#ff999999"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_orgname"
+            android:layout_alignLeft="@+id/tv_status"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="提报本级日期：2021-03-20"
+            android:textColor="#ff999999"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_orgname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_time"
+            android:layout_alignBottom="@+id/iv_head"
+            android:layout_toLeftOf="@+id/tv_no"
+            android:layout_marginRight="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="中共潍坊市奎文区委员会"
+            android:textColor="#ff333333"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_head"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/icon_edu_no_reviewed"/>
+
+    </RelativeLayout>
+</RelativeLayout>

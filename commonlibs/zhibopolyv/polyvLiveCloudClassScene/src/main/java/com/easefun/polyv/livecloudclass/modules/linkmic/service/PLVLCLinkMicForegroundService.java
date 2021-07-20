@@ -76,7 +76,7 @@ public class PLVLCLinkMicForegroundService extends Service {
                 0, notificationIntent, 0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("云课堂")
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.plvlc_bg_player_no_stream)
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);

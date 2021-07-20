@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:background="#C50405"
+        >
+        <TextView
+            android:id="@+id/tv_moudel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="党员教育内容资源管理系统"
+            android:textColor="#ffffffff"
+            android:textSize="18dp"
+            />
+
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/icon_model_close"
+            />
+
+        <TextView
+            android:id="@+id/tv_org_name"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tv_moudel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tv_user_name"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="20dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/eduresource_shape_red"
+            android:text="中国共产党山东省龙口市党支部中国共产党山东省龙口市党支部"
+            android:lines="1"
+            android:ellipsize="end"
+            android:drawableLeft="@mipmap/icon_edu_org"
+            android:drawableRight="@mipmap/icon_edu_org_arrow"
+            android:drawablePadding="10dp"
+            android:textColor="#ffffffff"
+            android:textSize="13dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tv_moudel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/eduresource_shape_red"
+            android:text="李洋"
+            android:drawableLeft="@mipmap/icon_edu_username"
+            android:drawablePadding="10dp"
+            android:textColor="#ffffffff"
+            android:textSize="13dp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_query1"
+                style="@style/logincontentedit"
+                android:background="@drawable/searchview_text_shape"
+                android:drawableLeft="@mipmap/icon_edu_search"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="请输入资源标题"
+                android:imeOptions="actionSearch"
+                android:text=""
+                android:textColor="@color/black_000"
+                android:textColorHint="#CCCCCC"
+                android:textSize="14dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@mipmap/icon_edu_arrow_down"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textColor="#ffc50405"
+            android:background="@drawable/btn_eduresource_type_selector"
+            android:textSize="11dp"
+            android:text="待审核"/>
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn_all"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/btn_eduresource_type_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@color/btn_edu_type_text_selector"
+                android:textSize="11dp" />
+
+            <RadioButton
+                android:id="@+id/btn_video"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/btn_eduresource_type_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="视频"
+                android:textColor="@color/btn_edu_type_text_selector"
+                android:textSize="11dp" />
+
+            <RadioButton
+                android:id="@+id/btn_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/btn_eduresource_type_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="音频"
+                android:textColor="@color/btn_edu_type_text_selector"
+                android:textSize="11dp" />
+
+            <RadioButton
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/btn_eduresource_type_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="图文"
+                android:textColor="@color/btn_edu_type_text_selector"
+                android:textSize="11dp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_screen"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/icon_edu_select"/>
+
+    </LinearLayout>
+
+    <com.zcolin.gui.zrecyclerview.ZRecyclerView
+        android:id="@+id/pullLoadMoreRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

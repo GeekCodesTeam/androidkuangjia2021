@@ -41,6 +41,7 @@
             android:name=".activity.DKMainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
             android:screenOrientation="portrait"
+            android:taskAffinity=".activity.DKMainActivity"
             android:theme="@style/DKAppTheme">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.DKMainActivity" />

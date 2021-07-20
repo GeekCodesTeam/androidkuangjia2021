@@ -29,7 +29,7 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
             tv_center_content17, tv_center_content18, tv_center_content19, tv_center_content20, tv_center_content21, tv_center_content22,
             tv_center_content23, tv_center_content24, tv_center_content25, tv_center_content26, tv_center_content27, tv_center_content28,
             tv_center_content29, tv_center_content30, tv_center_content31, tv_center_content32, tv_center_content33, tv_center_content34,
-            tv_center_content35, tv_center_content36;
+            tv_center_content35, tv_center_content36, tv_center_content37;
     private MessageReceiverIndex mMessageReceiver;
 
 
@@ -160,6 +160,7 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         tv_center_content34 = rootView.findViewById(R.id.shouyef1_tv34);
         tv_center_content35 = rootView.findViewById(R.id.shouyef1_tv35);
         tv_center_content36 = rootView.findViewById(R.id.shouyef1_tv36);
+        tv_center_content37 = rootView.findViewById(R.id.shouyef1_tv37);
         tv_center_content101.setOnClickListener(this);
         tv_center_content1.setOnClickListener(this);
         tv_center_content2.setOnClickListener(this);
@@ -198,6 +199,7 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         tv_center_content34.setOnClickListener(this);
         tv_center_content35.setOnClickListener(this);
         tv_center_content36.setOnClickListener(this);
+        tv_center_content37.setOnClickListener(this);
 
         mMessageReceiver = new MessageReceiverIndex();
         IntentFilter filter = new IntentFilter();
@@ -302,6 +304,8 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
 //                    .build();
 //            intent.setOperation(operation);
 //            startAbility(intent);
+        }else if (id == R.id.shouyef1_tv37) {
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ChangeIconActivity"));
         }
     }
 

@@ -32,6 +32,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+
     <application
         android:allowBackup="true"
         android:label="@string/app_nameslbappcomm"
@@ -249,22 +250,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".viewpager2.LunboMainActivity"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.LunboMainActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".viewpager2.ui.GalleryActivity" />
-        <activity android:name=".viewpager2.ui.TouTiaoActivity" />
-        <activity android:name=".viewpager2.ui.TVActivity" />
-        <activity android:name=".viewpager2.ui.RecyclerViewBannerActivity" />
-        <activity android:name=".viewpager2.ui.ConstraintLayoutBannerActivity" />
-        <activity
-            android:name=".viewpager2.ui.Vp2FragmentRecyclerviewActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".clickeffect.ClickEffectDemo"
             android:launchMode="singleTask">
             <intent-filter>
@@ -303,13 +288,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".polyv.PolyvActList1">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.PolyvActList1" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".zhiwen.ZhiwenAct">
+        <activity android:name="com.example.libbase.zhiwen.ZhiwenAct">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct" />
                 <category android:name="android.intent.category.DEFAULT" />

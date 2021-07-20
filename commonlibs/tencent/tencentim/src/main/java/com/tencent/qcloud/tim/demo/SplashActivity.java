@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
-
-import androidx.annotation.RequiresApi;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.geek.libutils.app.BaseApp;
@@ -20,7 +17,7 @@ import com.tencent.imsdk.v2.V2TIMMessage;
 import com.tencent.qcloud.tim.demo.helper.ConfigHelper;
 import com.tencent.qcloud.tim.demo.login.LoginForDevActivity;
 import com.tencent.qcloud.tim.demo.login.UserInfo;
-import com.tencent.qcloud.tim.demo.main.MainActivity;
+import com.tencent.qcloud.tim.demo.main.IMMainActivity;
 import com.tencent.qcloud.tim.demo.signature.GenerateTestUserSig;
 import com.tencent.qcloud.tim.demo.thirdpush.HUAWEIHmsMessageService;
 import com.tencent.qcloud.tim.demo.thirdpush.OfflineMessageDispatcher;
@@ -223,7 +220,7 @@ public class SplashActivity extends Activity {
             return;
         }
 
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, IMMainActivity.class);
         startActivity(intent);
         finish();
     }

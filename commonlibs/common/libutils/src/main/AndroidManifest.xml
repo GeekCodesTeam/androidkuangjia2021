@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.geek.libutils" >
+    package="com.geek.libutils">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 快捷方式开始 -->
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.bbk.launcher2.permission.WRITE_SETTINGS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_namelibutils"
+        android:supportsRtl="true">
+        <receiver
+            android:name=".shortcut.broadcast.AutoCreateBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.shortcut.core.auto_create" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".shortcut.broadcast.NormalCreateBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.shortcut.core.normal_create" />
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>

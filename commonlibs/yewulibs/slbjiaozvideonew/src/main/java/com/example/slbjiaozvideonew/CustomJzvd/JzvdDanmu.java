@@ -189,7 +189,7 @@ public class JzvdDanmu extends JzvdStd {
         if (danmaku == null) {
             return;
         }
-        Drawable drawable = ContextCompat.getDrawable(getContext(), R.mipmap.ic_launcher);
+        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.tiktok_comment_normal);
         int size = DipAndPx.dip2px(getContext(), 20);
         drawable.setBounds(0, 0, size, size);
         danmaku.text = createSpannable(drawable);

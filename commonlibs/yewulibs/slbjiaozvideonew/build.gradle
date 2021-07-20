@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply from: './../../../commonlibs1.gradle'
 apply from: './../../../commonlibs4.gradle'
 def librarys = rootProject.ext.dependencies //依赖

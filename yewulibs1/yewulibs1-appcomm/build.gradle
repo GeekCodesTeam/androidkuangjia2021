@@ -1,6 +1,4 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply from: './../../commonlibs2.gradle'
 // mob
 //apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
@@ -41,6 +39,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //TODO common libs
     implementation project(':commonlibs:baselibrary')
+    implementation project(':commonlibs:common:libbase')
     // 支持分版本网络请求
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
@@ -54,6 +53,8 @@ dependencies {
     // https://github.com/crazyandcoder/citypicker
     // api 'liji.library.dev:citypickerview:4.3.2'
     api project(':commonlibs:yewulibs:slbcitypickerview')
+    // https://github.com/begeekmyfriend/yasea
+    api project(':commonlibs:yewulibs:slbscreenlibrary')
     // slbbluetooth
     api project(':commonlibs:yewulibs:slbbluetooth')
     // ncalendar
@@ -78,14 +79,23 @@ dependencies {
     api project(':commonlibs:hunheku:libpdf')
     // 高德地图
     api project(':commonlibs:hunheku:liblocations')
-    // viewpager2 轮播图 https://github.com/youth5201314/banner
-    api 'io.github.youth5201314:banner:2.2.2'
     // https://github.com/CarGuo/GSYIjkJava
     api project(':commonlibs:yewulibs:slbgsyvideonew')
     // https://github.com/Jzvd/JZVideo
     api project(':commonlibs:yewulibs:slbjiaozvideonew')
     // https://github.com/Doikki/DKVideoPlayer
     api project(':commonlibs:dkplayer:dkplayer-sample')
+    // okhttputils
+    api project(':commonlibs:hunheku:libokhttputils')
+    // 指纹验证
+    api project(':commonlibs:yewulibs:slbyanzheng')
+    //TODO aar
+//    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
+    // test
+//    bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
+//    bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
+//    bxn_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
+    //业务bufen
     // 环信IM
     // api project(':commonlibs:huanxin:huanxinim')
     // 保利威直播1
@@ -94,14 +104,4 @@ dependencies {
     api project(':commonlibs:tencent:tencentim')
     // RongCloudIM
     api project(':commonlibs:rongcloud:rongcloudim')
-    //
-    api project(':commonlibs:hunheku:libokhttputils')
-    // 指纹验证
-    api project(':commonlibs:yewulibs:slbyanzheng')
-    //TODO aar
-//    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
-    // test
-    bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
-    bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
-    bxn_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
 }

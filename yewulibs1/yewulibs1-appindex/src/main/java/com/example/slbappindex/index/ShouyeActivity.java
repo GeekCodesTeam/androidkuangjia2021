@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +29,9 @@ import com.example.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.LocalBroadcastManagers;
+import com.geek.libutils.app.MyLogUtil;
+import com.geek.libutils.shortcut.ShortcutUtils;
+import com.geek.libutils.shortcut.core.Shortcut;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppReceiver;
 import com.github.commonlibs.libupdateapputilsold.util.UpdateAppUtils;
 import com.pgyer.pgyersdk.PgyerSDKManager;
@@ -90,10 +95,23 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
         }
     }
 
+    private final Shortcut.Callback callback = new Shortcut.Callback() {
+        @Override
+        public void onAsyncCreate(String id, String label) {
+            ShortcutUtils.dismissTryTipDialog();
+            if (!Build.MANUFACTURER.equalsIgnoreCase("huawei") && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+                MyLogUtil.e("创建成功，id = " + id + ", label = " + label);
+            } else {
+                Log.d("TAG", "onAsyncCreate: " + "系统会提示");
+            }
+        }
+    };
+
     @Override
     protected void onResume() {
         updateAppReceiver.setBr(this);
         PgyerSDKManager.checkSoftwareUpdate(this);
+        Shortcut.getSingleInstance().addShortcutCallback(callback);
         super.onResume();
     }
 
@@ -102,6 +120,9 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
         if (updateAppReceiver != null) {
             updateAppReceiver.desBr(this);
         }
+        Shortcut.getSingleInstance().removeShortcutCallback(callback);
+        ShortcutUtils.dismissPermissionTipDialog();
+        ShortcutUtils.dismissTryTipDialog();
         if (presenter != null) {
             presenter.onDestory();
         }
@@ -110,7 +131,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         mFragmentManager = getSupportFragmentManager();
         // 解决fragment布局重叠错乱
         if (savedInstanceState != null) {
@@ -299,7 +320,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
                 transaction.show(mFragment3);
                 mFragment3.getCate(tag, isrefresh);
             }
-        }else if (tag.equalsIgnoreCase(id4)) {
+        } else if (tag.equalsIgnoreCase(id4)) {
             if (mFragment4 == null) {
                 mFragment4 = new ShouyeF4();
                 Bundle args = new Bundle();

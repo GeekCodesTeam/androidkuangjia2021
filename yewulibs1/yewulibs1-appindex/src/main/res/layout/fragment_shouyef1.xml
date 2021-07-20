@@ -471,7 +471,7 @@
                     android:layout_marginTop="12mm"
                     android:layout_marginRight="12mm"
                     android:gravity="left"
-                    android:text="36.从Android启动鸿蒙组件"
+                    android:text="36.Android启动鸿蒙组件"
                     android:textColor="@color/gray4A4A4A"
                     android:textSize="12mm" />
 
@@ -484,6 +484,18 @@
                     android:layout_marginRight="12mm"
                     android:gravity="left"
                     android:text="37.鸿蒙启动Android组件"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="38.后台切换节日图标"
                     android:textColor="@color/gray4A4A4A"
                     android:textSize="12mm" />
             </LinearLayout>

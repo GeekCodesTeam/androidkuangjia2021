@@ -15,7 +15,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.slbappcomm.R;
 import com.example.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
-import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
+import com.example.libbase.widgets.NavigationBarUtil;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import me.jessyan.autosize.AutoSizeCompat;
 

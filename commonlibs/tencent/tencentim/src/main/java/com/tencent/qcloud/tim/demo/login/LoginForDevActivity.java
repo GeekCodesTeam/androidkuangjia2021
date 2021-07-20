@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.tencent.qcloud.tim.demo.R;
-import com.tencent.qcloud.tim.demo.main.MainActivity;
+import com.tencent.qcloud.tim.demo.main.IMMainActivity;
 import com.tencent.qcloud.tim.demo.signature.GenerateTestUserSig;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
 import com.tencent.qcloud.tim.demo.utils.Utils;
@@ -69,7 +69,7 @@ public class LoginForDevActivity extends Activity {
                     public void onSuccess(Object data) {
                         UserInfo.getInstance().setUserSig(userSig);
                         UserInfo.getInstance().setAutoLogin(true);
-                        Intent intent = new Intent(LoginForDevActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginForDevActivity.this, IMMainActivity.class);
                         startActivity(intent);
                         finish();
                     }

@@ -1,15 +1,13 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply from: './../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':commonlibs:common:libutils')
-    api project(':commonlibs:common:libbase')
+//    api project(':commonlibs:common:libutils')
+    implementation project(':commonlibs:common:libbase')
     // 网络请求
-    api project(':commonlibs:common:libmvp')
-    api project(':commonlibs:common:libretrofit')
+//    api project(':commonlibs:common:libmvp')
+//    api project(':commonlibs:common:libretrofit')
     // app升级
     api project(':commonlibs:hunheku:libupdateapputilsold')
     // https://github.com/teprinciple/UpdateAppUtils
@@ -69,10 +67,8 @@ dependencies {
     api project(':commonlibs:hunheku:libyanzhenjieandpermission')
     // https://github.com/yshrsmz/KeyboardVisibilityEvent
     api 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'
-    // https://github.com/getActivity/ToastUtils
-    api 'com.github.getActivity:ToastUtils:9.2'
     // https://github.com/li-xiaojun/XPopup
-    api 'com.github.li-xiaojun:XPopup:2.3.4'
+    api project(':commonlibs:yewulibs:slbxpopup')
     // https://github.com/meetsl/SCardView-master
     api 'io.github.meetsl:SCardView:1.2'
     // https://github.com/nanchen2251/BankCardUtils

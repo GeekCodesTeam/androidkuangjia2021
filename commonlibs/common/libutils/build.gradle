@@ -1,6 +1,4 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 //apply from: '../../mobsdk.gradle'
 apply from: './../../../commonlibs1.gradle'
 def config = rootProject.ext //配置
@@ -23,6 +21,7 @@ dependencies {
     api librarys.autosize
     api librarys.mmkv
     api librarys.viewpager2
+    api librarys.filedownloader
     api 'com.tencent.bugly:crashreport:latest.release'
     //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     api 'com.tencent.bugly:nativecrashreport:latest.release'
@@ -33,8 +32,13 @@ dependencies {
     api 'com.meituan.android.walle:library:1.1.7'
     // https://www.pgyer.com/doc/view/android-sdk
 //    api 'com.pgyer:analytics:4.1.16'
-    api 'com.pgyer:analytics:4.2.1'
-
+    api 'com.pgyer:analytics:4.2.2'
+    // https://github.com/getActivity/ToastUtils 横屏Toast
+    api 'com.github.getActivity:ToastUtils:9.2'
+    // viewpager2 轮播图 https://github.com/youth5201314/banner
+    api 'io.github.youth5201314:banner:2.2.2'
+    //  https://github.com/li-xiaojun/XPopup
+    api 'com.github.li-xiaojun:XPopup:2.4.9'
 //    implementation "androidx.legacy:legacy-support-v4:1.0.0"
 //    implementation "androidx.appcompat:appcompat:1.2.0"
 //    implementation "androidx.annotation:annotation:1.2.0"

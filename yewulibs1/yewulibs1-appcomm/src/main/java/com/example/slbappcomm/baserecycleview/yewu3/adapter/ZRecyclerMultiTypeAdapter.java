@@ -51,7 +51,7 @@ public class ZRecyclerMultiTypeAdapter extends BaseRecyclerAdapter<String> {
         textView.setText(data);
         if (viewType == TYPE_0) {
             ImageView imageView = getView(holder, R.id.imageView);
-            imageView.setImageResource(R.drawable.ic_launcher);
+            imageView.setImageResource(R.drawable.slb_poppay2);
         }
     }
 }

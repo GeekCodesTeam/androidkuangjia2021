@@ -1,8 +1,7 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply from: '../../assemble_dolast.gradle'
 apply from: './../../commonlibs2.gradle'
+
 def librarys = rootProject.ext.dependencies
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

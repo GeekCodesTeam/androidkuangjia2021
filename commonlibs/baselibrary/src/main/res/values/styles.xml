@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeBaselib" parent="Theme.AppCompat.Light.NoActionBar">
         <!--<style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">-->
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/transparent</item>
@@ -34,13 +34,13 @@
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
-    <style name="Theme.Transparent" parent="AppThemeBase">
+    <style name="Theme.Transparent" parent="AppThemeBaselib">
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
         <!--<item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>-->
     </style>
 
-    <style name="ad_common_dialogstyle1" parent="AppThemeBase">
+    <style name="ad_common_dialogstyle1" parent="AppThemeBaselib">
         <!--设置dialog的背景-->
         <item name="android:windowBackground">@android:color/transparent</item>
         <!--设置Dialog的windowFrame框为无-->
@@ -60,7 +60,7 @@
     </style>
 
     <!-- window 透明的-->
-    <style name="Theme.AppCompat.Translucent" parent="AppThemeBase">
+    <style name="Theme.AppCompat.Translucent" parent="AppThemeBaselib">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowDisablePreview">true</item>

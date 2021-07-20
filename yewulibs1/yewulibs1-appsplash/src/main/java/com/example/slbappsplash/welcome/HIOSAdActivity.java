@@ -7,19 +7,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.BarUtils;
-import com.blankj.utilcode.util.ScreenUtils;
 import com.example.bizyewu1.bean.VersionInfoBean;
 import com.example.bizyewu1.presenter.CheckverionPresenter;
 import com.example.bizyewu1.view.CheckverionView;
-import com.example.slbappcomm.utils.CommonUtils;
+import com.example.libbase.utils.CommonUtils;
+import com.example.libbase.widgets.NavigationBarUtil;
 import com.example.slbappsplash.R;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.data.MmkvUtils;
-import com.haier.cellarette.baselibrary.zothers.NavigationBarUtil;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 
@@ -139,7 +135,10 @@ public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
                                 @Override
                                 public void run() {
                                     // 跳转到学习报告详情页
-                                    HiosHelper.resolveAd(HIOSAdActivity.this, HIOSAdActivity.this, URLDecoder.decode(bbbb) + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
+                                    HiosHelper.resolveAd(HIOSAdActivity.this,
+                                            HIOSAdActivity.this,
+                                            URLDecoder.decode(bbbb)
+                                                    + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
                                     finish();
                                     return;
                                 }

@@ -40,7 +40,7 @@ import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.example.slbapplogin.msg.AppPermissionUtil;
 import com.example.slbapplogin.msg.SMSBroadcastReceiver;
-import com.example.slbapplogin.msg.YanzhengUtil;
+import com.example.libbase.utils.YanzhengUtil;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;

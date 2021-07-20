@@ -141,7 +141,7 @@ public class Liandong2Activity extends AppCompatActivity {
             for (int j = 0; j < 5; j++) {
                 Liandong2FoodBean bean = new Liandong2FoodBean();
                 bean.setGroup(i);
-                bean.setImageId(R.mipmap.ic_launcher);
+                bean.setImageId(R.drawable.img00);
                 bean.setTitle(mCategoryArr[i] + j);
                 mFoodList.add(bean);
             }

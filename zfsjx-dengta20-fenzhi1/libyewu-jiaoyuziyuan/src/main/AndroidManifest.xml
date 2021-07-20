@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fosung.lighthouse.jiaoyuziyuan">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name_jiaoyuziyuan"
+        android:supportsRtl="true">
+        <activity android:name="com.fosung.lighthouse.jiaoyuziyuan.activity.JiaoyuziyuanAct"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.JiaoyuziyuanAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/${applicationId}.hs.act.slbapp.JiaoyuziyuanAct"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JiaoyuziyuanAct"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JiaoyuziyuanAct"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

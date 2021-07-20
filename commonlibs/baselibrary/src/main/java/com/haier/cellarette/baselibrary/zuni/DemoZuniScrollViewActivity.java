@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.haier.cellarette.baselibrary.R;
-import com.haier.cellarette.baselibrary.changelanguage.LocalManageUtil;
+import com.geek.libutils.app.LocalManageUtil;
 
 
 public class DemoZuniScrollViewActivity extends AppCompatActivity {
