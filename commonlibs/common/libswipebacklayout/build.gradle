@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'android-maven'
+
 apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
