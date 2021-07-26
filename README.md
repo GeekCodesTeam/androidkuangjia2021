@@ -1,6 +1,6 @@
 # hunheappkuangjia
 
-混合移动应用框架APP-Android26
+混合移动应用框架APP-Android27
 ### 附：请切换mavencentral分支开发
 ###
 ![效果图](https://github.com/GeekCodesTeam/androidkuangjia2021/blob/main/zuser_adapter%2Bxml/111111.jpg "1")
