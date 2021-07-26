@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+//jitpack
+group='com.github.geeklx'
 apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
