@@ -7,8 +7,6 @@ android {
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
-        versionCode config.dengtaversionCode
-        versionName config.dengtaversionName
         multiDexEnabled true
         renderscriptTargetApi 30
         renderscriptSupportModeEnabled true
@@ -50,5 +48,3 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
 }
-// mob
-//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'

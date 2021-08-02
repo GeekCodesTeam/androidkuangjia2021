@@ -1,7 +1,6 @@
 package com.fosung.lighthouse.jiaoyuziyuan.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
 
@@ -50,27 +49,41 @@ public class EduDetailInfoFragment extends BaseFrameFrag {
     protected void createView(@Nullable Bundle savedInstanceState) {
         super.createView(savedInstanceState);
         zRecyclerView = getView(R.id.pullLoadMoreRecyclerView);
-        zRecyclerView.setEmptyView(LayoutInflater.from(mActivity)
-                .inflate(R.layout.view_pullrecycler_empty, null));//setEmptyView
+        zRecyclerView.setIsProceeConflict(true);
 
         ArrayList<String> datas = new ArrayList<>();
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
 
-        setDataToRecyclerView(datas,true);
+        zRecyclerView.setOnPullLoadMoreListener(new ZRecyclerView.PullLoadMoreListener() {
+            @Override
+            public void onRefresh() {
+                datas.clear();
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                setDataToRecyclerView(datas,true);
+                zRecyclerView.setPullLoadMoreCompleted();
+            }
+
+            @Override
+            public void onLoadMore() {
+                datas.add("1");
+                setDataToRecyclerView(datas,true);
+                zRecyclerView.setPullLoadMoreCompleted();
+                zRecyclerView.setNoMore(true);
+            }
+        });
+
+        zRecyclerView.refreshWithPull();
+
     }
 
     /**
      * @param isClear 是否清除原来的数据
      */
     public void setDataToRecyclerView(List<String> list, boolean isClear) {
+
         if (mRecyclerViewAdapter == null) {
             mRecyclerViewAdapter = new EduDetailInfoAdapter();
             zRecyclerView.setAdapter(mRecyclerViewAdapter);

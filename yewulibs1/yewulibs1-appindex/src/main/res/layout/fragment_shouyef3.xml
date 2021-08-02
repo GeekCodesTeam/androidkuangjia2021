@@ -213,7 +213,8 @@
                     android:gravity="left"
                     android:text="13.RongCloudIM"
                     android:textColor="@color/gray4A4A4A"
-                    android:textSize="12mm" />
+                    android:textSize="12mm"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/tv14"
@@ -223,7 +224,7 @@
                     android:layout_marginTop="12mm"
                     android:layout_marginRight="12mm"
                     android:gravity="left"
-                    android:text="14.业务弹窗"
+                    android:text="13.业务弹窗"
                     android:textColor="@color/gray4A4A4A"
                     android:textSize="12mm" />
 

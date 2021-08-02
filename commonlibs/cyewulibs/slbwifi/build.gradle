@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+//android {
+//    defaultConfig {
+////        ndk {
+////            moduleName "aaaa,bbb"
+////            ldLibs "log", "z", "m", "android", "c"
+////            abiFilters /*"armeabi",*/ "armeabi-v7a"/*, "x86"*/
+////        }
+//        sourceSets.main {
+//            jni.srcDirs = []
+//            //LOCAL_LDFLAGS += -fuse-ld=bfd
+//            //jni.srcDirs 'src/main/jni'
+////            jniLibs.srcDirs = ['./libs']
+//            jniLibs.srcDir './../../otherjar'
+////            jniLibs.srcDirs = ['../../../otherlibs','libs']
+//        }
+//    }
+//}
+//repositories { flatDir { dirs 'libs' } }
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.blankj
+    implementation librarys.mmkv
+    implementation librarys.fastJson
+    implementation librarys.gsonJson
+    // test aar jar
+//    implementation(name: 'opendroid', ext: 'aar')
+    implementation project(path: ':libsCenterNew:opendroid2')
+
+//    implementation files('libs/tbs_sdk_thirdapp.jar')
+//    implementation files('../../../otherlibs/alipaySdk-20180601.jar')
+}
+

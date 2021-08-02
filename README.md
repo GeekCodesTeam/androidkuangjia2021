@@ -1,6 +1,53 @@
 # hunheappkuangjia
 
-混合移动应用框架APP-Android27
+### 集成方式
+How to
+To get a Git project into your build:
+
+Step 1. Add the JitPack repository to your build file
+
+gradle
+maven
+sbt
+leiningen
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.geeklx:geeklibs:Tag'
+	}
+Share this release:
+
+### 你也可以这样
+    // 总依赖																	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.2.8'	
+    或者
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.2.8'	
+    
+    // 部分依赖																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.2.8'	
+
+![image](https://user-images.githubusercontent.com/7312232/127794495-5ee0ec57-c82a-4d4a-9887-4a9c366de3b0.png)
+
+
+混合移动应用框架APP-Android2
 ### 附：请切换mavencentral分支开发
 ###
 ![效果图](https://github.com/GeekCodesTeam/androidkuangjia2021/blob/main/zuser_adapter%2Bxml/111111.jpg "1")
@@ -284,7 +331,7 @@
 <br/>    api 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.8'
 <br/>    // https://github.com/Jzvd/JZVideo   播放器
 <br/>    // api 'cn.jzvd:jiaozivideoplayer:7.6.0'
-<br/>    api project(':commonlibs:yewulibs:slbjiaozivideoplayer')
+<br/>    api project(':commonlibs:cyewulibs:slbjiaozivideoplayer')
 <br/>    // https://github.com/HuanHaiLiuXin/CoolViewPager   viewpager
 <br/>    api 'com.github.HuanHaiLiuXin:CoolViewPager:v1.0.0'
 <br/>    // https://github.com/airbnb/lottie-android   动画
@@ -366,43 +413,43 @@
 ### 96.yewulibs1-appcomm
 
 <br/>    //TODO common libs
-<br/>    implementation project(':commonlibs:baselibrary')
+<br/>    implementation project(':baselibrary')
 <br/>    // 支持分版本网络请求
 <br/>    bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
 <br/>    bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
 <br/>    bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
 <br/>    // jpush推送
-<br/>    // api project(':commonlibs:hunheku:libappjpush')
+<br/>    // api project(':commonlibs:bhunheku:libappjpush')
 <br/>    // jpush分享
-<br/>    api project(':commonlibs:hunheku:libappjpushshare')
+<br/>    api project(':commonlibs:bhunheku:libappjpushshare')
 <br/>    // jpush统计
-<br/>    api project(':commonlibs:hunheku:libappjpushstatistics')
+<br/>    api project(':commonlibs:bhunheku:libappjpushstatistics')
 <br/>    // Umeng统计
-<br/>    api project(':commonlibs:hunheku:libappumengstatistics')
+<br/>    api project(':commonlibs:bhunheku:libappumengstatistics')
 <br/>    // mob分享
-<br/>    api project(':commonlibs:hunheku:libappmob')
+<br/>    api project(':commonlibs:bhunheku:libappmob')
 <br/>    // 支付
-<br/>    api project(':commonlibs:hunheku:libapppay')
+<br/>    api project(':commonlibs:bhunheku:libapppay')
 <br/>    // Glide 4.0以上
 <br/>    api librarys.glide47
-<br/>    api project(':commonlibs:common:libglide47')
+<br/>    api project(':libglide47')
 <br/>    //TODO other libs
 <br/>    // https://github.com/crazyandcoder/citypicker                      城市选择器
 <br/>    // pi 'liji.library.dev:citypickerview:4.3.2'
-<br/>    api project(':commonlibs:yewulibs:slbcitypickerview')
+<br/>    api project(':commonlibs:cyewulibs:slbcitypickerview')
 <br/>    // slbbluetooth                                                  蓝牙               
-<br/>    api project(':commonlibs:yewulibs:slbbluetooth')
+<br/>    api project(':commonlibs:cyewulibs:slbbluetooth')
 <br/>    // jiaozivideoplayer                                            播放器
-<br/>    api project(':commonlibs:yewulibs:slbjiaozivideoplayer')
+<br/>    api project(':commonlibs:cyewulibs:slbjiaozivideoplayer')
 <br/>    // ncalendar                                                    小米日历
-<br/>    api project(':commonlibs:yewulibs:slbncalendar')
+<br/>    api project(':commonlibs:cyewulibs:slbncalendar')
 <br/>    // slbota                                                       OTA升级
-<br/>    api project(':commonlibs:yewulibs:slbota')
+<br/>    api project(':commonlibs:cyewulibs:slbota')
 <br/>    // https://github.com/ikew0ng/SwipeBackLayout                       
 <br/>    // api 'me.imid.swipebacklayout.lib:library:1.1.0'                  关闭页面IOS效果
-<br/>    api project(':commonlibs:common:libswipebacklayout')
+<br/>    api project(':libswipebacklayout')
 <br/>    // slbwifi                                                      WIFI选择器            
-<br/>    api project(':commonlibs:yewulibs:slbwifi') 
+<br/>    api project(':commonlibs:cyewulibs:slbwifi') 
 <br/>    // https://github.com/scwang90/SmartRefreshLayout               下拉刷新上拉加载
 <br/>    api project(':commonlibs:smartrefreshlayout:refresh-footer')
 <br/>    api project(':commonlibs:smartrefreshlayout:refresh-header')
@@ -419,18 +466,18 @@
 <br/>    // exclude(group: 'com.android.support', module: 'support-annotations')
 <br/>    // }
 <br/>    // uploadpic                                                    图片选择器old
-<br/>    api project(':commonlibs:yewulibs:slbimagepicker')
+<br/>    api project(':commonlibs:cyewulibs:slbimagepicker')
 <br/>    // https://github.com/jenly1314/ZXingLite                       扫码
 <br/>    // api 'com.king.zxing:zxing-lite:1.1.4-androidx'
 <br/>    api project(':commonlibs:zxinglibs:zxinglibs1')
 <br/>    api project(':commonlibs:zxinglibs:zxinglibs2')
 <br/>    api project(':commonlibs:zxinglibs:zxinglibs3')
 <br/>    //                                                              recycleview
-<br/>    api project(':commonlibs:hunheku:libZRecyclerView')
+<br/>    api project(':commonlibs:bhunheku:libZRecyclerView')
 <br/>    // https://github.com/wangyiwy/PDF_Preview                      PDF
-<br/>    api project(':commonlibs:hunheku:libpdf')
+<br/>    api project(':commonlibs:bhunheku:libpdf')
 <br/>    // 高德地图                                                     地图marker    
-<br/>    api project(':commonlibs:hunheku:liblocations')
+<br/>    api project(':commonlibs:bhunheku:liblocations')
 ### 95.commonlibs：zhibopolyv：保利威直播
 ### 
 ### 96.huanxin：环信IM
@@ -444,18 +491,17 @@
 ### 100.slbyanzheng：指纹登录组件
 ### 
 ### 101.HuxiAct：布局加载组件
-### 
-### 102.slbscreenlibrary：投屏组件
+
 
 
 已知问题：
 1.融云问题：
 D:\code\lib7\bumenyanfa\fsjxappkuangjia-android\yewulibs1\yewulibs1-app\build\
 intermediates\merged_native_libs\bxn_nationRelease\out\lib\armeabi-v7a\libRongIMLib.so
- because of non-zero exit value from objcopy.
+because of non-zero exit value from objcopy.
 D:\code\android-studio-ide-201.6953283-windows\sdk\ndk\22.1.7171670\toolchains\
-llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has 
-a sh_offset (0x19c80) + sh_size (0xb61b8) that is greater than the file size 
+llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has
+a sh_offset (0x19c80) + sh_size (0xb61b8) that is greater than the file size
 (0x86214)
 
 

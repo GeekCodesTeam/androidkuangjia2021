@@ -1,7 +1,5 @@
 apply plugin: 'com.android.library'
 apply from: './../../commonlibs2.gradle'
-// mob
-//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
 def librarys = rootProject.ext.dependencies //
 //configurations {
 //    // use exclude
@@ -38,57 +36,53 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //TODO common libs
-    implementation project(':commonlibs:baselibrary')
-    implementation project(':commonlibs:common:libbase')
+    implementation project(':commonlibs:acommon:baselibrary')
+    implementation project(':commonlibs:acommon:libbase')
     // 支持分版本网络请求
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     // Umeng统计
-    api project(':commonlibs:hunheku:libappumengstatistics')
+    api project(':commonlibs:bhunheku:libappumengstatistics')
     // mob分享
-    api project(':commonlibs:hunheku:libappmob')
+    api project(':commonlibs:bhunheku:libappmob')
     // 支付
-    api project(':commonlibs:hunheku:libapppay')
+    api project(':commonlibs:bhunheku:libapppay')
     // https://github.com/crazyandcoder/citypicker
     // api 'liji.library.dev:citypickerview:4.3.2'
-    api project(':commonlibs:yewulibs:slbcitypickerview')
+    api project(':commonlibs:cyewulibs:slbcitypickerview')
     // https://github.com/begeekmyfriend/yasea
-    api project(':commonlibs:yewulibs:slbscreenlibrary')
+    api project(':commonlibs:cyewulibs:slbscreenlibrary')
     // slbbluetooth
-    api project(':commonlibs:yewulibs:slbbluetooth')
+    api project(':commonlibs:cyewulibs:slbbluetooth')
     // ncalendar
-    api project(':commonlibs:yewulibs:slbncalendar')
+    api project(':commonlibs:cyewulibs:slbncalendar')
     // slbota
-    api project(':commonlibs:yewulibs:slbota')
-    // https://github.com/ikew0ng/SwipeBackLayout
-    // api 'me.imid.swipebacklayout.lib:library:1.1.0'
-    api project(':commonlibs:common:libswipebacklayout')
+    api project(':commonlibs:cyewulibs:slbota')
     // slbwifi
-    api project(':commonlibs:yewulibs:slbwifi')
+    api project(':commonlibs:cyewulibs:slbwifi')
     // uploadpic
-    api project(':commonlibs:yewulibs:slbimagepicker')
+    api project(':commonlibs:cyewulibs:slbimagepicker')
     // https://github.com/jenly1314/ZXingLite
     // api 'com.king.zxing:zxing-lite:1.1.4-androidx'
-    api project(':commonlibs:zxinglibs:zxinglibs1')
-    api project(':commonlibs:zxinglibs:zxinglibs2')
-    api project(':commonlibs:zxinglibs:zxinglibs3')
+    api project(':commonlibs:cyewulibs:zxinglibs1')
+    api project(':commonlibs:cyewulibs:zxinglibs2')
     //
-    api project(':commonlibs:hunheku:libZRecyclerView')
+    api project(':commonlibs:bhunheku:libZRecyclerView')
     // https://github.com/wangyiwy/PDF_Preview
-    api project(':commonlibs:hunheku:libpdf')
+    api project(':commonlibs:bhunheku:libpdf')
     // 高德地图
-    api project(':commonlibs:hunheku:liblocations')
+    api project(':commonlibs:bhunheku:liblocations')
     // https://github.com/CarGuo/GSYIjkJava
-    api project(':commonlibs:yewulibs:slbgsyvideonew')
+    api project(':commonlibs:cyewulibs:slbgsyvideonew')
     // https://github.com/Jzvd/JZVideo
-    api project(':commonlibs:yewulibs:slbjiaozvideonew')
+    api project(':commonlibs:cyewulibs:slbjiaozvideonew')
     // https://github.com/Doikki/DKVideoPlayer
-    api project(':commonlibs:dkplayer:dkplayer-sample')
+    api project(':commonlibs:zdkplayer:dkplayer-sample')
     // okhttputils
-    api project(':commonlibs:hunheku:libokhttputils')
+    api project(':commonlibs:bhunheku:libokhttputils')
     // 指纹验证
-    api project(':commonlibs:yewulibs:slbyanzheng')
+    api project(':commonlibs:cyewulibs:slbyanzheng')
     //TODO aar
 //    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
     // test
@@ -99,9 +93,9 @@ dependencies {
     // 环信IM
     // api project(':commonlibs:huanxin:huanxinim')
     // 保利威直播1
-    api project(':commonlibs:zhibopolyv:demo')
+    api project(':commonlibs:zzhibopolyv:demo')
     // TencentIm
-    api project(':commonlibs:tencent:tencentim')
+    api project(':commonlibs:ztencent:tencentim')
     // RongCloudIM
-    api project(':commonlibs:rongcloud:rongcloudim')
+//    api project(':commonlibs:rongcloud:rongcloudim')
 }

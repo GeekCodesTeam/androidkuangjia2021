@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="55mm"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0mm"
+        android:layout_weight="1"
+        android:background="#357CD4">
+
+        <ImageView
+            android:id="@id/baserecycleview_iv_back1"
+            android:layout_width="55mm"
+            android:layout_height="55mm"
+            android:layout_centerVertical="true"
+            android:onClick="back"
+            android:padding="16mm"
+            android:src="@drawable/icon_jiantou3" />
+
+        <ImageView
+            android:id="@id/baserecycleview_iv_x1"
+            android:layout_width="55mm"
+            android:layout_height="55mm"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/baserecycleview_iv_back1"
+            android:onClick="back"
+            android:padding="16mm"
+            android:src="@drawable/icon_jiantou5"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@id/baserecycleview_tv_center_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxLength="8"
+            android:singleLine="true"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="18mm"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@id/baserecycleview_tv_right1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16mm"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18mm"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5mm"
+        android:background="#E1E1E1" />
+</LinearLayout>

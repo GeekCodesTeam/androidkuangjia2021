@@ -1,8 +1,0 @@
-apply plugin: 'com.android.library'
-apply from: './../../../commonlibs1.gradle'
-def librarys = rootProject.ext.dependencies //依赖
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:common:libutils')
-    api 'joda-time:joda-time:2.10.1'
-}

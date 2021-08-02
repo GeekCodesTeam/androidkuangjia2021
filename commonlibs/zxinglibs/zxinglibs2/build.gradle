@@ -1,9 +1,0 @@
-apply plugin: 'com.android.library'
-//apply plugin: 'com.novoda.bintray-release'
-apply from: './../../../commonlibs1.gradle'
-def librarys = rootProject.ext.dependencies //依赖
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
-    implementation librarys.zxing
-}

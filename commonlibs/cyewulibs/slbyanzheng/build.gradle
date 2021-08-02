@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+//repositories { flatDir { dirs 'libs' } }
+android {
+    sourceSets {
+        main.java.srcDirs += 'src/main/base'
+        main.java.srcDirs += 'src/main/api9'
+        main.java.srcDirs += 'src/main/api14'
+        main.java.srcDirs += 'src/main/api21'
+        main.java.srcDirs += 'src/main/api23'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.blankj
+    implementation librarys.retrofit
+    implementation librarys.retrofitconverters
+    implementation librarys.retrofitgconvertergson
+    implementation librarys.retrofitgconverterscalars
+    //
+    implementation librarys.rxJava2
+    implementation librarys.rxandroid2
+    implementation librarys.adapterrxjava2
+
+//    implementation project(path: ':libsCenterNew:opendroid2')
+//    implementation files('../../../otherlibs/alipaySdk-20180601.jar')
+}
+

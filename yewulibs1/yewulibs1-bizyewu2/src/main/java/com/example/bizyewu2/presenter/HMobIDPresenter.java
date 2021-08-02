@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.SPUtils;
 import com.example.bizyewu2.api.Bizyewu2Api;
 import com.example.bizyewu2.view.HMobIDView;
-import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.libmvp.mvp.Presenter;
 import com.haier.cellarette.libretrofit.common.BanbenUtils;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;

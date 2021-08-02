@@ -1,0 +1,7 @@
+<resources>
+
+    <declare-styleable name="ToolBarTheme">
+        <attr name="android:windowActionBarOverlay"/>
+    </declare-styleable>
+
+</resources>

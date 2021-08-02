@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/xcl_home_item_gongzuodongtai"
+    android:background="@drawable/dkt_notice_radio_shape"
+    android:textColor="@color/dkt_notice_radio_selector"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="6dp"
+    android:paddingTop="6dp"
+    android:gravity="center"
+    android:drawableTop="@null"
+    android:button="@null"
+    android:textSize="12dp"
+    android:checked="true"
+    >
+
+</RadioButton>

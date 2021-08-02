@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/iv_head"
             android:layout_width="117dp"
-            android:layout_height="88dp"
+            android:layout_height="90dp"
             android:background="#f2f2f2" />
 
         <ImageView
@@ -27,8 +27,7 @@
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/tv_status"
+            android:layout_height="32dp"
             android:layout_alignTop="@+id/iv_head"
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@+id/iv_head"
@@ -36,7 +35,7 @@
             android:maxLines="2"
             android:text="工作队工作推进会议工作队工作推进会工作推进会"
             android:textColor="#ff333333"
-            android:textSize="15sp" />
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/tv_status"
@@ -44,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/tv_time"
             android:layout_alignLeft="@+id/tv_title"
+            android:layout_marginBottom="3dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="审核节点：处室负责人审核"
@@ -56,9 +56,10 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/tv_orgname"
             android:layout_alignLeft="@+id/tv_status"
+            android:layout_marginBottom="3dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="提报本级日期：2021-03-20"
+            android:text="提报本级日期：2021-03-20 19:00:0011111"
             android:textColor="#ff999999"
             android:textSize="11sp" />
 
@@ -78,8 +79,8 @@
 
         <TextView
             android:id="@+id/tv_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
             android:layout_alignBottom="@+id/iv_head"
             android:layout_alignParentRight="true"
             android:background="@mipmap/icon_edu_no_reviewed"/>

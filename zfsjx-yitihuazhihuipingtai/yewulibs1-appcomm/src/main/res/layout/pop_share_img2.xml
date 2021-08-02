@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_share"
+        android:layout_width="match_parent"
+        android:layout_height="200mm"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0mm"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="16mm">
+
+            <LinearLayout
+                android:id="@+id/ll_shareWxFriend"
+                android:layout_width="0mm"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40mm"
+                    android:layout_height="40mm"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/share_wx_friend" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2mm"
+                    android:text="微信好友"
+                    android:textColor="@color/color_333"
+                    android:textSize="14mm" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_shareWxCircle"
+                android:layout_width="0mm"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40mm"
+                    android:layout_height="40mm"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/share_wx_circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2mm"
+                    android:text="微信朋友圈"
+                    android:textColor="@color/color_333"
+                    android:textSize="14mm" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_savePic"
+                android:layout_width="0mm"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40mm"
+                    android:layout_height="40mm"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/share_savepic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2mm"
+                    android:text="保存本地"
+                    android:textColor="@color/color_333"
+                    android:textSize="14mm" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cancelTv"
+            android:layout_width="match_parent"
+            android:layout_height="60mm"
+            android:layout_alignParentBottom="true"
+            android:background="@color/f5f5f5"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/color_333"
+            android:textSize="16mm"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/pop_share_content"
+        android:layout_width="236mm"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="177mm" />
+</RelativeLayout>

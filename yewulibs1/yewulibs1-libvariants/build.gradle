@@ -7,8 +7,6 @@ android {
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
-        versionCode config.appversionCode
-        versionName config.appversionName
         multiDexEnabled true
         //添加如下配置就OK了
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -36,5 +34,5 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
+    implementation librarys.blankj
 }

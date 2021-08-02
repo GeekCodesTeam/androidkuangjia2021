@@ -6,15 +6,35 @@ buildscript {
         google()
         mavenLocal()
         mavenCentral()
-        maven { url "https://www.jitpack.io" }
-        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven {
+            url "https://www.jitpack.io"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+            allowInsecureProtocol = true
+        }
         maven {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+            allowInsecureProtocol = true
         }
-        maven { url "http://mvn.mob.com/android" }
-        maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
-        maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
-        maven { url 'http://developer.huawei.com/repo/' }
+        maven {
+            url "http://mvn.mob.com/android"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "http://maven.rongcloud.cn/repository/maven-releases/"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'http://developer.huawei.com/repo/'
+            allowInsecureProtocol = true
+        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
@@ -37,15 +57,34 @@ allprojects {
         google()
         mavenLocal()
         mavenCentral()
-        maven { url "https://www.jitpack.io" }
-        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven {
+            url "https://www.jitpack.io"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+            allowInsecureProtocol = true
+        }
         maven {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+            allowInsecureProtocol = true
         }
-        maven { url "http://mvn.mob.com/android" }
-        maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
-        maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
-        maven { url 'http://developer.huawei.com/repo/' }
+        maven {
+            url "http://mvn.mob.com/android"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "http://maven.rongcloud.cn/repository/maven-releases/"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'http://developer.huawei.com/repo/'
+            allowInsecureProtocol = true
+        }
 
 //        flatDir {
 //            dirs project(':libsCenter').file('./')

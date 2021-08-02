@@ -126,7 +126,7 @@ android {
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
-                    app_name      : "Android框架-线上",
+                    app_name      : "福生Android框架",
                     app_icon      : "@mipmap/ic_launcher"
             ]
         }
@@ -144,7 +144,7 @@ android {
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
-                    app_name      : "Android框架-测试",
+                    app_name      : "福生Android框架-测试",
                     app_icon      : "@mipmap/ic_launcher"
             ]
         }
@@ -162,7 +162,7 @@ android {
                     TENCENT_APPID : "1106011004",
                     MTA_APPKEY    : "注册应用的appkey",
                     MTA_CHANNEL   : "渠道名称",
-                    app_name      : "Android框架-预生产",
+                    app_name      : "福生Android框架-预生产",
                     app_icon      : "@mipmap/ic_launcher"
             ]
         }
@@ -225,9 +225,11 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:common:libbase')
+    // 鸿蒙bufen
+    implementation files('./libs/abilityshell_ide_java.jar')
     // TODO common库
-    implementation project(':commonlibs:baselibrary')
+    implementation project(':commonlibs:acommon:libbase')
+    implementation project(':commonlibs:acommon:baselibrary')
     implementation project(':yewulibs1:yewulibs1-appcomm')
     // TODO 业务
     implementation project(':yewulibs1:yewulibs1-appindex')
@@ -241,4 +243,4 @@ dependencies {
 // TODO Wallet打包
 apply from: './multiple-channel.gradle'
 // TODO mob
-apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
+apply from: './../../commonlibs/bhunheku/libappmob/MobSDK.gradle'

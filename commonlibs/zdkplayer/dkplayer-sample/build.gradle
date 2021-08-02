@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //依赖
+//repositories { flatDir { dirs 'libs' } }
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.glide47
+    implementation librarys.gsonJson
+    implementation project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+    api project(':commonlibs:zdkplayer:dkplayer-java')
+    api project(':commonlibs:zdkplayer:dkplayer-ui')
+    api project(path: ':commonlibs:zdkplayer:dkplayer-players:ijkexo')
+    api project(':commonlibs:zdkplayer:dkplayer-videocache')
+}

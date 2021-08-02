@@ -6,8 +6,6 @@ android {
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
-        versionCode config.appversionCode
-        versionName config.appversionName
         multiDexEnabled true
         renderscriptTargetApi 30
         renderscriptSupportModeEnabled true
@@ -44,5 +42,9 @@ android {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
+    implementation librarys.design
+    implementation librarys.appcompatV7
+    implementation librarys.supportannotations
+    implementation librarys.recyclerviewv7
+    implementation librarys.swiperefreshlayout
 }

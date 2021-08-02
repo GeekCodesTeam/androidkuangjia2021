@@ -4,12 +4,7 @@ apply from: './../../commonlibs2.gradle'
 def librarys = rootProject.ext.dependencies
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
-    implementation project(':commonlibs:common:libmvp')
-    implementation project(':commonlibs:common:libretrofit')
-//    bxnt_nationImplementation(name: 'libvariants_bxnt_nation', ext: 'aar')
-//    bxny_nationImplementation(name: 'libvariants_bxny_nation', ext: 'aar')
-//    bxn_nationImplementation(name: 'libvariants_bxn_nation', ext: 'aar')
+    implementation project(':commonlibs:acommon:libbase')
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')

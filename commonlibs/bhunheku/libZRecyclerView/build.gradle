@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android:flexbox:2.0.1'
+//    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+}

@@ -1,6 +1,6 @@
-apply from: './../../commonlibsapks.gradle'
-// mob
-//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
+//apply plugin: 'com.android.library'
+//apply from: './../commonlibs2.gradle'
+apply from: './../commonlibsapks.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')

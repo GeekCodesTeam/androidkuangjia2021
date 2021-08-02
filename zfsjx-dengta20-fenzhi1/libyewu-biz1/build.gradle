@@ -4,9 +4,7 @@ apply from: './../commonlibs2.gradle'
 def librarys = rootProject.ext.dependencies
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
-    implementation project(':commonlibs:common:libmvp')
-    implementation project(':commonlibs:common:libretrofit')
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.2.8'
     bxnt_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
     bxny_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
     bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')

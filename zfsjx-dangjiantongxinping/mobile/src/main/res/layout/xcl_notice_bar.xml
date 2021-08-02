@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/noticeBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimens_large_small"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="@dimen/dimens_large_small"
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/icon_notice">
+
+    </ImageView>
+
+    <com.fosung.xuanchuanlan.xuanchuanlan.widget.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:mvAnimDuration="1000"
+        app:mvDirection="bottom_to_top"
+        app:mvEllipsize="end"
+        app:mvGravity="left"
+        app:mvInterval="10000"
+        app:mvMaxLines="1"
+        app:mvSingleLine="false"
+        app:mvTextSize="@dimen/textsize_micro_micro" />
+
+</LinearLayout>

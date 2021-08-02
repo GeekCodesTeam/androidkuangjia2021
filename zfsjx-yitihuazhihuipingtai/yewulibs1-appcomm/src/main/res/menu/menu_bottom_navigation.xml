@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_home"
+        android:icon="@drawable/viewpager1_ic_home"
+        android:title="@string/viewpager1_title_home" />
+
+    <item
+        android:id="@+id/menu_item_knowledgesystem"
+        android:icon="@drawable/viewpager1_ic_knowledgesystem"
+        android:title="@string/viewpager1_title_knowledgesystem" />
+
+    <item
+        android:id="@+id/menu_item_project"
+        android:icon="@drawable/viewpager1_ic_project"
+        android:title="@string/viewpager1_title_project" />
+</menu>

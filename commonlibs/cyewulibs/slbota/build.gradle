@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.blankj
+    implementation librarys.filedownloader
+
+}
+

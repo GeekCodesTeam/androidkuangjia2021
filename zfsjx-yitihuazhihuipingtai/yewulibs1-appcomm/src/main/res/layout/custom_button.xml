@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.geek.libglide47.base.GlideImageView
+        android:id="@+id/iv1"
+        android:layout_width="40mm"
+        android:layout_height="40mm"
+        android:src="@drawable/head_moren3"
+        app:siv_border_color="@color/white"
+        app:siv_border_width="0mm"
+        app:siv_pressed_alpha="0.5"
+        app:siv_pressed_color="@color/white_alpha30"
+        app:siv_radius="12mm" />
+
+
+</LinearLayout>

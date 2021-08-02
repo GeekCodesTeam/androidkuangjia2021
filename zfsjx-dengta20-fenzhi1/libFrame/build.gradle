@@ -4,19 +4,19 @@ def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 必须依赖
-    api project(':commonlibs:common:libbase')
-    api project(':commonlibs:baselibrary')
+//    api project(':commonlibs:acommon:libbase')
+    api 'com.github.GeekCodesTeam:geeklibs:1.2.8'
+    api project(':commonlibs:acommon:baselibrary')
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     bxnt_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
     bxny_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
     bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
     // others
-    api project(':commonlibs:dkplayer:dkplayer-sample')
-    api project(':commonlibs:yewulibs:slbyanzheng')
+    api project(':commonlibs:zdkplayer:dkplayer-sample')
+    api project(':commonlibs:cyewulibs:slbyanzheng')
     api 'io.github.youth5201314:banner:2.2.2'
-    api project(':commonlibs:zxinglibs:zxinglibs3')
-    api project(':commonlibs:zhibopolyv:demo')
-    api project(':commonlibs:tencent:tencentim')
-    api project(':commonlibs:yewulibs:slbscreenlibrary')
+    api project(':commonlibs:zzhibopolyv:demo')
+    api project(':commonlibs:ztencent:tencentim')
+    api project(':commonlibs:cyewulibs:slbscreenlibrary')
 
 }

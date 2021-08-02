@@ -8,8 +8,6 @@ android {
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
-        versionCode config.appversionCode
-        versionName config.appversionName
         multiDexEnabled true
         //添加如下配置就OK了
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -37,9 +35,10 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
-//    api project(':commonlibs:common:libmvp')
-//    api project(':commonlibs:common:libretrofit')
+    implementation librarys.blankj
+//    implementation project(':commonlibs:acommon:libutils')
+//    api project(':commonlibs:acommon:libmvp')
+//    api project(':commonlibs:acommon:libretrofit')
     // 临时方法
 //    api project(path: ':libsCenterNew:libmvpaar')
 //    api project(path: ':libsCenterNew:libretrofitaar')

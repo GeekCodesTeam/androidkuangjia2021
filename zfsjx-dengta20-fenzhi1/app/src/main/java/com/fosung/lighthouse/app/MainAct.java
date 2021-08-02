@@ -3,6 +3,7 @@ package com.fosung.lighthouse.app;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 
 import androidx.annotation.Nullable;
 
@@ -20,6 +21,7 @@ import com.liulishuo.filedownloader.util.FileDownloadUtils;
 import com.zhy.base.fileprovider.FileProvider7;
 
 import java.io.File;
+import java.util.Random;
 
 public class MainAct extends SlbBaseActivity {
 
@@ -33,6 +35,8 @@ public class MainAct extends SlbBaseActivity {
     @Override
     public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int numcode = (int) ((Math.random() * 9 + 1) * 100000);
+        String aaaa = "V1"+System.currentTimeMillis() + numcode + "aakey";
         findViewById(R.id.tv1).setOnClickListener(v -> {
             test1();
         });

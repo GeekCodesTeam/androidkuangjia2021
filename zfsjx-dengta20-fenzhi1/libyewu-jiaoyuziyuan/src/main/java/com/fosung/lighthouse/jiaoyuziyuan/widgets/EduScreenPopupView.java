@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -19,11 +20,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class EduScreenPopupView extends BottomPopupView {
+public class EduScreenPopupView extends BottomPopupView implements View.OnClickListener {
 
     private RecyclerView rl_app;
+    private ImageView iv_arrow;
     private BaseRecyclerAdapter adapter;
     private Context context;
+    private boolean isOpen;
+    ArrayList<String> datas = new ArrayList();
 
     public EduScreenPopupView(@NonNull @NotNull Context context) {
         super(context);
@@ -38,6 +42,9 @@ public class EduScreenPopupView extends BottomPopupView {
     @Override
     protected void onCreate() {
         super.onCreate();
+        iv_arrow = findViewById(R.id.iv_arrow);
+        iv_arrow.setOnClickListener(this);
+
         rl_app = findViewById(R.id.rl_app);
         rl_app.setLayoutManager(new GridLayoutManager(getContext(), 3));
         rl_app.setNestedScrollingEnabled(false);
@@ -52,28 +59,6 @@ public class EduScreenPopupView extends BottomPopupView {
         initAdapter();
         rl_app.setAdapter(adapter);
 
-        ArrayList<String> datas = new ArrayList();
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
         datas.add("1");
         datas.add("1");
         datas.add("1");
@@ -81,7 +66,6 @@ public class EduScreenPopupView extends BottomPopupView {
         datas.add("1");
         datas.add("1");
         adapter.setDatas(datas);
-
     }
 
     @Override
@@ -101,5 +85,47 @@ public class EduScreenPopupView extends BottomPopupView {
 
             }
         };
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.iv_arrow) {
+            datas.clear();
+            if (!isOpen) {
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                iv_arrow.animate().rotation(180);
+                isOpen = true;
+            } else {
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                datas.add("1");
+                iv_arrow.animate().rotation(0);
+                isOpen = false;
+            }
+            adapter.setDatas(datas);
+        }
     }
 }

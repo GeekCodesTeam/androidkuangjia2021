@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical"
+    tools:context=".setting.activity.LogoActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="368dp"
+            android:scaleType="fitXY"
+            android:layout_height="70dp"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:layout_toLeftOf="@+id/personal"
+            android:src="@drawable/im_wifi" />
+
+        <ImageView
+            android:id="@+id/personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/im_personal" />
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:id="@+id/weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/wifi"
+            android:src="@drawable/back_bg" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="2.3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_void_deep"
+                android:orientation="vertical">
+
+                <TextView
+                   android:text="灯塔账号登录"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_void_light_special" />
+
+                <EditText
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="25dp"
+                    android:drawableLeft="@drawable/user_icn"
+                    android:background="@drawable/item_login_light"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_account"/>
+
+                <EditText
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/pwd_icn"
+                    android:background="@drawable/item_login_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_password"/>
+
+                <Button
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="35dp"
+                    android:textColor="@color/red_light"
+                    android:text="登录"
+                    android:textSize="20dp"
+                    android:padding="20dp"
+                    android:background="@drawable/item_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_login"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+    </LinearLayout>
+</LinearLayout>

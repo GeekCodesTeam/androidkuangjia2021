@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.blankj
+    implementation 'com.github.open-android:pinyin4j:2.5.0'
+}

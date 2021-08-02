@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="284mm"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="会员支付"
+                android:textColor="@color/black_000"
+                android:textSize="20mm" />
+
+            <TextView
+                android:id="@+id/tv_del31"
+                android:layout_width="20mm"
+                android:layout_height="20mm"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10mm"
+                android:background="@drawable/slb_pay_delete31" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计"
+                android:textColor="@color/black"
+                android:textSize="12mm" />
+
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="188"
+                android:textColor="@color/color45A5F8"
+                android:textSize="22mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:textColor="@color/black"
+                android:textSize="12mm" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10mm"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="70mm"
+                android:layout_height="0.5mm"
+                android:layout_weight="1"
+                android:background="@color/colorE7E7E7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20mm"
+                android:layout_marginRight="20mm"
+                android:text="支付方式"
+                android:textColor="@color/color_666666"
+                android:textSize="12mm" />
+
+            <View
+                android:layout_width="70mm"
+                android:layout_height="0.5mm"
+                android:layout_weight="1"
+                android:background="@color/colorE7E7E7" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0mm"
+            android:layout_marginTop="10mm"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/slb_btn_comm_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20mm"
+                    android:drawableLeft="@drawable/slb_pay_wechat3"
+                    android:drawablePadding="10mm"
+                    android:gravity="center_vertical"
+                    android:text="微信支付"
+                    android:textColor="@color/color_666666"
+                    android:textSize="14mm" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20mm"
+                    android:background="@drawable/slb_pay_wechat_choose" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5mm"
+                android:background="@color/colorE7E7E7" />
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/slb_btn_comm_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20mm"
+                    android:drawableLeft="@drawable/slb_pay_alipay3"
+                    android:drawablePadding="10mm"
+                    android:gravity="center_vertical"
+                    android:text="支付宝支付"
+                    android:textColor="@color/color_666666"
+                    android:textSize="14mm" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20mm"
+                    android:background="@drawable/slb_pay_wechat_choose" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="match_parent"
+            android:layout_height="56mm"
+            android:background="@drawable/btn_pay_ljzf"
+            android:gravity="center"
+            android:text="立即支付"
+            android:textColor="@color/white"
+            android:textSize="20mm" />
+
+    </LinearLayout>
+</FrameLayout>

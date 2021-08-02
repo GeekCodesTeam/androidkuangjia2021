@@ -1,4 +1,4 @@
-apply from: './../../commonlibsapks.gradle'
+apply from: './../commonlibsapks.gradle'
 
 def librarys = rootProject.ext.dependencies //
 dependencies {
@@ -12,5 +12,5 @@ dependencies {
     bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-biz2')
 }
 
-// mob
-apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'
+// TODO mob
+apply from: './../MobSDK.gradle'

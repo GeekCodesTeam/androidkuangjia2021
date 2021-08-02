@@ -1,7 +1,7 @@
 //noinspection DuplicatePlatformClasses
 apply plugin: 'com.android.application'
 // 在 apply plugin: 'com.android.application' 下添加
-apply plugin: 'com.aliyun.ams.emas-services'
+//apply plugin: 'com.aliyun.ams.emas-services'
 def config = rootProject.ext //
 def library = rootProject.ext.dependencies //
 android {
@@ -168,6 +168,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // 鸿蒙bufen
+    implementation files('./libs/abilityshell_ide_java.jar')
     implementation project(':zfsjx-dengta20-fenzhi1:libFrame')
     // TODO 业务
 //    implementation project(':zfsjx-dengta20-fenzhi1:libyewu1')

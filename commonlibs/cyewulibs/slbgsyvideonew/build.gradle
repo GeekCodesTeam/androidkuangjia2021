@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+apply from: './../../../commonlibs4.gradle'
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.eventbus
+    implementation librarys.multidexVersion
+}

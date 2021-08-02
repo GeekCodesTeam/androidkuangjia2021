@@ -7,9 +7,9 @@ ext {
     supportLibVersion = '30.0.0'
 
     // 灯塔VPN版本号
-    isMIModeVPN = true
-    dengtaversionCode = 10006
-    dengtaversionName = "1.0.0.6"
+    isMIModeVPN = false
+    dengtaversionCode = 10007
+    dengtaversionName = "1.0.0.7"
 
     // 大屏版本号
     dapingversionCode = 20000
@@ -19,8 +19,8 @@ ext {
 //    # is Model Independent Mode
     isMIMode = false
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 3006
-    appversionName = "3.0.0.6"
+    appversionCode = 3008
+    appversionName = "3.0.0.8"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"

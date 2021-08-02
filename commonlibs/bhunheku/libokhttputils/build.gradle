@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply from: './../../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.fastJson
+    implementation librarys.gsonJson
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"//3.9.1
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+}

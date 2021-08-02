@@ -1,0 +1,76 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">党建同心屏</string>
+    <string name="init_failed">引擎初始化失败，错误码为 %d</string>
+    <string name="permission_denied">权限被拒绝！</string>
+    <string name="listview_xcl_header_main_title">智慧e党建</string>
+
+    <string name="xcl_home_item_dengtadangjian">灯塔APP</string>
+    <string name="xcl_home_packagename_dengtadangjian">com.fosung.lighthouse</string>
+
+    <string name="xcl_home_item_rikazezhufengapp">珠峰APP</string>
+    <string name="xcl_home_packagename_rikazezhufengdangjian">com.fosung.lighthouse.xzrkz</string>
+
+    <string name="xcl_home_item_rikazezhufengwangzhan">珠峰网站</string>
+    <string name="xcl_home_url_rikazezhufengwangzhan">http://www.rkzzfdj.gov.cn/</string>
+
+    <string name="xcl_home_item_xizangribao">西藏日报</string>
+    <string name="xcl_home_url_xizangribao">http://epaper.chinatibetnews.com</string>
+
+    <string name="xcl_home_item_rikazexinwenwang">日喀则新闻网</string>
+    <string name="xcl_home_url_rikazexinwenwang">http://www.rkzw.cn/</string>
+
+    <string name="xcl_home_item_xizanglvyou">西藏旅游</string>
+    <string name="xcl_home_url_xizanglvyou">http://lyw.xizang.gov.cn/</string>
+
+    <string name="xcl_home_item_xizangzhengwu">西藏政务</string>
+    <string name="xcl_home_url_xizangzhengwu">https://www.xzzwfw.gov.cn/</string>
+
+
+    <string name="xcl_home_item_dangjianzixun">党建资讯</string>
+    <string name="xcl_home_url_dangjianzixun">https://www.dtdjzx.gov.cn</string>
+
+
+    <string name="xcl_home_item_xinruidazhong">大众日报</string>
+    <string name="xcl_home_packagename_xinruidazhong">com.dzwww.dzrb.zhsh</string>
+
+    <string name="xcl_home_item_dazhongribao">大众日报\n数字报</string>
+    <string name="xcl_home_url_dazhongribao">http://paper.dzwww.com/dzrb/</string>
+
+
+    <string name="xcl_home_classname_login">com.fosung.lighthouse.master.amodule.login.LoginActivity</string>
+
+    <string name="xcl_home_item_tushuguan">图书馆</string>
+    <!--    <string name="xcl_home_classname_tushuguan">com.fosung.lighthouse.xuanchuanlan.activity.EnterReaderMainActivity</string>-->
+    <string name="xcl_home_classname_tushuguan">com.fosung.lighthouse.reader.amodule.activity.ReaderMain2Activity</string>
+    <string name="xcl_home_item_weishipin">微视频</string>
+    <string name="xcl_home_classname_weishipin">com.fosung.lighthouse.master.amodule.onlinevideo.SmallVideoListActivity</string>
+    <string name="xcl_home_item_zhuxuanlv">主旋律</string>
+    <string name="xcl_home_classname_zhuxuanlv">com.fosung.lighthouse.master.amodule.main.activity.DTYSActivity</string>
+    <string name="xcl_home_item_daketang">大课堂</string>
+    <string name="xcl_home_classname_daketang">com.fosung.lighthouse.dtdkt.activity.DtdktVideoPlayActivity</string>
+
+
+    <string name="xcl_home_item_sanwugongkai">三务公开</string>
+    <string name="xcl_home_classname_commonWebActivity">com.fosung.lighthouse.common.activity.AppsCommonWebActivity</string>
+    <string name="xcl_home_url_sanwugongkai">https://swgk.dtdjzx.gov.cn/sanwu_phone/login.do</string>
+
+
+    <string name="xcl_home_item_hongsebeiban">红色背板</string>
+    <string name="xcl_home_item_teselvyou">特色旅游</string>
+    <string name="xcl_home_item_zhengwufuwu">服务窗口</string>
+    <string name="xcl_home_url_zhengwufuwu">http://zwfw.sd.gov.cn</string>
+    <string name="xcl_home_url_new1">https://dxjyjd.dtdjzx.gov.cn/navigationIndex</string>
+
+
+    <string name="xcl_home_item_bendigaikuang">本地概况</string>
+    <string name="xcl_home_item_gongzuodongtai">工作动态</string>
+    <string name="xcl_home_item_tongzhigonggao">通知公告</string>
+    <string name="xcl_home_item_kehufuwu">客户服务</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    <string name="xcl_home_item_more">更多</string>-->
+
+
+</resources>
