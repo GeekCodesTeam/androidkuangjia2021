@@ -68,7 +68,7 @@ dependencies {
     api project(':commonlibs:cyewulibs:zxinglibs1')
     api project(':commonlibs:cyewulibs:zxinglibs2')
     //
-    api project(':commonlibs:bhunheku:libZRecyclerView')
+    api project(':zfsjx-commonlibs:libZRecyclerView')
     // https://github.com/wangyiwy/PDF_Preview
     api project(':commonlibs:bhunheku:libpdf')
     // 高德地图

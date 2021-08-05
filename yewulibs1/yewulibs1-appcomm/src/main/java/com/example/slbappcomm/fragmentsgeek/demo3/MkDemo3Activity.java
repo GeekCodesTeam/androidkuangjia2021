@@ -18,8 +18,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseFragment;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseFragment;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo3.configs.MkDemo3Config;
 import com.example.slbappcomm.fragmentsgeek.demo3.fragments.MkDemo3Fragment10;
 import com.example.slbappcomm.fragmentsgeek.demo3.fragments.MkDemo3Fragment20;

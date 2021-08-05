@@ -15,11 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
-import com.example.libbase.plugins.PluginConst;
-import com.example.libbase.plugins.PluginManager;
-import com.example.libbase.utils.ApkDownloadUtils;
-import com.example.libbase.widgets.GridSpacingItemDecoration;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.plugins.PluginConst;
+import com.geek.libbase.plugins.PluginManager;
+import com.geek.libbase.utils.ApkDownloadUtils;
+import com.geek.libbase.widgets.GridSpacingItemDecoration;
 import com.example.slbappindex.R;
 import com.example.slbappindex.adapters.ShouyeF4Adapter1;
 import com.example.slbappindex.adapters.ShouyeF4Bean1;

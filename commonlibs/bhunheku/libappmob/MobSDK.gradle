@@ -1,3 +1,6 @@
+//configurations.all {
+//    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+//}
 apply plugin: 'com.mob.sdk'
 
 MobSDK {

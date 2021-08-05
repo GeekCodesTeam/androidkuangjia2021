@@ -7,8 +7,8 @@ dependencies {
     implementation librarys.fastJson
     implementation librarys.gsonJson
     implementation librarys.glide47
-    // https://github.com/getActivity/ToastUtils 横屏Toast
-    api 'com.github.getActivity:ToastUtils:9.2'
+//    // https://github.com/getActivity/ToastUtils 横屏Toast
+//    api 'com.github.getActivity:ToastUtils:9.2'
     // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     // jitpack不支持aar+aar

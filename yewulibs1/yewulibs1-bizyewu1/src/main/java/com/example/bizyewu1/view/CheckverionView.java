@@ -1,7 +1,7 @@
 package com.example.bizyewu1.view;
 
 import com.example.bizyewu1.bean.VersionInfoBean;
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 public interface CheckverionView extends IView {
     void OnUpdateVersionSuccess(VersionInfoBean versionInfoBean);

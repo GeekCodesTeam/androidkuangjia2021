@@ -1,15 +1,19 @@
 //noinspection DuplicatePlatformClasses
 apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
 def config = rootProject.ext //
 def library = rootProject.ext.dependencies //
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
-    dexOptions {
-        jumboMode = true
-    }
+//    kotlinOptions {
+//        jvmTarget = "11"
+//    }
+//    dexOptions {
+//        jumboMode = true
+//    }
 
 //    aaptOptions {
 //        cruncherEnabled = false
@@ -36,7 +40,15 @@ android {
         pickFirst 'lib/x86/librsjni_androidx.so'
         pickFirst 'lib/x86/libRSSupport.so'
         pickFirst 'lib/x86/librsjni.so'
-
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'META-INF/LICENSE'
+//        exclude 'META-INF/LICENSE.txt'
+//        exclude 'META-INF/license.txt'
+//        exclude 'META-INF/NOTICE'
+//        exclude 'META-INF/NOTICE.txt'
+//        exclude 'META-INF/notice.txt'
+//        exclude 'META-INF/ASL2.0'
+//        exclude("META-INF/*.kotlin_module")
     }
 
     lintOptions {
@@ -47,12 +59,12 @@ android {
     }
 //    ndkVersion "major.minor.build" // e.g.,  ndkVersion '21.3.6528147'
     ndkVersion "22.1.7171670" // e.g.,  ndkVersion '21.3.6528147'
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdk config.compileSdk
+//    buildToolsVersion config.buildToolsVersion
     defaultConfig {
         applicationId "com.fosung.lighthouse.test"
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdk config.minSdk
+        targetSdk config.targetSdk
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true
@@ -221,6 +233,7 @@ android {
         // for view binding :
         // viewBinding = true
     }
+
 }
 
 dependencies {

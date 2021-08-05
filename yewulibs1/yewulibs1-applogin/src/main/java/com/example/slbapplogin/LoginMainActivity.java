@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
-import com.example.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
 
 

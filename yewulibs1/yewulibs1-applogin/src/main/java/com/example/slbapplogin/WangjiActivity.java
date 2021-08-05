@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.libbase.base.SlbBaseActivity;
-import com.example.libbase.utils.YanzhengUtil;
+import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.utils.YanzhengUtil;
 
 public class WangjiActivity extends SlbBaseActivity implements View.OnClickListener {
 

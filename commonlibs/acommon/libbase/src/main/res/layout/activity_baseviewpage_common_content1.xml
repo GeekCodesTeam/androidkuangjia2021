@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:ignore="MissingDefaultResource">
 
-    <com.example.libbase.emptyview.EmptyViewNewNew
+    <com.geek.libbase.emptyview.EmptyViewNewNew
         android:id="@id/baserecycleview_emptyview1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,7 +52,7 @@
                 app:tabTextColor="#999999" />
         </LinearLayout>
 
-        <com.example.libbase.widgets.ViewPagerSlide
+        <com.geek.libbase.widgets.ViewPagerSlide
             android:id="@+id/baserecycleview_viewpager1"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

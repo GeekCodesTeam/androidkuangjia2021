@@ -23,7 +23,7 @@ import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
-import com.example.libbase.HarmonyApplication2;
+import com.geek.libbase.HarmonyApplication2;
 import com.example.slbappcomm.phonebroadcastreceiver.PhoneService;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;

@@ -2,7 +2,7 @@
 package com.example.biz3slbappcomm.view;
 
 import com.example.app3libvariants.bean.VersionInfoBean;
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 */
 /**

@@ -1,7 +1,7 @@
 package com.example.bizyewu2.view;
 
 import com.example.bizyewu2.bean.HMobid2Bean;
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 public interface HMobID2View extends IView {
 

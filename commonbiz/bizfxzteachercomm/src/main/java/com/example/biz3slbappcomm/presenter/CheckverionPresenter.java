@@ -5,7 +5,7 @@ import com.example.app3libvariants.bean.VersionInfoBean;
 import com.example.app3libvariants.network.api.AccountService;
 import com.example.biz3slbappcomm.api.SCommonApi;
 import com.example.biz3slbappcomm.view.CheckverionView;
-import com.haier.cellarette.libmvp.mvp.Presenter;
+import com.geek.libmvp.Presenter;
 import com.haier.cellarette.libretrofit.common.BanbenUtils;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;

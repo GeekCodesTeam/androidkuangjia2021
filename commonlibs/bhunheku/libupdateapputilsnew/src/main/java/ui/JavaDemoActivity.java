@@ -201,8 +201,7 @@ public class JavaDemoActivity extends AppCompatActivity implements View.OnClickL
      */
     private void showBrowserUpdate() {
         // 使用SpannableString
-        SpanUtils spanUtils = new SpanUtils(this);
-        SpannableStringBuilder span = spanUtils
+        SpannableStringBuilder span = new SpanUtils(this)
                 .appendLine("1、Kotlin重构版")
                 .appendLine("2、支持自定义UI").setForegroundColor(Color.RED)
                 .appendLine("3、增加md5校验").setForegroundColor(Color.parseColor("#88e16531")).setFontSize(20, true)

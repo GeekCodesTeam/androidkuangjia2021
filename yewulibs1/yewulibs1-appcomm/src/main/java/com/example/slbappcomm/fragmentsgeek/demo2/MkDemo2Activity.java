@@ -14,9 +14,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseActivity;
-import com.example.libbase.base.SlbBaseFragment;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseFragment;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo2.configs.MkDemo2Config;
 import com.geek.libutils.app.FragmentHelper;
 import com.geek.libutils.app.MyLogUtil;

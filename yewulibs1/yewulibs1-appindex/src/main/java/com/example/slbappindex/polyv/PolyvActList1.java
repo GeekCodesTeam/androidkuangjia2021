@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.libbase.baserecycleview.SlbBaseActivityViewPage;
-import com.example.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
+import com.geek.libbase.baserecycleview.SlbBaseActivityViewPage;
+import com.geek.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.FragmentHelper;

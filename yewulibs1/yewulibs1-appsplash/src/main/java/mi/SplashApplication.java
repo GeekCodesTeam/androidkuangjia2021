@@ -3,7 +3,7 @@
  */
 package mi;
 
-import com.example.libbase.AndroidApplication;
+import com.geek.libbase.AndroidApplication;
 import com.geek.libutils.app.AppUtils;
 import com.geek.libutils.app.BaseApp;
 

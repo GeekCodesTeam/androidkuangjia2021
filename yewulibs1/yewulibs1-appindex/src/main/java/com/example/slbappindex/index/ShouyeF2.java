@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
@@ -272,7 +272,7 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
 //            Intent.ShortcutIconResource iconRes = Intent.ShortcutIconResource.fromContext(getActivity(), R.drawable.mn_icon_staues_test);
 //            shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes);
 //            //设置快捷方式启动入口
-//            ComponentName comp = new ComponentName(AppUtils.getAppPackageName(), "com.example.libbase.baserecycleview.yewu1.ActViewPageYewuList1");
+//            ComponentName comp = new ComponentName(AppUtils.getAppPackageName(), "com.geek.libbase.baserecycleview.yewu1.ActViewPageYewuList1");
 //            shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Intent.ACTION_MAIN).setComponent(comp));
             //发送广播，添加快捷方式
 //            getActivity().sendBroadcast(shortcut);

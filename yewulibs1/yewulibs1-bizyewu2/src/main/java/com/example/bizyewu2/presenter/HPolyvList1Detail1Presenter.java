@@ -7,7 +7,7 @@ import com.example.bizyewu2.bean.SPolyvList1Detail1Bean1;
 import com.example.bizyewu2.view.HPolyvList1Detail1View;
 import com.example.bizyewu2.view.HPolyvList1View;
 import com.fosung.lighthouse.test.BuildConfigApp;
-import com.haier.cellarette.libmvp.mvp.Presenter;
+import com.geek.libmvp.Presenter;
 import com.haier.cellarette.libretrofit.common.BanbenUtils;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean1;

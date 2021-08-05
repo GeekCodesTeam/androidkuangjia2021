@@ -20,8 +20,7 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdk 25
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -45,9 +44,9 @@ android {
         useNewCruncher = false
     }
     defaultConfig {
-        minSdkVersion minSdk
+        minSdk minSdk
         applicationId appId
-        targetSdkVersion targetSdk
+        targetSdk targetSdk
         versionCode vCode
         versionName "JCT_310_1189_0001"
         ndk {
@@ -73,9 +72,9 @@ android {
         //线上
         //全国版酒知道 线上
         NATION_310 {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JC_' + vNameCode + nation_num
@@ -97,9 +96,9 @@ android {
         }
         //餐厅版酒知道 线上
         RESTAURANT_310 {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JC_' + vNameCode + restaurant_num
@@ -122,9 +121,9 @@ android {
         //测试
         //全国版酒知道 测试
         NATION_310_TEST {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JCT_' + vNameCode + nation_num
@@ -146,9 +145,9 @@ android {
         }
         //餐厅版酒知道 测试
         RESTAURANT_310_TEST {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JCT_' + vNameCode + restaurant_num
@@ -171,9 +170,9 @@ android {
         //预生产
         //全国版酒知道 预生产
         NATION_310_YSC {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JCY_' + vNameCode + nation_num
@@ -195,9 +194,9 @@ android {
         }
         //餐厅版酒知道 预生产
         RESTAURANT_310_YSC {
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             //版本名字
             versionName 'JCY_' + vNameCode + restaurant_num
@@ -222,9 +221,9 @@ android {
 //        // 线上
 //        //全国版E侍酒 线上
 //        NATION_310_E {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJC_' + vNameCode + nation_num
@@ -246,9 +245,9 @@ android {
 //        }
 //        //餐厅版E侍酒 线上
 //        RESTAURANT_310_E {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJC_' + vNameCode + restaurant_num
@@ -271,9 +270,9 @@ android {
 //        //测试
 //        //全国版E侍酒 测试
 //        NATION_310_E_TEST {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJCT_' + vNameCode + nation_num
@@ -295,9 +294,9 @@ android {
 //        }
 //        //餐厅版E侍酒 测试
 //        RESTAURANT_310_E_TEST {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJCT_' + vNameCode + restaurant_num
@@ -320,9 +319,9 @@ android {
 //        //预生产
 //        //全国版E侍酒 预生产
 //        NATION_310_E_YSC {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJCY_' + vNameCode + nation_num
@@ -344,9 +343,9 @@ android {
 //        }
 //        //餐厅版E侍酒 预生产
 //        RESTAURANT_310_E_YSC {
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            //版本名字
 //            versionName 'EJCY_' + vNameCode + restaurant_num
@@ -431,9 +430,9 @@ android {
 //    productFlavors {
 //        BanBen {
 //            dimension "keep"
-//            minSdkVersion minSdk
+//            minSdk minSdk
 //            applicationId appId
-//            targetSdkVersion targetSdk
+//            targetSdk targetSdk
 //            versionCode vCode
 //            ndk {
 //                moduleName "native-powerctl-jni"

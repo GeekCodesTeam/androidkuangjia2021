@@ -7,13 +7,12 @@ import android.os.Build;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.R;
 import com.hjq.permissions.IPermissionInterceptor;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
-import com.hjq.toast.ToastUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,11 +64,11 @@ public final class PermissionInterceptor implements IPermissionInterceptor {
         }
 
         if (permissions.size() == 1 && Permission.ACCESS_BACKGROUND_LOCATION.equals(permissions.get(0))) {
-            ToastUtils.show(R.string.common_permission_fail_4);
+            ToastUtils.showLong(R.string.common_permission_fail_4);
             return;
         }
 
-        ToastUtils.show(R.string.common_permission_fail_1);
+        ToastUtils.showLong(R.string.common_permission_fail_1);
     }
 
     /**

@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 
 public class MkDemo1Fragment2 extends SlbBaseLazyFragmentNew {
 

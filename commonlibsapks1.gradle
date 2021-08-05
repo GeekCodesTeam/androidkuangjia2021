@@ -4,12 +4,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
-    dexOptions {
-        jumboMode = true
-    }
+
+//    dexOptions {
+//        jumboMode = true
+//    }
     packagingOptions {
         pickFirst 'lib/armeabi/libRSSupport.so'
         pickFirst 'lib/armeabi/librsjni_androidx.so'
@@ -28,11 +29,11 @@ android {
         pickFirst 'lib/x86/librsjni.so'
 
     }
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdk config.compileSdk
+
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdk config.minSdk
+        targetSdk config.targetSdk
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true

@@ -13,7 +13,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.example.gsydemo.JumpVideoPlayUtils;
 import com.example.gsydemo.SimplePlayer;
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.interfaces.OnConfirmListener;
 

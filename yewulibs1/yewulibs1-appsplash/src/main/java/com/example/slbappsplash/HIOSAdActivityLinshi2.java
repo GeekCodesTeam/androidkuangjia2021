@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.libbase.widgets.NavigationBarUtil;
+import com.geek.libbase.widgets.NavigationBarUtil;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
 
 public class HIOSAdActivityLinshi2 extends WebViewActivity implements View.OnClickListener {

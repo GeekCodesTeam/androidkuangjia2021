@@ -17,13 +17,12 @@ dependencies {
     api librarys.glide47
     api project(':commonlibs:acommon:libglide47')
     api project(':commonlibs:acommon:librararyforfileprovdider')
-// https://github.com/CymChad/BaseRecyclerViewAdapterHelper
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
 //    https://github.com/scwang90/SmartRefreshLayout
     api project(':commonlibs:acommon:refresh-footer')
     api project(':commonlibs:acommon:refresh-header')
     api project(':commonlibs:acommon:refresh-layout')
     api project(':commonlibs:acommon:zxinglibs3')
+    api project(':commonlibs:acommon:liblanguage')
 
 
 }

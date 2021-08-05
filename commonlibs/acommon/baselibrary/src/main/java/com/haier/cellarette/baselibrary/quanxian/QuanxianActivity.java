@@ -8,14 +8,12 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.haier.cellarette.baselibrary.BaselibApp;
 import com.haier.cellarette.baselibrary.R;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
-import com.hjq.toast.ToastUtils;
-import com.hjq.toast.style.WhiteToastStyle;
-
 import java.util.List;
 
 /**
@@ -32,7 +30,7 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_quanxian);
         //
         // 初始化吐司工具类
-        ToastUtils.init(BaselibApp.get(), new WhiteToastStyle());
+//        ToastUtils.init(BaselibApp.get(), new WhiteToastStyle());
 
         // 设置权限申请拦截器
         XXPermissions.setInterceptor(new PermissionInterceptor());
@@ -191,6 +189,6 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void toast(CharSequence text) {
-        ToastUtils.show(text);
+        ToastUtils.showLong(text);
     }
 }

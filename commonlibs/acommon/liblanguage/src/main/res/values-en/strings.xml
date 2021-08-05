@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name_liblanguage">MultiLanguages</string>
+    <string name="current_language">English</string>
+</resources>

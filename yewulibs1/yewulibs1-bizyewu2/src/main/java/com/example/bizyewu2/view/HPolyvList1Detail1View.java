@@ -1,7 +1,7 @@
 package com.example.bizyewu2.view;
 
 import com.example.bizyewu2.bean.SPolyvList1Detail1Bean1;
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 public interface HPolyvList1Detail1View extends IView {
 

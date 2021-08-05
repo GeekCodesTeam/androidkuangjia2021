@@ -288,7 +288,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.libbase.zhiwen.ZhiwenAct">
+        <activity android:name="com.geek.libbase.zhiwen.ZhiwenAct">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -297,6 +297,12 @@
         <activity android:name=".huxiview.HuxiAct">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.HuxiAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".pop.huodong.AdCommLoginAct">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.AdCommLoginAct" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -5,7 +5,7 @@ import com.example.bizyewu2.api.Bizyewu2Api;
 import com.example.bizyewu2.bean.SNew1SearchBean;
 import com.example.bizyewu2.view.SNew1SearchView;
 import com.fosung.lighthouse.test.BuildConfigApp;
-import com.haier.cellarette.libmvp.mvp.Presenter;
+import com.geek.libmvp.Presenter;
 import com.haier.cellarette.libretrofit.common.BanbenUtils;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;

@@ -50,11 +50,11 @@ android {
 //        pickFirst 'lib/x86/libijkffmpeg.so'
 //        pickFirst 'lib/x86/libijksdl.so'
     }
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdk config.compileSdk
+
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdk config.minSdk
+        targetSdk config.targetSdk
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true

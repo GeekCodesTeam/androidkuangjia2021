@@ -22,6 +22,8 @@ dependencies {
     api librarys.mmkv
     api librarys.viewpager2
     api librarys.filedownloader
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     api 'com.tencent.bugly:crashreport:latest.release'
     //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     api 'com.tencent.bugly:nativecrashreport:latest.release'
@@ -33,6 +35,8 @@ dependencies {
     // https://www.pgyer.com/doc/view/android-sdk
 //    api 'com.pgyer:analytics:4.1.16'
     api 'com.pgyer:analytics:4.2.2'
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    api 'com.github.getActivity:TitleBar:8.6'
     // https://github.com/getActivity/ToastUtils 横屏Toast
     api 'com.github.getActivity:ToastUtils:9.2'
     // viewpager2 轮播图 https://github.com/youth5201314/banner

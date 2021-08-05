@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;

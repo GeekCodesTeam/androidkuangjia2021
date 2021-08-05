@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.example.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.example.slbappsplash.R;
 
 public class ChangeIconActivity extends SlbBaseActivity {

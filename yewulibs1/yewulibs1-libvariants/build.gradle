@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 def config = rootProject.ext //
 def librarys = config.dependencies //
 android {
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdk config.compileSdk
+
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdk config.minSdk
+        targetSdk config.targetSdk
         multiDexEnabled true
         //添加如下配置就OK了
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }

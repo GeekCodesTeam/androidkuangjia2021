@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
-import com.example.libbase.base.SlbBaseActivity;
-import com.example.libbase.utils.YanzhengUtil;
+import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.utils.YanzhengUtil;
 
 public class ChongzhiActivity extends SlbBaseActivity implements View.OnClickListener {
 

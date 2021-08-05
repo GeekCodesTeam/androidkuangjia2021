@@ -8,7 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ScreenUtils;
-import com.example.libbase.widgets.NavigationBarUtil;
+import com.geek.libbase.widgets.NavigationBarUtil;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
 
 public class HIOSAdActivityLinshi extends WebViewActivity implements View.OnClickListener {

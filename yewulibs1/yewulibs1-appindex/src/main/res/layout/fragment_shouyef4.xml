@@ -21,7 +21,7 @@
         android:background="#fff"
         android:orientation="vertical">
 
-        <com.example.libbase.widgets.XRecyclerView
+        <com.geek.libbase.widgets.XRecyclerView
             android:id="@+id/recyclerView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

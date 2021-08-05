@@ -1,15 +1,15 @@
 ext {
 
-    compileSdkVersion = 30
-    buildToolsVersion = '30.0.3'
-    minSdkVersion = 21
-    targetSdkVersion = 30
+    compileSdk = 30
+    buildToolsVersion = '31.0.0'
+    minSdk = 21
+    targetSdk = 30
     supportLibVersion = '30.0.0'
 
     // 灯塔VPN版本号
     isMIModeVPN = false
-    dengtaversionCode = 10007
-    dengtaversionName = "1.0.0.7"
+    dengtaversionCode = 10008
+    dengtaversionName = "1.0.0.8"
 
     // 大屏版本号
     dapingversionCode = 20000
@@ -19,8 +19,8 @@ ext {
 //    # is Model Independent Mode
     isMIMode = false
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 3008
-    appversionName = "3.0.0.8"
+    appversionCode = 3009
+    appversionName = "3.0.0.9"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"

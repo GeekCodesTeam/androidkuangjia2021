@@ -34,7 +34,7 @@ public class SlbLoginUtil {
     }
 
     /**
-     * 用户是否登录
+     * 用户是否登录 true 已登录  false未登录去登录
      *
      * @return
      */

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.libbase">
+    package="com.geek.libbase">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -33,20 +33,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.libbase.viewpager2.LunboMainActivity"
+            android:name=".viewpager2.LunboMainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LunboMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.libbase.viewpager2.ui.GalleryActivity" />
-        <activity android:name="com.example.libbase.viewpager2.ui.TouTiaoActivity" />
-        <activity android:name="com.example.libbase.viewpager2.ui.TVActivity" />
-        <activity android:name="com.example.libbase.viewpager2.ui.RecyclerViewBannerActivity" />
-        <activity android:name="com.example.libbase.viewpager2.ui.ConstraintLayoutBannerActivity" />
+        <activity android:name=".viewpager2.ui.GalleryActivity" />
+        <activity android:name=".viewpager2.ui.TouTiaoActivity" />
+        <activity android:name=".viewpager2.ui.TVActivity" />
+        <activity android:name=".viewpager2.ui.RecyclerViewBannerActivity" />
+        <activity android:name=".viewpager2.ui.ConstraintLayoutBannerActivity" />
         <activity
-            android:name="com.example.libbase.viewpager2.ui.Vp2FragmentRecyclerviewActivity"
+            android:name=".viewpager2.ui.Vp2FragmentRecyclerviewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
     </application>

@@ -17,7 +17,7 @@
 //import com.example.biz3slbappcomm.view.SPaySuccessView;
 //import com.haier.cellarette.libutils.CommonUtils;
 //import com.example.slbappcomm.R;
-//import com.example.libbase.base.SlbBaseActivity;
+//import com.geek.libbase.base.SlbBaseActivity;
 //import com.example.slbappcomm.utils.LoginImgUtils;
 //import com.geek.libglide47.base.GlideImageView;
 //

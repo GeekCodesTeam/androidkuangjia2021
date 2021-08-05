@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.libbase.widgets.AlphaView
+    <com.geek.libbase.widgets.AlphaView
         android:id="@+id/alphaview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

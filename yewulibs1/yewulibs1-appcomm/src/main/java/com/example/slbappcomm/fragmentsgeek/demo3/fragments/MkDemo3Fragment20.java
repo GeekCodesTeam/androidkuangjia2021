@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 
 /**
  * Created by shining on 2017/8/14.

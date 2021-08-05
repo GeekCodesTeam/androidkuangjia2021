@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk 30
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        consumerProguardFiles 'proguard-rules.pro'
-
+        minSdk 21
+        targetSdk 30
+        consumerProguardFiles "proguard-rules.pro"
         renderscriptSupportModeEnabled true
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -25,7 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.google.android.material:material:1.3.0'
+    api 'com.google.android.material:material:1.4.0'
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.annotation:annotation:1.2.0'
     api 'androidx.recyclerview:recyclerview:1.2.0'

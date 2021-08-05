@@ -54,6 +54,7 @@ internal class UpdateAppActivity : AppCompatActivity() {
      */
     private val uiConfig by lazy { updateInfo.uiConfig }
 
+    @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

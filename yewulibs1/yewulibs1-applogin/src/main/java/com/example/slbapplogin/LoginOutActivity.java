@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.SPUtils;
-import com.example.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
 
 public class LoginOutActivity extends SlbBaseActivity {

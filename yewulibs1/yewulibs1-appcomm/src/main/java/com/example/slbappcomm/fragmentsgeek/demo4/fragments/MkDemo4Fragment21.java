@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappcomm.fragmentsgeek.demo5.MkDemo5Activity;
 
 /**

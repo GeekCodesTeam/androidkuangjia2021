@@ -17,9 +17,10 @@ android {
         abortOnError false
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
+
 //    signingConfigs {
 //        debug {
 //            keyAlias '****'
@@ -35,8 +36,7 @@ android {
 //        }
 //    }
 
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdk 25
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -53,8 +53,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.p031_mokuaihua_viewpager_fragment"
-        minSdkVersion 21
-        targetSdkVersion 25
+        minSdk 21
+        targetSdk 25
         versionCode 1
         versionName "1.0"
 
@@ -118,9 +118,9 @@ android {
     productFlavors {
         demo {
             dimension "keep"
-            minSdkVersion minSdk
+            minSdk minSdk
             applicationId appId
-            targetSdkVersion targetSdk
+            targetSdk targetSdk
             versionCode vCode
             multiDexEnabled true
             renderscriptTargetApi 21

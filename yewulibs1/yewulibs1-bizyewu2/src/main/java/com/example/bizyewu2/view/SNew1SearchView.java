@@ -1,7 +1,7 @@
 package com.example.bizyewu2.view;
 
 import com.example.bizyewu2.bean.SNew1SearchBean;
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 public interface SNew1SearchView extends IView {
 

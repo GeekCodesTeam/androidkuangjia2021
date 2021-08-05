@@ -6,7 +6,7 @@ import com.haier.biz.identification.bean.MD5;
 import com.haier.biz.identification.bean.WineDetial;
 import com.haier.biz.identification.bean.WineItemDetail;
 import com.haier.biz.identification.view.WineDetialInfoView;
-import com.haier.cellarette.libmvp.mvp.Presenter;
+import com.geek.libmvp.Presenter;
 import com.haier.cellarette.libretrofit.RetrofitNetNew;
 
 import org.json.JSONException;

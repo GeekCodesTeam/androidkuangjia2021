@@ -23,7 +23,7 @@
             app:srlAccentColor="#4DA3FE"
             app:srlPrimaryColor="#E6F1FF" />
 
-        <com.example.libbase.widgets.XRecyclerView
+        <com.geek.libbase.widgets.XRecyclerView
             android:id="@+id/baserecycleview_recycler_view1"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

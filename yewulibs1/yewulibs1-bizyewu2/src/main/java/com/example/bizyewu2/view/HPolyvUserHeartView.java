@@ -1,6 +1,6 @@
 package com.example.bizyewu2.view;
 
-import com.haier.cellarette.libmvp.mvp.IView;
+import com.geek.libmvp.IView;
 
 public interface HPolyvUserHeartView extends IView {
 

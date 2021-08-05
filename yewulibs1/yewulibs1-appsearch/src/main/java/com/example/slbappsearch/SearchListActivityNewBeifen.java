@@ -27,7 +27,7 @@
 //import com.example.biz3slbappusercenter.presenter.SSearchPresenter;
 //import com.example.biz3slbappusercenter.view.SSearchView;
 //import com.haier.cellarette.libutils.CommonUtils;
-//import com.example.libbase.base.SlbBaseActivity;
+//import com.geek.libbase.base.SlbBaseActivity;
 //import com.example.slbappindex.R;
 //import com.example.slbappindex.search.part1.SearchBean;
 //import com.example.slbappindex.search.part1.searchhuancun.SearchCommManager;

@@ -13,7 +13,7 @@ import com.example.bizyewu2.bean.SPolyvList1Bean;
 import com.example.bizyewu2.bean.SPolyvList1Bean1;
 import com.example.bizyewu2.presenter.HPolyvList1Presenter;
 import com.example.bizyewu2.view.HPolyvList1View;
-import com.example.libbase.baserecycleview.SlbBaseFragmentViewPageYewuList;
+import com.geek.libbase.baserecycleview.SlbBaseFragmentViewPageYewuList;
 import com.example.slbappcomm.R;
 import com.geek.libutils.app.MyLogUtil;
 

@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.example.libbase.emptyview.EmptyViewNewNew
+        <com.geek.libbase.emptyview.EmptyViewNewNew
             android:id="@id/baserecycleview_emptyview2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,7 +39,7 @@
                 app:srlAccentColor="@color/black_000"
                 app:srlPrimaryColor="@color/white" />
 
-            <com.example.libbase.widgets.XRecyclerView
+            <com.geek.libbase.widgets.XRecyclerView
                 android:id="@id/baserecycleview_recycler_view1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

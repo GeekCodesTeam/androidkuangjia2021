@@ -8,8 +8,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.example.libbase.base.SlbBaseActivityPermissions;
-import com.example.libbase.widgets.AlphaView;
+import com.geek.libbase.base.SlbBaseActivityPermissions;
+import com.geek.libbase.widgets.AlphaView;
 import com.example.slbappsplash.R;
 
 public class SplshActivity extends SlbBaseActivityPermissions implements View.OnClickListener {
@@ -37,7 +37,7 @@ public class SplshActivity extends SlbBaseActivityPermissions implements View.On
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_splash_act);
+        setContentView(R.layout.activity_splash_act);
         alphaview = findViewById(R.id.alphaview);
         alphaview.setPointGravity(Gravity.END);
         alphaview.setPointVisbile(View.GONE);

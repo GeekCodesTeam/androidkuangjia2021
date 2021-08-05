@@ -5,7 +5,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.bizyewu2.bean.SPolyvList1Bean1;
-import com.example.libbase.widgets.LxRelativeLayout;
+import com.geek.libbase.widgets.LxRelativeLayout;
 import com.example.slbappindex.R;
 import com.geek.libglide47.base.GlideImageView;
 

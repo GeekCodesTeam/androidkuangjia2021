@@ -35,12 +35,12 @@ import com.example.bizyewu2.presenter.HYonghudengluPresenter;
 import com.example.bizyewu2.view.HErweimaView;
 import com.example.bizyewu2.view.HUserInfoView;
 import com.example.bizyewu2.view.HYonghudengluView;
-import com.example.libbase.base.SlbBaseActivity;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.example.slbapplogin.msg.AppPermissionUtil;
 import com.example.slbapplogin.msg.SMSBroadcastReceiver;
-import com.example.libbase.utils.YanzhengUtil;
+import com.geek.libbase.utils.YanzhengUtil;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
@@ -501,6 +501,9 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
     private void wxdl() {
 //        jPushDengluUtils.shouquan(other_login_name);
         ShowLoadingUtil.showLoading(SlbLoginActivity.this, "", null);
+        // test 可注掉
+        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TOKEN, "用户token");
+        onLoginSuccess();
     }
 
     // 获取验证码bufen

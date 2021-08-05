@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
-import com.example.libbase.AndroidApplication;
+import com.geek.libbase.AndroidApplication;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;
 import com.example.slbappindex.services.MOBIDservices;

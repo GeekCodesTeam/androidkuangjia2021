@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.slbappcomm.R;
-import com.example.libbase.widgets.NavigationBarUtil;
+import com.geek.libbase.widgets.NavigationBarUtil;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
 
 import me.jessyan.autosize.AutoSizeCompat;

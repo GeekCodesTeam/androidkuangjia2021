@@ -2,21 +2,25 @@ package com.example.slbappcomm.pop.huodong;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-//
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
 import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.slbappcomm.R;
-import com.example.libbase.base.SlbBaseActivity;
+import com.example.slbappcomm.utils.CommonUtils;
+import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.widgets.NavigationBarUtil;
 import com.geek.libutils.SlbLoginUtil;
-import com.example.libbase.widgets.NavigationBarUtil;
+import com.geek.libutils.data.MmkvUtils;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
+
 import me.jessyan.autosize.AutoSizeCompat;
 
 public class AdCommImgActivity extends SlbBaseActivity {
@@ -62,34 +66,24 @@ public class AdCommImgActivity extends SlbBaseActivity {
             @Override
             public void onClick(View view) {
                 SPUtils.getInstance().put(TAG_ADCOMMON_ID, id1);
-                url1 = "https://www.baidu.com/";
-                if (url1.contains("http")) {
-                    // 网络请求bufen
-                    if (url1.contains("condition=login")) {
-//                        HiosHelper.resolveAd(AdCommImgActivity.this, AdCommImgActivity.this, url1);
-                        SlbLoginUtil.get().loginTowhere(AdCommImgActivity.this, new Runnable() {
-                            @Override
-                            public void run() {
-                                HiosHelper.resolveAd(AdCommImgActivity.this, AdCommImgActivity.this, url1);
-                            }
-                        });
-                    } else {
+                url1 = getIntent().getStringExtra("ces");
+                if (TextUtils.isEmpty(url1)) {
+                    // 测试1
+                    url1 = "https://www.baidu.com/";
+                    // 测试2
+                    url1 = "https://www.baidu.com/?condition=login";
+                    // 测试3
+//                url1 = "hios://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.AdCommLoginAct{act}?act={i}1&sku_id={s}2a&category_id={s}3a";
+                    // 测试4
+//                url1 = "hios://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.AdCommLoginAct{act}?act={i}1&sku_id={s}2a&category_id={s}3a&condition=login";
+                }
+                SlbLoginUtil.get().loginTowhere(AdCommImgActivity.this, new Runnable() {
+                    @Override
+                    public void run() {
                         HiosHelper.resolveAd(AdCommImgActivity.this, AdCommImgActivity.this, url1);
                     }
-                } else {
-                    // hiosbufen
-                    HiosHelper.resolveAd(AdCommImgActivity.this, AdCommImgActivity.this, url1);
-                }
-                if (url1.contains("condition=login")) {
-                    if (SlbLoginUtil.get().isUserLogin()) {
-                        finish();
-                    } else {
-                        // 防止des之前就finish没效果
-                        setIs_finish_login(true);
-                    }
-                } else {
-                    finish();
-                }
+                });
+                set_url_hios_finish(url1);
             }
         });
         tv_adJumps.setOnClickListener(new View.OnClickListener() {

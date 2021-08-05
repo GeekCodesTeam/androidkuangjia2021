@@ -1,4 +1,4 @@
-# hunheappkuangjia
+# APP框架使用说明
 
 ### 集成方式
 How to
@@ -27,22 +27,24 @@ Share this release:
 
 ### 你也可以这样
     // 总依赖																	
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.2.8'	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.3.3'	
     或者
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.2.8'	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.3.1'	
     
     // 部分依赖																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.2.8'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.2.8'	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.3.1'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.3.1'	
+    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.3.1'	
+
 
 ![image](https://user-images.githubusercontent.com/7312232/127794495-5ee0ec57-c82a-4d4a-9887-4a9c366de3b0.png)
 

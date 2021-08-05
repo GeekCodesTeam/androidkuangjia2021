@@ -20,7 +20,7 @@
 //
 //import com.blankj.utilcode.util.AppUtils;
 //import com.blankj.utilcode.util.ToastUtils;
-//import com.example.libbase.base.SlbBaseActivity;
+//import com.geek.libbase.base.SlbBaseActivity;
 //import com.example.slbappjpushshare.denglu.JPushDengluUtils;
 //import com.example.slbappjpushshare.denglu.OnResultInfoLitener;
 //import com.example.slbappjpushshare.fenxiang.JPushShareUtils;
