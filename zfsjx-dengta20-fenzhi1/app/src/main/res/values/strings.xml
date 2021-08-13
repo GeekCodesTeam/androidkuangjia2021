@@ -1,7 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="MissingTranslation">app</string>
-    <string name="open_plugin" tools:ignore="MissingTranslation">加载插件</string>
-    <string name="about" tools:ignore="MissingTranslation">关于</string>
-    <string name="webview" tools:ignore="MissingTranslation">Append WebView</string>
-    <string name="about_detail" tools:ignore="MissingTranslation">VirtualAPK 是一款由滴滴出行研发的 Android 插件化框架，项目地址：https://github.com/didi/VirtualAPK</string>
-</resources>
