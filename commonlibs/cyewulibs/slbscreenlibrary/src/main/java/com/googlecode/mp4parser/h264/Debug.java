@@ -72,17 +72,20 @@ public class Debug {
     public final static boolean debug = false;
 
     public static void print(int i) {
-        if (debug)
+        if (debug) {
             System.out.print(i);
+        }
     }
 
     public static void print(String string) {
-        if (debug)
+        if (debug) {
             System.out.print(string);
+        }
     }
 
     public static void println(String string) {
-        if (debug)
+        if (debug) {
             System.out.println(string);
+        }
     }
 }

@@ -68,6 +68,7 @@ public class AuthorBox extends AbstractFullBox {
         this.author = author;
     }
 
+    @Override
     protected long getContentSize() {
         return 7 + Utf8.utf8StringLengthInBytes(author);
     }
@@ -88,6 +89,7 @@ public class AuthorBox extends AbstractFullBox {
     }
 
 
+    @Override
     public String toString() {
         return "AuthorBox[language=" + getLanguage() + ";author=" + getAuthor() + "]";
     }

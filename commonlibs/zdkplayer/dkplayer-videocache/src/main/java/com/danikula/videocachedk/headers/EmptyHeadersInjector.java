@@ -12,7 +12,7 @@ public class EmptyHeadersInjector implements HeaderInjector {
 
     @Override
     public Map<String, String> addHeaders(String url) {
-        return new HashMap<>();
+        return new HashMap<>(16);
     }
 
 }

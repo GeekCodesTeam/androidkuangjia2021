@@ -43,10 +43,12 @@ public class DataEntryUrlBox extends AbstractFullBox {
         writeVersionAndFlags(byteBuffer);
     }
 
+    @Override
     protected long getContentSize() {
         return 4;
     }
 
+    @Override
     public String toString() {
         return "DataEntryUrlBox[]";
     }

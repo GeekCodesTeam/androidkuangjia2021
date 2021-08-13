@@ -35,7 +35,9 @@ class CameraTest implements PermissionTest {
         Camera camera = null;
         try {
             int cameraCount = Camera.getNumberOfCameras();
-            if (cameraCount <= 0) return true;
+            if (cameraCount <= 0) {
+                return true;
+            }
 
             camera = Camera.open(cameraCount - 1);
             Camera.Parameters parameters = camera.getParameters();
@@ -48,7 +50,7 @@ class CameraTest implements PermissionTest {
             return !packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA);
         } finally {
             if (camera != null) {
-                camera.stopPreview();
+                camera.startPreview();
                 camera.setPreviewCallback(null);
                 camera.release();
             }

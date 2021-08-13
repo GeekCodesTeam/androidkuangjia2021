@@ -52,8 +52,9 @@ public class CAVLCReader extends BitstreamReader {
      */
     private int readUE() throws IOException {
         int cnt = 0;
-        while (read1Bit() == 0)
+        while (read1Bit() == 0) {
             cnt++;
+        }
 
         int res = 0;
         if (cnt > 0) {
@@ -117,8 +118,9 @@ public class CAVLCReader extends BitstreamReader {
     }
 
     public int readTE(int max) throws IOException {
-        if (max > 1)
+        if (max > 1) {
             return readUE();
+        }
         return ~read1Bit() & 0x1;
     }
 
@@ -148,8 +150,9 @@ public class CAVLCReader extends BitstreamReader {
 
     public int readZeroBitCount(String message) throws IOException {
         int count = 0;
-        while (read1Bit() == 0)
+        while (read1Bit() == 0) {
             count++;
+        }
 
         trace(message, String.valueOf(count));
 
@@ -169,13 +172,15 @@ public class CAVLCReader extends BitstreamReader {
 
         traceBuilder.append("@" + pos);
 
-        for (int i = 0; i < spaces; i++)
+        for (int i = 0; i < spaces; i++) {
             traceBuilder.append(' ');
+        }
 
         traceBuilder.append(message);
         spaces = 100 - traceBuilder.length() - debugBits.length();
-        for (int i = 0; i < spaces; i++)
+        for (int i = 0; i < spaces; i++) {
             traceBuilder.append(' ');
+        }
         traceBuilder.append(debugBits);
         traceBuilder.append(" (" + val + ")");
         debugBits.clear();

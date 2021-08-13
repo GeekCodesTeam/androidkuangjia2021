@@ -38,7 +38,7 @@ public class SmsObserver extends ContentObserver {
         Log.d("====main", "SMS has changed!");
         Log.d("====main", uri.toString());
         // 短信内容变化时，第一次调用该方法时短信内容并没有写入到数据库中,return
-        if (uri.toString().equals("content://sms/raw")) {
+        if ("content://sms/raw".equals(uri.toString())) {
             return;
         }
         getValidateCode();//获取短信验证码
@@ -77,6 +77,8 @@ public class SmsObserver extends ContentObserver {
      * 获取短信验证码
      * 这里拿不到小米手机里面分类的短信
      */
+    private static Pattern patterngetValidateCode = Pattern.compile("(\\d{4})");
+
     private void getValidateCode() {
         String code = "";
         Uri inboxUri = Uri.parse("content://sms/inbox");
@@ -92,8 +94,7 @@ public class SmsObserver extends ContentObserver {
                 }*/
                 Log.d("====main", "发件人为:" + address + " ," + "短信内容为:" + body);
 
-                Pattern pattern = Pattern.compile("(\\d{4})");
-                Matcher matcher = pattern.matcher(body);
+                Matcher matcher = patterngetValidateCode.matcher(body);
 
                 if (matcher.find()) {
                     code = matcher.group(0);

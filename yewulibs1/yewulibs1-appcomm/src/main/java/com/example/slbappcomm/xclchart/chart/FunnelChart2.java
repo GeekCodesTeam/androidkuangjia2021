@@ -82,7 +82,9 @@ public class FunnelChart2 extends EventChart {
 	
 	public Paint getPaint()
 	{
-		if(null == mPaint)mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaint) {
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		return mPaint;
 	}
 	
@@ -104,7 +106,9 @@ public class FunnelChart2 extends EventChart {
 	
 	protected void renderPlot(Canvas canvas)
 	{
-		if(mDataSet.size() ==0 )return;
+		if(mDataSet.size() ==0 ) {
+            return;
+        }
 		 		
 		 float fHalfTopWidth  =  div(plotArea.getPlotWidth() , 5) ;		
 		 float funnelTopWidth  = mul(fHalfTopWidth , 2) ; 		 		 			 
@@ -175,7 +179,9 @@ public class FunnelChart2 extends EventChart {
 		 Path bezierPath = new Path();
 		 for(int i=0;i<lstTop.size();i++)
 		 {						 
-				if( i + 1 >= lstTop.size() )continue;
+				if( i + 1 >= lstTop.size() ) {
+                    continue;
+                }
 				getPaint().setColor(mDataSet.get(i+1).getColor());
 				bezierPath.moveTo(lstTop.get(i).x, lstTop.get(i).y);
 				PointF ctl2 = PointHelper.percent(lstTop.get(i), 0.7f,lstCenter.get(i), 0.5f);

@@ -15,13 +15,14 @@ public class EmojiStringUtils {
      * @date： 2021-01-26 11:01
      */
     public static boolean hasEmoji(String content) {
-        Pattern pattern = Pattern.compile("[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]");
-        Matcher matcher = pattern.matcher(content);
+        Matcher matcher = Emoji_PATTERN.matcher(content);
         if (matcher.find()) {
             return true;
         }
         return false;
     }
+
+    public static Pattern Emoji_PATTERN = Pattern.compile("[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]");
 
     /**
      * @Title: 替换字符串中的emoji字符

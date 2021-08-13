@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+apply from: './../../assemble_dolast.gradle'
+apply from: './../commonlibs2.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+def librarys = rootProject.ext.dependencies
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.0'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.5.0'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.5.0'
+    bxnt_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+    bxny_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+    bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+}

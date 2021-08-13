@@ -19,8 +19,9 @@ public class CommonUtil {
 
     public static void setViewHeight(View view, int width, int height) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        if (null == layoutParams)
+        if (null == layoutParams) {
             return;
+        }
         layoutParams.width = width;
         layoutParams.height = height;
         view.setLayoutParams(layoutParams);

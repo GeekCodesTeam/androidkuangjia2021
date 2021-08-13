@@ -53,8 +53,9 @@ public class RecycleAdapterbluetooth2 extends RecyclerView.Adapter<RecycleAdapte
         List<BlueDevice> newList = new ArrayList<>();
         for (Iterator iter = list.iterator(); iter.hasNext(); ) {
             BlueDevice element = (BlueDevice) iter.next();
-            if (set.add(element))
+            if (set.add(element)) {
                 newList.add(element);
+            }
         }
         return newList;
     }
@@ -65,8 +66,9 @@ public class RecycleAdapterbluetooth2 extends RecyclerView.Adapter<RecycleAdapte
 
     @Override
     public int getItemCount() {
-        if (mratings == null)
+        if (mratings == null) {
             return 0;
+        }
         return mratings.size();
     }
 

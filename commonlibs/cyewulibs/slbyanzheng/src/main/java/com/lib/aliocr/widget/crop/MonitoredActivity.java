@@ -39,21 +39,27 @@ public abstract class MonitoredActivity extends Activity {
     }
 
     public static class LifeCycleAdapter implements LifeCycleListener {
+        @Override
         public void onActivityCreated(MonitoredActivity activity) {
         }
 
+        @Override
         public void onActivityDestroyed(MonitoredActivity activity) {
         }
 
+        @Override
         public void onActivityStarted(MonitoredActivity activity) {
         }
 
+        @Override
         public void onActivityStopped(MonitoredActivity activity) {
         }
     }
 
     public void addLifeCycleListener(LifeCycleListener listener) {
-        if (listeners.contains(listener)) return;
+        if (listeners.contains(listener)) {
+            return;
+        }
         listeners.add(listener);
     }
 

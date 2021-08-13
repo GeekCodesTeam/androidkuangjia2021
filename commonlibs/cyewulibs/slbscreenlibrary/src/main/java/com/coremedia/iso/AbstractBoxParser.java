@@ -44,6 +44,7 @@ public abstract class AbstractBoxParser implements BoxParser {
      * @return the box just parsed
      * @throws java.io.IOException if reading from <code>in</code> fails
      */
+    @Override
     public Box parseBox(ReadableByteChannel byteChannel, ContainerBox parent) throws IOException {
 
 

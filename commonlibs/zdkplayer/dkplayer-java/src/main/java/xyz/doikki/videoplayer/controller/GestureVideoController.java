@@ -128,7 +128,9 @@ public abstract class GestureVideoController extends BaseVideoController impleme
         if (!isInPlaybackState() //不处于播放状态
                 || !mIsGestureEnabled //关闭了手势
                 || PlayerUtils.isEdge(getContext(), e)) //处于屏幕边沿
+        {
             return true;
+        }
         mStreamVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         Activity activity = PlayerUtils.scanForActivity(getContext());
         if (activity == null) {
@@ -159,7 +161,9 @@ public abstract class GestureVideoController extends BaseVideoController impleme
      */
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        if (!isLocked() && isInPlaybackState()) togglePlay();
+        if (!isLocked() && isInPlaybackState()) {
+            togglePlay();
+        }
         return true;
     }
 
@@ -173,7 +177,9 @@ public abstract class GestureVideoController extends BaseVideoController impleme
                 || !mCanSlide //关闭了滑动手势
                 || isLocked() //锁住了屏幕
                 || PlayerUtils.isEdge(getContext(), e1)) //处于屏幕边沿
+        {
             return true;
+        }
         float deltaX = e1.getX() - e2.getX();
         float deltaY = e1.getY() - e2.getY();
         if (mFirstTouch) {
@@ -219,8 +225,12 @@ public abstract class GestureVideoController extends BaseVideoController impleme
         int duration = (int) mControlWrapper.getDuration();
         int currentPosition = (int) mControlWrapper.getCurrentPosition();
         int position = (int) (deltaX / width * 120000 + currentPosition);
-        if (position > duration) position = duration;
-        if (position < 0) position = 0;
+        if (position > duration) {
+            position = duration;
+        }
+        if (position < 0) {
+            position = 0;
+        }
         for (Map.Entry<IControlComponent, Boolean> next : mControlComponents.entrySet()) {
             IControlComponent component = next.getKey();
             if (component instanceof IGestureComponent) {
@@ -232,16 +242,22 @@ public abstract class GestureVideoController extends BaseVideoController impleme
 
     protected void slideToChangeBrightness(float deltaY) {
         Activity activity = PlayerUtils.scanForActivity(getContext());
-        if (activity == null) return;
+        if (activity == null) {
+            return;
+        }
         Window window = activity.getWindow();
         WindowManager.LayoutParams attributes = window.getAttributes();
         int height = getMeasuredHeight();
-        if (mBrightness == -1.0f) mBrightness = 0.5f;
+        if (mBrightness == -1.0f) {
+            mBrightness = 0.5f;
+        }
         float brightness = deltaY * 2 / height * 1.0f + mBrightness;
         if (brightness < 0) {
             brightness = 0f;
         }
-        if (brightness > 1.0f) brightness = 1.0f;
+        if (brightness > 1.0f) {
+            brightness = 1.0f;
+        }
         int percent = (int) (brightness * 100);
         attributes.screenBrightness = brightness;
         window.setAttributes(attributes);
@@ -258,8 +274,12 @@ public abstract class GestureVideoController extends BaseVideoController impleme
         int height = getMeasuredHeight();
         float deltaV = deltaY * 2 / height * streamMaxVolume;
         float index = mStreamVolume + deltaV;
-        if (index > streamMaxVolume) index = streamMaxVolume;
-        if (index < 0) index = 0;
+        if (index > streamMaxVolume) {
+            index = streamMaxVolume;
+        }
+        if (index < 0) {
+            index = 0;
+        }
         int percent = (int) (index / streamMaxVolume * 100);
         mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) index, 0);
         for (Map.Entry<IControlComponent, Boolean> next : mControlComponents.entrySet()) {
@@ -286,6 +306,8 @@ public abstract class GestureVideoController extends BaseVideoController impleme
                 case MotionEvent.ACTION_CANCEL:
                     stopSlide();
                     mSeekPosition = 0;
+                    break;
+                default:
                     break;
             }
         }

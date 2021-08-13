@@ -41,6 +41,7 @@ public class ResponseSlbBean2<T> {
         this.data = data;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("success: ").append(this.success).append("\n");

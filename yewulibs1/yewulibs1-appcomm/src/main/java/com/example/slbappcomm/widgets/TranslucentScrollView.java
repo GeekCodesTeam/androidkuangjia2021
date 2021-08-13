@@ -4,9 +4,6 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
-//import android.support.annotation.ColorInt;
-import androidx.annotation.ColorInt;
-import androidx.core.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -15,14 +12,18 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ScrollView;
 
+import androidx.annotation.ColorInt;
+import androidx.core.graphics.ColorUtils;
+
 import com.example.slbappcomm.R;
 
 
 /**
  * 类功能描述：</br>
- *  Android沉浸式状态栏 + scrollView顶部伸缩 + actionBar渐变
+ * Android沉浸式状态栏 + scrollView顶部伸缩 + actionBar渐变
  * 博客地址：http://blog.csdn.net/androidstarjack
  * 公众号：终端研发部
+ *
  * @author yuyahao
  * @version 1.0 </p> 修改时间：</br> 修改备注：</br>
  */
@@ -213,6 +214,8 @@ public class TranslucentScrollView extends ScrollView {
                     Log.d(TAG, "params.height == " + params.height + ", zoomViewInitHeight == " + zoomViewInitHeight + ", distance == " + distance);
                     zoomView.setLayoutParams(params);
                     return true;
+                default:
+                    break;
             }
         }
 

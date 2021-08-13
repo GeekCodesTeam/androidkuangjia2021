@@ -66,6 +66,8 @@ public class StaticDrawer extends PLVMenuDrawer {
                 mMenuContainer.layout(0, height - mMenuSize, width, height);
                 mContentContainer.layout(0, 0, width, height - mMenuSize);
                 break;
+            default:
+                break;
         }
     }
 
@@ -111,6 +113,8 @@ public class StaticDrawer extends PLVMenuDrawer {
                 mMenuContainer.measure(childWidthMeasureSpec, menuHeightMeasureSpec);
                 break;
             }
+            default:
+                break;
         }
 
         setMeasuredDimension(width, height);

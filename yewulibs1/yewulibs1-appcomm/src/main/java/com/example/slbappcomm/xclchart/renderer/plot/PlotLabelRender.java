@@ -59,8 +59,12 @@ public class PlotLabelRender extends PlotLabel {
 	public boolean drawLabel(Canvas canvas,Paint paint,String label,
 			float cX,float cY,float itemAngle)
 	{
-		if("" == label||label.length() == 0) return false;
-		if(null == canvas || null == paint) return false;
+		if("" == label||label.length() == 0) {
+            return false;
+        }
+		if(null == canvas || null == paint) {
+            return false;
+        }
 						
 		float left = 0.0f,top = 0.0f,right=0.0f,bottom = 0.0f;
 		
@@ -93,8 +97,9 @@ public class PlotLabelRender extends PlotLabel {
 			y = y - mMargin - radius;						
 			canvas.drawCircle(x ,y ,radius, mBorder.getBackgroundPaint());
 			
-			if(mShowBoxBorder)
-				canvas.drawCircle(x ,y , radius, mBorder.getLinePaint());
+			if(mShowBoxBorder) {
+                canvas.drawCircle(x ,y , radius, mBorder.getLinePaint());
+            }
 			
 			DrawHelper.getInstance().drawRotateText(label,x ,y,itemAngle, canvas, paint);
 			return true;
@@ -105,7 +110,9 @@ public class PlotLabelRender extends PlotLabel {
 			top = y - h  -  mMargin ;
 			bottom = y ;
 								
-			if(null == mRectBox) mRectBox = new RectF();
+			if(null == mRectBox) {
+                mRectBox = new RectF();
+            }
 			mRectBox.left = left;
 			mRectBox.right = right;
 			mRectBox.top = top;
@@ -120,7 +127,9 @@ public class PlotLabelRender extends PlotLabel {
 				mRectBox.top -= AngleH;
 				mRectBox.bottom -= AngleH;					
 				initBox();	
-				if(mBorderColor != -1)mBorder.setBorderLineColor(mBorderColor);					
+				if(mBorderColor != -1) {
+                    mBorder.setBorderLineColor(mBorderColor);
+                }
 				
 				
 				switch(mLabelBoxStyle)
@@ -159,7 +168,9 @@ public class PlotLabelRender extends PlotLabel {
 	private void drawBox(Canvas canvas) 
 	{			
 		initBox();	
-		if(mBorderColor != -1)mBorder.setBorderLineColor(mBorderColor);
+		if(mBorderColor != -1) {
+            mBorder.setBorderLineColor(mBorderColor);
+        }
 		mBorder.renderRect(canvas, mRectBox,mShowBoxBorder,mShowBackground);		
 	}
 	

@@ -37,6 +37,8 @@ public class MultipleTypesAdapter extends BannerAdapter<DataBean, RecyclerView.V
 //                return new VideoHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_video));
             case 3:
                 return new TitleHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_title));
+            default:
+                break;
         }
         return new ImageHolder(BannerUtils.getView(parent, R.layout.lunbo_banner_image));
     }
@@ -72,6 +74,8 @@ public class MultipleTypesAdapter extends BannerAdapter<DataBean, RecyclerView.V
                 mVHMap.append(position,titleHolder);
                 titleHolder.title.setText(data.title);
                 titleHolder.title.setBackgroundColor(Color.parseColor(DataBean.getRandColor()));
+                break;
+            default:
                 break;
         }
     }

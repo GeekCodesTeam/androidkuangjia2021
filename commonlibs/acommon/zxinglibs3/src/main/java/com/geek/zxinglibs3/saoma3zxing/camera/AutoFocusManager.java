@@ -66,7 +66,7 @@ public class AutoFocusManager implements Camera.AutoFocusCallback {
 			AutoFocusTask newTask = new AutoFocusTask();
 			try {
 				if (Build.VERSION.SDK_INT >= 11) {
-					newTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+					newTask.execute(AsyncTask.THREAD_POOL_EXECUTOR);
 				} else {
 					newTask.execute();
 				}

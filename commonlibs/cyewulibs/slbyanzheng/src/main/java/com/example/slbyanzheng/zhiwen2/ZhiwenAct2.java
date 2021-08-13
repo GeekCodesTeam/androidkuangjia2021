@@ -54,8 +54,9 @@ public class ZhiwenAct2 extends AppCompatActivity implements View.OnClickListene
         if (id == R.id.ocr_auth) {
             FragmentTransaction transition = fragmentManager.beginTransaction();
             transition.replace(R.id.fragment_content_root, new OcrLaunchFragment(), OcrLaunchFragment.class.getSimpleName());
-            if (transition.isAddToBackStackAllowed())
+            if (transition.isAddToBackStackAllowed()) {
                 transition.addToBackStack(OcrLaunchFragment.class.getSimpleName());
+            }
             transition.commit();
             findViewById(R.id.layout_).setVisibility(View.GONE);
         } else if (id == R.id.gesture_password) {

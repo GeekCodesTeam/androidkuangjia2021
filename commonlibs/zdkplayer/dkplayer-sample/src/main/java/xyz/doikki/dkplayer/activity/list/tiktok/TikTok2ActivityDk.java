@@ -121,7 +121,9 @@ public class TikTok2ActivityDk extends BaseActivityDk<VideoView> {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                if (position == mCurPos) return;
+                if (position == mCurPos) {
+                    return;
+                }
                 startPlay(position);
             }
 

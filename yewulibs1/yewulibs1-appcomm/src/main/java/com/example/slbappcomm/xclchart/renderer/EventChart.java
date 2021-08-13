@@ -139,17 +139,20 @@ public class EventChart extends XChart {
 
 	protected void savePointRecord(final int dataID, final int childID,
 			final float x, final float y, final RectF r) {
-		if (!getListenItemClickStatus())
-			return;
+		if (!getListenItemClickStatus()) {
+            return;
+        }
 		savePointRecord(dataID, childID, x, y, r.left, r.top, r.right, r.bottom);
 	}
 
 	protected void savePointRecord(final int dataID, final int childID,
 			float x, float y, float left, float top, float right, float bottom) {
-		if (!getListenItemClickStatus())
-			return;
-		if (null == mRecordset)
-			mRecordset = new ArrayList<PlotPointPosition>();
+		if (!getListenItemClickStatus()) {
+            return;
+        }
+		if (null == mRecordset) {
+            mRecordset = new ArrayList<PlotPointPosition>();
+        }
 
 		PlotPointPosition pRecord = new PlotPointPosition();
 		pRecord.savePlotDataID(dataID);
@@ -162,10 +165,12 @@ public class EventChart extends XChart {
 
 	protected void saveBarRectFRecord(int dataID, int childID, float left,
 			float top, float right, float bottom) {
-		if (!getListenItemClickStatus())
-			return;
-		if (null == mRecordset)
-			mRecordset = new ArrayList<PlotBarPosition>();
+		if (!getListenItemClickStatus()) {
+            return;
+        }
+		if (null == mRecordset) {
+            mRecordset = new ArrayList<PlotBarPosition>();
+        }
 
 		PlotBarPosition pRecord = new PlotBarPosition();
 		pRecord.savePlotDataID(dataID);
@@ -177,10 +182,12 @@ public class EventChart extends XChart {
 
 	protected void saveBarRecord(int dataID, int childID, float x, float y,
 			RectF r) {
-		if (!getListenItemClickStatus())
-			return;
-		if (null == mRecordset)
-			mRecordset = new ArrayList<PlotBarPosition>();
+		if (!getListenItemClickStatus()) {
+            return;
+        }
+		if (null == mRecordset) {
+            mRecordset = new ArrayList<PlotBarPosition>();
+        }
 
 		PlotBarPosition pRecord = new PlotBarPosition();
 		pRecord.savePlotDataID(dataID);
@@ -194,10 +201,12 @@ public class EventChart extends XChart {
 	protected void saveArcRecord(int dataID, float centerX, float centerY,
 			float radius, float offsetAngle, float Angle, float selectedOffset,
 			float initialAngle) {
-		if (!getListenItemClickStatus())
-			return;
-		if (null == mRecordset)
-			mRecordset = new ArrayList<PlotArcPosition>();
+		if (!getListenItemClickStatus()) {
+            return;
+        }
+		if (null == mRecordset) {
+            mRecordset = new ArrayList<PlotArcPosition>();
+        }
 
 		PlotArcPosition pRecord = new PlotArcPosition();
 		pRecord.savePlotDataID(dataID);
@@ -227,16 +236,20 @@ public class EventChart extends XChart {
 	 * @return 是否需处理
 	 */
 	public boolean isPlotClickArea(float x, float y) {
-		if (!getListenItemClickStatus())
-			return false;
+		if (!getListenItemClickStatus()) {
+            return false;
+        }
 
-		if (Float.compare(x, getPlotArea().getLeft()) == -1)
-			return false;
-		if (Float.compare(x, getPlotArea().getRight()) == 1)
-			return false;
+		if (Float.compare(x, getPlotArea().getLeft()) == -1) {
+            return false;
+        }
+		if (Float.compare(x, getPlotArea().getRight()) == 1) {
+            return false;
+        }
 
-		if (Float.compare(y, getPlotArea().getTop()) == -1)
-			return false;
+		if (Float.compare(y, getPlotArea().getTop()) == -1) {
+            return false;
+        }
         return Float.compare(y, getPlotArea().getBottom()) != 1;
     }
 
@@ -250,14 +263,18 @@ public class EventChart extends XChart {
 	 * @return 记录类
 	 */
 	protected ArcPosition getArcRecord(float x, float y) {
-		if (!getListenItemClickStatus())
-			return null;
-		if (!isPlotClickArea(x, y))
-			return null;
-		if (!getClikedScaleStatus())
-			return null;
-		if (null == mRecordset)
-			return null;
+		if (!getListenItemClickStatus()) {
+            return null;
+        }
+		if (!isPlotClickArea(x, y)) {
+            return null;
+        }
+		if (!getClikedScaleStatus()) {
+            return null;
+        }
+		if (null == mRecordset) {
+            return null;
+        }
 
 		Iterator it = mRecordset.iterator();
 		while (it.hasNext()) {
@@ -273,14 +290,18 @@ public class EventChart extends XChart {
 	}
 
 	protected BarPosition getBarRecord(float x, float y) {
-		if (!getListenItemClickStatus())
-			return null;
-		if (!isPlotClickArea(x, y))
-			return null;
-		if (!getClikedScaleStatus())
-			return null;
-		if (null == mRecordset)
-			return null;
+		if (!getListenItemClickStatus()) {
+            return null;
+        }
+		if (!isPlotClickArea(x, y)) {
+            return null;
+        }
+		if (!getClikedScaleStatus()) {
+            return null;
+        }
+		if (null == mRecordset) {
+            return null;
+        }
 
 		Iterator it = mRecordset.iterator();
 		while (it.hasNext()) {
@@ -296,14 +317,18 @@ public class EventChart extends XChart {
 	}
 
 	protected PointPosition getPointRecord(final float x, final float y) {
-		if (!getListenItemClickStatus())
-			return null;
-		if (!isPlotClickArea(x, y))
-			return null;
-		if (!getClikedScaleStatus())
-			return null;
-		if (null == mRecordset)
-			return null;
+		if (!getListenItemClickStatus()) {
+            return null;
+        }
+		if (!isPlotClickArea(x, y)) {
+            return null;
+        }
+		if (!getClikedScaleStatus()) {
+            return null;
+        }
+		if (null == mRecordset) {
+            return null;
+        }
 
 		Iterator it = mRecordset.iterator();
 		while (it.hasNext()) {
@@ -331,8 +356,9 @@ public class EventChart extends XChart {
 	 * @return 画笔
 	 */
 	public Paint getFocusPaint() {
-		if (null == mFocusPaint)
-			mFocusPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if (null == mFocusPaint) {
+            mFocusPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		return mFocusPaint;
 	}
 
@@ -380,8 +406,9 @@ public class EventChart extends XChart {
 	 * @return 信息基类
 	 */
 	public ToolTip getToolTip() {
-		if (null == mToolTip)
-			mToolTip = new ToolTipRender();
+		if (null == mToolTip) {
+            mToolTip = new ToolTipRender();
+        }
 		return mToolTip;
 	}
 
@@ -392,19 +419,23 @@ public class EventChart extends XChart {
 	 *            画布
 	 */
 	protected void renderToolTip(Canvas canvas) {
-		if (null == mToolTip)
-			return;
+		if (null == mToolTip) {
+            return;
+        }
 		mToolTip.renderInfo(canvas);
 	}
 
 	protected boolean drawFocusRect(Canvas canvas, int dataID, int childID,
 			float left, float top, float right, float bottom) {
-		if (!mShowClikedFocus)
-			return true;
-		if (-1 == mSelectID)
-			return false;
-		if (null == mFocusRect)
-			return false;
+		if (!mShowClikedFocus) {
+            return true;
+        }
+		if (-1 == mSelectID) {
+            return false;
+        }
+		if (null == mFocusRect) {
+            return false;
+        }
 
 		// if(null == mFocusPath) mFocusPath = new Path();
 
@@ -438,8 +469,9 @@ public class EventChart extends XChart {
 	 * @return 是否绘制成功
 	 */
 	protected boolean renderFocusShape(Canvas canvas) {
-		if (!mShowClikedFocus)
-			return true;
+		if (!mShowClikedFocus) {
+            return true;
+        }
 		XEnum.ChartType ctype = this.getType();
 		if (XEnum.ChartType.BAR == ctype || XEnum.ChartType.BAR3D == ctype
 				|| XEnum.ChartType.STACKBAR == ctype) {

@@ -691,7 +691,7 @@ public class SrsEncoder {
 
             // choose YUV for h.264, prefer the bigger one.
             // corresponding to the color space transform in onPreviewFrame
-            if (cf >= cc.COLOR_FormatYUV420Planar && cf <= cc.COLOR_FormatYUV420SemiPlanar) {
+            if (cf >= MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar && cf <= MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar) {
                 if (cf > matchedColorFormat) {
                     matchedColorFormat = cf;
                 }

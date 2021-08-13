@@ -53,6 +53,7 @@ public class PerformerBox extends AbstractFullBox {
         this.performer = performer;
     }
 
+    @Override
     protected long getContentSize() {
         return 6 + Utf8.utf8StringLengthInBytes(performer) + 1;
     }
@@ -72,6 +73,7 @@ public class PerformerBox extends AbstractFullBox {
         performer = IsoTypeReader.readString(content);
     }
 
+    @Override
     public String toString() {
         return "PerformerBox[language=" + getLanguage() + ";performer=" + getPerformer() + "]";
     }

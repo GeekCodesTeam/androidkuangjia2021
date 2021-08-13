@@ -241,10 +241,9 @@ dependencies {
     // 鸿蒙bufen
     implementation files('./libs/abilityshell_ide_java.jar')
     // TODO common库
-    implementation project(':commonlibs:acommon:libbase')
-    implementation project(':commonlibs:acommon:baselibrary')
-    implementation project(':yewulibs1:yewulibs1-appcomm')
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.0'
     // TODO 业务
+    implementation project(':yewulibs1:yewulibs1-appcomm')
     implementation project(':yewulibs1:yewulibs1-appindex')
     implementation project(':yewulibs1:yewulibs1-appsplash')
     implementation project(':yewulibs1:yewulibs1-applogin')

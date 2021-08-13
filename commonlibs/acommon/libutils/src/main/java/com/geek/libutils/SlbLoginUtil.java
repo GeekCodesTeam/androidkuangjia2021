@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.geek.libutils.data.MmkvUtils;
 
 public class SlbLoginUtil {
 
-    public static final String MMKV_TOKEN = "用户token";//
     public static final int LOGIN_REQUEST_CODE = 301;
     public static final int LOGINOUT_REQUEST_CODE = 302;
     public static final int LOGIN_RESULT_OK = 101;
@@ -41,7 +41,8 @@ public class SlbLoginUtil {
     public boolean isUserLogin() {
         // step 1 判断内存中是否有user_id
 //        if (!TextUtils.isEmpty(SPUtils.getInstance().getString(CommonUtils.USER_TOKEN))) {
-        return !TextUtils.isEmpty(MmkvUtils.getInstance().get_common(MMKV_TOKEN));
+//        return !TextUtils.isEmpty(MmkvUtils.getInstance().get_common(MMKV_TOKEN));
+        return !TextUtils.isEmpty(SPUtils.getInstance().getString("token"));
 //        // step 2 如果内存中没有， 则去文件中找
 //        String uid = (String) SpUtils.get(get()).get(ConstantUtil.USER_ID, null);
 //        // step 3 如果文件中有， 则提到内存中

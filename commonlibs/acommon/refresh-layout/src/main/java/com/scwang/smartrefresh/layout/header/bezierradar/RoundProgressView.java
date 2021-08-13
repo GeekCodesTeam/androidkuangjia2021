@@ -115,10 +115,14 @@ public class RoundProgressView extends View {
     }
 
     public void startAnim(){
-        if (mAnimator !=null) mAnimator.start();
+        if (mAnimator !=null) {
+            mAnimator.start();
+        }
     }
 
     public void stopAnim(){
-        if (mAnimator !=null && mAnimator.isRunning()) mAnimator.cancel();
+        if (mAnimator !=null && mAnimator.isRunning()) {
+            mAnimator.cancel();
+        }
     }
 }

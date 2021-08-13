@@ -91,6 +91,7 @@ public class MovieHeaderBox extends AbstractFullBox {
         return nextTrackId;
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 4;
         if (getVersion() == 1) {
@@ -135,6 +136,7 @@ public class MovieHeaderBox extends AbstractFullBox {
 
     }
 
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("MovieHeaderBox[");

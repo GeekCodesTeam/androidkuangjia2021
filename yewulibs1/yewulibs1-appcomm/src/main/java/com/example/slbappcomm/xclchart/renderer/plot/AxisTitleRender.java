@@ -62,7 +62,9 @@ public class AxisTitleRender extends AxisTitle implements IRender {
 	public boolean render(Canvas canvas) {
 		// TODO Auto-generated method stub
 		
-		if(null == mChart) return false;
+		if(null == mChart) {
+            return false;
+        }
 		
 		float left = 0.0f,top = 0.0f,right =0.0f,bottom = 0.0f;
 		
@@ -118,10 +120,14 @@ public class AxisTitleRender extends AxisTitle implements IRender {
 	public void drawLeftAxisTitle(Canvas canvas, String axisTitle,double left,double top,
 											 double right,double bottom) 
 	{							
-		if(null == canvas) return ;
+		if(null == canvas) {
+            return ;
+        }
 		
 		//是否需要绘制轴标题
-		if( 0 == axisTitle.length() || "" == axisTitle)return;
+		if( 0 == axisTitle.length() || "" == axisTitle) {
+            return;
+        }
 		
 		 //计算图列宽度		 
 		 double axisTitleTextHeight = DrawHelper.getInstance().getTextWidth(
@@ -167,9 +173,13 @@ public class AxisTitleRender extends AxisTitle implements IRender {
 	public void drawLowerAxisTitle(Canvas canvas, String axisTitle,
 								double left,double top,double right,double bottom)
 	{         
-         if(null == canvas) return ;
+         if(null == canvas) {
+             return ;
+         }
  		 //是否需要绘制轴标题
- 		 if(""==axisTitle || 0 == axisTitle.length() )return;
+ 		 if(""==axisTitle || 0 == axisTitle.length() ) {
+             return;
+         }
  	
  		 //计算轴标题文字宽度		 
  		 double axisTitleTextHeight = DrawHelper.getInstance().getPaintFontHeight(
@@ -210,10 +220,14 @@ public class AxisTitleRender extends AxisTitle implements IRender {
 	public void drawRightAxisTitle(Canvas canvas,String axisTitle,
 								double left,double top,double right,double bottom)
 	{			
-		if(null == canvas) return ;
+		if(null == canvas) {
+            return ;
+        }
 		
 		//是否需要绘制轴标题
-		if( 0 == axisTitle.length() || "" == axisTitle)return;
+		if( 0 == axisTitle.length() || "" == axisTitle) {
+            return;
+        }
 		
 		//计算图列高度，超过最大高度要用...表示,这个后面再加		 
 		 float axisTitleTextHeight = DrawHelper.getInstance().getTextWidth(

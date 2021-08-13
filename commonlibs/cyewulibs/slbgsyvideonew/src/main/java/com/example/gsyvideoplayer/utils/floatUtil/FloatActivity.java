@@ -1,4 +1,4 @@
-package com.example.gsyvideoplayer.utils.floatUtil;
+package com.example.gsyvideoplayer.utils.floatutil;
 
 import android.app.Activity;
 import android.content.Context;

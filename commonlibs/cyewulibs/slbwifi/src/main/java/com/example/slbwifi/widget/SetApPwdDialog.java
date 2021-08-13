@@ -79,7 +79,7 @@ public class SetApPwdDialog extends DialogFragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().setCanceledOnTouchOutside(false);
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
-        View view = inflater.from(mActivity).inflate(R.layout.set_ap_pwd_page, null);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.set_ap_pwd_page, null);
         TextView ssidName = (TextView) view.findViewById(R.id.textView60);
         ssidName.setText(SSID);
         mEdPassword = (EditText) view.findViewById(R.id.editText1);

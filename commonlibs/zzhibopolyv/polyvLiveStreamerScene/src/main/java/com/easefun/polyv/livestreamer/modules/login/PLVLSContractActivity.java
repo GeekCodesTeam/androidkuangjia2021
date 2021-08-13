@@ -36,7 +36,9 @@ public class PLVLSContractActivity extends PLVBaseActivity {
         initView();
 
         Intent intent = getIntent();
-        if (intent == null) return;
+        if (intent == null) {
+            return;
+        }
 
         boolean isPrivatePolicy = intent.getBooleanExtra(KEY_IS_PRIVATE_POLICY, false);
 

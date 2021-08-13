@@ -19,8 +19,8 @@ ext {
 //    # is Model Independent Mode
     isMIMode = false
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 3009
-    appversionName = "3.0.0.9"
+    appversionCode = 3010
+    appversionName = "3.0.1.0"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"
@@ -39,7 +39,7 @@ ext {
 supportV4                         : "androidx.legacy:legacy-support-v4:1.0.0",
 appcompatV7                       : "androidx.appcompat:appcompat:1.2.0",
 supportannotations                : "androidx.annotation:annotation:1.2.0",
-design                            : "com.google.android.material:material:1.3.0",
+design                            : "com.google.android.material:material:1.4.0",
 cardviewv7                        : "androidx.cardview:cardview:1.0.0",
 recyclerviewv7                    : "androidx.recyclerview:recyclerview:1.2.0",
 percent                           : "androidx.percentlayout:percentlayout:1.0.0",

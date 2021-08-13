@@ -32,10 +32,12 @@ public class UserBox extends AbstractBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         return data.length;
     }
 
+    @Override
     public String toString() {
         return "UserBox[type=" + (getType()) +
                 ";userType=" + new String(getUserType()) +

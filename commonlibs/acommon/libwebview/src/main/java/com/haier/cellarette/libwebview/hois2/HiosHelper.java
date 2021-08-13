@@ -98,8 +98,28 @@ public class HiosHelper {
         if (!HiosHelper.shouldOverrideUrl(act, receiver, url)) {
             Intent it = new Intent(webAction);
             it.putExtra("url", url);
+            // TODO old
+//            try {
+//                act.startActivity(it);
+//            } catch (ActivityNotFoundException e) {
+//                Log.e("Activity", "No Activity found to handle intent " + it);
+//            }
+            // TODO new
             try {
-                act.startActivity(it);
+                if (url.contains(UriHelper.CONDITION_LOGIN)) {
+                    SlbLoginUtil.get().loginTowhere(act, new Runnable() {
+                        @Override
+                        public void run() {
+                            act.startActivity(it);
+                        }
+                    });
+                } else if (url.contains(UriHelper.CONDITION_OR_LOGIN)) {
+                    if (!SlbLoginUtil.get().isUserLogin()) {
+                        SlbLoginUtil.get().login(act);
+                    }
+                } else {
+                    act.startActivity(it);
+                }
             } catch (ActivityNotFoundException e) {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
@@ -128,6 +148,14 @@ public class HiosHelper {
                                             final Object receiver, final String url) {
         Uri uri = Uri.parse(url);
         if (!checkUriHost(uri)) {
+            // 处理http(s)验证登录跳转bufen
+            String host = uri.getHost();
+            if (!TextUtils.isEmpty(host)) {
+                Intent intent = new Intent(host);
+                Intent it = new Intent(webAction);
+                it.putExtra("url", url);
+                activity(activity, uri, intent);
+            }
             return false;
         }
 
@@ -240,7 +268,7 @@ public class HiosHelper {
 
     private static void invokeMethod(Activity activity, final Object receiver, Uri uri,
                                      final String host) {
-        final HashMap<String, Object> map = new HashMap<>();
+        final HashMap<String, Object> map = new HashMap<>(16);
         List<String> conditions = UriHelper.queryStringFillMap(map, uri);
 
         if (!conditions.isEmpty()) {
@@ -293,6 +321,10 @@ public class HiosHelper {
             activity(activity, uri, intent);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            // 这里是未找到路径下的class，判断为分包写法的act处理
+            final Intent intent = new Intent(host);
+            activity(activity, uri, intent);
+
         }
     }
 

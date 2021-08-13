@@ -144,8 +144,9 @@ public class GSYExo2MediaPlayer extends IjkExo2MediaPlayer {
                         if (mSpeedPlaybackParameters != null) {
                             mInternalPlayer.setPlaybackParameters(mSpeedPlaybackParameters);
                         }
-                        if (mSurface != null)
+                        if (mSurface != null) {
                             mInternalPlayer.setVideoSurface(mSurface);
+                        }
                         ///fix start index
                         if (playIndex > 0) {
                             mInternalPlayer.seekTo(playIndex, C.INDEX_UNSET);

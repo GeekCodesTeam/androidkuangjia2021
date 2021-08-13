@@ -235,6 +235,8 @@ public class ShapeLoadingView extends View {
 
 
                 break;
+            default:
+                break;
 
         }
 

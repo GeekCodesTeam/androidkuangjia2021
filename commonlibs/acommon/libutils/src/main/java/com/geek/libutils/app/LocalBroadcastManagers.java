@@ -45,6 +45,7 @@ public final class LocalBroadcastManagers {
     private LocalBroadcastManagers(Context context) {
         this.mAppContext = context;
         this.mHandler = new Handler(context.getMainLooper()) {
+            @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 1:
@@ -254,6 +255,7 @@ public final class LocalBroadcastManagers {
             this.receiver = _receiver;
         }
 
+        @Override
         public String toString() {
             StringBuilder builder = new StringBuilder(128);
             builder.append("Receiver{");

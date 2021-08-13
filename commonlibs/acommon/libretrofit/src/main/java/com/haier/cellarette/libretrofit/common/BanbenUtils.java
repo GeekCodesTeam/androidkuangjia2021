@@ -2,7 +2,7 @@ package com.haier.cellarette.libretrofit.common;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.DeviceUtils;
-import com.geek.libutils.data.MmkvUtils;
+import com.blankj.utilcode.util.SPUtils;
 
 public class BanbenUtils {
 
@@ -26,8 +26,7 @@ public class BanbenUtils {
     public String version = "";
     public String imei = "";
     public String token = "";
-    public String platform = "android_phone";
-    public String liveClientType = "android";
+    public String platform = "";
 
     public String getVersion() {
         return AppUtils.getAppVersionName(AppUtils.getAppPackageName());
@@ -38,7 +37,7 @@ public class BanbenUtils {
     }
 
     public String getImei() {
-        return DeviceUtils.getAndroidID();
+        return DeviceUtils.getUniqueDeviceId();
     }
 
     public void setImei(String imei) {
@@ -46,18 +45,20 @@ public class BanbenUtils {
     }
 
     public String getToken() {
-        return MmkvUtils.getInstance().get_common("用户token");
+        return SPUtils.getInstance().getString("token");
     }
 
     public void setToken(String token) {
         this.token = token;
     }
 
-    public String getLiveClientType() {
-        return liveClientType;
+    public String getPlatform() {
+        return SPUtils.getInstance().getString("ptlx", "android_phone");
     }
 
-    public void setLiveClientType(String liveClientType) {
-        this.liveClientType = liveClientType;
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
+
+
 }

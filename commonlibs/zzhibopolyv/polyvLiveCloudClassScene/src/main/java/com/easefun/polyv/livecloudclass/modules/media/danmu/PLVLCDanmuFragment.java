@@ -42,8 +42,9 @@ public class PLVLCDanmuFragment extends Fragment implements IPLVLCDanmuControlle
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        if (view == null)
+        if (view == null) {
             view = inflater.inflate(R.layout.plvlc_player_danmu_fragment, container, false);
+        }
         return view;
     }
 
@@ -55,12 +56,12 @@ public class PLVLCDanmuFragment extends Fragment implements IPLVLCDanmuControlle
     private void initView() {
         //-------------------仅对加载的弹幕有效-------------------//
         // 设置最大显示行数
-        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>(16);
         maxLinesPair.put(BaseDanmaku.TYPE_SCROLL_RL, 2); // 滚动弹幕最大显示5行
         maxLinesPair.put(BaseDanmaku.TYPE_FIX_TOP, 2);
         maxLinesPair.put(BaseDanmaku.TYPE_FIX_BOTTOM, 2);
         // 设置是否禁止重叠
-        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>();
+        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>(16);
         overlappingEnablePair.put(BaseDanmaku.TYPE_SCROLL_RL, true);
         overlappingEnablePair.put(BaseDanmaku.TYPE_FIX_TOP, true);
         overlappingEnablePair.put(BaseDanmaku.TYPE_FIX_BOTTOM, true);
@@ -148,8 +149,9 @@ public class PLVLCDanmuFragment extends Fragment implements IPLVLCDanmuControlle
             if (mDanmakuView != null && mDanmakuView.isPrepared() && mDanmakuView.isPaused()) {
                 if (!statusPauseFromUser) {
                     statusPauseFromUser = true;
-                    if (statusCanautoResume)
+                    if (statusCanautoResume) {
                         mDanmakuView.resume();
+                    }
                 } else {
                     statusCanautoResume = true;
                     mDanmakuView.resume();

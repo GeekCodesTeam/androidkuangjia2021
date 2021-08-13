@@ -36,12 +36,46 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //TODO common libs
-    implementation project(':commonlibs:acommon:baselibrary')
-    implementation project(':commonlibs:acommon:libbase')
+    api 'com.github.GeekCodesTeam:geeklibs:1.5.0'
+    // jitpack不支持aar+aar
+//    api project(':commonlibs:bhunheku:libagentweb')
     // 支持分版本网络请求
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
+    // https://github.com/yanzhenjie/NoFragment
+    api project(':commonlibs:bhunheku:libyanzhenjiebase')
+    // https://github.com/li-xiaojun/XPopup
+    api project(':commonlibs:cyewulibs:slbxpopup')
+    // https://github.com/yanzhenjie/AndPermission
+//    api 'com.yanzhenjie:permission:2.0.3'
+    api project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+    // https://github.com/hongyangAndroid/FlowLayout
+//    api 'com.hyman:flowlayout-lib:1.1.2'
+    // https://github.com/AigeStudio/WheelPicker
+//    api 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    api project(':commonlibs:bhunheku:libwheelpicker')
+    // https://github.com/shaohui10086/BottomDialog
+//    api 'me.shaohui:bottomdialog:1.1.9'
+    api project(':commonlibs:bhunheku:llibbottomdialog')
+    // https://github.com/KunMinX/Linkage-RecyclerView
+//    api 'com.kunminx.linkage:linkage-recyclerview:2.3.5'
+    api project(':commonlibs:bhunheku:liblinkagerecyclerview')
+    // https://github.com/LuckSiege/PictureSelector
+    api project(':commonlibs:cyewulibs:slbpictureselector')
+    // https://github.com/ethanhua/Skeleton
+//    api 'com.ethanhua:skeleton:1.1.2'
+    // https://github.com/team-supercharge/ShimmerLayout
+//    api 'io.supercharge:shimmerlayout:2.1.0'
+    api project(':commonlibs:bhunheku:libskeleton')
+    // https://github.com/drawthink/ExpandableRecyclerView
+//    api 'com.drawthink:expandable-recyclerview:0.0.3'
+    api project(':commonlibs:bhunheku:libexpandablerecyclerview')
+    // app升级
+    api project(':commonlibs:bhunheku:libupdateapputilsold')
+    // https://github.com/teprinciple/UpdateAppUtils
+//    api 'com.teprinciple:updateapputilsx:2.3.0'
+    api project(':commonlibs:bhunheku:libupdateapputilsnew')
     // Umeng统计
     api project(':commonlibs:bhunheku:libappumengstatistics')
     // mob分享

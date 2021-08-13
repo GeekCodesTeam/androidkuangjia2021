@@ -46,14 +46,17 @@ public class CroppedTrack extends AbstractTrack {
         this.toSample = (int) toSample;
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return origTrack.getSamples().subList(fromSample, toSample);
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return origTrack.getSampleDescriptionBox();
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         if (origTrack.getDecodingTimeEntries() != null && !origTrack.getDecodingTimeEntries().isEmpty()) {
             // todo optimize! too much long is allocated but then not used
@@ -78,6 +81,7 @@ public class CroppedTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         if (origTrack.getCompositionTimeEntries() != null && !origTrack.getCompositionTimeEntries().isEmpty()) {
             int[] compositionTime = CompositionTimeToSample.blowupCompositionTimes(origTrack.getCompositionTimeEntries());
@@ -101,6 +105,7 @@ public class CroppedTrack extends AbstractTrack {
         }
     }
 
+    @Override
     synchronized public long[] getSyncSamples() {
         if (this.syncSampleArray == null) {
             if (origTrack.getSyncSamples() != null && origTrack.getSyncSamples().length > 0) {
@@ -124,6 +129,7 @@ public class CroppedTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         if (origTrack.getSampleDependencies() != null && !origTrack.getSampleDependencies().isEmpty()) {
             return origTrack.getSampleDependencies().subList(fromSample, toSample);
@@ -132,18 +138,22 @@ public class CroppedTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return origTrack.getTrackMetaData();
     }
 
+    @Override
     public String getHandler() {
         return origTrack.getHandler();
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return origTrack.getMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return origTrack.getSubsampleInformationBox();
     }

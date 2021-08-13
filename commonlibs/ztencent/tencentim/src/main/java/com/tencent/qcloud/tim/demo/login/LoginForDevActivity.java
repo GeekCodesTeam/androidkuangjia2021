@@ -58,6 +58,7 @@ public class LoginForDevActivity extends Activity {
                     @Override
                     public void onError(String module, final int code, final String desc) {
                         runOnUiThread(new Runnable() {
+                            @Override
                             public void run() {
                                 ToastUtil.toastLongMessage(getString(R.string.failed_login_tip) + ", errCode = " + code + ", errInfo = " + desc);
                             }

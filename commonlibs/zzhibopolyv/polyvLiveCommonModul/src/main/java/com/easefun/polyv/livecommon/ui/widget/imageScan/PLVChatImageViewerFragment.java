@@ -1,4 +1,4 @@
-package com.easefun.polyv.livecommon.ui.widget.imageScan;
+package com.easefun.polyv.livecommon.ui.widget.imagescan;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;

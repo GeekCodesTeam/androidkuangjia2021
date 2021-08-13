@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -28,16 +28,22 @@ public class JzvdStdRv extends JzvdStd {
 
     public void setAtList(boolean atList) {
         isAtList = atList;
-        if (isAtList) bottomContainer.setVisibility(GONE);
+        if (isAtList) {
+            bottomContainer.setVisibility(GONE);
+        }
     }
 
     @Override
     public void onClick(View v) {
-        if (isAtList) bottomContainer.setVisibility(GONE);
+        if (isAtList) {
+            bottomContainer.setVisibility(GONE);
+        }
         if (v.getId() == cn.jzvd.R.id.surface_container &&
                 (state == STATE_PLAYING ||
                         state == STATE_PAUSE)) {
-            if (clickUi != null) clickUi.onClickUiToggle();
+            if (clickUi != null) {
+                clickUi.onClickUiToggle();
+            }
         }
         super.onClick(v);
     }
@@ -45,7 +51,9 @@ public class JzvdStdRv extends JzvdStd {
     @Override
     public void startVideo() {
         super.startVideo();
-        if (clickUi != null) clickUi.onClickStart();
+        if (clickUi != null) {
+            clickUi.onClickStart();
+        }
     }
 
     public interface ClickUi {

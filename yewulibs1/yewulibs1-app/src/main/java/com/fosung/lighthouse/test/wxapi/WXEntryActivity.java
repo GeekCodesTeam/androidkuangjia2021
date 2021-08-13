@@ -36,6 +36,7 @@ public class WXEntryActivity extends WechatHandlerActivity implements IWXAPIEven
      * 做点其他的事情，包括根本不打开任何页面
      */
 
+    @Override
     public void onGetMessageFromWXReq(WXMediaMessage msg) {
         if (msg != null) {
             Intent iLaunchMyself = getPackageManager().getLaunchIntentForPackage(getPackageName());
@@ -54,6 +55,7 @@ public class WXEntryActivity extends WechatHandlerActivity implements IWXAPIEven
      * <p>
      * 本Demo只是将信息展示出来，但你可做点其他的事情，而不仅仅只是Toast
      */
+    @Override
     public void onShowMessageFromWXReq(WXMediaMessage msg) {
         if (msg != null && msg.mediaObject != null
                 && (msg.mediaObject instanceof WXAppExtendObject)) {

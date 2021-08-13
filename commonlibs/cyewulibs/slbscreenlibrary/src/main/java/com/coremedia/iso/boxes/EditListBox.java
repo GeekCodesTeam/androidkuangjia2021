@@ -70,6 +70,7 @@ public class EditListBox extends AbstractFullBox {
         this.entries = entries;
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 8;
         if (getVersion() == 1) {
@@ -207,13 +208,21 @@ public class EditListBox extends AbstractFullBox {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Entry entry = (Entry) o;
 
-            if (mediaTime != entry.mediaTime) return false;
-            if (segmentDuration != entry.segmentDuration) return false;
+            if (mediaTime != entry.mediaTime) {
+                return false;
+            }
+            if (segmentDuration != entry.segmentDuration) {
+                return false;
+            }
 
             return true;
         }

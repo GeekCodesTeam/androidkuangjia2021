@@ -42,7 +42,9 @@ public class PIPManagerDk {
     }
 
     public void startFloatWindow() {
-        if (mIsShowing) return;
+        if (mIsShowing) {
+            return;
+        }
         UtilsDk.removeViewFormParent(mVideoView);
         mVideoView.setVideoController(mFloatController);
         mFloatController.setPlayState(mVideoView.getCurrentPlayState());
@@ -53,7 +55,9 @@ public class PIPManagerDk {
     }
 
     public void stopFloatWindow() {
-        if (!mIsShowing) return;
+        if (!mIsShowing) {
+            return;
+        }
         mFloatView.removeFromWindow();
         UtilsDk.removeViewFormParent(mVideoView);
         mIsShowing = false;
@@ -68,17 +72,23 @@ public class PIPManagerDk {
     }
 
     public void pause() {
-        if (mIsShowing) return;
+        if (mIsShowing) {
+            return;
+        }
         mVideoView.pause();
     }
 
     public void resume() {
-        if (mIsShowing) return;
+        if (mIsShowing) {
+            return;
+        }
         mVideoView.resume();
     }
 
     public void reset() {
-        if (mIsShowing) return;
+        if (mIsShowing) {
+            return;
+        }
         UtilsDk.removeViewFormParent(mVideoView);
         mVideoView.release();
         mVideoView.setVideoController(null);

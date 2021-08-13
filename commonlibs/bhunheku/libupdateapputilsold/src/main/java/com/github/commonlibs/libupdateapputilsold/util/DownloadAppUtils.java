@@ -39,8 +39,9 @@ class DownloadAppUtils {
         downloadUpdateApkFilePath = apkLocalPath;
 
         if (!FileApkUtil.isFileExists(downloadUpdateApkFilePath)) {
-            if (UpdateAppUtils.showProgress)
+            if (UpdateAppUtils.showProgress) {
                 UpdateAppUtils.mProgressDialog.show();
+            }
         }
 
         FileDownloader.setup(context);

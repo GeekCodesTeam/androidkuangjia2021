@@ -61,6 +61,7 @@ public class QuicktimeTextTrackImpl extends AbstractTrack {
     }
 
 
+    @Override
     public List<ByteBuffer> getSamples() {
         List<ByteBuffer> samples = new LinkedList<ByteBuffer>();
         long lastEnd = 0;
@@ -86,10 +87,12 @@ public class QuicktimeTextTrackImpl extends AbstractTrack {
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         List<TimeToSampleBox.Entry> stts = new LinkedList<TimeToSampleBox.Entry>();
         long lastEnd = 0;
@@ -106,22 +109,27 @@ public class QuicktimeTextTrackImpl extends AbstractTrack {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "text";
     }
@@ -152,6 +160,7 @@ public class QuicktimeTextTrackImpl extends AbstractTrack {
         }
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         GenericMediaHeaderAtom ghmd = new GenericMediaHeaderAtom();
         ghmd.addBox(new BaseMediaInfoAtom());
@@ -159,6 +168,7 @@ public class QuicktimeTextTrackImpl extends AbstractTrack {
         return ghmd;
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }

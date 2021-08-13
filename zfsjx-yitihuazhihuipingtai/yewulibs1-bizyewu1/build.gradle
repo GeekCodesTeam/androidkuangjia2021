@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply from: '../../assemble_dolast.gradle'
+apply from: './../commonlibs2.gradle'
+def librarys = rootProject.ext.dependencies
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.4.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.4.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.4.2'
+    bxnt_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants')
+    bxny_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants')
+    bxn_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants')
+}

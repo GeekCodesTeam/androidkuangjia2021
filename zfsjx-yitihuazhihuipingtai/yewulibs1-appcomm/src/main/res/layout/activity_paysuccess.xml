@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="328mm"
+        android:background="@drawable/slb_vip_bg39"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="286mm"
+            android:layout_height="170mm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20mm"
+            android:src="@drawable/slb_vip_light3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16mm"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.geek.libglide47.base.GlideImageView
+                android:id="@+id/iv1"
+                android:layout_width="60mm"
+                android:layout_height="60mm"
+                android:layout_marginTop="60mm"
+                android:scaleType="centerCrop"
+                android:src="@drawable/head_moren3"
+                app:siv_border_color="@color/white"
+                app:siv_border_width="3mm"
+                app:siv_pressed_alpha="0.3"
+                app:siv_pressed_color="@color/white_alpha30"
+                app:siv_shape_type="circle" />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10mm"
+                android:text="测试"
+                android:textColor="@color/white"
+                android:textSize="18mm" />
+
+            <TextView
+                android:id="@+id/tv2"
+                style="@style/logincommtextview"
+                android:layout_marginTop="6mm"
+                android:drawableLeft="@drawable/slb_vip_date"
+                android:drawablePadding="6mm"
+                android:gravity="center_vertical"
+                android:text="2019-01-12到期"
+                android:textColor="@color/white"
+                android:textSize="16mm"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:layout_width="200mm"
+                android:layout_height="66mm"
+                android:layout_marginTop="10mm"
+                android:src="@drawable/slb_vip_ktcg3" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="282mm"
+        android:layout_height="180mm"
+        android:layout_below="@+id/ll1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/slb_vip_quanxian3"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30mm"
+                android:layout_marginBottom="10mm"
+                android:text="你现在享有以下特权"
+                android:textColor="@color/color_333333"
+                android:textSize="18mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8mm"
+                android:drawableLeft="@drawable/slb_indicator1"
+                android:drawablePadding="8mm"
+                android:text="365天畅读所有绘本"
+                android:textColor="@color/color_333333"
+                android:textSize="16mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8mm"
+                android:drawableLeft="@drawable/slb_indicator1"
+                android:drawablePadding="8mm"
+                android:text="尊享阅读特色绘本"
+                android:textColor="@color/color_333333"
+                android:textSize="16mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8mm"
+                android:drawableLeft="@drawable/slb_indicator1"
+                android:drawablePadding="8mm"
+                android:text="尊享阅读成长计划"
+                android:textColor="@color/color_333333"
+                android:textSize="16mm" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="24mm"
+        android:layout_height="24mm"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40mm"
+        android:layout_marginRight="20mm"
+        android:src="@drawable/slb_vip_delete39" />
+
+</RelativeLayout>

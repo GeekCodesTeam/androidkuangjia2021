@@ -161,8 +161,9 @@ public class SeqParameterSet extends BitstreamElement {
         }
         boolean vui_parameters_present_flag = reader
                 .readBool("SPS: vui_parameters_present_flag");
-        if (vui_parameters_present_flag)
+        if (vui_parameters_present_flag) {
             sps.vuiParams = ReadVUIParameters(reader);
+        }
 
         reader.readTrailingBits();
 
@@ -244,12 +245,14 @@ public class SeqParameterSet extends BitstreamElement {
         }
         boolean nal_hrd_parameters_present_flag = reader
                 .readBool("VUI: nal_hrd_parameters_present_flag");
-        if (nal_hrd_parameters_present_flag)
+        if (nal_hrd_parameters_present_flag) {
             vuip.nalHRDParams = readHRDParameters(reader);
+        }
         boolean vcl_hrd_parameters_present_flag = reader
                 .readBool("VUI: vcl_hrd_parameters_present_flag");
-        if (vcl_hrd_parameters_present_flag)
+        if (vcl_hrd_parameters_present_flag) {
             vuip.vclHRDParams = readHRDParameters(reader);
+        }
         if (nal_hrd_parameters_present_flag || vcl_hrd_parameters_present_flag) {
             vuip.low_delay_hrd_flag = reader
                     .readBool("VUI: low_delay_hrd_flag");
@@ -307,6 +310,7 @@ public class SeqParameterSet extends BitstreamElement {
         return hrd;
     }
 
+    @Override
     public void write(OutputStream out) throws IOException {
         CAVLCWriter writer = new CAVLCWriter(out);
 
@@ -365,8 +369,9 @@ public class SeqParameterSet extends BitstreamElement {
             writer.writeSE(offset_for_top_to_bottom_field,
                     "SPS: offset_for_top_to_bottom_field");
             writer.writeUE(offsetForRefFrame.length, "SPS: ");
-            for (int i = 0; i < offsetForRefFrame.length; i++)
+            for (int i = 0; i < offsetForRefFrame.length; i++) {
                 writer.writeSE(offsetForRefFrame[i], "SPS: ");
+            }
         }
         writer.writeUE(num_ref_frames, "SPS: num_ref_frames");
         writer.writeBool(gaps_in_frame_num_value_allowed_flag,
@@ -392,8 +397,9 @@ public class SeqParameterSet extends BitstreamElement {
                     "SPS: frame_crop_bottom_offset");
         }
         writer.writeBool(vuiParams != null, "SPS: ");
-        if (vuiParams != null)
+        if (vuiParams != null) {
             writeVUIParameters(vuiParams, writer);
+        }
 
         writer.writeTrailingBits();
     }

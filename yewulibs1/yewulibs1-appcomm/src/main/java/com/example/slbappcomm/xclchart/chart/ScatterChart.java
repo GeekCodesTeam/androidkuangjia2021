@@ -80,15 +80,17 @@ public class ScatterChart extends LnChart {
 	@Override
 	protected void categoryAxisDefaultSetting()
 	{		
-		if(null != categoryAxis)
-			categoryAxis.setHorizontalTickAlign(Align.CENTER);					
+		if(null != categoryAxis) {
+            categoryAxis.setHorizontalTickAlign(Align.CENTER);
+        }
 	}
 	
 	@Override
 	protected void dataAxisDefaultSetting()
 	{		
-		if(null != dataAxis)
-			dataAxis.setHorizontalTickAlign(Align.LEFT);	
+		if(null != dataAxis) {
+            dataAxis.setHorizontalTickAlign(Align.LEFT);
+        }
 	}
 		
 	/**
@@ -97,7 +99,9 @@ public class ScatterChart extends LnChart {
 	 */
 	public void setCategories( List<String> categories)
 	{
-		if(null != categoryAxis)categoryAxis.setDataBuilding(categories);
+		if(null != categoryAxis) {
+            categoryAxis.setDataBuilding(categories);
+        }
 	}
 	
 	/**
@@ -166,7 +170,9 @@ public class ScatterChart extends LnChart {
 	 */
 	public PlotQuadrant getPlotQuadrant()
 	{
-		if(null == mPlotQuadrant) mPlotQuadrant = new PlotQuadrantRender();
+		if(null == mPlotQuadrant) {
+            mPlotQuadrant = new PlotQuadrantRender();
+        }
 		return mPlotQuadrant;
 	}
 	
@@ -190,7 +196,9 @@ public class ScatterChart extends LnChart {
 	 */
 	private void drawQuadrant(Canvas canvas )
 	{
-		if(!getPlotQuadrant().isShow())return;
+		if(!getPlotQuadrant().isShow()) {
+            return;
+        }
 		
 		//float axisScreenWidth = getPlotScreenWidth(); 
     	//float axisScreenHeight = getPlotScreenHeight();
@@ -244,7 +252,9 @@ public class ScatterChart extends LnChart {
 	
 		//得到标签对应的值数据集		
 		List<PointD> chartValues = bd.getDataSet();
-		if(null == chartValues) return ;
+		if(null == chartValues) {
+            return ;
+        }
 															
 	    //画出数据集对应的线条				
 		float YvaluePos = 0.0f,XvaluePos =0.0f;

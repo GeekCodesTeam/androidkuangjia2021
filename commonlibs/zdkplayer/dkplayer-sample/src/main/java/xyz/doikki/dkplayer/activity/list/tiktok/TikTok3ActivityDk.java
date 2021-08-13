@@ -125,7 +125,9 @@ public class TikTok3ActivityDk extends BaseActivityDk<VideoView> {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                if (position == mCurPos) return;
+                if (position == mCurPos) {
+                    return;
+                }
                 mViewPager.post(new Runnable() {
                     @Override
                     public void run() {

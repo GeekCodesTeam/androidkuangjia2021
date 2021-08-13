@@ -63,15 +63,26 @@ public class FullyGridLayoutManager extends GridLayoutManager {
         switch (widthMode) {
             case View.MeasureSpec.EXACTLY:
                 width = widthSize;
+                break;
             case View.MeasureSpec.AT_MOST:
+                break;
             case View.MeasureSpec.UNSPECIFIED:
+                break;
+            default:
+                break;
+
         }
 
         switch (heightMode) {
             case View.MeasureSpec.EXACTLY:
                 height = heightSize;
+                break;
             case View.MeasureSpec.AT_MOST:
+                break;
             case View.MeasureSpec.UNSPECIFIED:
+                break;
+            default:
+                break;
         }
 
         setMeasuredDimension(width, height);

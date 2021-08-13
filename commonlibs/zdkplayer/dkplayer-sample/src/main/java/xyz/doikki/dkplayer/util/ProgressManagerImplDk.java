@@ -1,7 +1,8 @@
 package xyz.doikki.dkplayer.util;
 
-import androidx.collection.LruCache;
 import android.text.TextUtils;
+
+import androidx.collection.LruCache;
 
 import xyz.doikki.videoplayer.player.ProgressManager;
 
@@ -12,7 +13,9 @@ public class ProgressManagerImplDk extends ProgressManager {
 
     @Override
     public void saveProgress(String url, long progress) {
-        if (TextUtils.isEmpty(url)) return;
+        if (TextUtils.isEmpty(url)) {
+            return;
+        }
         if (progress == 0) {
             clearSavedProgressByUrl(url);
             return;
@@ -22,9 +25,14 @@ public class ProgressManagerImplDk extends ProgressManager {
 
     @Override
     public long getSavedProgress(String url) {
-        if (TextUtils.isEmpty(url)) return 0;
-        Long pro = mCache.get(url.hashCode());
-        if (pro == null) return 0;
+        Long pro = null;
+        if (TextUtils.isEmpty(url)) {
+            return 0;
+        }
+        pro = mCache.get(url.hashCode());
+        if (pro == null) {
+            return 0;
+        }
         return pro;
     }
 

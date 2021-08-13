@@ -85,11 +85,12 @@ public class HrCardView extends FrameLayout {
         if (mMember == null) {
             reset();
         } else {
-            if (!TextUtils.isEmpty(mMember.getHeadImgUrl()))
+            if (!TextUtils.isEmpty(mMember.getHeadImgUrl())) {
                 Glide.with(mContext)
                         .load(mMember.getHeadImgUrl()).placeholder(R.drawable.lololo)
                         .transform(new GlideCircleTransform(mContext)).dontAnimate()
                         .into(headIv);
+            }
             nameTv.setText(mMember.getNickname());
             if (member.getCal() > 0) {
                 calTv.setText(((int) member.getCal()) + "");
@@ -104,8 +105,9 @@ public class HrCardView extends FrameLayout {
     private int oldIndex;
 
     public void setHr(Member member) {
-        if (member == null || member.getHr() == 0)
+        if (member == null || member.getHr() == 0) {
             return;
+        }
         if (hrIv != null) {
             hrTv.setText(member.getHr() + "");
         }
@@ -115,12 +117,15 @@ public class HrCardView extends FrameLayout {
             calTv.setText(String .format("%.2f",member.getCal()));
         }
         int percent = member.getHr() * 100 / member.getMaxhr();
-        if (percentTv != null)
+        if (percentTv != null) {
             percentTv.setText(percent + "");
-        if (tv_bmi != null)
+        }
+        if (tv_bmi != null) {
             tv_bmi.setText("BMI：" + member.getBmi());
-        if (tv_tizhi != null)
+        }
+        if (tv_tizhi != null) {
             tv_tizhi.setText("体脂：" + member.getTizhi());
+        }
 //        MemberBeanSqlite.changeData2(mContext, member);
         //背景颜色渐变
         if (ll_wrap != null && member != null && member.getMaxhr() != 0) {

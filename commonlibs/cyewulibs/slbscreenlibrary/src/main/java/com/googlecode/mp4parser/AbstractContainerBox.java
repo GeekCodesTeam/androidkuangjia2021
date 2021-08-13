@@ -54,19 +54,23 @@ public abstract class AbstractContainerBox extends AbstractBox implements Contai
         super(type);
     }
 
+    @Override
     public List<Box> getBoxes() {
         return Collections.unmodifiableList(boxes);
     }
 
+    @Override
     public void setBoxes(List<Box> boxes) {
         this.boxes = new LinkedList<Box>(boxes);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz) {
         return getBoxes(clazz, false);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz, boolean recursive) {
         List<T> boxesToBeReturned = new ArrayList<T>(2);
@@ -112,6 +116,7 @@ public abstract class AbstractContainerBox extends AbstractBox implements Contai
     }
 
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
 
@@ -132,6 +137,7 @@ public abstract class AbstractContainerBox extends AbstractBox implements Contai
      *
      * @return offset to first child box
      */
+    @Override
     public long getNumOfBytesToFirstChild() {
         return 8;
     }

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class CropImageView extends ImageViewTouchBase {
 
-    public  ArrayList<HighlightView> highlightViews = new ArrayList<HighlightView>();
-    public  HighlightView motionHighlightView;
+    public ArrayList<HighlightView> highlightViews = new ArrayList<HighlightView>();
+    public HighlightView motionHighlightView;
     public Context context;
 
     private float lastX;
@@ -94,45 +94,47 @@ public class CropImageView extends ImageViewTouchBase {
         }
 
         switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-            for (HighlightView hv : highlightViews) {
-                int edge = hv.getHit(event.getX(), event.getY());
-                if (edge != HighlightView.GROW_NONE) {
-                    motionEdge = edge;
-                    motionHighlightView = hv;
+            case MotionEvent.ACTION_DOWN:
+                for (HighlightView hv : highlightViews) {
+                    int edge = hv.getHit(event.getX(), event.getY());
+                    if (edge != HighlightView.GROW_NONE) {
+                        motionEdge = edge;
+                        motionHighlightView = hv;
+                        lastX = event.getX();
+                        lastY = event.getY();
+                        // Prevent multiple touches from interfering with crop area re-sizing
+                        validPointerId = event.getPointerId(event.getActionIndex());
+                        motionHighlightView.setMode((edge == HighlightView.MOVE)
+                                ? HighlightView.ModifyMode.Move
+                                : HighlightView.ModifyMode.Grow);
+                        break;
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                if (motionHighlightView != null) {
+                    centerBasedOnHighlightView(motionHighlightView);
+                    motionHighlightView.setMode(HighlightView.ModifyMode.None);
+                }
+                motionHighlightView = null;
+                center();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (motionHighlightView != null && event.getPointerId(event.getActionIndex()) == validPointerId) {
+                    motionHighlightView.handleMotion(motionEdge, event.getX()
+                            - lastX, event.getY() - lastY);
                     lastX = event.getX();
                     lastY = event.getY();
-                    // Prevent multiple touches from interfering with crop area re-sizing
-                    validPointerId = event.getPointerId(event.getActionIndex());
-                    motionHighlightView.setMode((edge == HighlightView.MOVE)
-                            ? HighlightView.ModifyMode.Move
-                            : HighlightView.ModifyMode.Grow);
-                    break;
                 }
-            }
-            break;
-        case MotionEvent.ACTION_UP:
-            if (motionHighlightView != null) {
-                centerBasedOnHighlightView(motionHighlightView);
-                motionHighlightView.setMode(HighlightView.ModifyMode.None);
-            }
-            motionHighlightView = null;
-            center();
-            break;
-        case MotionEvent.ACTION_MOVE:
-            if (motionHighlightView != null && event.getPointerId(event.getActionIndex()) == validPointerId) {
-                motionHighlightView.handleMotion(motionEdge, event.getX()
-                        - lastX, event.getY() - lastY);
-                lastX = event.getX();
-                lastY = event.getY();
-            }
 
-            // If we're not zoomed then there's no point in even allowing the user to move the image around.
-            // This call to center puts it back to the normalized location.
-            if (getScale() == 1F) {
-                center();
-            }
-            break;
+                // If we're not zoomed then there's no point in even allowing the user to move the image around.
+                // This call to center puts it back to the normalized location.
+                if (getScale() == 1F) {
+                    center();
+                }
+                break;
+            default:
+                break;
         }
 
         return true;
@@ -175,7 +177,7 @@ public class CropImageView extends ImageViewTouchBase {
         zoom = Math.max(1F, zoom);
 
         if ((Math.abs(zoom - getScale()) / zoom) > .1) {
-            float[] coordinates = new float[] { hv.cropRect.centerX(), hv.cropRect.centerY() };
+            float[] coordinates = new float[]{hv.cropRect.centerX(), hv.cropRect.centerY()};
             getUnrotatedMatrix().mapPoints(coordinates);
             zoomTo(zoom, coordinates[0], coordinates[1], 300F);
         }

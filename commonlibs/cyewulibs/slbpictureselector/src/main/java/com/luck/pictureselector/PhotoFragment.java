@@ -616,6 +616,8 @@ public class PhotoFragment extends Fragment implements View.OnClickListener,
                     mAdapter.setList(selectList);
                     mAdapter.notifyDataSetChanged();
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -1216,6 +1218,8 @@ public class PhotoFragment extends Fragment implements View.OnClickListener,
                                 getString(R.string.picture_jurisdiction), Toast.LENGTH_SHORT).show();
                     }
                 }
+                break;
+            default:
                 break;
         }
     }

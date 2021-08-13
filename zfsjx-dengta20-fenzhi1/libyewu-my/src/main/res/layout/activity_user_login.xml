@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:paddingLeft="22mm"
+    android:paddingTop="80mm"
+    android:paddingRight="22mm"
+    android:scrollbars="none"
+    tools:context=".account.activity.UserLoginAct">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50mm"
+            android:text="登录管理员账号"
+            android:textColor="#ff333333"
+            android:textSize="21mm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40mm"
+            android:text="身份证号"
+            android:textColor="#ff333333"
+            android:textSize="12mm" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_idcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15mm"
+            android:background="@null"
+            android:hint="请输入身份证号"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:textColor="#ffcccccc"
+            android:textSize="16mm" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1mm"
+            android:layout_marginTop="10mm"
+            android:background="#ffe6e6e6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15mm"
+            android:text="密码"
+            android:textColor="#ff333333"
+            android:textSize="12mm" />
+
+
+        <com.fosung.lighthouse.my.widget.SeeEditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15mm"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:maxLines="1"
+            android:maxLength="25"
+            android:textColor="#ffcccccc"
+            android:textSize="16mm" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1mm"
+            android:layout_marginTop="10mm"
+            android:background="#ffe6e6e6" />
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="44mm"
+            android:layout_marginTop="50mm"
+            android:background="@drawable/yhjh_sel_red"
+            android:text="立即登录"
+            android:textColor="@color/white"
+            android:textSize="15mm" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15mm">
+
+            <TextView
+                android:id="@+id/tv_activation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户激活"
+                android:textColor="#ffc50405"
+                android:textSize="15mm"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_forget_pas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码？"
+                android:textColor="#ffc50405"
+                android:textSize="15mm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

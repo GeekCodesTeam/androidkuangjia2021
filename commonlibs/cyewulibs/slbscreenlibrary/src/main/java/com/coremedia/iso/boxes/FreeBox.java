@@ -57,6 +57,7 @@ public class FreeBox implements Box {
         this.data = data;
     }
 
+    @Override
     public void getBox(WritableByteChannel os) throws IOException {
         for (Box replacer : replacers) {
             replacer.getBox(os);
@@ -71,14 +72,17 @@ public class FreeBox implements Box {
 
     }
 
+    @Override
     public ContainerBox getParent() {
         return parent;
     }
 
+    @Override
     public void setParent(ContainerBox parent) {
         this.parent = parent;
     }
 
+    @Override
     public long getSize() {
         long size = 8;
         for (Box replacer : replacers) {
@@ -88,10 +92,12 @@ public class FreeBox implements Box {
         return size;
     }
 
+    @Override
     public String getType() {
         return TYPE;
     }
 
+    @Override
     public void parse(ReadableByteChannel readableByteChannel, ByteBuffer header, long contentSize, BoxParser boxParser) throws IOException {
         if (readableByteChannel instanceof FileChannel && contentSize > 1024 * 1024) {
             // It's quite expensive to map a file into the memory. Just do it when the box is larger than a MB.

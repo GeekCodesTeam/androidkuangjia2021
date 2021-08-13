@@ -19,8 +19,9 @@ public class PLVImageUtils {
 
     public static Bitmap compressImage(String filePath) throws Exception {
         File file = new File(filePath);
-        if (!file.isFile() || file.length() < ALLOW_LENGTH / 2)
+        if (!file.isFile() || file.length() < ALLOW_LENGTH / 2) {
             return null;
+        }
         //13.4m-80-5.3m，60-3.3m，40-2.3m，20-1.1m
         long rate = file.length() / (1024 * 1024);
         final int startQuality;
@@ -74,14 +75,16 @@ public class PLVImageUtils {
             }
             out = new FileOutputStream(outputFile);
             boolean result = bm.compress(Bitmap.CompressFormat.JPEG, quality, out);//可以为0
-            if (!result)
+            if (!result) {
                 throw new Exception("compress fail");
+            }
         } catch (Exception e) {
             throw e;
         }
         finally {
-            if (out != null)
+            if (out != null) {
                 out.close();
+            }
         }
         return outputFile.getPath();
     }

@@ -125,7 +125,8 @@ public class VideoFragment extends Fragment {
             VideoModel videoModel = new VideoModel();
             dataList.add(videoModel);
         }
-        if (recyclerBaseAdapter != null)
+        if (recyclerBaseAdapter != null) {
             recyclerBaseAdapter.notifyDataSetChanged();
+        }
     }
 }

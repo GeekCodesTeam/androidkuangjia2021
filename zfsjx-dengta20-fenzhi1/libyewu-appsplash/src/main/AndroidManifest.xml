@@ -1,0 +1,523 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.slbappsplash">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_nameappsplash"
+        android:supportsRtl="true">
+
+        <!--原Activity enabled固定为false，且不通过代码进行设置 这个MainActivity设置enabled为false后就不能再通过显式intent调用了，会有报错信息。-->
+        <activity
+            android:name=".welcome.WelComeActivity"
+            android:enabled="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+
+            <!--            &lt;!&ndash;jpush applink&ndash;&gt;-->
+            <!--            <intent-filter>-->
+            <!--                <data android:scheme="geek001"/>-->
+            <!--                <action android:name="android.intent.action.VIEW" />-->
+            <!--                <category android:name="android.intent.category.DEFAULT" />-->
+            <!--                <category android:name="android.intent.category.BROWSABLE" />-->
+            <!--            </intent-filter>-->
+            <!--            &lt;!&ndash;jpush applink&ndash;&gt;-->
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.VIEW" />-->
+
+            <!--                <category android:name="android.intent.category.DEFAULT" />-->
+            <!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+            <!--                <data-->
+            <!--                    android:host="bfxhqt.jglinks.cn"-->
+            <!--                    android:path="/welcome"-->
+            <!--                    android:scheme="https" />-->
+            <!--            </intent-filter>-->
+        </activity>
+        <!-- 固定设置一个默认的别名，用来替代原Activity-->
+        <activity-alias
+            android:name="DefaultAlias"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_nameappsplash0"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名1，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity1"
+            android:enabled="false"
+            android:icon="@drawable/ic_web_close"
+            android:label="@string/app_nameappsplash1"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名2，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity2"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash2"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名3，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity3"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash3"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名4，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity4"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash4"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名5，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity5"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash5"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名6，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity6"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash6"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名7，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity7"
+            android:enabled="false"
+            android:icon="@drawable/slb_left_back2"
+            android:label="@string/app_nameappsplash7"
+            android:targetActivity=".welcome.WelComeActivity"
+            android:theme="@style/HXKTThemeSplash">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WelComeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cs.znclass.com"
+                    android:path="/geek/welcome"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity-alias>
+
+
+        <activity
+            android:name=".welcome.ChangeIconActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ChangeIconActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".welcome.SplshActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SplshActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AdActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="hs.act.slbapp.AdActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".welcome.HIOSAdActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/HXKTThemeSplash2">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HIOSAdActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HIOSAdActivityBeifen"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="hs.act.slbapp.HIOSAdActivityBeifen" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HIOSAdActivityLinshi"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="hs.act.slbapp.HIOSAdActivityLinshi" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HIOSAdActivityLinshi2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="hs.act.slbapp.HIOSAdActivityLinshi2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

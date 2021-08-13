@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.util.PIPManagerDk;
-import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
+import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.VideoView;
 
 public class PipControlViewDk extends FrameLayout implements IControlComponent, View.OnClickListener {
@@ -79,13 +79,15 @@ public class PipControlViewDk extends FrameLayout implements IControlComponent, 
     @Override
     public void onVisibilityChanged(boolean isVisible, Animation anim) {
         if (isVisible) {
-            if (mPlay.getVisibility() == VISIBLE)
+            if (mPlay.getVisibility() == VISIBLE) {
                 return;
+            }
             mPlay.setVisibility(VISIBLE);
             mPlay.startAnimation(anim);
         } else {
-            if (mPlay.getVisibility() == GONE)
+            if (mPlay.getVisibility() == GONE) {
                 return;
+            }
             mPlay.setVisibility(GONE);
             mPlay.startAnimation(anim);
         }
@@ -133,6 +135,8 @@ public class PipControlViewDk extends FrameLayout implements IControlComponent, 
                 break;
             case VideoView.STATE_PLAYBACK_COMPLETED:
                 bringToFront();
+                break;
+            default:
                 break;
         }
     }

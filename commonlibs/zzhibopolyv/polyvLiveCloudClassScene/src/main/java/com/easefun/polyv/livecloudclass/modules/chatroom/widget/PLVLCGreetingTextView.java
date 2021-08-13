@@ -89,14 +89,16 @@ public class PLVLCGreetingTextView extends PLVMarqueeTextView {
             int ls = 0;
             for (int i = 0; i <= 2; i++) {
                 PLVLoginEvent loginEvent = loginEventList.get(i);
-                if (i != 2)
+                if (i != 2) {
                     stringBuilder.append(loginEvent.getUser().getNick()).append("、");
-                else
+                } else {
                     stringBuilder.append(loginEvent.getUser().getNick());
-                if (i == 0)
+                }
+                if (i == 0) {
                     lf = stringBuilder.toString().length() - 1;
-                else if (i == 1)
+                } else if (i == 1) {
                     ls = stringBuilder.toString().length() - lf - 2;
+                }
             }
             span = new SpannableStringBuilder("欢迎 " + stringBuilder.toString() + " 等" + loginEventList.size() + "人加入");
             span.setSpan(new ForegroundColorSpan(Color.rgb(129, 147, 199)), 3, 3 + lf, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

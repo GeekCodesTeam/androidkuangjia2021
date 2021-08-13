@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_nameappindex" translatable="false">yewulibs-demo1-appindex</string>
+    <string name="index_title_common_webView" translatable="false">公共h5</string>
+
+</resources>

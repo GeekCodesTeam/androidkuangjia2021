@@ -92,7 +92,9 @@ public class PreloadTaskDk implements Runnable {
      * 将预加载任务提交到线程池，准备执行
      */
     public void executeOn(ExecutorService executorService) {
-        if (mIsExecuted) return;
+        if (mIsExecuted) {
+            return;
+        }
         mIsExecuted = true;
         executorService.submit(this);
     }

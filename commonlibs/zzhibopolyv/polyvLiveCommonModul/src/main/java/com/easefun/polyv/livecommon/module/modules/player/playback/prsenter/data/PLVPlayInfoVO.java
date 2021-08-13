@@ -10,6 +10,11 @@ public class PLVPlayInfoVO {
     private boolean isPlaying;
     private boolean isSubVideoViewPlaying;
 
+    @Override
+    public String toString() {
+        return "Super{" + "firstName=" + isPlaying + '\'' + '}';
+    }
+
     private PLVPlayInfoVO(Builder builder) {
         position = builder.position;
         totalTime = builder.totalTime;

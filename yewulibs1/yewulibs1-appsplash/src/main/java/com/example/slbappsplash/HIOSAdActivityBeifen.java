@@ -69,7 +69,7 @@ public class HIOSAdActivityBeifen extends WebViewActivity implements View.OnClic
 
     private void jump() {
         String key_token = (String) SPUtils.getInstance().getString("key_token", "");
-        if (key_token.equals("")) {
+        if ("".equals(key_token)) {
             startActivity(new Intent(getApplicationContext(), SplshActivity.class));
             finish();
         } else {

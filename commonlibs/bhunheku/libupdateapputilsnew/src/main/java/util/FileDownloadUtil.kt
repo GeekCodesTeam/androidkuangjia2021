@@ -3,6 +3,7 @@ package util
 import extension.log
 import extension.no
 import extension.yes
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -31,6 +32,7 @@ internal object FileDownloadUtil {
      * @param onComplete 下载完成回调
      * @param onError 下载失败回调
      */
+    @DelicateCoroutinesApi
     fun download(
         url: String,
         fileSavePath: String,

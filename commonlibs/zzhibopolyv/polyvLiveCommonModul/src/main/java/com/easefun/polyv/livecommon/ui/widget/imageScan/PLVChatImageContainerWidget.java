@@ -1,4 +1,4 @@
-package com.easefun.polyv.livecommon.ui.widget.imageScan;
+package com.easefun.polyv.livecommon.ui.widget.imagescan;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

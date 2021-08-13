@@ -64,7 +64,7 @@ public class DetailNormalActivityPlayer extends Activity {
         //初始化不打开外部的旋转
         orientationUtils.setEnable(false);
 
-        Map<String, String> header = new HashMap<>();
+        Map<String, String> header = new HashMap<>(16);
         header.put("ee", "33");
         header.put("allowCrossProtocolRedirects", "true");
         GSYVideoOptionBuilder gsyVideoOption = new GSYVideoOptionBuilder();
@@ -187,8 +187,9 @@ public class DetailNormalActivityPlayer extends Activity {
             getCurPlay().release();
         }
         //GSYPreViewManager.instance().releaseMediaPlayer();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 

@@ -83,7 +83,9 @@ public class ChartTouch implements IChartTouch {
 	
 	 public void handleTouch_Scale(MotionEvent event) 
 	 {  		 		 
-		 if(null == mChart || !mChart.getScaleStatus())return;			 
+		 if(null == mChart || !mChart.getScaleStatus()) {
+             return;
+         }
 			 
 		 switch(event.getActionMasked())
 		 {
@@ -103,7 +105,9 @@ public class ChartTouch implements IChartTouch {
                 if( Float.compare(newDist, 10.0f) == 1){
                 	halfDist = newDist/2 ;
                 	
-                	if(Float.compare(oldDist, 0.0f) == 0) return;                	
+                	if(Float.compare(oldDist, 0.0f) == 0) {
+                        return;
+                    }
                 	scaleRate = newDist/oldDist ;		 
                 	/**
                 	 * 目前是采用焦点在哪就以哪范围为中心放大缩小.              
@@ -111,9 +115,10 @@ public class ChartTouch implements IChartTouch {
                 		mChart.setScale(scaleRate ,scaleRate, 
                 				event.getX() - halfDist,event.getY() - halfDist );		                    
                    
-                	if(null != mView)
-                		mView.invalidate((int)mChart.getLeft(), (int)mChart.getTop(), 
-           				 			 	 (int)mChart.getRight(), (int)mChart.getBottom());
+                	if(null != mView) {
+                        mView.invalidate((int)mChart.getLeft(), (int)mChart.getTop(),
+                                              (int)mChart.getRight(), (int)mChart.getBottom());
+                    }
                 }	        		        	
 		 		break;		 		
 			 default:
@@ -173,12 +178,18 @@ public class ChartTouch implements IChartTouch {
 								float newX, float newY ) {
 			// TODO Auto-generated method stub
 			
-			if(null == mChart) return;
-			if(null == mView) return;
+			if(null == mChart) {
+                return;
+            }
+			if(null == mView) {
+                return;
+            }
 			
 			float xx = 0.0f,yy = 0.0f;		          
 	        float[] txy = mChart.getTranslateXY();		   
-	        if(null == txy) return;
+	        if(null == txy) {
+                return;
+            }
 	        xx =  txy[0];
 	        yy =  txy[1];
 	        

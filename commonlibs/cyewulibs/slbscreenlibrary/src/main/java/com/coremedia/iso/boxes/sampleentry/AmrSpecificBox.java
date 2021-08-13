@@ -62,6 +62,7 @@ public class AmrSpecificBox extends AbstractBox {
         return framesPerSample;
     }
 
+    @Override
     protected long getContentSize() {
         return 9;
     }
@@ -80,6 +81,7 @@ public class AmrSpecificBox extends AbstractBox {
     }
 
 
+    @Override
     public void getContent(ByteBuffer byteBuffer) {
         byteBuffer.put(IsoFile.fourCCtoBytes(vendor));
         IsoTypeWriter.writeUInt8(byteBuffer, decoderVersion);
@@ -88,6 +90,7 @@ public class AmrSpecificBox extends AbstractBox {
         IsoTypeWriter.writeUInt8(byteBuffer, framesPerSample);
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("AmrSpecificBox[vendor=").append(getVendor());

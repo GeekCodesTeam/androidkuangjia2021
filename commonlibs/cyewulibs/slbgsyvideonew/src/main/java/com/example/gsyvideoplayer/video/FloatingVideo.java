@@ -25,7 +25,7 @@ import java.util.Timer;
 
 public class FloatingVideo extends StandardGSYVideoPlayer {
 
-    protected Timer mDismissControlViewTimer;
+//    protected Timer mDismissControlViewTimer;
 
     /**
      * 1.5.0开始加入，如果需要不同布局区分功能，需要重载
@@ -55,8 +55,9 @@ public class FloatingVideo extends StandardGSYVideoPlayer {
         mTextureViewContainer = (ViewGroup) findViewById(R.id.surface_container);
         mStartButton = findViewById(R.id.start);
 
-        if (isInEditMode())
+        if (isInEditMode()) {
             return;
+        }
         mScreenWidth = getActivityContext().getResources().getDisplayMetrics().widthPixels;
         mScreenHeight = getActivityContext().getResources().getDisplayMetrics().heightPixels;
         mAudioManager = (AudioManager) getActivityContext().getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
@@ -100,8 +101,9 @@ public class FloatingVideo extends StandardGSYVideoPlayer {
             mTextureViewContainer.removeAllViews();
         }
 
-        if (!mIfCurrentIsFullscreen)
+        if (!mIfCurrentIsFullscreen) {
             getGSYVideoManager().setLastListener(null);
+        }
         mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
         //((Activity) getActivityContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 

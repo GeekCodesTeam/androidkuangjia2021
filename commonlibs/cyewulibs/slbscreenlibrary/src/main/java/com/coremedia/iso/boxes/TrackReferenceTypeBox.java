@@ -57,10 +57,12 @@ public class TrackReferenceTypeBox extends AbstractBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         return trackIds.length * 4;
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("TrackReferenceTypeBox[type=").append(getType());

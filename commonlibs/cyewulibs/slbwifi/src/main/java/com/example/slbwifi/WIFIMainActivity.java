@@ -26,7 +26,6 @@ public class WIFIMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_wifi);
         OpenDroidUtil.setup(this);
         MmkvUtilsWifi.getInstance().get("");
-//        Bugly.init(getApplicationContext(), "973ebfde25", true);
         WifiUtil.autoSwitchWifi(WIFIMainActivity.this);//请求升级数据失败，可能是没有网络，重启WIFI模块
 //        WifiUtil.autoSwitchWifi(MainActivity.this);//请求升级数据失败，可能是没有网络，重启WIFI模块
         findViewById(R.id.tv_content).setOnClickListener(new View.OnClickListener() {

@@ -3,5 +3,5 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation librarys.blankj
 }

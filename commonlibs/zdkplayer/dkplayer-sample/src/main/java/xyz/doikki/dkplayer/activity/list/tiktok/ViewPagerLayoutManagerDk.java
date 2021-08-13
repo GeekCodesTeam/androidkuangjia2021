@@ -80,9 +80,13 @@ public class ViewPagerLayoutManagerDk extends LinearLayoutManager implements Rec
     @Override
     public void onChildViewDetachedFromWindow(@NonNull View view) {
         if (mDrift >= 0){
-            if (mOnViewPagerListener != null) mOnViewPagerListener.onPageRelease(true,getPosition(view));
+            if (mOnViewPagerListener != null) {
+                mOnViewPagerListener.onPageRelease(true,getPosition(view));
+            }
         }else {
-            if (mOnViewPagerListener != null) mOnViewPagerListener.onPageRelease(false,getPosition(view));
+            if (mOnViewPagerListener != null) {
+                mOnViewPagerListener.onPageRelease(false,getPosition(view));
+            }
         }
     }
 }

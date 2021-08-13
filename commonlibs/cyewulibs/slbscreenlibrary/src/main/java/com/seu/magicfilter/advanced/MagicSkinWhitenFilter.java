@@ -39,6 +39,7 @@ public class MagicSkinWhitenFilter extends GPUImageFilter {
     protected void onInitialized() {
         super.onInitialized();
         runOnDraw(new Runnable() {
+            @Override
             public void run() {
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE3);
                 GLES20.glGenTextures(1, mToneCurveTexture, 0);

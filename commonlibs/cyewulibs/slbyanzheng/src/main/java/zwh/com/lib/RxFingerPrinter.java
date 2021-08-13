@@ -60,9 +60,7 @@ public class RxFingerPrinter implements LifecycleListener {
             fragment = new SupportFingerPrinterManagerFragment();
             FragmentManager fragmentManager = activity.getFragmentManager();
             fragmentManager
-                    .beginTransaction()
-                    .add(fragment, TAG)
-                    .commitAllowingStateLoss();
+                    .beginTransaction().add(fragment, TAG).commit();
             fragmentManager.executePendingTransactions();
             fragment.getLifecycle().addListener(this);
         }

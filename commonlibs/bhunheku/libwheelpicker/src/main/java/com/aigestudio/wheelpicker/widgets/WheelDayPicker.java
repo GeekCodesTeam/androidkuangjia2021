@@ -54,8 +54,9 @@ public class WheelDayPicker extends WheelPicker implements IWheelDayPicker {
         List<Integer> data = DAYS.get(days);
         if (null == data) {
             data = new ArrayList<>();
-            for (int i = 1; i <= days; i++)
+            for (int i = 1; i <= days; i++) {
                 data.add(i);
+            }
             DAYS.put(days, data);
         }
         super.setData(data);

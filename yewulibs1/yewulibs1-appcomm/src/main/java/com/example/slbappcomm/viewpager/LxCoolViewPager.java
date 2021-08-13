@@ -420,8 +420,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
 
         static ScrollMode getScrollMode(int id) {
             for (ScrollMode scrollMode : values()) {
-                if (scrollMode.id == id)
+                if (scrollMode.id == id) {
                     return scrollMode;
+                }
             }
             throw new IllegalArgumentException();
         }
@@ -1098,7 +1099,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         } else {
             mDrawingOrder = DRAW_ORDER_DEFAULT;
         }
-        if (needsPopulate) populate();
+        if (needsPopulate) {
+            populate();
+        }
     }
 
     @Override
@@ -1195,7 +1198,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
      */
     public void setPageMarginDrawable(@Nullable Drawable d) {
         mMarginDrawable = d;
-        if (d != null) refreshDrawableState();
+        if (d != null) {
+            refreshDrawableState();
+        }
         setWillNotDraw(d == null);
         invalidate();
     }
@@ -1419,7 +1424,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         // fling to a new position until we have finished the scroll to
         // that position, avoiding glitches from happening at that point.
         if (mPopulatePending) {
-            if (DEBUG) Log.i(TAG, "populate is pending, skipping for now...");
+            if (DEBUG) {
+                Log.i(TAG, "populate is pending, skipping for now...");
+            }
             sortChildDrawingOrder();
             return;
         }
@@ -1459,7 +1466,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         for (curIndex = 0; curIndex < mItems.size(); curIndex++) {
             final ItemInfo ii = mItems.get(curIndex);
             if (ii.position >= mCurItem) {
-                if (ii.position == mCurItem) curItem = ii;
+                if (ii.position == mCurItem) {
+                    curItem = ii;
+                }
                 break;
             }
         }
@@ -1670,7 +1679,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
             }
             offset -= ii.widthFactor + marginOffset;
             ii.offset = offset;
-            if (ii.position == 0) mFirstOffset = offset;
+            if (ii.position == 0) {
+                mFirstOffset = offset;
+            }
         }
         offset = curItem.offset + curItem.widthFactor + marginOffset;
         pos = curItem.position + 1;
@@ -1720,11 +1731,13 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         }
 
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                 return new SavedState(in, loader);
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in, null);
@@ -2183,7 +2196,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
             for (int i = 0; i < childCount; i++) {
                 final View child = getChildAt(i);
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
-                if (!lp.isDecor) continue;
+                if (!lp.isDecor) {
+                    continue;
+                }
 
                 final int hgrav = lp.gravity & Gravity.HORIZONTAL_GRAVITY_MASK;
                 int childLeft = 0;
@@ -2222,7 +2237,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                 final View child = getChildAt(i);
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
 
-                if (lp.isDecor) continue;
+                if (lp.isDecor) {
+                    continue;
+                }
                 final float transformPos = (float) (child.getLeft() - scrollX) / getClientWidth();
                 mPageTransformer.transformPage(child, transformPos);
             }
@@ -2366,7 +2383,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         // Always take care of the touch gesture being complete.
         if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
             // Release the drag.
-            if (DEBUG) Log.v(TAG, "Intercept done!");
+            if (DEBUG) {
+                Log.v(TAG, "Intercept done!");
+            }
             resetTouch();
             /**
              * 2:如果滑动方向是垂直方向,则将1:置换过的X、Y坐标重置为原始值
@@ -2381,7 +2400,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
         // are dragging.
         if (action != MotionEvent.ACTION_DOWN) {
             if (mIsBeingDragged) {
-                if (DEBUG) Log.v(TAG, "Intercept returning true!");
+                if (DEBUG) {
+                    Log.v(TAG, "Intercept returning true!");
+                }
                 /**
                  * 2:如果滑动方向是垂直方向,则将1:置换过的X、Y坐标重置为原始值
                  */
@@ -2391,7 +2412,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                 return true;
             }
             if (mIsUnableToDrag) {
-                if (DEBUG) Log.v(TAG, "Intercept returning false!");
+                if (DEBUG) {
+                    Log.v(TAG, "Intercept returning false!");
+                }
                 /**
                  * 2:如果滑动方向是垂直方向,则将1:置换过的X、Y坐标重置为原始值
                  */
@@ -2425,7 +2448,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                 final float xDiff = Math.abs(dx);
                 final float y = ev.getY(pointerIndex);
                 final float yDiff = Math.abs(y - mInitialMotionY);
-                if (DEBUG) Log.v(TAG, "Moved x to " + x + "," + y + " diff=" + xDiff + "," + yDiff);
+                if (DEBUG) {
+                    Log.v(TAG, "Moved x to " + x + "," + y + " diff=" + xDiff + "," + yDiff);
+                }
 
                 if (dx != 0 && !isGutterDrag(mLastMotionX, dx)
                         && canScroll(this, false, (int) dx, (int) x, (int) y)) {
@@ -2442,7 +2467,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                     return false;
                 }
                 if (xDiff > mTouchSlop && xDiff * 0.5f > yDiff) {
-                    if (DEBUG) Log.v(TAG, "Starting drag!");
+                    if (DEBUG) {
+                        Log.v(TAG, "Starting drag!");
+                    }
                     mIsBeingDragged = true;
                     requestParentDisallowInterceptTouchEvent(true);
                     setScrollState(SCROLL_STATE_DRAGGING);
@@ -2455,7 +2482,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                     // direction to be counted as a drag...  abort
                     // any attempt to drag horizontally, to work correctly
                     // with children that have scrolling containers.
-                    if (DEBUG) Log.v(TAG, "Starting unable to drag!");
+                    if (DEBUG) {
+                        Log.v(TAG, "Starting unable to drag!");
+                    }
                     mIsUnableToDrag = true;
                 }
                 if (mIsBeingDragged) {
@@ -2503,6 +2532,8 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
 
             case MotionEvent.ACTION_POINTER_UP:
                 onSecondaryPointerUp(ev);
+                break;
+            default:
                 break;
         }
 
@@ -2587,7 +2618,9 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                         Log.v(TAG, "Moved x to " + x + "," + y + " diff=" + xDiff + "," + yDiff);
                     }
                     if (xDiff > mTouchSlop && xDiff > yDiff) {
-                        if (DEBUG) Log.v(TAG, "Starting drag!");
+                        if (DEBUG) {
+                            Log.v(TAG, "Starting drag!");
+                        }
                         mIsBeingDragged = true;
                         requestParentDisallowInterceptTouchEvent(true);
                         mLastMotionX = x - mInitialMotionX > 0 ? mInitialMotionX + mTouchSlop :
@@ -2650,6 +2683,8 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
             case MotionEvent.ACTION_POINTER_UP:
                 onSecondaryPointerUp(ev);
                 mLastMotionX = ev.getX(ev.findPointerIndex(mActivePointerId));
+                break;
+            default:
                 break;
         }
         if (needsInvalidate) {
@@ -3194,6 +3229,8 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                         handled = arrowScroll(FOCUS_BACKWARD);
                     }
                     break;
+                default:
+                    break;
             }
         }
         return handled;
@@ -3499,6 +3536,8 @@ public class LxCoolViewPager extends ViewGroup implements LxICoolViewPagerFeatur
                     }
                 }
                 return false;
+                default:
+                    break;
             }
             return false;
         }

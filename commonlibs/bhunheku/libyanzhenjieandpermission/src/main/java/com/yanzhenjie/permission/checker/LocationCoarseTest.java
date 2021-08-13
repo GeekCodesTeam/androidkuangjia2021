@@ -43,7 +43,9 @@ class LocationCoarseTest implements PermissionTest {
 
         PackageManager packageManager = mContext.getPackageManager();
         boolean networkHardware = packageManager.hasSystemFeature(PackageManager.FEATURE_LOCATION_NETWORK);
-        if (!networkHardware) return true;
+        if (!networkHardware) {
+            return true;
+        }
 
         return !locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }

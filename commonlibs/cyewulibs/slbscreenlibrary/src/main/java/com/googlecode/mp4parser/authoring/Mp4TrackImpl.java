@@ -170,43 +170,53 @@ public class Mp4TrackImpl extends AbstractTrack {
         trackMetaData.setMatrix(tkhd.getMatrix());
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return samples;
     }
 
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return decodingTimeEntries;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return compositionTimeEntries;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return syncSamples;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return sampleDependencies;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return handler;
     }
 
+    @Override
     public AbstractMediaHeaderBox getMediaHeaderBox() {
         return mihd;
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }

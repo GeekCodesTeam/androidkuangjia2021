@@ -99,6 +99,7 @@ public abstract class AbstractBox implements Box {
      * @param boxParser           creates inner boxes
      * @throws IOException in case of an I/O error.
      */
+    @Override
     @DoNotParseDetail
     public void parse(ReadableByteChannel readableByteChannel, ByteBuffer header, long contentSize, BoxParser boxParser) throws IOException {
         if (readableByteChannel instanceof FileChannel && contentSize > MEM_MAP_THRESHOLD) {
@@ -118,6 +119,7 @@ public abstract class AbstractBox implements Box {
 
     }
 
+    @Override
     public void getBox(WritableByteChannel os) throws IOException {
         ByteBuffer bb = ByteBuffer.allocate(l2i(getSize()));
         getHeader(bb);
@@ -171,6 +173,7 @@ public abstract class AbstractBox implements Box {
      *
      * @return the box's size
      */
+    @Override
     public long getSize() {
         long size = (content == null ? getContentSize() : content.limit());
         size += (8 + // size|type
@@ -180,6 +183,7 @@ public abstract class AbstractBox implements Box {
         return size;
     }
 
+    @Override
     @DoNotParseDetail
     public String getType() {
         return type;
@@ -190,11 +194,13 @@ public abstract class AbstractBox implements Box {
         return userType;
     }
 
+    @Override
     @DoNotParseDetail
     public ContainerBox getParent() {
         return parent;
     }
 
+    @Override
     @DoNotParseDetail
     public void setParent(ContainerBox parent) {
         this.parent = parent;

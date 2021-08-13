@@ -637,7 +637,7 @@ public abstract class PLVMenuDrawer extends ViewGroup {
 
         mContentContainer = new NoClickThroughFrameLayout(context);
         mContentContainer.setId(R.id.md__content);
-        mContentContainer.setBackgroundDrawable(contentBackground);
+        mContentContainer.setBackground(contentBackground);
 
         mMenuOverlay = new ColorDrawable(0xFF000000);
 
@@ -758,6 +758,8 @@ public abstract class PLVMenuDrawer extends ViewGroup {
                 mDropShadowRect.top = ViewHelper.getBottom(mContentContainer);
                 mDropShadowRect.bottom = mDropShadowRect.top + mDropShadowSize;
                 break;
+            default:
+                break;
         }
     }
 
@@ -786,6 +788,9 @@ public abstract class PLVMenuDrawer extends ViewGroup {
                 case BOTTOM:
                     drawLeft = mIndicatorClipRect.left;
                     drawTop = mIndicatorClipRect.bottom - mActiveIndicator.getHeight();
+                    break;
+                default:
+                    break;
             }
 
             canvas.drawBitmap(mActiveIndicator, drawLeft, drawTop, null);
@@ -839,6 +844,8 @@ public abstract class PLVMenuDrawer extends ViewGroup {
                 }
                 right = left + indicatorWidth;
                 break;
+            default:
+                break;
         }
 
         switch (getPosition()) {
@@ -865,6 +872,8 @@ public abstract class PLVMenuDrawer extends ViewGroup {
                 bottom = top + interpolatedHeight;
                 break;
             }
+            default:
+                break;
         }
 
         mIndicatorClipRect.left = left;
@@ -888,13 +897,14 @@ public abstract class PLVMenuDrawer extends ViewGroup {
                 } else {
                     return Position.LEFT;
                 }
-
             case END:
                 if (layoutDirection == LAYOUT_DIRECTION_RTL) {
                     return Position.LEFT;
                 } else {
                     return Position.RIGHT;
                 }
+            default:
+                break;
         }
 
         return mPosition;
@@ -904,14 +914,18 @@ public abstract class PLVMenuDrawer extends ViewGroup {
     public void onRtlPropertiesChanged(int layoutDirection) {
         super.onRtlPropertiesChanged(layoutDirection);
 
-        if (!mCustomDropShadow) setDropShadowColor(mDropShadowColor);
+        if (!mCustomDropShadow) {
+            setDropShadowColor(mDropShadowColor);
+        }
 
         if (getPosition() != mResolvedPosition) {
             mResolvedPosition = getPosition();
             setOffsetPixels(mOffsetPixels * -1);
         }
 
-        if (mSlideDrawable != null) mSlideDrawable.setIsRtl(layoutDirection == LAYOUT_DIRECTION_RTL);
+        if (mSlideDrawable != null) {
+            mSlideDrawable.setIsRtl(layoutDirection == LAYOUT_DIRECTION_RTL);
+        }
 
         requestLayout();
         invalidate();
@@ -1232,7 +1246,7 @@ public abstract class PLVMenuDrawer extends ViewGroup {
 
         final int endColor = color & 0x00FFFFFF;
         mDropShadowDrawable = new GradientDrawable(orientation,
-                new int[] {
+                new int[]{
                         color,
                         endColor,
                 });
@@ -1496,6 +1510,8 @@ public abstract class PLVMenuDrawer extends ViewGroup {
             case PLVMenuDrawer.MENU_DRAG_WINDOW:
                 mActivity.setContentView(layoutResId);
                 break;
+            default:
+                break;
         }
     }
 
@@ -1524,6 +1540,8 @@ public abstract class PLVMenuDrawer extends ViewGroup {
             case PLVMenuDrawer.MENU_DRAG_WINDOW:
                 mActivity.setContentView(view, params);
                 break;
+            default:
+                break;
         }
     }
 
@@ -1531,8 +1549,12 @@ public abstract class PLVMenuDrawer extends ViewGroup {
         if (state != mDrawerState) {
             final int oldState = mDrawerState;
             mDrawerState = state;
-            if (mOnDrawerStateChangeListener != null) mOnDrawerStateChangeListener.onDrawerStateChange(oldState, state);
-            if (DEBUG) logDrawerState(state);
+            if (mOnDrawerStateChangeListener != null) {
+                mOnDrawerStateChangeListener.onDrawerStateChange(oldState, state);
+            }
+            if (DEBUG) {
+                logDrawerState(state);
+            }
         }
     }
 
@@ -1617,7 +1639,9 @@ public abstract class PLVMenuDrawer extends ViewGroup {
      * @return Returns a Parcelable containing the drawer state.
      */
     public final Parcelable saveState() {
-        if (mState == null) mState = new Bundle();
+        if (mState == null) {
+            mState = new Bundle();
+        }
         saveState(mState);
         return mState;
     }
@@ -1640,7 +1664,9 @@ public abstract class PLVMenuDrawer extends ViewGroup {
         Parcelable superState = super.onSaveInstanceState();
         SavedState state = new SavedState(superState);
 
-        if (mState == null) mState = new Bundle();
+        if (mState == null) {
+            mState = new Bundle();
+        }
         saveState(mState);
 
         state.mState = mState;

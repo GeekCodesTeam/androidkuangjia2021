@@ -24,6 +24,7 @@ import java.util.Locale;
 
 public final class HuaweiOreoShortcut extends ShortcutCore {
 
+    @Override
     public boolean isShortcutExit(Context context, String id, CharSequence label) {
         if (Build.VERSION.SDK_INT >= 25) {
             ShortcutManager var10000 = (ShortcutManager) context.getSystemService(ShortcutManager.class);
@@ -75,6 +76,7 @@ public final class HuaweiOreoShortcut extends ShortcutCore {
         }
     }
 
+    @Override
     public void createShortcut(Context context, ShortcutInfoCompat shortcutInfoCompat,
                                boolean updateIfExit, ShortcutAction shortcutAction, int check) {
         try {

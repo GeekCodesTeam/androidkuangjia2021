@@ -96,7 +96,9 @@ public class HttpsUtils
 
     private static TrustManager[] prepareTrustManager(InputStream... certificates)
     {
-        if (certificates == null || certificates.length <= 0) return null;
+        if (certificates == null || certificates.length <= 0) {
+            return null;
+        }
         try
         {
 
@@ -110,8 +112,9 @@ public class HttpsUtils
                 keyStore.setCertificateEntry(certificateAlias, certificateFactory.generateCertificate(certificate));
                 try
                 {
-                    if (certificate != null)
+                    if (certificate != null) {
                         certificate.close();
+                    }
                 } catch (IOException e)
 
                 {
@@ -147,7 +150,9 @@ public class HttpsUtils
     {
         try
         {
-            if (bksFile == null || password == null) return null;
+            if (bksFile == null || password == null) {
+                return null;
+            }
 
             KeyStore clientKeyStore = KeyStore.getInstance("BKS");
             clientKeyStore.load(bksFile, password.toCharArray());

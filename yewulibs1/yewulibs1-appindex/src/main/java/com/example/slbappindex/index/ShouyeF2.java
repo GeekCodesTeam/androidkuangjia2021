@@ -260,43 +260,13 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef2_tv31) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.ExpandableTextViewAct"));
         } else if (id == R.id.shouyef2_tv32) {
-//            /*
-//             *新加添加快捷方式代码
-//             */
-//            Intent shortcut = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
-//            //设置快捷方式名称
-//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "6.搜索组件");
-//            //设置是否允许重复添加
-//            shortcut.putExtra("duplicate", false);
-//            //设置快捷方式图标
-//            Intent.ShortcutIconResource iconRes = Intent.ShortcutIconResource.fromContext(getActivity(), R.drawable.mn_icon_staues_test);
-//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes);
-//            //设置快捷方式启动入口
-//            ComponentName comp = new ComponentName(AppUtils.getAppPackageName(), "com.geek.libbase.baserecycleview.yewu1.ActViewPageYewuList1");
-//            shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Intent.ACTION_MAIN).setComponent(comp));
-            //发送广播，添加快捷方式
-//            getActivity().sendBroadcast(shortcut);
-            ShortcutUtils.addShortcut(getActivity(), false,
-                    "xyz.doikki.dkplayer.activity.DKMainActivity",
-                    "DK播放器",
-                    R.drawable.mn_icon_staues_test);
+
         } else if (id == R.id.shouyef2_tv33) {
-            ShortcutUtils.addShortcut(getActivity(), false,
-                    "com.example.gsyvideoplayer.GSYMainActivity",
-                    "GSY播放器",
-                    R.drawable.mn_icon_staues_test);
+
         } else if (id == R.id.shouyef2_tv34) {
-            ShortcutUtils.addIcon((AppCompatActivity) getActivity(),
-                    "xyz.doikki.dkplayer.activity.DKMainActivity",
-                    "11",
-                    "DK播放器2",
-                    R.drawable.mn_icon_staues_test);
+
         } else if (id == R.id.shouyef2_tv35) {
-            ShortcutUtils.addIcon((AppCompatActivity) getActivity(),
-                    "com.example.gsyvideoplayer.GSYMainActivity",
-                    "22",
-                    "GSY播放器2",
-                    R.drawable.mn_icon_staues_test);
+            
         }
     }
 

@@ -72,13 +72,19 @@ public class GlideImageLoader {
     }
 
     public String getImageUrl() {
-        if (mImageUrlObj == null) return null;
-        if (!(mImageUrlObj instanceof String)) return null;
+        if (mImageUrlObj == null) {
+            return null;
+        }
+        if (!(mImageUrlObj instanceof String)) {
+            return null;
+        }
         return (String) mImageUrlObj;
     }
 
     public Uri resId2Uri(int resourceId) {
-        if (getContext() == null) return null;
+        if (getContext() == null) {
+            return null;
+        }
         return Uri.parse(ANDROID_RESOURCE + getContext().getPackageName() + SEPARATOR + resourceId);
     }
 
@@ -87,12 +93,16 @@ public class GlideImageLoader {
     }
 
     public void load(Uri uri, RequestOptions options) {
-        if (uri == null || getContext() == null) return;
+        if (uri == null || getContext() == null) {
+            return;
+        }
         requestBuilder(uri, options).into(getImageView());
     }
 
     public void load(String url, RequestOptions options) {
-        if (url == null || getContext() == null) return;
+        if (url == null || getContext() == null) {
+            return;
+        }
         requestBuilder(url, options).into(getImageView());
     }
 
@@ -162,16 +172,26 @@ public class GlideImageLoader {
     }
 
     private void addProgressListener() {
-        if (getImageUrl() == null) return;
+        if (getImageUrl() == null) {
+            return;
+        }
         final String url = getImageUrl();
-        if (!url.startsWith(HTTP)) return;
+        if (!url.startsWith(HTTP)) {
+            return;
+        }
 
         internalProgressListener = new OnProgressListener() {
             @Override
             public void onProgress(String imageUrl, long bytesRead, long totalBytes, boolean isDone, GlideException exception) {
-                if (totalBytes == 0) return;
-                if (!url.equals(imageUrl)) return;
-                if (mLastBytesRead == bytesRead && mLastStatus == isDone) return;
+                if (totalBytes == 0) {
+                    return;
+                }
+                if (!url.equals(imageUrl)) {
+                    return;
+                }
+                if (mLastBytesRead == bytesRead && mLastStatus == isDone) {
+                    return;
+                }
 
                 mLastBytesRead = bytesRead;
                 mTotalBytes = totalBytes;

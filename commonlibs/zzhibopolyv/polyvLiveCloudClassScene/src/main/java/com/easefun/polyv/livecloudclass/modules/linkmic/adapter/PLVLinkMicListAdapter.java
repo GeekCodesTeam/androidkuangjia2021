@@ -523,6 +523,8 @@ public class PLVLinkMicListAdapter extends RecyclerView.Adapter<PLVLinkMicListAd
                     isMuteVideo = true;
                 }
                 break;
+            default:
+                break;
         }
         return isMuteVideo;
     }

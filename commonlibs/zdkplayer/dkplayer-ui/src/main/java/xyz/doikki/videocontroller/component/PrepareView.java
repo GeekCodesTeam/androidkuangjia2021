@@ -116,6 +116,8 @@ public class PrepareView extends FrameLayout implements IControlComponent {
                 mNetWarning.setVisibility(VISIBLE);
                 mNetWarning.bringToFront();
                 break;
+            default:
+                break;
         }
     }
 

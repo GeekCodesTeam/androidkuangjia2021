@@ -33,7 +33,9 @@ public final class StrictChecker implements PermissionChecker {
 
     @Override
     public boolean hasPermission(Context context, String... permissions) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return true;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            return true;
+        }
 
         for (String permission : permissions) {
             if (!hasPermission(context, permission)) {
@@ -45,7 +47,9 @@ public final class StrictChecker implements PermissionChecker {
 
     @Override
     public boolean hasPermission(Context context, List<String> permissions) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return true;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            return true;
+        }
 
         for (String permission : permissions) {
             if (!hasPermission(context, permission)) {
@@ -106,6 +110,8 @@ public final class StrictChecker implements PermissionChecker {
                     return checkReadStorage();
                 case Permission.WRITE_EXTERNAL_STORAGE:
                     return checkWriteStorage(context);
+                default:
+                    break;
             }
         } catch (Throwable e) {
             return false;

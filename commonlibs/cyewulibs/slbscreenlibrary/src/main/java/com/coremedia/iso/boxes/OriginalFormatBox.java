@@ -48,6 +48,7 @@ public class OriginalFormatBox extends AbstractBox {
         this.dataFormat = dataFormat;
     }
 
+    @Override
     protected long getContentSize() {
         return 4;
     }
@@ -63,6 +64,7 @@ public class OriginalFormatBox extends AbstractBox {
     }
 
 
+    @Override
     public String toString() {
         return "OriginalFormatBox[dataFormat=" + getDataFormat() + "]";
     }

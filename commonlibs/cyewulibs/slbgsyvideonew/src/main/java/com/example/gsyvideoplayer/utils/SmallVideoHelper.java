@@ -379,8 +379,9 @@ public class SmallVideoHelper {
         if (isCurrentViewPlaying(position, tag)) {
             if (!isFull) {
                 ViewGroup viewGroup = (ViewGroup) gsyVideoPlayer.getParent();
-                if (viewGroup != null)
+                if (viewGroup != null) {
                     viewGroup.removeAllViews();
+                }
                 container.addView(gsyVideoPlayer);
                 playBtn.setVisibility(View.INVISIBLE);
             }
@@ -475,12 +476,14 @@ public class SmallVideoHelper {
     public void releaseVideoPlayer() {
         removeWindowContainer();
         ViewGroup viewGroup = (ViewGroup) gsyVideoPlayer.getParent();
-        if (viewGroup != null)
+        if (viewGroup != null) {
             viewGroup.removeAllViews();
+        }
         playPosition = -1;
         TAG = "NULL";
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
 
     }
 

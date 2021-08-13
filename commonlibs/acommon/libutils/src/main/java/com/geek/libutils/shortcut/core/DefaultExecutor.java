@@ -8,6 +8,7 @@ public class DefaultExecutor implements Executor {
 
     private final Context context;
 
+    @Override
     public void executeSetting() {
         (new AllRequest(this.context)).start();
     }

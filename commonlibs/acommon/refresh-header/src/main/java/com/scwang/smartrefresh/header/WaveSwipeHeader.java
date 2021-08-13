@@ -1,12 +1,15 @@
 package com.scwang.smartrefresh.header;
 
+import static android.view.View.MeasureSpec.EXACTLY;
+import static android.view.View.MeasureSpec.getSize;
+import static android.view.View.MeasureSpec.makeMeasureSpec;
+
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
-
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +33,6 @@ import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 
-import static android.view.View.MeasureSpec.EXACTLY;
-import static android.view.View.MeasureSpec.getSize;
-import static android.view.View.MeasureSpec.makeMeasureSpec;
-
 /**
  * 水滴下拉头
  * Created by SCWANG on 2017/6/4.
@@ -48,8 +47,9 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
 
     private enum VERTICAL_DRAG_THRESHOLD {
         FIRST(0.1f), SECOND(0.16f + FIRST.val), THIRD(0.5f + FIRST.val);
-//        FIRST(0.2f), SECOND(0.26f + FIRST.val), THIRD(0.7f + FIRST.val);
+        //        FIRST(0.2f), SECOND(0.26f + FIRST.val), THIRD(0.7f + FIRST.val);
         final float val;
+
         VERTICAL_DRAG_THRESHOLD(float val) {
             this.val = val;
         }
@@ -111,7 +111,7 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         setMeasuredDimension(getSize(widthMeasureSpec), getSize(heightMeasureSpec));
         mCircleView.measure();
-        mWaveView.measure(makeMeasureSpec(getSize(widthMeasureSpec), EXACTLY),makeMeasureSpec(getSize(heightMeasureSpec), EXACTLY));
+        mWaveView.measure(makeMeasureSpec(getSize(widthMeasureSpec), EXACTLY), makeMeasureSpec(getSize(heightMeasureSpec), EXACTLY));
     }
 
     @Override
@@ -121,7 +121,7 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
         final int thisWidth = getMeasuredWidth();
         final int circleWidth = mCircleView.getMeasuredWidth();
         final int circleHeight = mCircleView.getMeasuredHeight();
-        mCircleView.layout((thisWidth - circleWidth) / 2, -circleHeight , (thisWidth + circleWidth) / 2, 0);
+        mCircleView.layout((thisWidth - circleWidth) / 2, -circleHeight, (thisWidth + circleWidth) / 2, 0);
 
         if (isInEditMode()) {
             onPullingDown(0.99f, DensityUtil.dp2px(99), DensityUtil.dp2px(100), DensityUtil.dp2px(100));
@@ -132,6 +132,7 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
     //</editor-fold>
 
     //<editor-fold desc="WaveSwipe">
+
     /**
      * @param colors セットするColor達
      */
@@ -253,6 +254,8 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
                 break;
             case Refreshing:
                 break;
+            default:
+                break;
         }
     }
 
@@ -266,8 +269,15 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
         };
         scaleDownAnimation.setDuration(200);
         mCircleView.setAnimationListener(new Animation.AnimationListener() {
-            public void onAnimationStart(Animation animation) {}
-            public void onAnimationRepeat(Animation animation) {}
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+
+            @Override
             public void onAnimationEnd(Animation animation) {
                 mCircleView.stopProgress();
                 mCircleView.makeProgressTransparent();
@@ -279,8 +289,9 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
         return 0;
     }
 
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mWaveView.setWaveColor(colors[0]);
             if (colors.length > 1) {
@@ -303,6 +314,7 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
     //</editor-fold>
 
     //<editor-fold desc="ProgressAnimationImageView">
+
     /**
      * Custom view has progress drawable.
      * Some features of MaterialProgressDrawable are decorated.

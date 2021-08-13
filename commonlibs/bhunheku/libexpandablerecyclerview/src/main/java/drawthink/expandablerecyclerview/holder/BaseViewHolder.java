@@ -30,6 +30,8 @@ public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
             case VIEW_TYPE_CHILD:
                 childView = (ViewGroup) itemView.findViewById(getChildViewResId());
                 break;
+            default:
+                break;
         }
     }
 

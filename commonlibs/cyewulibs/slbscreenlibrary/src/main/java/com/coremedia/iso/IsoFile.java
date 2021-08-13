@@ -95,6 +95,7 @@ public class IsoFile extends AbstractContainerBox implements Closeable {
         }
     }
 
+    @Override
     @DoNotParseDetail
     public String toString() {
         StringBuilder buffer = new StringBuilder();
@@ -174,6 +175,7 @@ public class IsoFile extends AbstractContainerBox implements Closeable {
         return null;
     }
 
+    @Override
     public void getBox(WritableByteChannel os) throws IOException {
         for (Box box : boxes) {
 
@@ -189,6 +191,7 @@ public class IsoFile extends AbstractContainerBox implements Closeable {
         }
     }
 
+    @Override
     public void close() throws IOException {
         this.byteChannel.close();
     }

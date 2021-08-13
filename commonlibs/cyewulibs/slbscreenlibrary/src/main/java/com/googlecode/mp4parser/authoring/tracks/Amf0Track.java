@@ -49,6 +49,7 @@ public class Amf0Track extends AbstractTrack {
         trackMetaData.setLanguage("eng");
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         LinkedList<ByteBuffer> samples = new LinkedList<ByteBuffer>();
         for (byte[] bytes : rawSamples.values()) {
@@ -57,6 +58,7 @@ public class Amf0Track extends AbstractTrack {
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         SampleDescriptionBox stsd = new SampleDescriptionBox();
         ActionMessageFormat0SampleEntryBox amf0 = new ActionMessageFormat0SampleEntryBox();
@@ -65,6 +67,7 @@ public class Amf0Track extends AbstractTrack {
         return stsd;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         LinkedList<TimeToSampleBox.Entry> timesToSample = new LinkedList<TimeToSampleBox.Entry>();
         LinkedList<Long> keys = new LinkedList<Long>(rawSamples.keySet());
@@ -82,33 +85,40 @@ public class Amf0Track extends AbstractTrack {
         return timesToSample;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         // AMF0 tracks do not have Composition Time
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         // AMF0 tracks do not have Sync Samples
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         // AMF0 tracks do not have Sample Dependencies
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @Override
     public String getHandler() {
         return "data";
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return new NullMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="18mm"
+    android:paddingRight="18mm">
+
+    <LinearLayout
+        android:id="@+id/ll_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8mm"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="12mm"
+            android:layout_height="12mm"
+            android:src="@mipmap/my_item_login_log" />
+
+        <View
+            android:layout_width="1mm"
+            android:layout_height="95mm"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-3mm"
+        android:layout_toRightOf="@id/ll_left"
+        android:textColor="#ffc50405"
+        android:textSize="14mm"
+        tools:text="2021-05-29  19:52:58" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_date"
+        android:layout_alignParentRight="true"
+        android:text="手机"
+        android:textColor="#ff333333"
+        android:textSize="14mm" />
+
+    <TextView
+        android:id="@+id/tv_note_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date"
+        android:layout_alignLeft="@id/tv_date"
+        android:layout_marginTop="12mm"
+        android:text="登录终端"
+        android:textColor="#ff333333"
+        android:textSize="14mm" />
+
+    <TextView
+        android:id="@+id/tv_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_note_device"
+        android:layout_alignRight="@id/tv_phone"
+        android:text="山东e支部"
+        android:textColor="#ff999999"
+        android:textSize="14mm" />
+
+    <TextView
+        android:id="@+id/tv_note_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_note_device"
+        android:layout_alignLeft="@id/tv_note_device"
+        android:layout_marginTop="12mm"
+        android:text="登录地点"
+        android:textColor="#ff333333"
+        android:textSize="14mm" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_note_address"
+        android:layout_alignRight="@id/tv_phone"
+        android:layout_alignParentRight="true"
+        android:text="山东省济南市"
+        android:textColor="#ff999999"
+        android:textSize="14mm" />
+
+
+</RelativeLayout>

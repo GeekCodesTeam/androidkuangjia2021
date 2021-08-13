@@ -57,7 +57,7 @@ public class OcrUtils {
         }
         // 加密
         Base64 encoder = new Base64();
-        return encoder.encode(data);
+        return Base64.encode(data);
     }
 
     public static Bitmap byte2bitmap(byte[] data) {
@@ -162,8 +162,9 @@ public class OcrUtils {
                                              File file,
                                              int kb,
                                              boolean iSsaveFile) {
-        if (image == null)
+        if (image == null) {
             return false;
+        }
         Boolean isCompressed = false;
         boolean isSaveFileSuccessed = false;// 是否存储成功了文件夹
         File parent = file.getParentFile();
@@ -240,7 +241,7 @@ public class OcrUtils {
                     split = docId.split(":");
                     type = split[0];
                     if ("primary".equalsIgnoreCase(type)) {
-                        return Environment.getExternalStorageDirectory() + "/" + split[1];
+                        return Environment.getExternalStorageState() + "/" + split[1];
                     }
                 } else {
                     if (isDownloadsDocument(uri)) {
@@ -390,7 +391,7 @@ public class OcrUtils {
         // remove documents intent
         if (!includeDocuments) {
             for (Intent intent : intents) {
-                if (intent.getComponent().getClassName().equals("com.android.documentsui.DocumentsActivity")) {
+                if ("com.android.documentsui.DocumentsActivity".equals(intent.getComponent().getClassName())) {
                     intents.remove(intent);
                     break;
                 }
@@ -432,10 +433,11 @@ public class OcrUtils {
         Uri destination = Uri.fromFile(new File(activity.getCacheDir(), "cropped"));
 
         Crop crop = Crop.of(source, destination).withAspect(1, 1.3f);
-        if (fragment == null)
+        if (fragment == null) {
             crop.start(activity);
-        else
+        } else {
             crop.start(activity, fragment);
+        }
 
     }
 }

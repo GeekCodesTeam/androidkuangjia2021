@@ -92,15 +92,17 @@ public class SplineChart extends LnChart {
 	@Override
 	protected void categoryAxisDefaultSetting()
 	{
-		if(null != categoryAxis)
-			categoryAxis.setHorizontalTickAlign(Align.CENTER);
+		if(null != categoryAxis) {
+            categoryAxis.setHorizontalTickAlign(Align.CENTER);
+        }
 	}
 
 	@Override
 	protected void dataAxisDefaultSetting()
 	{
-		if(null != dataAxis)
-			dataAxis.setHorizontalTickAlign(Align.LEFT);
+		if(null != dataAxis) {
+            dataAxis.setHorizontalTickAlign(Align.LEFT);
+        }
 	}
 
 	/**
@@ -109,7 +111,9 @@ public class SplineChart extends LnChart {
 	 */
 	public void setCategories( List<String> categories)
 	{
-		if(null != categoryAxis)categoryAxis.setDataBuilding(categories);
+		if(null != categoryAxis) {
+            categoryAxis.setDataBuilding(categories);
+        }
 	}
 
 	/**
@@ -151,7 +155,9 @@ public class SplineChart extends LnChart {
 	 *            定制线数据集合
 	 */
 	public void setCategoryAxisCustomLines(List<CustomLineData> customLineDataset) {
-		if (null == mXAxisCustomLine) mXAxisCustomLine = new PlotCustomLine();
+		if (null == mXAxisCustomLine) {
+            mXAxisCustomLine = new PlotCustomLine();
+        }
 		mXAxisCustomLine.setCustomLines(customLineDataset);
 	}
 
@@ -225,7 +231,9 @@ public class SplineChart extends LnChart {
 
 		//得到标签对应的值数据集
 		List<PointD> chartValues = bd.getLineDataSet();
-		if(null == chartValues) return ;
+		if(null == chartValues) {
+            return ;
+        }
 
 	    //画出数据集对应的线条
 		int count = chartValues.size();
@@ -263,7 +271,9 @@ public class SplineChart extends LnChart {
 		int count = lstPoints.size();
 		for(int i=0;i<count;i++)
 		{
-			if(0 == i)continue;
+			if(0 == i) {
+                continue;
+            }
 			PointF pointStart = lstPoints.get(i - 1);
 			PointF pointStop = lstPoints.get(i);
 

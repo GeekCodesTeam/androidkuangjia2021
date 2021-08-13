@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: './../../commonlibs1.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.design
+    implementation librarys.appcompatV7
+    implementation librarys.supportannotations
+    implementation librarys.recyclerviewv7
+    implementation librarys.blankj
+    implementation librarys.eventbus
+}

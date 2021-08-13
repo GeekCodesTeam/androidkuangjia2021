@@ -630,7 +630,7 @@ public class RtmpConnection implements RtmpPublisher {
     private void handleRxInvoke(Command invoke) throws IOException {
         String commandName = invoke.getCommandName();
 
-        if (commandName.equals("_result")) {
+        if ("_result".equals(commandName)) {
             // This is the result of one of the methods invoked by us
             String method = rtmpSessionInfo.takeInvokedCommand(invoke.getTransactionId());
 
@@ -657,14 +657,14 @@ public class RtmpConnection implements RtmpPublisher {
             } else {
                 Log.w(TAG, "handleRxInvoke(): '_result' message received for unknown method: " + method);
             }
-        } else if (commandName.equals("onBWDone")) {
+        } else if ("onBWDone".equals(commandName)) {
             Log.d(TAG, "handleRxInvoke(): 'onBWDone'");
-        } else if (commandName.equals("onFCPublish")) {
+        } else if ("onFCPublish".equals(commandName)) {
             Log.d(TAG, "handleRxInvoke(): 'onFCPublish'");
-        } else if (commandName.equals("onStatus")) {
+        } else if ("onStatus".equals(commandName)) {
             String code = ((AmfString) ((AmfObject) invoke.getData().get(1)).getProperty("code")).getValue();
             Log.d(TAG, "handleRxInvoke(): onStatus " + code);
-            if (code.equals("NetStream.Publish.Start")) {
+            if ("NetStream.Publish.Start".equals(code)) {
 //                onMetaData(0);
                 // We can now publish AV data
                 publishPermitted = true;

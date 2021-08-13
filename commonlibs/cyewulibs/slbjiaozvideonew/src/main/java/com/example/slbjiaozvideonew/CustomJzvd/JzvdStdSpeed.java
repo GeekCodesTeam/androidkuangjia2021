@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -27,6 +27,7 @@ public class JzvdStdSpeed extends JzvdStd {
         tvSpeed.setOnClickListener(this);
     }
 
+    @Override
     public void setScreenNormal() {
         super.setScreenNormal();
         tvSpeed.setVisibility(View.GONE);
@@ -35,8 +36,9 @@ public class JzvdStdSpeed extends JzvdStd {
     @Override
     public void setScreenFullscreen() {
         super.setScreenFullscreen();
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             tvSpeed.setVisibility(View.VISIBLE);
+        }
 
         if (jzDataSource.objects == null) {
             Object[] object = {2};

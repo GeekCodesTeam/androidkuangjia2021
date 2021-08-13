@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -53,6 +53,8 @@ public class JzvdStdLockScreen extends JzvdStd {
                     }
                     return true;
                 }
+                break;
+            default:
                 break;
         }
         return super.onTouch(v, event);

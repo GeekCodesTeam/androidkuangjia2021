@@ -54,7 +54,7 @@ public class InactivityTimer {
 		cancel();
 		inactivityTask = new InactivityAsyncTask();
 		if (Build.VERSION.SDK_INT >= 11) {
-			inactivityTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+			inactivityTask.execute(AsyncTask.THREAD_POOL_EXECUTOR);
 		} else {
 			inactivityTask.execute();
 		}

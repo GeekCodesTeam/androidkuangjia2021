@@ -72,8 +72,9 @@ public class XinPopWindow extends PopupWindow {
         mItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                           @Override
                                           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                              if (mOnItemClickListener != null)
+                                              if (mOnItemClickListener != null) {
                                                   mOnItemClickListener.onItemClick(parent, view, position, id, menuAdapter.getMenuItems().get(position).type);
+                                              }
                                           }
                                       }
         );
@@ -82,8 +83,9 @@ public class XinPopWindow extends PopupWindow {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_UP || event.getY() < mItems.getTop())
+                if (event.getAction() == MotionEvent.ACTION_UP || event.getY() < mItems.getTop()) {
                     XinPopWindow.this.dismiss();
+                }
                 return true;
             }
         });
@@ -109,8 +111,9 @@ public class XinPopWindow extends PopupWindow {
         if (mWindow == null) {
             mWindow = mContext.getWindow();
         }
-        if (mWindow == null)
+        if (mWindow == null) {
             return;
+        }
         WindowManager.LayoutParams lp = mWindow.getAttributes();
         mWindow.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         lp.alpha = bgAlpha; //0.0-1.0
@@ -224,8 +227,12 @@ public class XinPopWindow extends PopupWindow {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof MenuItem)) return false;
+            if (this == o) {
+                return true;
+            }
+            if (!(o instanceof MenuItem)) {
+                return false;
+            }
 
             MenuItem menuItem = (MenuItem) o;
 

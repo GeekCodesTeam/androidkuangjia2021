@@ -3,8 +3,9 @@ package com.haier.cellarette.libretrofit.common;
 import android.content.Context;
 import android.util.Log;
 
-import com.blankj.utilcode.util.GsonUtils;
-import com.blankj.utilcode.util.ToastUtils;
+import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -78,7 +79,8 @@ public class LoggingInterceptor implements Interceptor {
         Log.d("HTTP_LOG", "---------------HTTP_LOG请求end----------------");
         Log.d("HTTP_LOG", "                                              ");
         try {
-            ResponseSlbBean  responseSlbBean = GsonUtils.fromJson(rBody, ResponseSlbBean.class);
+            Gson gson = new Gson();
+            ResponseSlbBean responseSlbBean = gson.fromJson(rBody, ResponseSlbBean.class);
             if (null != responseSlbBean && responseSlbBean.getCode() == 2000) {
                 set_token_out();
             }
@@ -89,7 +91,7 @@ public class LoggingInterceptor implements Interceptor {
     }
 
     private void set_token_out() {
-        ToastUtils.showLong("登录失效，请重新登录！");
+        EventBus.getDefault().post("登录失效，请重新登录！");
      /*   MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_KEY1);
         MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_SEX);
         MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_IMG);

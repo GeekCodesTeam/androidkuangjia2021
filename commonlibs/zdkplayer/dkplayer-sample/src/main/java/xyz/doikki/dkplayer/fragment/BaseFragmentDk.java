@@ -63,8 +63,9 @@ public abstract class BaseFragmentDk extends Fragment {
     }
 
     private void fetchData() {
-        if (mIsInitData)
+        if (mIsInitData) {
             return;
+        }
         initData();
         mIsInitData = true;
     }

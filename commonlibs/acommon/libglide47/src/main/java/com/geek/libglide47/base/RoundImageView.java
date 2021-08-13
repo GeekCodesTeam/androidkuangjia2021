@@ -214,10 +214,12 @@ public class RoundImageView extends ImageView {
         return mIsCircle;
     }
 
+    @Override
     public boolean isPressed() {
         return mIsPressed;
     }
 
+    @Override
     public void setPressed(boolean isPressed) {
         if (mIsPressed != isPressed) {
             mIsPressed = isPressed;
@@ -433,6 +435,8 @@ public class RoundImageView extends ImageView {
             case MotionEvent.ACTION_OUTSIDE:
             case MotionEvent.ACTION_CANCEL:
                 this.setPressed(false);
+                break;
+            default:
                 break;
         }
         return super.onTouchEvent(event);

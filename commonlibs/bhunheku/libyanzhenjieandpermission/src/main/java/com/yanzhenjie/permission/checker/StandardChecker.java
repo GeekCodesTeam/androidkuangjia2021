@@ -42,7 +42,9 @@ public final class StandardChecker implements PermissionChecker {
 
     @Override
     public boolean hasPermission(Context context, List<String> permissions) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return true;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return true;
+        }
 
         AppOpsManager opsManager = null;
         for (String permission : permissions) {
@@ -56,8 +58,10 @@ public final class StandardChecker implements PermissionChecker {
                 continue;
             }
 
-            if (opsManager == null) opsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
-            result = opsManager.checkOpNoThrow(op, android.os.Process.myUid(), context.getPackageName());
+            if (opsManager == null) {
+                opsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+            }
+            result = opsManager.unsafeCheckOpNoThrow(op, android.os.Process.myUid(), context.getPackageName());
             if (result != AppOpsManager.MODE_ALLOWED && result != MODE_ASK && result != MODE_COMPAT) {
                 return false;
             }

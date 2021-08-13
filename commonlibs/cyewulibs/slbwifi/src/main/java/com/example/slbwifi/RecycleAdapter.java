@@ -51,8 +51,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     public void refreshPwdList(List<WifiPwdUtil.WifiInfo> mResult) {
 
-        if (mResult == null)
+        if (mResult == null) {
             return;
+        }
 
         mWifiPwdInfo.clear();
         mWifiPwdInfo.addAll(mResult);
@@ -82,8 +83,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        if (mScanResult == null)
+        if (mScanResult == null) {
             return 0;
+        }
         return mScanResult.size();
     }
 
@@ -159,7 +161,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 //                    Log.d(TAG, "ip = " + Ip);
 
                     String strIp = "" + (Ip & 0xFF) + "." + ((Ip >> 8) & 0xFF) + "." + ((Ip >> 16) & 0xFF) + "." + ((Ip >> 24) & 0xFF);
-                    if (mInfo.getBSSID() != null && mInfo.getSSID() != null /*&& WifiDatabaseUtils.isExisted(mInfo.getSSID())*/ && strIp != null && !strIp.equals("0.0.0.0")) {
+                    if (mInfo.getBSSID() != null && mInfo.getSSID() != null /*&& WifiDatabaseUtils.isExisted(mInfo.getSSID())*/ && strIp != null && !"0.0.0.0".equals(strIp)) {
                         viewHolder.mEncryptTv.setText(lianjie_content);
                         viewHolder.mEncryptTv.setTextColor(mContext.getResources().getColor(R.color.blue3));
                         viewHolder.mSsidTv.setTextColor(mContext.getResources().getColor(R.color.blue3));

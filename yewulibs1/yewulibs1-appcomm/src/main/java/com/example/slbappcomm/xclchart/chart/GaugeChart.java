@@ -251,7 +251,9 @@ public class GaugeChart extends CirChart {
 	
 	private void renderLabels(Canvas canvas)
 	{		
-		if(null == mLabels) return ;
+		if(null == mLabels) {
+            return ;
+        }
 		
 		float stepsAngle = Math.round(180/(mLabels.size() - 1 ));
 		
@@ -305,7 +307,9 @@ public class GaugeChart extends CirChart {
 				
 		for(int i=0;i<mTickSteps;i++)
 		{
-			if(0 == i)continue;			
+			if(0 == i) {
+                continue;
+            }
 			//float Angle =  (float) (180d + i *stepsAngle) ;					
 			float Angle = (float) MathHelper.getInstance().add(180d, i *stepsAngle);
 			MathHelper.getInstance().calcArcEndPointXY(cirX, cirY, getRadius(), Angle);
@@ -342,7 +346,9 @@ public class GaugeChart extends CirChart {
 			MathHelper.getInstance().calcArcEndPointXY(cirX, cirY, currentRadius, calcAngle);
 			float endX = MathHelper.getInstance().getPosX();
 			float endY = MathHelper.getInstance().getPosY();
-			if(Float.compare( endY, cirY ) == 1 ) endY = cirY;
+			if(Float.compare( endY, cirY ) == 1 ) {
+                endY = cirY;
+            }
             canvas.drawLine(cirX, cirY, endX,endY, mPaintPointerLine);	          						
 		}		
 	}

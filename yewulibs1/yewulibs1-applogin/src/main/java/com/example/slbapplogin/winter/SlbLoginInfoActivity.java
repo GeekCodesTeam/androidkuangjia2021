@@ -95,7 +95,7 @@ public class SlbLoginInfoActivity extends SlbBaseActivity implements View.OnClic
         dayOfMonth0 = calendar.get(Calendar.DAY_OF_MONTH);
 
         datepicker1.setMaxDate(System.currentTimeMillis());
-        datepicker1.setMinDate(631123200000l);// 315504000000 1980
+        datepicker1.setMinDate(631123200000L);// 315504000000 1980
         datepicker1.updateDate(year0, monthOfYear0, dayOfMonth0);
         //
         datepicker1.init(1980, 1, 1, new DatePicker.OnDateChangedListener() {

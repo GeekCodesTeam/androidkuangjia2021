@@ -154,8 +154,10 @@ public class SplashView extends FrameLayout {
         skipButton.setText(String.format("跳过\n%d s", duration));
     }
 
-    private void setOnSplashImageClickListener(final OnSplashViewActionListener listener) {
-        if (null == listener) return;
+    public void setOnSplashImageClickListener(final OnSplashViewActionListener listener) {
+        if (null == listener) {
+            return;
+        }
         mOnSplashViewActionListener = listener;
         splashImageView.setOnClickListener(new OnClickListener() {
             @Override
@@ -190,7 +192,9 @@ public class SplashView extends FrameLayout {
 //        SplashView splashView = new SplashView(activity);
         RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         this.setOnSplashImageClickListener(listener);
-        if (null != durationTime) this.setDuration(durationTime);
+        if (null != durationTime) {
+            this.setDuration(durationTime);
+        }
         Bitmap bitmapToShow = null;
 
         if (isExistsLocalSplashData(activity)) {
@@ -202,7 +206,9 @@ public class SplashView extends FrameLayout {
             bitmapToShow = BitmapFactory.decodeResource(activity.getResources(), defaultBitmapRes);
         }
 
-        if (null == bitmapToShow) return;
+        if (null == bitmapToShow) {
+            return;
+        }
         this.setImage(bitmapToShow);
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         if (activity instanceof AppCompatActivity) {
@@ -232,8 +238,9 @@ public class SplashView extends FrameLayout {
     }
 
     public void dismissSplashView(boolean initiativeDismiss) {
-        if (null != mOnSplashViewActionListener)
+        if (null != mOnSplashViewActionListener) {
             mOnSplashViewActionListener.onSplashViewDismiss(initiativeDismiss);
+        }
 
         if (handler != null) {
             handler.removeCallbacks(timerRunnable);
@@ -284,12 +291,16 @@ public class SplashView extends FrameLayout {
         if (mActivity instanceof AppCompatActivity) {
             ActionBar supportActionBar = ((AppCompatActivity) mActivity).getSupportActionBar();
             if (null != supportActionBar) {
-                if (isActionBarShowing) supportActionBar.show();
+                if (isActionBarShowing) {
+                    supportActionBar.show();
+                }
             }
         } else if (mActivity instanceof Activity) {
             android.app.ActionBar actionBar = mActivity.getActionBar();
             if (null != actionBar) {
-                if (isActionBarShowing) actionBar.show();
+                if (isActionBarShowing) {
+                    actionBar.show();
+                }
             }
         }
     }

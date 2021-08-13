@@ -135,6 +135,8 @@ public class PLVStreamerMsgHandler {
                         PLVJoinAnswerSEvent joinAnswerSEvent = PLVGsonUtil.fromJson(PLVJoinAnswerSEvent.class, message);
                         acceptJoinAnswerSEvent(joinAnswerSEvent);
                         break;
+                    default:
+                        break;
                 }
             }
         };

@@ -95,7 +95,9 @@ public class ArcPosition extends PositionRecord {
 	@Override
 	protected boolean compareRange(float x, float y) {
 		// TODO Auto-generated method stub
-		if(null == mCirXY)return false;								
+		if(null == mCirXY) {
+            return false;
+        }
 		return compareRadius( x,  y) ;
 	}
 		

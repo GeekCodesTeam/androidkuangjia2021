@@ -60,7 +60,9 @@ public class PlayListActivityDk extends BaseActivityDk {
                 if (playState == VideoView.STATE_PLAYBACK_COMPLETED) {
                     if (data != null) {
                         mCurrentVideoPosition++;
-                        if (mCurrentVideoPosition >= data.size()) return;
+                        if (mCurrentVideoPosition >= data.size()) {
+                            return;
+                        }
                         mVideoView.release();
                         //重新设置数据
                         VideoBeanDk videoBean = data.get(mCurrentVideoPosition);

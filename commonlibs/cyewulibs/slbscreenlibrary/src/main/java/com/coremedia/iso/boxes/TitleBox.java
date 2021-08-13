@@ -64,11 +64,13 @@ public class TitleBox extends AbstractFullBox {
         this.title = title;
     }
 
+    @Override
     protected long getContentSize() {
         return 7 + Utf8.utf8StringLengthInBytes(title);
     }
 
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeIso639(byteBuffer, language);
@@ -83,6 +85,7 @@ public class TitleBox extends AbstractFullBox {
         title = IsoTypeReader.readString(content);
     }
 
+    @Override
     public String toString() {
         return "TitleBox[language=" + getLanguage() + ";title=" + getTitle() + "]";
     }

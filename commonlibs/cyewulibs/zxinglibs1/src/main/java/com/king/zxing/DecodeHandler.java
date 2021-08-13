@@ -195,8 +195,9 @@ final class DecodeHandler extends Handler {
         if(isRotate){
             byte[] rotatedData = new byte[data.length];
             for (int y = 0; y < height; y++) {
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < width; x++) {
                     rotatedData[x * height + height - y - 1] = data[x + y * width];
+                }
             }
             int tmp = width;
             width = height;
@@ -231,7 +232,7 @@ final class DecodeHandler extends Handler {
                 Camera.Parameters params = camera.getParameters();
                 if (params.isZoomSupported()) {
                     int maxZoom = params.getMaxZoom();
-                    int zoom = params.getZoom();
+                    int zoom = params.getMaxZoom();
                     params.setZoom(Math.min(zoom + maxZoom/5,maxZoom));
                     camera.setParameters(params);
                     lastZoomTime = System.currentTimeMillis();

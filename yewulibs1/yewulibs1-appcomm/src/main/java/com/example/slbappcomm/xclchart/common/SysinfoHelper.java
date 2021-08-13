@@ -54,7 +54,9 @@ public class SysinfoHelper {
 		boolean result = true;
 		int currentVersion = android.os.Build.VERSION.SDK_INT;	
 		//android 3.0 == android.os.Build.VERSION_CODES.HONEYCOMB
-		if(currentVersion < 11) result = false;
+		if(currentVersion < 11) {
+            result = false;
+        }
 		return result;
 	}
 

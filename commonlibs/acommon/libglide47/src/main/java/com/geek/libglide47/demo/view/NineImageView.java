@@ -91,7 +91,9 @@ public class NineImageView extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        if (imageAttrs == null) return;
+        if (imageAttrs == null) {
+            return;
+        }
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = 0;
         int totalWidth = width - getPaddingLeft() - getPaddingRight();
@@ -112,12 +114,16 @@ public class NineImageView extends ViewGroup {
     }
 
     private void layoutChildrenView() {
-        if (imageAttrs == null) return;
+        if (imageAttrs == null) {
+            return;
+        }
         int childrenCount = imageAttrs.size();
         for (int i = 0; i < childrenCount; i++) {
             ImageView imageView = (ImageView) getChildAt(i);
             ImageAttr imageAttr = imageAttrs.get(i);
-            if (imageView == null) continue;
+            if (imageView == null) {
+                continue;
+            }
 
             int rowNum = i / columnCount;
             int columnNum = i % columnCount;
@@ -162,7 +168,9 @@ public class NineImageView extends ViewGroup {
     }
 
     private void setSingleImageWidthHeight(Drawable drawable) {
-        if (drawable == null) return;
+        if (drawable == null) {
+            return;
+        }
         int width = drawable.getIntrinsicWidth();
         int height = drawable.getIntrinsicHeight();
         float ratio = width * 1.0f / height;

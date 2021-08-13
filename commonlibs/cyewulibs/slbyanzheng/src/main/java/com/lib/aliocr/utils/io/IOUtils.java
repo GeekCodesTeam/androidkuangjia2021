@@ -1141,7 +1141,9 @@ public class IOUtils {
 
 
     public static Object toObject(byte[] input) {
-        if (input == null) return null;
+        if (input == null) {
+            return null;
+        }
         ByteArrayInputStream byteArrayInputStream = null;
         ObjectInputStream ois = null;
         try {

@@ -120,6 +120,8 @@ public class AndroidOPiPActivityDk extends AppCompatActivity {
                         updatePictureInPictureActions(
                                 R.drawable.dkplayer_ic_action_replay, "重新播放", CONTROL_TYPE_REPLAY, REQUEST_REPLAY);
                         break;
+                    default:
+                        break;
                 }
             }
         });
@@ -178,7 +180,9 @@ public class AndroidOPiPActivityDk extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mVideoView.onBackPressed()) return;
+        if (mVideoView.onBackPressed()) {
+            return;
+        }
         super.onBackPressed();
     }
 
@@ -213,6 +217,8 @@ public class AndroidOPiPActivityDk extends AppCompatActivity {
                                     break;
                                 case CONTROL_TYPE_REPLAY:
                                     mVideoView.replay(true);
+                                    break;
+                                default:
                                     break;
                             }
                         }

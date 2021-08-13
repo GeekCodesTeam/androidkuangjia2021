@@ -38,8 +38,11 @@ public class ImageFolderAdapter extends BaseAdapter {
 
     public ImageFolderAdapter(Activity activity, List<ImageFolder> folders) {
         mActivity = activity;
-        if (folders != null && folders.size() > 0) imageFolders = folders;
-        else imageFolders = new ArrayList<>();
+        if (folders != null && folders.size() > 0) {
+            imageFolders = folders;
+        } else {
+            imageFolders = new ArrayList<>();
+        }
 
         imagePicker = ImagePicker.getInstance();
         mImageSize = Utils.getImageItemWidth(mActivity);
@@ -47,8 +50,11 @@ public class ImageFolderAdapter extends BaseAdapter {
     }
 
     public void refreshData(List<ImageFolder> folders) {
-        if (folders != null && folders.size() > 0) imageFolders = folders;
-        else imageFolders.clear();
+        if (folders != null && folders.size() > 0) {
+            imageFolders = folders;
+        } else {
+            imageFolders.clear();
+        }
         notifyDataSetChanged();
     }
 

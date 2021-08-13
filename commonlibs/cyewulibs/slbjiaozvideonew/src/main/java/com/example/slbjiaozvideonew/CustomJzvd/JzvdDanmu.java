@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -54,10 +54,10 @@ public class JzvdDanmu extends JzvdStd {
     public void init(Context context) {
         super.init(context);
         danmakuView = findViewById(R.id.jz_danmu);
-        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>();
+        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>(16);
         overlappingEnablePair.put(BaseDanmaku.TYPE_SCROLL_RL, true);
         overlappingEnablePair.put(BaseDanmaku.TYPE_FIX_TOP, true);
-        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>(16);
         maxLinesPair.put(BaseDanmaku.TYPE_SCROLL_RL, 5); // 滚动弹幕最大显示5行,可设置多种类型限制行数
         danmakuContext = DanmakuContext.create();
         danmakuContext.setDanmakuStyle(IDisplayer.DANMAKU_STYLE_STROKEN, 3)

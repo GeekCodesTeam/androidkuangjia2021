@@ -85,6 +85,7 @@ public class FragmentedMp4Builder implements Mp4Builder {
     protected List<Track> sortTracksInSequence(List<Track> tracks, final int cycle, final Map<Track, long[]> intersectionMap) {
         tracks = new LinkedList<Track>(tracks);
         Collections.sort(tracks, new Comparator<Track>() {
+            @Override
             public int compare(Track o1, Track o2) {
                 long[] startSamples1 = intersectionMap.get(o1);
                 long startSample1 = startSamples1[cycle];
@@ -112,7 +113,7 @@ public class FragmentedMp4Builder implements Mp4Builder {
 
     protected List<Box> createMoofMdat(final Movie movie) {
         List<Box> boxes = new LinkedList<Box>();
-        HashMap<Track, long[]> intersectionMap = new HashMap<Track, long[]>();
+        HashMap<Track, long[]> intersectionMap = new HashMap<Track, long[]>(16);
         int maxNumberOfFragments = 0;
         for (Track track : movie.getTracks()) {
             long[] intersects = intersectionFinder.sampleNumbers(track, movie);
@@ -153,6 +154,7 @@ public class FragmentedMp4Builder implements Mp4Builder {
     /**
      * {@inheritDoc}
      */
+    @Override
     public IsoFile build(Movie movie) {
         LOG.fine("Creating movie " + movie);
         IsoFile isoFile = new IsoFile();
@@ -174,14 +176,17 @@ public class FragmentedMp4Builder implements Mp4Builder {
         class Mdat implements Box {
             ContainerBox parent;
 
+            @Override
             public ContainerBox getParent() {
                 return parent;
             }
 
+            @Override
             public void setParent(ContainerBox parent) {
                 this.parent = parent;
             }
 
+            @Override
             public long getSize() {
                 long size = 8; // I don't expect 2gig fragments
                 for (ByteBuffer sample : getSamples(startSample, endSample, track, i)) {
@@ -190,10 +195,12 @@ public class FragmentedMp4Builder implements Mp4Builder {
                 return size;
             }
 
+            @Override
             public String getType() {
                 return "mdat";
             }
 
+            @Override
             public void getBox(WritableByteChannel writableByteChannel) throws IOException {
                 List<ByteBuffer> bbs = getSamples(startSample, endSample, track, i);
                 final List<ByteBuffer> samples = ByteBufferHelper.mergeAdjacentBuffers(bbs);
@@ -212,7 +219,7 @@ public class FragmentedMp4Builder implements Mp4Builder {
                         List<ByteBuffer> sublist = samples.subList(
                                 i * STEPSIZE, // start
                                 (i + 1) * STEPSIZE < samples.size() ? (i + 1) * STEPSIZE : samples.size()); // end
-                        ByteBuffer sampleArray[] = sublist.toArray(new ByteBuffer[sublist.size()]);
+                        ByteBuffer[] sampleArray = sublist.toArray(new ByteBuffer[sublist.size()]);
                         do {
                             ((GatheringByteChannel) writableByteChannel).write(sampleArray);
                         } while (sampleArray[sampleArray.length - 1].remaining() > 0);
@@ -227,6 +234,7 @@ public class FragmentedMp4Builder implements Mp4Builder {
 
             }
 
+            @Override
             public void parse(ReadableByteChannel readableByteChannel, ByteBuffer header, long contentSize, BoxParser boxParser) throws IOException {
 
             }

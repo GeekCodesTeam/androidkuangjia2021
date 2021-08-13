@@ -69,21 +69,21 @@ public class MyAnimationDrawable {
 
                         } else if (eventType == XmlPullParser.START_TAG) {
 
-                            if (parser.getName().equals("item")) {
+                            if ("item".equals(parser.getName())) {
                                 byte[] bytes = null;
                                 int duration = 1000;
 
                                 for (int i = 0; i < parser.getAttributeCount(); i++) {
-                                    if (parser.getAttributeName(i).equals(
-                                            "drawable")) {
+                                    if ("drawable".equals(
+                                            parser.getAttributeName(i))) {
                                         int resId = Integer.parseInt(parser
                                                 .getAttributeValue(i)
                                                 .substring(1));
                                         bytes = IOUtils.toByteArray(context
                                                 .getResources()
                                                 .openRawResource(resId));
-                                    } else if (parser.getAttributeName(i)
-                                            .equals("duration")) {
+                                    } else if ("duration"
+                                            .equals(parser.getAttributeName(i))) {
                                         duration = parser.getAttributeIntValue(
                                                 i, 1000);
                                     }
@@ -211,11 +211,11 @@ public class MyAnimationDrawable {
 
             } else if (eventType == XmlPullParser.START_TAG) {
 
-                if (parser.getName().equals("item")) {
+                if ("item".equals(parser.getName())) {
                     Drawable drawable = null;
 
                     for (int i = 0; i < parser.getAttributeCount(); i++) {
-                        if (parser.getAttributeName(i).equals("drawable")) {
+                        if ("drawable".equals(parser.getAttributeName(i))) {
                             int resId = Integer.parseInt(parser
                                     .getAttributeValue(i).substring(1));
                             byte[] bytes = IOUtils.toByteArray(imageView
@@ -225,8 +225,8 @@ public class MyAnimationDrawable {
                                     .getContext().getResources(),
                                     BitmapFactory.decodeByteArray(bytes, 0,
                                             bytes.length));
-                        } else if (parser.getAttributeName(i)
-                                .equals("duration")) {
+                        } else if ("duration"
+                                .equals(parser.getAttributeName(i))) {
                             duration = parser.getAttributeIntValue(i, 66);
                         }
                     }

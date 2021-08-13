@@ -87,8 +87,9 @@ public class ViewPager2Activity extends AppCompatActivity {
             VideoModel videoModel = new VideoModel();
             dataList.add(videoModel);
         }
-        if (viewPagerAdapter != null)
+        if (viewPagerAdapter != null) {
             viewPagerAdapter.notifyDataSetChanged();
+        }
     }
 
     private void playPosition(int position) {

@@ -105,7 +105,9 @@ public class DefinitionControlViewDk extends VodControlView {
         mMultiRateData = multiRateData;
         if (mDefinition != null && TextUtils.isEmpty(mDefinition.getText())) {
             L.d("multiRate");
-            if (multiRateData == null) return;
+            if (multiRateData == null) {
+                return;
+            }
             mRateStr = new ArrayList<>();
             int index = 0;
             ListIterator<Map.Entry<String, String>> iterator = new ArrayList<>(multiRateData.entrySet()).listIterator(multiRateData.size());
@@ -130,7 +132,9 @@ public class DefinitionControlViewDk extends VodControlView {
         @Override
         public void onClick(View v) {
             int index = (int) v.getTag();
-            if (mCurIndex == index) return;
+            if (mCurIndex == index) {
+                return;
+            }
             ((TextView) mPopLayout.getChildAt(mCurIndex)).setTextColor(Color.BLACK);
             ((TextView) mPopLayout.getChildAt(index)).setTextColor(ContextCompat.getColor(getContext(), R.color.theme_color));
             mDefinition.setText(mRateStr.get(index));
@@ -144,8 +148,9 @@ public class DefinitionControlViewDk extends VodControlView {
         mControlWrapper.hide();
         mControlWrapper.stopProgress();
         String url = mMultiRateData.get(s);
-        if (mOnRateSwitchListener != null)
+        if (mOnRateSwitchListener != null) {
             mOnRateSwitchListener.onRateChange(url);
+        }
     }
 
     public interface OnRateSwitchListener {

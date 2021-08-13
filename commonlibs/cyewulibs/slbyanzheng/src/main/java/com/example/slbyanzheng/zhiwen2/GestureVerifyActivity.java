@@ -9,8 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.slbyanzheng.R;
-import com.lib.lock.gesture.customView.OnPatternChangeListener;
-import com.lib.lock.gesture.customView.PatternLockerView;
+import com.lib.lock.gesture.customview.OnPatternChangeListener;
+import com.lib.lock.gesture.customview.PatternLockerView;
 import com.lib.lock.gesture.utils.PatternHelper;
 
 import java.util.List;

@@ -8,9 +8,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,6 +18,10 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.slbappcomm.R;
 import com.example.slbappcomm.uploadimg.view.UploadImgCircleImageView;
@@ -122,6 +123,7 @@ public class UploadImgMainActivity extends AppCompatActivity implements View.OnC
 //        popupWindow.setBackgroundDrawable(dw);
         mMenuView.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
             public boolean onTouch(View v, MotionEvent event) {
 //                hideInputMethod(context);
                 return true;
@@ -248,6 +250,8 @@ public class UploadImgMainActivity extends AppCompatActivity implements View.OnC
                     //......
 
                 }
+                break;
+            default:
                 break;
         }
     }

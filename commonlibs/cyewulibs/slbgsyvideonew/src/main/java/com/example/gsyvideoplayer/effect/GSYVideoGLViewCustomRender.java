@@ -53,7 +53,7 @@ public class GSYVideoGLViewCustomRender extends GSYVideoGLViewSimpleRender {
 
     private int curProgram;
 
-    private int mTexturesBitmap[] = new int[1];
+    private int[] mTexturesBitmap = new int[1];
 
     private FloatBuffer mTriangleVertices;
 

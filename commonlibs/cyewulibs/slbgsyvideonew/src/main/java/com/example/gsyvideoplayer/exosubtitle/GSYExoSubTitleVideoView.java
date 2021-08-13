@@ -74,7 +74,7 @@ public class GSYExoSubTitleVideoView extends NormalGSYVideoPlayer {
         }
         mBackUpPlayingBufferState = -1;
 
-        getGSYVideoManager().prepare(mUrl, mSubTitle, mSubtitleView, (mMapHeadData == null) ? new HashMap<String, String>() : mMapHeadData, mLooping, mSpeed, mCache, mCachePath, mOverrideExtension);
+        getGSYVideoManager().prepare(mUrl, mSubTitle, mSubtitleView, (mMapHeadData == null) ? new HashMap<String, String>(16) : mMapHeadData, mLooping, mSpeed, mCache, mCachePath, mOverrideExtension);
         setStateAndUi(CURRENT_STATE_PREPAREING);
     }
 

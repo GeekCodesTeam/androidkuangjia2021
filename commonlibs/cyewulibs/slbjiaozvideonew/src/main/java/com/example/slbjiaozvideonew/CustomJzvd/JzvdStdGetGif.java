@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.os.Environment;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slbjiaozvideonew.R;
-import com.example.slbjiaozvideonew.Tab_3_List.GifCreateHelper;
+import com.example.slbjiaozvideonew.tab3list.GifCreateHelper;
 
 import java.io.File;
 

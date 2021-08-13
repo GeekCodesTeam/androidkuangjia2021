@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.slbjiaozvideonew.CustomJzvd.JzvdDanmu
+    <com.example.slbjiaozvideonew.customjzvd.JzvdDanmu
         android:id="@+id/jz_danmu_player"
         android:layout_width="match_parent"
         android:layout_height="200dp" />

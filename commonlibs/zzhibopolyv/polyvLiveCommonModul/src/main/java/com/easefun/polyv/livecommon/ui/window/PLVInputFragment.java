@@ -98,6 +98,7 @@ public abstract class PLVInputFragment extends PLVBaseFragment {
         FrameLayout content = getActivity().findViewById(android.R.id.content);
         final View childOfContent = content.getChildAt(0);
         childOfContent.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
             public void onGlobalLayout() {//all call
                 int usableHeightNow = computeUsableHeight(childOfContent);
                 int usableHeightSansKeyboard = childOfContent.getRootView().getHeight();
@@ -261,8 +262,9 @@ public abstract class PLVInputFragment extends PLVBaseFragment {
 
     protected boolean popupLayoutIsVisible() {
         for (ViewGroup viewGroup : popupLayoutList) {
-            if (viewGroup.getVisibility() == View.VISIBLE)
+            if (viewGroup.getVisibility() == View.VISIBLE) {
                 return true;
+            }
         }
         return false;
     }

@@ -22,10 +22,12 @@ public abstract class AbstractAppleMetaDataBox extends AbstractBox implements Co
     private static Logger LOG = Logger.getLogger(AbstractAppleMetaDataBox.class.getName());
     AppleDataBox appleDataBox = new AppleDataBox();
 
+    @Override
     public List<Box> getBoxes() {
         return Collections.singletonList((Box) appleDataBox);
     }
 
+    @Override
     public void setBoxes(List<Box> boxes) {
         if (boxes.size() == 1 && boxes.get(0) instanceof AppleDataBox) {
             appleDataBox = (AppleDataBox) boxes.get(0);
@@ -34,10 +36,12 @@ public abstract class AbstractAppleMetaDataBox extends AbstractBox implements Co
         }
     }
 
+    @Override
     public <T extends Box> List<T> getBoxes(Class<T> clazz) {
         return getBoxes(clazz, false);
     }
 
+    @Override
     public <T extends Box> List<T> getBoxes(Class<T> clazz, boolean recursive) {
         //todo recursive?
         if (clazz.isAssignableFrom(appleDataBox.getClass())) {
@@ -65,10 +69,12 @@ public abstract class AbstractAppleMetaDataBox extends AbstractBox implements Co
     }
 
 
+    @Override
     protected long getContentSize() {
         return appleDataBox.getSize();
     }
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         try {
             appleDataBox.getBox(new ByteBufferByteChannel(byteBuffer));
@@ -77,6 +83,7 @@ public abstract class AbstractAppleMetaDataBox extends AbstractBox implements Co
         }
     }
 
+    @Override
     public long getNumOfBytesToFirstChild() {
         return getSize() - appleDataBox.getSize();
     }

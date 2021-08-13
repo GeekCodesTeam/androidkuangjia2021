@@ -277,11 +277,13 @@ public class FunGameBattleCityHeader extends FunGameView {
         bulletSpeed += DensityUtil.dp2px(1);
         wipeOutNum = 0;
 
-        if (enemyTankSpace > 12)
-        enemyTankSpace -= 12;
+        if (enemyTankSpace > 12) {
+            enemyTankSpace -= 12;
+        }
 
-        if (bulletSpace > 30)
-        bulletSpace -= 30;
+        if (bulletSpace > 30) {
+            bulletSpace -= 30;
+        }
     }
 
     /**
@@ -370,7 +372,9 @@ public class FunGameBattleCityHeader extends FunGameView {
                 drawTank(canvas, rectF);
             }
 
-            if (status == STATUS_GAME_OVER) break;
+            if (status == STATUS_GAME_OVER) {
+                break;
+            }
             if (isOverstep) {
                 rectFQueue.poll();
                 isOverstep = false;

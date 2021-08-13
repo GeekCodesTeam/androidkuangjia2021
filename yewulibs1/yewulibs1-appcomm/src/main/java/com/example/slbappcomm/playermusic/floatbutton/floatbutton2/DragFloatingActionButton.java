@@ -139,6 +139,8 @@ public class DragFloatingActionButton extends FloatingActionButton {
                     }
                 }
                 break;
+            default:
+                break;
 
 
         }

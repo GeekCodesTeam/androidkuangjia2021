@@ -1,4 +1,4 @@
-package com.easefun.polyv.livecommon.ui.widget.imageScan;
+package com.easefun.polyv.livecommon.ui.widget.imagescan;
 
 import android.Manifest;
 import android.app.Activity;
@@ -139,8 +139,9 @@ public class PLVChatImageViewer extends FrameLayout {
                             .map(new Function<File, Boolean>() {
                                 @Override
                                 public Boolean apply(File file) throws Exception {
-                                    if (file.getAbsolutePath().equals(new File(savePath, fileName).getAbsolutePath()))
+                                    if (file.getAbsolutePath().equals(new File(savePath, fileName).getAbsolutePath())) {
                                         return true;
+                                    }
                                     return FileUtils.copyFile(file, new File(savePath, fileName),//同path时，复制失败
                                             new FileUtils.OnReplaceListener() {
                                                 @Override

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".account.activity.YonghujihuoMainAct">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="34mm"
+            android:background="#FFF2F2"
+            android:drawableLeft="@mipmap/my_tip"
+            android:drawablePadding="8mm"
+            android:gravity="center_vertical"
+            android:paddingLeft="8mm"
+            android:text="修改手机号将同步修改您的登录手机号"
+            android:textColor="#000000"
+            android:textSize="13mm" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="28mm"
+            android:paddingTop="25mm"
+            android:paddingRight="28mm">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="原手机号"
+                android:textColor="#ff333333"
+                android:textSize="12mm" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:maxLines="1"
+                android:maxLength="18"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:hint="请输入原手机号"
+                android:textColor="#ffcccccc"
+                android:textSize="16mm" />
+
+            <View style="@style/lineStyle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:text="新手机号"
+                android:textColor="#ff333333"
+                android:textSize="12mm" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:background="@null"
+                android:maxLines="1"
+                android:maxLength="18"
+                android:layout_marginBottom="15mm"
+                android:hint="请输入新手机号"
+                android:textColor="#ffcccccc"
+                android:textSize="16mm" />
+
+            <View style="@style/lineStyle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:text="验证码"
+                android:textColor="#ff333333"
+                android:textSize="12mm" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="请输入验证码"
+                    android:background="@null"
+                    android:textColor="#ffcccccc"
+                    android:textSize="16mm" />
+
+                <com.geek.libglide47.base.GlideImageView
+                    android:id="@+id/iv_vercode"
+                    android:layout_marginLeft="10mm"
+                    android:layout_width="96mm"
+                    android:layout_height="38mm"
+                    android:background="@color/gray_disable" />
+
+
+            </LinearLayout>
+
+            <View style="@style/lineStyle" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:text="短信验证码"
+                android:textColor="#ff333333"
+                android:textSize="12mm" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_msg_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="请输入短信验证码"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="#ffcccccc"
+                    android:textSize="16mm" />
+
+                <View
+                    android:layout_width="1mm"
+                    android:layout_height="16mm"
+                    android:background="#DDDDDD" />
+
+                <TextView
+                    android:id="@+id/tv_getcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15mm"
+                    android:text="获取验证码"
+                    android:textColor="#ffc50405"
+                    android:textSize="15mm" />
+
+
+            </LinearLayout>
+
+            <View style="@style/lineStyle" />
+
+            <Button
+                android:id="@+id/btn_change"
+                style="@style/my_bottom_btn"
+                android:layout_marginTop="100mm"
+                android:text="确认修改" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.core.widget.NestedScrollView>

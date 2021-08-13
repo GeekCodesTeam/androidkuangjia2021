@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -29,8 +29,9 @@ public class JzvdStdTinyWindow extends JzvdStd {
 
     public void gotoTinyScreen() {
         Log.i(TAG, "startWindowTiny " + " [" + this.hashCode() + "] ");
-        if (state == STATE_NORMAL || state == STATE_ERROR || state == STATE_AUTO_COMPLETE)
+        if (state == STATE_NORMAL || state == STATE_ERROR || state == STATE_AUTO_COMPLETE) {
             return;
+        }
         ViewGroup vg = (ViewGroup) getParent();
         jzvdContext = vg.getContext();
         blockLayoutParams = getLayoutParams();

@@ -22,8 +22,9 @@ public class MagicWaldenFilter extends GPUImageFilter {
     protected void onDestroy() {
         super.onDestroy();
         GLES20.glDeleteTextures(inputTextureHandles.length, inputTextureHandles, 0);
-        for(int i = 0; i < inputTextureHandles.length; i++)
+        for(int i = 0; i < inputTextureHandles.length; i++) {
             inputTextureHandles[i] = -1;
+        }
     }
 
     @Override
@@ -48,8 +49,9 @@ public class MagicWaldenFilter extends GPUImageFilter {
     @Override
     public void onInit(){
         super.onInit();
-        for(int i = 0; i < inputTextureUniformLocations.length; i++)
+        for(int i = 0; i < inputTextureUniformLocations.length; i++) {
             inputTextureUniformLocations[i] = GLES20.glGetUniformLocation(getProgram(), "inputImageTexture"+(2+i));
+        }
         mGLStrengthLocation = GLES20.glGetUniformLocation(getProgram(), "strength");
     }
 
@@ -58,6 +60,7 @@ public class MagicWaldenFilter extends GPUImageFilter {
         super.onInitialized();
         setFloat(mGLStrengthLocation, 1.0f);
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 inputTextureHandles[0] = OpenGLUtils.loadTexture(getContext(), "filter/walden_map.png");
                 inputTextureHandles[1] = OpenGLUtils.loadTexture(getContext(), "filter/vignette_map.png");

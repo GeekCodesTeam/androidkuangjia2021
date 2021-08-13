@@ -28,24 +28,25 @@ public class PLVTextFaceLoader {
         return messageToSpan(charSequence, sizes, context, null);
     }
 
+    public static Pattern patternmessageToSpan = Pattern.compile("\\[[^\\[]{1,5}\\]");
+
     public static CharSequence[] messageToSpan(CharSequence charSequence, int[] sizes, Context context, List<int[]> spanIndexs) {
-    /**
-     * ///暂时保留该代码
-     * if (sizes.length > 2) {
-     *     throw new RuntimeException("sizes length is incorrect");
-     * }
-     * if (charSequence instanceof String) {
-     *     charSequence = Html.fromHtml((String) charSequence);//html转义，send no transfer，eg: <> -> ""
-     * }
-     */
+        /**
+         * ///暂时保留该代码
+         * if (sizes.length > 2) {
+         *     throw new RuntimeException("sizes length is incorrect");
+         * }
+         * if (charSequence instanceof String) {
+         *     charSequence = Html.fromHtml((String) charSequence);//html转义，send no transfer，eg: <> -> ""
+         * }
+         */
         SpannableStringBuilder[] spanArr = new SpannableStringBuilder[sizes.length];
         for (int i = 0; i < sizes.length; i++) {
             spanArr[i] = new SpannableStringBuilder(charSequence);
         }
         int start;
         int end;
-        Pattern pattern = Pattern.compile("\\[[^\\[]{1,5}\\]");
-        Matcher matcher = pattern.matcher(charSequence);
+        Matcher matcher = patternmessageToSpan.matcher(charSequence);
         while (matcher.find()) {
             start = matcher.start();
             end = matcher.end();

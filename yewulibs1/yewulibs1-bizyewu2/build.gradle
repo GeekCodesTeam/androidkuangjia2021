@@ -1,23 +1,14 @@
 apply plugin: 'com.android.library'
 apply from: '../../assemble_dolast.gradle'
 apply from: './../../commonlibs2.gradle'
-
 def librarys = rootProject.ext.dependencies
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-////    implementation project(':commonlibs:acommon:libutils')
-//    implementation librarys.blankj
 //    implementation project(':commonlibs:acommon:libmvp')
 //    implementation project(':commonlibs:acommon:libretrofit')
-////    bxnt_nationImplementation(name: 'libvariants_bxnt_nation', ext: 'aar')
-////    bxny_nationImplementation(name: 'libvariants_bxny_nation', ext: 'aar')
-////    bxn_nationImplementation(name: 'libvariants_bxn_nation', ext: 'aar')
-////    implementation "com.github.geeklx:libmvp:1.0.8"
-////    implementation "com.github.geeklx:libretrofit:1.0.8"
-    //    implementation librarys.blankj
-//    implementation project(':commonlibs:acommon:libmvp')
-//    implementation project(':commonlibs:acommon:libretrofit')
-    implementation project(':commonlibs:acommon:libbase')
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.0'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.5.0'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.5.0'
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxn_nationImplementation project(':yewulibs1:yewulibs1-libvariants')

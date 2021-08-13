@@ -14,8 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import xyz.doikki.dkplayer.R;
-import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
+import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
@@ -58,7 +58,9 @@ public class AdControlViewDk extends FrameLayout implements IControlComponent, V
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener != null) mListener.onAdClick();
+                if (mListener != null) {
+                    mListener.onAdClick();
+                }
             }
         });
     }
@@ -88,6 +90,8 @@ public class AdControlViewDk extends FrameLayout implements IControlComponent, V
             case VideoView.STATE_PAUSED:
                 mPlayButton.setSelected(false);
                 break;
+            default:
+                break;
         }
     }
 
@@ -102,6 +106,8 @@ public class AdControlViewDk extends FrameLayout implements IControlComponent, V
                 mBack.setVisibility(VISIBLE);
                 mFullScreen.setSelected(true);
                 break;
+            default:
+                break;
         }
 
         //暂未实现全面屏适配逻辑，需要你自己补全
@@ -109,8 +115,9 @@ public class AdControlViewDk extends FrameLayout implements IControlComponent, V
 
     @Override
     public void setProgress(int duration, int position) {
-        if (mAdTime != null)
+        if (mAdTime != null) {
             mAdTime.setText(String.format("%s | 跳过", (duration - position) / 1000));
+        }
     }
 
     @Override
@@ -126,9 +133,13 @@ public class AdControlViewDk extends FrameLayout implements IControlComponent, V
         } else if (id == R.id.iv_volume) {
             doMute();
         } else if (id == R.id.ad_detail) {
-            if (mListener != null) mListener.onAdClick();
+            if (mListener != null) {
+                mListener.onAdClick();
+            }
         } else if (id == R.id.ad_time) {
-            if (mListener != null) mListener.onSkipAd();
+            if (mListener != null) {
+                mListener.onSkipAd();
+            }
         } else if (id == R.id.iv_play) {
             mControlWrapper.togglePlay();
         }

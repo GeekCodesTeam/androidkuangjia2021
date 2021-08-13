@@ -72,8 +72,9 @@ public class BitstreamReader {
       * @see ua.org.jplayer.javcodec.h264.RBSPInputStream#readNBit(int)
       */
     public long readNBit(int n) throws IOException {
-        if (n > 64)
+        if (n > 64) {
             throw new IllegalArgumentException("Can not readByte more then 64 bit");
+        }
 
         long val = 0;
 
@@ -143,8 +144,9 @@ public class BitstreamReader {
       * @see ua.org.jplayer.javcodec.h264.RBSPInputStream#next_bits(int)
       */
     public int peakNextBits(int n) throws IOException {
-        if (n > 8)
+        if (n > 8) {
             throw new IllegalArgumentException("N should be less then 8");
+        }
         if (nBit == 8) {
             advance();
             if (curByte == -1) {

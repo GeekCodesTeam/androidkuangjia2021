@@ -69,7 +69,9 @@ public class RotateBitmap {
     }
 
     public int getHeight() {
-        if (bitmap == null) return 0;
+        if (bitmap == null) {
+            return 0;
+        }
         if (isOrientationChanged()) {
             return bitmap.getWidth();
         } else {
@@ -78,7 +80,9 @@ public class RotateBitmap {
     }
 
     public int getWidth() {
-        if (bitmap == null) return 0;
+        if (bitmap == null) {
+            return 0;
+        }
         if (isOrientationChanged()) {
             return bitmap.getHeight();
         } else {

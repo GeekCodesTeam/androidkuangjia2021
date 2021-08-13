@@ -44,6 +44,7 @@ public class DataEntryUrnBox extends AbstractFullBox {
         return location;
     }
 
+    @Override
     protected long getContentSize() {
         return Utf8.utf8StringLengthInBytes(name) + 1 + Utf8.utf8StringLengthInBytes(location) + 1;
     }
@@ -63,6 +64,7 @@ public class DataEntryUrnBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "DataEntryUrlBox[name=" + getName() + ";location=" + getLocation() + "]";
     }

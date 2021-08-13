@@ -183,8 +183,9 @@ public class ScrollingActivity extends AppCompatActivity {
         if (isPlay) {
             getCurPlay().release();
         }
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 

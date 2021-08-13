@@ -17,7 +17,6 @@
 package com.geek.swipebacklayout;
 
 import android.content.Context;
-
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -363,6 +362,7 @@ public class ViewDragHelper {
      * Interpolator defining the animation curve for mScroller
      */
     private static final Interpolator sInterpolator = new Interpolator() {
+        @Override
         public float getInterpolation(float t) {
             t -= 1.0f;
             return t * t * t * t * t + 1.0f;
@@ -370,6 +370,7 @@ public class ViewDragHelper {
     };
 
     private final Runnable mSetIdleRunnable = new Runnable() {
+        @Override
         public void run() {
             setDragState(STATE_IDLE);
         }
@@ -742,10 +743,12 @@ public class ViewDragHelper {
      */
     private int clampMag(int value, int absMin, int absMax) {
         final int absValue = Math.abs(value);
-        if (absValue < absMin)
+        if (absValue < absMin) {
             return 0;
-        if (absValue > absMax)
+        }
+        if (absValue > absMax) {
             return value > 0 ? absMax : -absMax;
+        }
         return value;
     }
 
@@ -761,10 +764,12 @@ public class ViewDragHelper {
      */
     private float clampMag(float value, float absMin, float absMax) {
         final float absValue = Math.abs(value);
-        if (absValue < absMin)
+        if (absValue < absMin) {
             return 0;
-        if (absValue > absMax)
+        }
+        if (absValue > absMax) {
             return value > 0 ? absMax : -absMax;
+        }
         return value;
     }
 
@@ -1141,6 +1146,8 @@ public class ViewDragHelper {
                 cancel();
                 break;
             }
+            default:
+                break;
         }
 
         return mDragState == STATE_DRAGGING;
@@ -1308,6 +1315,8 @@ public class ViewDragHelper {
                 cancel();
                 break;
             }
+            default:
+                break;
         }
     }
 
@@ -1568,14 +1577,18 @@ public class ViewDragHelper {
     private int getEdgeTouched(int x, int y) {
         int result = 0;
 
-        if (x < mParentView.getLeft() + mEdgeSize)
+        if (x < mParentView.getLeft() + mEdgeSize) {
             result = EDGE_LEFT;
-        if (y < mParentView.getTop() + mEdgeSize)
+        }
+        if (y < mParentView.getTop() + mEdgeSize) {
             result = EDGE_TOP;
-        if (x > mParentView.getRight() - mEdgeSize)
+        }
+        if (x > mParentView.getRight() - mEdgeSize) {
             result = EDGE_RIGHT;
-        if (y > mParentView.getBottom() - mEdgeSize)
+        }
+        if (y > mParentView.getBottom() - mEdgeSize) {
             result = EDGE_BOTTOM;
+        }
 
         return result;
     }

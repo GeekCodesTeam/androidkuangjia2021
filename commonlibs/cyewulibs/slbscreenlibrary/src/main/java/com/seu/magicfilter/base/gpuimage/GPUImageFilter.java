@@ -128,14 +128,14 @@ public class GPUImageFilter {
     }
 
     private void initVbo() {
-        final float VEX_CUBE[] = {
+        final float[] VEX_CUBE = {
             -1.0f, -1.0f, // Bottom left.
             1.0f, -1.0f, // Bottom right.
             -1.0f, 1.0f, // Top left.
             1.0f, 1.0f, // Top right.
         };
 
-        final float TEX_COORD[] = {
+        final float[] TEX_COORD = {
             0.0f, 0.0f, // Bottom left.
             1.0f, 0.0f, // Bottom right.
             0.0f, 1.0f, // Top left.

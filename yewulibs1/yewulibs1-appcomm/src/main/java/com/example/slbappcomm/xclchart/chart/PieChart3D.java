@@ -62,7 +62,9 @@ public class PieChart3D extends PieChart {
 							 List<PieData> chartDataSource,
 							 float cirX, float cirY, float radius)
 	{		
-		if(null == chartDataSource) return false;
+		if(null == chartDataSource) {
+            return false;
+        }
  		float offsetAngle = initOffsetAngle;		
         float currentAngle = 0.0f;	              
         float newRadius = 0.0f;	
@@ -77,10 +79,14 @@ public class PieChart3D extends PieChart {
 			  for(int j=0;j< size;j++)
 			  {			  
 				    PieData cData =  chartDataSource.get(j);
-				    if(null == cData) continue;
+				    if(null == cData) {
+                        continue;
+                    }
 					//currentAngle = cData.getSliceAngle();		
 					currentAngle = MathHelper.getInstance().getSliceAngle(getTotalAngle(), (float) cData.getPercentage());
-					if(!validateAngle(currentAngle)) continue;
+					if(!validateAngle(currentAngle)) {
+                        continue;
+                    }
 					geArcPaint().setColor(cData.getSliceColor());	
 					
 				    if(cData.getSelected()) //指定突出哪个块
@@ -119,7 +125,9 @@ public class PieChart3D extends PieChart {
 										float cirX,float cirY,float radius)
 	{
 		
-		if(null == chartDataSource) return false;
+		if(null == chartDataSource) {
+            return false;
+        }
 		
  		float offsetAngle = initOffsetAngle;				
         float currentAngle = 0.0f;	              
@@ -135,10 +143,14 @@ public class PieChart3D extends PieChart {
 		for(int j=0;j< size;j++)
 		{
 		 	PieData cData = chartDataSource.get(j);
-		 	if(null == cData) continue;
+		 	if(null == cData) {
+                continue;
+            }
 		 	//currentAngle = cData.getSliceAngle();
 		 	currentAngle = MathHelper.getInstance().getSliceAngle(getTotalAngle(), (float) cData.getPercentage());
-		 	if(!validateAngle(currentAngle)) continue;		  
+		 	if(!validateAngle(currentAngle)) {
+                continue;
+            }
 		 	geArcPaint().setColor( DrawHelper.getInstance().getDarkerColor(
 		 												cData.getSliceColor()) ); 						
 		  	

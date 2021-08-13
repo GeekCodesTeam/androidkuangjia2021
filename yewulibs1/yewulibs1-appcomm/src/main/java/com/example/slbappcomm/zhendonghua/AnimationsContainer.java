@@ -33,8 +33,9 @@ public class AnimationsContainer {
 
     //获取单例
     public static AnimationsContainer getInstance(int resId, int fps) {
-        if (mInstance == null)
+        if (mInstance == null) {
             mInstance = new AnimationsContainer();
+        }
         mInstance.setResId(resId, fps);
         return mInstance;
     }
@@ -114,8 +115,9 @@ public class AnimationsContainer {
         //循环读取下一帧
         private int getNext() {
             mIndex++;
-            if (mIndex >= mFrames.length)
+            if (mIndex >= mFrames.length) {
                 mIndex = 0;
+            }
             return mFrames[mIndex];
         }
 
@@ -124,8 +126,9 @@ public class AnimationsContainer {
          */
         public synchronized void start() {
             mShouldRun = true;
-            if (mIsRunning)
+            if (mIsRunning) {
                 return;
+            }
 
             Runnable runnable = new Runnable() {
                 @Override

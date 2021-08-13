@@ -34,6 +34,7 @@ public final class OmaDrmAccessUnitFormatBox extends AbstractFullBox {
     private int keyIndicatorLength;
     private int initVectorLength;
 
+    @Override
     protected long getContentSize() {
         return 7;
     }

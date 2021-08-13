@@ -163,10 +163,12 @@ public class RecyclerViewFragmentDk extends BaseFragmentDk implements OnItemChil
      * 子类将会重写此方法，改变onResume的逻辑
      */
     protected void resume() {
-        if (mLastPos == -1)
+        if (mLastPos == -1) {
             return;
-        if (DKMainActivity.mCurrentIndex != 1)
+        }
+        if (DKMainActivity.mCurrentIndex != 1) {
             return;
+        }
         //恢复上次播放的位置
         startPlay(mLastPos);
     }
@@ -184,7 +186,9 @@ public class RecyclerViewFragmentDk extends BaseFragmentDk implements OnItemChil
      * @param position 列表位置
      */
     protected void startPlay(int position) {
-        if (mCurPos == position) return;
+        if (mCurPos == position) {
+            return;
+        }
         if (mCurPos != -1) {
             releaseVideoView();
         }
@@ -196,7 +200,9 @@ public class RecyclerViewFragmentDk extends BaseFragmentDk implements OnItemChil
         mVideoView.setUrl(videoBean.getUrl());
         mTitleView.setTitle(videoBean.getTitle());
         View itemView = mLinearLayoutManager.findViewByPosition(position);
-        if (itemView == null) return;
+        if (itemView == null) {
+            return;
+        }
         VideoRecyclerViewAdapterDk.VideoHolder viewHolder = (VideoRecyclerViewAdapterDk.VideoHolder) itemView.getTag();
         //把列表中预置的PrepareView添加到控制器中，注意isPrivate此处只能为true。
         mController.addControlComponent(viewHolder.mPrepareView, true);

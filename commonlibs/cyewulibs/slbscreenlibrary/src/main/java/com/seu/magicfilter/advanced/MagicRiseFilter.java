@@ -20,8 +20,9 @@ public class MagicRiseFilter extends GPUImageFilter{
     protected void onDestroy() {
         super.onDestroy();
         GLES20.glDeleteTextures(inputTextureHandles.length, inputTextureHandles, 0);
-        for(int i = 0; i < inputTextureHandles.length; i++)
+        for(int i = 0; i < inputTextureHandles.length; i++) {
             inputTextureHandles[i] = -1;
+        }
     }
 
     @Override
@@ -56,6 +57,7 @@ public class MagicRiseFilter extends GPUImageFilter{
     protected void onInitialized(){
         super.onInitialized();
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 inputTextureHandles[0] = OpenGLUtils.loadTexture(getContext(), "filter/blackboard1024.png");
                 inputTextureHandles[1] = OpenGLUtils.loadTexture(getContext(), "filter/overlaymap.png");

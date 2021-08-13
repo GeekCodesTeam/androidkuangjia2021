@@ -32,7 +32,9 @@ public class BaseAppManager {
      * 移除当前activity
      */
     public void pop() {
-        if (mActivities.isEmpty()) return;
+        if (mActivities.isEmpty()) {
+            return;
+        }
 
         Activity a = mActivities.lastElement();
         remove(a);
@@ -55,7 +57,9 @@ public class BaseAppManager {
      * @param activity
      */
     public void finish(Class<?> activity) {
-        if (mActivities.isEmpty()) return;
+        if (mActivities.isEmpty()) {
+            return;
+        }
         for (Activity a : mActivities) {
             if (a.getClass().equals(activity)) {
                 a.finish();
@@ -73,7 +77,9 @@ public class BaseAppManager {
      */
     public Activity get(Class<?> klass) {
         for (Activity a : mActivities) {
-            if (a.getClass().equals(klass)) return a;
+            if (a.getClass().equals(klass)) {
+                return a;
+            }
         }
 
         return null;

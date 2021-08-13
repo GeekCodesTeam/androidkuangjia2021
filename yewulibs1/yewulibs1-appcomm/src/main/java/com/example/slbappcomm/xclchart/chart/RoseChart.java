@@ -219,8 +219,12 @@ public class RoseChart extends PieChart {
 	 */
 	private void drawBGCircle(Canvas canvas)
 	{
-		if(!mShowBgCircle)return;
-		if(mListBgSeg == null)return ;
+		if(!mShowBgCircle) {
+            return;
+        }
+		if(mListBgSeg == null) {
+            return ;
+        }
 	
 		float radius = getRadius();		
 		for(Map.Entry<Float,Integer> entry:mListBgSeg.entrySet()){    
@@ -239,8 +243,12 @@ public class RoseChart extends PieChart {
 	
 	private void drawBGLines(Canvas canvas)
 	{
-		if(!mShowBgLines)return;
-		if(0 == mBgLines)return ;
+		if(!mShowBgLines) {
+            return;
+        }
+		if(0 == mBgLines) {
+            return ;
+        }
 		
 		int totalAngle =  360 - mIntervalAngle * mBgLines;
  		
@@ -299,7 +307,9 @@ public class RoseChart extends PieChart {
 	 		}
 	 		
 	 		 //内环
-			if(mShowInner)canvas.drawCircle(cirX,cirY,radius,getInnerPaint()); 
+			if(mShowInner) {
+                canvas.drawCircle(cirX,cirY,radius,getInnerPaint());
+            }
 			
 			 //画背景
 	        drawBGCircle(canvas);

@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -53,6 +53,8 @@ public class MyJzvdStd extends JzvdStd {
                     if (mChangeVolume) {
                         Log.i(TAG, "Touch screen change volume");
                     }
+                    break;
+                default:
                     break;
             }
         }

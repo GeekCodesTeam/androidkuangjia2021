@@ -80,8 +80,9 @@ public class DecodeHandler extends Handler {
 		// 这里需要将获取的data翻转一下，因为相机默认拿的的横屏的数据
 		byte[] rotatedData = new byte[data.length];
 		for (int y = 0; y < size.height; y++) {
-			for (int x = 0; x < size.width; x++)
-				rotatedData[x * size.height + size.height - y - 1] = data[x + y * size.width];
+			for (int x = 0; x < size.width; x++) {
+                rotatedData[x * size.height + size.height - y - 1] = data[x + y * size.width];
+            }
 		}
 
 		// 宽高也要调整

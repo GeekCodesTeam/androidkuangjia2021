@@ -97,7 +97,7 @@ public class FileUtil {
                 if (dir.listFiles().length == 0) {// 若目录下没有文件则直接删除
                     dir.delete();
                 } else {// 若有则把文件放进数组，并判断是否有下级目录
-                    File delFile[] = dir.listFiles();
+                    File[] delFile = dir.listFiles();
                     int len = dir.listFiles().length;
                     for (int j = 0; j < len; j++) {
                         if (delFile[j].isDirectory()) {
@@ -410,8 +410,9 @@ public class FileUtil {
                                             String content,
                                             boolean isAppend) {
         boolean isWriteOk = false;
-        if (TextUtils.isEmpty(content))
+        if (TextUtils.isEmpty(content)) {
             return false;
+        }
 
         char[] buffer;
         int count = 0;
@@ -679,7 +680,7 @@ public class FileUtil {
     public static long getFileSize(File f) {
         long size = 0;
         try {
-            File fList[] = f.listFiles();
+            File[] fList = f.listFiles();
             for (File file : fList) {
                 if (file.isDirectory()) {
                     size = size + getFileSize(file);
@@ -875,7 +876,7 @@ public class FileUtil {
                     // then delete the files and subdirectories in this dir
                     // only empty directories can be deleted, so subDirs have
                     // been done first
-                    if (child.lastModified() < new Date().getTime() - numDays * DateUtils.DAY_IN_MILLIS) {
+                    if (child.lastModified() < System.currentTimeMillis() - numDays * DateUtils.DAY_IN_MILLIS) {
                         if (child.delete()) {
                             deletedFiles++;
                         }

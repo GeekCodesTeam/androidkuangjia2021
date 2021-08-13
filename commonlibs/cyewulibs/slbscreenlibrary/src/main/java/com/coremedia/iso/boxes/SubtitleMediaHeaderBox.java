@@ -10,6 +10,7 @@ public class SubtitleMediaHeaderBox extends AbstractMediaHeaderBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 4;
     }
@@ -24,6 +25,7 @@ public class SubtitleMediaHeaderBox extends AbstractMediaHeaderBox {
         writeVersionAndFlags(byteBuffer);
     }
 
+    @Override
     public String toString() {
         return "SubtitleMediaHeaderBox";
     }

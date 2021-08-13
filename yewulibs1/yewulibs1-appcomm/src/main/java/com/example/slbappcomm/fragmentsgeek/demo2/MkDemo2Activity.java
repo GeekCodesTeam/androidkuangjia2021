@@ -44,11 +44,11 @@ public class MkDemo2Activity extends SlbBaseActivity implements OnClickListener 
                             PackageManager.GET_META_DATA);
             String klassName = appInfo.metaData.getString(ST);
             MyLogUtil.d("ST_DATA_activity", "ST=" + klassName);
-            if (klassName.equals(".ceshi")) {
+            if (".ceshi".equals(klassName)) {
 //                ServiceAddr.setIsDebugServer(true);
-            } else if (klassName.equals(".yushengchan")) {
+            } else if (".yushengchan".equals(klassName)) {
 //                ServiceAddr.setIsDebugServer(true);
-            } else if (klassName.equals(".xianshang")) {
+            } else if (".xianshang".equals(klassName)) {
 //                ServiceAddr.setIsDebugServer(false);
             }
             MyLogUtil.d("ST_DATA_activity", "ST_DATA=" /*+ ServiceAddr.isIsDebugServer()*/);

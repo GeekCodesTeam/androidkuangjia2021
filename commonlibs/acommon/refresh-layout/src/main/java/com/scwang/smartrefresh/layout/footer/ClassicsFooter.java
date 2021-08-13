@@ -1,15 +1,12 @@
 package com.scwang.smartrefresh.layout.footer;
 
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-//import android.support.annotation.ColorInt;
-//import android.support.annotation.ColorRes;
-//import android.support.annotation.DrawableRes;
-//
-//import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -34,8 +31,6 @@ import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.internal.ProgressDrawable;
 import com.scwang.smartrefresh.layout.internal.pathview.PathsDrawable;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
-
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * 经典上拉底部组件
@@ -298,6 +293,7 @@ public class ClassicsFooter extends RelativeLayout implements RefreshFooter {
         return true;
     }
 
+    @Override
     @NonNull
     public View getView() {
         return this;
@@ -316,6 +312,7 @@ public class ClassicsFooter extends RelativeLayout implements RefreshFooter {
                 case None:
 //                    restoreRefreshLayoutBackground();
                     mArrowView.setVisibility(VISIBLE);
+                    break;
                 case PullToUpLoad:
                     mTitleText.setText(REFRESH_FOOTER_PULLUP);
                     mArrowView.animate().rotation(180);
@@ -334,6 +331,8 @@ public class ClassicsFooter extends RelativeLayout implements RefreshFooter {
                     mTitleText.setText(REFRESH_FOOTER_REFRESHING);
                     mProgressView.setVisibility(GONE);
                     mArrowView.setVisibility(GONE);
+                    break;
+                default:
                     break;
             }
         }

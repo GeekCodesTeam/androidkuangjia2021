@@ -25,8 +25,9 @@ public class PLVPressedBgTextView extends AppCompatTextView {
         super.onDraw(canvas);
         int solidColor = getSolidColor();
         int color = Color.argb(99, Color.red(solidColor), Color.green(solidColor), Color.blue(solidColor));
-        if (isPressed())
+        if (isPressed()) {
             canvas.drawColor(color);
+        }
     }
 
     @Override

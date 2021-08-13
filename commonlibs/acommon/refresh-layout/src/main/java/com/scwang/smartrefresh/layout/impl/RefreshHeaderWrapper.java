@@ -27,6 +27,7 @@ public class RefreshHeaderWrapper implements RefreshHeader {
         this.mWrapperView = wrapper;
     }
 
+    @Override
     @NonNull
     public View getView() {
         return mWrapperView;

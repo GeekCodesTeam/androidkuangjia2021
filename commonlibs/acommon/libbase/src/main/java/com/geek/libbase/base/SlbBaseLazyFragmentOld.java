@@ -1,5 +1,6 @@
 package com.geek.libbase.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -99,7 +100,7 @@ public abstract class SlbBaseLazyFragmentOld extends SlbBaseFragment {
     public void hideInput() {
         // 先隐藏键盘
         if (getActivity().getCurrentFocus() != null) {
-            ((InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE)).
+            ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).
                     hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
         }

@@ -108,7 +108,9 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
 
     @Override
     public boolean onPreDraw() {
-        if (isAnimating) return true;
+        if (isAnimating) {
+            return true;
+        }
         rootView.getViewTreeObserver().removeOnPreDrawListener(this);
         if (curPosition >= 9) {
             curPosition = 8;
@@ -144,7 +146,9 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
     }
 
     public void finishWithAnim() {
-        if (isAnimating) return;
+        if (isAnimating) {
+            return;
+        }
         if (curPosition >= 9) {
             curPosition = 8;
         }

@@ -9,6 +9,7 @@
         android:id="@+id/fiv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         tools:src="@color/app_color_f6" />
 
     <ImageView
@@ -19,6 +20,8 @@
         android:layout_alignRight="@id/fiv"
         android:paddingLeft="10dp"
         android:paddingBottom="10dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginRight="-5dp"
         android:scaleType="centerInside"
         android:src="@drawable/ic_delete_menu"
         android:visibility="gone"

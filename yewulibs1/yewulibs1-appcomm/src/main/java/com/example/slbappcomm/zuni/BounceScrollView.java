@@ -23,8 +23,9 @@ public class BounceScrollView extends ScrollView {
 
     @Override
     protected void onFinishInflate() {
-        if (getChildCount() > 0)
+        if (getChildCount() > 0) {
             mView = getChildAt(0);
+        }
         super.onFinishInflate();
     }
 
@@ -41,37 +42,39 @@ public class BounceScrollView extends ScrollView {
         int cy = (int) ev.getY();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-            break;
+                break;
             case MotionEvent.ACTION_MOVE:
-            int dy = cy - y;
-            if (isFirst) {
-                dy = 0;
-                isFirst = false;
-            }
-            y = cy;
-            if (isNeedMove()) {
-                if (mRect.isEmpty()) {
-                    mRect.set(mView.getLeft(), mView.getTop(),
-                            mView.getRight(), mView.getBottom());
+                int dy = cy - y;
+                if (isFirst) {
+                    dy = 0;
+                    isFirst = false;
                 }
-                mView.layout(mView.getLeft(), mView.getTop() + 2 * dy / 3,
-                        mView.getRight(), mView.getBottom() + 2 * dy / 3);
-                if (shouldCallBack(dy)) {
-                    if (mCallback != null) {
-                        if (!isCalled) {
-                            isCalled = true;
-                            resetPosition();
-                            mCallback.callback();
+                y = cy;
+                if (isNeedMove()) {
+                    if (mRect.isEmpty()) {
+                        mRect.set(mView.getLeft(), mView.getTop(),
+                                mView.getRight(), mView.getBottom());
+                    }
+                    mView.layout(mView.getLeft(), mView.getTop() + 2 * dy / 3,
+                            mView.getRight(), mView.getBottom() + 2 * dy / 3);
+                    if (shouldCallBack(dy)) {
+                        if (mCallback != null) {
+                            if (!isCalled) {
+                                isCalled = true;
+                                resetPosition();
+                                mCallback.callback();
+                            }
                         }
                     }
                 }
-            }
-            break;
+                break;
             case MotionEvent.ACTION_UP:
-            if (!mRect.isEmpty()) {
-                resetPosition();
-            }
-            break;
+                if (!mRect.isEmpty()) {
+                    resetPosition();
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -102,8 +105,7 @@ public class BounceScrollView extends ScrollView {
         mCallback = callback;
     }
 
-    public interface Callback
-    {
+    public interface Callback {
         void callback();
     }
 }

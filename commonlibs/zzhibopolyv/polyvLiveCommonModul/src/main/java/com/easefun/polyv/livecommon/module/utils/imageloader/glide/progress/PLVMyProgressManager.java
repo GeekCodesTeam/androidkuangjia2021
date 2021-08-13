@@ -26,8 +26,9 @@ public class PLVMyProgressManager {
                         int percentage = (int) ((bytesRead * 1f / totalBytes) * 100f);
                         boolean isComplete = percentage >= 100;
                         if (!isComplete) {//交给glide回调(可以回调，因为多个相同url请求时glide可能只会回调其中一个，但是回调的话图片不会显示)。应该是其中一个url加载失败了(没有重新加载)，然后另外一个(重新加载了)又出现加载进度导致的！可以在url后面拼接参数解决(但是会加载两次/其他下载保存文件问题)。
-                            for (PLVOnProgressListener onProgressListener : onProgressListenerList)
+                            for (PLVOnProgressListener onProgressListener : onProgressListenerList) {
                                 onProgressListener.onProgress(url, isComplete, percentage, bytesRead, totalBytes);
+                            }
                         }
                         /***
                          * 暂时保留该代码
@@ -56,8 +57,9 @@ public class PLVMyProgressManager {
                                 PLVProgressResponseBody.mainThreadHandler.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        for (PLVOnProgressListener onProgressListener : onProgressListenerList)
+                                        for (PLVOnProgressListener onProgressListener : onProgressListenerList) {
                                             onProgressListener.onStart(url);
+                                        }
                                     }
                                 });
                             }
@@ -93,7 +95,7 @@ public class PLVMyProgressManager {
                     objectList.put(urlTag, listener);
                 }
             } else {
-                objectList = new ConcurrentHashMap<>();
+                objectList = new ConcurrentHashMap<>(16);
                 objectList.put(urlTag, listener);
                 listenersMap.put(moduleTag, objectList);
             }

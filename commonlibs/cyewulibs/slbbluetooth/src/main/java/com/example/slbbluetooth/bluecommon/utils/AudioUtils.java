@@ -5,30 +5,34 @@ import android.media.MediaPlayer;
 
 import com.example.slbbluetooth.R;
 
-import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-public enum  AudioUtils {
+public enum AudioUtils {
+    //
     INSTANCE;
+    //
     private MediaPlayer mediaPlayer;
-    private Timer mTimer;
+    //定时器任务
+    private ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;
+    //
     private TimerTask mTimerTask;
 
     public void playMedai(Context activity) {
 //        mediaPlayer= MediaPlayer.create(activity, R.raw.yiqianlengyiye);
-        mediaPlayer= MediaPlayer.create(activity, R.raw.zxl_beep);
-        mTimer = new Timer();
-        mTimerTask = new TimerTask() {
+        mediaPlayer = MediaPlayer.create(activity, R.raw.zxl_beep);
+        scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
+        scheduledThreadPoolExecutor.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
 
             }
-        };
-        mTimer.schedule(mTimerTask, 0, 10);
+        }, 0, 2000, TimeUnit.SECONDS);
         mediaPlayer.start();
     }
 
-    public  void stopPlay (){
+    public void stopPlay() {
         mediaPlayer.stop();
     }
 }

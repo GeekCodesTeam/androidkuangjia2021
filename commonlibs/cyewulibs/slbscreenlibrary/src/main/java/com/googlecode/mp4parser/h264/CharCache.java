@@ -36,6 +36,7 @@ public class CharCache {
         pos += toWrite;
     }
 
+    @Override
     public String toString() {
         return new String(cache, 0, pos);
     }

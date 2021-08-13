@@ -64,6 +64,7 @@ public class FlatManifestWriterImpl extends AbstractManifestWriter {
         return manifest;
     }
 
+    @Override
     public String getManifest(Movie movie) throws IOException {
 
         LinkedList<VideoQuality> videoQualities = new LinkedList<VideoQuality>();
@@ -193,9 +194,9 @@ public class FlatManifestWriterImpl extends AbstractManifestWriter {
     }
 
     private AudioQuality getAudioQuality(Track track, AudioSampleEntry ase) {
-        if (getFormat(ase).equals("mp4a")) {
+        if ("mp4a".equals(getFormat(ase))) {
             return getAacAudioQuality(track, ase);
-        } else if (getFormat(ase).equals("ec-3")) {
+        } else if ("ec-3".equals(getFormat(ase))) {
             return getEc3AudioQuality(track, ase);
         } else if (getFormat(ase).startsWith("dts")) {
             return getDtsAudioQuality(track, ase);
@@ -338,6 +339,8 @@ public class FlatManifestWriterImpl extends AbstractManifestWriter {
                         dWChannelMaskFirstByte |= 0xEC;
                     }
                     break;
+                default:
+                    break;
             }
             if (entry.lfeon == 1) {
                 lfechans ++;
@@ -388,6 +391,8 @@ public class FlatManifestWriterImpl extends AbstractManifestWriter {
                 break;
             case 3:
                 samplesPerBlock = 4096;
+                break;
+            default:
                 break;
         }
         waveformatex.put((byte) (samplesPerBlock & 0xff));
@@ -635,6 +640,8 @@ public class FlatManifestWriterImpl extends AbstractManifestWriter {
                     break;
                 case 7:
                     dWChannelMaskSecondByte |= 0x2;
+                    break;
+                default:
                     break;
             }
             return this;

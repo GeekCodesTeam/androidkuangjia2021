@@ -50,7 +50,9 @@ public class RectPosition extends PositionRecord {
 	
 	protected void saveRectF(float left,float top,float right,float bottom)
 	{
-		if(null == mRectF)mRectF = new RectF();			
+		if(null == mRectF) {
+            mRectF = new RectF();
+        }
 		mRectF.set(left, top, right, bottom);
 	}
 	
@@ -68,7 +70,9 @@ public class RectPosition extends PositionRecord {
 			
 	public String getRectInfo()
 	{	
-		if(null == mRectF)return "";
+		if(null == mRectF) {
+            return "";
+        }
 		
 		float left = mRectF.left +  mExtValue;
 		float top = mRectF.top +  mExtValue;
@@ -89,8 +93,12 @@ public class RectPosition extends PositionRecord {
 	protected boolean compareRange(float x, float y) {
 		// TODO Auto-generated method stub
 		
-		if(null == mRectF)return false;		
-		if(null == mRectFRange)  mRectFRange = new RectF();
+		if(null == mRectF) {
+            return false;
+        }
+		if(null == mRectFRange) {
+            mRectFRange = new RectF();
+        }
 	
 		mRectFRange.setEmpty();
 		mRectFRange.set(mRectF);
@@ -101,7 +109,9 @@ public class RectPosition extends PositionRecord {
 		mRectFRange.bottom +=  mExtValue;			
 			
 		//contains 在范围比较小时很不好使.
-		if( mRectFRange.contains(x, y)) return true;
+		if( mRectFRange.contains(x, y)) {
+            return true;
+        }
 		
 		//再加层手工检查
         return (Float.compare(x, mRectFRange.left) == 1 || Float.compare(x, mRectFRange.left) == 0)

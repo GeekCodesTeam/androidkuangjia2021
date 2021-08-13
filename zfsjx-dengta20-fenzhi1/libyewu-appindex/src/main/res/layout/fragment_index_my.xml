@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/smartRefresh"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.header.MaterialHeader
+        android:id="@+id/materlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/index_my_bg"
+        app:srlAccentColor="@android:color/white"
+        android:orientation="vertical"
+        android:paddingLeft="15mm"
+        android:paddingTop="35mm"
+        android:paddingRight="15mm">
+
+        <ImageView
+          android:id="@+id/iv_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@mipmap/index_scan" />
+
+        <com.geek.libglide47.base.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="58mm"
+            android:layout_height="58mm"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/index_head" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13mm"
+            tools:text="李思思"
+            android:textColor="#ffffffff"
+            android:textSize="17mm" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5mm"
+            tools:text="山东福生佳信科技股份有限公司党支部"
+            android:textColor="#ffffffff"
+            android:textSize="13mm" />
+
+        <TextView
+            android:id="@+id/tv_job_state"
+            android:layout_width="wrap_content"
+            android:layout_height="20mm"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8mm"
+            android:background="@drawable/index_my_state"
+            android:drawableLeft="@mipmap/index_state"
+            android:drawablePadding="5mm"
+            android:gravity="center"
+            android:paddingLeft="10mm"
+            android:paddingRight="10mm"
+            android:text="状态"
+            android:textColor="#ffffffff"
+            android:textSize="11mm" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25mm"
+            android:background="@drawable/index_shape_white"
+            android:orientation="vertical"
+            android:paddingLeft="16mm"
+            android:paddingRight="16mm">
+
+            <TextView
+                android:id="@+id/tv_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:drawableLeft="@mipmap/index_security"
+                android:drawableRight="@mipmap/index_right"
+                android:drawablePadding="10mm"
+                android:text="账号安全"
+                android:textColor="#ff333333"
+                android:textSize="15mm" />
+
+            <View
+                style="@style/index_lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="1mm" />
+
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:drawableLeft="@mipmap/index_service"
+                android:drawableRight="@mipmap/index_right"
+                android:drawablePadding="10mm"
+                android:text="智能客服"
+                android:textColor="#ff333333"
+                android:textSize="15mm" />
+
+            <View
+                style="@style/index_lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="1mm" />
+
+
+            <TextView
+                android:id="@+id/tv_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:drawableLeft="@mipmap/index_help"
+                android:drawableRight="@mipmap/index_right"
+                android:drawablePadding="10mm"
+                android:text="帮助与反馈"
+                android:textColor="#ff333333"
+                android:textSize="15mm" />
+
+            <View
+                style="@style/index_lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="1mm" />
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:drawableLeft="@mipmap/index_setting"
+                android:drawableRight="@mipmap/index_right"
+                android:drawablePadding="10mm"
+                android:text="设置"
+                android:textColor="#ff333333"
+                android:textSize="15mm" />
+
+            <View
+                style="@style/index_lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="1mm" />
+
+            <TextView
+                android:id="@+id/tv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15mm"
+                android:layout_marginBottom="15mm"
+                android:drawableLeft="@mipmap/index_about"
+                android:drawableRight="@mipmap/index_right"
+                android:drawablePadding="10mm"
+                android:text="关于我们"
+                android:textColor="#ff333333"
+                android:textSize="15mm" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

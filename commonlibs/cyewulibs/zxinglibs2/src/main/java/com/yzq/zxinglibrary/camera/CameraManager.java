@@ -212,7 +212,7 @@ public final class CameraManager {
             autoFocusManager = null;
         }
         if (camera != null && previewing) {
-            camera.stopPreview();
+            camera.startPreview();
             previewCallback.setHandler(null, 0);
             previewing = false;
         }

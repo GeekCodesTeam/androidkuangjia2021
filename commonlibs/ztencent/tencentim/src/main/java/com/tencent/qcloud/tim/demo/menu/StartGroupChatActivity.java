@@ -159,15 +159,15 @@ public class StartGroupChatActivity extends BaseActivity {
             mJoinTypeIndex = -1;
         }
         final GroupInfo groupInfo = new GroupInfo();
-        String groupName = V2TIMManager.getInstance().getLoginUser();
+        StringBuilder groupName = new StringBuilder(V2TIMManager.getInstance().getLoginUser());
         for (int i = 1; i < mMembers.size(); i++) {
-            groupName = groupName + "、" + mMembers.get(i).getAccount();
+            groupName.append("、").append(mMembers.get(i).getAccount());
         }
         if (groupName.length() > 20) {
-            groupName = groupName.substring(0, 17) + "...";
+            groupName = new StringBuilder(groupName.substring(0, 17) + "...");
         }
-        groupInfo.setChatName(groupName);
-        groupInfo.setGroupName(groupName);
+        groupInfo.setChatName(groupName.toString());
+        groupInfo.setGroupName(groupName.toString());
         groupInfo.setMemberDetails(mMembers);
         groupInfo.setGroupType(mGroupTypeValue.get(mGroupType));
         groupInfo.setJoinType(mJoinTypeIndex);

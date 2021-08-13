@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -80,6 +80,7 @@ public class JzvdStdTikTok extends JzvdStd {
         topContainer.setVisibility(GONE);
     }
 
+    @Override
     public void updateStartImage() {
         if (state == STATE_PLAYING) {
             startButton.setVisibility(VISIBLE);

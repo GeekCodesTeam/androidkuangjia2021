@@ -45,7 +45,9 @@ public class StackBarChart  extends BarChart {
 
 	public StackBarChart()
 	{
-		if(null == flatBar)flatBar = new FlatBar();
+		if(null == flatBar) {
+            flatBar = new FlatBar();
+        }
 	}
 
 	@Override
@@ -85,7 +87,9 @@ public class StackBarChart  extends BarChart {
 	@Override
 	protected boolean renderHorizontalBar(Canvas canvas)
 	{
-		 if(null == categoryAxis.getDataSet()) return false;
+		 if(null == categoryAxis.getDataSet()) {
+             return false;
+         }
 
 		 float axisScreenWidth  =  getPlotScreenWidth();
 		 float axisDataRange = dataAxis.getAxisRange();
@@ -115,15 +119,21 @@ public class StackBarChart  extends BarChart {
 
 				//得到数据源
 				List<BarData> chartDataSource = this.getDataSource();
-				if(null==chartDataSource||chartDataSource.size() == 0)continue;
+				if(null==chartDataSource||chartDataSource.size() == 0) {
+                    continue;
+                }
 
 				 dataSize = chartDataSource.size();
 				 for(int i=0;i<dataSize;i++) //轴上的每个标签各自所占的高度
 				 {
 					 BarData bd = chartDataSource.get(i);
-					 if(null == bd.getDataSet()) continue ;
+					 if(null == bd.getDataSet()) {
+                         continue ;
+                     }
 					 flatBar.getBarPaint().setColor(bd.getColor());
-					 if(bd.getDataSet().size() < r+1) continue;
+					 if(bd.getDataSet().size() < r+1) {
+                         continue;
+                     }
 
 					//参数值与最大值的比例  照搬到 y轴高度与矩形高度的比例上来
 					double bv = bd.getDataSet().get(r);
@@ -192,11 +202,15 @@ public class StackBarChart  extends BarChart {
 	{
 			//得到分类轴数据集
 			List<String> dataSet =  categoryAxis.getDataSet();
-			if(null == dataSet) return false;
+			if(null == dataSet) {
+                return false;
+            }
 
 			//得到数据源
 			List<BarData> chartDataSource = this.getDataSource();
-			if(null == chartDataSource) return false;	
+			if(null == chartDataSource) {
+                return false;
+            }
 					
 			float XSteps = getVerticalXSteps(dataSet.size() + 1 );			 
 			float axisScreenHeight  =  getAxisScreenHeight(); 
@@ -224,10 +238,14 @@ public class StackBarChart  extends BarChart {
 					 for(int i=0; i < sourceSize;i++) //各自所占的高度
 					 {
 						 BarData bd = chartDataSource.get(i);
-						 if(null == bd.getDataSet()) continue ;
+						 if(null == bd.getDataSet()) {
+                             continue ;
+                         }
 						 
 						 flatBar.getBarPaint().setColor(bd.getColor());						 
-						 if(bd.getDataSet().size() < r+1) continue; 						 
+						 if(bd.getDataSet().size() < r+1) {
+                             continue;
+                         }
 						 
 						//参数值与最大值的比例  照搬到 y轴高度与矩形高度的比例上来	
 						Double bv = bd.getDataSet().get(r);												

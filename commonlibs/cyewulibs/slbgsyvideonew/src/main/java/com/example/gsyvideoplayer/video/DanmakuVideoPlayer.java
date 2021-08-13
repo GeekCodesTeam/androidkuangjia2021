@@ -221,10 +221,10 @@ public class DanmakuVideoPlayer extends StandardGSYVideoPlayer {
 
     private void initDanmaku() {
         // 设置最大显示行数
-        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>(16);
         maxLinesPair.put(BaseDanmaku.TYPE_SCROLL_RL, 5); // 滚动弹幕最大显示5行
         // 设置是否禁止重叠
-        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>();
+        HashMap<Integer, Boolean> overlappingEnablePair = new HashMap<Integer, Boolean>(16);
         overlappingEnablePair.put(BaseDanmaku.TYPE_SCROLL_RL, true);
         overlappingEnablePair.put(BaseDanmaku.TYPE_FIX_TOP, true);
 
@@ -304,8 +304,9 @@ public class DanmakuVideoPlayer extends StandardGSYVideoPlayer {
             @Override
             public void run() {
                 if (mDanmaKuShow) {
-                    if (!getDanmakuView().isShown())
+                    if (!getDanmakuView().isShown()) {
                         getDanmakuView().show();
+                    }
                     mToogleDanmaku.setText("弹幕关");
                 } else {
                     if (getDanmakuView().isShown()) {

@@ -152,7 +152,7 @@ public class CheckverionPresenter extends Presenter<CheckverionView> {
 
     // 多file混合方式上传bufen
     public void checkVerion4(List<File> fileList) {
-        Map<String, RequestBody> params = new HashMap<>();
+        Map<String, RequestBody> params = new HashMap<>(16);
         //以下参数是，参数需要换成自己服务器支持的
         params.put("uid", convertToRequestBody("1701"));
         params.put("token", convertToRequestBody("E6C4C1B581A506F2F4D6748B3649AD3C"));

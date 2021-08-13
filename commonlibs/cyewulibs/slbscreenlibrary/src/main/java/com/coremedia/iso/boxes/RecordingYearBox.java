@@ -35,6 +35,7 @@ public class RecordingYearBox extends AbstractFullBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         return 6;
     }

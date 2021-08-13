@@ -156,7 +156,7 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
             mPictureHeight = rc.height;
         }
         mCamera.getParameters().setPreviewSize(mPreviewWidth, mPreviewHeight);
-        mCamera.getParameters().setPictureSize(mPictureWidth, mPictureHeight);
+        mCamera.getParameters().setPreviewSize(mPictureWidth, mPictureHeight);
 
         mGLPreviewBuffer = ByteBuffer.allocateDirect(mPreviewWidth * mPreviewHeight * 4);
         mInputAspectRatio = mPreviewWidth > mPreviewHeight ?
@@ -282,7 +282,7 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
         }
 
         Camera.Parameters params = mCamera.getParameters();
-        params.setPictureSize(mPictureWidth, mPictureHeight);
+        params.setPreviewSize(mPictureWidth, mPictureHeight);
         params.setPreviewSize(mPreviewWidth, mPreviewHeight);
         int[] range = adaptFpsRange(Config.VFPS, params.getSupportedPreviewFpsRange());
         params.setPreviewFpsRange(range[0], range[1]);
@@ -333,7 +333,7 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
 
         stopTorch();
         if (mCamera != null) {
-            mCamera.stopPreview();
+            mCamera.startPreview();
             mCamera.release();
             mCamera = null;
         }

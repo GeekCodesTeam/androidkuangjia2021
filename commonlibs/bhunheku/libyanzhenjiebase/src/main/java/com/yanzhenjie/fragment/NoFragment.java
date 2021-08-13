@@ -189,8 +189,9 @@ public class NoFragment extends Fragment {
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!onInterceptToolbarBack())
+                if (!onInterceptToolbarBack()) {
                     finish();
+                }
             }
         });
     }
@@ -221,8 +222,9 @@ public class NoFragment extends Fragment {
      * @param title title.
      */
     protected void setTitle(CharSequence title) {
-        if (mToolbar != null)
+        if (mToolbar != null) {
             mToolbar.setTitle(title);
+        }
     }
 
     /**
@@ -231,8 +233,9 @@ public class NoFragment extends Fragment {
      * @param titleId string resource id from {@code string.xml}.
      */
     protected void setTitle(int titleId) {
-        if (mToolbar != null)
+        if (mToolbar != null) {
             mToolbar.setTitle(titleId);
+        }
     }
 
     /**
@@ -241,8 +244,9 @@ public class NoFragment extends Fragment {
      * @param title sub title.
      */
     protected void setSubtitle(CharSequence title) {
-        if (mToolbar != null)
+        if (mToolbar != null) {
             mToolbar.setSubtitle(title);
+        }
     }
 
     /**
@@ -251,8 +255,9 @@ public class NoFragment extends Fragment {
      * @param titleId string resource id from {@code string.xml}.
      */
     protected void setSubtitle(int titleId) {
-        if (mToolbar != null)
+        if (mToolbar != null) {
             mToolbar.setSubtitle(titleId);
+        }
     }
 
     // ------------------------- Stack ------------------------- //

@@ -107,7 +107,7 @@ public class OTASendUtils {
             if (file.isFile()) {
                 file.delete();
             } else if (file.isDirectory()) {
-                File files[] = file.listFiles();
+                File[] files = file.listFiles();
                 for (int i = 0; i < files.length; i++) {
                     deleteFile(files[i]);
                 }
@@ -145,8 +145,9 @@ public class OTASendUtils {
      * 获取目录剩余可用空间 返回bytes
      */
     public long getAvailableSizeOfFilePath(File path) {
-        if (path.isFile())
+        if (path.isFile()) {
             return path.length();
+        }
         StatFs sf = new StatFs(path.getPath());
 
         //文件系统中总的空闲字节数，包括保留的存储区块（不能被普通应用程序使用）

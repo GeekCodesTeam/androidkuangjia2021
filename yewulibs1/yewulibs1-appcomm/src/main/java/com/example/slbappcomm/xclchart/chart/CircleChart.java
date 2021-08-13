@@ -387,14 +387,16 @@ public class CircleChart extends CirChart {
                     if("" != cData.getLabel()) { //getCirY(hCirY,textHeight)
                     	canvas.drawText(cData.getLabel(), cirX, sub(hCirY,textHeight), getLabelPaint());
                     }
-                    if("" != mDataInfo )
-                    	canvas.drawText(mDataInfo, cirX, hCirY - infoHeight, getDataInfoPaint());
+                    if("" != mDataInfo ) {
+                        canvas.drawText(mDataInfo, cirX, hCirY - infoHeight, getDataInfoPaint());
+                    }
 
                 } else {
                     currentAngle = MathHelper.getInstance().getSliceAngle(360.f, (float) cData.getPercentage());
                     
-                    if(isShowInnerBG())
-                    	canvas.drawCircle(cirX, cirY, radius, getBgCirclePaint());
+                    if(isShowInnerBG()) {
+                        canvas.drawCircle(cirX, cirY, radius, getBgCirclePaint());
+                    }
                     	// canvas.drawCircle(cirX, cirY, (float) (Math.round(radius * 0.9f)), mPaintFillCircle);
                     
                     
@@ -436,15 +438,18 @@ public class CircleChart extends CirChart {
                     }
         	    	////////////////////        	    	
                     
-                    if(isShowInnerFill())
-                    	canvas.drawCircle(cirX, cirY, 
-                    					MathHelper.getInstance().round(mul(radius , miRadius ),2), getFillCirclePaint());
+                    if(isShowInnerFill()) {
+                        canvas.drawCircle(cirX, cirY,
+                                        MathHelper.getInstance().round(mul(radius , miRadius ),2), getFillCirclePaint());
+                    }
                     
-                    if("" != cData.getLabel())
-                       canvas.drawText(cData.getLabel(), cirX, getCirY(cirY,LabelHeight), getLabelPaint());
+                    if("" != cData.getLabel()) {
+                        canvas.drawText(cData.getLabel(), cirX, getCirY(cirY,LabelHeight), getLabelPaint());
+                    }
 
-                    if ("" != mDataInfo)
-                        canvas.drawText(mDataInfo, cirX, add(cirY , infoHeight), getDataInfoPaint());                                                                               
+                    if ("" != mDataInfo) {
+                        canvas.drawText(mDataInfo, cirX, add(cirY , infoHeight), getDataInfoPaint());
+                    }
                 }
 
                 break;

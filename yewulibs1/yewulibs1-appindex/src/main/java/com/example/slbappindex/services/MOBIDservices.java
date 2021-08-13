@@ -13,6 +13,10 @@ import android.os.Message;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.SPUtils;
+import com.example.bizyewu1.bean.SbbdBean;
+import com.example.bizyewu1.presenter.SbbdPresenter;
+import com.example.bizyewu1.view.SbbdView;
 import com.example.bizyewu2.bean.HMobid2Bean;
 import com.example.bizyewu2.presenter.HMobID2Presenter;
 import com.example.bizyewu2.presenter.HMobIDPresenter;
@@ -27,11 +31,12 @@ import com.mob.pushsdk.MobPushReceiver;
 
 import java.util.List;
 
-public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
+public class MOBIDservices extends Service implements HMobIDView, HMobID2View, SbbdView {
 
     // test
     private HMobIDPresenter presenter_mobid;
     private HMobID2Presenter presenter_mobid2;
+    private SbbdPresenter presenter3;
     private Handler handler;
 
     @Nullable
@@ -81,6 +86,25 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
         return System.currentTimeMillis() + "";
     }
 
+    @Override
+    public void OnSbbdSuccess(SbbdBean versionInfoBean) {
+        SPUtils.getInstance().put("accessSecret", versionInfoBean.getAccessSecret());
+        SPUtils.getInstance().put("accessKey", versionInfoBean.getAccessKey());
+        SPUtils.getInstance().put("version", versionInfoBean.getSignVersion());
+        // test
+        presenter_mobid.get_mob_id();
+    }
+
+    @Override
+    public void OnSbbdNodata(String bean) {
+
+    }
+
+    @Override
+    public void OnSbbdFail(String msg) {
+
+    }
+
 
     public class MsgBinder extends Binder {
         public MOBIDservices getService() {
@@ -97,6 +121,8 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
         presenter_mobid.onCreate(this);
         presenter_mobid2 = new HMobID2Presenter();
         presenter_mobid2.onCreate(this);
+        presenter3 = new SbbdPresenter();
+        presenter3.onCreate(this);
 //        MobSDK.init(this);
 //        //防止多进程注册多次  可以在MainActivity或者其他页面注册MobPushReceiver
 //        String processName = getProcessName(this);
@@ -110,8 +136,6 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
 //                presenter_mobid.get_mob_id();
 //            }
 //        });
-        // test
-        presenter_mobid.get_mob_id();
         MobPush.addPushReceiver(new MobPushReceiver() {
             @Override
             public void onCustomMessageReceive(Context context, MobPushCustomMessage message) {
@@ -204,7 +228,7 @@ public class MOBIDservices extends Service implements HMobIDView, HMobID2View {
                 return false;
             }
         });
-
+        presenter3.getSbbdPresenter();
     }
 
     private String getProcessName(Context context) {

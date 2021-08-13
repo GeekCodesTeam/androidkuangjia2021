@@ -192,8 +192,12 @@ public class DKMainActivity extends BaseActivityDk implements BottomNavigationVi
 
     @Override
     public void onBackPressed() {
-        if (getVideoViewManager().onBackPress(TagDk.LIST)) return;
-        if (getVideoViewManager().onBackPress(TagDk.SEAMLESS)) return;
+        if (getVideoViewManager().onBackPress(TagDk.LIST)) {
+            return;
+        }
+        if (getVideoViewManager().onBackPress(TagDk.SEAMLESS)) {
+            return;
+        }
         super.onBackPressed();
     }
 

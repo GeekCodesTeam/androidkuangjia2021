@@ -112,8 +112,9 @@ public class CityListSelectActivity extends AppCompatActivity {
         }
         int count = cityList.size();
         String[] list = new String[count];
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             list[i] = cityList.get(i).getName();
+        }
         
         sourceDateList.addAll(filledData(cityList));
         // 根据a-z进行排序源数据
@@ -142,13 +143,13 @@ public class CityListSelectActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(cityName) && cityName.length() > 0) {
                     
                     String pinyin = "";
-                    if (cityName.equals("重庆市")) {
+                    if ("重庆市".equals(cityName)) {
                         pinyin = "chong";
                     }
-                    else if (cityName.equals("长沙市")) {
+                    else if ("长沙市".equals(cityName)) {
                         pinyin = "chang";
                     }
-                    else if (cityName.equals("长春市")) {
+                    else if ("长春市".equals(cityName)) {
                         pinyin = "chang";
                     }
                     else {

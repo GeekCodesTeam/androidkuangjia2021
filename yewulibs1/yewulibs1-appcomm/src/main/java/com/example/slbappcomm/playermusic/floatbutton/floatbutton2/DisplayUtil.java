@@ -157,6 +157,8 @@ public class DisplayUtil {
                 return 180;
             case Surface.ROTATION_270:
                 return 270;
+            default:
+                break;
         }
         return 0;
     }
@@ -195,6 +197,8 @@ public class DisplayUtil {
 
             case 270:
                 display = ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+                break;
+            default:
                 break;
         }
 

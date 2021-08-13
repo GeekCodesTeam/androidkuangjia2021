@@ -38,59 +38,73 @@ public class SilenceTrackImpl implements Track {
         }
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return source.getSampleDescriptionBox();
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return Collections.singletonList(entry);
 
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return source.getTrackMetaData();
     }
 
+    @Override
     public String getHandler() {
         return source.getHandler();
     }
 
+    @Override
     public boolean isEnabled() {
         return source.isEnabled();
     }
 
+    @Override
     public boolean isInMovie() {
         return source.isInMovie();
     }
 
+    @Override
     public boolean isInPreview() {
         return source.isInPreview();
     }
 
+    @Override
     public boolean isInPoster() {
         return source.isInPoster();
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return samples;
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return source.getMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }

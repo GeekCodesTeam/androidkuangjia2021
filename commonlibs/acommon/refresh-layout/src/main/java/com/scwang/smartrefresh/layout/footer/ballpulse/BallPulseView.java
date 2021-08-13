@@ -63,8 +63,10 @@ public class BallPulseView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (mAnimators != null) for (int i = 0; i < mAnimators.size(); i++) {
-            mAnimators.get(i).cancel();
+        if (mAnimators != null) {
+            for (int i = 0; i < mAnimators.size(); i++) {
+                mAnimators.get(i).cancel();
+            }
         }
     }
 
@@ -130,9 +132,15 @@ public class BallPulseView extends View {
     }
 
     public void startAnim() {
-        if (mAnimators == null) createAnimators();
-        if (mAnimators == null) return;
-        if (isStarted()) return;
+        if (mAnimators == null) {
+            createAnimators();
+        }
+        if (mAnimators == null) {
+            return;
+        }
+        if (isStarted()) {
+            return;
+        }
 
         for (int i = 0; i < mAnimators.size(); i++) {
             ValueAnimator animator = mAnimators.get(i);

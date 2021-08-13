@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_sh_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_edu_hua"
+                    android:drawablePadding="5dp"
+                    android:text="审核结果"
+                    android:textColor="#ff333333"
+                    android:textSize="14dp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_sh_result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector"
+                        android:visibility="gone"
+                        android:checked="true" />
+
+                    <TextView
+                        android:id="@+id/tv_sh_yes_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="通过"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:visibility="gone"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector" />
+
+                    <TextView
+                        android:id="@+id/tv_sh_no_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="不通过"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="#ffe9e9e9" />
+
+            <LinearLayout
+                android:id="@+id/ll_sh_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#80E1E1E1"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:padding="15dp">
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/btn_no_c"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_eduresource_screen_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="不采用"
+                        android:textColor="@color/btn_edu_screen_text_selector"
+                        android:textSize="11dp"
+                        android:visibility="gone"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_no_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_eduresource_screen_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="返回修改"
+                        android:textColor="@color/btn_edu_screen_text_selector"
+                        android:textSize="11dp"
+                        android:visibility="gone"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_no_disable"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_eduresource_screen_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="禁用"
+                        android:textColor="@color/btn_edu_screen_text_selector"
+                        android:textSize="11dp"
+                        android:visibility="gone"
+                        />
+
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/iv_sh_dialog_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_edu_help" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sh_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#80E1E1E1"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:padding="15dp">
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/btn_sh_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_eduresource_screen_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="审核通过"
+                        android:textColor="@color/btn_edu_screen_text_selector"
+                        android:textSize="11dp"
+                        android:visibility="gone"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_sh_yes_finish"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_eduresource_screen_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="审核通过并终审"
+                        android:textColor="@color/btn_edu_screen_text_selector"
+                        android:textSize="11dp"
+                        android:visibility="gone"
+                        />
+
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/iv_sh_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_edu_help" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sug_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="15dp"
+                    android:text="审核建议"
+                    android:textColor="#ff333333"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/et_sug"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@null"
+                    android:hint="请输入审核建议"
+                    android:textColor="#999999"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="#ffe9e9e9" />
+
+            <LinearLayout
+                android:id="@+id/ll_sh_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_edu_hua"
+                    android:drawablePadding="5dp"
+                    android:text="审核结果"
+                    android:textColor="#ff333333"
+                    android:textSize="13dp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_sh_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector"
+                        android:visibility="gone"
+                        android:checked="true" />
+
+                    <TextView
+                        android:id="@+id/tv_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="A"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rb_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="1dp"
+                        android:visibility="gone"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector" />
+
+                    <TextView
+                        android:id="@+id/tv_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="B"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rb_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="1dp"
+                        android:visibility="gone"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector" />
+
+                    <TextView
+                        android:id="@+id/tv_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="C"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="1dp"
+                        android:visibility="gone"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector" />
+
+                    <TextView
+                        android:id="@+id/tv_d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="D"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rb_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="1dp"
+                        android:visibility="gone"
+                        android:button="@drawable/btn_eduresource_detail_sh_selector" />
+
+                    <TextView
+                        android:id="@+id/tv_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="E"
+                        android:textColor="#999999"
+                        android:visibility="gone"
+                        android:textSize="13dp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/btn_eduresource_type_selector"
+            android:drawableLeft="@mipmap/icon_edu_sh_suo"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="锁定审核"
+            android:textColor="#ffc50405"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/eduresource_btn_sel_red"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+
+    </LinearLayout>
+</LinearLayout>
+
+
+

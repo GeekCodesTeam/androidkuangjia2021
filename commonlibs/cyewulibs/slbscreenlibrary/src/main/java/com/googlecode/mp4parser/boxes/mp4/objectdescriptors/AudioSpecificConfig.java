@@ -346,11 +346,13 @@ public class AudioSpecificConfig extends BaseDescriptor {
                 psPresentFlag = 1;
             }
             extensionSamplingFrequencyIndex = bitReaderBuffer.readBits(4);
-            if (extensionSamplingFrequencyIndex == 0xf)
+            if (extensionSamplingFrequencyIndex == 0xf) {
                 extensionSamplingFrequency = bitReaderBuffer.readBits(24);
+            }
             audioObjectType = getAudioObjectType(bitReaderBuffer);
-            if (audioObjectType == 22)
+            if (audioObjectType == 22) {
                 extensionChannelConfiguration = bitReaderBuffer.readBits(4);
+            }
         } else {
             extensionAudioObjectType = 0;
         }
@@ -469,6 +471,8 @@ public class AudioSpecificConfig extends BaseDescriptor {
                         throw new RuntimeException("not implemented");
                     }
                 }
+            default:
+                break;
         }
 
         if (extensionAudioObjectType != 5 && bitReaderBuffer.remainingBits() >= 16) {

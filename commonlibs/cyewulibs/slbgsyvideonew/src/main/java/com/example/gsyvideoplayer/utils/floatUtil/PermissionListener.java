@@ -1,4 +1,4 @@
-package com.example.gsyvideoplayer.utils.floatUtil;
+package com.example.gsyvideoplayer.utils.floatutil;
 
 /**
  * Created by yhao on 2017/11/14.

@@ -72,7 +72,6 @@ public class HarmonyApplication2 extends Application {
 //         String channel = WalleChannelReader.getChannel(this);
 //         Bugly.set(getApplicationContext(), channel);
         if (TextUtils.equals(banben_comm, "测试")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
             //TODO test
 //            if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -82,13 +81,11 @@ public class HarmonyApplication2 extends Application {
 //            }
 //            LeakCanary.install(this);
         } else if (TextUtils.equals(banben_comm, "预生产")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         } else if (TextUtils.equals(banben_comm, "线上")) {
-//            CrashReport.initCrashReport(this, "068e7f32c3", false);// 线上
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         }
+        Bugly.init(getApplicationContext(), buglykey, true);
     }
 
     /**
@@ -99,6 +96,7 @@ public class HarmonyApplication2 extends Application {
     protected void handleSSLHandshake() {
         try {
             TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+                @Override
                 public X509Certificate[] getAcceptedIssuers() {
                     return new X509Certificate[0];
                 }

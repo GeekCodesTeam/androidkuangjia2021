@@ -90,6 +90,8 @@ public class ActivityStackManager {
                  */
                 return true;
             }
+            default:
+                break;
         }
         return true;
     }

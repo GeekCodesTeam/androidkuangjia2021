@@ -32,7 +32,7 @@ public class SrsEncodeHandler extends Handler {
     public void notifyEncodeIllegalArgumentException(IllegalArgumentException e) {
         obtainMessage(MSG_ENCODE_ILLEGAL_ARGUMENT_EXCEPTION, e).sendToTarget();
     }
-    
+
     @Override  // runs on UI thread
     public void handleMessage(Message msg) {
         SrsEncodeListener listener = mWeakListener.get();
@@ -49,6 +49,7 @@ public class SrsEncodeHandler extends Handler {
                 break;
             case MSG_ENCODE_ILLEGAL_ARGUMENT_EXCEPTION:
                 listener.onEncodeIllegalArgumentException((IllegalArgumentException) msg.obj);
+                break;
             default:
                 throw new RuntimeException("unknown msg " + msg.what);
         }

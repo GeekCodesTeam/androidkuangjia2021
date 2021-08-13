@@ -103,10 +103,11 @@ public class PLVMessageRecyclerView extends RecyclerView {
                     }
                     callOnUnreadChange(unreadCount);
                     if (getAdapter() != null && getAdapter().getItemCount() > 0) {
-                        if ((getAdapter().getItemCount() - 1) - ((LinearLayoutManager) getLayoutManager()).findLastVisibleItemPosition() <= 10)
+                        if ((getAdapter().getItemCount() - 1) - ((LinearLayoutManager) getLayoutManager()).findLastVisibleItemPosition() <= 10) {
                             smoothScrollToPosition(getAdapter().getItemCount() - 1);
-                        else
+                        } else {
                             scrollToPosition(getAdapter().getItemCount() - 1);
+                        }
                     }
                 }
             });

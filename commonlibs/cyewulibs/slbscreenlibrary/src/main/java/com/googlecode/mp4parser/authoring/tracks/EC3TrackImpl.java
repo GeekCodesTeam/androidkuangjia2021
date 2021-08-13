@@ -125,43 +125,53 @@ public class EC3TrackImpl extends AbstractTrack {
     }
 
 
+    @Override
     public List<ByteBuffer> getSamples() {
 
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "soun";
     }
 
+    @Override
     public AbstractMediaHeaderBox getMediaHeaderBox() {
         return new SoundMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }
@@ -212,6 +222,8 @@ public class EC3TrackImpl extends AbstractTrack {
 
             case 3:
                 numberOfBlocksPerSyncFrame = 6;
+                break;
+            default:
                 break;
 
         }
@@ -375,9 +387,13 @@ public class EC3TrackImpl extends AbstractTrack {
                     case 3:
                         entry.samplerate = 0;
                         break;
+                    default:
+                        break;
                 }
                 break;
             }
+            default:
+                break;
 
         }
         if (entry.samplerate == 0) {

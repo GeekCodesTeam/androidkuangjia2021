@@ -35,20 +35,30 @@ class StorageWriteTest implements PermissionTest {
 
     @Override
     public boolean test() throws Throwable {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && !Environment.isExternalStorageLegacy()) return true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && !Environment.isExternalStorageLegacy()) {
+            return true;
+        }
 
-        if (!TextUtils.equals(Environment.MEDIA_MOUNTED, Environment.getExternalStorageState())) return true;
+        if (!TextUtils.equals(Environment.MEDIA_MOUNTED, Environment.getExternalStorageState())) {
+            return true;
+        }
 
         File directory = mContext.getExternalFilesDir(null);
 
-        if (!directory.exists()) return true;
+        if (!directory.exists()) {
+            return true;
+        }
 
         File parent = new File(directory, "Android");
         if (parent.exists() && parent.isFile()) {
-            if (!parent.delete()) return false;
+            if (!parent.delete()) {
+                return false;
+            }
         }
         if (!parent.exists()) {
-            if (!parent.mkdirs()) return false;
+            if (!parent.mkdirs()) {
+                return false;
+            }
         }
         File file = new File(parent, "ANDROID.PERMISSION.TEST");
         if (file.exists()) {

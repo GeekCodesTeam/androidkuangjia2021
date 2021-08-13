@@ -77,12 +77,14 @@ public class ImageDataSource implements LoaderManager.LoaderCallbacks<Cursor> {
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         CursorLoader cursorLoader = null;
         //扫描所有图片
-        if (id == LOADER_ALL)
+        if (id == LOADER_ALL) {
             cursorLoader = new CursorLoader(activity, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, IMAGE_PROJECTION, null, null, IMAGE_PROJECTION[6] + " DESC");
+        }
         Log.e("--geekyun--", "cursorLoader加载图片");
         //扫描某个图片文件夹
-        if (id == LOADER_CATEGORY)
+        if (id == LOADER_CATEGORY) {
             cursorLoader = new CursorLoader(activity, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, IMAGE_PROJECTION, IMAGE_PROJECTION[1] + " like '%" + args.getString("path") + "%'", null, IMAGE_PROJECTION[6] + " DESC");
+        }
 
         return cursorLoader;
     }

@@ -293,6 +293,8 @@ public class MaterialHeader extends ViewGroup implements RefreshHeader {
                 break;
             case Refreshing:
                 break;
+            default:
+                break;
         }
     }
 

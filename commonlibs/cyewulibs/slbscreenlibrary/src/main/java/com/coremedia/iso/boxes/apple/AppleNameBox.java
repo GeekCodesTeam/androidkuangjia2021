@@ -19,6 +19,7 @@ public final class AppleNameBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 4 + Utf8.convert(name).length;
     }

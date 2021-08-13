@@ -73,8 +73,9 @@ public class GSYExoSubTitlePlayer extends IjkExo2MediaPlayer {
                         if (mSpeedPlaybackParameters != null) {
                             mInternalPlayer.setPlaybackParameters(mSpeedPlaybackParameters);
                         }
-                        if (mSurface != null)
+                        if (mSurface != null) {
                             mInternalPlayer.setVideoSurface(mSurface);
+                        }
 
                         if (mSubTitile != null) {
                             MediaSource textMediaSource = getTextSource(Uri.parse(mSubTitile));

@@ -96,10 +96,14 @@ public class BounceZoomScrollView extends ScrollView {
                     upDownSlide = true;
                 }
                 break;
+            default:
+                break;
         }
         lastX = currentX;
         lastY = currentY;
-        if (upDownSlide && inner != null) commOnTouchEvent(ev);
+        if (upDownSlide && inner != null) {
+            commOnTouchEvent(ev);
+        }
         return super.dispatchTouchEvent(ev);
     }
  
@@ -173,6 +177,8 @@ public class BounceZoomScrollView extends ScrollView {
                 setZoom(1 + distance);
                 //头部处理end
  
+                break;
+            default:
                 break;
  
         }

@@ -90,6 +90,8 @@ public class ListViewFragmentDk extends BaseFragmentDk implements OnItemChildCli
                     case AbsListView.OnScrollListener.SCROLL_STATE_FLING:
                         scrollFlag = true;
                         break;
+                    default:
+                        break;
                 }
 
             }
@@ -153,7 +155,9 @@ public class ListViewFragmentDk extends BaseFragmentDk implements OnItemChildCli
 
     @Override
     public void onItemChildClick(int position) {
-        if (mCurPosition == position) return;
+        if (mCurPosition == position) {
+            return;
+        }
         if (mCurPosition != -1) {
             releaseVideoView();
         }

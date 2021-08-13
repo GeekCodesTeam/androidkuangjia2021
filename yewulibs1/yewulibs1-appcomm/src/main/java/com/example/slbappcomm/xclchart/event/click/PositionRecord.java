@@ -60,11 +60,17 @@ public abstract class PositionRecord {
 	
 	public int getRecordID()
 	{			
-		if(-1 == mDataID && -1 == mDataChildID ) return -1;
+		if(-1 == mDataID && -1 == mDataChildID ) {
+            return -1;
+        }
 		
 		int id = 0;	
-		if( mDataID > 0)  id += mDataChildID;
-		if( mDataChildID > 0) id +=  mDataChildID;
+		if( mDataID > 0) {
+            id += mDataChildID;
+        }
+		if( mDataChildID > 0) {
+            id +=  mDataChildID;
+        }
 	
 		return id;
 	}

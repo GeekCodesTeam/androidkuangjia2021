@@ -54,6 +54,7 @@ public class AlbumArtistBox extends AbstractFullBox {
         this.albumArtist = albumArtist;
     }
 
+    @Override
     protected long getContentSize() {
         return 6 + Utf8.utf8StringLengthInBytes(albumArtist) + 1;
     }
@@ -65,6 +66,7 @@ public class AlbumArtistBox extends AbstractFullBox {
         albumArtist = IsoTypeReader.readString(content);
     }
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeIso639(byteBuffer, language);
@@ -72,6 +74,7 @@ public class AlbumArtistBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "AlbumArtistBox[language=" + getLanguage() + ";albumArtist=" + getAlbumArtist() + "]";
     }

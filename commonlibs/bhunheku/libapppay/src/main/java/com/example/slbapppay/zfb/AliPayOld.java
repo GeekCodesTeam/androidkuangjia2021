@@ -46,6 +46,7 @@ public class AliPayOld implements Pay {
     // ali start
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
+        @Override
         @SuppressWarnings("unused")
         public void handleMessage(Message msg) {
             switch (msg.what) {

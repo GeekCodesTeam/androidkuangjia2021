@@ -37,6 +37,8 @@ public class ParentRecyclerView extends RecyclerView {
                 float distanceY = Math.abs(endY - mStartY);
                 getParent().requestDisallowInterceptTouchEvent(!(distanceX > 4 && distanceX > distanceY));
                 break;
+            default:
+                break;
         }
         return super.dispatchTouchEvent(ev);
     }

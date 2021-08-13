@@ -832,7 +832,9 @@ public final class SpanUtils {
     }
 
     private void updateCharCharSequence() {
-        if (mText.length() == 0) return;
+        if (mText.length() == 0) {
+            return;
+        }
         int start = mBuilder.length();
         mBuilder.append(mText);
         int end = mBuilder.length();
@@ -1092,10 +1094,12 @@ public final class SpanUtils {
             this.gapWidth = gapWidth;
         }
 
+        @Override
         public int getLeadingMargin(final boolean first) {
             return stripeWidth + gapWidth;
         }
 
+        @Override
         public void drawLeadingMargin(final Canvas c, final Paint p, final int x, final int dir,
                                       final int top, final int baseline, final int bottom,
                                       final CharSequence text, final int start, final int end,
@@ -1127,10 +1131,12 @@ public final class SpanUtils {
             this.gapWidth = gapWidth;
         }
 
+        @Override
         public int getLeadingMargin(final boolean first) {
             return 2 * radius + gapWidth;
         }
 
+        @Override
         public void drawLeadingMargin(final Canvas c, final Paint p, final int x, final int dir,
                                       final int top, final int baseline, final int bottom,
                                       final CharSequence text, final int start, final int end,

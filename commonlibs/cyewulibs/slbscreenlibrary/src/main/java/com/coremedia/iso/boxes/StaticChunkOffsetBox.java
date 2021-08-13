@@ -35,10 +35,12 @@ public class StaticChunkOffsetBox extends ChunkOffsetBox {
         super(TYPE);
     }
 
+    @Override
     public long[] getChunkOffsets() {
         return chunkOffsets;
     }
 
+    @Override
     protected long getContentSize() {
         return 8 + chunkOffsets.length * 4;
     }

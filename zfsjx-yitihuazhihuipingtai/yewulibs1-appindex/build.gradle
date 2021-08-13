@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply from: './../commonlibs2.gradle'
+
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.0'
+    implementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-appcomm')
+    bxnt_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1')
+    bxny_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1')
+    bxn_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1')
+    // test
+    bxnt_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2')
+    bxny_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2')
+    bxn_nationImplementation project(':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2')
+    //common aar
+//    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
+//    /**rep*/implementation (name:'biz3hxktindex_bxnt_nation', ext:'aar')
+//    /**rep*/implementation (name:'biz3hxktdetail_bxnt_nation', ext:'aar')
+    // 业务
+
+
+}
+
+// TODO mob
+apply from: './../MobSDK.gradle'

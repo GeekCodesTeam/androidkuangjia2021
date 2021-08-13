@@ -82,14 +82,18 @@ public class UpdateAppReceiver extends BroadcastReceiver {
             notificationManager.notify(notifyId, notification);
         }
 
-        if (UpdateAppUtils.showProgress)
+        if (UpdateAppUtils.showProgress) {
             UpdateAppUtils.mProgressDialog.setProgress(progress);
+        }
 
         if (progress == 100) {
-            if (notificationManager != null) notificationManager.cancel(notifyId);
+            if (notificationManager != null) {
+                notificationManager.cancel(notifyId);
+            }
 
-            if (UpdateAppUtils.showProgress)
+            if (UpdateAppUtils.showProgress) {
                 UpdateAppUtils.mProgressDialog.dismiss();
+            }
 
                 if (DownloadAppUtils.downloadUpdateApkFilePath != null) {
                     File apkFile = new File(DownloadAppUtils.downloadUpdateApkFilePath);

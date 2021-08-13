@@ -907,7 +907,9 @@ public class SrsFlvMuxer {
         }
 
         public void writeVideoSample(final ByteBuffer bb, MediaCodec.BufferInfo bi) {
-            if (bi.size < 4) return;
+            if (bi.size < 4) {
+                return;
+            }
 
             int pts = (int) (bi.presentationTimeUs / 1000);
             int dts = pts;
@@ -929,8 +931,9 @@ public class SrsFlvMuxer {
 
                 SrsFlvFrameBytes frame_sei = avc.demuxAnnexb(bb, bi, false);
                 if (frame_sei.size > 0) {
-                    if (SrsAvcNaluType.SEI == (int) (frame_sei.data.get(0) & 0x1f))
+                    if (SrsAvcNaluType.SEI == (int) (frame_sei.data.get(0) & 0x1f)) {
                         frame_pps.size = frame_pps.size - frame_sei.size - 3;// 3 ---> 00 00 01 SEI
+                    }
                 }
 
                 if (!frame_pps.data.equals(h264_pps)) {

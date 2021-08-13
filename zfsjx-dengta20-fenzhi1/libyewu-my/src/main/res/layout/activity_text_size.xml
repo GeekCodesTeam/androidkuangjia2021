@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:paddingTop="10mm"
+    android:scrollbars="none"
+    tools:context=".account.activity.UserLoginAct">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_extremely"
+            android:layout_width="match_parent"
+            android:layout_height="50mm"
+            android:gravity="center"
+            android:text="极大"
+            android:textColor="#ff333333"
+            android:textSize="20mm" />
+
+        <View style="@style/lineStyle" />
+
+        <TextView
+            android:id="@+id/tv_big"
+            android:layout_width="match_parent"
+            android:layout_height="50mm"
+            android:gravity="center"
+            android:text="大"
+            android:textColor="#ff333333"
+            android:textSize="18mm" />
+
+        <View style="@style/lineStyle" />
+
+        <TextView
+            android:id="@+id/tv_standard"
+            android:layout_width="match_parent"
+            android:layout_height="50mm"
+            android:gravity="center"
+            android:text="标准"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15mm" />
+
+        <View style="@style/lineStyle" />
+
+
+        <TextView
+            android:id="@+id/tv_small"
+            android:layout_width="match_parent"
+            android:layout_height="50mm"
+            android:gravity="center"
+            android:text="小"
+            android:textColor="#333333"
+            android:textSize="12mm" />
+
+        <View style="@style/lineStyle" />
+
+        <TextView
+            android:id="@+id/tv_minimum"
+            android:layout_width="match_parent"
+            android:layout_height="50mm"
+            android:gravity="center"
+            android:text="极小"
+            android:textColor="#ff333333"
+            android:textSize="10mm" />
+
+        <View style="@style/lineStyle" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

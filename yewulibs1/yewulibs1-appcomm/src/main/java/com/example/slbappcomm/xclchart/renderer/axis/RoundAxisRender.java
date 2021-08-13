@@ -59,24 +59,36 @@ public class RoundAxisRender extends RoundAxis {
 	
 	public void setAxisPercentage(List<Float> angle)
 	  {
-		  if(null != mPercentage) mPercentage.clear();	
-		  if(null == mPercentage) mPercentage = new ArrayList<Float>();			  
+		  if(null != mPercentage) {
+              mPercentage.clear();
+          }
+		  if(null == mPercentage) {
+              mPercentage = new ArrayList<Float>();
+          }
 		 		  
 		  mPercentage = angle;
 	  }
 	  
 	  public void setAxisColor(List<Integer> color)
 	  {
-		  if(null != mColor) mColor.clear();
-		  if(null == mColor) mColor = new ArrayList<Integer>();
+		  if(null != mColor) {
+              mColor.clear();
+          }
+		  if(null == mColor) {
+              mColor = new ArrayList<Integer>();
+          }
 		  
 		  mColor = color;
 	  }
 	  
 	  public void setAxisLabels(List<String> labels)
 	  {
-		  if(null != mLabels) mLabels.clear();
-		  if(null == mLabels) mLabels = new ArrayList<String>();
+		  if(null != mLabels) {
+              mLabels.clear();
+          }
+		  if(null == mLabels) {
+              mLabels = new ArrayList<String>();
+          }
 		 
 		  mLabels = labels;
 	  }
@@ -113,14 +125,16 @@ public class RoundAxisRender extends RoundAxis {
 				detailRadius = tickRadius;
 							
 				//有启用主明细步长设置 (inner)
-				if(1 < mDetailModeSteps)
-					tickRadius = tickRadius  - mRadius * 0.05f;
+				if(1 < mDetailModeSteps) {
+                    tickRadius = tickRadius  - mRadius * 0.05f;
+                }
 				
 			}else{
 				tickRadius = mRadius + mRadius * 0.05f; 
 				detailRadius = tickRadius;
-				if(1 < mDetailModeSteps)
-					tickRadius = mRadius + mRadius * 0.08f; 
+				if(1 < mDetailModeSteps) {
+                    tickRadius = mRadius + mRadius * 0.08f;
+                }
 			}
 						
 			int steps = mDetailModeSteps;
@@ -171,7 +185,9 @@ public class RoundAxisRender extends RoundAxis {
 						{
 							getTickMarksPaint().setStrokeWidth( tickMarkWidth + 1);
 						}else{
-							if(mLongTickfakeBold)getTickMarksPaint().setStrokeWidth(tickMarkWidth);
+							if(mLongTickfakeBold) {
+                                getTickMarksPaint().setStrokeWidth(tickMarkWidth);
+                            }
 						}								
 						canvas.drawLine(startX, startY, stopX, stopY, getTickMarksPaint());
 					}
@@ -288,8 +304,9 @@ public class RoundAxisRender extends RoundAxis {
 		{			
 			if(isShow() && isShowAxisLine())
 			{
-				if(null != mColor)
-					getFillAxisPaint().setColor(mColor.get(0));
+				if(null != mColor) {
+                    getFillAxisPaint().setColor(mColor.get(0));
+                }
 				
 				DrawHelper.getInstance().drawPercent(canvas, this.getFillAxisPaint(),
 								mCirX, mCirY, mRadius, mInitAngle, mTotalAngle, true);		
@@ -305,8 +322,12 @@ public class RoundAxisRender extends RoundAxis {
 		 */
 		public boolean renderTickAxis(Canvas canvas) throws Exception
 		{			
-			if(!isShow()) return false;			
-			if(null == mLabels) return false;
+			if(!isShow()) {
+                return false;
+            }
+			if(null == mLabels) {
+                return false;
+            }
 						
 			if(isShowAxisLine())
 			{
@@ -338,8 +359,9 @@ public class RoundAxisRender extends RoundAxis {
 		{			
 			if(isShow() && isShowAxisLine())
 			{
-				if(null != mColor)
-					getAxisPaint().setColor(mColor.get(0));
+				if(null != mColor) {
+                    getAxisPaint().setColor(mColor.get(0));
+                }
 				
 				 canvas.drawCircle(mCirX, mCirY, mRadius,  this.getAxisPaint());
 			}
@@ -355,15 +377,23 @@ public class RoundAxisRender extends RoundAxis {
 		 */
 		public boolean renderRingAxis(Canvas canvas) throws Exception
 		{
-			if(!isShow()|| !isShowAxisLine()) return true;
+			if(!isShow()|| !isShowAxisLine()) {
+                return true;
+            }
 			
-			if(null == mPercentage) return false;
+			if(null == mPercentage) {
+                return false;
+            }
 									
 			int angleCount = 0,colorCount = 0,labelsCount = 0;	
 			
 			 angleCount = this.mPercentage.size();
-			 if(null != mColor)colorCount = this.mColor.size();
-			 if(null != mLabels)labelsCount = this.mLabels.size();
+			 if(null != mColor) {
+                 colorCount = this.mColor.size();
+             }
+			 if(null != mLabels) {
+                 labelsCount = this.mLabels.size();
+             }
 			
 			float offsetAngle = this.mInitAngle;
 			int currentColor = -1;
@@ -372,8 +402,12 @@ public class RoundAxisRender extends RoundAxis {
 			
 			for(int i=0;i<angleCount;i++)
 			{				
-				if(null != mColor && colorCount > i) currentColor = mColor.get(i);
-				if(null != mLabels && labelsCount > i)currentLabel = mLabels.get(i);				
+				if(null != mColor && colorCount > i) {
+                    currentColor = mColor.get(i);
+                }
+				if(null != mLabels && labelsCount > i) {
+                    currentLabel = mLabels.get(i);
+                }
 				sweepAngle = MathHelper.getInstance().mul( mTotalAngle , mPercentage.get(i));
 				
 				renderPartitions(canvas,offsetAngle,sweepAngle,currentColor,currentLabel) ;
@@ -459,7 +493,9 @@ public class RoundAxisRender extends RoundAxis {
 		 */
 		public boolean renderLineAxis(Canvas canvas) throws Exception
 		{
-			 if(!isShow()|| !isShowAxisLine()) return true;		
+			 if(!isShow()|| !isShowAxisLine()) {
+                 return true;
+             }
 			 switch(mLocation)
 			 {
 			 case TOP:					 

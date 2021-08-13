@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,6 +22,7 @@ import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -41,13 +43,13 @@ public class ShareImgCutUtil {
     private static final String TAG = "ShareImgCutUtil";
 
     public static boolean isEmpty(String str) {
-        return null == str || str.trim().equals("");
+        return null == str || "".equals(str.trim());
     }
 
     public static boolean isEmptyMoney(String str) {
         try {
-            if (null == str || str.equals("") || str.equals("0")
-                    || str.equals("0.00") || 0 == Double.parseDouble(str)) {
+            if (null == str || "".equals(str) || "0".equals(str)
+                    || "0.00".equals(str) || 0 == Double.parseDouble(str)) {
                 return true;
             }
 
@@ -146,11 +148,12 @@ public class ShareImgCutUtil {
      * @param str2
      * @return counter
      */
+    public static Pattern patterncountStrParentheses = Pattern.compile("(?<=\\()[^\\)]+");
+
     public static String countStrParentheses(String str2) {
         // TODO SGF ADD
         String str1 = "";
-        Pattern pattern = Pattern.compile("(?<=\\()[^\\)]+");
-        Matcher matcher = pattern.matcher(str2);
+        Matcher matcher = patterncountStrParentheses.matcher(str2);
         while (matcher.find()) {
             str1 = matcher.group();
         }
@@ -205,7 +208,7 @@ public class ShareImgCutUtil {
         try {
             MyLogUtil.d(TAG, "formatMoney_FenToYuan : " + str);
             if (!isEmpty(str)) {
-                if (str.equals("0")) {
+                if ("0".equals(str)) {
                     return "0";
                 } else if (str.endsWith("00")) {
                     MyLogUtil.d(TAG, str.substring(0, str.length() - 2));
@@ -581,7 +584,9 @@ public class ShareImgCutUtil {
 
         if (isEmpty(password)) {
             return false;
-        } else return password.matches("^[0-9a-zA-Z]{6,15}$");
+        } else {
+            return password.matches("^[0-9a-zA-Z]{6,15}$");
+        }
 
     }
 
@@ -593,7 +598,9 @@ public class ShareImgCutUtil {
             return false;
         } else if (!phone.startsWith("1")) {
             return false;
-        } else return phone.length() == 11;
+        } else {
+            return phone.length() == 11;
+        }
 //        if (phone
 //                .matches("^((13[0-9])|(15[^4,\\D])|(18[0,5-9])|(170))\\d{8}$")) {
 //            return true;
@@ -612,7 +619,9 @@ public class ShareImgCutUtil {
     public static boolean verifyUsername(String username) {
         if (isEmpty(username)) {
             return false;
-        } else return username.matches("[\u4E00-\u9FA5a-zA-Z]{1}[\u4E00-\u9FA5a-zA-Z0-9]{2,15}");
+        } else {
+            return username.matches("[\u4E00-\u9FA5a-zA-Z]{1}[\u4E00-\u9FA5a-zA-Z0-9]{2,15}");
+        }
     }
 
     // /** 密码验证 */
@@ -622,16 +631,17 @@ public class ShareImgCutUtil {
     // .matches();
     // }
 
+    public static Pattern patternverifyEmail = Pattern.compile("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w+)\\s*$");
+
     public static boolean verifyEmail(String paramString) {
-        return Pattern
-                .compile("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w+)\\s*$")
-                .matcher(paramString).matches();
+        return patternverifyEmail.matcher(paramString).matches();
     }
 
+    public static String regex = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)";
+    public static Pattern patternverifyIDCard = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+
     public static boolean verifyIDCard(String validateStr) {
-        String regex = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)";
-        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        return pattern.matcher(validateStr).matches();
+        return patternverifyIDCard.matcher(validateStr).matches();
     }
 
 
@@ -686,7 +696,7 @@ public class ShareImgCutUtil {
 
     public static Map<String, String> parseData(String data) {
 
-        Map<String, String> retMap = new HashMap<String, String>();
+        Map<String, String> retMap = new HashMap<String, String>(16);
 
         String[] items = data.split("#");
         String[] item = null;
@@ -782,9 +792,10 @@ public class ShareImgCutUtil {
         return retBuf.toString();
     }
 
+    public static Pattern patternisNumeric = Pattern.compile("[0-9]*");
+
     public static boolean isNumeric(String str) {
-        Pattern pattern = Pattern.compile("[0-9]*");
-        Matcher isNum = pattern.matcher(str);
+        Matcher isNum = patternisNumeric.matcher(str);
         return isNum.matches();
     }
 
@@ -842,8 +853,9 @@ public class ShareImgCutUtil {
     public static Bitmap makeQRImage(String content, int width, int height)
             throws WriterException {
         // 判断URL合法性
-        if (!isNoBlankAndNoNull(content))
+        if (isNoBlankAndNoNull(content)) {
             return null;
+        }
 
         Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
         hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
@@ -857,9 +869,9 @@ public class ShareImgCutUtil {
         // 按照二维码的算法，逐个生成二维码的图片，两个for循环是图片横列扫描的结果
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                if (bitMatrix.get(x, y))
+                if (bitMatrix.get(x, y)) {
                     pixels[y * width + x] = 0xff000000;
-                else {
+                } else {
                     pixels[y * width + x] = 0xffffffff;
                 }
             }
@@ -871,6 +883,7 @@ public class ShareImgCutUtil {
 
         return bitmap;
     }
+
     private static BitMatrix deleteWhite(BitMatrix matrix) {
         int[] rec = matrix.getEnclosingRectangle();
         int resWidth = rec[2] + 1;
@@ -880,12 +893,14 @@ public class ShareImgCutUtil {
         resMatrix.clear();
         for (int i = 0; i < resWidth; i++) {
             for (int j = 0; j < resHeight; j++) {
-                if (matrix.get(i + rec[0], j + rec[1]))
+                if (matrix.get(i + rec[0], j + rec[1])) {
                     resMatrix.set(i, j);
+                }
             }
         }
         return resMatrix;
     }
+
     /**
      * 判断字符串是否非空非null
      *
@@ -893,7 +908,7 @@ public class ShareImgCutUtil {
      * @return 真假
      */
     public static boolean isNoBlankAndNoNull(String strParm) {
-        return !((strParm == null) || (strParm.equals("")));
+        return TextUtils.isEmpty(strParm);
     }
 
 
@@ -1110,7 +1125,7 @@ public class ShareImgCutUtil {
         int h = 0;
         Bitmap bitmap;
         for (int i = 0; i < relativeLayout.getChildCount(); i++) {
-            MyLogUtil.e("---geee45--h---",h+"");
+            MyLogUtil.e("---geee45--h---", h + "");
             h += relativeLayout.getChildAt(i).getHeight();
         }
         // 创建对应大小的bitmap

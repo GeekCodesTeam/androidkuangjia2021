@@ -289,6 +289,8 @@ public class CaptureHelper implements CaptureLifecycle, CaptureTouchEvent, Captu
                         }
                         oldDistance = newDistance;
                         break;
+                    default:
+                        break;
                 }
 
                 return true;
@@ -401,7 +403,7 @@ public class CaptureHelper implements CaptureLifecycle, CaptureTouchEvent, Captu
         Camera.Parameters params = camera.getParameters();
         if (params.isZoomSupported()) {
             int maxZoom = params.getMaxZoom();
-            int zoom = params.getZoom();
+            int zoom = params.getMaxZoom();
             if (isZoomIn && zoom < maxZoom) {
                 zoom++;
             } else if (zoom > 0) {

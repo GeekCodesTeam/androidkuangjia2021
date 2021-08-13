@@ -502,7 +502,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
 //        jPushDengluUtils.shouquan(other_login_name);
         ShowLoadingUtil.showLoading(SlbLoginActivity.this, "", null);
         // test 可注掉
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TOKEN, "用户token");
+        SPUtils.getInstance().put(CommonUtils.MMKV_TOKEN, "token");
         onLoginSuccess();
     }
 

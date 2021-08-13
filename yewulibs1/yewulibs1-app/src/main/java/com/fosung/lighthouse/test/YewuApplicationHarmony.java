@@ -3,6 +3,7 @@
  */
 package com.fosung.lighthouse.test;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -23,8 +24,6 @@ import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
-import com.geek.libbase.HarmonyApplication2;
-import com.example.slbappcomm.phonebroadcastreceiver.PhoneService;
 import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;
 import com.example.slbappindex.services.MOBIDservices;
@@ -104,7 +103,7 @@ public class YewuApplicationHarmony extends HarmonyApplication {
             @Override
             public void run() {
                 //TODO commonbufen
-                configBugly(BanbenCommonUtils.banben_comm, "3aeeb18e5e");
+                configBugly(BanbenCommonUtils.banben_comm, "4d63611bdc");
                 configHios();
                 configmmkv();
                 configShipei();
@@ -180,7 +179,6 @@ public class YewuApplicationHarmony extends HarmonyApplication {
 //         String channel = WalleChannelReader.getChannel(this);
 //         Bugly.set(getApplicationContext(), channel);
         if (TextUtils.equals(banben_comm, "测试")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
             //TODO test
 //            if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -190,13 +188,11 @@ public class YewuApplicationHarmony extends HarmonyApplication {
 //            }
 //            LeakCanary.install(this);
         } else if (TextUtils.equals(banben_comm, "预生产")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         } else if (TextUtils.equals(banben_comm, "线上")) {
-//            CrashReport.initCrashReport(this, "068e7f32c3", false);// 线上
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         }
+        Bugly.init(getApplicationContext(), buglykey, true);
     }
 
     /**
@@ -207,6 +203,7 @@ public class YewuApplicationHarmony extends HarmonyApplication {
     protected void handleSSLHandshake() {
         try {
             TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+                @Override
                 public X509Certificate[] getAcceptedIssuers() {
                     return new X509Certificate[0];
                 }
@@ -397,10 +394,6 @@ public class YewuApplicationHarmony extends HarmonyApplication {
     }
 
     private void initTencentIM() {
-        // bugly上报
-        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
-        strategy.setAppVersion(V2TIMManager.getInstance().getVersion());
-        CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
         TXLiveBase.getInstance().setLicence(this, "licenceUrl", "licenseKey");
         /**
          * TUIKit的初始化函数
@@ -553,7 +546,7 @@ public class YewuApplicationHarmony extends HarmonyApplication {
                 Method declaredMethod = cls.getDeclaredMethod("currentActivityThread");
                 declaredMethod.setAccessible(true);
                 Object activityThread = declaredMethod.invoke(null);
-                Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown");
+                @SuppressLint("SoonBlockedPrivateApi") Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown");
                 mHiddenApiWarningShown.setAccessible(true);
                 mHiddenApiWarningShown.setBoolean(activityThread, true);
             } catch (Exception e) {

@@ -18,6 +18,7 @@ public class CustomAnimatorDemo extends BaseFragment {
         return R.layout.fragment_custom_animator_demo;
     }
 
+    @Override
     public void init(View view) {
         view.findViewById(R.id.btn_show).setOnClickListener(listener);
     }

@@ -18,12 +18,14 @@ package com.yanzhenjie.permission.bridge;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.KeyEvent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.yanzhenjie.permission.overlay.setting.LSettingPage;
 import com.yanzhenjie.permission.overlay.setting.MSettingPage;
@@ -125,10 +127,13 @@ public final class BridgeActivity extends Activity {
 
     private String mActionSuffix;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) return;
+        if (savedInstanceState != null) {
+            return;
+        }
 
         Intent intent = getIntent();
         int operation = intent.getIntExtra(KEY_TYPE, -1);
@@ -180,6 +185,8 @@ public final class BridgeActivity extends Activity {
                 startActivityForResult(settingIntent, BridgeRequest.TYPE_WRITE_SETTING);
                 break;
             }
+            default:
+                break;
         }
     }
 

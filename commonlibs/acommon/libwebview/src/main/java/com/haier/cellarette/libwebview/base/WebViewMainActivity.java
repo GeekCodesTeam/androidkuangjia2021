@@ -15,7 +15,7 @@ public class WebViewMainActivity extends WebViewActivity {
             finish();
             return;
         }
-        if (adId.equals("1")) {
+        if ("1".equals(adId)) {
             url = "http://liangxiao.blog.51cto.com/";
         } else {
             url = "https://www.baidu.com/";

@@ -58,6 +58,7 @@ public class MagicPixarFilter extends GPUImageFilter{
         super.onInitialized();
         setFloat(mGLStrengthLocation, 1.0f);
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 inputTextureHandles[0] = OpenGLUtils.loadTexture(getContext(), "filter/pixar_curves.png");
             }

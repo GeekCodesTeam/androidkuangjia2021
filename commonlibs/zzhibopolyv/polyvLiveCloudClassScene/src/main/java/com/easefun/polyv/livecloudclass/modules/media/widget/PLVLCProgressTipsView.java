@@ -49,8 +49,9 @@ public class PLVLCProgressTipsView extends FrameLayout {
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == View.GONE)
+            if (msg.what == View.GONE) {
                 setVisibility(View.GONE);
+            }
         }
     };
 
@@ -60,10 +61,12 @@ public class PLVLCProgressTipsView extends FrameLayout {
             handler.sendEmptyMessageDelayed(View.GONE, 300);
         } else {
             setVisibility(View.VISIBLE);
-            if (fastForwardPos < 0)
+            if (fastForwardPos < 0) {
                 fastForwardPos = 0;
-            if (fastForwardPos > totaltime)
+            }
+            if (fastForwardPos > totaltime) {
                 fastForwardPos = totaltime;
+            }
             tvProgress.setText(PLVTimeUtils.generateTime(fastForwardPos, true) + "/" + PLVTimeUtils.generateTime(totaltime, true));
         }
     }

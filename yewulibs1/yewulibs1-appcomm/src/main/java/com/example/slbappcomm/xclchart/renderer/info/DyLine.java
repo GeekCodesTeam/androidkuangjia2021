@@ -74,7 +74,9 @@ public class DyLine {
 	 */
 	public void setCurrentXY(float x,float y) //setCurrentXY
 	{
-		if(null == mCenterXY) mCenterXY = new PointF();
+		if(null == mCenterXY) {
+            mCenterXY = new PointF();
+        }
 		mCenterXY.x = x;
 		mCenterXY.y = y;
 	}
@@ -85,7 +87,9 @@ public class DyLine {
 	 */
 	public boolean isInvalidate()
 	{
-		if(null == mCenterXY) return false;
+		if(null == mCenterXY) {
+            return false;
+        }
 		if(Float.compare(Math.abs(mCenterXY.x - mOldX ) , 5.f ) == 1 
         		|| Float.compare(Math.abs(mCenterXY.y - mOldY), 5.f) == 1)
         {        				          				       

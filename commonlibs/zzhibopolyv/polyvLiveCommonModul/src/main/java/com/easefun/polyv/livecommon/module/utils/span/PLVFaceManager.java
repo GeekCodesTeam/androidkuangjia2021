@@ -24,8 +24,9 @@ public class PLVFaceManager {
     private static PLVFaceManager instance;
 
     public static PLVFaceManager getInstance() {
-        if (null == instance)
+        if (null == instance) {
             instance = new PLVFaceManager();
+        }
         return instance;
     }
 
@@ -34,8 +35,9 @@ public class PLVFaceManager {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
             bitmap = eraseColor(bitmap, Color.WHITE);
             bitmap = eraseColor(bitmap, Color.rgb(230, 230, 230));
-            if (id != R.drawable.polyv_33 && id != R.drawable.polyv_71)
+            if (id != R.drawable.polyv_33 && id != R.drawable.polyv_71) {
                 bitmap = eraseColor(bitmap, Color.BLACK);
+            }
             return new BitmapDrawable(bitmap);
         } else {
             return drawable;

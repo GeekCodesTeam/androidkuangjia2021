@@ -28,7 +28,7 @@ public class OrderInfoUtil2_0 {
 	 * @return
 	 */
 	public static Map<String, String> buildAuthInfoMap(String pid, String app_id, String target_id, boolean rsa2) {
-		Map<String, String> keyValues = new HashMap<String, String>();
+		Map<String, String> keyValues = new HashMap<String, String>(16);
 
 		// 商户签约拿到的app_id，如：2013081700024223
 		keyValues.put("app_id", app_id);
@@ -70,7 +70,7 @@ public class OrderInfoUtil2_0 {
 	 * 构造支付订单参数列表
 	 */
 	public static Map<String, String> buildOrderParamMap(String app_id, boolean rsa2) {
-		Map<String, String> keyValues = new HashMap<String, String>();
+		Map<String, String> keyValues = new HashMap<String, String>(16);
 
 		keyValues.put("app_id", app_id);
 

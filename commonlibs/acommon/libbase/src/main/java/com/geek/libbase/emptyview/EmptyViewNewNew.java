@@ -382,7 +382,9 @@ public class EmptyViewNewNew extends FrameLayout implements View.OnClickListener
     }
 
     private void bindViewVisible(int visibility) {
-        if (mBindView != null) mBindView.setVisibility(visibility);
+        if (mBindView != null) {
+            mBindView.setVisibility(visibility);
+        }
     }
 
     /**

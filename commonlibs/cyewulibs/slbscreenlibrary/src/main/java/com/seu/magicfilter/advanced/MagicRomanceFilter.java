@@ -53,6 +53,7 @@ public class MagicRomanceFilter extends GPUImageFilter{
     protected void onInitialized(){
         super.onInitialized();
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 GLES20.glGenTextures(1, mToneCurveTexture, 0);
                 GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mToneCurveTexture[0]);

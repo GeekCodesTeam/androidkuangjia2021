@@ -17,6 +17,7 @@ import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.lang.reflect.Method;
 
@@ -239,7 +240,8 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef1_tv12) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.phone.ScrollViewAct"));
         } else if (id == R.id.shouyef1_tv13) {
-            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.phone.anroomcrash"));
+//            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.phone.anroomcrash"));
+            CrashReport.testNativeCrash();
         } else if (id == R.id.shouyef1_tv14) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.phone.MusicActivity"));
         } else if (id == R.id.shouyef1_tv15) {

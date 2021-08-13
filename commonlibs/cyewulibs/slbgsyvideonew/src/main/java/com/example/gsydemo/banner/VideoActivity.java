@@ -65,15 +65,17 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (player != null)
+        if (player != null) {
             player.onVideoPause();
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (player != null)
+        if (player != null) {
             player.onVideoResume();
+        }
     }
 
     @Override
@@ -85,8 +87,9 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //释放所有
-        if (player != null)
+        if (player != null) {
             player.setVideoAllCallBack(null);
+        }
         super.onBackPressed();
     }
 

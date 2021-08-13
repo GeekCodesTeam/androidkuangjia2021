@@ -133,6 +133,7 @@ public class PLVLSLoginStreamerActivity extends PLVBaseActivity implements View.
         FrameLayout content = findViewById(android.R.id.content);
         final View childOfContent = content.getChildAt(0);
         childOfContent.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
             public void onGlobalLayout() {
                 Rect r = new Rect();
                 childOfContent.getWindowVisibleDisplayFrame(r);

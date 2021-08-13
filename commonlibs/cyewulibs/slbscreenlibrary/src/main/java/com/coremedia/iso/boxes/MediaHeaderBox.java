@@ -62,6 +62,7 @@ public class MediaHeaderBox extends AbstractFullBox {
         return language;
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 4;
         if (getVersion() == 1) {
@@ -114,6 +115,7 @@ public class MediaHeaderBox extends AbstractFullBox {
     }
 
 
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("MediaHeaderBox[");
@@ -130,6 +132,7 @@ public class MediaHeaderBox extends AbstractFullBox {
         return result.toString();
     }
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         if (getVersion() == 1) {

@@ -76,10 +76,18 @@ public class PlotAttrInfo {
      * 清掉所有附加信息
      */
     public void clearPlotAttrInfo() {
-        if (null != mAttrInfoLocation) mAttrInfoLocation.clear();
-        if (null != mAttrInfo) mAttrInfo.clear();
-        if (null != mAttrInfoPostion) mAttrInfoPostion.clear();
-        if (null != mAttrInfoPaint) mAttrInfoPaint.clear();
+        if (null != mAttrInfoLocation) {
+            mAttrInfoLocation.clear();
+        }
+        if (null != mAttrInfo) {
+            mAttrInfo.clear();
+        }
+        if (null != mAttrInfoPostion) {
+            mAttrInfoPostion.clear();
+        }
+        if (null != mAttrInfoPaint) {
+            mAttrInfoPaint.clear();
+        }
     }
 
 
@@ -94,11 +102,19 @@ public class PlotAttrInfo {
     public void addAttributeInfo(Location position, String info,
                                  float infoPosRadiusPercentage, Paint paint) {
 
-        if (null == mAttrInfoLocation) mAttrInfoLocation = new ArrayList<Location>();
-        if (null == mAttrInfo) mAttrInfo = new ArrayList<String>();
+        if (null == mAttrInfoLocation) {
+            mAttrInfoLocation = new ArrayList<Location>();
+        }
+        if (null == mAttrInfo) {
+            mAttrInfo = new ArrayList<String>();
+        }
 
-        if (null == mAttrInfoPostion) mAttrInfoPostion = new ArrayList<Float>();
-        if (null == mAttrInfoPaint) mAttrInfoPaint = new ArrayList<Paint>();
+        if (null == mAttrInfoPostion) {
+            mAttrInfoPostion = new ArrayList<Float>();
+        }
+        if (null == mAttrInfoPaint) {
+            mAttrInfoPaint = new ArrayList<Paint>();
+        }
 
         mAttrInfoLocation.add(position);
         mAttrInfo.add(info);

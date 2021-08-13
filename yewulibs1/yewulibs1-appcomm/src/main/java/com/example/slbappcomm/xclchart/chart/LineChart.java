@@ -70,7 +70,9 @@ public class LineChart extends LnChart {
 		 */
 		public void setCategories( List<String> categories)
 		{
-			if(null != categoryAxis)categoryAxis.setDataBuilding(categories);
+			if(null != categoryAxis) {
+                categoryAxis.setDataBuilding(categories);
+            }
 		}
 		
 		/**
@@ -146,7 +148,9 @@ public class LineChart extends LnChart {
 		 */
 		private boolean renderLine(Canvas canvas, LineData bd, String type, int dataID)
 		{
-			if(null == categoryAxis || null == dataAxis) return false;
+			if(null == categoryAxis || null == dataAxis) {
+                return false;
+            }
 			
 			if(null == bd)
 			{
@@ -177,7 +181,9 @@ public class LineChart extends LnChart {
 			float XSteps = 0.0f;	
 			int j = 0; //,childID = 0;	
 			int tickCount = dataSet.size();		
-			if (1 == tickCount)j = 1;  //label仅一个时右移 !mXCoordFirstTickmarksBegin && 
+			if (1 == tickCount) {
+                j = 1;  //label仅一个时右移 !mXCoordFirstTickmarksBegin &&
+            }
 					
 			int labeltickCount = getCategoryAxisCount();		
 			XSteps = getVerticalXSteps(labeltickCount );
@@ -204,8 +210,9 @@ public class LineChart extends LnChart {
 				}          
             	//当柱图与线图混合，且柱图柱形为BarCenterStyle.SPACE时
             	if(mXCoordFirstTickmarksBegin && 
-            			XEnum.BarCenterStyle.SPACE == mBarCenterStyle)
-            					lineStopX = sub(lineStopX ,div(XSteps,2)); 
+            			XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
+                    lineStopX = sub(lineStopX ,div(XSteps,2));
+                }
             	            	            	           
             	if(0 == j)
             	{
@@ -223,7 +230,7 @@ public class LineChart extends LnChart {
     				j++;
             	}else{
 	            	        
-	            	if(type.equalsIgnoreCase("LINE"))
+	            	if("LINE".equalsIgnoreCase(type))
 	            	{	            		
 	            		if(getLineAxisIntersectVisible() == true ||
 	            					Float.compare(lineStartY, initY) != 0 )	
@@ -232,7 +239,7 @@ public class LineChart extends LnChart {
 	            					lineStartX ,lineStartY ,lineStopX ,lineStopY,
 	            					canvas,pLine.getLinePaint());		            			
 	            		}
-	            	}else if(type.equalsIgnoreCase("DOT2LABEL")){
+	            	}else if("DOT2LABEL".equalsIgnoreCase(type)){
 	            		
 	            		if(!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE))
 	                	{          
@@ -289,13 +296,16 @@ public class LineChart extends LnChart {
 			int count = mDataSet.size();
 			for(int i=0;i<count;i++)
 			{								
-				if(renderLine(canvas,mDataSet.get(i),"LINE",i) == false) 
-					return false;
-                if(renderLine(canvas,mDataSet.get(i),"DOT2LABEL",i) == false)
-					return false;
+				if(renderLine(canvas,mDataSet.get(i),"LINE",i) == false) {
+                    return false;
+                }
+                if(renderLine(canvas,mDataSet.get(i),"DOT2LABEL",i) == false) {
+                    return false;
+                }
                 key = mDataSet.get(i).getLineKey();
-				if("" != key && key.length() > 0)
-					mLstKey.add(mDataSet.get(i));
+				if("" != key && key.length() > 0) {
+                    mLstKey.add(mDataSet.get(i));
+                }
 			}			
 			
 			return true;

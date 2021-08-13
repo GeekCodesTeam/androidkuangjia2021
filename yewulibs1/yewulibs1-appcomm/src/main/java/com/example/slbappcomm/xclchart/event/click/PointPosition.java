@@ -48,7 +48,9 @@ public class PointPosition extends RectPosition {
 	
 	public String getPointInfo()
 	{	
-		if(null == mPoint)return "";
+		if(null == mPoint) {
+            return "";
+        }
 		String info = "x:"+ mPoint.x +" y:"+ mPoint.y;
 		return info;
 	}

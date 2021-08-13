@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -346,7 +345,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             monthCalendar.setY(-getGestureMonthUpOffset(dy) + monthCalendarY);
             childView.setY(-getGestureChildUpOffset(dy) + childViewY);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
 
         } else if (dy < 0 && childViewY == monthHeight && monthCalendarY == 0 && isMonthStretchEnable) {
@@ -358,7 +359,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             float childOffset = getOffset(-dy, stretchMonthHeight - childViewY);
             childView.setY(childViewY + childOffset);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
 
         } else if (dy > 0 && childViewY <= monthHeight && childViewY != weekHeight) {
@@ -372,7 +375,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             monthCalendar.setY(-getGestureMonthUpOffset(dy) + monthCalendarY);
             childView.setY(-getGestureChildUpOffset(dy) + childViewY);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
 
         } else if (dy < 0 && childViewY <= monthHeight && childViewY >= weekHeight && (isWeekHoldEnable ? consumed == null : true) && (targetView == null ? true : !targetView.canScrollVertically(-1))) {
@@ -385,7 +390,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             monthCalendar.setY(getGestureMonthDownOffset(dy) + monthCalendarY);
             childView.setY(getGestureChildDownOffset(dy) + childViewY);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
 
         } else if (dy < 0 && childViewY >= monthHeight && childViewY <= stretchMonthHeight && monthCalendarY == 0 && isMonthStretchEnable) {
@@ -397,7 +404,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             float childOffset = getOffset(-dy, stretchMonthHeight - childViewY);
             childView.setY(childViewY + childOffset);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
 
         } else if (dy > 0 && childViewY >= monthHeight && childViewY <= stretchMonthHeight && monthCalendarY == 0 && isMonthStretchEnable) {
@@ -409,7 +418,9 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             float childOffset = getOffset(-dy, stretchMonthHeight - childViewY);
             childView.setY(childViewY + childOffset);
 
-            if (consumed != null) consumed[1] = (int) dy;
+            if (consumed != null) {
+                consumed[1] = (int) dy;
+            }
             scrolling(dy);
         }
 
@@ -443,6 +454,8 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
                     return true;
                 }
                 break;
+            default:
+                break;
 
         }
         return super.onInterceptTouchEvent(ev);
@@ -471,6 +484,8 @@ public abstract class NCalendar extends FrameLayout implements IICalendar, Neste
             case MotionEvent.ACTION_CANCEL:
                 isFirstScroll = true;
                 autoScroll();
+                break;
+            default:
                 break;
         }
         return true;

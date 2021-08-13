@@ -109,8 +109,9 @@ public class RdChart extends EventChart {
 		if(Angle < 0 || Angle > 360)
 		{
 			Log.e(TAG, "起始偏移角度不能小于0或大于360");
-		}else
-			mOffsetAngle = Angle;
+		}else {
+            mOffsetAngle = Angle;
+        }
 	}
 	
 
@@ -191,8 +192,9 @@ public class RdChart extends EventChart {
 		// TODO Auto-generated method stubcalcPlotRange
 		
 		try {
-				if (null == canvas)
-						return false;								
+				if (null == canvas) {
+                    return false;
+                }
 				
 				
 				if(getPanModeStatus())

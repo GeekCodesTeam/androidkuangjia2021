@@ -1,4 +1,4 @@
-package com.example.gsyvideoplayer.utils.floatUtil;
+package com.example.gsyvideoplayer.utils.floatutil;
 
 import android.animation.TimeInterpolator;
 import android.content.Context;
@@ -171,7 +171,7 @@ public class FloatWindow {
 
         public void build() {
             if (mFloatWindowMap == null) {
-                mFloatWindowMap = new HashMap<>();
+                mFloatWindowMap = new HashMap<>(16);
             }
             if (mFloatWindowMap.containsKey(mTag)) {
                 throw new IllegalArgumentException("FloatWindow of this tag has been added, Please set a new tag for the new FloatWindow");

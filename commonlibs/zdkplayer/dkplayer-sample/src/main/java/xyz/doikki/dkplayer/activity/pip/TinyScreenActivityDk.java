@@ -117,8 +117,9 @@ public class TinyScreenActivityDk extends BaseActivityDk<VideoView> implements O
      * @param position 列表位置
      */
     protected void startPlay(int position, boolean isRelease) {
-        if (mVideoView.isTinyScreen())
+        if (mVideoView.isTinyScreen()) {
             mVideoView.stopTinyScreen();
+        }
         if (mCurPos != -1 && isRelease) {
             releaseVideoView();
         }
@@ -126,7 +127,9 @@ public class TinyScreenActivityDk extends BaseActivityDk<VideoView> implements O
         mVideoView.setUrl(videoBean.getUrl());
         mTitleView.setTitle(videoBean.getTitle());
         View itemView = mLinearLayoutManager.findViewByPosition(position);
-        if (itemView == null) return;
+        if (itemView == null) {
+            return;
+        }
         //注意：要先设置控制才能去设置控制器的状态。
         mVideoView.setVideoController(mController);
         mController.setPlayState(mVideoView.getCurrentPlayState());

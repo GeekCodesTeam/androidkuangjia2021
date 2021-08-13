@@ -127,8 +127,9 @@ public class SwitchDetailActivity extends AppCompatActivity {
         detailPlayer.getGSYVideoManager().setListener(detailPlayer.getGSYVideoManager().lastListener());
         detailPlayer.getGSYVideoManager().setLastListener(null);
         GSYVideoManager.releaseAllVideos();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
 
         SwitchUtil.release();
     }

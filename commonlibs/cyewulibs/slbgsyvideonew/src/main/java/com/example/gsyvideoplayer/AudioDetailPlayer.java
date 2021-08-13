@@ -60,7 +60,7 @@ public class AudioDetailPlayer extends AppCompatActivity {
 
         detailPlayer.loadCoverImage("", R.drawable.lololo);
 
-        Map<String, String> header = new HashMap<>();
+        Map<String, String> header = new HashMap<>(16);
         header.put("ee", "33");
         header.put("allowCrossProtocolRedirects", "true");
         GSYVideoOptionBuilder gsyVideoOption = new GSYVideoOptionBuilder();
@@ -183,8 +183,9 @@ public class AudioDetailPlayer extends AppCompatActivity {
             getCurPlay().release();
         }
         //GSYPreViewManager.instance().releaseMediaPlayer();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 

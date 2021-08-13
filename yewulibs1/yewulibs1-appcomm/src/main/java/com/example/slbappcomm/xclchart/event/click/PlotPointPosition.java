@@ -53,7 +53,9 @@ public class PlotPointPosition extends PointPosition {
 			
 	public void savePlotPosition(float x,float y)
 	{
-		if(null == mPoint)mPoint = new PointF();
+		if(null == mPoint) {
+            mPoint = new PointF();
+        }
 		
 		mPoint.x =  x;
 		mPoint.y =  y;				

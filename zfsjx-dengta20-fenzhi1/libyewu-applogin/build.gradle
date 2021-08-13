@@ -1,0 +1,11 @@
+//apply plugin: 'com.android.library'
+//apply from: './../commonlibs2.gradle'
+apply from: './../commonlibsapks.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':zfsjx-dengta20-fenzhi1:libFrame')
+    bxnt_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-biz2')
+    bxny_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-biz2')
+    bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-biz2')
+}

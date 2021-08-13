@@ -65,6 +65,7 @@ public abstract class SampleEntry extends AbstractBox implements ContainerBox {
         this.dataReferenceIndex = dataReferenceIndex;
     }
 
+    @Override
     public void setBoxes(List<Box> boxes) {
         this.boxes = new LinkedList<Box>(boxes);
     }
@@ -79,10 +80,12 @@ public abstract class SampleEntry extends AbstractBox implements ContainerBox {
         return boxes.remove(b);
     }
 
+    @Override
     public List<Box> getBoxes() {
         return boxes;
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz, boolean recursive) {
         List<T> boxesToBeReturned = new ArrayList<T>(2);
@@ -100,6 +103,7 @@ public abstract class SampleEntry extends AbstractBox implements ContainerBox {
         //return (T[]) boxesToBeReturned.toArray();
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz) {
         return getBoxes(clazz, false);
@@ -149,6 +153,7 @@ public abstract class SampleEntry extends AbstractBox implements ContainerBox {
         bb.put(baos.toByteArray());
     }
 
+    @Override
     public long getNumOfBytesToFirstChild() {
         long sizeOfChildren = 0;
         for (Box box : boxes) {

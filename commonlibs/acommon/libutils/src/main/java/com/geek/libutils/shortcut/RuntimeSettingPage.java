@@ -120,7 +120,9 @@ public class RuntimeSettingPage {
         Intent intent = new Intent();
         intent.putExtra("packagename", context.getPackageName());
         intent.setComponent(new ComponentName("com.vivo.permissionmanager", "com.vivo.permissionmanager.activity.SoftPermissionDetailActivity"));
-        if (hasActivity(context, intent)) return intent;
+        if (hasActivity(context, intent)) {
+            return intent;
+        }
 
         intent.setComponent(new ComponentName("com.iqoo.secure", "com.iqoo.secure.safeguard.SoftPermissionDetailActivity"));
         return intent;
@@ -131,7 +133,9 @@ public class RuntimeSettingPage {
         intent.putExtra("packageName", context.getPackageName());
         //OPPO R9S 6.0.1,由于OPPO手机在"应用列表-xx应用-权限"下的权限列表并没有创建快捷方式一项，只能到"权限隐私-创建快捷方式"中设置。
         intent.setClassName("com.oppo.launcher", "com.oppo.launcher.shortcut.ShortcutSettingsActivity");
-        if (hasActivity(context, intent)) return intent;
+        if (hasActivity(context, intent)) {
+            return intent;
+        }
         intent.setComponent(new ComponentName("com.color.safecenter", "com.color.safecenter.permission.PermissionManagerActivity"));
         return intent;
     }

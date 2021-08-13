@@ -148,8 +148,9 @@ public class PLVECLikeIconView extends RelativeLayout {
     }
 
     private void startAnimator(ImageView view) {
-        if (height <= 0 || width <= 0)
+        if (height <= 0 || width <= 0) {
             return;
+        }
         //曲线的两个顶点
         PointF pointF1 = new PointF(
                 random.nextInt(Math.max(2, width - ConvertUtils.dp2px(16))),
@@ -180,8 +181,9 @@ public class PLVECLikeIconView extends RelativeLayout {
             R.drawable.plvec_like_4};
 
     public void addLoveIcon(final int count) {
-        if (height <= 0 || width <= 0)
+        if (height <= 0 || width <= 0) {
             return;
+        }
         post(new Runnable() {
             @Override
             public void run() {

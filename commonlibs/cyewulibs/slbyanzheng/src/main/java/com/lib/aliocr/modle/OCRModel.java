@@ -28,6 +28,7 @@ import okhttp3.RequestBody;
 public class OCRModel implements OcrContact.M{
 
 
+    @Override
     public Observable<RepOutput> AuthCard(final boolean isFace, final String imgPath) {
 
         return Observable.create(new ObservableOnSubscribe<ReqInput>() {

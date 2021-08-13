@@ -1,4 +1,4 @@
-package com.easefun.polyv.livecommon.ui.widget.imageScan;
+package com.easefun.polyv.livecommon.ui.widget.imagescan;
 
 
 import android.content.Context;
@@ -120,8 +120,9 @@ public class PLVScaleImageView extends AppCompatImageView {
         addOnLayoutChangeListener(new OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                if (!canScale())
+                if (!canScale()) {
                     return;
+                }
                 if (oldRight > 0 && right > 0) {
                     if (right > oldRight) {//切到横屏
                         resetScaleX(getDrawable());
@@ -347,15 +348,23 @@ public class PLVScaleImageView extends AppCompatImageView {
                     //边界
                     if (isCheckTopAndBottom) {
                         if (dy > 0 && dy + rectF.top > 0)//下拉
+                        {
                             dy = -rectF.top;
+                        }
                         if (dy < 0 && rectF.bottom + dy < getHeight())//上拉
+                        {
                             dy = getHeight() - rectF.bottom;
+                        }
                     }
                     if (isCheckLeftAndRight) {
                         if (dx > 0 && dx + rectF.left > 0)//右拉
+                        {
                             dx = -rectF.left;
+                        }
                         if (dx < 0 && rectF.right + dx < getWidth())//左拉
+                        {
                             dx = getWidth() - rectF.right;
+                        }
                     }
                     if (dx == 0 && Math.abs(tempX) > Math.abs(tempY) && !isDraged) {
                         getParent().requestDisallowInterceptTouchEvent(false);

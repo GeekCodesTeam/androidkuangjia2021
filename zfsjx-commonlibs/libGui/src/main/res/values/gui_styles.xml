@@ -1,0 +1,35 @@
+<resources>
+    <!-- 进度条风格 -->
+    <style name="gui_style_progressbar">
+        <item name="android:indeterminateDrawable">@drawable/gui_progress_draw</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">3600</item>
+        <item name="android:minWidth">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <!-- webview进度条风格 -->
+    <style name="gui_style_horizontal_progressbar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/gui_progressbar_horizontal</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">10dip</item>
+    </style>
+
+
+    <!-- 弹出框风格 -->
+    <style name="gui_style_dialog">
+        <item name="android:windowBackground">@drawable/gui_bg_dialog</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- Dialog 底部弹出动画 -->
+    <style name="style_anim_dialog_bottom">
+        <item name="android:windowEnterAnimation">@anim/zdialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/zdialog_bottom_exit</item>
+    </style>
+</resources>

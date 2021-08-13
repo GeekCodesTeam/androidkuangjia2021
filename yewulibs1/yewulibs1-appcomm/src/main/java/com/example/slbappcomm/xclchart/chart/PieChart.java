@@ -76,7 +76,9 @@ public class PieChart extends CirChart {
 
 	public PieChart()
 	{
-		if(null == mLstLabels) mLstLabels = new ArrayList<PlotArcLabelInfo>();
+		if(null == mLstLabels) {
+            mLstLabels = new ArrayList<PlotArcLabelInfo>();
+        }
 	}
 
 	@Override
@@ -277,13 +279,17 @@ public class PieChart extends CirChart {
 
 	protected boolean renderLabels(Canvas canvas)
 	{
-		if(null == mLstLabels) return false;
+		if(null == mLstLabels) {
+            return false;
+        }
 
 		boolean showLabel = true;
 
 		if(mSaveLabelsPosition)
 		{
-			if( XEnum.LabelSaveType.ONLYPOSITION == mLabelSaveType ) showLabel = false;
+			if( XEnum.LabelSaveType.ONLYPOSITION == mLabelSaveType ) {
+                showLabel = false;
+            }
 		}
 
 		int count = mLstLabels.size();
@@ -293,7 +299,9 @@ public class PieChart extends CirChart {
 			 renderLabel(canvas,mDataset.get(info.getID()),info,mSaveLabelsPosition,showLabel);
 		}
 
-		if(!mSaveLabelsPosition)mLstLabels.clear();
+		if(!mSaveLabelsPosition) {
+            mLstLabels.clear();
+        }
 
 		return true;
 	}
@@ -334,12 +342,15 @@ public class PieChart extends CirChart {
 				PieData cData = mDataset.get(i);
 				//currentAngle = cData.getSliceAngle();	
 				currentAngle = MathHelper.getInstance().getSliceAngle(getTotalAngle(), (float) cData.getPercentage());
-				if(!validateAngle(currentAngle))continue;			
+				if(!validateAngle(currentAngle)) {
+                    continue;
+                }
 				geArcPaint().setColor(cData.getSliceColor());	
 								
 				// 绘制环形渐变
-    			if(getGradient())
-    				geArcPaint().setShader(renderRadialGradient(geArcPaint(),cirX,cirY,radius));
+    			if(getGradient()) {
+                    geArcPaint().setShader(renderRadialGradient(geArcPaint(),cirX,cirY,radius));
+                }
     											
 			    if(cData.getSelected()) //指定突出哪个块
 	            {			    	   			    	
@@ -394,7 +405,9 @@ public class PieChart extends CirChart {
 	 */
 	protected boolean validateParams()
 	{		
-		if(null == mDataset)return false;
+		if(null == mDataset) {
+            return false;
+        }
 		float totalAngle = 0.0f,currentValue = 0.0f;	
 				
 		for(PieData cData : mDataset)
@@ -439,7 +452,9 @@ public class PieChart extends CirChart {
 			super.postRender(canvas);
 			
 			//检查值是否合理
-	        if(false == validateParams())return false;
+	        if(false == validateParams()) {
+                return false;
+            }
 			
 			//绘制图表
 			renderPlot(canvas);			

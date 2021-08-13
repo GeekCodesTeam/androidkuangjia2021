@@ -181,7 +181,7 @@ public class SampleList extends AbstractList<ByteBuffer> {
     }
 
     Map<Long, Long> getOffsets(MovieFragmentBox moof, long trackId, TrackExtendsBox trex) {
-        Map<Long, Long> offsets2Sizes = new HashMap<Long, Long>();
+        Map<Long, Long> offsets2Sizes = new HashMap<Long, Long>(16);
         List<TrackFragmentBox> traf = moof.getBoxes(TrackFragmentBox.class);
         for (TrackFragmentBox trackFragmentBox : traf) {
             if (trackFragmentBox.getTrackFragmentHeaderBox().getTrackId() == trackId) {

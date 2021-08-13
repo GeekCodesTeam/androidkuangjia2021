@@ -1,5 +1,10 @@
 package com.lljjcoder.style.cityjd;
 
+import static com.lljjcoder.style.cityjd.JDConst.INDEX_INVALID;
+import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_AREA;
+import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_CITY;
+import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_PROVINCE;
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -22,21 +27,15 @@ import android.widget.TextView;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
 import com.lljjcoder.Interface.OnCityItemClickListener;
+import com.lljjcoder.R;
 import com.lljjcoder.bean.CityBean;
 import com.lljjcoder.bean.DistrictBean;
 import com.lljjcoder.bean.ProvinceBean;
 import com.lljjcoder.citywheel.CityParseHelper;
-import com.lljjcoder.style.citylist.Toast.ToastUtils;
-import com.lljjcoder.R;
-import com.lljjcoder.style.citypickerview.widget.CanShow;
+import com.lljjcoder.style.citylist.toast.ToastUtils;
 import com.lljjcoder.utils.utils;
 
 import java.util.List;
-
-import static com.lljjcoder.style.cityjd.JDConst.INDEX_INVALID;
-import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_AREA;
-import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_CITY;
-import static com.lljjcoder.style.cityjd.JDConst.INDEX_TAB_PROVINCE;
 
 /**
  * 仿京东城市选择器
@@ -240,6 +239,8 @@ public class JDCityPicker {
                     callback(districtBean);
                 }
                 break;
+            default:
+                break;
         }
     }
 
@@ -289,6 +290,8 @@ public class JDCityPicker {
                         break;
                     case INDEX_TAB_AREA:
                         tabSelectedIndicatorAnimation(mAreaTv).start();
+                        break;
+                    default:
                         break;
                 }
             }
@@ -407,6 +410,8 @@ public class JDCityPicker {
                         tabIndex = INDEX_TAB_AREA;
                     }
                     break;
+                default:
+                    break;
 
             }
 
@@ -452,6 +457,8 @@ public class JDCityPicker {
                 mProTv.setVisibility(View.VISIBLE);
                 mCityTv.setVisibility(View.VISIBLE);
                 mAreaTv.setVisibility(View.VISIBLE);
+                break;
+            default:
                 break;
         }
 

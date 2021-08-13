@@ -70,14 +70,17 @@ public final class MediaDataBox implements Box {
      */
     private ByteBuffer content;
 
+    @Override
     public ContainerBox getParent() {
         return parent;
     }
 
+    @Override
     public void setParent(ContainerBox parent) {
         this.parent = parent;
     }
 
+    @Override
     public String getType() {
         return TYPE;
     }
@@ -93,6 +96,7 @@ public final class MediaDataBox implements Box {
         }
     }
 
+    @Override
     public void getBox(WritableByteChannel writableByteChannel) throws IOException {
         if (fileChannel != null) {
             assert checkStillOk();
@@ -129,12 +133,14 @@ public final class MediaDataBox implements Box {
     }
 
 
+    @Override
     public long getSize() {
         long size = header.limit();
         size += contentSize;
         return size;
     }
 
+    @Override
     public void parse(ReadableByteChannel readableByteChannel, ByteBuffer header, long contentSize, BoxParser boxParser) throws IOException {
         this.header = header;
         this.contentSize = contentSize;
@@ -145,7 +151,7 @@ public final class MediaDataBox implements Box {
             ((FileChannel) readableByteChannel).position(((FileChannel) readableByteChannel).position() + contentSize);
         } else {
             content = ChannelHelper.readFully(readableByteChannel, l2i(contentSize));
-            cache.put(0l, new SoftReference<ByteBuffer>(content));
+            cache.put(0L, new SoftReference<ByteBuffer>(content));
         }
     }
 

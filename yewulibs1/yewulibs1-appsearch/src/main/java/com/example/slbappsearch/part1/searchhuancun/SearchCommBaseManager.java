@@ -31,7 +31,7 @@ public class SearchCommBaseManager {
         if (file_apks != null) {
             file_apk_url = file_apks.getAbsolutePath();
         } else {
-            file_apk_url = Environment.getExternalStorageDirectory().getAbsolutePath();
+            file_apk_url = Utils.getApp().getExternalFilesDir(null).getAbsolutePath();
         }
         return file_apk_url;
     }

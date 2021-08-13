@@ -42,6 +42,7 @@ public class CoverUriBox extends AbstractFullBox {
         this.coverUri = coverUri;
     }
 
+    @Override
     protected long getContentSize() {
         return Utf8.utf8StringLengthInBytes(coverUri) + 5;
     }
@@ -60,6 +61,7 @@ public class CoverUriBox extends AbstractFullBox {
     }
 
 
+    @Override
     public String toString() {
         return "CoverUriBox[coverUri=" + getCoverUri() + "]";
     }

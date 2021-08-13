@@ -71,8 +71,9 @@ public class DialChart  extends CirChart {
 		mStartAngle	= INIT_ANGLE;
 		mTotalAngle = FIX_TOTAL_ANGLE;
 		
-		if(null == plotAttrInfoRender)
-			plotAttrInfoRender = new PlotAttrInfoRender();
+		if(null == plotAttrInfoRender) {
+            plotAttrInfoRender = new PlotAttrInfoRender();
+        }
 	}
 	
 	@Override
@@ -133,7 +134,9 @@ public class DialChart  extends CirChart {
 	  */
 	 public void clearPlotPointer()
 	 {
-		 if(null != mPointerSet) mPointerSet.clear();
+		 if(null != mPointerSet) {
+             mPointerSet.clear();
+         }
 	 }
 	 
 	/**
@@ -141,7 +144,9 @@ public class DialChart  extends CirChart {
 	 */
 	 public void clearPlotAxis()
 	 {
-		if(null != mRoundAxis) mRoundAxis.clear();	
+		if(null != mRoundAxis) {
+            mRoundAxis.clear();
+        }
 	 }		
 	 
 	
@@ -162,7 +167,9 @@ public class DialChart  extends CirChart {
 	 */
 	public Pointer getPointer()
 	{
-		if(null == mPointer) mPointer = new PointerRender();
+		if(null == mPointer) {
+            mPointer = new PointerRender();
+        }
 		return mPointer;
 	}
 
@@ -173,7 +180,9 @@ public class DialChart  extends CirChart {
      */
 	private void renderPointerLine(Canvas canvas)
 	{											
-		if(null == mPointerSet) return;	
+		if(null == mPointerSet) {
+            return;
+        }
 		float radius = getRadius();
 		for(int i=0;i< mPointerSet.size();i++)
 		{
@@ -185,7 +194,9 @@ public class DialChart  extends CirChart {
 			pointer.render(canvas);
 		}
 		
-		if(null == mPointer) mPointer = new PointerRender();
+		if(null == mPointer) {
+            mPointer = new PointerRender();
+        }
 		mPointer.setStartXY(plotArea.getCenterX(), plotArea.getCenterY());
 		mPointer.setTotalAngle(mTotalAngle );
 		mPointer.setStartAngle(mStartAngle);

@@ -74,7 +74,7 @@ public class DetailDownloadPlayer extends AppCompatActivity {
         //初始化不打开外部的旋转
         orientationUtils.setEnable(false);
 
-        Map<String, String> header = new HashMap<>();
+        Map<String, String> header = new HashMap<>(16);
         header.put("ee", "33");
         header.put("allowCrossProtocolRedirects", "true");
         GSYVideoOptionBuilder gsyVideoOption = new GSYVideoOptionBuilder();
@@ -218,8 +218,9 @@ public class DetailDownloadPlayer extends AppCompatActivity {
             getCurPlay().release();
         }
         stopDownload();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 

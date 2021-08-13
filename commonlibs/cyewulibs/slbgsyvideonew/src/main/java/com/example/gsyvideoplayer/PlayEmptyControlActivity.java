@@ -67,8 +67,9 @@ public class PlayEmptyControlActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         videoPlayer.release();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
     @Override

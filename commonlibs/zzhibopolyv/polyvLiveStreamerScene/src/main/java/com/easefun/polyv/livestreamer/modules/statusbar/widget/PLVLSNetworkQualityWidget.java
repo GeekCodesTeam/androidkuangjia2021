@@ -73,6 +73,8 @@ public class PLVLSNetworkQualityWidget extends FrameLayout {
             case PLVSStreamerConfig.NetQuality.NET_QUALITY_NO_CONNECTION:
                 showHashNetwork(false);
                 break;
+            default:
+                break;
         }
     }
 

@@ -53,6 +53,7 @@ public class PopSuccessPay extends PopupWindow {
         // mMenuView添加OnTouchListener监听判断获取触屏位置如果在选择框外面则销毁弹出框
         mMenuView.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
             public boolean onTouch(View v, MotionEvent event) {
 
 //				int height = mMenuView.findViewById(R.id.pop_layout).getTop();

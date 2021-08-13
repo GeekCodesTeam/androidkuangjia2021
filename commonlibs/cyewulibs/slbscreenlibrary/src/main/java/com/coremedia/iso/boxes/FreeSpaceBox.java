@@ -30,6 +30,7 @@ public class FreeSpaceBox extends AbstractBox {
 
     byte[] data;
 
+    @Override
     protected long getContentSize() {
         return data.length;
     }
@@ -57,6 +58,7 @@ public class FreeSpaceBox extends AbstractBox {
         byteBuffer.put(data);
     }
 
+    @Override
     public String toString() {
         return "FreeSpaceBox[size=" + data.length + ";type=" + getType() + "]";
     }

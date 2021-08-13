@@ -6,7 +6,7 @@ public class CommonUtils {
     public static final String MMKV_IMG = "用户头像";//
     public static final String MMKV_TEL = "用户电话";//
     public static final String MMKV_NAME = "用户昵称";//
-    public static final String MMKV_TOKEN = "用户token";//
+    public static final String MMKV_TOKEN = "token";//
     public static final String MMKV_USER_NAME = "用户账号";//
     public static final String MMKV_USER_PSW = "用户密码";//
     public static final String MMKV_USER_CHECKED = "是否记住密码";//

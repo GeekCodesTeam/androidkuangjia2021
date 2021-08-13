@@ -40,6 +40,7 @@ public class OCRPresenter implements OcrContact.P {
         model = new OCRModel();
     }
 
+    @Override
     public void onPictureTaken(final byte[] data) {
 
 
@@ -72,6 +73,7 @@ public class OCRPresenter implements OcrContact.P {
         });
     }
 
+    @Override
     public void request(boolean isFace, final String imgPath) {
         model.AuthCard(isFace, imgPath).subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).
@@ -83,8 +85,9 @@ public class OCRPresenter implements OcrContact.P {
 
                     @Override
                     public void onNext(RepOutput repOutput) {
-                        if (repOutput != null)
+                        if (repOutput != null) {
                             Log.i("HTTPLOG", repOutput.toString());
+                        }
 
                         Toast.makeText(view.getActivity(), "" + repOutput.toString(), Toast.LENGTH_LONG).show();
                     }

@@ -190,8 +190,7 @@ public class DvAppUtil {
         TelephonyManager mgrTel = (TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE);
         return ((mgrConn.getActiveNetworkInfo() != null && mgrConn
-                .getActiveNetworkInfo().getState() == NetworkInfo.State.CONNECTED) || mgrTel
-                .getNetworkType() == TelephonyManager.NETWORK_TYPE_UMTS);
+                .getActiveNetworkInfo().getState() == NetworkInfo.State.CONNECTED) || mgrTel.getDataNetworkType() == TelephonyManager.NETWORK_TYPE_UMTS);
     }
 
     /**

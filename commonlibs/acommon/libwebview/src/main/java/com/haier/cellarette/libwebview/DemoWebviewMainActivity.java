@@ -7,11 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.haier.cellarette.libwebview.base.UrlEncodeUtils;
 import com.haier.cellarette.libwebview.hioscommon.HiosRegister;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
-
-import java.io.UnsupportedEncodingException;
 
 
 /**
@@ -109,6 +106,7 @@ public class DemoWebviewMainActivity extends AppCompatActivity {
                 // hios://hs.ac.NoHiosMainActivity{act}?act={i}1&sku_id={s}value&category_id={s}category_id_value       action跳转带参数并且弹出窗
                 // value为商品的id category_id_value为分类id
                 HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "hios://" + AppUtils.getAppPackageName() + ".hs.act.NoHiosMainActivity{act}?act={i}1&sku_id={s}2a&category_id={s}3a");
+//                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "hios://.hs.act.NoHiosMainActivity?act={i}1&sku_id={s}2a&category_id={s}3a");
             }
         });
 
@@ -129,7 +127,8 @@ public class DemoWebviewMainActivity extends AppCompatActivity {
                 // Activity act = (Activity) container.getContext();
                 // HiosHelper.resolveAd(act, mReceiver, "");
                 // 如果是activity中的fragment 那么 HiosHelper.resolveAd(activity, fragment, "");
-                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://liangxiao.blog.51cto.com/");
+//                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://liangxiao.blog.51cto.com/");
+                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://liangxiao.blog.51cto.com/?condition=login");
             }
         });
 

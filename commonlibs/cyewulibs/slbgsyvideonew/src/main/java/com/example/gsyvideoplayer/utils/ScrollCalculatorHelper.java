@@ -40,6 +40,8 @@ public class ScrollCalculatorHelper {
             case RecyclerView.SCROLL_STATE_IDLE:
                 playVideo(view);
                 break;
+            default:
+                break;
         }
     }
 

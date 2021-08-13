@@ -57,7 +57,9 @@ public class UploadImgUtils {
      * 兼容了file:///开头的 和 content://开头的情况
      */
     public String getRealFilePathFromUri(final Context context, final Uri uri) {
-        if (null == uri) return null;
+        if (null == uri) {
+            return null;
+        }
         final String scheme = uri.getScheme();
         String data = null;
         if (scheme == null) {
@@ -110,6 +112,7 @@ public class UploadImgUtils {
 //        popupWindow.setBackgroundDrawable(dw);
         mMenuView.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
             public boolean onTouch(View v, MotionEvent event) {
 //                hideInputMethod(context);
                 popupWindow.dismiss();

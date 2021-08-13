@@ -51,7 +51,7 @@ public abstract class HText implements IHText {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mHTextView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 } else {
-                    mHTextView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    mHTextView.getViewTreeObserver().addOnGlobalLayoutListener(this);
                 }
                 mTextSize = mHTextView.getTextSize();
                 mWidth = mHTextView.getWidth();

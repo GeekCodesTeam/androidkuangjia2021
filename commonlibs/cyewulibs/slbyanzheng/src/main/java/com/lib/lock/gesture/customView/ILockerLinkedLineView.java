@@ -1,4 +1,4 @@
-package com.lib.lock.gesture.customView;
+package com.lib.lock.gesture.customview;
 
 import android.graphics.Canvas;
 

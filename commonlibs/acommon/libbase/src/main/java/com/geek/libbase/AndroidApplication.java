@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.Utils;
 import com.geek.liblanguage.MultiLanguages;
 import com.geek.liblanguage.OnLanguageListener;
@@ -24,7 +25,8 @@ import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
-import com.tencent.bugly.Bugly;
+import com.meituan.android.walle.WalleChannelReader;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -74,7 +76,6 @@ public class AndroidApplication extends Application {
 //         String channel = WalleChannelReader.getChannel(this);
 //         Bugly.set(getApplicationContext(), channel);
         if (TextUtils.equals(banben_comm, "测试")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
             //TODO test
 //            if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -84,13 +85,28 @@ public class AndroidApplication extends Application {
 //            }
 //            LeakCanary.install(this);
         } else if (TextUtils.equals(banben_comm, "预生产")) {
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         } else if (TextUtils.equals(banben_comm, "线上")) {
-//            CrashReport.initCrashReport(this, "068e7f32c3", false);// 线上
-            Bugly.init(getApplicationContext(), buglykey, true);
             MyLogUtil.on(true);
         }
+        /* Bugly SDK初始化
+         * 参数1：上下文对象
+         * 参数2：APPID，平台注册时得到,注意替换成你的appId
+         * 参数3：是否开启调试模式，调试模式下会输出'CrashReport'tag的日志
+         */
+        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
+        strategy.setDeviceID(DeviceUtils.getUniqueDeviceId());
+        //设置渠道
+        String channel = WalleChannelReader.getChannel(this);
+        strategy.setAppChannel(channel);
+        //App的版本
+        strategy.setAppVersion(AppUtils.getAppVersionCode() + "");
+        //App的包名
+        strategy.setAppPackageName(AppUtils.getAppPackageName());
+        //改为20s
+        strategy.setAppReportDelay(20000);
+        CrashReport.initCrashReport(getApplicationContext(), buglykey, true);
+//        Bugly.init(getApplicationContext(), buglykey, true);
     }
 
     /**
@@ -101,6 +117,7 @@ public class AndroidApplication extends Application {
     protected void handleSSLHandshake() {
         try {
             TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+                @Override
                 public X509Certificate[] getAcceptedIssuers() {
                     return new X509Certificate[0];
                 }

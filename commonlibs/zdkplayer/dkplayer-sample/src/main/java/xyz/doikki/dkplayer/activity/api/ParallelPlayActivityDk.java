@@ -82,8 +82,9 @@ public class ParallelPlayActivityDk extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         for (VideoView vv : mVideoViews) {
-            if (vv.onBackPressed())
+            if (vv.onBackPressed()) {
                 return;
+            }
         }
         super.onBackPressed();
     }

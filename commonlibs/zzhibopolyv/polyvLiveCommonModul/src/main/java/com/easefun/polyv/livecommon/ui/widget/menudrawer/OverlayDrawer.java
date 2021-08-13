@@ -85,6 +85,8 @@ public class OverlayDrawer extends DraggableDrawer {
             case BOTTOM:
                 mMenuOverlay.setBounds(0, 0, width, height + offsetPixels);
                 break;
+            default:
+                break;
         }
 
         mMenuOverlay.setAlpha((int) (MAX_MENU_OVERLAY_ALPHA * openRatio));
@@ -103,6 +105,8 @@ public class OverlayDrawer extends DraggableDrawer {
             case RIGHT:
             case BOTTOM:
                 animateTo = -mMenuSize;
+                break;
+            default:
                 break;
         }
 
@@ -133,6 +137,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 case BOTTOM:
                     mMenuContainer.setTranslationY(offsetPixels + mMenuSize);
                     break;
+                default:
+                    break;
             }
         } else {
             switch (getPosition()) {
@@ -150,6 +156,8 @@ public class OverlayDrawer extends DraggableDrawer {
 
                 case RIGHT:
                     mMenuContainer.offsetLeftAndRight(offsetPixels - (mMenuContainer.getLeft() - getWidth()));
+                    break;
+                default:
                     break;
             }
         }
@@ -231,6 +239,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 mDropShadowRect.bottom = ViewHelper.getTop(mMenuContainer);
                 mDropShadowRect.top = mDropShadowRect.bottom - dropShadowSize;
                 break;
+            default:
+                break;
         }
     }
 
@@ -274,6 +284,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 case BOTTOM:
                     mMenuContainer.layout(0, height - mMenuSize, width, height);
                     break;
+                default:
+                    break;
             }
 
         } else {
@@ -296,6 +308,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 case BOTTOM:
                     mMenuContainer.layout(0, height + offsetPixels, width, height + menuSize + offsetPixels);
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -312,7 +326,9 @@ public class OverlayDrawer extends DraggableDrawer {
         final int width = MeasureSpec.getSize(widthMeasureSpec);
         final int height = MeasureSpec.getSize(heightMeasureSpec);
 
-        if (mOffsetPixels == -1) openMenu(false);
+        if (mOffsetPixels == -1) {
+            openMenu(false);
+        }
 
         int menuWidthMeasureSpec;
         int menuHeightMeasureSpec;
@@ -358,6 +374,8 @@ public class OverlayDrawer extends DraggableDrawer {
             case BOTTOM:
                 contentTouch = ViewHelper.getTop(mMenuContainer) > y;
                 break;
+            default:
+                break;
         }
 
         return contentTouch;
@@ -384,6 +402,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 final int height = getHeight();
                 return (!mMenuVisible && mInitialMotionY >= height - mTouchSize)
                         || (mMenuVisible && mInitialMotionY >= height + mOffsetPixels);
+            default:
+                break;
         }
 
         return false;
@@ -416,6 +436,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 return (!mMenuVisible && mInitialMotionY >= height - mTouchSize && (dy < 0))
                         || (mMenuVisible && x >= height - mOffsetPixels)
                         || (Math.abs(mOffsetPixels) <= mPeekSize && mMenuVisible);
+            default:
+                break;
         }
 
         return false;
@@ -437,6 +459,8 @@ public class OverlayDrawer extends DraggableDrawer {
 
             case BOTTOM:
                 setOffsetPixels(Math.max(Math.min(mOffsetPixels + dy, 0), -mMenuSize));
+                break;
+            default:
                 break;
         }
     }
@@ -502,6 +526,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 }
                 break;
             }
+            default:
+                break;
         }
     }
 
@@ -532,6 +558,7 @@ public class OverlayDrawer extends DraggableDrawer {
         }
     }
 
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         final int action = ev.getAction() & MotionEvent.ACTION_MASK;
 
@@ -662,9 +689,13 @@ public class OverlayDrawer extends DraggableDrawer {
                 mLastMotionX = ev.getX(ev.findPointerIndex(mActivePointerId));
                 mLastMotionY = ev.getY(ev.findPointerIndex(mActivePointerId));
                 break;
+            default:
+                break;
         }
 
-        if (mVelocityTracker == null) mVelocityTracker = VelocityTracker.obtain();
+        if (mVelocityTracker == null) {
+            mVelocityTracker = VelocityTracker.obtain();
+        }
         mVelocityTracker.addMovement(ev);
 
         return mIsDragging;
@@ -677,7 +708,9 @@ public class OverlayDrawer extends DraggableDrawer {
         }
         final int action = ev.getAction() & MotionEvent.ACTION_MASK;
 
-        if (mVelocityTracker == null) mVelocityTracker = VelocityTracker.obtain();
+        if (mVelocityTracker == null) {
+            mVelocityTracker = VelocityTracker.obtain();
+        }
         mVelocityTracker.addMovement(ev);
 
         switch (action) {
@@ -774,6 +807,8 @@ public class OverlayDrawer extends DraggableDrawer {
                 onPointerUp(ev);
                 mLastMotionX = ev.getX(ev.findPointerIndex(mActivePointerId));
                 mLastMotionY = ev.getY(ev.findPointerIndex(mActivePointerId));
+                break;
+            default:
                 break;
         }
 

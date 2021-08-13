@@ -51,6 +51,7 @@ public class FileTypeBox extends AbstractBox {
         this.compatibleBrands = compatibleBrands;
     }
 
+    @Override
     protected long getContentSize() {
         return 8 + compatibleBrands.size() * 4;
 
@@ -127,6 +128,7 @@ public class FileTypeBox extends AbstractBox {
         this.compatibleBrands = compatibleBrands;
     }
 
+    @Override
     @DoNotParseDetail
     public String toString() {
         StringBuilder result = new StringBuilder();

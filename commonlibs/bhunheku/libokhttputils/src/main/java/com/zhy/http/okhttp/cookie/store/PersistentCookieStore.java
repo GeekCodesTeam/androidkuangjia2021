@@ -75,8 +75,9 @@ public class PersistentCookieStore implements CookieStore
                         Cookie decodedCookie = decodeCookie(encodedCookie);
                         if (decodedCookie != null)
                         {
-                            if (!cookies.containsKey(entry.getKey()))
+                            if (!cookies.containsKey(entry.getKey())) {
                                 cookies.put(entry.getKey(), new ConcurrentHashMap<String, Cookie>());
+                            }
                             cookies.get(entry.getKey()).put(name, decodedCookie);
                         }
                     }
@@ -94,7 +95,7 @@ public class PersistentCookieStore implements CookieStore
         {
             if (!cookies.containsKey(uri.host()))
             {
-                cookies.put(uri.host(), new ConcurrentHashMap<String, Cookie>());
+                cookies.put(uri.host(), new ConcurrentHashMap<String, Cookie>(16));
             }
             cookies.get(uri.host()).put(name, cookie);
         } else
@@ -195,8 +196,9 @@ public class PersistentCookieStore implements CookieStore
     public List<Cookie> getCookies()
     {
         ArrayList<Cookie> ret = new ArrayList<Cookie>();
-        for (String key : cookies.keySet())
+        for (String key : cookies.keySet()) {
             ret.addAll(cookies.get(key).values());
+        }
 
         return ret;
     }
@@ -204,8 +206,9 @@ public class PersistentCookieStore implements CookieStore
 
     protected String encodeCookie(SerializableHttpCookie cookie)
     {
-        if (cookie == null)
+        if (cookie == null) {
             return null;
+        }
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         try
         {

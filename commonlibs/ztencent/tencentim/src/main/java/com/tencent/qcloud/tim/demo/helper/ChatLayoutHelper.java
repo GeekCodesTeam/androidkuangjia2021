@@ -265,7 +265,7 @@ public class ChatLayoutHelper {
             if (data == null) {
                 DemoLog.e(TAG, "No Custom Data: " + new String(elem.getData()));
             } else if (data.version == TUIKitConstants.JSON_VERSION_1
-                    || (data.version == TUIKitConstants.JSON_VERSION_4 && data.businessID.equals("text_link"))) {
+                    || (data.version == TUIKitConstants.JSON_VERSION_4 && "text_link".equals(data.businessID))) {
                 CustomHelloTIMUIController.onDraw(parent, data);
             } else {
                 DemoLog.w(TAG, "unsupported version: " + data);

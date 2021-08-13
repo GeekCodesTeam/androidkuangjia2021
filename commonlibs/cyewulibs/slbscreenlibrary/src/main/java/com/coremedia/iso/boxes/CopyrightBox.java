@@ -58,6 +58,7 @@ public class CopyrightBox extends AbstractFullBox {
         this.copyright = copyright;
     }
 
+    @Override
     protected long getContentSize() {
         return 7 + Utf8.utf8StringLengthInBytes(copyright);
     }
@@ -77,6 +78,7 @@ public class CopyrightBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "CopyrightBox[language=" + getLanguage() + ";copyright=" + getCopyright() + "]";
     }

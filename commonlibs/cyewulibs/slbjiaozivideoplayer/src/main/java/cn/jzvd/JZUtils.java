@@ -60,7 +60,9 @@ public class JZUtils {
      * @return object of Activity or null if it is not Activity
      */
     public static Activity scanForActivity(Context context) {
-        if (context == null) return null;
+        if (context == null) {
+            return null;
+        }
 
         if (context instanceof Activity) {
             return (Activity) context;
@@ -78,7 +80,9 @@ public class JZUtils {
      * @return AppCompatActivity if it's not null
      */
     public static AppCompatActivity getAppCompActivity(Context context) {
-        if (context == null) return null;
+        if (context == null) {
+            return null;
+        }
         if (context instanceof AppCompatActivity) {
             return (AppCompatActivity) context;
         } else if (context instanceof ContextThemeWrapper) {
@@ -111,7 +115,9 @@ public class JZUtils {
     }
 
     public static void saveProgress(Context context, String url, int progress) {
-        if (!JZVideoPlayer.SAVE_PROGRESS) return;
+        if (!JZVideoPlayer.SAVE_PROGRESS) {
+            return;
+        }
         Log.i(TAG, "saveProgress: " + progress);
         if (progress < 6000) {
             progress = 0;
@@ -124,7 +130,9 @@ public class JZUtils {
     }
 
     public static int getSavedProgress(Context context, String url) {
-        if (!JZVideoPlayer.SAVE_PROGRESS) return 0;
+        if (!JZVideoPlayer.SAVE_PROGRESS) {
+            return 0;
+        }
         SharedPreferences spn;
         spn = context.getSharedPreferences("JZVD_PROGRESS",
                 Context.MODE_PRIVATE);

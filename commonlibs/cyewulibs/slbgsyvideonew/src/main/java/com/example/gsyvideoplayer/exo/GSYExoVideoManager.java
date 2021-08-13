@@ -54,7 +54,9 @@ public class GSYExoVideoManager extends GSYVideoBaseManager {
     }
 
     public void prepare(List<String> urls, Map<String, String> mapHeadData, int index,  boolean loop, float speed, boolean cache, File cachePath, String overrideExtension) {
-        if (urls.size() == 0) return;
+        if (urls.size() == 0) {
+            return;
+        }
         Message msg = new Message();
         msg.what = HANDLER_PREPARE;
         msg.obj = new GSYExoModel(urls, mapHeadData, index, loop, speed, cache, cachePath, overrideExtension);

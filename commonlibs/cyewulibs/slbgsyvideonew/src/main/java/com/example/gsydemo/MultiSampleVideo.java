@@ -66,6 +66,8 @@ public class MultiSampleVideo extends StandardGSYVideoPlayer {
                         break;
                     case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                         break;
+                    default:
+                        break;
                 }
             }
         };

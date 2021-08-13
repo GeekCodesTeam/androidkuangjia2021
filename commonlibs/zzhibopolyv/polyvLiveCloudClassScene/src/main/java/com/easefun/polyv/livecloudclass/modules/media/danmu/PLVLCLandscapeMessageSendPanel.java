@@ -62,6 +62,7 @@ public class PLVLCLandscapeMessageSendPanel implements IPLVLCLandscapeMessageSen
         FrameLayout content = activity.findViewById(android.R.id.content);
         final View childOfContent = content.getChildAt(0);
         childOfContent.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
             public void onGlobalLayout() {//all call
                 int usableHeightNow = computeUsableHeight(childOfContent);
                 if (usableHeightPrevious != usableHeightNow) {

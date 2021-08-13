@@ -14,7 +14,9 @@ import android.widget.RelativeLayout;
  * By  Jie  2018/8/30
  */
 public abstract class AbastractDragFloatActionButton extends RelativeLayout {
-    private int parentHeight;//悬浮的父布局高度
+
+    //悬浮的父布局高度
+    private int parentHeight;
     private int parentWidth;
 
     public AbastractDragFloatActionButton(Context context) {
@@ -60,9 +62,12 @@ public abstract class AbastractDragFloatActionButton extends RelativeLayout {
         int rawY = (int) event.getRawY();
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
-                setPressed(true);//默认是点击事件
-                isDrag = false;//默认是非拖动而是点击事件
-                getParent().requestDisallowInterceptTouchEvent(true);//父布局不要拦截子布局的监听
+                //默认是点击事件
+                setPressed(true);
+                //默认是非拖动而是点击事件
+                isDrag = false;
+                //父布局不要拦截子布局的监听
+                getParent().requestDisallowInterceptTouchEvent(true);
                 lastX = rawX;
                 lastY = rawY;
                 ViewGroup parent;
@@ -74,14 +79,19 @@ public abstract class AbastractDragFloatActionButton extends RelativeLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 isDrag = (parentHeight > 0 && parentWidth > 0);//只有父布局存在你才可以拖动
-                if (!isDrag) break;
+                if (!isDrag) {
+                    break;
+                }
 
                 int dx = rawX - lastX;
                 int dy = rawY - lastY;
                 //这里修复一些华为手机无法触发点击事件
                 int distance = (int) Math.sqrt(dx * dx + dy * dy);
-                isDrag = distance > 0;//只有位移大于0说明拖动了
-                if (!isDrag) break;
+                //只有位移大于0说明拖动了
+                isDrag = distance > 0;
+                if (!isDrag) {
+                    break;
+                }
 
                 float x = getX() + dx;
                 float y = getY() + dy;
@@ -96,6 +106,8 @@ public abstract class AbastractDragFloatActionButton extends RelativeLayout {
             case MotionEvent.ACTION_UP:
                 //如果是拖动状态下即非点击按压事件
                 setPressed(!isDrag);
+                break;
+            default:
                 break;
         }
 

@@ -147,19 +147,22 @@ public class LogUtils {
      * @param msg
      */
     public static void v(String msg) {
-        if (isShowLog && priority <= VERBOSE)
+        if (isShowLog && priority <= VERBOSE) {
             Log.v(getCallerStackLogTag(), String.valueOf(msg));
+        }
 
     }
 
     public static void v(Throwable t) {
-        if (isShowLog && priority <= VERBOSE)
+        if (isShowLog && priority <= VERBOSE) {
             Log.v(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void v(String msg,Throwable t) {
-        if (isShowLog && priority <= VERBOSE)
+        if (isShowLog && priority <= VERBOSE) {
             Log.v(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------Log.d
@@ -169,18 +172,21 @@ public class LogUtils {
      * @param msg
      */
     public static void d(String msg) {
-        if (isShowLog && priority <= DEBUG)
+        if (isShowLog && priority <= DEBUG) {
             Log.d(getCallerStackLogTag(), String.valueOf(msg));
+        }
     }
 
     public static void d(Throwable t) {
-        if (isShowLog && priority <= DEBUG)
+        if (isShowLog && priority <= DEBUG) {
             Log.d(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void d(String msg,Throwable t) {
-        if (isShowLog && priority <= DEBUG)
+        if (isShowLog && priority <= DEBUG) {
             Log.d(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------Log.i
@@ -190,18 +196,21 @@ public class LogUtils {
      * @param msg
      */
     public static void i(String msg) {
-        if (isShowLog && priority <= INFO)
+        if (isShowLog && priority <= INFO) {
             Log.i(getCallerStackLogTag(), String.valueOf(msg));
+        }
     }
 
     public static void i(Throwable t) {
-        if (isShowLog && priority <= INFO)
+        if (isShowLog && priority <= INFO) {
             Log.i(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void i(String msg,Throwable t) {
-        if (isShowLog && priority <= INFO)
+        if (isShowLog && priority <= INFO) {
             Log.i(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------Log.w
@@ -211,18 +220,21 @@ public class LogUtils {
      * @param msg
      */
     public static void w(String msg) {
-        if (isShowLog && priority <= WARN)
+        if (isShowLog && priority <= WARN) {
             Log.w(getCallerStackLogTag(), String.valueOf(msg));
+        }
     }
 
     public static void w(Throwable t) {
-        if (isShowLog && priority <= WARN)
+        if (isShowLog && priority <= WARN) {
             Log.w(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void w(String msg,Throwable t) {
-        if (isShowLog && priority <= WARN)
+        if (isShowLog && priority <= WARN) {
             Log.w(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------Log.e
@@ -232,18 +244,21 @@ public class LogUtils {
      * @param msg
      */
     public static void e(String msg) {
-        if (isShowLog && priority <= ERROR)
+        if (isShowLog && priority <= ERROR) {
             Log.e(getCallerStackLogTag(), String.valueOf(msg));
+        }
     }
 
     public static void e(Throwable t) {
-        if (isShowLog && priority <= ERROR)
+        if (isShowLog && priority <= ERROR) {
             Log.e(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void e(String msg,Throwable t) {
-        if (isShowLog && priority <= ERROR)
+        if (isShowLog && priority <= ERROR) {
             Log.e(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------Log.wtf
@@ -253,18 +268,21 @@ public class LogUtils {
      * @param msg
      */
     public static void wtf(String msg) {
-        if (isShowLog && priority <= ASSERT)
+        if (isShowLog && priority <= ASSERT) {
             Log.wtf(getCallerStackLogTag(), String.valueOf(msg));
+        }
     }
 
     public static void wtf(Throwable t) {
-        if (isShowLog && priority <= ASSERT)
+        if (isShowLog && priority <= ASSERT) {
             Log.wtf(getCallerStackLogTag(), getStackTraceString(t));
+        }
     }
 
     public static void wtf(String msg,Throwable t) {
-        if (isShowLog && priority <= ASSERT)
+        if (isShowLog && priority <= ASSERT) {
             Log.wtf(getCallerStackLogTag(), String.valueOf(msg), t);
+        }
     }
 
     // -----------------------------------System.out.print
@@ -275,13 +293,15 @@ public class LogUtils {
      * @param msg
      */
     public static void print(String msg) {
-        if (isShowLog && priority <= PRINTLN)
+        if (isShowLog && priority <= PRINTLN) {
             System.out.print(msg);
+        }
     }
 
     public static void print(Object obj) {
-        if (isShowLog && priority <= PRINTLN)
+        if (isShowLog && priority <= PRINTLN) {
             System.out.print(obj);
+        }
     }
 
     // -----------------------------------System.out.printf
@@ -292,8 +312,9 @@ public class LogUtils {
      * @param msg
      */
     public static void printf(String msg) {
-        if (isShowLog && priority <= PRINTLN)
+        if (isShowLog && priority <= PRINTLN) {
             System.out.printf(msg);
+        }
     }
 
     // -----------------------------------System.out.println
@@ -304,13 +325,15 @@ public class LogUtils {
      * @param msg
      */
     public static void println(String msg) {
-        if (isShowLog && priority <= PRINTLN)
+        if (isShowLog && priority <= PRINTLN) {
             System.out.println(msg);
+        }
     }
 
     public static void println(Object obj) {
-        if (isShowLog && priority <= PRINTLN)
+        if (isShowLog && priority <= PRINTLN) {
             System.out.println(obj);
+        }
     }
 
 }

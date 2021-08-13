@@ -155,6 +155,8 @@ public class PLVSwipeMenu extends ViewGroup {
                 lastX = 0;
                 lastY = 0;
                 break;
+            default:
+                break;
 
         }
         return true;

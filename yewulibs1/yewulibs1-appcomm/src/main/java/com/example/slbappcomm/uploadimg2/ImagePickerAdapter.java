@@ -67,8 +67,11 @@ public class ImagePickerAdapter extends RecyclerView.Adapter<ImagePickerAdapter.
 
     public ArrayList<ImageItem> getImages() {
         //由于图片未选满时，最后一张显示添加图片，因此这个方法返回真正的已选图片
-        if (isAdded) return new ArrayList<>(mData.subList(0, mData.size() - 1));
-        else return mData;
+        if (isAdded) {
+            return new ArrayList<>(mData.subList(0, mData.size() - 1));
+        } else {
+            return mData;
+        }
     }
 
     public ImagePickerAdapter(Context mContext, List<ImageItem> data, int maxImgCount) {

@@ -58,8 +58,9 @@ public class ScanResultAdapterNew extends BaseAdapter {
 
     public void refreshPwdList(List<WifiPwdUtil.WifiInfo> mResult) {
 
-        if (mResult == null)
+        if (mResult == null) {
             return;
+        }
 
         mWifiPwdInfo.clear();
         mWifiPwdInfo.addAll(mResult);
@@ -159,7 +160,7 @@ public class ScanResultAdapterNew extends BaseAdapter {
 //                    Log.d(TAG, "ip = " + Ip);
 
                     String strIp = "" + (Ip & 0xFF) + "." + ((Ip >> 8) & 0xFF) + "." + ((Ip >> 16) & 0xFF) + "." + ((Ip >> 24) & 0xFF);
-                    if (mInfo.getBSSID() != null && mInfo.getSSID() != null /*&& WifiDatabaseUtils.isExisted(mInfo.getSSID())*/ && strIp != null && !strIp.equals("0.0.0.0")) {
+                    if (mInfo.getBSSID() != null && mInfo.getSSID() != null /*&& WifiDatabaseUtils.isExisted(mInfo.getSSID())*/ && strIp != null && !"0.0.0.0".equals(strIp)) {
                         mEncryptTv.setText(lianjie_content);
                         mEncryptTv.setTextColor(mContext.getResources().getColor(R.color.blue3));
                         mSsidTv.setTextColor(mContext.getResources().getColor(R.color.blue3));
@@ -219,7 +220,9 @@ public class ScanResultAdapterNew extends BaseAdapter {
                         mScanResult.remove(i);
                     }
                 }
-            } else break;
+            } else {
+                break;
+            }
         }
     }
 

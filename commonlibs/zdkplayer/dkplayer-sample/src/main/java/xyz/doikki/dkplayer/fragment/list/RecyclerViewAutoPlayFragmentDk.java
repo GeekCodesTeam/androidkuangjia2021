@@ -30,13 +30,17 @@ public class RecyclerViewAutoPlayFragmentDk extends RecyclerViewFragmentDk {
             }
 
             private void autoPlayVideo(RecyclerView view) {
-                if (view == null) return;
+                if (view == null) {
+                    return;
+                }
                 //遍历RecyclerView子控件,如果mPlayerContainer完全可见就开始播放
                 int count = view.getChildCount();
                 L.d("ChildCount:" + count);
                 for (int i = 0; i < count; i++) {
                     View itemView = view.getChildAt(i);
-                    if (itemView == null) continue;
+                    if (itemView == null) {
+                        continue;
+                    }
                     VideoRecyclerViewAdapterDk.VideoHolder holder = (VideoRecyclerViewAdapterDk.VideoHolder) itemView.getTag();
                     Rect rect = new Rect();
                     holder.mPlayerContainer.getLocalVisibleRect(rect);

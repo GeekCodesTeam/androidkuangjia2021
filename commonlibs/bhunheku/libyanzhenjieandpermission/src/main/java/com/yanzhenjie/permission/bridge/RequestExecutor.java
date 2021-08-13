@@ -104,6 +104,8 @@ final class RequestExecutor extends Thread implements Messenger.Callback {
                 iBridge.requestWriteSetting(getName());
                 break;
             }
+            default:
+                break;
         }
     }
 

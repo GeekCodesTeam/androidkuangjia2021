@@ -140,6 +140,8 @@ public class OCRMainActivity extends AppCompatActivity implements OcrContact.V {
                 }
                 // No need to start camera here; it is handled by onResume
                 break;
+            default:
+                break;
         }
     }
 

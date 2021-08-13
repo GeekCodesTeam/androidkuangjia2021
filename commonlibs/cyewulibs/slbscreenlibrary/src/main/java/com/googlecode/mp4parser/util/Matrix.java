@@ -48,20 +48,42 @@ public class Matrix {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Matrix matrix = (Matrix) o;
 
-        if (Double.compare(matrix.a, a) != 0) return false;
-        if (Double.compare(matrix.b, b) != 0) return false;
-        if (Double.compare(matrix.c, c) != 0) return false;
-        if (Double.compare(matrix.d, d) != 0) return false;
-        if (Double.compare(matrix.tx, tx) != 0) return false;
-        if (Double.compare(matrix.ty, ty) != 0) return false;
-        if (Double.compare(matrix.u, u) != 0) return false;
-        if (Double.compare(matrix.v, v) != 0) return false;
-        if (Double.compare(matrix.w, w) != 0) return false;
+        if (Double.compare(matrix.a, a) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.b, b) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.c, c) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.d, d) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.tx, tx) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.ty, ty) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.u, u) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.v, v) != 0) {
+            return false;
+        }
+        if (Double.compare(matrix.w, w) != 0) {
+            return false;
+        }
 
         return true;
     }

@@ -48,6 +48,8 @@ public class PLVLoadingWindow {
                     case ON_PAUSE:
                         window.dismiss();
                         break;
+                    default:
+                        break;
                 }
             }
         });

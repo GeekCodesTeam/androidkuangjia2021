@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomMedia;
+package com.example.slbjiaozvideonew.custommedia;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
@@ -79,8 +79,7 @@ public class JZMediaExo extends JZMediaInterface implements Player.EventListener
                         .setAllocator(new DefaultAllocator(true, C.DEFAULT_BUFFER_SEGMENT_SIZE))
                         .setBufferDurationsMs(360000, 600000, 1000, 5000)
                         .setPrioritizeTimeOverSizeThresholds(false)
-                        .setTargetBufferBytes(C.LENGTH_UNSET)
-                        .createDefaultLoadControl();
+                        .setTargetBufferBytes(C.LENGTH_UNSET).build();
 
 
                 BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter.Builder(context).build();
@@ -99,15 +98,13 @@ public class JZMediaExo extends JZMediaInterface implements Player.EventListener
                 String currUrl = jzvd.jzDataSource.getCurrentUrl().toString();
                 MediaSource videoSource;
                 if (currUrl.contains(".m3u8")) {
-                    videoSource = new HlsMediaSource.Factory(dataSourceFactory)
-                            .createMediaSource(Uri.parse(currUrl));
+                    videoSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(Uri.parse(currUrl));
                     //addEventListener 这里只有两个参数都要传入值才可以成功设置
                     // 否者会被断言 Assertions.checkArgument(handler != null && eventListener != null);
                     // 并且报错  IllegalArgumentException()  所以不需要添加监听器时 注释掉
                     //      videoSource .addEventListener( handler, null);
                 } else {
-                    videoSource = new ProgressiveMediaSource.Factory(dataSourceFactory)
-                            .createMediaSource(Uri.parse(currUrl));
+                    videoSource = new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(Uri.parse(currUrl));
                 }
                 simpleExoPlayer.addVideoListener(JZMediaExo.this);
 
@@ -196,16 +193,20 @@ public class JZMediaExo extends JZMediaInterface implements Player.EventListener
 
     @Override
     public long getCurrentPosition() {
-        if (simpleExoPlayer != null)
+        if (simpleExoPlayer != null) {
             return simpleExoPlayer.getCurrentPosition();
-        else return 0;
+        } else {
+            return 0;
+        }
     }
 
     @Override
     public long getDuration() {
-        if (simpleExoPlayer != null)
+        if (simpleExoPlayer != null) {
             return simpleExoPlayer.getDuration();
-        else return 0;
+        } else {
+            return 0;
+        }
     }
 
     @Override
@@ -267,6 +268,8 @@ public class JZMediaExo extends JZMediaInterface implements Player.EventListener
                         jzvd.onCompletion();
                     }
                     break;
+                    default:
+                        break;
                 }
             }
         });

@@ -52,6 +52,7 @@ public class KeywordsBox extends AbstractFullBox {
         this.keywords = keywords;
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 7;
         for (String keyword : keywords) {
@@ -83,6 +84,7 @@ public class KeywordsBox extends AbstractFullBox {
         }
     }
 
+    @Override
     public String toString() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("KeywordsBox[language=").append(getLanguage());

@@ -44,7 +44,9 @@ public class PlotLine {
 			
 	public PlotLine()
 	{
-		if(null == mPlotDot)mPlotDot = new PlotDot();
+		if(null == mPlotDot) {
+            mPlotDot = new PlotDot();
+        }
 	}
 	
 	private void initLinePaint()

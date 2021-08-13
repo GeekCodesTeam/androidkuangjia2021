@@ -65,9 +65,15 @@ public class Bar3D extends Bar {
 	
 	public Bar3D()
 	{		
-		if(null == mPaint3D)mPaint3D = new Paint();		
-		if(null== mPaintBase)mPaintBase = new Paint();
-		if(null == mPaintBase3D)mPaintBase3D = new Paint();		
+		if(null == mPaint3D) {
+            mPaint3D = new Paint();
+        }
+		if(null== mPaintBase) {
+            mPaintBase = new Paint();
+        }
+		if(null == mPaintBase3D) {
+            mPaintBase3D = new Paint();
+        }
 	}
 
 	/**
@@ -304,7 +310,9 @@ public class Bar3D extends Bar {
 			  int color,
 			  Canvas canvas)
 	{
-		 if(Float.compare(barTop, barBottom) == 0)return;		 
+		 if(Float.compare(barTop, barBottom) == 0) {
+             return;
+         }
 		 
 		//浅色
 		int lightColor =  DrawHelper.getInstance().getLightColor(color,mAlpha);

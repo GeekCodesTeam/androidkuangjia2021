@@ -104,7 +104,9 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         if (swipeBack != null) {
             enableSwipeBack = swipeBack.value();
         }
-        if (enableSwipeBack) mHelper = new SwipeBackActivityHelper(this);
+        if (enableSwipeBack) {
+            mHelper = new SwipeBackActivityHelper(this);
+        }
         try {
             if (enableSwipeBack) {
                 mHelper.onActivityCreate();
@@ -371,7 +373,9 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        if (enableSwipeBack) mHelper.onPostCreate();
+        if (enableSwipeBack) {
+            mHelper.onPostCreate();
+        }
     }
 
     @Override

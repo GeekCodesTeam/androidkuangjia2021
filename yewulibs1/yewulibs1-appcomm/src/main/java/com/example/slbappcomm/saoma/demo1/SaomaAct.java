@@ -65,6 +65,8 @@ public class SaomaAct extends AppCompatActivity implements EasyPermissions.Permi
                 case REQUEST_CODE_PHOTO:
                     parsePhoto(data);
                     break;
+                default:
+                    break;
             }
 
         }

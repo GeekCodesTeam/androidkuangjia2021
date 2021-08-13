@@ -71,14 +71,24 @@ public abstract class AbstractTrackEncryptionBox extends AbstractFullBox {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         AbstractTrackEncryptionBox that = (AbstractTrackEncryptionBox) o;
 
-        if (defaultAlgorithmId != that.defaultAlgorithmId) return false;
-        if (defaultIvSize != that.defaultIvSize) return false;
-        if (!Arrays.equals(default_KID, that.default_KID)) return false;
+        if (defaultAlgorithmId != that.defaultAlgorithmId) {
+            return false;
+        }
+        if (defaultIvSize != that.defaultIvSize) {
+            return false;
+        }
+        if (!Arrays.equals(default_KID, that.default_KID)) {
+            return false;
+        }
 
         return true;
     }

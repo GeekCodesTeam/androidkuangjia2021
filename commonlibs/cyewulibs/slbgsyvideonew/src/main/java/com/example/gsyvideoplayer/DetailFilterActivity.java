@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.opengl.Matrix;
 import android.os.Bundle;
+import android.os.Message;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 import permissions.dispatcher.NeedsPermission;
@@ -104,11 +108,12 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
     private String url = "https://res.exexm.com/cw_145225549855002";
     //private String url = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4";
 
-    private Timer timer = new Timer();
+//    private Timer timer = new Timer();
+    private ScheduledExecutorService mExecutorService;
 
-    private TaskLocal mTimerTask;
+//    private TaskLocal mTimerTask;
 
-    private TaskLocal2 mTimerTask2;
+//    private TaskLocal2 mTimerTask2;
 
     private GSYVideoGLViewCustomRender mGSYVideoGLViewCustomRender;
 
@@ -212,8 +217,41 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
             public void onClick(View v) {
                 //画面旋转
                 cancelTask();
-                mTimerTask = new TaskLocal();
-                timer.schedule(mTimerTask, 0, 50);
+//                mTimerTask = new TaskLocal();
+//                timer.schedule(mTimerTask, 0, 50);
+                //
+                mExecutorService = Executors.newScheduledThreadPool(1);
+                mExecutorService.scheduleWithFixedDelay(new Runnable() {
+                    @Override
+                    public void run() {
+                        float[] transform = new float[16];
+                        switch (percentageType) {
+                            case 1:
+                                //给予x变化
+                                Matrix.setRotateM(transform, 0, 360 * percentage / 100, 1.0f, 0, 0.0f);
+                                break;
+                            case 2:
+                                //给予y变化
+                                Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 1.0f, 0.0f);
+                                break;
+                            case 3:
+                                //给予z变化
+                                Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 0, 1.0f);
+                                break;
+                            case 4:
+                                Matrix.setRotateM(transform, 0, 360, 0.0f, 0, 1.0f);
+                                break;
+                            default:
+                                break;
+                        }
+                        //设置渲染transform
+                        detailPlayer.setMatrixGL(transform);
+                        percentage++;
+                        if (percentage > 100) {
+                            percentage = 1;
+                        }
+                    }
+                }, 0, 50, TimeUnit.MILLISECONDS);
                 percentageType++;
                 if (percentageType > 4) {
                     percentageType = 1;
@@ -474,6 +512,8 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
             case 26:
                 effect = new BrightnessEffect(deep);
                 break;
+            default:
+                break;
         }
         detailPlayer.setEffectFilter(effect);
         type++;
@@ -484,16 +524,20 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
 
 
     private void cancelTask2() {
-        if (mTimerTask2 != null) {
-            mTimerTask2.cancel();
-            mTimerTask2 = null;
-        }
+//        if (mTimerTask2 != null) {
+//            mTimerTask2.cancel();
+//            mTimerTask2 = null;
+//        }
     }
 
     private void cancelTask() {
-        if (mTimerTask != null) {
-            mTimerTask.cancel();
-            mTimerTask = null;
+//        if (mTimerTask != null) {
+//            mTimerTask.cancel();
+//            mTimerTask = null;
+//        }
+        //
+        if (mExecutorService != null) {
+            mExecutorService.shutdown();
         }
     }
 
@@ -501,65 +545,67 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
     /**
      * 水印图动起来,播放前开始会崩溃哟
      */
-    private class TaskLocal2 extends TimerTask {
-        @Override
-        public void run() {
-            float[] transform = new float[16];
-            //旋转到正常角度
-            Matrix.setRotateM(transform, 0, 180f, 0.0f, 0, 1.0f);
-            //调整大小比例
-            Matrix.scaleM(transform, 0, mCustomBitmapIconEffect.getScaleW(), mCustomBitmapIconEffect.getScaleH(), 1);
-            if (moveBitmap) {
-                //调整位置
-                Matrix.translateM(transform, 0, mCustomBitmapIconEffect.getPositionX(), mCustomBitmapIconEffect.getPositionY(), 0f);
-            } else {
-                float maxX = mCustomBitmapIconEffect.getMaxPositionX();
-                float minX = mCustomBitmapIconEffect.getMinPositionX();
-                float maxY = mCustomBitmapIconEffect.getMaxPositionY();
-                float minY = mCustomBitmapIconEffect.getMinPositionY();
-                float x = (float) Math.random() * (maxX - minX) + minX;
-                float y = (float) Math.random() * (maxY - minY) + minY;
-                //调整位置
-                Matrix.translateM(transform, 0, x, y, 0f);
-                mGSYVideoGLViewCustomRender.setCurrentMVPMatrix(transform);
-            }
-        }
-    }
+//    private class TaskLocal2 extends TimerTask {
+//        @Override
+//        public void run() {
+//            float[] transform = new float[16];
+//            //旋转到正常角度
+//            Matrix.setRotateM(transform, 0, 180f, 0.0f, 0, 1.0f);
+//            //调整大小比例
+//            Matrix.scaleM(transform, 0, mCustomBitmapIconEffect.getScaleW(), mCustomBitmapIconEffect.getScaleH(), 1);
+//            if (moveBitmap) {
+//                //调整位置
+//                Matrix.translateM(transform, 0, mCustomBitmapIconEffect.getPositionX(), mCustomBitmapIconEffect.getPositionY(), 0f);
+//            } else {
+//                float maxX = mCustomBitmapIconEffect.getMaxPositionX();
+//                float minX = mCustomBitmapIconEffect.getMinPositionX();
+//                float maxY = mCustomBitmapIconEffect.getMaxPositionY();
+//                float minY = mCustomBitmapIconEffect.getMinPositionY();
+//                float x = (float) Math.random() * (maxX - minX) + minX;
+//                float y = (float) Math.random() * (maxY - minY) + minY;
+//                //调整位置
+//                Matrix.translateM(transform, 0, x, y, 0f);
+//                mGSYVideoGLViewCustomRender.setCurrentMVPMatrix(transform);
+//            }
+//        }
+//    }
 
 
     /**
      * 设置GLRender的VertexShader的transformMatrix
      * 注意，这是android.opengl.Matrix
      */
-    private class TaskLocal extends TimerTask {
-        @Override
-        public void run() {
-            float[] transform = new float[16];
-            switch (percentageType) {
-                case 1:
-                    //给予x变化
-                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 1.0f, 0, 0.0f);
-                    break;
-                case 2:
-                    //给予y变化
-                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 1.0f, 0.0f);
-                    break;
-                case 3:
-                    //给予z变化
-                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 0, 1.0f);
-                    break;
-                case 4:
-                    Matrix.setRotateM(transform, 0, 360, 0.0f, 0, 1.0f);
-                    break;
-            }
-            //设置渲染transform
-            detailPlayer.setMatrixGL(transform);
-            percentage++;
-            if (percentage > 100) {
-                percentage = 1;
-            }
-        }
-    }
+//    private class TaskLocal extends TimerTask {
+//        @Override
+//        public void run() {
+//            float[] transform = new float[16];
+//            switch (percentageType) {
+//                case 1:
+//                    //给予x变化
+//                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 1.0f, 0, 0.0f);
+//                    break;
+//                case 2:
+//                    //给予y变化
+//                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 1.0f, 0.0f);
+//                    break;
+//                case 3:
+//                    //给予z变化
+//                    Matrix.setRotateM(transform, 0, 360 * percentage / 100, 0.0f, 0, 1.0f);
+//                    break;
+//                case 4:
+//                    Matrix.setRotateM(transform, 0, 360, 0.0f, 0, 1.0f);
+//                    break;
+//                default:
+//                    break;
+//            }
+//            //设置渲染transform
+//            detailPlayer.setMatrixGL(transform);
+//            percentage++;
+//            if (percentage > 100) {
+//                percentage = 1;
+//            }
+//        }
+//    }
 
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,

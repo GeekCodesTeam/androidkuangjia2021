@@ -1,0 +1,41 @@
+<resources>
+    <attr name="fontSize_micro" format="dimension"/>
+    <attr name="fontSize_small" format="dimension"/>
+    <attr name="fontSize_normal" format="dimension"/>
+    <attr name="fontSize_big" format="dimension"/>
+    <attr name="fontSize_large" format="dimension"/>
+
+    <declare-styleable name="ToolBarTheme">
+        <attr name="android:windowActionBarOverlay"/>
+    </declare-styleable>
+
+    <!--头条跑马灯-->
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference"/>
+        <attr name="mvAnimDuration" format="integer|reference"/>
+        <attr name="mvMaxLines" format="integer" min="0" />
+        <attr name="mvTextSize" format="dimension|reference"/>
+        <attr name="mvTextColor" format="color|reference"/>
+        <attr name="mvSingleLine" format="boolean"/>
+        <attr name="mvFont" format="reference"/>
+        <attr name="mvGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0"/>
+            <enum name="top_to_bottom" value="1"/>
+            <enum name="right_to_left" value="2"/>
+            <enum name="left_to_right" value="3"/>
+        </attr>
+        <attr name="mvEllipsize">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+        </attr>
+    </declare-styleable>
+
+</resources>

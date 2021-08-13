@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.zothers.ComeraAutomation;
@@ -252,6 +252,24 @@ public class ShouyeF3 extends SlbBaseLazyFragmentNew {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LanguageAct"));
+            }
+        });
+        rootView.findViewById(R.id.tv16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.CoordinatorLayoutAct"));
+            }
+        });
+        rootView.findViewById(R.id.tv17).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ElmAct"));
+            }
+        });
+        rootView.findViewById(R.id.tv18).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LoginActDemo"));
             }
         });
     }

@@ -46,6 +46,7 @@ public class SyncSampleBox extends AbstractFullBox {
         return sampleNumber;
     }
 
+    @Override
     protected long getContentSize() {
         return sampleNumber.length * 4 + 8;
     }
@@ -73,6 +74,7 @@ public class SyncSampleBox extends AbstractFullBox {
 
     }
 
+    @Override
     public String toString() {
         return "SyncSampleBox[entryCount=" + sampleNumber.length + "]";
     }

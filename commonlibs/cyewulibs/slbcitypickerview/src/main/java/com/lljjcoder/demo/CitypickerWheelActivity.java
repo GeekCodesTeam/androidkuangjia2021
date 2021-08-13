@@ -2,7 +2,6 @@ package com.lljjcoder.demo;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Process;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -13,16 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.lljjcoder.Interface.OnCityItemClickListener;
 import com.lljjcoder.bean.CityBean;
-import com.lljjcoder.bean.CustomCityData;
 import com.lljjcoder.bean.DistrictBean;
 import com.lljjcoder.bean.ProvinceBean;
 import com.lljjcoder.citywheel.CityConfig;
 import com.lljjcoder.style.citypickerview.CityPickerView;
-import com.lljjcoder.style.citylist.Toast.ToastUtils;
+import com.lljjcoder.style.citylist.toast.ToastUtils;
 import com.lljjcoder.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CitypickerWheelActivity extends AppCompatActivity {
 

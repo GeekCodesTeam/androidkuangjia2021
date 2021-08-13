@@ -83,6 +83,7 @@ public class QuicktimeTextSampleEntry extends SampleEntry {
     }
 
 
+    @Override
     protected long getContentSize() {
         return 52 + (fontName != null ? fontName.length() : 0);
     }

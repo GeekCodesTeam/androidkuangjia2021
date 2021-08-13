@@ -166,6 +166,7 @@ public abstract class SlbBaseActivityPermissionsBase extends SlbBaseActivity {
         return true;
     }
 
+    @Override
     @TargetApi(26)
     public void onRequestPermissionsResult(int requestCode,
                                            String[] permissions, int[] paramArrayOfInt) {

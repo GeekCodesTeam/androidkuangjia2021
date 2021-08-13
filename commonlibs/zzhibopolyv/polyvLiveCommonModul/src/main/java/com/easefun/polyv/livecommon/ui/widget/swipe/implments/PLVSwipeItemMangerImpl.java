@@ -31,16 +31,19 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
     protected PLVSwipeAdapterInterface swipeAdapterInterface;
 
     public PLVSwipeItemMangerImpl(PLVSwipeAdapterInterface swipeAdapterInterface) {
-        if (swipeAdapterInterface == null)
+        if (swipeAdapterInterface == null) {
             throw new IllegalArgumentException("PLVSSwipeAdapterInterface can not be null");
+        }
 
         this.swipeAdapterInterface = swipeAdapterInterface;
     }
 
+    @Override
     public PLVAttributes.Mode getMode() {
         return mode;
     }
 
+    @Override
     public void setMode(PLVAttributes.Mode mode) {
         this.mode = mode;
         mOpenPositions.clear();
@@ -55,8 +58,9 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
     }
 
     public void bindSL(PLVSwipeLayout swipeLayout, int position, int resId) {
-        if (swipeLayout == null)
+        if (swipeLayout == null) {
             throw new IllegalStateException("can not find SwipeLayout in target view");
+        }
 
         if (swipeLayout.getTag(resId) == null) {
             OnLayoutListener onLayoutListener = new OnLayoutListener(position);
@@ -76,8 +80,9 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
     @Override
     public void openItem(int position) {
         if (mode == PLVAttributes.Mode.Multiple) {
-            if (!mOpenPositions.contains(position))
+            if (!mOpenPositions.contains(position)) {
                 mOpenPositions.add(position);
+            }
         } else {
             mOpenPosition = position;
         }
@@ -89,8 +94,9 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
         if (mode == PLVAttributes.Mode.Multiple) {
             mOpenPositions.remove(position);
         } else {
-            if (mOpenPosition == position)
+            if (mOpenPosition == position) {
                 mOpenPosition = INVALID_POSITION;
+            }
         }
         swipeAdapterInterface.notifyDatasetChanged();
     }
@@ -98,8 +104,9 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
     @Override
     public void closeAllExcept(PLVSwipeLayout layout) {
         for (PLVSwipeLayout s : mShownLayouts) {
-            if (s != layout)
+            if (s != layout) {
                 s.close();
+            }
         }
     }
 
@@ -204,9 +211,9 @@ public class PLVSwipeItemMangerImpl implements PLVSwipeItemMangerInterface {
 
         @Override
         public void onOpen(PLVSwipeLayout layout) {
-            if (mode == PLVAttributes.Mode.Multiple)
+            if (mode == PLVAttributes.Mode.Multiple) {
                 mOpenPositions.add(position);
-            else {
+            } else {
                 closeAllExcept(layout);
                 mOpenPosition = position;
             }

@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply from: './../commonlibs2.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // 必须依赖
+    api 'com.github.GeekCodesTeam:geeklibs:1.5.0'
+    bxnt_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+    bxny_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+    bxn_nationImplementation project(':zfsjx-dengta20-fenzhi1:libyewu-variants')
+    // others
+    api project(':commonlibs:zdkplayer:dkplayer-sample')
+    api project(':commonlibs:cyewulibs:slbyanzheng')
+    api project(':commonlibs:zzhibopolyv:demo')
+    api project(':commonlibs:ztencent:tencentim')
+    api project(':commonlibs:cyewulibs:slbscreenlibrary')
+    api project(':commonlibs:cyewulibs:slbxpopup')
+    api project(':commonlibs:bhunheku:liblinkagerecyclerview')
+}

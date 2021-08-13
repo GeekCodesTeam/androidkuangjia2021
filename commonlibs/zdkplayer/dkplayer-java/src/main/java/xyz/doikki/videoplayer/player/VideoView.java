@@ -21,6 +21,11 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import xyz.doikki.videoplayer.R;
 import xyz.doikki.videoplayer.controller.BaseVideoController;
 import xyz.doikki.videoplayer.controller.MediaPlayerControl;
@@ -28,11 +33,6 @@ import xyz.doikki.videoplayer.render.IRenderView;
 import xyz.doikki.videoplayer.render.RenderViewFactory;
 import xyz.doikki.videoplayer.util.L;
 import xyz.doikki.videoplayer.util.PlayerUtils;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 播放器
@@ -189,6 +189,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     /**
      * 第一次播放
+     *
      * @return 是否成功开始播放
      */
     protected boolean startPlay() {
@@ -217,7 +218,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     protected boolean showNetWarning() {
         //播放本地数据源时不检测网络
-        if (isLocalDataSource()) return false;
+        if (isLocalDataSource()) {
+            return false;
+        }
         return mVideoController != null && mVideoController.showNetWarning();
     }
 
@@ -297,6 +300,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     /**
      * 设置播放数据
+     *
      * @return 播放数据是否设置成功
      */
     protected boolean prepareDataSource() {
@@ -555,8 +559,11 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
                 }
                 break;
             case AbstractPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED:
-                if (mRenderView != null)
+                if (mRenderView != null) {
                     mRenderView.setVideoRotation(extra);
+                }
+                break;
+            default:
                 break;
         }
     }
@@ -711,12 +718,14 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public void startFullScreen() {
-        if (mIsFullScreen)
+        if (mIsFullScreen) {
             return;
+        }
 
         ViewGroup decorView = getDecorView();
-        if (decorView == null)
+        if (decorView == null) {
             return;
+        }
 
         mIsFullScreen = true;
 
@@ -759,12 +768,14 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public void stopFullScreen() {
-        if (!mIsFullScreen)
+        if (!mIsFullScreen) {
             return;
+        }
 
         ViewGroup decorView = getDecorView();
-        if (decorView == null)
+        if (decorView == null) {
             return;
+        }
 
         mIsFullScreen = false;
 
@@ -795,7 +806,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     protected ViewGroup getDecorView() {
         Activity activity = getActivity();
-        if (activity == null) return null;
+        if (activity == null) {
+            return null;
+        }
         return (ViewGroup) activity.getWindow().getDecorView();
     }
 
@@ -804,7 +817,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     protected ViewGroup getContentView() {
         Activity activity = getActivity();
-        if (activity == null) return null;
+        if (activity == null) {
+            return null;
+        }
         return activity.findViewById(android.R.id.content);
     }
 
@@ -835,10 +850,15 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 开启小屏
      */
+    @Override
     public void startTinyScreen() {
-        if (mIsTinyScreen) return;
+        if (mIsTinyScreen) {
+            return;
+        }
         ViewGroup contentView = getContentView();
-        if (contentView == null) return;
+        if (contentView == null) {
+            return;
+        }
         this.removeView(mPlayerContainer);
         int width = mTinyScreenSize[0];
         if (width <= 0) {
@@ -860,11 +880,16 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 退出小屏
      */
+    @Override
     public void stopTinyScreen() {
-        if (!mIsTinyScreen) return;
+        if (!mIsTinyScreen) {
+            return;
+        }
 
         ViewGroup contentView = getContentView();
-        if (contentView == null) return;
+        if (contentView == null) {
+            return;
+        }
         contentView.removeView(mPlayerContainer);
         LayoutParams params = new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -875,6 +900,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         setPlayerState(PLAYER_NORMAL);
     }
 
+    @Override
     public boolean isTinyScreen() {
         return mIsTinyScreen;
     }
@@ -1005,6 +1031,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     public interface OnStateChangeListener {
         void onPlayerStateChanged(int playerState);
+
         void onPlayStateChanged(int playState);
     }
 
@@ -1013,9 +1040,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     public static class SimpleOnStateChangeListener implements OnStateChangeListener {
         @Override
-        public void onPlayerStateChanged(int playerState) {}
+        public void onPlayerStateChanged(int playerState) {
+        }
+
         @Override
-        public void onPlayStateChanged(int playState) {}
+        public void onPlayStateChanged(int playState) {
+        }
     }
 
     /**

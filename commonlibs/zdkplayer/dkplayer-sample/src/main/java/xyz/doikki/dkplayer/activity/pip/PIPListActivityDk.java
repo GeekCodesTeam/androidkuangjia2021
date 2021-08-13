@@ -133,7 +133,9 @@ public class PIPListActivityDk extends BaseActivityDk implements OnItemChildClic
 
     @Override
     public void onBackPressed() {
-        if (mPIPManager.onBackPress()) return;
+        if (mPIPManager.onBackPress()) {
+            return;
+        }
         super.onBackPressed();
 
     }
@@ -149,8 +151,9 @@ public class PIPListActivityDk extends BaseActivityDk implements OnItemChildClic
      * @param position 列表位置
      */
     protected void startPlay(int position, boolean isRelease) {
-        if (mPIPManager.isStartFloatWindow())
+        if (mPIPManager.isStartFloatWindow()) {
             mPIPManager.stopFloatWindow();
+        }
         if (mPIPManager.getPlayingPosition() != -1 && isRelease) {
             releaseVideoView();
         }
@@ -158,7 +161,9 @@ public class PIPListActivityDk extends BaseActivityDk implements OnItemChildClic
         mVideoView.setUrl(videoBean.getUrl());
         mTitleView.setTitle(videoBean.getTitle());
         View itemView = mLinearLayoutManager.findViewByPosition(position);
-        if (itemView == null) return;
+        if (itemView == null) {
+            return;
+        }
         //注意：要先设置控制才能去设置控制器的状态。
         mVideoView.setVideoController(mController);
         mController.setPlayState(mVideoView.getCurrentPlayState());

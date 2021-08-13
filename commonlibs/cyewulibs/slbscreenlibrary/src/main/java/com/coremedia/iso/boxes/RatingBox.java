@@ -87,6 +87,7 @@ public class RatingBox extends AbstractFullBox {
         return ratingInfo;
     }
 
+    @Override
     protected long getContentSize() {
         return 15 + Utf8.utf8StringLengthInBytes(ratingInfo);
     }
@@ -111,6 +112,7 @@ public class RatingBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("RatingBox[language=").append(getLanguage());

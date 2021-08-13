@@ -212,6 +212,8 @@ public class LoadingView extends FrameLayout {
                 objectAnimator1 = ObjectAnimator.ofFloat(mShapeLoadingView, "rotation", 0, 180);
 
                 break;
+            default:
+                break;
         }
 
 

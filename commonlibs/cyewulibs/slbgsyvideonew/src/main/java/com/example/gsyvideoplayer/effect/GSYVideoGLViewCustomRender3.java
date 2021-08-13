@@ -19,7 +19,7 @@ import javax.microedition.khronos.opengles.GL10;
 @SuppressLint("ViewConstructor")
 public class GSYVideoGLViewCustomRender3 extends GSYVideoGLViewSimpleRender {
 
-    private int mTexturesBitmap[] = new int[1];
+    private int[] mTexturesBitmap = new int[1];
 
     private BitmapEffect mBitmapEffect = new BitmapEffect();
 

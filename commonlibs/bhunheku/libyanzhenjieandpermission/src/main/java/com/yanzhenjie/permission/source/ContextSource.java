@@ -52,13 +52,17 @@ public class ContextSource extends Source {
 
     @Override
     public boolean isShowRationalePermission(String permission) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return false;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return false;
+        }
 
         PackageManager packageManager = mContext.getPackageManager();
         Class<?> pkManagerClass = packageManager.getClass();
         try {
             Method method = pkManagerClass.getMethod("shouldShowRequestPermissionRationale", String.class);
-            if (!method.isAccessible()) method.setAccessible(true);
+            if (!method.isAccessible()) {
+                method.setAccessible(true);
+            }
             return (boolean)method.invoke(packageManager, permission);
         } catch (Exception ignored) {
             return false;

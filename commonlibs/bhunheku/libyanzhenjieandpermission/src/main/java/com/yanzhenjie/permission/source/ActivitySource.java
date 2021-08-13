@@ -49,7 +49,9 @@ public class ActivitySource extends Source {
 
     @Override
     public boolean isShowRationalePermission(String permission) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return false;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return false;
+        }
 
         return mActivity.shouldShowRequestPermissionRationale(permission);
     }

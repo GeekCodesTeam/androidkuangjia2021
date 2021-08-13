@@ -232,6 +232,7 @@ public class AppendTrack extends AbstractTrack {
     }
 
 
+    @Override
     public List<ByteBuffer> getSamples() {
         ArrayList<ByteBuffer> lists = new ArrayList<ByteBuffer>();
 
@@ -242,10 +243,12 @@ public class AppendTrack extends AbstractTrack {
         return lists;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return stsd;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         if (tracks[0].getDecodingTimeEntries() != null && !tracks[0].getDecodingTimeEntries().isEmpty()) {
             List<long[]> lists = new LinkedList<long[]>();
@@ -271,6 +274,7 @@ public class AppendTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         if (tracks[0].getCompositionTimeEntries() != null && !tracks[0].getCompositionTimeEntries().isEmpty()) {
             List<int[]> lists = new LinkedList<int[]>();
@@ -295,6 +299,7 @@ public class AppendTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public long[] getSyncSamples() {
         if (tracks[0].getSyncSamples() != null && tracks[0].getSyncSamples().length > 0) {
             int numSyncSamples = 0;
@@ -317,6 +322,7 @@ public class AppendTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         if (tracks[0].getSampleDependencies() != null && !tracks[0].getSampleDependencies().isEmpty()) {
             List<SampleDependencyTypeBox.Entry> list = new LinkedList<SampleDependencyTypeBox.Entry>();
@@ -329,18 +335,22 @@ public class AppendTrack extends AbstractTrack {
         }
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return tracks[0].getTrackMetaData();
     }
 
+    @Override
     public String getHandler() {
         return tracks[0].getHandler();
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return tracks[0].getMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return tracks[0].getSubsampleInformationBox();
     }

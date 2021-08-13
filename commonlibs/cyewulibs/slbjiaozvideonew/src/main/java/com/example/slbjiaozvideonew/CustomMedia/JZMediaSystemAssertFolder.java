@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomMedia;
+package com.example.slbjiaozvideonew.custommedia;
 
 import android.content.res.AssetFileDescriptor;
 import android.graphics.SurfaceTexture;
@@ -143,11 +143,15 @@ public class JZMediaSystemAssertFolder extends JZMediaInterface implements Media
 
     @Override
     public void setVolume(final float leftVolume, final float rightVolume) {
-        if (mMediaHandler == null) return;
+        if (mMediaHandler == null) {
+            return;
+        }
         mMediaHandler.post(new Runnable() {
             @Override
             public void run() {
-                if (mediaPlayer != null) mediaPlayer.setVolume(leftVolume, rightVolume);
+                if (mediaPlayer != null) {
+                    mediaPlayer.setVolume(leftVolume, rightVolume);
+                }
             }
         });
     }

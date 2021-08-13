@@ -38,18 +38,22 @@ public abstract class AbstractFullBox extends AbstractBox implements FullBox {
         super(type, userType);
     }
 
+    @Override
     public int getVersion() {
         return version;
     }
 
+    @Override
     public void setVersion(int version) {
         this.version = version;
     }
 
+    @Override
     public int getFlags() {
         return flags;
     }
 
+    @Override
     public void setFlags(int flags) {
         this.flags = flags;
     }

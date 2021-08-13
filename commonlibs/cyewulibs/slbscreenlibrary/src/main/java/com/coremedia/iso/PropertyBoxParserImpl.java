@@ -74,6 +74,7 @@ public class PropertyBoxParserImpl extends AbstractBoxParser {
 
     Pattern p = Pattern.compile("(.*)\\((.*?)\\)");
 
+    @Override
     @SuppressWarnings("unchecked")
     public Class<? extends Box> getClassForFourCc(String type, byte[] userType, String parent) {
         FourCcToBox fourCcToBox = new FourCcToBox(type, userType, parent).invoke();

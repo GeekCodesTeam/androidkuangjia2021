@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
 
+import com.blankj.utilcode.util.Utils;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -54,7 +56,7 @@ public class SdCardUtil {
      * Get SD card path.
      */
     public static String getNormalSDCardPath() {
-        return Environment.getExternalStorageDirectory().getPath();
+        return Utils.getApp().getExternalFilesDir(null).getPath();
     }
 
     /**
@@ -93,7 +95,7 @@ public class SdCardUtil {
                 e.printStackTrace();
             }
         }
-        sdcard = Environment.getExternalStorageDirectory().getPath();
+        sdcard = Utils.getApp().getExternalFilesDir(null).getPath();
         return sdcard;
     }
 
@@ -119,12 +121,12 @@ public class SdCardUtil {
                 }
 
                 if (line.contains("fat")) {
-                    String columns[] = line.split(" ");
+                    String[] columns = line.split(" ");
                     if (columns.length > 1) {
                         list.add("*" + columns[1]);
                     }
                 } else if (line.contains("fuse")) {
-                    String columns[] = line.split(" ");
+                    String[] columns = line.split(" ");
                     if (columns.length > 1) {
                         list.add(columns[1]);
                     }
@@ -166,7 +168,7 @@ public class SdCardUtil {
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             sd.isExist = true;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                File sdcardDir = Environment.getExternalStorageDirectory();
+                File sdcardDir = Utils.getApp().getExternalFilesDir(null);
                 StatFs sf = new StatFs(sdcardDir.getPath());
 
                 sd.totalBlocks = sf.getBlockCountLong();

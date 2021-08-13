@@ -1,5 +1,6 @@
 package com.example.bizyewu1.api;
 
+import com.example.bizyewu1.bean.SbbdBean;
 import com.example.bizyewu1.bean.VersionInfoBean;
 import com.haier.cellarette.libretrofit.common.ResponseSlbBean;
 
@@ -53,5 +54,12 @@ public interface SCommonApi {
     // get请求
     @GET()
     Call<ResponseSlbBean<VersionInfoBean>> get_version5(@Query("pageNum") String pageNum, @Query("pageSize") String pageSize, @Query("searchKey") String searchKey);
+
+
+    // 更新版本1
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @POST()
+    Call<ResponseSlbBean<SbbdBean>> get_version6(@Url String path);
+
 
 }

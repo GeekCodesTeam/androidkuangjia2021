@@ -67,8 +67,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
         List years = mPickerYear.getData();
         String lastYear = String.valueOf(years.get(years.size() - 1));
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < lastYear.length(); i++)
+        for (int i = 0; i < lastYear.length(); i++) {
             sb.append("0");
+        }
         mPickerYear.setMaximumWidthText(sb.toString());
     }
 
@@ -83,10 +84,12 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
         }
         mDay = mPickerDay.getCurrentDay();
         String date = mYear + "-" + mMonth + "-" + mDay;
-        if (null != mListener) try {
-            mListener.onDateSelected(this, SDF.parse(date));
-        } catch (ParseException e) {
-            e.printStackTrace();
+        if (null != mListener) {
+            try {
+                mListener.onDateSelected(this, SDF.parse(date));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -100,8 +103,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getVisibleItemCount() {
         if (mPickerYear.getVisibleItemCount() == mPickerMonth.getVisibleItemCount() &&
-                mPickerMonth.getVisibleItemCount() == mPickerDay.getVisibleItemCount())
+                mPickerMonth.getVisibleItemCount() == mPickerDay.getVisibleItemCount()) {
             return mPickerYear.getVisibleItemCount();
+        }
         throw new ArithmeticException("Can not get visible item count correctly from" +
                 "WheelDatePicker!");
     }
@@ -218,8 +222,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getSelectedItemTextColor() {
         if (mPickerYear.getSelectedItemTextColor() == mPickerMonth.getSelectedItemTextColor() &&
-                mPickerMonth.getSelectedItemTextColor() == mPickerDay.getSelectedItemTextColor())
+                mPickerMonth.getSelectedItemTextColor() == mPickerDay.getSelectedItemTextColor()) {
             return mPickerYear.getSelectedItemTextColor();
+        }
         throw new RuntimeException("Can not get color of selected item text correctly from" +
                 "WheelDatePicker!");
     }
@@ -234,8 +239,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getItemTextColor() {
         if (mPickerYear.getItemTextColor() == mPickerMonth.getItemTextColor() &&
-                mPickerMonth.getItemTextColor() == mPickerDay.getItemTextColor())
+                mPickerMonth.getItemTextColor() == mPickerDay.getItemTextColor()) {
             return mPickerYear.getItemTextColor();
+        }
         throw new RuntimeException("Can not get color of item text correctly from" +
                 "WheelDatePicker!");
     }
@@ -250,8 +256,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getItemTextSize() {
         if (mPickerYear.getItemTextSize() == mPickerMonth.getItemTextSize() &&
-                mPickerMonth.getItemTextSize() == mPickerDay.getItemTextSize())
+                mPickerMonth.getItemTextSize() == mPickerDay.getItemTextSize()) {
             return mPickerYear.getItemTextSize();
+        }
         throw new RuntimeException("Can not get size of item text correctly from" +
                 "WheelDatePicker!");
     }
@@ -266,8 +273,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getItemSpace() {
         if (mPickerYear.getItemSpace() == mPickerMonth.getItemSpace() &&
-                mPickerMonth.getItemSpace() == mPickerDay.getItemSpace())
+                mPickerMonth.getItemSpace() == mPickerDay.getItemSpace()) {
             return mPickerYear.getItemSpace();
+        }
         throw new RuntimeException("Can not get item space correctly from WheelDatePicker!");
     }
 
@@ -294,8 +302,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getIndicatorSize() {
         if (mPickerYear.getIndicatorSize() == mPickerMonth.getIndicatorSize() &&
-                mPickerMonth.getIndicatorSize() == mPickerDay.getIndicatorSize())
+                mPickerMonth.getIndicatorSize() == mPickerDay.getIndicatorSize()) {
             return mPickerYear.getIndicatorSize();
+        }
         throw new RuntimeException("Can not get indicator size correctly from WheelDatePicker!");
     }
 
@@ -309,8 +318,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getIndicatorColor() {
         if (mPickerYear.getCurtainColor() == mPickerMonth.getCurtainColor() &&
-                mPickerMonth.getCurtainColor() == mPickerDay.getCurtainColor())
+                mPickerMonth.getCurtainColor() == mPickerDay.getCurtainColor()) {
             return mPickerYear.getCurtainColor();
+        }
         throw new RuntimeException("Can not get indicator color correctly from WheelDatePicker!");
     }
 
@@ -337,8 +347,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public int getCurtainColor() {
         if (mPickerYear.getCurtainColor() == mPickerMonth.getCurtainColor() &&
-                mPickerMonth.getCurtainColor() == mPickerDay.getCurtainColor())
+                mPickerMonth.getCurtainColor() == mPickerDay.getCurtainColor()) {
             return mPickerYear.getCurtainColor();
+        }
         throw new RuntimeException("Can not get curtain color correctly from WheelDatePicker!");
     }
 
@@ -390,8 +401,9 @@ public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemS
     @Override
     public Typeface getTypeface() {
         if (mPickerYear.getTypeface().equals(mPickerMonth.getTypeface()) &&
-                mPickerMonth.getTypeface().equals(mPickerDay.getTypeface()))
+                mPickerMonth.getTypeface().equals(mPickerDay.getTypeface())) {
             return mPickerYear.getTypeface();
+        }
         throw new RuntimeException("Can not get typeface correctly from WheelDatePicker!");
     }
 

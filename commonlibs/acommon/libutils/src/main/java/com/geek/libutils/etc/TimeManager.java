@@ -15,8 +15,11 @@ public class TimeManager {
         mHandler = new Handler();
 
         mTicker = new Runnable() {
+            @Override
             public void run() {
-                if (mTickerStopped) return;
+                if (mTickerStopped) {
+                    return;
+                }
                 long time = System.currentTimeMillis();
                 if (mListener != null) { mListener.onTimeChange(time);}
 

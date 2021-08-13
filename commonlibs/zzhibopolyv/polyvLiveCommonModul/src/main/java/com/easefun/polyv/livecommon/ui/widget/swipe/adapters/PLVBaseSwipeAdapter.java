@@ -21,6 +21,7 @@ public abstract class PLVBaseSwipeAdapter extends BaseAdapter implements PLVSwip
      * @param position
      * @return
      */
+    @Override
     public abstract int getSwipeLayoutResourceId(int position);
 
     /**

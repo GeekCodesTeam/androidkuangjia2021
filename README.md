@@ -1,4 +1,4 @@
-# APP框架使用说明
+# APP开发框架库
 
 ### 集成方式
 How to
@@ -27,26 +27,27 @@ Share this release:
 
 ### 你也可以这样
     // 总依赖																	
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.3.3'	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.4.6'	
     或者
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.3.1'	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.4.6'
+			
+    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
     
-    // 部分依赖																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.3.1'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.3.1'	
-    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.3.1'	
-
-
-![image](https://user-images.githubusercontent.com/7312232/127794495-5ee0ec57-c82a-4d4a-9887-4a9c366de3b0.png)
+    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
+    
+    // 部分依赖	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.4.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.4.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.4.6'	
 
 
 混合移动应用框架APP-Android2

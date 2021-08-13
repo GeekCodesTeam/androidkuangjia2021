@@ -24,7 +24,7 @@ public class ConfigHelper {
         // 显示对方是否已读的view将会展示
         config.setShowRead(true);
         config.setAppCacheDir(TencentApp.get().getFilesDir().getPath());
-        if (new File(Environment.getExternalStorageDirectory() + "/111222333").exists()) {
+        if (new File(Environment.getExternalStorageState() + "/111222333").exists()) {
             config.setTestEnv(true);
         }
         TUIKit.getConfigs().setGeneralConfig(config);

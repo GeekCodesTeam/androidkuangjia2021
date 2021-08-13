@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 设置整个屏幕背景为白色 -->
+    <item>
+        <color android:color="@color/transparent" />
+    </item>
+
+    <!-- 展示图片 -->
+    <item>
+        <bitmap
+            android:src="@mipmap/iconlogin7" />
+    </item>
+    <!-- 底部图表 -->
+    <!--    <item-->
+    <!--        android:height="124dp"-->
+    <!--        android:gravity="bottom"-->
+    <!--        android:bottom="24dp"-->
+    <!--        android:top="16dp">-->
+    <!--        <bitmap-->
+    <!--            android:layout_width="64dp"-->
+    <!--            android:layout_height="84dp"-->
+    <!--            android:gravity="bottom|center_horizontal"-->
+    <!--            android:src="@mipmap/ic_start_logo" />-->
+    <!--    </item>-->
+
+</layer-list>

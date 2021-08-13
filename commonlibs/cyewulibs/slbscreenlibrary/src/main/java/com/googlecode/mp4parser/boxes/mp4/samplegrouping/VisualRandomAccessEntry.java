@@ -64,13 +64,21 @@ public class VisualRandomAccessEntry extends GroupEntry {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         VisualRandomAccessEntry that = (VisualRandomAccessEntry) o;
 
-        if (numLeadingSamples != that.numLeadingSamples) return false;
-        if (numLeadingSamplesKnown != that.numLeadingSamplesKnown) return false;
+        if (numLeadingSamples != that.numLeadingSamples) {
+            return false;
+        }
+        if (numLeadingSamplesKnown != that.numLeadingSamplesKnown) {
+            return false;
+        }
 
         return true;
     }

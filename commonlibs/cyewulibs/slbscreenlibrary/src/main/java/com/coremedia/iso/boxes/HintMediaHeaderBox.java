@@ -54,6 +54,7 @@ public class HintMediaHeaderBox extends AbstractMediaHeaderBox {
         return avgBitrate;
     }
 
+    @Override
     protected long getContentSize() {
         return 20;
     }

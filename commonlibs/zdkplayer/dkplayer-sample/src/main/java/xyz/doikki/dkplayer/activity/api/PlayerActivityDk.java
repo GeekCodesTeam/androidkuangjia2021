@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
 import xyz.doikki.dkplayer.util.IntentKeysDk;
@@ -164,6 +165,8 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                     break;
                 case VideoView.PLAYER_FULL_SCREEN://全屏
                     break;
+                default:
+                    break;
             }
         }
 
@@ -191,6 +194,8 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 case VideoView.STATE_PLAYBACK_COMPLETED:
                     break;
                 case VideoView.STATE_ERROR:
+                    break;
+                default:
                     break;
             }
         }

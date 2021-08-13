@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -31,6 +32,9 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Nathen
@@ -38,7 +42,8 @@ import java.util.TimerTask;
  */
 public class JZVideoPlayerStandard extends JZVideoPlayer {
 
-    protected static Timer DISMISS_CONTROL_VIEW_TIMER;
+//    protected static Timer DISMISS_CONTROL_VIEW_TIMER;
+    private static ScheduledExecutorService mExecutorService;
 
     public ImageView backButton;
     public ProgressBar bottomProgressBar, loadingProgressBar;
@@ -52,7 +57,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     public TextView clarity;
     public PopupWindow clarityPopWindow;
 
-    protected DismissControlViewTimerTask mDismissControlViewTimerTask;
+//    protected DismissControlViewTimerTask mDismissControlViewTimerTask;
     protected Dialog mProgressDialog;
     protected ProgressBar mDialogProgressBar;
     protected TextView mDialogSeekTime;
@@ -67,6 +72,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     protected TextView mDialogBrightnessTextView;
     private boolean brocasting = false;
     private BroadcastReceiver battertReceiver = new BroadcastReceiver() {
+        @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
@@ -121,9 +127,12 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
         clarity.setOnClickListener(this);
     }
 
+    @Override
     public void setUp(LinkedHashMap urlMap, int defaultUrlMapIndex, int screen, Object... objects) {
         super.setUp(urlMap, defaultUrlMapIndex, screen, objects);
-        if (objects.length == 0) return;
+        if (objects.length == 0) {
+            return;
+        }
         titleTextView.setText(objects[0].toString());
         if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
             fullscreenButton.setImageResource(R.drawable.jz_shrink);
@@ -243,6 +252,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                         onClickUiToggle();
                     }
                     break;
+                default:
+                    break;
             }
         } else if (id == R.id.bottom_seek_progress) {
             switch (event.getAction()) {
@@ -251,6 +262,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                     break;
                 case MotionEvent.ACTION_UP:
                     startDismissControlViewTimer();
+                    break;
+                default:
                     break;
             }
         }
@@ -295,6 +308,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
             final LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.jz_layout_clarity, null);
 
             OnClickListener mQualityListener = new OnClickListener() {
+                @Override
                 public void onClick(View v) {
                     int index = (int) v.getTag();
                     onStatePreparingChangingUrl(index, getCurrentPositionWhenPlaying());
@@ -450,13 +464,17 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     @Override
     public void setProgressAndText(int progress, int position, int duration) {
         super.setProgressAndText(progress, position, duration);
-        if (progress != 0) bottomProgressBar.setProgress(progress);
+        if (progress != 0) {
+            bottomProgressBar.setProgress(progress);
+        }
     }
 
     @Override
     public void setBufferProgress(int bufferProgress) {
         super.setBufferProgress(bufferProgress);
-        if (bufferProgress != 0) bottomProgressBar.setSecondaryProgress(bufferProgress);
+        if (bufferProgress != 0) {
+            bottomProgressBar.setSecondaryProgress(bufferProgress);
+        }
     }
 
     @Override
@@ -481,6 +499,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                 break;
             case SCREEN_WINDOW_TINY:
                 break;
+            default:
+                break;
         }
     }
 
@@ -496,6 +516,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                         View.VISIBLE, View.VISIBLE, View.INVISIBLE);
                 break;
             case SCREEN_WINDOW_TINY:
+                break;
+            default:
                 break;
         }
 
@@ -516,6 +538,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                 break;
             case SCREEN_WINDOW_TINY:
                 break;
+            default:
+                break;
         }
 
     }
@@ -532,6 +556,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                         View.INVISIBLE, View.INVISIBLE, View.VISIBLE);
                 break;
             case SCREEN_WINDOW_TINY:
+                break;
+            default:
                 break;
         }
 
@@ -552,6 +578,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                 break;
             case SCREEN_WINDOW_TINY:
                 break;
+            default:
+                break;
         }
     }
 
@@ -567,6 +595,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                         View.INVISIBLE, View.INVISIBLE, View.VISIBLE);
                 break;
             case SCREEN_WINDOW_TINY:
+                break;
+            default:
                 break;
         }
 
@@ -587,6 +617,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                 break;
             case SCREEN_WINDOW_TINY:
                 break;
+            default:
+                break;
         }
 
     }
@@ -605,6 +637,8 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
                 updateStartImage();
                 break;
             case SCREEN_WINDOW_TINY:
+                break;
+            default:
                 break;
         }
 
@@ -752,19 +786,29 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
 
     public void startDismissControlViewTimer() {
         cancelDismissControlViewTimer();
-        DISMISS_CONTROL_VIEW_TIMER = new Timer();
-        mDismissControlViewTimerTask = new DismissControlViewTimerTask();
-        DISMISS_CONTROL_VIEW_TIMER.schedule(mDismissControlViewTimerTask, 2500);
+//        DISMISS_CONTROL_VIEW_TIMER = new Timer();
+//        mDismissControlViewTimerTask = new DismissControlViewTimerTask();
+//        DISMISS_CONTROL_VIEW_TIMER.schedule(mDismissControlViewTimerTask, 2500);
+        //
+        mExecutorService = Executors.newScheduledThreadPool(1);
+        mExecutorService.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                dissmissControlView();
+            }
+        }, 0, 2500, TimeUnit.MILLISECONDS);
     }
 
     public void cancelDismissControlViewTimer() {
-        if (DISMISS_CONTROL_VIEW_TIMER != null) {
-            DISMISS_CONTROL_VIEW_TIMER.cancel();
+//        if (DISMISS_CONTROL_VIEW_TIMER != null) {
+//            DISMISS_CONTROL_VIEW_TIMER.cancel();
+//        }
+//        if (mDismissControlViewTimerTask != null) {
+//            mDismissControlViewTimerTask.cancel();
+//        }
+        if (mExecutorService != null) {
+            mExecutorService.shutdown();
         }
-        if (mDismissControlViewTimerTask != null) {
-            mDismissControlViewTimerTask.cancel();
-        }
-
     }
 
     @Override
@@ -782,13 +826,13 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
         }
     }
 
-    public class DismissControlViewTimerTask extends TimerTask {
-
-        @Override
-        public void run() {
-            dissmissControlView();
-        }
-    }
+//    public class DismissControlViewTimerTask extends TimerTask {
+//
+//        @Override
+//        public void run() {
+//            dissmissControlView();
+//        }
+//    }
 
     public void dissmissControlView() {
         if (currentState != CURRENT_STATE_NORMAL

@@ -10,104 +10,105 @@
         android:allowBackup="true"
         android:label="@string/app_nameslbjiaozvideonew"
         android:supportsRtl="true">
-        <activity android:name=".Tab_4_More.SlideZoomActivity"></activity>
+        <activity android:name=".tab4more.SlideZoomActivity"></activity>
         <activity
             android:name=".JZVideoMainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/JZAppTheme">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.JZVideoMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Tab_4_More.DirectPlayActivity"
+            android:name=".tab4more.DirectPlayActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.NormalListViewActivity"
+            android:name=".tab3list.ListView.NormalListViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.ListViewFragmentViewPagerActivity"
+            android:name=".tab3list.ListView.ListViewFragmentViewPagerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.ListViewMultiHolderActivity"
+            android:name=".tab3list.ListView.ListViewMultiHolderActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.TinyWindow.TinyWindowRecycleViewActivity"
+            android:name=".tab3list.TinyWindow.TinyWindowRecycleViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.TinyWindow.TinyWindowActivity"
+            android:name=".tab3list.TinyWindow.TinyWindowActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.TinyWindow.TinyWindowRecycleViewMultiHolderActivity"
+            android:name=".tab3list.TinyWindow.TinyWindowRecycleViewMultiHolderActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_1_Basic.RotationVideoSizeActivity"
+            android:name=".tab1basic.RotationVideoSizeActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_1_Basic.CustomMediaActivity"
+            android:name=".tab1basic.CustomMediaActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.RecyclerViewActivity"
+            android:name=".tab3list.ListView.RecyclerViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_4_More.WebViewActivity"
+            android:name=".tab4more.WebViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_1_Basic.OrientationActivity"
+            android:name=".tab1basic.OrientationActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_1_Basic.PreloadingActivity"
+            android:name=".tab1basic.PreloadingActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.tiktok.ActivityTikTok"
+            android:name=".tab3list.ListView.tiktok.ActivityTikTok"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Tab_3_List.ListView.ListViewToDetailActivity"
+            android:name=".tab3list.ListView.ListViewToDetailActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.ListView.DetailListViewActivity"
+            android:name=".tab3list.ListView.DetailListViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/TransparentWindow" />
         <activity
-            android:name=".Tab_3_List.ListView.AutoPlayListViewActivity"
+            android:name=".tab3list.ListView.AutoPlayListViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_4_More.LocalVideoActivity"
+            android:name=".tab4more.LocalVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_1_Basic.ScreenRotateActivity"
+            android:name=".tab1basic.ScreenRotateActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_2_Custom.AGVideoActivity"
+            android:name=".tab2custom.AGVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_3_List.GetGifActivity"
+            android:name=".tab3list.GetGifActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tab_4_More.DanmuActivity"
+            android:name=".tab4more.DanmuActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <!--饺子视频-->

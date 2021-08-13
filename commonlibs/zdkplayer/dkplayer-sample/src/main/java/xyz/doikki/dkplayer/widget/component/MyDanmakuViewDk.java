@@ -141,6 +141,8 @@ public class MyDanmakuViewDk extends DanmakuView implements IControlComponent {
                 clear();
                 clearDanmakusOnScreen();
                 break;
+            default:
+                break;
         }
     }
 

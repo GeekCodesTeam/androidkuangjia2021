@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@mipmap/icon_check_unselected" android:state_checked="false" />
+
+    <item android:drawable="@mipmap/icon_check_selected" android:state_checked="true" />
+
+    <!-- 注意⚠：选择器如果的默认一定要放在最后一行，否则会出现莫名其妙的问题 -->
+    <!--<item android:drawable="@drawable/radio_false" />-->
+
+</selector>

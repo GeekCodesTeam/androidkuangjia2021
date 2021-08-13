@@ -18,6 +18,6 @@
         app:itemIconTint="@drawable/viewpager1_nav_item_color_state"
         app:itemTextColor="@drawable/viewpager1_nav_item_color_state"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_bottom_navigation" />
+        app:menu="@menu/menu_bottom_navigation_vp1" />
 
 </LinearLayout>

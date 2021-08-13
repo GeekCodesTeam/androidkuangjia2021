@@ -156,6 +156,7 @@ public class TrackRunBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         long size = 8;
         int flags = getFlags();
@@ -184,6 +185,7 @@ public class TrackRunBox extends AbstractFullBox {
         return size;
     }
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeUInt32(byteBuffer, entries.size());

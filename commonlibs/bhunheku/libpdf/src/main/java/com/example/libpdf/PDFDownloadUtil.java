@@ -51,14 +51,16 @@ public class PDFDownloadUtil {
                     listener.onDownloadFailed(e.getMessage());
                 } finally {
                     try {
-                        if (is != null)
+                        if (is != null) {
                             is.close();
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     try {
-                        if (fos != null)
+                        if (fos != null) {
                             fos.close();
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

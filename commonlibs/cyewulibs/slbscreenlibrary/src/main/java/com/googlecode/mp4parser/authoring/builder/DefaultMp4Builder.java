@@ -83,6 +83,7 @@ public class DefaultMp4Builder implements Mp4Builder {
     /**
      * {@inheritDoc}
      */
+    @Override
     public IsoFile build(Movie movie) {
         LOG.fine("Creating movie " + movie);
         for (Track track : movie.getTracks()) {
@@ -163,9 +164,9 @@ public class DefaultMp4Builder implements Mp4Builder {
             nextTrackId = nextTrackId < track.getTrackMetaData().getTrackId() ? track.getTrackMetaData().getTrackId() : nextTrackId;
         }
         mvhd.setNextTrackId(++nextTrackId);
-        if (DateHelper.convert(mvhd.getCreationTime()) >= 1l << 32 ||
-                DateHelper.convert(mvhd.getModificationTime()) >= 1l << 32 ||
-                mvhd.getDuration() >= 1l << 32) {
+        if (DateHelper.convert(mvhd.getCreationTime()) >= 1L << 32 ||
+                DateHelper.convert(mvhd.getModificationTime()) >= 1L << 32 ||
+                mvhd.getDuration() >= 1L << 32) {
             mvhd.setVersion(1);
         }
 
@@ -227,9 +228,9 @@ public class DefaultMp4Builder implements Mp4Builder {
         tkhd.setTrackId(track.getTrackMetaData().getTrackId());
         tkhd.setVolume(track.getTrackMetaData().getVolume());
         tkhd.setMatrix(track.getTrackMetaData().getMatrix());
-        if (DateHelper.convert(tkhd.getCreationTime()) >= 1l << 32 ||
-                DateHelper.convert(tkhd.getModificationTime()) >= 1l << 32 ||
-                tkhd.getDuration() >= 1l << 32) {
+        if (DateHelper.convert(tkhd.getCreationTime()) >= 1L << 32 ||
+                DateHelper.convert(tkhd.getModificationTime()) >= 1L << 32 ||
+                tkhd.getDuration() >= 1L << 32) {
             tkhd.setVersion(1);
         }
 
@@ -301,7 +302,7 @@ public class DefaultMp4Builder implements Mp4Builder {
             sdtp.setEntries(track.getSampleDependencies());
             stbl.addBox(sdtp);
         }
-        HashMap<Track, int[]> track2ChunkSizes = new HashMap<Track, int[]>();
+        HashMap<Track, int[]> track2ChunkSizes = new HashMap<Track, int[]>(16);
         for (Track current : movie.getTracks()) {
             track2ChunkSizes.put(current, getChunkSizes(current, movie));
         }
@@ -379,14 +380,17 @@ public class DefaultMp4Builder implements Mp4Builder {
 
         long contentSize = 0;
 
+        @Override
         public ContainerBox getParent() {
             return parent;
         }
 
+        @Override
         public void setParent(ContainerBox parent) {
             this.parent = parent;
         }
 
+        @Override
         public void parse(ReadableByteChannel readableByteChannel, ByteBuffer header, long contentSize, BoxParser boxParser) throws IOException {
         }
 
@@ -436,10 +440,12 @@ public class DefaultMp4Builder implements Mp4Builder {
         }
 
 
+        @Override
         public String getType() {
             return "mdat";
         }
 
+        @Override
         public long getSize() {
             return 16 + contentSize;
         }
@@ -449,6 +455,7 @@ public class DefaultMp4Builder implements Mp4Builder {
         }
 
 
+        @Override
         public void getBox(WritableByteChannel writableByteChannel) throws IOException {
             ByteBuffer bb = ByteBuffer.allocate(16);
             long size = getSize();
@@ -473,7 +480,7 @@ public class DefaultMp4Builder implements Mp4Builder {
                     List<ByteBuffer> sublist = nuSamples.subList(
                             i * STEPSIZE, // start
                             (i + 1) * STEPSIZE < nuSamples.size() ? (i + 1) * STEPSIZE : nuSamples.size()); // end
-                    ByteBuffer sampleArray[] = sublist.toArray(new ByteBuffer[sublist.size()]);
+                    ByteBuffer[] sampleArray = sublist.toArray(new ByteBuffer[sublist.size()]);
                     do {
                         ((GatheringByteChannel) writableByteChannel).write(sampleArray);
                     } while (sampleArray[sampleArray.length - 1].remaining() > 0);

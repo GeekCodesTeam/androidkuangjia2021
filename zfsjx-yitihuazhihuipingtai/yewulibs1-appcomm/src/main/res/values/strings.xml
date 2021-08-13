@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_nameslbappcomm" translatable="false">slbappcomm</string>
+    <string name="initStr" translatable="false">this is a init sentence</string>
+    <string name="readbooks_tips1" translatable="false">小朋友，恭喜你完成了每日阅读任务一，奖励已经放到你的从无背包里了，快去看看吧</string>
+    <string name="readbooks_tips2" translatable="false">付费内容需要妈妈购买才能听阅哦</string>
+    <string name="readbooks_tips22" translatable="false">阅读完整绘本需要购买</string>
+    <string name="readbooks_tips23" translatable="false">阅读完整听书需要购买</string>
+    <string name="permission_camera" translatable="false">App扫码需要用到拍摄权限</string>
+    <string name="permission_external_storage" translatable="false">App需要用到读写权限</string>
+    <string name="tips_scan_code" translatable="false">将二维码/条形码放入框内，即可自动扫描</string>
+    <string name="qr_code" translatable="false">二维码</string>
+    <string name="bar_code" translatable="false">条形码</string>
+    <string name="viewpager1_title_home" translatable="false">首页</string>
+    <string name="viewpager1_title_knowledgesystem" translatable="false">知识体系</string>
+    <string name="viewpager1_title_project" translatable="false">项目</string>
+    <string name="viewpager1_title_navigation" translatable="false">导航</string>
+
+    <!-- Main activity strings -->
+    <string name="hello">Hello! Press one of the following buttons to crash the app:</string>
+    <string name="crash_main_thread">Crash main thread</string>
+    <string name="crash_background_thread">Crash background thread</string>
+    <string name="crash_with_delay">Crash with delay (5s)</string>
+
+    <!-- These strings are only for our CUSTOM error activity, if you are using the default activity, they are not needed! -->
+    <string name="error_title">Something went wrong!</string>
+    <string name="error_occurred">An error occurred. We\'re deeply sorry.</string>
+    <string name="error_details">Error details:</string>
+    <string name="unknown_exception">Unknown exception</string>
+    <string name="restart_app">Restart app</string>
+    <string name="close_app">Close app</string>
+</resources>

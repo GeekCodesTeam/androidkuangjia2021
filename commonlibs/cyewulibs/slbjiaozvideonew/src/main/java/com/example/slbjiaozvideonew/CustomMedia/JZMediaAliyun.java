@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomMedia;
+package com.example.slbjiaozvideonew.custommedia;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -69,8 +69,9 @@ public class JZMediaAliyun extends JZMediaInterface implements IPlayer.OnPrepare
 
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-        if (aliyunMediaPlayer != null)
+        if (aliyunMediaPlayer != null) {
             aliyunMediaPlayer.redraw();
+        }
     }
 
     @Override
@@ -196,8 +197,9 @@ public class JZMediaAliyun extends JZMediaInterface implements IPlayer.OnPrepare
 
     @Override
     public void seekTo(long time) {
-        if (aliyunMediaPlayer != null)
+        if (aliyunMediaPlayer != null) {
             aliyunMediaPlayer.seekTo(time);
+        }
     }
 
     @Override
@@ -241,14 +243,16 @@ public class JZMediaAliyun extends JZMediaInterface implements IPlayer.OnPrepare
 
     @Override
     public void setSpeed(float speed) {
-        if (aliyunMediaPlayer != null)
+        if (aliyunMediaPlayer != null) {
             aliyunMediaPlayer.setSpeed(speed);
+        }
     }
 
     @Override
     public void setSurface(Surface surface) {
-        if (aliyunMediaPlayer != null)
+        if (aliyunMediaPlayer != null) {
             aliyunMediaPlayer.setSurface(surface);
+        }
     }
 
     @Override
@@ -379,8 +383,9 @@ public class JZMediaAliyun extends JZMediaInterface implements IPlayer.OnPrepare
     }
 
     public void saveCacheRotation(Object url, int rotation) {
-        if (jzvd == null)
+        if (jzvd == null) {
             return;
+        }
         SharedPreferences spn = jzvd.getContext().getSharedPreferences("ALIYUN_ROTATION",
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = spn.edit();
@@ -388,8 +393,9 @@ public class JZMediaAliyun extends JZMediaInterface implements IPlayer.OnPrepare
     }
 
     public int getCacheRotation(Object url) {
-        if (jzvd == null)
+        if (jzvd == null) {
             return -1;
+        }
         SharedPreferences spn = jzvd.getContext().getSharedPreferences("ALIYUN_ROTATION",
                 Context.MODE_PRIVATE);
         return spn.getInt("rotate:" + url.toString(), -1);

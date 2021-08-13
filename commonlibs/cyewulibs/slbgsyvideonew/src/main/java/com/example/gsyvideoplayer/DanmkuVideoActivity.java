@@ -172,8 +172,9 @@ public class DanmkuVideoActivity extends AppCompatActivity {
             getCurPlay().release();
         }
         //GSYPreViewManager.instance().releaseMediaPlayer();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
 
         isDestory = true;
     }

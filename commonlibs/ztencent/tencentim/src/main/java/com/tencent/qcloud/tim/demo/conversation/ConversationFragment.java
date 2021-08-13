@@ -132,8 +132,9 @@ public class ConversationFragment extends BaseFragment {
      * @param locationY        长按时Y坐标
      */
     private void showItemPopMenu(final int index, final ConversationInfo conversationInfo, float locationX, float locationY) {
-        if (mConversationPopActions == null || mConversationPopActions.size() == 0)
+        if (mConversationPopActions == null || mConversationPopActions.size() == 0) {
             return;
+        }
         View itemPop = LayoutInflater.from(getActivity()).inflate(R.layout.pop_menu_layout, null);
         mConversationPopList = itemPop.findViewById(R.id.pop_menu_list);
         mConversationPopList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

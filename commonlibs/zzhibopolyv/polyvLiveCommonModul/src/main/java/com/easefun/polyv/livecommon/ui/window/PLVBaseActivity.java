@@ -46,8 +46,9 @@ public class PLVBaseActivity extends AppCompatActivity {
 
     private int getTaskActivityCount() {
         ActivityManager am = (ActivityManager) getSystemService(Activity.ACTIVITY_SERVICE);
-        if (am == null)
+        if (am == null) {
             return -1;
+        }
         try {
             // getBusinessProtocol the info from the currently running task
             List<ActivityManager.RunningTaskInfo> taskInfos = am.getRunningTasks(1);
@@ -134,6 +135,7 @@ public class PLVBaseActivity extends AppCompatActivity {
     }
 
     //新增的findViewById()方法，用于兼容support 25
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends View> T findViewById(@IdRes int id) {
         return (T) super.findViewById(id);

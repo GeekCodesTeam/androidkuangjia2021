@@ -10,73 +10,74 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WifiPwdUtil {
-	
-	public static List Read() throws Exception {
-		List wifiInfos = new ArrayList();
-		Process process = null;
-		DataOutputStream dataOutputStream = null;
-		DataInputStream dataInputStream = null;
-		StringBuffer wifiConf = new StringBuffer();
-		try {
-			process = Runtime.getRuntime().exec("su");
-			dataOutputStream = new DataOutputStream(process.getOutputStream());
-			dataInputStream = new DataInputStream(process.getInputStream());
-			dataOutputStream.writeBytes("cat /data/misc/wifi/*.conf\n");
-			dataOutputStream.writeBytes("exit\n");
-			dataOutputStream.flush();
-			InputStreamReader inputStreamReader = new InputStreamReader(
-					dataInputStream, "UTF-8");
-			BufferedReader bufferedReader = new BufferedReader(
-					inputStreamReader);
-			String line = null;
-			while ((line = bufferedReader.readLine()) != null) {
-				wifiConf.append(line);
-			}
-			bufferedReader.close();
-			inputStreamReader.close();
-			process.waitFor();
-		} catch (Exception e) {
-			throw e;
-		} finally {
-			try {
-				if (dataOutputStream != null) {
-					dataOutputStream.close();
-				}
-				if (dataInputStream != null) {
-					dataInputStream.close();
-				}
-				process.destroy();
-			} catch (Exception e) {
-				throw e;
-			}
-		}
-		Pattern network = Pattern.compile("network=\\{([^\\}]+)\\}",
-				Pattern.DOTALL);
-		Matcher networkMatcher = network.matcher(wifiConf.toString());
-		while (networkMatcher.find()) {
-			String networkBlock = networkMatcher.group();
-			Pattern ssid = Pattern.compile("ssid=\"([^\"]+)\"");
-			Matcher ssidMatcher = ssid.matcher(networkBlock);
-			if (ssidMatcher.find()) {
-				WifiInfo wifiInfo = new WifiInfo();
-				wifiInfo.Ssid = ssidMatcher.group(1);
-				Pattern psk = Pattern.compile("psk=\"([^\"]+)\"");
-				Matcher pskMatcher = psk.matcher(networkBlock);
-				if (pskMatcher.find()) {
-					wifiInfo.Password = pskMatcher.group(1);
-				} else {
-					wifiInfo.Password = "无密码";
-				}
-				wifiInfos.add(wifiInfo);
-			}
-		}
-		return wifiInfos;
-	}
-	public static class WifiInfo{
-		
-		public String Ssid;
 
-		public String Password;
-	}
+    public static Pattern network = Pattern.compile("network=\\{([^\\}]+)\\}", Pattern.DOTALL);
+    public static Pattern ssid = Pattern.compile("ssid=\"([^\"]+)\"");
+    public static Pattern psk = Pattern.compile("psk=\"([^\"]+)\"");
+
+    public static List Read() throws Exception {
+        List wifiInfos = new ArrayList();
+        Process process = null;
+        DataOutputStream dataOutputStream = null;
+        DataInputStream dataInputStream = null;
+        StringBuffer wifiConf = new StringBuffer();
+        try {
+            process = Runtime.getRuntime().exec("su");
+            dataOutputStream = new DataOutputStream(process.getOutputStream());
+            dataInputStream = new DataInputStream(process.getInputStream());
+            dataOutputStream.writeBytes("cat /data/misc/wifi/*.conf\n");
+            dataOutputStream.writeBytes("exit\n");
+            dataOutputStream.flush();
+            InputStreamReader inputStreamReader = new InputStreamReader(
+                    dataInputStream, "UTF-8");
+            BufferedReader bufferedReader = new BufferedReader(
+                    inputStreamReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                wifiConf.append(line);
+            }
+            bufferedReader.close();
+            inputStreamReader.close();
+            process.waitFor();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                if (dataOutputStream != null) {
+                    dataOutputStream.close();
+                }
+                if (dataInputStream != null) {
+                    dataInputStream.close();
+                }
+                process.destroy();
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+        Matcher networkMatcher = network.matcher(wifiConf.toString());
+        while (networkMatcher.find()) {
+            String networkBlock = networkMatcher.group();
+            Matcher ssidMatcher = ssid.matcher(networkBlock);
+            if (ssidMatcher.find()) {
+                WifiInfo wifiInfo = new WifiInfo();
+                wifiInfo.Ssid = ssidMatcher.group(1);
+                Matcher pskMatcher = psk.matcher(networkBlock);
+                if (pskMatcher.find()) {
+                    wifiInfo.Password = pskMatcher.group(1);
+                } else {
+                    wifiInfo.Password = "无密码";
+                }
+                wifiInfos.add(wifiInfo);
+            }
+        }
+        return wifiInfos;
+    }
+
+    public static class WifiInfo {
+
+        public String Ssid;
+
+        public String Password;
+    }
 }
 

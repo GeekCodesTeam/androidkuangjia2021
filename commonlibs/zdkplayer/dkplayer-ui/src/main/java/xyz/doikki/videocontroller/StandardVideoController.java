@@ -66,6 +66,7 @@ public class StandardVideoController extends GestureVideoController implements V
 
     /**
      * 快速添加各个组件
+     *
      * @param title  标题
      * @param isLive 是否为直播
      */
@@ -141,6 +142,8 @@ public class StandardVideoController extends GestureVideoController implements V
                     mLockButton.setVisibility(GONE);
                 }
                 break;
+            default:
+                break;
         }
 
         if (mActivity != null && hasCutout()) {
@@ -185,6 +188,8 @@ public class StandardVideoController extends GestureVideoController implements V
                 mLoadingProgress.setVisibility(GONE);
                 mLockButton.setVisibility(GONE);
                 mLockButton.setSelected(false);
+                break;
+            default:
                 break;
         }
     }

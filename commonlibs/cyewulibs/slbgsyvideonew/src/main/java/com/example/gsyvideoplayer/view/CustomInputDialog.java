@@ -121,6 +121,7 @@ public class CustomInputDialog extends Dialog {
         hintInput = msg;
     }
 
+    @Override
     public void setTitle(int msgId) {
         title = context.getString(msgId);
     }
@@ -195,7 +196,7 @@ public class CustomInputDialog extends Dialog {
 
 
     public void collapseSoftInputMethod() {
-        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(getContext().INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(getCurrentFocus()
                     .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);

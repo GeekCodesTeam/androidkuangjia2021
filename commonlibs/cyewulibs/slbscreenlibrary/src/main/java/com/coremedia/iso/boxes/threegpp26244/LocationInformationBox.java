@@ -90,6 +90,7 @@ public class LocationInformationBox extends AbstractFullBox {
         this.additionalNotes = additionalNotes;
     }
 
+    @Override
     protected long getContentSize() {
         return 22 + Utf8.convert(name).length + Utf8.convert(astronomicalBody).length + Utf8.convert(additionalNotes).length;
     }

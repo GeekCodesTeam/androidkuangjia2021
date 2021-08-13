@@ -80,6 +80,7 @@ public class SampleSizeBox extends AbstractFullBox {
         this.sampleSizes = sampleSizes;
     }
 
+    @Override
     protected long getContentSize() {
         return 12 + (sampleSize == 0 ? sampleSizes.length * 4 : 0);
     }
@@ -115,6 +116,7 @@ public class SampleSizeBox extends AbstractFullBox {
 
     }
 
+    @Override
     public String toString() {
         return "SampleSizeBox[sampleSize=" + getSampleSize() + ";sampleCount=" + getSampleCount() + "]";
     }

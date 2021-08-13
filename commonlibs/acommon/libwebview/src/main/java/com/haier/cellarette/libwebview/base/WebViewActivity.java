@@ -277,8 +277,9 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         Document doc = Jsoup.parse(htmltext);
         Elements elements = doc.getElementsByTag("img");
         for (Element element : elements) {
-            if (element.className() != null && element.className().length() > 0)
+            if (element.className() != null && element.className().length() > 0) {
                 element.attr("width", "100%").attr("height", "auto");
+            }
         }
         return doc.toString();
     }

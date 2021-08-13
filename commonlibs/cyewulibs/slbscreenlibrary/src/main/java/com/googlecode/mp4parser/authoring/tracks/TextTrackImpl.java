@@ -64,6 +64,7 @@ public class TextTrackImpl extends AbstractTrack {
     }
 
 
+    @Override
     public List<ByteBuffer> getSamples() {
         List<ByteBuffer> samples = new LinkedList<ByteBuffer>();
         long lastEnd = 0;
@@ -89,10 +90,12 @@ public class TextTrackImpl extends AbstractTrack {
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         List<TimeToSampleBox.Entry> stts = new LinkedList<TimeToSampleBox.Entry>();
         long lastEnd = 0;
@@ -109,22 +112,27 @@ public class TextTrackImpl extends AbstractTrack {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "sbtl";
     }
@@ -155,10 +163,12 @@ public class TextTrackImpl extends AbstractTrack {
         }
     }
 
+    @Override
     public AbstractMediaHeaderBox getMediaHeaderBox() {
         return new NullMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }

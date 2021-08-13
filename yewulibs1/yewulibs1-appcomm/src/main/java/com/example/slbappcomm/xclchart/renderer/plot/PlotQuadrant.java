@@ -151,8 +151,9 @@ public class PlotQuadrant {
 	 */
 	public Paint  getVerticalLinePaint()
 	{
-		if(null == mPaintVerticalLine)
-			mPaintVerticalLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintVerticalLine) {
+            mPaintVerticalLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		
 		return mPaintVerticalLine;
 	}
@@ -163,8 +164,9 @@ public class PlotQuadrant {
 	 */
 	public Paint  getHorizontalLinePaint()
 	{
-		if(null == mPaintHorizontalLine)
-			mPaintHorizontalLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintHorizontalLine) {
+            mPaintHorizontalLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		
 		return mPaintHorizontalLine;		
 	}
@@ -175,8 +177,9 @@ public class PlotQuadrant {
 	 */
 	public Paint  getBgColorPaint()
 	{
-		if(null == mPaintBgColor)	
-			mPaintBgColor = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintBgColor) {
+            mPaintBgColor = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 					
 		return mPaintBgColor;		
 	}

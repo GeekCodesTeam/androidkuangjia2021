@@ -38,7 +38,9 @@ public class BitmapUtil {
             // 一定都会大于等于目标的宽和高。
             inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
         }
-        if(inSampleSize==0) return 1;
+        if(inSampleSize==0) {
+            return 1;
+        }
         Log.e("hongliang","inSampleSize=" + inSampleSize);
         return inSampleSize;
     }

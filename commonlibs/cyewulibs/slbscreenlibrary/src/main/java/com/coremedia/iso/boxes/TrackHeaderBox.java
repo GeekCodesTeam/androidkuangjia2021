@@ -96,6 +96,7 @@ public class TrackHeaderBox extends AbstractFullBox {
         return height;
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 4;
         if (getVersion() == 1) {
@@ -134,6 +135,7 @@ public class TrackHeaderBox extends AbstractFullBox {
         height = IsoTypeReader.readFixedPoint1616(content);
     }
 
+    @Override
     public void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         if (getVersion() == 1) {
@@ -160,6 +162,7 @@ public class TrackHeaderBox extends AbstractFullBox {
         IsoTypeWriter.writeFixedPoint1616(byteBuffer, height);
     }
 
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("TrackHeaderBox[");

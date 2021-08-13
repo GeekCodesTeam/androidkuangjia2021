@@ -31,6 +31,7 @@ public class MpegSampleEntry extends SampleEntry implements ContainerBox {
         return contentSize;
     }
 
+    @Override
     public String toString() {
         return "MpegSampleEntry" + Arrays.asList(getBoxes());
     }

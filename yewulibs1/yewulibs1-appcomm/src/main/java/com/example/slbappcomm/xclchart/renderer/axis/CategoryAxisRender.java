@@ -108,8 +108,9 @@ public class CategoryAxisRender extends CategoryAxis {
 	 */
 	public void renderAxis(Canvas canvas,float startX,float startY,float stopX,float stopY)
 	{
-		if(isShow() && isShowAxisLine())
-			drawAxisLine(canvas,startX, startY, stopX, stopY);
+		if(isShow() && isShowAxisLine()) {
+            drawAxisLine(canvas,startX, startY, stopX, stopY);
+        }
 	}
 	
 	public void renderAxisLine(Canvas canvas,float startX,float startY,float stopX,float stopY)

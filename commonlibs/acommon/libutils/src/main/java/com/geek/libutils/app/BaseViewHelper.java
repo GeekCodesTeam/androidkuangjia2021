@@ -18,7 +18,9 @@ public class BaseViewHelper {
     }
 
     public static void click(View.OnClickListener li, View ...views) {
-        if (views == null || views.length == 0) return;
+        if (views == null || views.length == 0) {
+            return;
+        }
         for (View v : views) {
             v.setOnClickListener(li);
         }
@@ -29,10 +31,15 @@ public class BaseViewHelper {
     }
 
     public static void setVisable(Boolean is, View... views) {
-        if (views == null || views.length == 0) return;
+        if (views == null || views.length == 0) {
+            return;
+        }
         for (View v : views) {
-            if (is) v.setVisibility(View.VISIBLE);
-            else v.setVisibility(View.GONE);
+            if (is) {
+                v.setVisibility(View.VISIBLE);
+            } else {
+                v.setVisibility(View.GONE);
+            }
         }
     }
 }

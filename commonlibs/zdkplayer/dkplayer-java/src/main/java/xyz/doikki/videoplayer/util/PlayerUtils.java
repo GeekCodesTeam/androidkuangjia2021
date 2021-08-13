@@ -124,7 +124,9 @@ public final class PlayerUtils {
      * 获取Activity
      */
     public static Activity scanForActivity(Context context) {
-        if (context == null) return null;
+        if (context == null) {
+            return null;
+        }
         if (context instanceof Activity) {
             return (Activity) context;
         } else if (context instanceof ContextWrapper) {
@@ -224,6 +226,8 @@ public final class PlayerUtils {
                     // 5G
                 case TelephonyManager.NETWORK_TYPE_NR:
                     return NETWORK_MOBILE;
+                default:
+                    break;
             }
         }
         // 未知网络

@@ -134,8 +134,9 @@ public class WheelAreaPicker extends LinearLayout implements IWheelAreaPicker {
         //获取所有city的名字
         //重置先前的城市集合数据
         mCityName.clear();
-        for (City city : mCityList)
+        for (City city : mCityList) {
             mCityName.add(city.getName());
+        }
         mWPCity.setData(mCityName);
         mWPCity.setSelectedItemPosition(0);
         //获取第一个城市对应的城区的名字

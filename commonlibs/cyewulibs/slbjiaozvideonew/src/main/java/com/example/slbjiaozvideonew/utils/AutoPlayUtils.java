@@ -47,7 +47,9 @@ public class AutoPlayUtils {
      * @param percent              当item被遮挡percent/1时释放,percent取值0-1
      */
     public static void onScrollReleaseAllVideos(int firstVisiblePosition, int lastVisiblePosition, float percent) {
-        if (Jzvd.CURRENT_JZVD == null) return;
+        if (Jzvd.CURRENT_JZVD == null) {
+            return;
+        }
         if (positionInList >= 0) {
             if ((positionInList <= firstVisiblePosition || positionInList >= lastVisiblePosition - 1)) {
                 if (getViewVisiblePercent(Jzvd.CURRENT_JZVD) < percent) {

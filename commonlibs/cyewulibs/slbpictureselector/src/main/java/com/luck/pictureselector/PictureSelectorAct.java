@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.Utils;
 import com.luck.picture.lib.PictureMediaScannerConnection;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.animators.AnimationType;
@@ -608,7 +609,7 @@ public class PictureSelectorAct extends AppCompatActivity implements View.OnClic
                 customFile.mkdirs();
             }
         } else {
-            File rootFile = Environment.getExternalStorageDirectory();
+            File rootFile = Utils.getApp().getExternalFilesDir(null);
             customFile = new File(rootFile.getAbsolutePath() + File.separator + "CustomPictureCamera");
             if (!customFile.exists()) {
                 customFile.mkdirs();

@@ -54,6 +54,7 @@ public class GenreBox extends AbstractFullBox {
         this.genre = genre;
     }
 
+    @Override
     protected long getContentSize() {
         return 7 + Utf8.utf8StringLengthInBytes(genre);
     }
@@ -73,6 +74,7 @@ public class GenreBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "GenreBox[language=" + getLanguage() + ";genre=" + getGenre() + "]";
     }

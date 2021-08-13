@@ -51,7 +51,7 @@ public final class CutoutUtil {
      */
     @SuppressWarnings("unchecked")
     private static boolean hasCutoutHuawei(Activity activity) {
-        if (!Build.MANUFACTURER.equalsIgnoreCase("HUAWEI")) {
+        if (!"HUAWEI".equalsIgnoreCase(Build.MANUFACTURER)) {
             return false;
         }
         try {
@@ -71,7 +71,7 @@ public final class CutoutUtil {
      * 是否是oppo刘海屏机型
      */
     private static boolean hasCutoutOPPO(Activity activity) {
-        if (!Build.MANUFACTURER.equalsIgnoreCase("oppo")) {
+        if (!"oppo".equalsIgnoreCase(Build.MANUFACTURER)) {
             return false;
         }
         return activity.getPackageManager().hasSystemFeature("com.oppo.feature.screen.heteromorphism");
@@ -83,7 +83,7 @@ public final class CutoutUtil {
     @SuppressWarnings("unchecked")
     @SuppressLint("PrivateApi")
     private static boolean hasCutoutVIVO(Activity activity) {
-        if (!Build.MANUFACTURER.equalsIgnoreCase("vivo")) {
+        if (!"vivo".equalsIgnoreCase(Build.MANUFACTURER)) {
             return false;
         }
         try {
@@ -105,7 +105,7 @@ public final class CutoutUtil {
     @SuppressWarnings("unchecked")
     @SuppressLint("PrivateApi")
     private static boolean hasCutoutXIAOMI(Activity activity) {
-        if (!Build.MANUFACTURER.equalsIgnoreCase("xiaomi")) {
+        if (!"xiaomi".equalsIgnoreCase(Build.MANUFACTURER)) {
             return false;
         }
         try {
@@ -131,7 +131,9 @@ public final class CutoutUtil {
      */
     public static void adaptCutoutAboveAndroidP(Context context, boolean isAdapt) {
         Activity activity = PlayerUtils.scanForActivity(context);
-        if (activity == null) return;
+        if (activity == null) {
+            return;
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
             if (isAdapt) {

@@ -137,8 +137,9 @@ public class AutoPlayRecyclerViewActivity extends AppCompatActivity {
             VideoModel videoModel = new VideoModel();
             dataList.add(videoModel);
         }
-        if (recyclerBaseAdapter != null)
+        if (recyclerBaseAdapter != null) {
             recyclerBaseAdapter.notifyDataSetChanged();
+        }
     }
 
 }

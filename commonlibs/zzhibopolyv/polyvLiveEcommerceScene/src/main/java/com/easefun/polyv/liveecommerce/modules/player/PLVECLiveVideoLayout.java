@@ -168,7 +168,9 @@ public class PLVECLiveVideoLayout extends FrameLayout implements IPLVECVideoLayo
                     int viewHeight = PLVVideoSizeUtils.getVideoWH(subVideoView)[1];
                     if (subVideoView.getAspectRatio() == PolyvPlayerScreenRatio.AR_ASPECT_FIT_PARENT) {
                         int surHeight = subVideoView.getHeight();
-                        if (viewHeight == 0 || surHeight == 0) return;
+                        if (viewHeight == 0 || surHeight == 0) {
+                            return;
+                        }
                         y = y + (float) ((surHeight - viewHeight) >> 1);
                     } else {
                         y = ConvertUtils.dp2px(112);
@@ -296,6 +298,7 @@ public class PLVECLiveVideoLayout extends FrameLayout implements IPLVECVideoLayo
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="对外API- 实现IPLVECVideoLayout定义的live方法">
+    @Override
     public void setVideoViewRect(Rect videoViewRect) {
         this.videoViewRect = videoViewRect;
         if (!isVideoViewParentDetachVideoLayout) {

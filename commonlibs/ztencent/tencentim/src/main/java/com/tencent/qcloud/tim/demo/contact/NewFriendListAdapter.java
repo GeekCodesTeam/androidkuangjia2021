@@ -97,6 +97,8 @@ public class NewFriendListAdapter extends ArrayAdapter<V2TIMFriendApplication> {
             case V2TIMFriendApplication.V2TIM_FRIEND_APPLICATION_BOTH:
                 mViewHolder.agree.setText(res.getString(R.string.request_accepted));
                 break;
+            default:
+                break;
         }
         return mView;
     }

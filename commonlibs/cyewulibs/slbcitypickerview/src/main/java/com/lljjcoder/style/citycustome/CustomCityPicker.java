@@ -13,13 +13,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lljjcoder.Interface.OnCustomCityPickerItemClickListener;
-import com.lljjcoder.bean.CityBean;
 import com.lljjcoder.bean.CustomCityData;
-import com.lljjcoder.bean.DistrictBean;
-import com.lljjcoder.bean.ProvinceBean;
 import com.lljjcoder.citywheel.CityConfig;
 import com.lljjcoder.citywheel.CustomConfig;
-import com.lljjcoder.style.citylist.Toast.ToastUtils;
+import com.lljjcoder.style.citylist.toast.ToastUtils;
 import com.lljjcoder.R;
 import com.lljjcoder.style.citypickerview.widget.CanShow;
 import com.lljjcoder.style.citypickerview.widget.wheel.OnWheelChangedListener;
@@ -209,7 +206,9 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
                     CustomCityData province = provinceList.get(pCurrent);
                     int cCurrent = mViewCity.getCurrentItem();
                     List<CustomCityData> cityDataList = province.getList();
-                    if (cityDataList == null) return;
+                    if (cityDataList == null) {
+                        return;
+                    }
                     CustomCityData city = cityDataList.get(cCurrent);
                     listener.onSelected(province, city, new CustomCityData());
                 } else if (type == CustomConfig.WheelType.PRO_CITY_DIS) {
@@ -218,11 +217,15 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
                     CustomCityData province = provinceList.get(pCurrent);
                     int cCurrent = mViewCity.getCurrentItem();
                     List<CustomCityData> cityDataList = province.getList();
-                    if (cityDataList == null) return;
+                    if (cityDataList == null) {
+                        return;
+                    }
                     CustomCityData city = cityDataList.get(cCurrent);
                     int dCurrent = mViewDistrict.getCurrentItem();
                     List<CustomCityData> areaList = city.getList();
-                    if (areaList == null) return;
+                    if (areaList == null) {
+                        return;
+                    }
                     CustomCityData area = areaList.get(dCurrent);
                     listener.onSelected(province, city, area);
                 }
@@ -269,7 +272,9 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
     private void setUpData() {
 
         List<CustomCityData> proArra = config.getCityDataList();
-        if (proArra == null) return;
+        if (proArra == null) {
+            return;
+        }
 
         int provinceDefault = -1;
         if (!TextUtils.isEmpty(config.getDefaultProvinceName()) && proArra.size() > 0) {
@@ -284,7 +289,7 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
 
         ArrayWheelAdapter arrayWheelAdapter = new ArrayWheelAdapter<CustomCityData>(mContext, proArra);
         //自定义item
-        if (config.getCustomItemLayout() != CityConfig.NONE && config.getCustomItemTextViewId() != CityConfig.NONE) {
+        if (!config.getCustomItemLayout().equals(CityConfig.NONE) && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
             arrayWheelAdapter.setItemResource(config.getCustomItemLayout());
             arrayWheelAdapter.setItemTextResource(config.getCustomItemTextViewId());
         } else {
@@ -339,7 +344,9 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
         CustomCityData mProvinceBean = proArra.get(pCurrent);
 
         List<CustomCityData> pCityList = mProvinceBean.getList();
-        if (pCityList == null) return;
+        if (pCityList == null) {
+            return;
+        }
 
 
         //设置最初的默认城市
@@ -356,7 +363,7 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
 
         ArrayWheelAdapter cityWheel = new ArrayWheelAdapter<CustomCityData>(mContext, pCityList);
         //自定义item
-        if (config.getCustomItemLayout() != CityConfig.NONE && config.getCustomItemTextViewId() != CityConfig.NONE) {
+        if (!config.getCustomItemLayout().equals(CityConfig.NONE) && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
             cityWheel.setItemResource(config.getCustomItemLayout());
             cityWheel.setItemTextResource(config.getCustomItemTextViewId());
         } else {
@@ -390,10 +397,14 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
         List<CustomCityData> provinceList = config.getCityDataList();
         CustomCityData province = provinceList.get(pCurrent);
         List<CustomCityData> cityDataList = province.getList();
-        if (cityDataList == null || cityDataList.size() <= cCurrent) return;
+        if (cityDataList == null || cityDataList.size() <= cCurrent) {
+            return;
+        }
         CustomCityData city = cityDataList.get(cCurrent);
         List<CustomCityData> areaList = city.getList();
-        if (areaList == null) return;
+        if (areaList == null) {
+            return;
+        }
 
 
         int districtDefault = -1;
@@ -408,8 +419,8 @@ public class CustomCityPicker implements CanShow, OnWheelChangedListener {
 
         ArrayWheelAdapter districtWheel = new ArrayWheelAdapter<CustomCityData>(mContext, areaList);
         //自定义item
-        if (config.getCustomItemLayout() != CityConfig.NONE
-                && config.getCustomItemTextViewId() != CityConfig.NONE) {
+        if (!config.getCustomItemLayout().equals(CityConfig.NONE)
+                && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
             districtWheel.setItemResource(config.getCustomItemLayout());
             districtWheel.setItemTextResource(config.getCustomItemTextViewId());
         } else {

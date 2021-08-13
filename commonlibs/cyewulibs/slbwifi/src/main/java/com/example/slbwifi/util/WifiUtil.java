@@ -67,8 +67,9 @@ public class WifiUtil {
 
         StringBuilder sb = new StringBuilder();
 
-        if (TextUtils.isEmpty(capability))
+        if (TextUtils.isEmpty(capability)) {
             return "unknow";
+        }
 
         if (capability.contains("WEP")) {
 
@@ -98,8 +99,9 @@ public class WifiUtil {
 
         }
 
-        if (TextUtils.isEmpty(sb))
+        if (TextUtils.isEmpty(sb)) {
             return "OPEN";
+        }
 
         return sb.toString();
     }
@@ -410,7 +412,7 @@ public class WifiUtil {
 
     //将搜索到的wifi根据信号强度从强到弱进行排序
     public static void sortByLevel(List<ScanResult> list) {
-        for (int i = 0; i < list.size(); i++)
+        for (int i = 0; i < list.size(); i++) {
             for (int j = 1; j < list.size(); j++) {
                 if (list.get(i).level > list.get(j).level)    //level属性即为强度
                 {
@@ -420,6 +422,7 @@ public class WifiUtil {
                     list.set(j, temp);
                 }
             }
+        }
     }
 
     /**

@@ -53,8 +53,9 @@ public class LabelBrokenLineRender extends LabelBrokenLine {
 	{
 		float pointRadius = 0.0f;
 		if(getLinePointStyle() == XEnum.LabelLinePoint.END
-				||getLinePointStyle() == XEnum.LabelLinePoint.ALL)
-			 pointRadius = getRadius();
+				||getLinePointStyle() == XEnum.LabelLinePoint.ALL) {
+            pointRadius = getRadius();
+        }
 		
 			//显示在扇形的外部
 			//1/4处为起始点		  
@@ -155,7 +156,9 @@ public class LabelBrokenLineRender extends LabelBrokenLine {
 							float stopX,float stopY,float endX,
 							Canvas canvas)
 	{
-		 if(null == mBzLine)mBzLine = new Path();
+		 if(null == mBzLine) {
+             mBzLine = new Path();
+         }
 		 
 		 getLabelLinePaint().setStyle(Style.STROKE);		 		 
 		 //绘制贝塞尔曲线  

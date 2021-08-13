@@ -254,17 +254,33 @@ public class SegmentIndexBox extends AbstractFullBox {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Entry entry = (Entry) o;
 
-            if (referenceType != entry.referenceType) return false;
-            if (referencedSize != entry.referencedSize) return false;
-            if (sapDeltaTime != entry.sapDeltaTime) return false;
-            if (sapType != entry.sapType) return false;
-            if (startsWithSap != entry.startsWithSap) return false;
-            if (subsegmentDuration != entry.subsegmentDuration) return false;
+            if (referenceType != entry.referenceType) {
+                return false;
+            }
+            if (referencedSize != entry.referencedSize) {
+                return false;
+            }
+            if (sapDeltaTime != entry.sapDeltaTime) {
+                return false;
+            }
+            if (sapType != entry.sapType) {
+                return false;
+            }
+            if (startsWithSap != entry.startsWithSap) {
+                return false;
+            }
+            if (subsegmentDuration != entry.subsegmentDuration) {
+                return false;
+            }
 
             return true;
         }

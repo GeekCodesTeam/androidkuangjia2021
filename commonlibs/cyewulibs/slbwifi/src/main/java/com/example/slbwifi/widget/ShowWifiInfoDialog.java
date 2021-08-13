@@ -93,7 +93,7 @@ public class ShowWifiInfoDialog extends DialogFragment implements View.OnClickLi
         Log.d(TAG, "ip = " + Ip);
         String strIp = "" + (Ip & 0xFF) + "." + ((Ip >> 8) & 0xFF) + "." + ((Ip >> 16) & 0xFF) + "." + ((Ip >> 24) & 0xFF);
 
-        if (mConnectedInfo.getSSID() != null && mConnectedInfo.getBSSID() != null && !strIp.equals("0.0.0.0")) {
+        if (mConnectedInfo.getSSID() != null && mConnectedInfo.getBSSID() != null && !"0.0.0.0".equals(strIp)) {
 
             mStateTv.setText("已连接");
         } else {

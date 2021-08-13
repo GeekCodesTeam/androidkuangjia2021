@@ -46,7 +46,8 @@ public class SideBar extends View {
 	/**
 	 * 重写这个方法
 	 */
-	protected void onDraw(Canvas canvas) {
+	@Override
+    protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		// 获取焦点改变背景颜色.
 		int height = getHeight();// 获取对应高度
@@ -82,7 +83,7 @@ public class SideBar extends View {
 
 		switch (action) {
 		case MotionEvent.ACTION_UP:
-			setBackgroundDrawable(new ColorDrawable(0x00000000));
+			setBackground(new ColorDrawable(0x00000000));
 			choose = -1;//
 			invalidate();
 			if (mTextDialog != null) {

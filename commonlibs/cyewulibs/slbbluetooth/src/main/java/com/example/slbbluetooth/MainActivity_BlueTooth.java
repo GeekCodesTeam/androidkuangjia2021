@@ -115,7 +115,8 @@ public class MainActivity_BlueTooth extends AppCompatActivity implements View.On
     /**
      * 请求权限的回调：这里判断权限是否添加成功
      */
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSION_REQUEST_CONSTANT: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -123,6 +124,8 @@ public class MainActivity_BlueTooth extends AppCompatActivity implements View.On
                 }
                 return;
             }
+            default:
+                break;
         }
     }
 
@@ -351,7 +354,7 @@ public class MainActivity_BlueTooth extends AppCompatActivity implements View.On
                 address = listItem.getAddress();
                 listItem_bind = listItem;
                 if (tpye == -1) {
-                    if (currentBluetoothDevice_address.equals("")) {
+                    if ("".equals(currentBluetoothDevice_address)) {
                         //已配对连接bufen
                         //old
                         shezhi_connect_peidui(listItem_bind);
@@ -442,7 +445,7 @@ public class MainActivity_BlueTooth extends AppCompatActivity implements View.On
                 bd.setStatus(getResources().getString(R.string.bluetooth_tips4));
                 bd.setType(BLUE_yipeidui);
             }
-            if (mList1.get(i).getName() == null || mList1.get(i).getName().equals("")) {
+            if (mList1.get(i).getName() == null || "".equals(mList1.get(i).getName())) {
                 bd.setName("未知设备");
             } else {
                 bd.setName(mList1.get(i).getName());
@@ -696,7 +699,7 @@ public class MainActivity_BlueTooth extends AppCompatActivity implements View.On
                 }
             }
             Data1();
-            if (!currentBluetoothDevice_address.equals("")) {
+            if (!"".equals(currentBluetoothDevice_address)) {
                 Log.d("atodp_status", pos + "");
                 mAdapter2.remove_item(pos);
             }

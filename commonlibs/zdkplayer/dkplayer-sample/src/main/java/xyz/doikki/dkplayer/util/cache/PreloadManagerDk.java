@@ -63,7 +63,9 @@ public class PreloadManagerDk {
      * @param rawUrl 原始视频地址
      */
     public void addPreloadTask(String rawUrl, int position) {
-        if (isPreloaded(rawUrl)) return;
+        if (isPreloaded(rawUrl)) {
+            return;
+        }
         PreloadTaskDk task = new PreloadTaskDk();
         task.mRawUrl = rawUrl;
         task.mPosition = position;

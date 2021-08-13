@@ -115,7 +115,7 @@ public final class CodeUtils {
      */
     public static Bitmap createQRCode(String content, int heightPix, Bitmap logo,@FloatRange(from = 0.0f,to = 1.0f)float ratio) {
         //配置参数
-        Map<EncodeHintType, Object> hints = new HashMap<>();
+        Map<EncodeHintType, Object> hints = new HashMap<>(16);
         hints.put( EncodeHintType.CHARACTER_SET, "utf-8");
         //容错级别
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
@@ -135,7 +135,7 @@ public final class CodeUtils {
      */
     public static Bitmap createQRCode(String content, int heightPix, Bitmap logo,@FloatRange(from = 0.0f,to = 1.0f)float ratio,int codeColor) {
         //配置参数
-        Map<EncodeHintType, Object> hints = new HashMap<>();
+        Map<EncodeHintType, Object> hints = new HashMap<>(16);
         hints.put( EncodeHintType.CHARACTER_SET, "utf-8");
         //容错级别
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
@@ -246,7 +246,7 @@ public final class CodeUtils {
      * @return
      */
     public static String parseQRCode(String bitmapPath) {
-        Map<DecodeHintType, Object> hints = new HashMap<>();
+        Map<DecodeHintType, Object> hints = new HashMap<>(16);
         hints.put(DecodeHintType.CHARACTER_SET, "utf-8");
         hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
         return parseQRCode(bitmapPath,hints);
@@ -346,7 +346,7 @@ public final class CodeUtils {
      * @return
      */
     public static String parseCode(String bitmapPath){
-        Map<DecodeHintType,Object> hints = new HashMap<>();
+        Map<DecodeHintType,Object> hints = new HashMap<>(16);
         //添加可以解析的编码类型
         Vector<BarcodeFormat> decodeFormats = new Vector<>();
         decodeFormats.addAll(DecodeFormatManager.ONE_D_FORMATS);
@@ -475,8 +475,9 @@ public final class CodeUtils {
             hSize = (int) (height / reqHeight);
         }
         int size = Math.max(wSize,hSize);
-        if (size <= 0)
+        if (size <= 0) {
             size = 1;
+        }
         newOpts.inSampleSize = size;// 设置缩放比例
         // 重新读入图片，注意此时已经把options.inJustDecodeBounds 设回false了
         newOpts.inJustDecodeBounds = false;

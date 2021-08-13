@@ -79,7 +79,9 @@ public class ShapeImageView extends ImageView {
             borderColor = array.getColor(R.styleable.ShapeImageViewStyle_siv_border_color, borderColor);
             radius = array.getDimensionPixelOffset(R.styleable.ShapeImageViewStyle_siv_radius, radius);
             pressedAlpha = array.getFloat(R.styleable.ShapeImageViewStyle_siv_pressed_alpha, pressedAlpha);
-            if (pressedAlpha > 1) pressedAlpha = 1;
+            if (pressedAlpha > 1) {
+                pressedAlpha = 1;
+            }
             pressedColor = array.getColor(R.styleable.ShapeImageViewStyle_siv_pressed_color, pressedColor);
             shapeType = array.getInteger(R.styleable.ShapeImageViewStyle_siv_shape_type, shapeType);
             array.recycle();

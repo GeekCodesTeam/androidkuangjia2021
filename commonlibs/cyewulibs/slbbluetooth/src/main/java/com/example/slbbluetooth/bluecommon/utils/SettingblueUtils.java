@@ -39,7 +39,7 @@ public class SettingblueUtils {
     }
 
     public SettingblueUtils(BlueDevice listItem, Context context) {
-        this.context = context;
+        SettingblueUtils.context = context;
         this.listItem = listItem;
     }
 

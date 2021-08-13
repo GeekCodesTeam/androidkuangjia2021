@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext //
+def librarys = config.dependencies //
+
+android {
+    compileSdk config.compileSdk
+
+    defaultConfig {
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        versionCode config.appversionCode
+        versionName config.appversionName
+        multiDexEnabled true
+        //添加如下配置就OK了
+//        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+
+    flavorDimensions "keep"
+    productFlavors {
+        bxnt_nation {
+            dimension "keep"
+        }
+        bxny_nation {
+            dimension "keep"
+        }
+        bxn_nation {
+            dimension "keep"
+        }
+    }
+
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+//            outputFileName = "${variant.name}-${variant.versionName}.apk"
+            outputFileName = "${project.name}_${variant.flavorName}.aar"
+        }
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api librarys.okhttpVersion
+    api librarys.retrofit
+    api librarys.retrofitconverters
+    api librarys.retrofitgconvertergson
+    api librarys.retrofitgconverterscalars
+//    api project(':commonlibs:bhunheku:libutils')
+    api project(':commonlibs:acommon:libmvp')
+    api project(':commonlibs:acommon:libretrofit')
+}

@@ -26,7 +26,9 @@ public class MobileUtils {
      * @return
      */
     public static int screenWidth(Context ctx) {
-        if (sScreenWidth == 0) initSize(ctx);
+        if (sScreenWidth == 0) {
+            initSize(ctx);
+        }
         return sScreenWidth;
     }
 
@@ -36,7 +38,9 @@ public class MobileUtils {
      * @return
      */
     public static int screenHeight(Context ctx) {
-        if (sScreenHeight == 0) initSize(ctx);
+        if (sScreenHeight == 0) {
+            initSize(ctx);
+        }
         return sScreenHeight;
     }
 

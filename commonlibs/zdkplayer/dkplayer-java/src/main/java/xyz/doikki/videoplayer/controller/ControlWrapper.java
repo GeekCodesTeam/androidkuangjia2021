@@ -155,8 +155,9 @@ public class ControlWrapper implements MediaPlayerControl, IVideoController {
      * 横竖屏切换，会旋转屏幕
      */
     public void toggleFullScreen(Activity activity) {
-        if (activity == null || activity.isFinishing())
+        if (activity == null || activity.isFinishing()) {
             return;
+        }
         if (isFullScreen()) {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             stopFullScreen();
@@ -181,8 +182,9 @@ public class ControlWrapper implements MediaPlayerControl, IVideoController {
      * 横竖屏切换，根据适配宽高决定是否旋转屏幕
      */
     public void toggleFullScreenByVideoSize(Activity activity) {
-        if (activity == null || activity.isFinishing())
+        if (activity == null || activity.isFinishing()) {
             return;
+        }
         int[] size = getVideoSize();
         int width = size[0];
         int height = size[1];

@@ -76,9 +76,9 @@ public class ServiceUtil {
             }
         } else {
             //SDK在23以下，不用管.
-            Log.i("TAG","------------------L196");
+            Log.i("TAG", "------------------L196");
             Intent intent1 = new Intent(context, FadeService.class);
-            Log.i("TAG","------------------L197");
+            Log.i("TAG", "------------------L197");
             context.startService(intent1);
         }
 
@@ -103,7 +103,7 @@ public class ServiceUtil {
                 .getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningServiceInfo> serviceList = activityManager
                 .getRunningServices(Integer.MAX_VALUE);
-        if (!(serviceList.size() > 0)) {
+        if (serviceList.size() <= 0) {
             return false;
         }
 

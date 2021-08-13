@@ -112,6 +112,7 @@ public class PhoneService extends Service {
     }
 
     private AudioManager.OnAudioFocusChangeListener mAudioFocusListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
         public void onAudioFocusChange(int focusChange) {
             Log.d("qcl111", "focusChange----------" + focusChange);// -2 暂停  1 继续
 //            setplay_pause_music();

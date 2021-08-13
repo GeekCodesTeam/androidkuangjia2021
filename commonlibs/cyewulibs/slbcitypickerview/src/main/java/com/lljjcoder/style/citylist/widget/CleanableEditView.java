@@ -148,7 +148,7 @@ public class CleanableEditView extends AppCompatEditText implements TextWatcher,
             String msg=getText().toString();
 
             if(hasFocus){
-                if(msg.equalsIgnoreCase("")){
+                if("".equalsIgnoreCase(msg)){
                     setCompoundDrawablesWithIntrinsicBounds(left, null, null, null);
                 }else{
                     setCompoundDrawablesWithIntrinsicBounds(left, null, right, null);

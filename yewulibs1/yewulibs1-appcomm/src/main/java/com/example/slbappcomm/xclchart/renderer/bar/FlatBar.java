@@ -135,7 +135,9 @@ public class FlatBar extends Bar {
 	public boolean renderBar(float left,float top,float right ,float bottom,Canvas canvas)
 	{				
 		 XEnum.BarStyle style = getBarStyle();
-		 if(Float.compare(top, bottom)==0) return true;
+		 if(Float.compare(top, bottom)==0) {
+             return true;
+         }
 		 
 		 if( XEnum.BarStyle.ROUNDBAR == style)
 		 {
@@ -144,7 +146,9 @@ public class FlatBar extends Bar {
 				return true;
 		 }
 		 
-		if(null == mPath)mPath = new Path();			
+		if(null == mPath) {
+            mPath = new Path();
+        }
 		if( XEnum.BarStyle.OUTLINE == style)
 		{
 			int barColor = getBarPaint().getColor();
@@ -196,8 +200,9 @@ public class FlatBar extends Bar {
 				getBarPaint().setStyle(Style.FILL);
 				break;
 			case STROKE:						
-				if(Float.compare(1f,  getBarPaint().getStrokeWidth() ) == 0)
-											getBarPaint().setStrokeWidth(3);
+				if(Float.compare(1f,  getBarPaint().getStrokeWidth() ) == 0) {
+                    getBarPaint().setStrokeWidth(3);
+                }
 				getBarPaint().setStyle(Style.STROKE);
 				break;
 			case TRIANGLE:		

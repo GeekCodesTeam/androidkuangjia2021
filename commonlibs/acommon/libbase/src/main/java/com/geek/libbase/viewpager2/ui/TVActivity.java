@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.geek.libbase.R;
 import com.geek.libbase.viewpager2.adapter.ImageAdapter;
 import com.geek.libbase.viewpager2.bean.DataBean;
@@ -50,6 +51,8 @@ public class TVActivity extends AppCompatActivity {
                     next = 1;
                 }
                 banner.setCurrentItem(next, false);
+                break;
+            default:
                 break;
         }
         //如果没有设置指示器，就不用执行下面两行

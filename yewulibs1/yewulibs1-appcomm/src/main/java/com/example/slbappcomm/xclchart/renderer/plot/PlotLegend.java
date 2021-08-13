@@ -82,7 +82,9 @@ public class PlotLegend {
 		public void hide()
 		{
 			mVisible = false;
-			if(null != mKeyPaint) mKeyPaint = null;
+			if(null != mKeyPaint) {
+                mKeyPaint = null;
+            }
 		}
 						
 		/**

@@ -172,8 +172,9 @@ public class BubbleData {
 	 */
 	public Paint getDotLabelPaint()
 	{
-		if(null == mLabelPaint) 
-			mLabelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mLabelPaint) {
+            mLabelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		
 		return mLabelPaint;
 	}

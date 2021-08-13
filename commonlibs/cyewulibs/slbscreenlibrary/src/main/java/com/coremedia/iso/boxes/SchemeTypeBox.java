@@ -65,6 +65,7 @@ public class SchemeTypeBox extends AbstractFullBox {
         this.schemeUri = schemeUri;
     }
 
+    @Override
     protected long getContentSize() {
         return 12 + (((getFlags() & 1) == 1) ? Utf8.utf8StringLengthInBytes(schemeUri) + 1 : 0);
     }
@@ -89,6 +90,7 @@ public class SchemeTypeBox extends AbstractFullBox {
         }
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("Schema Type Box[");

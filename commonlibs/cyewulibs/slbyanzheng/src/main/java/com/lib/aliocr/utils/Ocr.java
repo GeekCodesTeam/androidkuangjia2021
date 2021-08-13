@@ -132,7 +132,7 @@ public class Ocr {
     }
 
 
-    public static void onRequestPermissionsResult(Activity activity, int requestCode, String permissions[],
+    public static void onRequestPermissionsResult(Activity activity, int requestCode, String[] permissions,
                                                   int[] grantResults, Uri cropImageUri) {
 
         if (requestCode == PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {

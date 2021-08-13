@@ -59,8 +59,11 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     public void refreshData(ArrayList<ImageItem> images) {
-        if (images == null || images.size() == 0) this.images = new ArrayList<>();
-        else this.images = images;
+        if (images == null || images.size() == 0) {
+            this.images = new ArrayList<>();
+        } else {
+            this.images = images;
+        }
         notifyDataSetChanged();
     }
 
@@ -69,8 +72,11 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
      */
     public ImageRecyclerAdapter(Activity activity, ArrayList<ImageItem> images) {
         this.mActivity = activity;
-        if (images == null || images.size() == 0) this.images = new ArrayList<>();
-        else this.images = images;
+        if (images == null || images.size() == 0) {
+            this.images = new ArrayList<>();
+        } else {
+            this.images = images;
+        }
 
         mImageSize = Utils.getImageItemWidth(mActivity);
         imagePicker = ImagePicker.getInstance();
@@ -98,7 +104,9 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemViewType(int position) {
-        if (isShowCamera) return position == 0 ? ITEM_TYPE_CAMERA : ITEM_TYPE_NORMAL;
+        if (isShowCamera) {
+            return position == 0 ? ITEM_TYPE_CAMERA : ITEM_TYPE_NORMAL;
+        }
         return ITEM_TYPE_NORMAL;
     }
 
@@ -114,7 +122,9 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     public ImageItem getItem(int position) {
         if (isShowCamera) {
-            if (position == 0) return null;
+            if (position == 0) {
+                return null;
+            }
             return images.get(position - 1);
         } else {
             return images.get(position);
@@ -145,7 +155,9 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
             ivThumb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (listener != null) listener.onImageItemClick(rootView, imageItem, position);
+                    if (listener != null) {
+                        listener.onImageItemClick(rootView, imageItem, position);
+                    }
                 }
             });
             checkView.setOnClickListener(new View.OnClickListener() {

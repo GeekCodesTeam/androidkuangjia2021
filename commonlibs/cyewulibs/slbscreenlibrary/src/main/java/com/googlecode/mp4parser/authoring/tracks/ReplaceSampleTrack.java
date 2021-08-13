@@ -43,44 +43,54 @@ public class ReplaceSampleTrack extends AbstractTrack {
 
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return origTrack.getSampleDescriptionBox();
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return origTrack.getDecodingTimeEntries();
 
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return origTrack.getCompositionTimeEntries();
 
     }
 
+    @Override
     synchronized public long[] getSyncSamples() {
         return origTrack.getSyncSamples();
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return origTrack.getSampleDependencies();
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return origTrack.getTrackMetaData();
     }
 
+    @Override
     public String getHandler() {
         return origTrack.getHandler();
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return origTrack.getMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return origTrack.getSubsampleInformationBox();
     }

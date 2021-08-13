@@ -174,8 +174,9 @@ public class RecyclerView2Activity extends AppCompatActivity {
             VideoModel videoModel = new VideoModel();
             dataList.add(videoModel);
         }
-        if (recyclerBaseAdapter != null)
+        if (recyclerBaseAdapter != null) {
             recyclerBaseAdapter.notifyDataSetChanged();
+        }
     }
 
 

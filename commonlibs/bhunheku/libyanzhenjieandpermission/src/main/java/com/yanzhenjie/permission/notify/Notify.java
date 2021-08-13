@@ -67,10 +67,12 @@ public class Notify implements NotifyOption {
         this.mSource = source;
     }
 
+    @Override
     public PermissionRequest permission() {
         return PERMISSION_REQUEST_FACTORY.create(mSource);
     }
 
+    @Override
     public ListenerRequest listener() {
         return LISTENER_REQUEST_FACTORY.create(mSource);
     }

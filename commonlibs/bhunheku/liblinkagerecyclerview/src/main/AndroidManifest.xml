@@ -1,2 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kunminx.linkage" />
+    package="com.kunminx.linkagelistview">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_nameliblinkagerecyclerview"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ElmAct"
+            android:theme="@style/AppThemeliblinkagerecyclerview">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ElmAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

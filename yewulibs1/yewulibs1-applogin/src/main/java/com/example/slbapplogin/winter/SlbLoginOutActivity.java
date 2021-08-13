@@ -5,15 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
+
 import androidx.annotation.Nullable;
+
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.bizyewu2.presenter.HTuichudengluPresenter;
 import com.example.bizyewu2.view.HTuichudengluView;
-import com.geek.libbase.base.SlbBaseActivity;
 import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.data.MmkvUtils;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.impl.LoadingPopupView;
 
 public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengluView {
 
@@ -41,6 +45,8 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
 
     }
 
+    private LoadingPopupView loadingPopupView;
+
     private void onclick() {
         ll_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +57,12 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
         ll_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                loadingPopupView = new XPopup.Builder(SlbLoginOutActivity.this)
+                        .isDestroyOnDismiss(true)
+                        .asLoading("");
+                loadingPopupView.show();
+//        loadingPopupView.dismiss();
+//                loadingPopupView.delayDismiss(1200);
                 hTuichudengluPresenter.get_tuichudenglu();
 
             }
@@ -102,6 +114,7 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
     /**
      * 隐藏软键盘
      */
+    @Override
     protected void hideSoftKeyboard() {
         if (getCurrentFocus() != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -114,6 +127,7 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
     @Override
     public void OnTuichudengluSuccess(String s) {
         ToastUtils.showLong(s);
+        loadingPopupView.dismiss();
         donetloginout();
 
     }
@@ -121,6 +135,7 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
     @Override
     public void OnTuichudengluNodata(String s) {
         ToastUtils.showLong(s);
+        loadingPopupView.dismiss();
         donetloginout();
 
     }
@@ -128,6 +143,7 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
     @Override
     public void OnTuichudengluFail(String s) {
         ToastUtils.showLong(s);
+        loadingPopupView.dismiss();
         donetloginout();
     }
 }

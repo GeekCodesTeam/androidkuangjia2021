@@ -84,6 +84,7 @@ public class PathsDrawable extends Drawable {
         }
     }
 
+    @Override
     public void setBounds(@NonNull Rect bounds) {
         setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
     }

@@ -532,13 +532,14 @@ public class PLVECLiveEcommerceActivity extends PLVBaseActivity {
         });
 
         // 当前页面 监听 回放播放器数据对象中的播放信息变化
-        if (videoLayout.getPlaybackPlayInfoVO() != null)
+        if (videoLayout.getPlaybackPlayInfoVO() != null) {
             videoLayout.getPlaybackPlayInfoVO().observe(this, new Observer<PLVPlayInfoVO>() {
                 @Override
                 public void onChanged(@Nullable PLVPlayInfoVO playInfoVO) {
                     commonHomeFragment.setPlaybackPlayInfo(playInfoVO);
                 }
             });
+        }
     }
     // </editor-fold>
 

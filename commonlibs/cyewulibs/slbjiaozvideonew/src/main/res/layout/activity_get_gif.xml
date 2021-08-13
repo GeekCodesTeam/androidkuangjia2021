@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdGetGif
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdGetGif
                 android:id="@+id/jz_video"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />

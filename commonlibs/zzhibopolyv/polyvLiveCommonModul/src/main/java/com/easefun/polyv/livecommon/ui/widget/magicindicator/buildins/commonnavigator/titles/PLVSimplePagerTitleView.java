@@ -58,7 +58,9 @@ public class PLVSimplePagerTitleView extends TextView implements IPLVMeasurableP
         if (getText().toString().contains("\n")) {
             String[] brokenStrings = getText().toString().split("\\n");
             for (String each : brokenStrings) {
-                if (each.length() > longestString.length()) longestString = each;
+                if (each.length() > longestString.length()) {
+                    longestString = each;
+                }
             }
         } else {
             longestString = getText().toString();
@@ -82,7 +84,9 @@ public class PLVSimplePagerTitleView extends TextView implements IPLVMeasurableP
         if (getText().toString().contains("\n")) {
             String[] brokenStrings = getText().toString().split("\\n");
             for (String each : brokenStrings) {
-                if (each.length() > longestString.length()) longestString = each;
+                if (each.length() > longestString.length()) {
+                    longestString = each;
+                }
             }
         } else {
             longestString = getText().toString();

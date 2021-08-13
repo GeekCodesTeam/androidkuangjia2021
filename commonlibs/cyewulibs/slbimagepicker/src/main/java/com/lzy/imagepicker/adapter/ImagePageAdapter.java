@@ -60,7 +60,9 @@ public class ImagePageAdapter extends PagerAdapter {
         photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
             @Override
             public void onPhotoTap(View view, float x, float y) {
-                if (listener != null) listener.OnPhotoTapListener(view, x, y);
+                if (listener != null) {
+                    listener.OnPhotoTapListener(view, x, y);
+                }
             }
         });
         container.addView(photoView);

@@ -67,7 +67,7 @@ public class GSYExo2PlayerView extends StandardGSYVideoPlayer {
      * @return
      */
     public boolean setUp(List<GSYVideoModel> url, int position) {
-        return setUp(url, position, null, new HashMap<String, String>());
+        return setUp(url, position, null, new HashMap<String, String>(16));
     }
 
     /**
@@ -79,7 +79,7 @@ public class GSYExo2PlayerView extends StandardGSYVideoPlayer {
      * @return
      */
     public boolean setUp(List<GSYVideoModel> url, int position, File cachePath) {
-        return setUp(url, position, cachePath, new HashMap<String, String>());
+        return setUp(url, position, cachePath, new HashMap<String, String>(16));
     }
 
     /**
@@ -185,7 +185,7 @@ public class GSYExo2PlayerView extends StandardGSYVideoPlayer {
             Debuger.printfError("********************** urls isEmpty . Do you know why ? **********************");
         }
 
-        ((GSYExoVideoManager) getGSYVideoManager()).prepare(urls, (mMapHeadData == null) ? new HashMap<String, String>() : mMapHeadData, mPlayPosition, mLooping, mSpeed, mExoCache, mCachePath, mOverrideExtension);
+        ((GSYExoVideoManager) getGSYVideoManager()).prepare(urls, (mMapHeadData == null) ? new HashMap<String, String>(16) : mMapHeadData, mPlayPosition, mLooping, mSpeed, mExoCache, mCachePath, mOverrideExtension);
 
         setStateAndUi(CURRENT_STATE_PREPAREING);
     }
@@ -260,8 +260,9 @@ public class GSYExo2PlayerView extends StandardGSYVideoPlayer {
             mTextureViewContainer.removeAllViews();
         }
 
-        if (!mIfCurrentIsFullscreen)
+        if (!mIfCurrentIsFullscreen) {
             getGSYVideoManager().setLastListener(null);
+        }
         mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
         if (mContext instanceof Activity) {
             try {

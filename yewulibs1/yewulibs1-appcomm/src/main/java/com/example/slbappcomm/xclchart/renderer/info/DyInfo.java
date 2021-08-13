@@ -143,8 +143,12 @@ public class DyInfo {
 		String text = "";
 		for(int i=0;i<countText;i++)
 		{
-			if(countPaint > i) paint = mClickedPaint.get(i);
-			if(null == paint) break;			
+			if(countPaint > i) {
+                paint = mClickedPaint.get(i);
+            }
+			if(null == paint) {
+                break;
+            }
 			
 			text = mClickedText.get(i);			
 			textHeight = DrawHelper.getInstance().getPaintFontHeight(paint);
@@ -209,7 +213,9 @@ public class DyInfo {
 	
 	protected void setCenterXY(float x,float y)
 	{
-		if(null == mCenterXY) mCenterXY = new PointF();
+		if(null == mCenterXY) {
+            mCenterXY = new PointF();
+        }
 		mCenterXY.x = x;
 		mCenterXY.y = y;
 	}
@@ -228,9 +234,15 @@ public class DyInfo {
 	
 	protected void addInfo(PlotDot dotStyle, String text, Paint paint)
 	{
-		if(null == mClickedDotStyle) mClickedDotStyle = new ArrayList<PlotDot>();
-		if(null == mClickedText) mClickedText = new ArrayList<String>();
-		if(null == mClickedPaint) mClickedPaint = new ArrayList<Paint>();
+		if(null == mClickedDotStyle) {
+            mClickedDotStyle = new ArrayList<PlotDot>();
+        }
+		if(null == mClickedText) {
+            mClickedText = new ArrayList<String>();
+        }
+		if(null == mClickedPaint) {
+            mClickedPaint = new ArrayList<Paint>();
+        }
 		
 		mClickedDotStyle.add(dotStyle);
 		mClickedText.add(text);
@@ -240,20 +252,30 @@ public class DyInfo {
 
 	protected void drawInfo(Canvas canvas) //hint  ToolTips
 	{
-		if(validateParams() == false)return ;	
+		if(validateParams() == false) {
+            return ;
+        }
 		
 		int countDots = (null != mClickedDotStyle)? mClickedDotStyle.size():0 ;	
 		int countPaint = (null != mClickedPaint)? mClickedPaint.size():0 ;
 		int countText = (null != mClickedPaint)? mClickedPaint.size():0 ;	
-		if(0 == countText && 0 == countDots ) return;
+		if(0 == countText && 0 == countDots ) {
+            return;
+        }
 		
 		getContentRect();		
-		if(null == mRect) return;
+		if(null == mRect) {
+            return;
+        }
 		
 		if(XEnum.DyInfoStyle.RECT == mStyle)
 		{
-			if(mShowBackground)canvas.drawRect(mRect, this.getBackgroundPaint());				
-			if(mShowBoxBorder)canvas.drawRect(mRect, this.getBorderPaint());
+			if(mShowBackground) {
+                canvas.drawRect(mRect, this.getBackgroundPaint());
+            }
+			if(mShowBoxBorder) {
+                canvas.drawRect(mRect, this.getBorderPaint());
+            }
 		}else if(XEnum.DyInfoStyle.CAPRECT == mStyle){
 			renderCapRect(canvas,mRect);		
 		}else if(XEnum.DyInfoStyle.CAPROUNDRECT == mStyle){
@@ -262,8 +284,12 @@ public class DyInfo {
 			renderCircle(canvas,mRect);	
 		//}else if(XEnum.DyInfoStyle.ELLIPSE == mStyle){						
 		}else{
-			if(mShowBackground)canvas.drawRoundRect(mRect, mRoundRectX, mRoundRectY, this.getBackgroundPaint());	
-			if(mShowBoxBorder)canvas.drawRoundRect(mRect, mRoundRectX, mRoundRectY,this.getBorderPaint());
+			if(mShowBackground) {
+                canvas.drawRoundRect(mRect, mRoundRectX, mRoundRectY, this.getBackgroundPaint());
+            }
+			if(mShowBoxBorder) {
+                canvas.drawRoundRect(mRect, mRoundRectX, mRoundRectY,this.getBorderPaint());
+            }
 		}
 		
 		
@@ -276,8 +302,12 @@ public class DyInfo {
 		int j = 0;		
 		for(int i=0;i<countText;i++)
 		{			
-			if(countPaint > i) j = i;
-			if(null == mClickedPaint.get(j)) break;
+			if(countPaint > i) {
+                j = i;
+            }
+			if(null == mClickedPaint.get(j)) {
+                break;
+            }
 						
 			textHeight = DrawHelper.getInstance().getPaintFontHeight( mClickedPaint.get(j) );
 			
@@ -296,11 +326,12 @@ public class DyInfo {
 				}
 			}
 			
-			if(countText > i)
-				 DrawHelper.getInstance().drawText(canvas,
-						 mClickedPaint.get(j),
-						 mClickedText.get(i), 
-						 currTextX, currRowY + textHeight);
+			if(countText > i) {
+                DrawHelper.getInstance().drawText(canvas,
+                        mClickedPaint.get(j),
+                        mClickedText.get(i),
+                        currTextX, currRowY + textHeight);
+            }
 							
 			currRowY += textHeight + mRowSpan;		
 			currTextX = currDotsX ;
@@ -321,7 +352,9 @@ public class DyInfo {
 	
 	private void renderCapRect(Canvas canvas,RectF rect){
 		
-		if( !mShowBackground && !mShowBoxBorder)return;
+		if( !mShowBackground && !mShowBoxBorder) {
+            return;
+        }
 		
 		float AngleH = rect.width() * mScale; //0.2f ; 		
 		rect.top -= AngleH;
@@ -340,14 +373,20 @@ public class DyInfo {
 		path.lineTo( centerX - AngleH, AngleY);
 		path.close();	
 		
-		if(mShowBackground)canvas.drawPath(path, this.getBackgroundPaint());				
-		if(mShowBoxBorder)canvas.drawPath(path, this.getBorderPaint());		
+		if(mShowBackground) {
+            canvas.drawPath(path, this.getBackgroundPaint());
+        }
+		if(mShowBoxBorder) {
+            canvas.drawPath(path, this.getBorderPaint());
+        }
 	}
 	
 	private void renderCapRound(Canvas canvas,RectF rect){
 		
 		//if( !mShowBackground && !mShowBoxBorder)return;		
-		if(!mShowBackground)return;		//此风格无边框
+		if(!mShowBackground) {
+            return;		//此风格无边框
+        }
 		float AngleH = rect.width() * mScale; //0.2f ; 		
 		rect.top -= AngleH;
 		rect.bottom -= AngleH;
@@ -378,20 +417,30 @@ public class DyInfo {
 	private void renderCircle(Canvas canvas,RectF rect)
 	{
 		float radius = Math.max(rect.width(),rect.height()) / 2 + 5;		
-		if(Float.compare(mRadius,0.0f) != 0 )radius = mRadius;
+		if(Float.compare(mRadius,0.0f) != 0 ) {
+            radius = mRadius;
+        }
 				
-		if(mShowBackground)
-			canvas.drawCircle(rect.centerX(),rect.centerY(),radius, this.getBackgroundPaint());				
-		if(mShowBoxBorder)
-			canvas.drawCircle(rect.centerX(),rect.centerY(),radius, this.getBorderPaint());	
+		if(mShowBackground) {
+            canvas.drawCircle(rect.centerX(),rect.centerY(),radius, this.getBackgroundPaint());
+        }
+		if(mShowBoxBorder) {
+            canvas.drawCircle(rect.centerX(),rect.centerY(),radius, this.getBorderPaint());
+        }
 		
 	}
 							
 	protected void clear()
 	{
-		if(null != mClickedDotStyle)mClickedDotStyle.clear();
-		if(null != mClickedText)mClickedText.clear();
-		if(null != mClickedPaint)mClickedPaint.clear();
+		if(null != mClickedDotStyle) {
+            mClickedDotStyle.clear();
+        }
+		if(null != mClickedText) {
+            mClickedText.clear();
+        }
+		if(null != mClickedPaint) {
+            mClickedPaint.clear();
+        }
 	}
 
 	private void getInfoRect()

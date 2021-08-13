@@ -14,6 +14,7 @@ public abstract class ChunkOffsetBox extends AbstractFullBox {
     public abstract long[] getChunkOffsets();
 
 
+    @Override
     public String toString() {
         return this.getClass().getSimpleName() + "[entryCount=" + getChunkOffsets().length + "]";
     }

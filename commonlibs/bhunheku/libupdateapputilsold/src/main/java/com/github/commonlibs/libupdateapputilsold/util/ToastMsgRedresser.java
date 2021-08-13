@@ -18,7 +18,7 @@ public class ToastMsgRedresser {
             return NET_ERROR;
         }
 
-        if (lowerMsg.equals("canceled")) {
+        if ("canceled".equals(lowerMsg)) {
             return null;
         }
 

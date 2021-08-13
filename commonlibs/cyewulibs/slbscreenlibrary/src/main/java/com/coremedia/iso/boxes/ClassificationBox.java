@@ -72,6 +72,7 @@ public class ClassificationBox extends AbstractFullBox {
         this.classificationInfo = classificationInfo;
     }
 
+    @Override
     protected long getContentSize() {
         return 4 + 2 + 2 + Utf8.utf8StringLengthInBytes(classificationInfo) + 1;
     }
@@ -97,6 +98,7 @@ public class ClassificationBox extends AbstractFullBox {
     }
 
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("ClassificationBox[language=").append(getLanguage());

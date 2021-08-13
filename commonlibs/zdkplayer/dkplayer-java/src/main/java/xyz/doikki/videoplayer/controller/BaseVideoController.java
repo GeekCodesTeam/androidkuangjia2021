@@ -275,7 +275,9 @@ public abstract class BaseVideoController extends FrameLayout
      */
     @Override
     public void startProgress() {
-        if (mIsStartProgress) return;
+        if (mIsStartProgress) {
+            return;
+        }
         post(mShowProgress);
         mIsStartProgress = true;
     }
@@ -285,7 +287,9 @@ public abstract class BaseVideoController extends FrameLayout
      */
     @Override
     public void stopProgress() {
-        if (!mIsStartProgress) return;
+        if (!mIsStartProgress) {
+            return;
+        }
         removeCallbacks(mShowProgress);
         mIsStartProgress = false;
     }
@@ -329,7 +333,9 @@ public abstract class BaseVideoController extends FrameLayout
      * 检查是否需要适配刘海
      */
     private void checkCutout() {
-        if (!mAdaptCutout) return;
+        if (!mAdaptCutout) {
+            return;
+        }
         if (mActivity != null && mHasCutout == null) {
             mHasCutout = CutoutUtil.allowDisplayToCutout(mActivity);
             if (mHasCutout) {
@@ -387,7 +393,9 @@ public abstract class BaseVideoController extends FrameLayout
      * @return 是否成功进入全屏
      */
     protected boolean startFullScreen() {
-        if (mActivity == null || mActivity.isFinishing()) return false;
+        if (mActivity == null || mActivity.isFinishing()) {
+            return false;
+        }
         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         mControlWrapper.startFullScreen();
         return true;
@@ -399,7 +407,9 @@ public abstract class BaseVideoController extends FrameLayout
      * @return 是否成功退出全屏
      */
     protected boolean stopFullScreen() {
-        if (mActivity == null || mActivity.isFinishing()) return false;
+        if (mActivity == null || mActivity.isFinishing()) {
+            return false;
+        }
         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mControlWrapper.stopFullScreen();
         return true;
@@ -442,7 +452,9 @@ public abstract class BaseVideoController extends FrameLayout
     @CallSuper
     @Override
     public void onOrientationChanged(int orientation) {
-        if (mActivity == null || mActivity.isFinishing()) return;
+        if (mActivity == null || mActivity.isFinishing()) {
+            return;
+        }
 
         //记录用户手机上一次放置的位置
         int lastOrientation = mOrientation;
@@ -457,8 +469,12 @@ public abstract class BaseVideoController extends FrameLayout
         if (orientation > 350 || orientation < 10) {
             int o = mActivity.getRequestedOrientation();
             //手动切换横竖屏
-            if (o == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE && lastOrientation == 0) return;
-            if (mOrientation == 0) return;
+            if (o == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE && lastOrientation == 0) {
+                return;
+            }
+            if (mOrientation == 0) {
+                return;
+            }
             //0度，用户竖直拿着手机
             mOrientation = 0;
             onOrientationPortrait(mActivity);
@@ -466,16 +482,24 @@ public abstract class BaseVideoController extends FrameLayout
 
             int o = mActivity.getRequestedOrientation();
             //手动切换横竖屏
-            if (o == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT && lastOrientation == 90) return;
-            if (mOrientation == 90) return;
+            if (o == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT && lastOrientation == 90) {
+                return;
+            }
+            if (mOrientation == 90) {
+                return;
+            }
             //90度，用户右侧横屏拿着手机
             mOrientation = 90;
             onOrientationReverseLandscape(mActivity);
         } else if (orientation > 260 && orientation < 280) {
             int o = mActivity.getRequestedOrientation();
             //手动切换横竖屏
-            if (o == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT && lastOrientation == 270) return;
-            if (mOrientation == 270) return;
+            if (o == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT && lastOrientation == 270) {
+                return;
+            }
+            if (mOrientation == 270) {
+                return;
+            }
             //270度，用户左侧横屏拿着手机
             mOrientation = 270;
             onOrientationLandscape(mActivity);
@@ -487,9 +511,13 @@ public abstract class BaseVideoController extends FrameLayout
      */
     protected void onOrientationPortrait(Activity activity) {
         //屏幕锁定的情况
-        if (mIsLocked) return;
+        if (mIsLocked) {
+            return;
+        }
         //没有开启设备方向监听的情况
-        if (!mEnableOrientation) return;
+        if (!mEnableOrientation) {
+            return;
+        }
 
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mControlWrapper.stopFullScreen();
@@ -571,6 +599,8 @@ public abstract class BaseVideoController extends FrameLayout
             case VideoView.STATE_ERROR:
                 mShowing = false;
                 break;
+            default:
+                break;
         }
     }
 
@@ -608,6 +638,8 @@ public abstract class BaseVideoController extends FrameLayout
                 break;
             case VideoView.PLAYER_TINY_SCREEN:
                 mOrientationHelper.disable();
+                break;
+            default:
                 break;
         }
     }

@@ -71,12 +71,12 @@ public class RtmpSessionInfo {
      * @param numBytes the number of bytes to add
      * @return <code>true</code> if an "acknowledgement" packet should be sent, <code>false</code> otherwise
      */
-    public final void addToWindowBytesRead(final int numBytes, final RtmpPacket packet) throws WindowAckRequired {
+    public final void addToWindowBytesRead(final int numBytes, final RtmpPacket packet) throws WindowAckRequiredException {
         windowBytesRead += numBytes;
         totalBytesRead += numBytes;
         if (windowBytesRead >= acknowledgementWindowSize) {            
             windowBytesRead -= acknowledgementWindowSize;                       
-            throw new WindowAckRequired(totalBytesRead, packet);
+            throw new WindowAckRequiredException(totalBytesRead, packet);
         }
     }       
 }

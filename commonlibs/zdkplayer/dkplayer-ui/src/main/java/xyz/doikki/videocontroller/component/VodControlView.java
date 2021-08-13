@@ -1,5 +1,7 @@
 package xyz.doikki.videocontroller.component;
 
+import static xyz.doikki.videoplayer.util.PlayerUtils.stringForTime;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -26,13 +28,11 @@ import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
-import static xyz.doikki.videoplayer.util.PlayerUtils.stringForTime;
-
 /**
  * 点播底部控制栏
  */
 public class VodControlView extends FrameLayout implements IControlComponent, View.OnClickListener, SeekBar.OnSeekBarChangeListener {
-    
+
     protected ControlWrapper mControlWrapper;
 
     private TextView mTotalTime, mCurrTime;
@@ -57,8 +57,8 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
     public VodControlView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-    
-    
+
+
     {
         setVisibility(GONE);
         LayoutInflater.from(getContext()).inflate(getLayoutId(), this, true);
@@ -165,6 +165,8 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
             case VideoView.STATE_BUFFERED:
                 mPlayButton.setSelected(mControlWrapper.isPlaying());
                 break;
+            default:
+                break;
         }
     }
 
@@ -176,6 +178,8 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
                 break;
             case VideoView.PLAYER_FULL_SCREEN:
                 mFullScreen.setSelected(true);
+                break;
+            default:
                 break;
         }
 
@@ -221,10 +225,12 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
             }
         }
 
-        if (mTotalTime != null)
+        if (mTotalTime != null) {
             mTotalTime.setText(stringForTime(duration));
-        if (mCurrTime != null)
+        }
+        if (mCurrTime != null) {
             mCurrTime.setText(stringForTime(position));
+        }
     }
 
     @Override
@@ -275,7 +281,8 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
 
         long duration = mControlWrapper.getDuration();
         long newPosition = (duration * progress) / mVideoProgress.getMax();
-        if (mCurrTime != null)
+        if (mCurrTime != null) {
             mCurrTime.setText(stringForTime((int) newPosition));
+        }
     }
 }

@@ -23,11 +23,12 @@ public class StringUtil {
 
     /**
      * str is null or length==0 or "null" or "NULL"
+     *
      * @param str
      * @return
      */
     public static boolean isNull(String str) {
-        return TextUtils.isEmpty(str) || str.equalsIgnoreCase("null");
+        return TextUtils.isEmpty(str) || "null".equalsIgnoreCase(str);
     }
 
     public static String avoidNull(String str) {
@@ -168,8 +169,9 @@ public class StringUtil {
 
     // 获取url最后一节
     public static String getLastPathComponent(String url) {
-        if (url == null)
+        if (url == null) {
             return "";
+        }
         return url.split("/")[url.split("/").length - 1];
     }
 
@@ -179,15 +181,17 @@ public class StringUtil {
     }
 
     public static void appendString(StringBuffer buff, String str) {
-        if (isBlank(str))
+        if (isBlank(str)) {
             str = "";
+        }
         buff.append(str);
     }
 
     // 字符串拼接
     public static String appendString(String str1, String str2) {
-        if (isBlank(str1))
+        if (isBlank(str1)) {
             str1 = "";
+        }
         StringBuffer strBuf = new StringBuffer(str1);
         appendString(strBuf, str2);
         return strBuf.toString();
@@ -206,27 +210,32 @@ public class StringUtil {
     }
 
     public static boolean isBlank(Object object) {
-        if (isNull(object))
+        if (isNull(object)) {
             return true;
+        }
         if (object instanceof JSONArray) {
             JSONArray obj = (JSONArray) object;
-            if (obj.length() == 0)
+            if (obj.length() == 0) {
                 return true;
+            }
         }
         if (object instanceof JSONObject) {
             JSONObject obj = (JSONObject) object;
-            if (obj.length() == 0)
+            if (obj.length() == 0) {
                 return true;
+            }
         }
         if (object instanceof List) {
             List<?> obj = (List<?>) object;
-            if (obj.size() == 0)
+            if (obj.size() == 0) {
                 return true;
+            }
         }
         if (object instanceof Map) {
             Map<?, ?> obj = (Map<?, ?>) object;
-            if (obj.size() == 0)
+            if (obj.size() == 0) {
                 return true;
+            }
         }
         return isNull(object);
     }
@@ -251,7 +260,7 @@ public class StringUtil {
      */
     public static String checkEditText(EditText editText) {
         if (editText != null && editText.getText() != null
-                && !(editText.getText().toString().trim().equals(""))) {
+                && !("".equals(editText.getText().toString().trim()))) {
             return editText.getText().toString().trim();
         } else {
             return "";
@@ -278,7 +287,8 @@ public class StringUtil {
 
 
     public static boolean isNumber(String str) {
-        Boolean isNumber = str.matches("-?[0-9]+.*[0-9]*");
+        Boolean isNumber = null;
+        isNumber = str.matches("-?[0-9]+.*[0-9]*");
         return isNumber;
     }
 
@@ -295,7 +305,7 @@ public class StringUtil {
 
 
     public static byte getHexByteFrom10(int i) {
-        byte b=(byte) Integer.parseInt(Integer.toHexString(i), 16);
+        byte b = (byte) Integer.parseInt(Integer.toHexString(i), 16);
 //        MyLogUtil.i("testbyte::::", String.format("%02x", b));
         return b;
     }

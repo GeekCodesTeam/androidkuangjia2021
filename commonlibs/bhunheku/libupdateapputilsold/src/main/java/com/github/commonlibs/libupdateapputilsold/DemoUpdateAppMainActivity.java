@@ -115,6 +115,8 @@ public class DemoUpdateAppMainActivity extends AppCompatActivity implements View
             case 4:
                 update4();
                 break;
+            default:
+                break;
         }
     }
 
@@ -188,6 +190,8 @@ public class DemoUpdateAppMainActivity extends AppCompatActivity implements View
                         }
                     }).setContent("暂无读写SD卡权限\n是否前往设置？").show();
                 }
+                break;
+            default:
                 break;
         }
     }

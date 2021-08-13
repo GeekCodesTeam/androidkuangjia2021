@@ -36,6 +36,7 @@ public class MovieFragmentRandomAccessOffsetBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 8;
     }

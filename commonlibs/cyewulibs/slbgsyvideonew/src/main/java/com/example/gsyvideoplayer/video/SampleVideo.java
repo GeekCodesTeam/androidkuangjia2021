@@ -191,6 +191,8 @@ public class SampleVideo extends StandardGSYVideoPlayer {
                 mTextureView.invalidate();
             }
             break;
+            default:
+                break;
         }
     }
 
@@ -311,8 +313,9 @@ public class SampleVideo extends StandardGSYVideoPlayer {
             GSYVideoType.setShowType(GSYVideoType.SCREEN_TYPE_DEFAULT);
         }
         changeTextureViewShowType();
-        if (mTextureView != null)
+        if (mTextureView != null) {
             mTextureView.requestLayout();
+        }
         mSwitchSize.setText(mTypeText);
     }
 

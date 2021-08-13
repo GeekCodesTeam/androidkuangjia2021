@@ -129,8 +129,9 @@ public class PLVLCLikeIconView extends RelativeLayout {
     }
 
     private void startAnimator(ImageView view) {
-        if (height <= 0 || width <= 0)
+        if (height <= 0 || width <= 0) {
             return;
+        }
         PointF pointF1 = new PointF(
                 random.nextInt(Math.max(2, width - ConvertUtils.dp2px(16))) - ConvertUtils.dp2px(6),
                 random.nextInt(height / 2));
@@ -167,8 +168,9 @@ public class PLVLCLikeIconView extends RelativeLayout {
     private Random randomColor = new Random();
 
     public void addLoveIcon(final int count) {
-        if (height <= 0 || width <= 0)
+        if (height <= 0 || width <= 0) {
             return;
+        }
         post(new Runnable() {
             @Override
             public void run() {

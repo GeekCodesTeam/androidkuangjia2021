@@ -131,8 +131,9 @@ public class SimpleDetailActivityMode2 extends AppCompatActivity {
         if (isPlay) {
             detailPlayer.getCurrentPlayer().release();
         }
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 

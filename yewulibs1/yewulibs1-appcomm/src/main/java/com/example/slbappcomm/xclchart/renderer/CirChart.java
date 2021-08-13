@@ -190,7 +190,9 @@ public class CirChart extends EventChart {
 	 */
 	public LabelBrokenLine getLabelBrokenLine()
 	{
-		if(null == mLabelLine)mLabelLine = new LabelBrokenLineRender();
+		if(null == mLabelLine) {
+            mLabelLine = new LabelBrokenLineRender();
+        }
 		return mLabelLine;
 	}
 	
@@ -240,12 +242,16 @@ public class CirChart extends EventChart {
                                      float cirX, float cirY, float radius, float calcAngle,
                                      boolean showLabel)
 	{		
-		if(null == mLabelLine)mLabelLine = new LabelBrokenLineRender();
+		if(null == mLabelLine) {
+            mLabelLine = new LabelBrokenLineRender();
+        }
 		
-		if(mIsLabelLineSyncColor)
-			mLabelLine.getLabelLinePaint().setColor(cData.getSliceColor());
-		if(mIsLabelPointSyncColor)
-			mLabelLine.getPointPaint().setColor(cData.getSliceColor());
+		if(mIsLabelLineSyncColor) {
+            mLabelLine.getLabelLinePaint().setColor(cData.getSliceColor());
+        }
+		if(mIsLabelPointSyncColor) {
+            mLabelLine.getPointPaint().setColor(cData.getSliceColor());
+        }
 		
 		return ( mLabelLine.renderLabelLine(cData.getLabel(),cData.getItemLabelRotateAngle(),
 									cirX,cirY,radius,calcAngle,
@@ -305,11 +311,17 @@ public class CirChart extends EventChart {
 									boolean savePosition, 
 									boolean showLabel)
 	{				
-		if(XEnum.SliceLabelStyle.HIDE == mLabelStyle) return true;
+		if(XEnum.SliceLabelStyle.HIDE == mLabelStyle) {
+            return true;
+        }
 		
-		if(null == cData)return false;
+		if(null == cData) {
+            return false;
+        }
 		String text = cData.getLabel();
-		if(""==text||text.length()==0)return true;
+		if(""==text||text.length()==0) {
+            return true;
+        }
 				
 		float cirX = info.getX();
 		float cirY = info.getY();
@@ -327,7 +339,9 @@ public class CirChart extends EventChart {
 		PointF position = null;
 		
 		//标签颜色与当地扇区颜色同步
-		if(mIsLabelSyncColor) this.getLabelPaint().setColor(cData.getSliceColor());
+		if(mIsLabelSyncColor) {
+            this.getLabelPaint().setColor(cData.getSliceColor());
+        }
 	
 		int color = getLabelPaint().getColor();
 				
@@ -336,8 +350,9 @@ public class CirChart extends EventChart {
 		if( cData.getCustLabelStyleStatus() )
 		{
 			labelStyle = cData.getLabelStyle();
-			if( XEnum.SliceLabelStyle.INSIDE == labelStyle)
-						getLabelPaint().setTextAlign(Align.CENTER);		
+			if( XEnum.SliceLabelStyle.INSIDE == labelStyle) {
+                getLabelPaint().setTextAlign(Align.CENTER);
+            }
 			
 			getLabelPaint().setColor(cData.getCustLabelColor());
 		}
@@ -361,8 +376,9 @@ public class CirChart extends EventChart {
 		}						
 		getLabelPaint().setColor(color);
 		
-		if(savePosition)
-				info.setLabelPointF(position); //保存标签坐标位置
+		if(savePosition) {
+            info.setLabelPointF(position); //保存标签坐标位置
+        }
 		return true;
 	}
 				
@@ -388,8 +404,9 @@ public class CirChart extends EventChart {
 	public boolean render(Canvas canvas) throws Exception {
 		// TODO Auto-generated method stubcalcPlotRange
 		try {
-				if (null == canvas)
-						return false;
+				if (null == canvas) {
+                    return false;
+                }
 				
 				if(getPanModeStatus())
 				{											

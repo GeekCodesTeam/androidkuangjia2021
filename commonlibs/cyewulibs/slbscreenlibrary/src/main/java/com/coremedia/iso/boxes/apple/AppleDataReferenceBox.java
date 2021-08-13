@@ -37,6 +37,7 @@ public class AppleDataReferenceBox extends AbstractFullBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         return 12 + dataReferenceSize;
     }

@@ -99,7 +99,7 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
         @Override
         public void onAsyncCreate(String id, String label) {
             ShortcutUtils.dismissTryTipDialog();
-            if (!Build.MANUFACTURER.equalsIgnoreCase("huawei") && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+            if (!"huawei".equalsIgnoreCase(Build.MANUFACTURER) && !"samsung".equalsIgnoreCase(Build.MANUFACTURER)) {
                 MyLogUtil.e("创建成功，id = " + id + ", label = " + label);
             } else {
                 Log.d("TAG", "onAsyncCreate: " + "系统会提示");

@@ -53,13 +53,21 @@ public class TemporalLevelEntry extends GroupEntry {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         TemporalLevelEntry that = (TemporalLevelEntry) o;
 
-        if (levelIndependentlyDecodable != that.levelIndependentlyDecodable) return false;
-        if (reserved != that.reserved) return false;
+        if (levelIndependentlyDecodable != that.levelIndependentlyDecodable) {
+            return false;
+        }
+        if (reserved != that.reserved) {
+            return false;
+        }
 
         return true;
     }

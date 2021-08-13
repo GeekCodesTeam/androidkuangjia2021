@@ -51,6 +51,7 @@ public class SampleToChunkBox extends AbstractFullBox {
         this.entries = entries;
     }
 
+    @Override
     protected long getContentSize() {
         return entries.size() * 12 + 8;
     }
@@ -80,6 +81,7 @@ public class SampleToChunkBox extends AbstractFullBox {
         }
     }
 
+    @Override
     public String toString() {
         return "SampleToChunkBox[entryCount=" + entries.size() + "]";
     }

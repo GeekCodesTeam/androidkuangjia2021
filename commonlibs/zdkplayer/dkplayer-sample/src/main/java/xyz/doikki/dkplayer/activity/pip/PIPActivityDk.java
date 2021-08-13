@@ -83,7 +83,9 @@ public class PIPActivityDk extends BaseActivityDk {
 
     @Override
     public void onBackPressed() {
-        if (mPIPManager.onBackPress()) return;
+        if (mPIPManager.onBackPress()) {
+            return;
+        }
         super.onBackPressed();
     }
 

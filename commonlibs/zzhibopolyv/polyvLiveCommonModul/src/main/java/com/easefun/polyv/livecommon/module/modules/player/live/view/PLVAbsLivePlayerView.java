@@ -60,6 +60,7 @@ public abstract class PLVAbsLivePlayerView implements IPLVLivePlayerContract.ILi
 
     }
 
+    @Override
     public void onSubVideoViewVisiblityChanged(boolean isOpenAdHead, boolean isShow) {
 
     }

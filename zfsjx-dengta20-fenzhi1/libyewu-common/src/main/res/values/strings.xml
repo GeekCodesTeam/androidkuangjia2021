@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name_common">公共ui</string>
+    <string name="title_common_web">公共webview</string>
+</resources>

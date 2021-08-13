@@ -47,9 +47,9 @@ public final class CaptureActivityHandler extends Handler {
         PREVIEW, SUCCESS, DONE
     }
 
-    public CaptureActivityHandler(CaptureActivity activity,CameraManager cameraManager) {
+    public CaptureActivityHandler(CaptureActivity activity, CameraManager cameraManager) {
         this.activity = activity;
-        decodeThread = new DecodeThread(activity,  new ViewfinderResultPointCallback(
+        decodeThread = new DecodeThread(activity, new ViewfinderResultPointCallback(
                 activity.getViewfinderView()));
         decodeThread.start();
         state = State.SUCCESS;
@@ -94,6 +94,8 @@ public final class CaptureActivityHandler extends Handler {
                 break;
             case Constant.FLASH_CLOSE:
                 activity.switchFlashImg(Constant.FLASH_CLOSE);
+                break;
+            default:
                 break;
         }
     }

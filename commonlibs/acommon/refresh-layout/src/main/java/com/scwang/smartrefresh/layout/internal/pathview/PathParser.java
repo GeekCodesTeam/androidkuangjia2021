@@ -121,6 +121,8 @@ class PathParser {
             case 'A':
                 incr = 7;
                 break;
+            default:
+                break;
         }
         for (int k = 0; k < val.length; k += incr) {
             switch (cmd) {
@@ -158,12 +160,15 @@ class PathParser {
                     val[k + 1] *= ratioHeight;
                     val[k + 2] *= ratioWidth;
                     val[k + 3] *= ratioHeight;
+                    break;
                 case 'a': // Draws an elliptical arc
                 case 'A': // Draws an elliptical arc
                     val[k] *= ratioWidth;
                     val[k + 1] *= ratioHeight;
                     val[k + 5] *= ratioWidth;
                     val[k + 6] *= ratioHeight;
+                    break;
+                default:
                     break;
             }
         }
@@ -391,6 +396,8 @@ class PathParser {
                 case 'E':
                     isExponential = true;
                     break;
+                default:
+                    break;
             }
             if (foundSeparator) {
                 break;
@@ -506,6 +513,8 @@ class PathParser {
                 case 'a':
                 case 'A':
                     incr = 7;
+                    break;
+                default:
                     break;
             }
 
@@ -691,6 +700,8 @@ class PathParser {
                         currentY = val[k + 6];
                         ctrlPointX = currentX;
                         ctrlPointY = currentY;
+                        break;
+                    default:
                         break;
                 }
                 previousCmd = cmd;

@@ -212,7 +212,7 @@ public class ProfileLayout extends LinearLayout implements View.OnClickListener 
     }
 
     private void updateProfile() {
-        HashMap<String, Object> hashMap = new HashMap<>();
+        HashMap<String, Object> hashMap = new HashMap<>(16);
 
         V2TIMUserFullInfo v2TIMUserFullInfo = new V2TIMUserFullInfo();
         // 头像

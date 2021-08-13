@@ -20,8 +20,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import xyz.doikki.videocontroller.R;
-import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
+import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
@@ -108,7 +108,9 @@ public class TitleView extends FrameLayout implements IControlComponent {
     @Override
     public void onVisibilityChanged(boolean isVisible, Animation anim) {
         //只在全屏时才有效
-        if (!mControlWrapper.isFullScreen()) return;
+        if (!mControlWrapper.isFullScreen()) {
+            return;
+        }
         if (isVisible) {
             if (getVisibility() == GONE) {
                 mSysTime.setText(PlayerUtils.getCurrentSystemTime());
@@ -137,6 +139,8 @@ public class TitleView extends FrameLayout implements IControlComponent {
             case VideoView.STATE_ERROR:
             case VideoView.STATE_PLAYBACK_COMPLETED:
                 setVisibility(GONE);
+                break;
+            default:
                 break;
         }
     }
@@ -193,7 +197,9 @@ public class TitleView extends FrameLayout implements IControlComponent {
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle extras = intent.getExtras();
-            if (extras == null) return;
+            if (extras == null) {
+                return;
+            }
             int current = extras.getInt("level");// 获得当前电量
             int total = extras.getInt("scale");// 获得总电量
             int percent = current * 100 / total;

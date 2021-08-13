@@ -42,6 +42,8 @@ import java.util.Map;
 import static org.xmlpull.v1.XmlPullParser.END_DOCUMENT;
 import static org.xmlpull.v1.XmlPullParser.START_TAG;
 
+import com.blankj.utilcode.util.Utils;
+
 /**
  * <p>Copied from the support library v27.1.1.</p>
  * Created by Zhenjie Yan on 2018/4/28.
@@ -204,7 +206,8 @@ public class FileProvider extends ContentProvider {
                 } else if (TAG_CACHE_PATH.equals(tag)) {
                     target = context.getCacheDir();
                 } else if (TAG_EXTERNAL.equals(tag)) {
-                    target = Environment.getExternalStorageDirectory();
+//                    target = Environment.getExternalStorageDirectory();
+                    target = Utils.getApp().getExternalFilesDir(null);
                 } else if (TAG_EXTERNAL_FILES.equals(tag)) {
                     File[] externalFilesDirs = getExternalFilesDirs(context, null);
                     if (externalFilesDirs.length > 0) {

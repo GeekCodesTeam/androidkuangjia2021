@@ -19,6 +19,7 @@ public final class AppleMeanBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 4 + Utf8.utf8StringLengthInBytes(meaning);
     }

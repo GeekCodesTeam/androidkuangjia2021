@@ -3,4 +3,10 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.gsonJson
+    implementation librarys.glide47
+    annotationProcessor librarys.annotationProcessorglide47compiler
+    implementation librarys.viewpager2
+    implementation 'com.github.li-xiaojun:XPopup:2.4.0'
+    api 'com.kunminx.linkage:linkage-recyclerview:2.4.0'
 }

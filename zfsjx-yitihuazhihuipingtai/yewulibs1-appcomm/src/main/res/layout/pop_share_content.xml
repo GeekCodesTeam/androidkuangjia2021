@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_content"
+    android:layout_width="236mm"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="236mm"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+        <com.geek.libglide47.base.GlideImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/share_medal_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:siv_border_color="@color/transparent"
+            app:siv_border_width="0mm"
+            app:siv_pressed_alpha="0"
+            app:siv_pressed_color="@color/transparent"
+            app:siv_radius="0mm"
+            app:siv_shape_type="rectangle" />
+
+
+        <ImageView
+            android:layout_width="86mm"
+            android:layout_height="24mm"
+            android:layout_marginLeft="8mm"
+            android:layout_marginTop="6mm"
+            android:src="@drawable/slb_share_icon1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/whiteBbV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="12mm"
+            android:layout_marginTop="35mm"
+            android:layout_marginRight="12mm"
+            android:layout_marginBottom="12mm"
+            android:background="@drawable/shape_white_corner_6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2mm"
+            android:layout_marginTop="17mm"
+            android:layout_marginRight="2mm"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/whiteBbV"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.geek.libglide47.base.CircleImageView
+                android:id="@+id/headIv"
+                android:layout_width="44mm"
+                android:layout_height="44mm"
+                android:src="@drawable/head_moren3"
+                app:border_color="@color/white"
+                app:border_width="1mm"
+                app:type1="circle" />
+
+            <TextView
+                android:id="@+id/nameTv"
+                style="@style/WrapWrap"
+                android:layout_marginTop="7mm"
+                android:text="尚尚"
+                android:textColor="@color/color_333"
+                android:textSize="10mm" />
+
+            <TextView
+                android:id="@+id/detailTv"
+                style="@style/WrapWrap"
+                android:layout_marginLeft="28mm"
+                android:layout_marginTop="6mm"
+                android:layout_marginRight="28mm"
+                android:lineSpacingExtra="0.4mm"
+                android:textColor="@color/color_333"
+                android:textSize="9mm" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="234mm"
+                    android:layout_height="146mm"
+                    android:src="@drawable/share_wing2" />
+
+                <com.geek.libglide47.base.CircleImageView
+                    android:id="@+id/centerMedalIv"
+                    android:layout_width="100mm"
+                    android:layout_height="100mm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20mm"
+                    android:src="@drawable/slb_logo"
+                    app:border_color="@color/white"
+                    app:border_width="0mm"
+                    app:type1="circle" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/qrcodeIv"
+                android:layout_width="80mm"
+                android:layout_height="80mm"
+                android:layout_marginTop="14mm"
+                android:scaleType="fitXY" />
+
+            <TextView
+                style="@style/WrapWrap"
+                android:layout_marginTop="10mm"
+                android:text="识别二维码,下载合象阅读"
+                android:textColor="@color/color_666"
+                android:textSize="9mm" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7mm"
+                android:layout_marginBottom="15mm"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23mm"
+                    android:src="@drawable/medal_pop_share_slogan" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

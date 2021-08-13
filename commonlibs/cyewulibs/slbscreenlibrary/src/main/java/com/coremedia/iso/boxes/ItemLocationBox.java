@@ -243,16 +243,30 @@ public class ItemLocationBox extends AbstractFullBox {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Item item = (Item) o;
 
-            if (baseOffset != item.baseOffset) return false;
-            if (constructionMethod != item.constructionMethod) return false;
-            if (dataReferenceIndex != item.dataReferenceIndex) return false;
-            if (itemId != item.itemId) return false;
-            if (extents != null ? !extents.equals(item.extents) : item.extents != null) return false;
+            if (baseOffset != item.baseOffset) {
+                return false;
+            }
+            if (constructionMethod != item.constructionMethod) {
+                return false;
+            }
+            if (dataReferenceIndex != item.dataReferenceIndex) {
+                return false;
+            }
+            if (itemId != item.itemId) {
+                return false;
+            }
+            if (extents != null ? !extents.equals(item.extents) : item.extents != null) {
+                return false;
+            }
 
             return true;
         }
@@ -324,14 +338,24 @@ public class ItemLocationBox extends AbstractFullBox {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Extent extent = (Extent) o;
 
-            if (extentIndex != extent.extentIndex) return false;
-            if (extentLength != extent.extentLength) return false;
-            if (extentOffset != extent.extentOffset) return false;
+            if (extentIndex != extent.extentIndex) {
+                return false;
+            }
+            if (extentLength != extent.extentLength) {
+                return false;
+            }
+            if (extentOffset != extent.extentOffset) {
+                return false;
+            }
 
             return true;
         }

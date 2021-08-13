@@ -41,6 +41,8 @@ public class PhoneBroadcastReceiver extends BroadcastReceiver {
                 case TelephonyManager.CALL_STATE_IDLE:
                     //挂断状态
                     break;
+                default:
+                    break;
             }
         }
     }

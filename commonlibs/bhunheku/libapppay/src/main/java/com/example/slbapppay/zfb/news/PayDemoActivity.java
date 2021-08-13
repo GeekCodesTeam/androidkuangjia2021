@@ -73,7 +73,8 @@ public class PayDemoActivity extends AppCompatActivity {
 
 	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler() {
-		@SuppressWarnings("unused")
+		@Override
+        @SuppressWarnings("unused")
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case SDK_PAY_FLAG: {

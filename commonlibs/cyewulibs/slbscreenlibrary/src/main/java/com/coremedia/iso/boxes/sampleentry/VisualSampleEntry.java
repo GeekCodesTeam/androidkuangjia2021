@@ -170,6 +170,7 @@ public class VisualSampleEntry extends SampleEntry implements ContainerBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         long contentSize = 78;
         for (Box boxe : boxes) {

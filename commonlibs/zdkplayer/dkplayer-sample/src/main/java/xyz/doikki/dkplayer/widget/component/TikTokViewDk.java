@@ -15,8 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import xyz.doikki.dkplayer.R;
-import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
+import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.L;
 
@@ -73,6 +73,8 @@ public class TikTokViewDk extends FrameLayout implements IControlComponent {
                     performClick();
                 }
                 break;
+            default:
+                break;
         }
         return false;
     }
@@ -115,6 +117,8 @@ public class TikTokViewDk extends FrameLayout implements IControlComponent {
             case VideoView.STATE_ERROR:
                 L.e("STATE_ERROR " + hashCode());
                 Toast.makeText(getContext(), R.string.dkplayer_error_message, Toast.LENGTH_SHORT).show();
+                break;
+            default:
                 break;
         }
     }

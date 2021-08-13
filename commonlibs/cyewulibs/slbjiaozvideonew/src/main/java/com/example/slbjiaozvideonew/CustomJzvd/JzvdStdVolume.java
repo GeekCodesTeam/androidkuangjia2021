@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomJzvd;
+package com.example.slbjiaozvideonew.customjzvd;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -42,16 +42,18 @@ public class JzvdStdVolume extends JzvdStd {
     @Override
     public void setScreenNormal() {
         super.setScreenNormal();
-        if (mediaInterface != null && !volumeOpen)
+        if (mediaInterface != null && !volumeOpen) {
             mediaInterface.setVolume(0f, 0f);
+        }
         ivVolume.setImageResource(volumeOpen ? R.drawable.ic_volume_open : R.drawable.ic_volume_close);
     }
 
     @Override
     public void setScreenFullscreen() {
         super.setScreenFullscreen();
-        if (mediaInterface != null)
+        if (mediaInterface != null) {
             mediaInterface.setVolume(1f, 1f);
+        }
         ivVolume.setImageResource(R.drawable.ic_volume_open);
     }
 

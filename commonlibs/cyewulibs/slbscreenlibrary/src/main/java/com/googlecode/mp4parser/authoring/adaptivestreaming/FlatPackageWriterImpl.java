@@ -88,6 +88,7 @@ public class FlatPackageWriterImpl implements PackageWriter {
      * @param source the source movie with all qualities
      * @throws IOException
      */
+    @Override
     public void write(Movie source) throws IOException {
 
         if (debugOutput) {
@@ -149,7 +150,7 @@ public class FlatPackageWriterImpl implements PackageWriter {
                         startTime += fragmentTimes[currentFragment++];
                         FileChannel fc = fos.getChannel();
                         Box mdat = boxIt.next();
-                        assert mdat.getType().equals("mdat");
+                        assert "mdat".equals(mdat.getType());
                         b.getBox(fc); // moof
                         mdat.getBox(fc); // mdat
                         fc.truncate(fc.position());

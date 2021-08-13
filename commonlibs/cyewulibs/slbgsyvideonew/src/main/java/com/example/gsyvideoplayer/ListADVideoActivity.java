@@ -226,8 +226,9 @@ public class ListADVideoActivity extends AppCompatActivity {
                 @Override
                 public void onPrepared(String url, Object... objects) {
                     super.onPrepared(url, objects);
-                    if (isNeedAdOnStart())
+                    if (isNeedAdOnStart()) {
                         startAdPlay(holder.adVideoPlayer, holder.gsyVideoPlayer);
+                    }
                 }
 
                 @Override

@@ -82,6 +82,8 @@ public class MainActivityokhttputils extends AppCompatActivity {
                 case 101:
                     Toast.makeText(MainActivityokhttputils.this, "https", Toast.LENGTH_SHORT).show();
                     break;
+                default:
+                    break;
             }
         }
 
@@ -151,7 +153,7 @@ public class MainActivityokhttputils extends AppCompatActivity {
     }
 
     public void postFile(View view) {
-        File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
+        File file = new File(getExternalFilesDir(null), "messenger_01.png");
         if (!file.exists()) {
             Toast.makeText(MainActivityokhttputils.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
@@ -190,7 +192,7 @@ public class MainActivityokhttputils extends AppCompatActivity {
 
 
     public void getUsers(View view) {
-        Map<String, String> params = new HashMap<String, String>();
+        Map<String, String> params = new HashMap<String, String>(16);
         params.put("name", "zhy");
         String url = mBaseUrl + "user!getUsers";
         OkHttpUtils//
@@ -255,16 +257,16 @@ public class MainActivityokhttputils extends AppCompatActivity {
 
     public void uploadFile(View view) {
 
-        File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
+        File file = new File(getExternalFilesDir(null), "messenger_01.png");
         if (!file.exists()) {
             Toast.makeText(MainActivityokhttputils.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
         }
-        Map<String, String> params = new HashMap<>();
+        Map<String, String> params = new HashMap<>(16);
         params.put("username", "张鸿洋");
         params.put("password", "123");
 
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<>(16);
         headers.put("APP-Key", "APP-Secret222");
         headers.put("APP-Secret", "APP-Secret111");
 
@@ -281,13 +283,13 @@ public class MainActivityokhttputils extends AppCompatActivity {
 
 
     public void multiFileUpload(View view) {
-        File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
-        File file2 = new File(Environment.getExternalStorageDirectory(), "test1#.txt");
+        File file = new File(getExternalFilesDir(null), "messenger_01.png");
+        File file2 = new File(getExternalFilesDir(null), "test1#.txt");
         if (!file.exists()) {
             Toast.makeText(MainActivityokhttputils.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
         }
-        Map<String, String> params = new HashMap<>();
+        Map<String, String> params = new HashMap<>(16);
         params.put("username", "张鸿洋");
         params.put("password", "123");
 
@@ -308,7 +310,7 @@ public class MainActivityokhttputils extends AppCompatActivity {
                 .get()//
                 .url(url)//
                 .build()//
-                .execute(new FileCallBack(Environment.getExternalStorageDirectory().getAbsolutePath(), "gson-2.2.1.jar")//
+                .execute(new FileCallBack(getExternalFilesDir(null).getAbsolutePath(), "gson-2.2.1.jar")//
                 {
 
                     @Override

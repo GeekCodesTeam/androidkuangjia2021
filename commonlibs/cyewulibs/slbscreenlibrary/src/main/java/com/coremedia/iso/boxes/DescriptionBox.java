@@ -44,6 +44,7 @@ public class DescriptionBox extends AbstractFullBox {
         return description;
     }
 
+    @Override
     protected long getContentSize() {
         return 7 + Utf8.utf8StringLengthInBytes(description);
     }
@@ -63,6 +64,7 @@ public class DescriptionBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "DescriptionBox[language=" + getLanguage() + ";description=" + getDescription() + "]";
     }

@@ -73,16 +73,18 @@ public class JzvdSlideZoomBehavior extends CoordinatorLayout.Behavior<JzvdStd> {
         @Override
         public int getViewVerticalDragRange(@NonNull View child) {
             int isMove = 0;
-            if (!scrollingView.canScrollVertically(-1))
+            if (!scrollingView.canScrollVertically(-1)) {
                 isMove = viewDragHelper.getTouchSlop();
+            }
             return isMove;
         }
 
 
         @Override
         public int clampViewPositionVertical(@NonNull View child, int top, int dy) {
-            if (jzvdStd == null || dy == 0)
+            if (jzvdStd == null || dy == 0) {
                 return 0;
+            }
             if (dy > 0 && jzvdStd.getBottom() < minHeight || (dy < 0 && jzvdStd.getBottom() > childHeight) || (dy < 0 && (scrollingView != null && scrollingView.canScrollVertically(-1)))) {
                 return 0;
             }
@@ -121,16 +123,18 @@ public class JzvdSlideZoomBehavior extends CoordinatorLayout.Behavior<JzvdStd> {
 
     @Override
     public boolean onTouchEvent(@NonNull CoordinatorLayout parent, @NonNull JzvdStd child, @NonNull MotionEvent ev) {
-        if (viewDragHelper == null)
+        if (viewDragHelper == null) {
             return super.onTouchEvent(parent, child, ev);
+        }
         viewDragHelper.processTouchEvent(ev);
         return true;
     }
 
     @Override
     public boolean onInterceptTouchEvent(@NonNull CoordinatorLayout parent, @NonNull JzvdStd child, @NonNull MotionEvent ev) {
-        if (viewDragHelper == null)
+        if (viewDragHelper == null) {
             return super.onInterceptTouchEvent(parent, child, ev);
+        }
         return viewDragHelper.shouldInterceptTouchEvent(ev);
     }
 
@@ -164,7 +168,9 @@ public class JzvdSlideZoomBehavior extends CoordinatorLayout.Behavior<JzvdStd> {
             if (overScroller.computeScrollOffset() && height >= minHeight && height <= childHeight) {
                 int newHeight = Math.min(overScroller.getCurrY(), childHeight);
                 if (newHeight != height) {
-                   if (newHeight < minHeight) newHeight = minHeight;
+                   if (newHeight < minHeight) {
+                       newHeight = minHeight;
+                   }
                     params.height = newHeight;
                     mFlingView.setLayoutParams(params);
                 }

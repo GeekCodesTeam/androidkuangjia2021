@@ -189,8 +189,9 @@ public class DetailMoreTypeActivity extends AppCompatActivity {
             getCurPlay().release();
         }
         //GSYPreViewManager.instance().releaseMediaPlayer();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
         if (mCoverMedia != null) {
             mCoverMedia.release();
             mCoverMedia = null;
@@ -277,7 +278,7 @@ public class DetailMoreTypeActivity extends AppCompatActivity {
         if (mCoverMedia == null) {
             mCoverMedia = new MediaMetadataRetriever();
         }
-        mCoverMedia.setDataSource(url, new HashMap<String, String>());
+        mCoverMedia.setDataSource(url, new HashMap<String, String>(16));
         return mCoverMedia;
     }
 }

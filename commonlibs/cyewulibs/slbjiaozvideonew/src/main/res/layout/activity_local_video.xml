@@ -20,7 +20,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="8dp">
 
-        <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdAssert
+        <com.example.slbjiaozvideonew.customjzvd.JzvdStdAssert
             android:id="@+id/assert_path"
             android:layout_width="match_parent"
             android:layout_height="200dp" />

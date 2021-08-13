@@ -232,7 +232,9 @@ public class ImagePicker {
     }
 
     public void clearSelectedImages() {
-        if (mSelectedImages != null) mSelectedImages.clear();
+        if (mSelectedImages != null) {
+            mSelectedImages.clear();
+        }
     }
 
     public void clear() {
@@ -257,8 +259,11 @@ public class ImagePicker {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         takePictureIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (takePictureIntent.resolveActivity(activity.getPackageManager()) != null) {
-            if (Utils.existSDCard()) takeImageFile = new File(com.blankj.utilcode.util.Utils.getApp().getExternalFilesDir(null), "/DCIM/camera/");
-            else takeImageFile = Environment.getDataDirectory();
+            if (Utils.existSDCard()) {
+                takeImageFile = new File(com.blankj.utilcode.util.Utils.getApp().getExternalFilesDir(null), "/DCIM/camera/");
+            } else {
+                takeImageFile = Environment.getDataDirectory();
+            }
             takeImageFile = createFile(takeImageFile, "IMG_", ".jpg");
             if (takeImageFile != null) {
                 // 默认情况下，即不需要指定intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
@@ -295,7 +300,9 @@ public class ImagePicker {
      * 根据系统时间、前缀、后缀产生一个文件
      */
     public static File createFile(File folder, String prefix, String suffix) {
-        if (!folder.exists() || !folder.isDirectory()) folder.mkdirs();
+        if (!folder.exists() || !folder.isDirectory()) {
+            folder.mkdirs();
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);
         String filename = prefix + dateFormat.format(new Date(System.currentTimeMillis())) + suffix;
         return new File(folder, filename);
@@ -319,18 +326,25 @@ public class ImagePicker {
     }
 
     public void addOnImageSelectedListener(OnImageSelectedListener l) {
-        if (mImageSelectedListeners == null) mImageSelectedListeners = new ArrayList<>();
+        if (mImageSelectedListeners == null) {
+            mImageSelectedListeners = new ArrayList<>();
+        }
         mImageSelectedListeners.add(l);
     }
 
     public void removeOnImageSelectedListener(OnImageSelectedListener l) {
-        if (mImageSelectedListeners == null) return;
+        if (mImageSelectedListeners == null) {
+            return;
+        }
         mImageSelectedListeners.remove(l);
     }
 
     public void addSelectedImageItem(int position, ImageItem item, boolean isAdd) {
-        if (isAdd) mSelectedImages.add(item);
-        else mSelectedImages.remove(item);
+        if (isAdd) {
+            mSelectedImages.add(item);
+        } else {
+            mSelectedImages.remove(item);
+        }
         notifyImageSelectedChanged(position, item, isAdd);
     }
 
@@ -342,7 +356,9 @@ public class ImagePicker {
     }
 
     private void notifyImageSelectedChanged(int position, ImageItem item, boolean isAdd) {
-        if (mImageSelectedListeners == null) return;
+        if (mImageSelectedListeners == null) {
+            return;
+        }
         for (OnImageSelectedListener l : mImageSelectedListeners) {
             l.onImageSelected(position, item, isAdd);
         }

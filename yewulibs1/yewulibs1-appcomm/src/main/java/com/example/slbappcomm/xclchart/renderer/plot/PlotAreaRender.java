@@ -48,7 +48,9 @@ public class PlotAreaRender extends PlotArea implements IRender {
 	 */
 	protected void drawPlotBackground(Canvas canvas)
 	{
-		if(null == canvas) return;
+		if(null == canvas) {
+            return;
+        }
 		if(getBackgroundColorVisible())
 		{
 			if(getApplayGradient())
@@ -145,7 +147,9 @@ public class PlotAreaRender extends PlotArea implements IRender {
 	public boolean render(Canvas canvas) throws Exception {
 		// TODO Auto-generated method stub
 		try{
-			if(null == canvas) return false;
+			if(null == canvas) {
+                return false;
+            }
 			drawPlotBackground(canvas);
 		}catch( Exception e){
 			 throw e;

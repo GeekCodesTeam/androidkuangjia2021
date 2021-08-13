@@ -78,7 +78,9 @@ public class DanmukuVideoViewDk extends VideoView {
     protected void startPrepare(boolean reset) {
         super.startPrepare(reset);
         if (mDanmakuView != null) {
-            if (reset) mDanmakuView.restart();
+            if (reset) {
+                mDanmakuView.restart();
+            }
             mDanmakuView.prepare(mParser, mContext);
         }
     }
@@ -123,7 +125,9 @@ public class DanmukuVideoViewDk extends VideoView {
     public void seekTo(long pos) {
         super.seekTo(pos);
         if (isInPlaybackState()) {
-            if (mDanmakuView != null) mDanmakuView.seekTo(pos);
+            if (mDanmakuView != null) {
+                mDanmakuView.seekTo(pos);
+            }
         }
     }
 
@@ -213,14 +217,18 @@ public class DanmukuVideoViewDk extends VideoView {
      * 显示弹幕
      */
     public void showDanMu() {
-        if (mDanmakuView != null) mDanmakuView.show();
+        if (mDanmakuView != null) {
+            mDanmakuView.show();
+        }
     }
 
     /**
      * 隐藏弹幕
      */
     public void hideDanMu() {
-        if (mDanmakuView != null) mDanmakuView.hide();
+        if (mDanmakuView != null) {
+            mDanmakuView.hide();
+        }
     }
 
     /**
@@ -230,7 +238,9 @@ public class DanmukuVideoViewDk extends VideoView {
      * @param isSelf 是不是自己发的
      */
     public void addDanmaku(String text, boolean isSelf) {
-        if (mDanmakuView == null) return;
+        if (mDanmakuView == null) {
+            return;
+        }
         mContext.setCacheStuffer(new SpannedCacheStuffer(), null);
         BaseDanmaku danmaku = mContext.mDanmakuFactory.createDanmaku(BaseDanmaku.TYPE_SCROLL_RL);
         if (danmaku == null || mDanmakuView == null) {

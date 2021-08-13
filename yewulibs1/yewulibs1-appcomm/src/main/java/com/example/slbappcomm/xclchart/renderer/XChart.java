@@ -128,14 +128,22 @@ public class XChart implements IRender {
 		mTranslateXY[1] = 0.0f;
 
 		//图例
-		if(null == plotLegend)plotLegend = new PlotLegendRender(this);
+		if(null == plotLegend) {
+            plotLegend = new PlotLegendRender(this);
+        }
 
 		// 图表
-		if(null == plotArea)plotArea = new PlotAreaRender();
+		if(null == plotArea) {
+            plotArea = new PlotAreaRender();
+        }
 
-		if(null == plotGrid)plotGrid = new PlotGridRender();
+		if(null == plotGrid) {
+            plotGrid = new PlotGridRender();
+        }
 
-		if(null == plotTitle)plotTitle = new PlotTitleRender();
+		if(null == plotTitle) {
+            plotTitle = new PlotTitleRender();
+        }
 	}
 
 	/**
@@ -155,7 +163,9 @@ public class XChart implements IRender {
 	public PlotLegend getPlotLegend()
 	{
 		//图例
-		if(null == plotLegend)plotLegend = new PlotLegendRender(this);
+		if(null == plotLegend) {
+            plotLegend = new PlotLegendRender(this);
+        }
 		return plotLegend;
 	}
 
@@ -172,14 +182,18 @@ public class XChart implements IRender {
 	 *            绘图区与图底部的保留距离，用于显示底轴及轴标题之类
 	 */
 	public void setPadding(float left, float top, float right,float bottom  ) {
-		if (top > 0)
-			mPaddingTop = top;
-		if (bottom > 0)
-			mPaddingBottom = bottom ;
-		if (left > 0)
-			mPaddingLeft = left;
-		if (right > 0)
-			mPaddingRight = right ;
+		if (top > 0) {
+            mPaddingTop = top;
+        }
+		if (bottom > 0) {
+            mPaddingBottom = bottom ;
+        }
+		if (left > 0) {
+            mPaddingLeft = left;
+        }
+		if (right > 0) {
+            mPaddingRight = right ;
+        }
 	}
 
 
@@ -189,7 +203,9 @@ public class XChart implements IRender {
 	 * @return 主图表区基类
 	 */
 	public PlotArea getPlotArea() {
-		if(null == plotArea)plotArea = new PlotAreaRender();
+		if(null == plotArea) {
+            plotArea = new PlotAreaRender();
+        }
 		return plotArea;
 	}
 
@@ -199,7 +215,9 @@ public class XChart implements IRender {
 	 * @return 网格基类
 	 */
 	public PlotGrid getPlotGrid() {
-		if(null == plotGrid)plotGrid = new PlotGridRender();
+		if(null == plotGrid) {
+            plotGrid = new PlotGridRender();
+        }
 		return plotGrid;
 	}
 
@@ -209,7 +227,9 @@ public class XChart implements IRender {
 	 * @return 标题基类
 	 */
 	public PlotTitle getPlotTitle() {
-		if(null == plotTitle)plotTitle = new PlotTitleRender();
+		if(null == plotTitle) {
+            plotTitle = new PlotTitleRender();
+        }
 		return plotTitle;
 	}
 
@@ -240,16 +260,22 @@ public class XChart implements IRender {
 	public void setChartRange(float startX, float startY, float width,
 			float height) {
 
-		if (startX > 0)
-			mLeft = startX;
-		if (startY > 0)
-			mTop = startY;
+		if (startX > 0) {
+            mLeft = startX;
+        }
+		if (startY > 0) {
+            mTop = startY;
+        }
 
 		mRight = add(startX , width);
 		mBottom = add(startY , height);
 
-		if (Float.compare(width, 0.0f) > 0)mWidth = width;
-		if (Float.compare(height, 0.0f) > 0)mHeight = height;
+		if (Float.compare(width, 0.0f) > 0) {
+            mWidth = width;
+        }
+		if (Float.compare(height, 0.0f) > 0) {
+            mHeight = height;
+        }
 	}
 
 	/**
@@ -258,7 +284,9 @@ public class XChart implements IRender {
 	 * @param title 标题
 	 */
 	public void setTitle(String title) {
-		if(null!= plotTitle)plotTitle.setTitle(title);
+		if(null!= plotTitle) {
+            plotTitle.setTitle(title);
+        }
 	}
 
 	/**
@@ -267,7 +295,9 @@ public class XChart implements IRender {
 	 * @param subtitle 子标题
 	 */
 	public void addSubtitle(String subtitle) {
-		if(null!= plotTitle)plotTitle.setSubtitle(subtitle);
+		if(null!= plotTitle) {
+            plotTitle.setSubtitle(subtitle);
+        }
 	}
 
 	/**
@@ -275,7 +305,9 @@ public class XChart implements IRender {
 	 * @param position 显示位置
 	 */
 	public void setTitleVerticalAlign(XEnum.VerticalAlign position) {
-		if(null!= plotTitle)plotTitle.setVerticalAlign(position);
+		if(null!= plotTitle) {
+            plotTitle.setVerticalAlign(position);
+        }
 	}
 
 	/**
@@ -284,7 +316,9 @@ public class XChart implements IRender {
 	 * @param align 显示位置
 	 */
 	public void setTitleAlign(XEnum.HorizontalAlign align) {
-		if(null!= plotTitle)plotTitle.setTitleAlign(align);
+		if(null!= plotTitle) {
+            plotTitle.setTitleAlign(align);
+        }
 	}
 
 
@@ -399,8 +433,12 @@ public class XChart implements IRender {
 	 */
 	public void setTranslateXY(float x,float y)
 	{
-		if(!mEnablePanMode)return;
-		if(null == mTranslateXY) mTranslateXY = new float[2];
+		if(!mEnablePanMode) {
+            return;
+        }
+		if(null == mTranslateXY) {
+            mTranslateXY = new float[2];
+        }
 		mTranslateXY[0] = x;
 		mTranslateXY[1] = y;
 	}
@@ -420,7 +458,9 @@ public class XChart implements IRender {
 	protected void calcPlotRange() {
 
 		int borderWidth = getBorderWidth();
-		if(null == plotArea) return;
+		if(null == plotArea) {
+            return;
+        }
 		plotArea.setBottom(sub(this.getBottom() - borderWidth/2 , mPaddingBottom) );
 		plotArea.setLeft(add(this.getLeft() + borderWidth/2 , mPaddingLeft));
 		plotArea.setRight(sub(this.getRight() - borderWidth/2 , mPaddingRight));
@@ -432,7 +472,9 @@ public class XChart implements IRender {
 	 */
 	protected void renderTitle(Canvas canvas) {
 		int borderWidth = getBorderWidth();
-		if(null == plotTitle) return;
+		if(null == plotTitle) {
+            return;
+        }
 		this.plotTitle.renderTitle(
 				mLeft + borderWidth, mRight - borderWidth, mTop + borderWidth,
 				mWidth, this.plotArea.getTop(), canvas);
@@ -452,7 +494,9 @@ public class XChart implements IRender {
 	protected boolean drawAnchor(List<AnchorDataPoint> anchorSet,
 								int dataID,int childID,Canvas canvas,float x,float y,float radius)
 	{
-		if(null == anchorSet || -1 == dataID)return false;
+		if(null == anchorSet || -1 == dataID) {
+            return false;
+        }
 		int count = anchorSet.size();
 
 		float left = getPlotArea().getLeft();
@@ -497,7 +541,9 @@ public class XChart implements IRender {
 		getBackgroundPaint().setColor(color);
 		getPlotArea().getBackgroundPaint().setColor(color);
 
-		if(null == mBorder)mBorder = new BorderRender();
+		if(null == mBorder) {
+            mBorder = new BorderRender();
+        }
 		mBorder.getBackgroundPaint().setColor(color);
 	}
 
@@ -532,7 +578,9 @@ public class XChart implements IRender {
 			getBackgroundPaint().setShader(linearGradient);
 		}
 
-		if(null == mBorder)mBorder = new BorderRender();
+		if(null == mBorder) {
+            mBorder = new BorderRender();
+        }
 		mBorder.getBackgroundPaint().setColor(endColor);
 	}
 
@@ -543,7 +591,9 @@ public class XChart implements IRender {
 	 * @return 画笔
 	 */
 	public Paint getBackgroundPaint() {
-		if(null == mBorder)mBorder = new BorderRender();
+		if(null == mBorder) {
+            mBorder = new BorderRender();
+        }
 		return mBorder.getBackgroundPaint();
 	}
 
@@ -553,7 +603,9 @@ public class XChart implements IRender {
 	public void showBorder()
 	{
 		 mShowBorder = true;
-		 if(null == mBorder)mBorder = new BorderRender();
+		 if(null == mBorder) {
+             mBorder = new BorderRender();
+         }
 		 mBorder.setBorderRectType(XEnum.RectType.RECT);
 	}
 
@@ -563,7 +615,9 @@ public class XChart implements IRender {
 	public void showRoundBorder()
 	{
 		mShowBorder = true;
-		if(null == mBorder)mBorder = new BorderRender();
+		if(null == mBorder) {
+            mBorder = new BorderRender();
+        }
 		mBorder.setBorderRectType(XEnum.RectType.ROUNDRECT);
 	}
 
@@ -573,7 +627,9 @@ public class XChart implements IRender {
 	public void hideBorder()
 	{
 		 mShowBorder = false;
-		 if(null != mBorder)mBorder = null;
+		 if(null != mBorder) {
+             mBorder = null;
+         }
 	}
 
 	/**
@@ -582,7 +638,9 @@ public class XChart implements IRender {
 	 */
 	public Border getBorder()
 	{
-		if(null == mBorder)mBorder = new BorderRender();
+		if(null == mBorder) {
+            mBorder = new BorderRender();
+        }
 		return mBorder;
 	}
 
@@ -604,7 +662,9 @@ public class XChart implements IRender {
 		int borderWidth = 0;
 		if(mShowBorder)
 		{
-			 if(null == mBorder)mBorder = new BorderRender();
+			 if(null == mBorder) {
+                 mBorder = new BorderRender();
+             }
 			 borderWidth = mBorder.getBorderWidth();
 		}
 		return borderWidth;
@@ -616,8 +676,12 @@ public class XChart implements IRender {
 	 */
 	public void setBorderWidth(int width)
 	{
-		 if(0 >= width) return;
-		 if(null == mBorder)mBorder = new BorderRender();
+		 if(0 >= width) {
+             return;
+         }
+		 if(null == mBorder) {
+             mBorder = new BorderRender();
+         }
 		 mBorder.setRoundRadius(width);
 	}
 
@@ -629,7 +693,9 @@ public class XChart implements IRender {
 	{
 		if(mShowBorder)
 		{
-			if(null == mBorder) mBorder = new BorderRender();
+			if(null == mBorder) {
+                mBorder = new BorderRender();
+            }
 			mBorder.renderBorder("BORDER",canvas,
 								 mLeft  , mTop  , mRight , mBottom  );
 		}
@@ -642,7 +708,9 @@ public class XChart implements IRender {
 
 		if(this.mBackgroundColorVisible)
 		{
-			if(null == mBorder) mBorder = new BorderRender();
+			if(null == mBorder) {
+                mBorder = new BorderRender();
+            }
 			if(mShowBorder)
 			{
 				mBorder.renderBorder("CHART",canvas,
@@ -676,8 +744,12 @@ public class XChart implements IRender {
 
 	protected boolean getClikedScaleStatus()
 	{
-		if(!mEnableScale)return true;
-		if( Float.compare(mXScale, 0.0f) == 0)return true;
+		if(!mEnableScale) {
+            return true;
+        }
+		if( Float.compare(mXScale, 0.0f) == 0) {
+            return true;
+        }
 
 		//如果在这范围内，则可以处理点击
         return Float.compare(mXScale, 0.95f) == 1 &&
@@ -690,7 +762,9 @@ public class XChart implements IRender {
 	 */
 	private void scaleChart(Canvas canvas)
 	{
-		if(!mEnableScale)return;
+		if(!mEnableScale) {
+            return;
+        }
 
 		if( Float.compare(mCenterX, 0.0f) == 1 ||
 				Float.compare(mCenterY, 0.0f) == 1	)
@@ -803,7 +877,9 @@ public class XChart implements IRender {
 	 */
 	public Legend getDyLegend()
 	{
-		if(null == mDyLegend)mDyLegend = new LegendRender();
+		if(null == mDyLegend) {
+            mDyLegend = new LegendRender();
+        }
 		
 		return mDyLegend;
 	}
@@ -840,15 +916,21 @@ public class XChart implements IRender {
 	 */
 	public DyLine getDyLine()
 	{
-		if(null == mDyLine) mDyLine = new DyLineRender();
+		if(null == mDyLine) {
+            mDyLine = new DyLineRender();
+        }
 		return mDyLine;
 	}
 	
 	//交叉线
 	private void drawDyLine(Canvas canvas)
 	{
-		if(!mDyLineVisible)return;		
-		if(null == mDyLine)mDyLine = new DyLineRender();
+		if(!mDyLineVisible) {
+            return;
+        }
+		if(null == mDyLine) {
+            mDyLine = new DyLineRender();
+        }
 		mDyLine.renderLine(canvas,plotArea.getLeft(),plotArea.getTop(),
 								  plotArea.getRight(),plotArea.getBottom());
 	}
@@ -888,8 +970,9 @@ public class XChart implements IRender {
 		boolean ret = true;
 		try {
 			
-				if (null == canvas)
-						return false;
+				if (null == canvas) {
+                    return false;
+                }
 				
 				
 				canvas.save();

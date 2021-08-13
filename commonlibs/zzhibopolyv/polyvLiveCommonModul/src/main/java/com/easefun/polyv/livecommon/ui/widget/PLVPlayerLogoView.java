@@ -44,8 +44,9 @@ public class PLVPlayerLogoView extends FrameLayout {
     }
 
     private void addLogo(final LogoParam logoParam, boolean posted) {
-        if (logoParam == null)
+        if (logoParam == null) {
             return;
+        }
         if (!posted && (logoParam.width < 1 || logoParam.height < 1)) {
             if (getWidth() == 0 || getHeight() == 0) {
                 post(new Runnable() {

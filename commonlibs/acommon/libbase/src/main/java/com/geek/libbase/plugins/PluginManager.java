@@ -48,7 +48,7 @@ public class PluginManager {
 
     public void init(Context context) {
         this.context = context.getApplicationContext();
-        pluginItemHashMap = new HashMap<>();
+        pluginItemHashMap = new HashMap<>(16);
     }
 
     /**

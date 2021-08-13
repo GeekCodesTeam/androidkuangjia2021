@@ -77,22 +77,22 @@ public class Permission {
         public static final String[] CONTACTS = new String[]{Permission.READ_CONTACTS, Permission.WRITE_CONTACTS, Permission.GET_ACCOUNTS};
 
         public static final String[] LOCATION = new String[]{Permission.ACCESS_FINE_LOCATION, Permission.ACCESS_COARSE_LOCATION,
-            Permission.ACCESS_BACKGROUND_LOCATION};
+                Permission.ACCESS_BACKGROUND_LOCATION};
 
         public static final String[] MICROPHONE = new String[]{Permission.RECORD_AUDIO};
 
         public static final String[] PHONE = new String[]{Permission.READ_PHONE_STATE, Permission.CALL_PHONE, Permission.USE_SIP,
-            Permission.READ_PHONE_NUMBERS, Permission.ANSWER_PHONE_CALLS, Permission.ADD_VOICEMAIL};
+                Permission.READ_PHONE_NUMBERS, Permission.ANSWER_PHONE_CALLS, Permission.ADD_VOICEMAIL};
 
         public static final String[] CALL_LOG = new String[]{Permission.READ_CALL_LOG, Permission.WRITE_CALL_LOG,
-            Permission.PROCESS_OUTGOING_CALLS};
+                Permission.PROCESS_OUTGOING_CALLS};
 
         public static final String[] SENSORS = new String[]{Permission.BODY_SENSORS};
 
         public static final String[] ACTIVITY_RECOGNITION = new String[]{Permission.ACTIVITY_RECOGNITION};
 
         public static final String[] SMS = new String[]{Permission.SEND_SMS, Permission.RECEIVE_SMS, Permission.READ_SMS,
-            Permission.RECEIVE_WAP_PUSH, Permission.RECEIVE_MMS};
+                Permission.RECEIVE_WAP_PUSH, Permission.RECEIVE_MMS};
 
         public static final String[] STORAGE = new String[]{Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE};
     }
@@ -178,7 +178,7 @@ public class Permission {
                 case Permission.WRITE_CALL_LOG:
                 case Permission.PROCESS_OUTGOING_CALLS: {
                     int messageId = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
-                        R.string.permission_name_call_log : R.string.permission_name_phone;
+                            R.string.permission_name_call_log : R.string.permission_name_phone;
                     String message = context.getString(messageId);
                     if (!textList.contains(message)) {
                         textList.add(message);
@@ -218,6 +218,8 @@ public class Permission {
                     }
                     break;
                 }
+                default:
+                    break;
             }
         }
         return textList;

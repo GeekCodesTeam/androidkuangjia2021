@@ -117,6 +117,8 @@ public class ShortcutPermissionChecker {
                     return ShortcutPermission.PERMISSION_DENIED;
                 case "5":
                     return ShortcutPermission.PERMISSION_ASK;
+                default:
+                    break;
             }
         } catch (Exception e) {
             MyLogUtil.e(TAG, e.getMessage());

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="60dp"
+    android:layout_marginRight="@dimen/textsize_normal"
+    android:layout_marginLeft="@dimen/textsize_normal"
+    android:layout_marginTop="@dimen/textsize_normal"
+    android:layout_marginBottom="@dimen/textsize_normal"
+    android:background="@color/white_transparent">
+
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentLeft="true"
+        android:text = "haha"
+        android:textColor="@color/white"
+        android:id="@+id/wifiname"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"/>
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_usercenter_rightarrow"
+        android:scaleType="centerInside"
+        android:layout_centerVertical="true"/>
+
+
+
+
+</RelativeLayout>

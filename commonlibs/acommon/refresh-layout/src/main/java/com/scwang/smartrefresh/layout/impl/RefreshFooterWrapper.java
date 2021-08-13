@@ -27,6 +27,7 @@ public class RefreshFooterWrapper implements RefreshFooter {
         this.mWrapperView = wrapper;
     }
 
+    @Override
     @NonNull
     public View getView() {
         return mWrapperView;

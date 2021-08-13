@@ -21,19 +21,6 @@ include ':libsCenterNew',
         ':libsCenterNew:opendroid2'
 // end aar
 
-//include ':yewulibs3',
-//        ':yewulibs3:app',
-//        ':yewulibs3:slbdoodle',
-//        ':yewulibs3:slbMZBannerViewLibrary',
-//        ':yewulibs3:slbpicturelibrary',
-//        ':yewulibs3:slbpicturelibraryucrop',
-//        ':yewulibs3:slbpictureviewerlibrary',
-//        ':yewulibs3:slbdachshundtablayout',
-//        ':yewulibs3:slbcalendarlibrary',
-//        ':yewulibs3:slbxpopuplibrary',
-//        ':yewulibs3:updateapputils',
-//        ':yewulibs3:slbfloatwindow',
-//        ':yewulibs3:slbbaselibrary'
 // start app
 include ':yewulibs1',
         ':yewulibs1:yewulibs1-bizyewu1',
@@ -52,22 +39,22 @@ include ':yewulibs1',
 
 // commonlibs
 include ':commonlibs',
-        ':commonlibs:acommon:baselibrary',
-        ':commonlibs:acommon:libagentweb',
+//        ':commonlibs:acommon:libotherlibs',
 //        ':commonlibs:acommon:libagentweb-filechooser',
-        ':commonlibs:acommon:libmvp',
-        ':commonlibs:acommon:libbase',
-        ':commonlibs:acommon:libutils',
-        ':commonlibs:acommon:libretrofit',
-        ':commonlibs:acommon:libglide47',
-        ':commonlibs:acommon:libwebview',
-        ':commonlibs:acommon:libswipebacklayout',
-        ':commonlibs:acommon:librararyforfileprovdider',
-        ':commonlibs:acommon:refresh-footer',
-        ':commonlibs:acommon:refresh-header',
-        ':commonlibs:acommon:refresh-layout',
-        ':commonlibs:acommon:zxinglibs3',
-        ':commonlibs:acommon:liblanguage',
+//        ':commonlibs:acommon:libmvp',
+//        ':commonlibs:acommon:libbase',
+//        ':commonlibs:acommon:libutils',
+//        ':commonlibs:acommon:libretrofit',
+//        ':commonlibs:acommon:libglide47',
+//        ':commonlibs:acommon:libwebview',
+//        ':commonlibs:acommon:libswipebacklayout',
+//        ':commonlibs:acommon:librararyforfileprovdider',
+//        ':commonlibs:acommon:refresh-footer',
+//        ':commonlibs:acommon:refresh-header',
+//        ':commonlibs:acommon:refresh-layout',
+//        ':commonlibs:acommon:zxinglibs3',
+//        ':commonlibs:acommon:liblanguage',
+        ':commonlibs:bhunheku:libagentweb',
         ':commonlibs:bhunheku:libappmob',
         ':commonlibs:bhunheku:libpdf',
         ':commonlibs:bhunheku:liblocations',
@@ -127,45 +114,31 @@ include ':zfsjx-commonlibs',
         ':zfsjx-commonlibs:libIjkPlayer',
         ':zfsjx-commonlibs:libFosungFrame',
         ':zfsjx-commonlibs:libappservices',
-        ':zfsjx-commonlibs:recyclertreeview-lib'
+        ':zfsjx-commonlibs:recyclertreeviewlib'
 // fsjxcommonlibs
 
 // start app1
-//include ':yewulibsdengta',
-//        ':yewulibsdengta:yewulibs-appdengta',
-//        ':yewulibsdengta:yewulibs-biz-dengta1',
-//        ':yewulibsdengta:yewulibs-commonlibvariants'
-// end app1
-
-// start app2
 //include ':zfsjx-dangjiantongxinping',
 //        ':zfsjx-dangjiantongxinping:yewulibs-biz-daping1',
 //        ':zfsjx-dangjiantongxinping:yewulibs-commonlibvariants',
 //        ':zfsjx-dangjiantongxinping:yewulibs-common:libIjkPlayer',
 //        ':zfsjx-dangjiantongxinping:tv',
 //        ':zfsjx-dangjiantongxinping:mobile'
+// end app1
+
+// start app2
+include ':zfsjx-yitihuazhihuipingtai',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-app',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appcomm',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appindex',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appsplash',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-applogin',
+        ':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants'
 // end app2
 
 // start app3
-//include ':fsjxapp1',
-//        ':fsjxapp1:yewulibs-appdengta1',
-//        ':fsjxapp1:yewulibs-biz-dengta1',
-//        ':fsjxapp1:yewulibs-commonlibvariants'
-// end app3
-
-// start app4
-//include ':zfsjx-yitihuazhihuipingtai',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-app',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appcomm',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appindex',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appsplash',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-applogin',
-//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants'
-// end app4
-
-// start app5
 include ':zfsjx-dengta20-fenzhi1',
         ':zfsjx-dengta20-fenzhi1:app',
         ':zfsjx-dengta20-fenzhi1:libyewu-appsplash',
@@ -180,6 +153,7 @@ include ':zfsjx-dengta20-fenzhi1',
         ':zfsjx-dengta20-fenzhi1:libyewu-vpndenglu',
         ':zfsjx-dengta20-fenzhi1:libyewu-yonghudenglu',
         ':zfsjx-dengta20-fenzhi1:libyewu-my',
+        ':zfsjx-dengta20-fenzhi1:libyewu-common',
         ':zfsjx-dengta20-fenzhi1:libyewu-biz1',
         ':zfsjx-dengta20-fenzhi1:libyewu-biz2',
         ':zfsjx-dengta20-fenzhi1:libyewu-eduapi',
@@ -188,4 +162,4 @@ include ':zfsjx-dengta20-fenzhi1',
 //        ':zfsjx-dengta20-fenzhi1:neplugin',
 //        ':zfsjx-dengta20-fenzhi1:mylibyewu1',
         ':zfsjx-dengta20-fenzhi1:libyewu-variants'
-// start app5
+// start app3

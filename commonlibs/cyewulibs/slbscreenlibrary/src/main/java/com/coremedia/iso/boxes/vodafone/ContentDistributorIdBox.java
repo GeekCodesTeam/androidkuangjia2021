@@ -44,6 +44,7 @@ public class ContentDistributorIdBox extends AbstractFullBox {
         return contentDistributorId;
     }
 
+    @Override
     protected long getContentSize() {
         return 2 + Utf8.utf8StringLengthInBytes(contentDistributorId) + 5;
     }
@@ -64,6 +65,7 @@ public class ContentDistributorIdBox extends AbstractFullBox {
 
     }
 
+    @Override
     public String toString() {
         return "ContentDistributorIdBox[language=" + getLanguage() + ";contentDistributorId=" + getContentDistributorId() + "]";
     }

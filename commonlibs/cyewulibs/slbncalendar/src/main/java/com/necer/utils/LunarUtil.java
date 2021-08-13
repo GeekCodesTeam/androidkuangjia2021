@@ -17,7 +17,7 @@ public class LunarUtil {
     /**
      * 用于保存中文的月份
      */
-    private final static String CHINESE_NUMBER[] = {"一", "二", "三", "四", "五",
+    private final static String[] CHINESE_NUMBER = {"一", "二", "三", "四", "五",
             "六", "七", "八", "九", "十", "冬", "腊"};
 
 
@@ -30,7 +30,7 @@ public class LunarUtil {
      * 1001 0101 0101 1010 1011 1111
      * 闰九月  农历正月初一对应公历1月31号
      */
-    private static final int LUNAR_INFO[] = {
+    private static final int[] LUNAR_INFO = {
             0x84B6BF,/*1900*/
             0x04AE53, 0x0A5748, 0x5526BD, 0x0D2650, 0x0D9544, 0x46AAB9, 0x056A4D, 0x09AD42, 0x24AEB6, 0x04AE4A,/*1901-1910*/
             0x6A4DBE, 0x0A4D52, 0x0D2546, 0x5D52BA, 0x0B544E, 0x0D6A43, 0x296D37, 0x095B4B, 0x749BC1, 0x049754,/*1911-1920*/
@@ -98,7 +98,7 @@ public class LunarUtil {
     private static String[] Gan = {"癸", "甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬"};
     private static String[] Zhi = {"亥", "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"};
     private static String[] Animals = {"猪", "鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗"};
-    private static String chineseTen[] = {"初", "十", "廿", "卅"};
+    private static String[] chineseTen = {"初", "十", "廿", "卅"};
 
     /**
      * 传回农历year年month月的总天数
@@ -148,10 +148,11 @@ public class LunarUtil {
      */
     public static int daysInLunarMonth(int year, int month) {
 
-        if ((LUNAR_INFO[year - MIN_YEAR] & (0x100000 >> month)) == 0)
+        if ((LUNAR_INFO[year - MIN_YEAR] & (0x100000 >> month)) == 0) {
             return 29;
-        else
+        } else {
             return 30;
+        }
     }
 
     /**
@@ -256,9 +257,9 @@ public class LunarUtil {
 
     private static String getDrawStr(int lunatMonth, int lunatDay, boolean isLeap) {
         String relust = "";
-        if (relust.equals("初一") && isLeap) {
+        if ("初一".equals(relust) && isLeap) {
             relust = "闰" + CHINESE_NUMBER[lunatMonth - 1] + "月";
-        } else if (relust.equals("初一") && !isLeap) {
+        } else if ("初一".equals(relust) && !isLeap) {
             relust = CHINESE_NUMBER[lunatMonth - 1] + "月";
         } else if (lunatDay == 10) {
             relust = "初十";

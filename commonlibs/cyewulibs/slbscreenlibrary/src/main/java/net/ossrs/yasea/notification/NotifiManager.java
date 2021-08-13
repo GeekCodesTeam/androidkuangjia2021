@@ -33,7 +33,7 @@ public class NotifiManager {
     public void initNotification(Context context) {
         isRecording = true;
         mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, null);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "null");
         mNotification = builder.setContentTitle("录屏中")
                 .setContentText("").setWhen(System.currentTimeMillis())
                 .setDefaults(Notification.DEFAULT_LIGHTS).setSmallIcon(R.drawable.ic_launcher)

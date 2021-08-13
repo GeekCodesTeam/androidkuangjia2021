@@ -34,6 +34,7 @@ public class SoundMediaHeaderBox extends AbstractMediaHeaderBox {
         return balance;
     }
 
+    @Override
     protected long getContentSize() {
         return 8;
     }
@@ -52,6 +53,7 @@ public class SoundMediaHeaderBox extends AbstractMediaHeaderBox {
         IsoTypeWriter.writeUInt16(byteBuffer, 0);
     }
 
+    @Override
     public String toString() {
         return "SoundMediaHeaderBox[balance=" + getBalance() + "]";
     }

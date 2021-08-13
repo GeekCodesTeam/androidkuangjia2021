@@ -115,6 +115,8 @@ public class FunGameBase extends FrameLayout implements RefreshHeader {
                         mRefreshKernel.moveSpinner(mHeaderHeight, true);
                     }
                     break;
+                default:
+                    break;
             }
             return true;
         }
@@ -185,8 +187,9 @@ public class FunGameBase extends FrameLayout implements RefreshHeader {
 
     @Override
     public void onPullingDown(float percent, int offset, int headHeight, int extendHeight) {
-        if (mManualOperation) onManualOperationMove(percent, offset, headHeight, extendHeight);
-        else {
+        if (mManualOperation) {
+            onManualOperationMove(percent, offset, headHeight, extendHeight);
+        } else {
             mOffset = offset;
             setTranslationY(mOffset - mHeaderHeight);
         }

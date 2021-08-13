@@ -60,6 +60,7 @@ public class MagicValenciaFilter extends GPUImageFilter{
         super.onInitialized();
         setFloat(mGLStrengthLocation, 1.0f);
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 inputTextureHandles[0] = OpenGLUtils.loadTexture(getContext(), "filter/valenciamap.png");
                 inputTextureHandles[1] = OpenGLUtils.loadTexture(getContext(), "filter/valenciagradientmap.png");

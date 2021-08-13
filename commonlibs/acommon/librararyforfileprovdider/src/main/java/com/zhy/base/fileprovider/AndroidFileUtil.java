@@ -18,31 +18,33 @@ public class AndroidFileUtil {
 
     public static Intent openFile(String filePath) {
         File file = new File(filePath);
-        if (!file.exists()) return null;
+        if (!file.exists()) {
+            return null;
+        }
         /* 取得扩展名 */
         String end = file.getName().substring(file.getName().lastIndexOf(".") + 1).toLowerCase();
         /* 依扩展名的类型决定MimeType */
-        if (end.equals("m4a") || end.equals("mp3") || end.equals("mid") ||
-                end.equals("xmf") || end.equals("ogg") || end.equals("wav")) {
+        if ("m4a".equals(end) || "mp3".equals(end) || "mid".equals(end) ||
+                "xmf".equals(end) || "ogg".equals(end) || "wav".equals(end)) {
             return getAudioFileIntent(filePath);
-        } else if (end.equals("3gp") || end.equals("mp4")) {
+        } else if ("3gp".equals(end) || "mp4".equals(end)) {
             return getAudioFileIntent(filePath);
-        } else if (end.equals("jpg") || end.equals("gif") || end.equals("png") ||
-                end.equals("jpeg") || end.equals("bmp")) {
+        } else if ("jpg".equals(end) || "gif".equals(end) || "png".equals(end) ||
+                "jpeg".equals(end) || "bmp".equals(end)) {
             return getImageFileIntent(filePath);
-        } else if (end.equals("apk")) {
+        } else if ("apk".equals(end)) {
             return getApkFileIntent(filePath);
-        } else if (end.equals("ppt")) {
+        } else if ("ppt".equals(end)) {
             return getPptFileIntent(filePath);
-        } else if (end.equals("xls")) {
+        } else if ("xls".equals(end)) {
             return getExcelFileIntent(filePath);
-        } else if (end.equals("doc")) {
+        } else if ("doc".equals(end)) {
             return getWordFileIntent(filePath);
-        } else if (end.equals("pdf")) {
+        } else if ("pdf".equals(end)) {
             return getPdfFileIntent(filePath);
-        } else if (end.equals("chm")) {
+        } else if ("chm".equals(end)) {
             return getChmFileIntent(filePath);
-        } else if (end.equals("txt")) {
+        } else if ("txt".equals(end)) {
             return getTextFileIntent(filePath, false);
         } else {
             return getAllIntent(filePath);

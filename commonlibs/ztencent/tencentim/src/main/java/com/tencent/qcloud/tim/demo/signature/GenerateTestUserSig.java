@@ -165,7 +165,7 @@ public class GenerateTestUserSig {
 
     private static byte[] base64EncodeUrl(byte[] input) {
         byte[] base64 = new String(Base64.encode(input, Base64.NO_WRAP)).getBytes();
-        for (int i = 0; i < base64.length; ++i)
+        for (int i = 0; i < base64.length; ++i) {
             switch (base64[i]) {
                 case '+':
                     base64[i] = '*';
@@ -179,6 +179,7 @@ public class GenerateTestUserSig {
                 default:
                     break;
             }
+        }
         return base64;
     }
 

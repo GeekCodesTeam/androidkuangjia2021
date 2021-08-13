@@ -567,7 +567,6 @@ public class MyApplication extends MultiDexApplication {
 //        CrashReport.setIsDevelopmentDevice(mContext, true);
         if (ServiceAddr.isIsDebugServer()) {
             //自测Bugly上报
-//            CrashReport.initCrashReport(mContext, "8450182e5e", true, strategy);
             CrashReport.initCrashReport(mContext, "86380c76a9", true, strategy);
         } else {
             //优化后版本Bugly上报

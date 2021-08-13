@@ -156,6 +156,7 @@ public final class AppleLosslessSpecificBox extends AbstractFullBox {
         super("alac");
     }
 
+    @Override
     protected long getContentSize() {
         return 28;
     }

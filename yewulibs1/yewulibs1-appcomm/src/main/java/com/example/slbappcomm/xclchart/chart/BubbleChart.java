@@ -87,8 +87,9 @@ public class BubbleChart extends LnChart {
 	
 	private void initChart()
 	{
-		if(null != mPlotDot)
-			mPlotDot.setDotStyle(XEnum.DotStyle.DOT);
+		if(null != mPlotDot) {
+            mPlotDot.setDotStyle(XEnum.DotStyle.DOT);
+        }
 		
 		categoryAxisDefaultSetting();
 		dataAxisDefaultSetting();
@@ -99,15 +100,17 @@ public class BubbleChart extends LnChart {
 	@Override
 	protected void categoryAxisDefaultSetting()
 	{		
-		if(null != categoryAxis)
-			categoryAxis.setHorizontalTickAlign(Align.CENTER);
+		if(null != categoryAxis) {
+            categoryAxis.setHorizontalTickAlign(Align.CENTER);
+        }
 	}
 	
 	@Override
 	protected void dataAxisDefaultSetting()
 	{		
-		if(null != dataAxis)
-			dataAxis.setHorizontalTickAlign(Align.LEFT);
+		if(null != dataAxis) {
+            dataAxis.setHorizontalTickAlign(Align.LEFT);
+        }
 	}
 	
 	
@@ -154,7 +157,9 @@ public class BubbleChart extends LnChart {
 	 */
 	public void setCategories( List<String> categories)
 	{
-		if(null != categoryAxis)categoryAxis.setDataBuilding(categories);
+		if(null != categoryAxis) {
+            categoryAxis.setDataBuilding(categories);
+        }
 	}
 	
 	/**
@@ -221,7 +226,9 @@ public class BubbleChart extends LnChart {
 	 */
 	public PlotQuadrant getPlotQuadrant()
 	{
-		if(null == mPlotQuadrant) mPlotQuadrant = new PlotQuadrantRender();
+		if(null == mPlotQuadrant) {
+            mPlotQuadrant = new PlotQuadrantRender();
+        }
 		return mPlotQuadrant;
 	}
 	
@@ -257,7 +264,9 @@ public class BubbleChart extends LnChart {
 	 */
 	private void drawQuadrant(Canvas canvas )
 	{
-		if(!getPlotQuadrant().isShow())return;
+		if(!getPlotQuadrant().isShow()) {
+            return;
+        }
 		
 		Double xValue = getPlotQuadrant().getQuadrantXValue();
 	    Double yValue = getPlotQuadrant().getQuadrantYValue();	    
@@ -274,7 +283,9 @@ public class BubbleChart extends LnChart {
 	{	
 		//得到标签对应的值数据集		
 		List<PointD> chartValues = bd.getDataSet();
-		if(null == chartValues) return ;
+		if(null == chartValues) {
+            return ;
+        }
 															
 	    //画出数据集对应的线条	
 		float YvaluePos = 0.0f,XvaluePos = 0.0f;
@@ -314,7 +325,9 @@ public class BubbleChart extends LnChart {
 		//汽泡颜色
 		getPointPaint().setColor(bd.getColor());	
 		//边框颜色
-		if(bd.getBorderColor() != -1) getPointBorderPaint().setColor(bd.getBorderColor());	
+		if(bd.getBorderColor() != -1) {
+            getPointBorderPaint().setColor(bd.getBorderColor());
+        }
 		
 		float itemAngle = bd.getItemLabelRotateAngle();
 				

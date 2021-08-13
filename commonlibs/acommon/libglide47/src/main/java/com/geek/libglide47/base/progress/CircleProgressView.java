@@ -9,7 +9,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Parcelable;
-//import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ProgressBar;
@@ -164,6 +163,8 @@ public class CircleProgressView extends ProgressBar {
                     needDrawInnerBackground = true;
                 }
                 break;
+            default:
+                break;
         }
         ta.recycle();
     }
@@ -197,6 +198,8 @@ public class CircleProgressView extends ProgressBar {
                         + Math.abs(mRadius * 2)  // 直径
                         + maxBarPaintWidth;// 边框
                 break;
+            default:
+                break;
         }
 
         mRealWidth = resolveSize(width, widthMeasureSpec);
@@ -216,6 +219,8 @@ public class CircleProgressView extends ProgressBar {
                 break;
             case ProgressStyle.FILL_IN_ARC:
                 drawFillInArcCircle(canvas);
+                break;
+            default:
                 break;
         }
     }

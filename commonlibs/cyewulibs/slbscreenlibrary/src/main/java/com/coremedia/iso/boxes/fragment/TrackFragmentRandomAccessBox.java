@@ -65,6 +65,7 @@ public class TrackFragmentRandomAccessBox extends AbstractFullBox {
     }
 
 
+    @Override
     protected long getContentSize() {
         long contentSize = 4;
         contentSize += 4 + 4 /*26 + 2 + 2 + 2 */ + 4;
@@ -259,16 +260,30 @@ public class TrackFragmentRandomAccessBox extends AbstractFullBox {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Entry entry = (Entry) o;
 
-            if (moofOffset != entry.moofOffset) return false;
-            if (sampleNumber != entry.sampleNumber) return false;
-            if (time != entry.time) return false;
-            if (trafNumber != entry.trafNumber) return false;
-            if (trunNumber != entry.trunNumber) return false;
+            if (moofOffset != entry.moofOffset) {
+                return false;
+            }
+            if (sampleNumber != entry.sampleNumber) {
+                return false;
+            }
+            if (time != entry.time) {
+                return false;
+            }
+            if (trafNumber != entry.trafNumber) {
+                return false;
+            }
+            if (trunNumber != entry.trunNumber) {
+                return false;
+            }
 
             return true;
         }

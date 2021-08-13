@@ -191,23 +191,6 @@
 
             </intent-filter>
         </activity>
-        <activity
-            android:name=".baserecycleview.yewu3.ActYewu3"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.ActYewu3" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".baserecycleview.yewu3.EmptyViewLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.SwipeMenuLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.ScrollViewLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.GridLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.StaggeredLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.MultiTypeLayoutActivity" />
-        <activity android:name=".baserecycleview.yewu3.DecorationActivity" />
-        <activity android:name=".baserecycleview.yewu3.DesignSupportActivity" />
-        <activity android:name=".baserecycleview.yewu3.FlexBoxLayoutActivity" />
 
         <activity
             android:name=".jingchengbaohuo.JingChengActivity"

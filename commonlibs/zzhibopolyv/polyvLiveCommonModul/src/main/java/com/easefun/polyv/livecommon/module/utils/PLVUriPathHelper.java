@@ -45,7 +45,9 @@ public class PLVUriPathHelper {
     }
 
     public static String getFileName(Uri uri) {
-        if (uri == null) return null;
+        if (uri == null) {
+            return null;
+        }
         String fileName = null;
         String path = uri.getPath();
         int cut = path.lastIndexOf('/');
@@ -60,7 +62,9 @@ public class PLVUriPathHelper {
         OutputStream outputStream = null;
         try {
             inputStream = context.getContentResolver().openInputStream(srcUri);
-            if (inputStream == null) return;
+            if (inputStream == null) {
+                return;
+            }
             outputStream = new FileOutputStream(dstFile);
             copyStream(inputStream, outputStream);
         } catch (Exception e) {
@@ -142,7 +146,7 @@ public class PLVUriPathHelper {
                 final String[] split = docId.split(":");
                 final String type = split[0];
                 if ("primary".equalsIgnoreCase(type)) {
-                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                    return Environment.getExternalStorageState() + "/" + split[1];
                 }
                 // TODO handle non-primary volumes
             }
@@ -204,8 +208,9 @@ public class PLVUriPathHelper {
             String path = getFilePathFromURI(context, uri);
             return !TextUtils.isEmpty(path) ? path : getFilePathForN(uri, context);
         } finally {
-            if (cursor != null)
+            if (cursor != null) {
                 cursor.close();
+            }
         }
         return null;
     }

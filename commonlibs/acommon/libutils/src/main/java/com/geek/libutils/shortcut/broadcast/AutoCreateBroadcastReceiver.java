@@ -14,6 +14,7 @@ import java.lang.reflect.Field;
 
 public final class AutoCreateBroadcastReceiver extends BroadcastReceiver {
 
+    @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         MyLogUtil.e("Shortcut", "onReceive: " + action);

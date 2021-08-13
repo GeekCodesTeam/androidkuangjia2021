@@ -45,8 +45,9 @@ public class PLVLSEmoGridViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null)
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.plvls_chatroom_chat_emoji_gridview_item, null);
+        }
         ImageView iv_emo = PLVViewInitUtils.get(convertView, R.id.plvls_chatroom_emoji_iv);
         if (iv_emo.getTag() == null) {
             int id = PLVFaceManager.getInstance().getFaceId(lists.get(position));

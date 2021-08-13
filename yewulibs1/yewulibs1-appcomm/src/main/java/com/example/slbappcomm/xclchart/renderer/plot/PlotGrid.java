@@ -139,7 +139,9 @@ public class PlotGrid {
 	public void hideHorizontalLines()
 	{
 		mGridLinesHorizontalVisible = false;
-		if(null != mPaintGridLineHorizontal)mPaintGridLineHorizontal = null;
+		if(null != mPaintGridLineHorizontal) {
+            mPaintGridLineHorizontal = null;
+        }
 	}
 	
 	
@@ -167,7 +169,9 @@ public class PlotGrid {
 	public void hideVerticalLines() 
 	{
 		mGridLinesVerticalVisible = false;
-		if(null != mPaintGridLineVertical)mPaintGridLineVertical =null;
+		if(null != mPaintGridLineVertical) {
+            mPaintGridLineVertical =null;
+        }
 	}
 	
 	
@@ -195,7 +199,9 @@ public class PlotGrid {
 	public void hideOddRowBgColor()
 	{
 		mOddRowBgColorVisible = false;
-		if(null != mPaintOddBgColor) mPaintOddBgColor = null;
+		if(null != mPaintOddBgColor) {
+            mPaintOddBgColor = null;
+        }
 	}
 	
 	/**
@@ -221,7 +227,9 @@ public class PlotGrid {
 	public void  hideEvenRowBgColor() 
 	{
 		mEvenRowBgColorVisible = false;
-		if(null != mPaintEvenBgColor) mPaintEvenBgColor = null;
+		if(null != mPaintEvenBgColor) {
+            mPaintEvenBgColor = null;
+        }
 	}
 	
 	

@@ -428,6 +428,7 @@ public class WaveView extends View implements ViewTreeObserver.OnPreDrawListener
         postInvalidateOnAnimation();
     }
 
+    @Override
     public void postInvalidateOnAnimation() {
         if (Build.VERSION.SDK_INT >= 16) {
             super.postInvalidateOnAnimation();

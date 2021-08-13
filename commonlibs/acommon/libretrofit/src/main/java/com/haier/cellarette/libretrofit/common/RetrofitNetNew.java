@@ -7,8 +7,6 @@ import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.libutils.app.MyLogUtil;
-import com.geek.libutils.data.MmkvUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,9 +45,9 @@ public class RetrofitNetNew {
                 .addInterceptor(addHeaderInterceptor()) // token过滤
                 .addInterceptor(new LoggingInterceptor()) //日志,所有的请求响应度看到 LoggingInterceptor
                 .cache(cache)  //添加缓存
-                .connectTimeout(10l, TimeUnit.SECONDS)
-                .readTimeout(10l, TimeUnit.SECONDS)
-                .writeTimeout(10l, TimeUnit.SECONDS)
+                .connectTimeout(10L, TimeUnit.SECONDS)
+                .readTimeout(10L, TimeUnit.SECONDS)
+                .writeTimeout(10L, TimeUnit.SECONDS)
                 .build();
 
 //        client.dispatcher().runningCalls().get(0).request().tag()
@@ -155,19 +153,13 @@ public class RetrofitNetNew {
                 String timer = System.currentTimeMillis() + "";
                 String accessKey = timer + numcode + accessSecret;
                 String MD5 = version2 + EncryptUtils.encryptMD5ToString(accessKey) + "";
-//                String MD5 = EncryptUtils.encryptMD5ToString("123456") + "";
-//                MyLogUtil.e("ssssssssss", MD5);
-                MyLogUtil.e("ssssssssss", MD5.toUpperCase() + "");
                 Request.Builder requestBuilder = originalRequest.newBuilder()
                         // Provide your custom header here
-//                        .header("token", (String) SpUtils.get("token", ""))
-//                        .header("hxAppVersion", BanbenUtils.getInstance().getVersion())
-//                        .header("liveClientType", BanbenUtils.getInstance().getLiveClientType())
                         .header("imei", BanbenUtils.getInstance().getImei())
-                        .header("platform", SPUtils.getInstance().getString("平台类型", "android_phone"))
-                        .header("token", MmkvUtils.getInstance().get_common("用户token"))
+                        .header("platform", BanbenUtils.getInstance().getPlatform())
+                        .header("token", BanbenUtils.getInstance().getToken())
                         .header("model", DeviceUtils.getManufacturer())
-                        .header("version", AppUtils.getAppVersionName())
+                        .header("version", BanbenUtils.getInstance().getVersion())
                         .header("version_code", AppUtils.getAppVersionCode() + "")
                         .header("X-CA-KEY", accessKey2)
                         .header("X-CA-SIGNATURE", MD5.toUpperCase() + "")

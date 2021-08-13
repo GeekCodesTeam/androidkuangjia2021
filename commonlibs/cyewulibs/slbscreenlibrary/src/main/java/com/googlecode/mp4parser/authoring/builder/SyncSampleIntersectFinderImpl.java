@@ -61,6 +61,7 @@ public class SyncSampleIntersectFinderImpl implements FragmentIntersectionFinder
      * @param movie the context of the track
      * @return an array containing the ordinal of each fragment's first sample
      */
+    @Override
     public long[] sampleNumbers(Track track, Movie movie) {
         final CacheTuple key = new CacheTuple(track, movie);
         final long[] result = getSampleNumbersCache.get(key);
@@ -313,13 +314,21 @@ public class SyncSampleIntersectFinderImpl implements FragmentIntersectionFinder
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             CacheTuple that = (CacheTuple) o;
 
-            if (movie != null ? !movie.equals(that.movie) : that.movie != null) return false;
-            if (track != null ? !track.equals(that.track) : that.track != null) return false;
+            if (movie != null ? !movie.equals(that.movie) : that.movie != null) {
+                return false;
+            }
+            if (track != null ? !track.equals(that.track) : that.track != null) {
+                return false;
+            }
 
             return true;
         }

@@ -30,6 +30,7 @@ public class AppleDataRateBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 8;
     }

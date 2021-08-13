@@ -1,5 +1,7 @@
 package com.example.slbjiaozvideonew;
 
+import static cn.jzvd.Jzvd.backPress;
+
 import android.os.Bundle;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
@@ -12,21 +14,18 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.jzvd.Jzvd;
 
-import static cn.jzvd.Jzvd.backPress;
-
 public class JZVideoMainActivity extends AppCompatActivity {
 
     private VpAdapter adapter;
     private ViewPager viewPager;
-    private BottomNavigationViewEx bottomNavigationViewEx;
-
+    private BottomNavigationView bottomNavigationViewEx;
+    private MenuItem menuItem;
     private SparseIntArray items;// used for change ViewPager selected item
     private List<Fragment> fragments;// used for ViewPager adapter
 
@@ -43,19 +42,19 @@ public class JZVideoMainActivity extends AppCompatActivity {
     private void initView() {
         viewPager = findViewById(R.id.viewpager);
         bottomNavigationViewEx = findViewById(R.id.bottom_navigation);
-        bottomNavigationViewEx.enableAnimation(false);
-        bottomNavigationViewEx.enableShiftingMode(false);
-        bottomNavigationViewEx.enableItemShiftingMode(true);
+//        bottomNavigationViewEx.enableAnimation(false);
+//        bottomNavigationViewEx.enableShiftingMode(false);
+//        bottomNavigationViewEx.enableItemShiftingMode(true);
     }
 
     private void initData() {
         fragments = new ArrayList<>(4);
         items = new SparseIntArray(4);
 
-        Fragment_1_Base basicsFragment = new Fragment_1_Base();
-        Fragment_2_Custom customFragment = new Fragment_2_Custom();
-        Fragment_3_List complexFragment = new Fragment_3_List();
-        Fragment_4_More otherFragment = new Fragment_4_More();
+        Fragment1Base basicsFragment = new Fragment1Base();
+        Fragment2Custom customFragment = new Fragment2Custom();
+        Fragment3List complexFragment = new Fragment3List();
+        Fragment4More otherFragment = new Fragment4More();
 
         fragments.add(basicsFragment);
         fragments.add(customFragment);
@@ -80,7 +79,14 @@ public class JZVideoMainActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-            bottomNavigationViewEx.setCurrentItem(position);
+            if (menuItem != null) {
+                menuItem.setChecked(false);
+            } else {
+                bottomNavigationViewEx.getMenu().getItem(0).setChecked(false);
+            }
+            menuItem = bottomNavigationViewEx.getMenu().getItem(position);
+            menuItem.setChecked(true);
+
             Jzvd.releaseAllVideos();
         }
 

@@ -109,7 +109,10 @@ public class ErrorView extends LinearLayout implements IControlComponent {
                         absDeltaY > ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
                     getParent().requestDisallowInterceptTouchEvent(false);
                 }
+                break;
             case MotionEvent.ACTION_UP:
+                break;
+            default:
                 break;
         }
         return super.dispatchTouchEvent(ev);

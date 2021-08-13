@@ -47,7 +47,7 @@
         tools:text="msg"/>
 
 
-    <com.lib.lock.gesture.customView.PatternLockerView
+    <com.lib.lock.gesture.customview.PatternLockerView
         android:id="@+id/pattern_lock_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,0 +1,9 @@
+apply from: './../commonlibsapks.gradle'
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':zfsjx-dengta20-fenzhi1:libFrame')
+}
+
+// TODO mob
+apply from: './../MobSDK.gradle'

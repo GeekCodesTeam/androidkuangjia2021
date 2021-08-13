@@ -46,7 +46,9 @@ public abstract class MemoryCallBack extends Callback<Boolean> {
         } finally {
             try {
                 response.body().close();
-                if (is != null) is.close();
+                if (is != null) {
+                    is.close();
+                }
             } catch (IOException e) {
             }
 

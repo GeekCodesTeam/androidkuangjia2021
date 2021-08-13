@@ -18,8 +18,9 @@ public class NetState {
 
     public void setNetStateListener(NetconListener listener, Context context) {
         mNet_con = listener;
-        if (mNet_con == null || context == null)
+        if (mNet_con == null || context == null) {
             return;
+        }
         mContext = context;
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
@@ -35,8 +36,9 @@ public class NetState {
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
                 ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                if (connManager == null)
+                if (connManager == null) {
                     return;
+                }
 
                 NetworkInfo wifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
                 NetworkInfo mobile = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);

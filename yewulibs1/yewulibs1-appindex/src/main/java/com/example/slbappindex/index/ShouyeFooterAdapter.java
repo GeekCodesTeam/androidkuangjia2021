@@ -51,8 +51,9 @@ public class ShouyeFooterAdapter extends RecyclerView.Adapter<ShouyeFooterAdapte
 
     @Override
     public int getItemCount() {
-        if (mratings == null)
+        if (mratings == null) {
             return 0;
+        }
         return mratings.size();
     }
 

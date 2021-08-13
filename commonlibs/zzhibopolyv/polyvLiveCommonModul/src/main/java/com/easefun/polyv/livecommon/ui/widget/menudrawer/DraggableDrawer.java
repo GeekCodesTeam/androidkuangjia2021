@@ -187,6 +187,7 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         mCloseEnough = dpToPx(DraggableDrawer.CLOSE_ENOUGH);
     }
 
+    @Override
     public void toggleMenu(boolean animate) {
         if (mDrawerState == STATE_OPEN || mDrawerState == STATE_OPENING) {
             closeMenu(animate);
@@ -195,10 +196,12 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         }
     }
 
+    @Override
     public boolean isMenuVisible() {
         return mMenuVisible;
     }
 
+    @Override
     public void setMenuSize(final int size) {
         mMenuSize = size;
         if (mDrawerState == STATE_OPEN || mDrawerState == STATE_OPENING) {
@@ -213,6 +216,7 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         mDragAreaMenuBottom = bottom;
     }
 
+    @Override
     public void setOffsetMenuEnabled(boolean offsetMenu) {
         if (offsetMenu != mOffsetMenu) {
             mOffsetMenu = offsetMenu;
@@ -221,18 +225,22 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         }
     }
 
+    @Override
     public boolean getOffsetMenuEnabled() {
         return mOffsetMenu;
     }
 
+    @Override
     public void peekDrawer() {
         peekDrawer(DEFAULT_PEEK_START_DELAY, DEFAULT_PEEK_DELAY);
     }
 
+    @Override
     public void peekDrawer(long delay) {
         peekDrawer(DEFAULT_PEEK_START_DELAY, delay);
     }
 
+    @Override
     public void peekDrawer(final long startDelay, final long delay) {
         if (startDelay < 0) {
             throw new IllegalArgumentException("startDelay must be zero or larger.");
@@ -254,6 +262,7 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         postDelayed(mPeekStartRunnable, startDelay);
     }
 
+    @Override
     public void setHardwareLayerEnabled(boolean enabled) {
         if (enabled != mHardwareLayersEnabled) {
             mHardwareLayersEnabled = enabled;
@@ -263,10 +272,12 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         }
     }
 
+    @Override
     public int getTouchMode() {
         return mTouchMode;
     }
 
+    @Override
     public void setTouchMode(int mode) {
         if (mTouchMode != mode) {
             mTouchMode = mode;
@@ -274,10 +285,12 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         }
     }
 
+    @Override
     public void setTouchBezelSize(int size) {
         mTouchBezelSize = size;
     }
 
+    @Override
     public int getTouchBezelSize() {
         return mTouchBezelSize;
     }
@@ -408,7 +421,9 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
             final int oldX = (int) mOffsetPixels;
             final int x = mScroller.getCurrX();
 
-            if (x != oldX) setOffsetPixels(x);
+            if (x != oldX) {
+                setOffsetPixels(x);
+            }
             if (x != mScroller.getFinalX()) {
                 postOnAnimation(mDragRunnable);
                 return;
@@ -438,7 +453,9 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         if (mPeekScroller.computeScrollOffset()) {
             final int oldX = (int) mOffsetPixels;
             final int x = mPeekScroller.getCurrX();
-            if (x != oldX) setOffsetPixels(x);
+            if (x != oldX) {
+                setOffsetPixels(x);
+            }
 
             if (!mPeekScroller.isFinished()) {
                 postOnAnimation(mPeekRunnable);
@@ -509,6 +526,9 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
                     canScroll = canChildScrollVertically(mMenuContainer, false, dy,
                             x - ViewHelper.getLeft(mMenuContainer), y - ViewHelper.getTop(mContentContainer));
                 }
+                break;
+            default:
+                break;
         }
 
         return canScroll;
@@ -617,11 +637,13 @@ public abstract class DraggableDrawer extends PLVMenuDrawer {
         return 0;
     }
 
+    @Override
     void saveState(Bundle state) {
         final boolean menuVisible = mDrawerState == STATE_OPEN || mDrawerState == STATE_OPENING;
         state.putBoolean(STATE_MENU_VISIBLE, menuVisible);
     }
 
+    @Override
     public void restoreState(Parcelable in) {
         super.restoreState(in);
         Bundle state = (Bundle) in;

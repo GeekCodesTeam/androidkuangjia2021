@@ -252,8 +252,12 @@ public class PLVHorizontalExpandMenu extends RelativeLayout {
                                 expandMenu(expandAnimTime);
                             }
                             break;
+                        default:
+                            break;
                     }
                 }
+                break;
+            default:
                 break;
         }
         return true;

@@ -31,12 +31,16 @@ final class ActionBarHelperNative {
                 sii.setHomeAsUpIndicator.invoke(actionBar, drawable);
                 sii.setHomeActionContentDescription.invoke(actionBar, contentDescRes);
             } catch (Throwable t) {
-                if (ActionBarHelper.DEBUG) Log.e(TAG, "Couldn't set home-as-up indicator via JB-MR2 API", t);
+                if (ActionBarHelper.DEBUG) {
+                    Log.e(TAG, "Couldn't set home-as-up indicator via JB-MR2 API", t);
+                }
             }
         } else if (sii.upIndicatorView != null) {
             sii.upIndicatorView.setImageDrawable(drawable);
         } else {
-            if (ActionBarHelper.DEBUG) Log.e(TAG, "Couldn't set home-as-up indicator");
+            if (ActionBarHelper.DEBUG) {
+                Log.e(TAG, "Couldn't set home-as-up indicator");
+            }
         }
     }
 
@@ -47,7 +51,9 @@ final class ActionBarHelperNative {
                 final ActionBar actionBar = activity.getActionBar();
                 sii.setHomeActionContentDescription.invoke(actionBar, contentDescRes);
             } catch (Throwable t) {
-                if (ActionBarHelper.DEBUG) Log.e(TAG, "Couldn't set content description via JB-MR2 API", t);
+                if (ActionBarHelper.DEBUG) {
+                    Log.e(TAG, "Couldn't set content description via JB-MR2 API", t);
+                }
             }
         }
     }

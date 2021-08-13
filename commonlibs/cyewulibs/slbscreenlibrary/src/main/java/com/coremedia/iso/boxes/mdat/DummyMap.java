@@ -27,38 +27,46 @@ public class DummyMap<K, V> implements Map<K, V> {
 
     }
 
+    @Override
     public int size() {
         return keys.size();
     }
 
+    @Override
     public boolean isEmpty() {
         return keys.isEmpty();
     }
 
+    @Override
     public boolean containsKey(Object key) {
         return keys.contains(key);
     }
 
+    @Override
     public boolean containsValue(Object value) {
         return this.value == value;
     }
 
+    @Override
     public V get(Object key) {
         return keys.contains(key) ? value : null;
     }
 
+    @Override
     public V put(K key, V value) {
         assert this.value == value;
         keys.add(key);
         return this.value;
     }
 
+    @Override
     public V remove(Object key) {
         V v = get(key);
         keys.remove(key);
         return v;
     }
 
+    @Override
     public void putAll(Map<? extends K, ? extends V> m) {
         for (K k : m.keySet()) {
             assert m.get(k) == value;
@@ -66,18 +74,22 @@ public class DummyMap<K, V> implements Map<K, V> {
         }
     }
 
+    @Override
     public void clear() {
         keys.clear();
     }
 
+    @Override
     public Set<K> keySet() {
         return keys;
     }
 
+    @Override
     public Collection<V> values() {
         throw new UnsupportedOperationException();
     }
 
+    @Override
     public Set<Entry<K, V>> entrySet() {
         throw new UnsupportedOperationException();
     }

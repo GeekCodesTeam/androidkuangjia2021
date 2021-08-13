@@ -106,6 +106,8 @@ public class LiveControlView extends FrameLayout implements IControlComponent, V
             case VideoView.STATE_BUFFERED:
                 mPlayButton.setSelected(mControlWrapper.isPlaying());
                 break;
+            default:
+                break;
         }
     }
 
@@ -117,6 +119,8 @@ public class LiveControlView extends FrameLayout implements IControlComponent, V
                 break;
             case VideoView.PLAYER_FULL_SCREEN:
                 mFullScreen.setSelected(true);
+                break;
+            default:
                 break;
         }
 

@@ -24,6 +24,7 @@ public class NavigationBarUtil {
         mObserved = content;
         //给View添加全局的布局监听器监听视图的变化
         mObserved.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
             public void onGlobalLayout() {
                 resetViewHeight();
             }

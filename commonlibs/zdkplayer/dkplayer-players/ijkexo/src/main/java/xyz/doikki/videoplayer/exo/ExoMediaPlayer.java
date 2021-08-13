@@ -102,30 +102,36 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public void start() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return;
+        }
         mInternalPlayer.setPlayWhenReady(true);
     }
 
     @Override
     public void pause() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return;
+        }
         mInternalPlayer.setPlayWhenReady(false);
     }
 
     @Override
     public void stop() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return;
+        }
         mInternalPlayer.stop();
     }
 
     @Override
     public void prepareAsync() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return;
-        if (mMediaSource == null) return;
+        }
+        if (mMediaSource == null) {
+            return;
+        }
         if (mSpeedPlaybackParameters != null) {
             mInternalPlayer.setPlaybackParameters(mSpeedPlaybackParameters);
         }
@@ -148,8 +154,9 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public boolean isPlaying() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return false;
+        }
         int state = mInternalPlayer.getPlaybackState();
         switch (state) {
             case Player.STATE_BUFFERING:
@@ -164,8 +171,9 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public void seekTo(long time) {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return;
+        }
         mInternalPlayer.seekTo(time);
     }
 
@@ -186,15 +194,17 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public long getCurrentPosition() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return 0;
+        }
         return mInternalPlayer.getCurrentPosition();
     }
 
     @Override
     public long getDuration() {
-        if (mInternalPlayer == null)
+        if (mInternalPlayer == null) {
             return 0;
+        }
         return mInternalPlayer.getDuration();
     }
 
@@ -212,22 +222,25 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public void setDisplay(SurfaceHolder holder) {
-        if (holder == null)
+        if (holder == null) {
             setSurface(null);
-        else
+        } else {
             setSurface(holder.getSurface());
+        }
     }
 
     @Override
     public void setVolume(float leftVolume, float rightVolume) {
-        if (mInternalPlayer != null)
+        if (mInternalPlayer != null) {
             mInternalPlayer.setVolume((leftVolume + rightVolume) / 2);
+        }
     }
 
     @Override
     public void setLooping(boolean isLooping) {
-        if (mInternalPlayer != null)
+        if (mInternalPlayer != null) {
             mInternalPlayer.setRepeatMode(isLooping ? Player.REPEAT_MODE_ALL : Player.REPEAT_MODE_OFF);
+        }
     }
 
     @Override
@@ -269,8 +282,12 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
 
     @Override
     public void onPlaybackStateChanged(int playbackState) {
-        if (mPlayerEventListener == null) return;
-        if (mIsPreparing) return;
+        if (mPlayerEventListener == null) {
+            return;
+        }
+        if (mIsPreparing) {
+            return;
+        }
         if (mLastReportedPlaybackState != playbackState) {
             switch (playbackState) {
                 case Player.STATE_BUFFERING:
@@ -285,6 +302,8 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
                     break;
                 case Player.STATE_ENDED:
                     mPlayerEventListener.onCompletion();
+                    break;
+                default:
                     break;
             }
             mLastReportedPlaybackState = playbackState;

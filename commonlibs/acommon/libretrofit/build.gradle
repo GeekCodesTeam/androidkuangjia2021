@@ -12,7 +12,8 @@ dependencies {
     api librarys.okhttploggerinter
     api librarys.gsonJson
     api librarys.fastJson
-    implementation project(':commonlibs:acommon:libutils')
+    api librarys.eventbus
+    api librarys.blankj
     //
 //    implementation "com.squareup.okhttp3:okhttp:4.5.0"
 //    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"

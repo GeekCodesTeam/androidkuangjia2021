@@ -31,7 +31,7 @@ public class HMobIDPresenter extends Presenter<HMobIDView> {
         requestData.put("appKey", "ak");//
         requestData.put("appSecret", "as");//
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), requestData.toString());
-        RetrofitNetNew.build(Bizyewu2Api.class, getIdentifier()).get_mob_id("http://t-ums.ireign.cn:8380/api/ums/terminal/bind", requestBody).enqueue(new Callback<Object>() {
+        RetrofitNetNew.build(Bizyewu2Api.class, getIdentifier()).get_mob_id("http://t-ums.ireign.cn/gwapi/ums/api/ums/terminal/bind", requestBody).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (!hasView()) {
@@ -40,7 +40,7 @@ public class HMobIDPresenter extends Presenter<HMobIDView> {
                 if (response.body() == null) {
                     return;
                 }
-//                if (response.body().getCode() != 0) {
+//                if (!response.body().isSuccess()) {
 //                    getView().OnMobIDNodata(response.body().getMsg());
 //                    return;
 //                }

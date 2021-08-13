@@ -331,27 +331,54 @@ public class ESDescriptor extends BaseDescriptor {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         ESDescriptor that = (ESDescriptor) o;
 
-        if (URLFlag != that.URLFlag) return false;
-        if (URLLength != that.URLLength) return false;
-        if (dependsOnEsId != that.dependsOnEsId) return false;
-        if (esId != that.esId) return false;
-        if (oCREsId != that.oCREsId) return false;
-        if (oCRstreamFlag != that.oCRstreamFlag) return false;
-        if (remoteODFlag != that.remoteODFlag) return false;
-        if (streamDependenceFlag != that.streamDependenceFlag) return false;
-        if (streamPriority != that.streamPriority) return false;
-        if (URLString != null ? !URLString.equals(that.URLString) : that.URLString != null) return false;
-        if (decoderConfigDescriptor != null ? !decoderConfigDescriptor.equals(that.decoderConfigDescriptor) : that.decoderConfigDescriptor != null)
+        if (URLFlag != that.URLFlag) {
             return false;
-        if (otherDescriptors != null ? !otherDescriptors.equals(that.otherDescriptors) : that.otherDescriptors != null)
+        }
+        if (URLLength != that.URLLength) {
             return false;
-        if (slConfigDescriptor != null ? !slConfigDescriptor.equals(that.slConfigDescriptor) : that.slConfigDescriptor != null)
+        }
+        if (dependsOnEsId != that.dependsOnEsId) {
             return false;
+        }
+        if (esId != that.esId) {
+            return false;
+        }
+        if (oCREsId != that.oCREsId) {
+            return false;
+        }
+        if (oCRstreamFlag != that.oCRstreamFlag) {
+            return false;
+        }
+        if (remoteODFlag != that.remoteODFlag) {
+            return false;
+        }
+        if (streamDependenceFlag != that.streamDependenceFlag) {
+            return false;
+        }
+        if (streamPriority != that.streamPriority) {
+            return false;
+        }
+        if (URLString != null ? !URLString.equals(that.URLString) : that.URLString != null) {
+            return false;
+        }
+        if (decoderConfigDescriptor != null ? !decoderConfigDescriptor.equals(that.decoderConfigDescriptor) : that.decoderConfigDescriptor != null) {
+            return false;
+        }
+        if (otherDescriptors != null ? !otherDescriptors.equals(that.otherDescriptors) : that.otherDescriptors != null) {
+            return false;
+        }
+        if (slConfigDescriptor != null ? !slConfigDescriptor.equals(that.slConfigDescriptor) : that.slConfigDescriptor != null) {
+            return false;
+        }
 
         return true;
     }

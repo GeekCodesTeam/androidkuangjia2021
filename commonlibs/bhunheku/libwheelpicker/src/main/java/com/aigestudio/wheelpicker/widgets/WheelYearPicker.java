@@ -35,8 +35,9 @@ public class WheelYearPicker extends WheelPicker implements IWheelYearPicker {
 
     private void updateYears() {
         List<Integer> data = new ArrayList<>();
-        for (int i = mYearStart; i <= mYearEnd; i++)
+        for (int i = mYearStart; i <= mYearEnd; i++) {
             data.add(i);
+        }
         super.setData(data);
     }
 

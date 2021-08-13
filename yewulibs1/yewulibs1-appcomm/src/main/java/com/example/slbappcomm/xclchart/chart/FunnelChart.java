@@ -81,7 +81,9 @@ public class FunnelChart extends EventChart {
 	 */
 	public Paint getPaint()
 	{
-		if(null == mPaint)mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaint) {
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		return mPaint;
 	}
 
@@ -91,7 +93,9 @@ public class FunnelChart extends EventChart {
 	 */
 	public Paint getFunnelLinePaint()
 	{
-		if(null == mPaintFunnelLine)mPaintFunnelLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintFunnelLine) {
+            mPaintFunnelLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		mPaintFunnelLine.setStrokeWidth(5);
 		return mPaintFunnelLine;
 	}
@@ -102,7 +106,9 @@ public class FunnelChart extends EventChart {
 	 */
 	public Paint getLabelPaint()
 	{
-		if(null == mPaintLabel)mPaintLabel = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintLabel) {
+            mPaintLabel = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		return mPaintLabel;
 	}
 
@@ -112,7 +118,9 @@ public class FunnelChart extends EventChart {
 	 */
 	public Paint getLabelLinePaint()
 	{
-		if(null == mPaintLabelLine)mPaintLabelLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+		if(null == mPaintLabelLine) {
+            mPaintLabelLine = new Paint(Paint.ANTI_ALIAS_FLAG);
+        }
 		return mPaintLabelLine;
 	}
 
@@ -281,8 +289,12 @@ public class FunnelChart extends EventChart {
 				mDataSet.remove(i);
 			}
 		}
-		if( mDataSet.size() == 0) return false;
-		if( XEnum.SortType.NORMAL != mSortType)Collections.sort(mDataSet);
+		if( mDataSet.size() == 0) {
+            return false;
+        }
+		if( XEnum.SortType.NORMAL != mSortType) {
+            Collections.sort(mDataSet);
+        }
 		return true;
 	}
 
@@ -361,9 +373,13 @@ public class FunnelChart extends EventChart {
 
 			this.getPaint().setColor(d.getColor());
 			path.close();
-			if(d.getAlpha() != -1)getPaint().setAlpha(d.getAlpha());
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(d.getAlpha());
+            }
 			canvas.drawPath(path, this.getPaint());
-			if(d.getAlpha() != -1)getPaint().setAlpha(255);
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(255);
+            }
 
 			if(i != count -1 && mFunnelLineVisible)
 			{
@@ -418,9 +434,13 @@ public class FunnelChart extends EventChart {
 			path.close();
 			
 			this.getPaint().setColor(d.getColor());						
-			if(d.getAlpha() != -1)getPaint().setAlpha(d.getAlpha());						
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(d.getAlpha());
+            }
 			canvas.drawPath(path, this.getPaint());					
-			if(d.getAlpha() != -1)getPaint().setAlpha(255);
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(255);
+            }
 			
 			if(i != count -1 && mFunnelLineVisible)
 			{
@@ -448,9 +468,13 @@ public class FunnelChart extends EventChart {
 			}else{
 				pStart.y = pStop.y = plotArea.getBottom();
 			}									
-			if(d.getAlpha() != -1)getPaint().setAlpha(d.getAlpha());	
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(d.getAlpha());
+            }
 			drawTriangle(canvas,cx, pStart,pStop );
-			if(d.getAlpha() != -1)getPaint().setAlpha(255);
+			if(d.getAlpha() != -1) {
+                getPaint().setAlpha(255);
+            }
 			
 			float labelY = plotArea.getBottom() - plotArea.getHeight()/2;	
 			renderLabels(canvas,d.getLabel(),cx, labelY,d.getColor());
@@ -460,8 +484,12 @@ public class FunnelChart extends EventChart {
 	
 	protected void renderLabels(Canvas canvas,String label,float cx,float y,int color)
 	{		
-		if(!getLabelVisible())return;
-		if("" == label) return;
+		if(!getLabelVisible()) {
+            return;
+        }
+		if("" == label) {
+            return;
+        }
 		
 		if(mIsLabelLineSyncColor)
 		{
@@ -510,7 +538,9 @@ public class FunnelChart extends EventChart {
 	
 	protected void renderPlot(Canvas canvas)
 	{
-		if(!sortDataSet())return;
+		if(!sortDataSet()) {
+            return;
+        }
 		
 		int count = mDataSet.size();
 		float funnelWidth = plotArea.getPlotWidth() * (mPlotWidthPercent/100);

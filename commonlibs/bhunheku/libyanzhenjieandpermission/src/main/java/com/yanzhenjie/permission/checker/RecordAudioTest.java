@@ -45,23 +45,33 @@ class RecordAudioTest implements PermissionTest {
         FileOutputStream fos = null;
         try {
             int[] params = findAudioParameters();
-            if (params == null) return !existMicrophone(mContext);
+            if (params == null) {
+                return !existMicrophone(mContext);
+            }
 
             audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, params[0], params[1], params[2], params[3]);
             int state = audioRecord.getState();
-            if (state != AudioRecord.STATE_INITIALIZED) return !existMicrophone(mContext);
+            if (state != AudioRecord.STATE_INITIALIZED) {
+                return !existMicrophone(mContext);
+            }
 
             int recordState = audioRecord.getRecordingState();
-            if (recordState != AudioRecord.RECORDSTATE_STOPPED) return true;
+            if (recordState != AudioRecord.RECORDSTATE_STOPPED) {
+                return true;
+            }
 
             audioRecord.startRecording();
-            if (audioRecord.getRecordingState() != AudioRecord.RECORDSTATE_RECORDING) return true;
+            if (audioRecord.getRecordingState() != AudioRecord.RECORDSTATE_RECORDING) {
+                return true;
+            }
 
             File cacheDir = new File(mContext.getCacheDir(), "_andpermission_audio_record_test_");
             cacheDir.mkdirs();
 
             file = new File(cacheDir, Long.toString(System.currentTimeMillis()));
-            if (file.exists()) file.createNewFile();
+            if (file.exists()) {
+                file.createNewFile();
+            }
 
             fos = new FileOutputStream(file);
             byte[] buffer = new byte[params[3]];

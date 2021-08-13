@@ -64,8 +64,9 @@ public class BleService extends Service implements BleStateCallback {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        if (bleServiceBinder == null)
+        if (bleServiceBinder == null) {
             bleServiceBinder = new BleServiceBinder();
+        }
         return bleServiceBinder;
     }
 
@@ -138,6 +139,7 @@ public class BleService extends Service implements BleStateCallback {
         bleDataThread = new HandlerThread("handlerBleData");
         bleDataThread.start();
         bleDataHandler = new Handler(bleDataThread.getLooper()) {
+            @Override
             public void handleMessage(android.os.Message msg) {
                 try {
 //                    Thread.sleep(500);
@@ -198,6 +200,8 @@ public class BleService extends Service implements BleStateCallback {
             case BluetoothAdapter.STATE_TURNING_ON:
                 Log.e(TAG, "蓝牙正在开启");
                 break;
+            default:
+                break;
         }
     }
 
@@ -213,16 +217,18 @@ public class BleService extends Service implements BleStateCallback {
             sb.append(hexArray[bit]);
             bit = bs[i] & 0x0f;
             sb.append(hexArray[bit]);
-            if (i != length - 1)
+            if (i != length - 1) {
                 sb.append(",");
+            }
         }
         return sb.toString();
     }
 
     private int getHrData(String str) {
         int hr = 0;
-        if (TextUtils.isEmpty(str))
+        if (TextUtils.isEmpty(str)) {
             return hr;
+        }
         String[] dataArr = str.split(",");
         try {
             List<String> list = Arrays.asList(dataArr);
@@ -300,7 +306,7 @@ public class BleService extends Service implements BleStateCallback {
         double aaa = 0.0;
         int bbb = 0;
         DecimalFormat df = new DecimalFormat("######0.00");
-        if (member.getSex().equals("m")) {
+        if ("m".equals(member.getSex())) {
             bbb = 1;
         } else {
             bbb = 0;
@@ -310,8 +316,9 @@ public class BleService extends Service implements BleStateCallback {
     }
 
     private void handlerBleData(Message message) {
-        if (message == null || message.getData() == null)
+        if (message == null || message.getData() == null) {
             return;
+        }
         BluetoothDevice device = message.getData().getParcelable("device");
         byte[] scanRecord = message.getData().getByteArray("scanRecord");
         String braceletNo = getBraceletNo(device);

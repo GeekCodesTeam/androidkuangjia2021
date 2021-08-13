@@ -61,6 +61,7 @@ public interface ContainerBox extends Box {
      *
      * @return a <code>ContainerBox</code> that contains <code>this</code>
      */
+    @Override
     ContainerBox getParent();
 
     /**

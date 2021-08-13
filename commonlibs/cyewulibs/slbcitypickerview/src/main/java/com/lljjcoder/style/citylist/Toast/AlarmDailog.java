@@ -1,4 +1,4 @@
-package com.lljjcoder.style.citylist.Toast;
+package com.lljjcoder.style.citylist.toast;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -39,6 +39,7 @@ public class AlarmDailog extends Toast
         noticeText.setText(dialogNotice);
     }
 
+    @Override
     public void show()
     {
         toast.show();

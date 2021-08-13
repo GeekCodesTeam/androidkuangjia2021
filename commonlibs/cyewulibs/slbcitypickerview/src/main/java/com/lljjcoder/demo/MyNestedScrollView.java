@@ -43,6 +43,9 @@ public class MyNestedScrollView extends NestedScrollView {
                 if (Math.abs(moveY - downY) > mTouchSlop) {
                     return true;
                 }
+                break;
+            default:
+                break;
         }
         return super.onInterceptTouchEvent(e);
     }

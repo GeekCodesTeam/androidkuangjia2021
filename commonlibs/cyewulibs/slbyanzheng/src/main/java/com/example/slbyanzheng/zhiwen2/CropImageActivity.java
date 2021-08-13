@@ -114,6 +114,7 @@ public class CropImageActivity extends MonitoredActivity {
         });
 
         findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 setResult(RESULT_CANCELED);
                 finish();
@@ -121,6 +122,7 @@ public class CropImageActivity extends MonitoredActivity {
         });
 
         findViewById(R.id.btn_done).setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 onSaveClicked();
             }
@@ -205,9 +207,11 @@ public class CropImageActivity extends MonitoredActivity {
         imageView.setImageRotateBitmapResetBase(rotateBitmap, true);
         CropUtil.startBackgroundJob(this, null, getResources().getString(R.string.crop__wait),
                 new Runnable() {
+                    @Override
                     public void run() {
                         final CountDownLatch latch = new CountDownLatch(1);
                         handler.post(new Runnable() {
+                            @Override
                             public void run() {
                                 if (imageView.getScale() == 1F) {
                                     imageView.center();
@@ -262,6 +266,7 @@ public class CropImageActivity extends MonitoredActivity {
 
         public void crop() {
             handler.post(new Runnable() {
+                @Override
                 public void run() {
                     makeDefault();
                     imageView.invalidate();
@@ -319,6 +324,7 @@ public class CropImageActivity extends MonitoredActivity {
             final Bitmap b = croppedImage;
             CropUtil.startBackgroundJob(this, null, getResources().getString(R.string.crop__saving),
                     new Runnable() {
+                        @Override
                         public void run() {
                             saveOutput(b);
                         }
@@ -414,6 +420,7 @@ public class CropImageActivity extends MonitoredActivity {
 
         final Bitmap b = croppedImage;
         handler.post(new Runnable() {
+            @Override
             public void run() {
                 imageView.clear();
                 b.recycle();

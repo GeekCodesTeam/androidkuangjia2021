@@ -29,7 +29,7 @@
                 android:layout_marginLeft="3dp"
                 android:text="@string/jzvd_auto_orientation" />
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdAutoOrizental
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdAutoOrizental
                 android:id="@+id/jz_auto_oriental"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="3dp"
                 android:text="@string/jzvd_round" />
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdRound
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdRound
                 android:id="@+id/jz_round"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -52,7 +52,7 @@
                 android:layout_marginLeft="3dp"
                 android:text="@string/extend_jzvdstd_delete_view" />
 
-            <com.example.slbjiaozvideonew.CustomJzvd.MyJzvdStdNoTitleNoClarity
+            <com.example.slbjiaozvideonew.customjzvd.MyJzvdStdNoTitleNoClarity
                 android:id="@+id/jz_notitle"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -64,7 +64,7 @@
                 android:text="@string/jzvdstd_delete_view_add_lock" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdLockScreen
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdLockScreen
                 android:id="@+id/lock_screen"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -76,7 +76,7 @@
                 android:text="@string/add_share_btn_after_fullscreen" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdShowShareButtonAfterFullscreen
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdShowShareButtonAfterFullscreen
                 android:id="@+id/custom_videoplayer_standard_with_share_button"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -90,7 +90,7 @@
                 android:text="@string/show_title_when_fullscreen" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdShowTitleAfterFullscreen
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdShowTitleAfterFullscreen
                 android:id="@+id/custom_videoplayer_standard_show_title_after_fullscreen"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -104,7 +104,7 @@
                 android:text="@string/show_textureview_after_complete" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdShowTextureViewAfterAutoComplete
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdShowTextureViewAfterAutoComplete
                 android:id="@+id/custom_videoplayer_standard_show_textureview_aoto_complete"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -118,7 +118,7 @@
                 android:text="@string/auto_complete_after_fullscreen" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdAutoCompleteAfterFullscreen
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdAutoCompleteAfterFullscreen
                 android:id="@+id/custom_videoplayer_standard_aoto_complete"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -160,7 +160,7 @@
                 android:text="@string/volume_after_fullscreen" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdVolumeAfterFullscreen
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdVolumeAfterFullscreen
                 android:id="@+id/jz_videoplayer_volume"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -173,7 +173,7 @@
                 android:text="@string/add_volume_btn" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdVolume
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdVolume
                 android:id="@+id/custom_videoplayer_standard_with_volume_button"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -187,7 +187,7 @@
                 android:text="@string/play_mp3" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdMp3
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdMp3
                 android:id="@+id/jz_videoplayer_mp3"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -201,7 +201,7 @@
                 android:text="@string/play_speed" />
 
 
-            <com.example.slbjiaozvideonew.CustomJzvd.JzvdStdSpeed
+            <com.example.slbjiaozvideonew.customjzvd.JzvdStdSpeed
                 android:id="@+id/jz_videoplayer_speed"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />

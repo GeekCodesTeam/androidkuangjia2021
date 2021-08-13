@@ -87,43 +87,53 @@ public class AC3TrackImpl extends AbstractTrack {
     }
 
 
+    @Override
     public List<ByteBuffer> getSamples() {
 
         return samples;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "soun";
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return new SoundMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }
@@ -160,7 +170,8 @@ public class AC3TrackImpl extends AbstractTrack {
             case 3:
                 samplerate = 0;
                 break;
-
+            default:
+                break;
         }
         if (samplerate == 0) {
             return false;
@@ -228,6 +239,8 @@ public class AC3TrackImpl extends AbstractTrack {
 
             case 7:
                 channelCount = 5;
+                break;
+            default:
                 break;
 
         }

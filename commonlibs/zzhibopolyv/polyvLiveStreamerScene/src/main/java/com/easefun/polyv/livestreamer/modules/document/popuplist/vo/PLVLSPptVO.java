@@ -101,19 +101,33 @@ public class PLVLSPptVO implements Cloneable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         PLVLSPptVO pptVO = (PLVLSPptVO) o;
 
-        if (image != null ? !image.equals(pptVO.image) : pptVO.image != null) return false;
-        if (name != null ? !name.equals(pptVO.name) : pptVO.name != null) return false;
-        if (suffix != null ? !suffix.equals(pptVO.suffix) : pptVO.suffix != null) return false;
-        if (id != null ? !id.equals(pptVO.id) : pptVO.id != null) return false;
-        if (uploadStatus != null ? !uploadStatus.equals(pptVO.uploadStatus) : pptVO.uploadStatus != null)
+        if (image != null ? !image.equals(pptVO.image) : pptVO.image != null) {
             return false;
-        if (uploadProgress != null ? !uploadProgress.equals(pptVO.uploadProgress) : pptVO.uploadProgress != null)
+        }
+        if (name != null ? !name.equals(pptVO.name) : pptVO.name != null) {
             return false;
+        }
+        if (suffix != null ? !suffix.equals(pptVO.suffix) : pptVO.suffix != null) {
+            return false;
+        }
+        if (id != null ? !id.equals(pptVO.id) : pptVO.id != null) {
+            return false;
+        }
+        if (uploadStatus != null ? !uploadStatus.equals(pptVO.uploadStatus) : pptVO.uploadStatus != null) {
+            return false;
+        }
+        if (uploadProgress != null ? !uploadProgress.equals(pptVO.uploadProgress) : pptVO.uploadProgress != null) {
+            return false;
+        }
         return fileId != null ? fileId.equals(pptVO.fileId) : pptVO.fileId == null;
     }
 

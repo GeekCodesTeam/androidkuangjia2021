@@ -64,12 +64,16 @@ public class Glide48ImageLoaderUtils {
                 //1. create path
                 String dirPath = Utils.getApp().getExternalFilesDir(null).getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
                 File dirFile = new File(dirPath);
-                if (!dirFile.exists()) dirFile.mkdirs();
+                if (!dirFile.exists()) {
+                    dirFile.mkdirs();
+                }
                 try {
                     Glide48ImageType type = Glide48ImageHeaderParser.getImageType(new FileInputStream(source));
                     String ext = getFileExt(type);
                     final File target = new File(dirPath, System.currentTimeMillis() + "." + ext);
-                    if (target.exists()) target.delete();
+                    if (target.exists()) {
+                        target.delete();
+                    }
                     target.createNewFile();
                     //2. save
                     writeFileFromIS(target, new FileInputStream(source));
@@ -113,6 +117,8 @@ public class Glide48ImageLoaderUtils {
                 return "webp";
             case JPEG:
                 return "jpeg";
+            default:
+                break;
         }
         return "jpeg";
     }

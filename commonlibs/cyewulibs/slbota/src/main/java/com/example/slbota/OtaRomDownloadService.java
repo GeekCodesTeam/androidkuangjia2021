@@ -216,6 +216,7 @@ public class OtaRomDownloadService extends Service {
                 intent.putExtra("bin", "cp -f " + saveFile.toString() + " /cache/update.zip");
                 sendBroadcast(intent);
                 handler.postDelayed(new Runnable() {
+                    @Override
                     public void run() {
                         Intent intent = new Intent();
                         intent.setAction("android.intent.action.runbin");
@@ -224,6 +225,7 @@ public class OtaRomDownloadService extends Service {
                     }
                 }, 1000);
                 handler.postDelayed(new Runnable() {
+                    @Override
                     public void run() {
                         Intent intent = new Intent();
                         intent.setAction("com.haier.gradevin.action.dameon.updatefile");

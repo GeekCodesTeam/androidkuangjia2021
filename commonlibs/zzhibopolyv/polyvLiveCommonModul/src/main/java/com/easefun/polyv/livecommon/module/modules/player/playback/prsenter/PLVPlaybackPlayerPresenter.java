@@ -339,8 +339,9 @@ public class PLVPlaybackPlayerPresenter implements IPLVPlaybackPlayerContract.IP
                 public void onCountdown(int totalTime, int remainTime, int adStage) {
                     boolean isOpenAdHead = subVideoView != null && subVideoView.isOpenHeadAd();
                     IPLVPlaybackPlayerContract.IPlaybackPlayerView view = getView();
-                    if (view != null)
+                    if (view != null) {
                         view.onSubVideoViewCountDown(isOpenAdHead, totalTime, remainTime, adStage);
+                    }
                 }
 
                 @Override

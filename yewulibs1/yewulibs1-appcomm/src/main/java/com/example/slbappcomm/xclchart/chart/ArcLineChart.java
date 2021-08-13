@@ -80,8 +80,9 @@ public class ArcLineChart  extends XChart {
 	public ArcLineChart()
 	{	
 		int fillColor = Color.BLACK;
-		if( null != plotArea)
-			 fillColor =  this.plotArea.getBackgroundPaint().getColor();		
+		if( null != plotArea) {
+            fillColor =  this.plotArea.getBackgroundPaint().getColor();
+        }
 		
 		if(null == mPaintFill)
 		{
@@ -90,7 +91,9 @@ public class ArcLineChart  extends XChart {
 			mPaintFill.setAntiAlias(true);
 		}
 		
-		if(null == plotAttrInfoRender)plotAttrInfoRender = new PlotAttrInfoRender();
+		if(null == plotAttrInfoRender) {
+            plotAttrInfoRender = new PlotAttrInfoRender();
+        }
 		
 		//初始化图例
 		if(null != plotLegend)
@@ -297,7 +300,9 @@ public class ArcLineChart  extends XChart {
 		for(ArcLineData cData : mDataset)
 		{						
 			currentAngle = cData.getSliceAngle();							
-			if(!validateAngle(currentAngle)) continue; 
+			if(!validateAngle(currentAngle)) {
+                continue;
+            }
 							
 			getLabelPaint().setColor(cData.getBarColor());	
 			
@@ -352,7 +357,9 @@ public class ArcLineChart  extends XChart {
 		for(ArcLineData cData : mDataset)
 		{							
 			currentAngle = cData.getSliceAngle();							
-			if(!validateAngle(currentAngle)) continue; 
+			if(!validateAngle(currentAngle)) {
+                continue;
+            }
 			
 			getLinePaint().setColor(cData.getBarColor());	
 			DrawHelper.getInstance().drawPercent(canvas,
@@ -427,8 +434,9 @@ public class ArcLineChart  extends XChart {
 	public boolean render(Canvas canvas) throws Exception {
 		// TODO Auto-generated method stubcalcPlotRange
 		try {
-				if (null == canvas)
-						return false;
+				if (null == canvas) {
+                    return false;
+                }
 				
 				if(getPanModeStatus())
 				{											

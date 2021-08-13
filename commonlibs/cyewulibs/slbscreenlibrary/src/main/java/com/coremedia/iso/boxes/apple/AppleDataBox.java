@@ -52,6 +52,7 @@ public final class AppleDataBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return data.length + 8;
     }

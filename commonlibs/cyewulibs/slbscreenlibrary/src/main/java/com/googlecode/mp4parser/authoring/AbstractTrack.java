@@ -25,18 +25,22 @@ public abstract class AbstractTrack implements Track {
     private boolean inPreview = true;
     private boolean inPoster = true;
 
+    @Override
     public boolean isEnabled() {
         return enabled;
     }
 
+    @Override
     public boolean isInMovie() {
         return inMovie;
     }
 
+    @Override
     public boolean isInPreview() {
         return inPreview;
     }
 
+    @Override
     public boolean isInPoster() {
         return inPoster;
     }

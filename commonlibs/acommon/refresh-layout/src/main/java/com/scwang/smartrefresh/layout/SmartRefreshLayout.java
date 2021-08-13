@@ -1,5 +1,15 @@
 package com.scwang.smartrefresh.layout;
 
+import static android.view.MotionEvent.obtain;
+import static android.view.View.MeasureSpec.AT_MOST;
+import static android.view.View.MeasureSpec.EXACTLY;
+import static android.view.View.MeasureSpec.getSize;
+import static android.view.View.MeasureSpec.makeMeasureSpec;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+import static com.scwang.smartrefresh.layout.util.DensityUtil.dp2px;
+import static java.lang.System.currentTimeMillis;
+
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorListenerAdapter;
@@ -66,16 +76,6 @@ import com.scwang.smartrefresh.layout.util.ViscousFluidInterpolator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.view.MotionEvent.obtain;
-import static android.view.View.MeasureSpec.AT_MOST;
-import static android.view.View.MeasureSpec.EXACTLY;
-import static android.view.View.MeasureSpec.getSize;
-import static android.view.View.MeasureSpec.makeMeasureSpec;
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static com.scwang.smartrefresh.layout.util.DensityUtil.dp2px;
-import static java.lang.System.currentTimeMillis;
 
 /**
  * 智能刷新布局
@@ -420,7 +420,9 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (isInEditMode()) return;
+        if (isInEditMode()) {
+            return;
+        }
 
         if (mHandler == null) {
             mHandler = new Handler();
@@ -829,7 +831,9 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
         float sumX = 0, sumY = 0;
         final int count = e.getPointerCount();
         for (int i = 0; i < count; i++) {
-            if (skipIndex == i) continue;
+            if (skipIndex == i) {
+                continue;
+            }
             sumX += e.getX(i);
             sumY += e.getY(i);
         }
@@ -862,8 +866,12 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
                     break;
                 case MotionEvent.ACTION_UP:
                     mVelocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
+                    break;
                 case MotionEvent.ACTION_CANCEL:
                     mRefreshContent.onActionUpOrCancel();
+                    break;
+                default:
+                    break;
             }
         }
         if ((reboundAnimator != null && !interceptAnimator(action)) || mState.finishing
@@ -1007,6 +1015,8 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
                     }
                 }
                 mIsBeingDragged = false;//关闭拖动状态
+                break;
+            default:
                 break;
         }
         return superDispatchTouchEvent(e);
@@ -2893,6 +2903,8 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
                     }
                     break;
                 }
+                default:
+                    break;
             }
             return null;
         }
@@ -2938,11 +2950,13 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
 
         //<editor-fold desc="视图位移 Spinner">
 
+        @Override
         public RefreshKernel moveSpinner(int spinner, boolean isAnimator) {
             layout.moveSpinner(spinner, isAnimator);
             return this;
         }
 
+        @Override
         public RefreshKernel animSpinner(int endSpinner) {
             layout.animSpinner(endSpinner);
             return this;

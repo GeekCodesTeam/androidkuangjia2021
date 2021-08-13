@@ -39,7 +39,6 @@ import com.geek.zxinglibs3.utils.Saoma3Constant;
 import com.google.zxing.Result;
 
 
-
 /**
  * 二维码扫描使用
  *
@@ -67,7 +66,6 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
     TextView tv_scan_result;
 
 
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -81,12 +79,12 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         title = (TextView) findViewById(R.id.common_title_TV_center);
         scan_hint = (TextView) findViewById(R.id.scan_hint);
         tv_scan_result = (TextView) findViewById(R.id.tv_scan_result);
-        scanMode=getIntent().getIntExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
+        scanMode = getIntent().getIntExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
         initView();
     }
 
     void initView() {
-        switch (scanMode){
+        switch (scanMode) {
             case DecodeThread.BARCODE_MODE:
                 title.setText(R.string.scan_barcode_title);
                 scan_hint.setText(R.string.scan_barcode_hint);
@@ -98,6 +96,8 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
             case DecodeThread.ALL_MODE:
                 title.setText(R.string.scan_allcode_title);
                 scan_hint.setText(R.string.scan_allcode_hint);
+                break;
+            default:
                 break;
         }
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
@@ -113,7 +113,7 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         rescan.setOnClickListener(this);
         authorize_return.setOnClickListener(this);
         //构造出扫描管理器
-        scanManager = new ScanManager(this, scanPreview, scanContainer, scanCropView, scanLine, scanMode,this);
+        scanManager = new ScanManager(this, scanPreview, scanContainer, scanCropView, scanLine, scanMode, this);
     }
 
     @Override
@@ -129,9 +129,11 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         super.onPause();
         scanManager.onPause();
     }
+
     /**
      *
      */
+    @Override
     public void scanResult(Result rawResult, Bundle bundle) {
         //扫描成功后，扫描器不会再连续扫描，如需连续扫描，调用reScan()方法。
         //scanManager.reScan();
@@ -152,7 +154,7 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         rescan.setVisibility(View.VISIBLE);
         scan_image.setVisibility(View.VISIBLE);
         tv_scan_result.setVisibility(View.VISIBLE);
-        tv_scan_result.setText("结果："+rawResult.getText());
+        tv_scan_result.setText("结果：" + rawResult.getText());
     }
 
     void startScan() {
@@ -167,7 +169,7 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
     public void scanError(Exception e) {
         Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         //相机扫描出错时
-        if(e.getMessage()!=null&&e.getMessage().startsWith("相机")){
+        if (e.getMessage() != null && e.getMessage().startsWith("相机")) {
             scanPreview.setVisibility(View.INVISIBLE);
         }
     }
@@ -195,6 +197,9 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
                         }
                         scanManager.scanningImage(photo_path);
                     }
+                    break;
+                default:
+                    break;
             }
         }
     }

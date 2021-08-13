@@ -1,4 +1,4 @@
-package com.example.slbjiaozvideonew.CustomMedia;
+package com.example.slbjiaozvideonew.custommedia;
 
 import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
@@ -29,7 +29,9 @@ public class JZMediaIjk extends JZMediaInterface implements IMediaPlayer.OnPrepa
 
     @Override
     public void start() {
-        if (ijkMediaPlayer != null) ijkMediaPlayer.start();
+        if (ijkMediaPlayer != null) {
+            ijkMediaPlayer.start();
+        }
     }
 
     @Override
@@ -143,7 +145,9 @@ public class JZMediaIjk extends JZMediaInterface implements IMediaPlayer.OnPrepa
 
     @Override
     public long getDuration() {
-        if (ijkMediaPlayer == null) return 0;
+        if (ijkMediaPlayer == null) {
+            return 0;
+        }
         return ijkMediaPlayer.getDuration();
     }
 

@@ -634,7 +634,7 @@ public class GSYDefaultHttpDataSource extends BaseDataSource implements HttpData
         connection.setConnectTimeout(connectTimeoutMillis);
         connection.setReadTimeout(readTimeoutMillis);
 
-        Map<String, String> requestHeaders = new HashMap<>();
+        Map<String, String> requestHeaders = new HashMap<>(16);
         if (defaultRequestProperties != null) {
             requestHeaders.putAll(defaultRequestProperties.getSnapshot());
         }

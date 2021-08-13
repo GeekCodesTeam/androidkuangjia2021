@@ -55,7 +55,9 @@ public class PortraitWhenFullScreenControllerDk extends StandardVideoController 
 
     @Override
     protected void toggleFullScreen() {
-        if (mActivity == null) return;
+        if (mActivity == null) {
+            return;
+        }
         int o = mActivity.getRequestedOrientation();
         if (o == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
             mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

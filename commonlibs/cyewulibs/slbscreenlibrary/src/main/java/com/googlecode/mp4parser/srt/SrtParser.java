@@ -34,7 +34,7 @@ public class SrtParser {
             String timeString = r.readLine();
             String lineString = "";
             String s;
-            while (!((s = r.readLine()) == null || s.trim().equals(""))) {
+            while (!((s = r.readLine()) == null || "".equals(s.trim()))) {
                 lineString += s + "\n";
             }
 

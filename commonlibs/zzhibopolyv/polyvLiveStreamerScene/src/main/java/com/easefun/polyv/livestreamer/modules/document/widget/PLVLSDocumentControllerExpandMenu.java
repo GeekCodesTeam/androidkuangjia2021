@@ -313,8 +313,12 @@ public class PLVLSDocumentControllerExpandMenu extends RelativeLayout {
                                 }
                             }
                             break;
+                        default:
+                            break;
                     }
                 }
+                break;
+            default:
                 break;
         }
         return true;

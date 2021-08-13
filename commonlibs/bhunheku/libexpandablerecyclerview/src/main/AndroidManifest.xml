@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.drawthink.expandable_recyclerview">
+    package="drawthink.expandablerecyclerview">
     <application
         android:allowBackup="true"
         android:label="@string/appnamelibexpandablerecyclerview"
         android:supportsRtl="true">
+        <activity
+            android:name=".demo.ExpandableAct"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.phone.expandableview" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.extextview.TextViewAct"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.phone.TextViewAct" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.eximageview.ImageViewAct"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.phone.ImageViewAct" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

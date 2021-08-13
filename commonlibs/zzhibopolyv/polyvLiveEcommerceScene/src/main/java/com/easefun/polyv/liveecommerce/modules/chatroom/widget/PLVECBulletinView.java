@@ -126,6 +126,7 @@ public class PLVECBulletinView extends FrameLayout {
         int end = clickableHtmlBuilder.getSpanEnd(urlSpan);
         int flags = clickableHtmlBuilder.getSpanFlags(urlSpan);
         ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
             public void onClick(View view) {
                 PLVCommonLog.d(TAG, "clickableSpan click: " + urlSpan.getURL());
             }

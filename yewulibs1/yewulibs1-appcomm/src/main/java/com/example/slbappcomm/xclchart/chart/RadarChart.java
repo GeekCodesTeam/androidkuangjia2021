@@ -94,7 +94,9 @@ public class RadarChart extends RdChart {
 		
 	private void initChart()
 	{		
-		if(null == dataAxis)dataAxis = new DataAxisRender();
+		if(null == dataAxis) {
+            dataAxis = new DataAxisRender();
+        }
 		
 		if(null != dataAxis)
 		{
@@ -103,24 +105,40 @@ public class RadarChart extends RdChart {
 			dataAxis.hideTickMarks();	
 		}
 		
-		if(null == categoryAxis)categoryAxis = new CategoryAxisRender();
+		if(null == categoryAxis) {
+            categoryAxis = new CategoryAxisRender();
+        }
 		
-		if(null == plotLegend)this.plotLegend.show();
+		if(null == plotLegend) {
+            this.plotLegend.show();
+        }
 	}		
 	
 	private void clearArray()
 	{
-		if(null != mArrayDotX) mArrayDotX = null;
-		if(null != mArrayDotY) mArrayDotY= null;
+		if(null != mArrayDotX) {
+            mArrayDotX = null;
+        }
+		if(null != mArrayDotY) {
+            mArrayDotY= null;
+        }
 		
-		if(null != mArrayLabelX) mArrayLabelX = null;
-		if(null != mArrayLabelY) mArrayLabelY= null;
+		if(null != mArrayLabelX) {
+            mArrayLabelX = null;
+        }
+		if(null != mArrayLabelY) {
+            mArrayLabelY= null;
+        }
 		
 		
 		//依次存下每个标签节点归属的圆心角度
-		if(null != mArrayLabelAgent) mArrayLabelAgent = null;
+		if(null != mArrayLabelAgent) {
+            mArrayLabelAgent = null;
+        }
 		//半径
-		if(null != mArrayRadius) mArrayRadius = null;
+		if(null != mArrayRadius) {
+            mArrayRadius = null;
+        }
 	}
 		 	
  	
@@ -159,7 +177,9 @@ public class RadarChart extends RdChart {
 	 *            标签集
 	 */
 	public void setCategories( List<String> dataSeries) {
-		if(null != categoryAxis)categoryAxis.setDataBuilding(dataSeries);
+		if(null != categoryAxis) {
+            categoryAxis.setDataBuilding(dataSeries);
+        }
 	}
 
 	/**
@@ -329,7 +349,9 @@ public class RadarChart extends RdChart {
 	 */
 	private int getAxisTickCount()
 	{		
-		if(null == dataAxis) return 0;
+		if(null == dataAxis) {
+            return 0;
+        }
 		return Math.round(dataAxis.getAixTickCount() + 1);
 	}
 	
@@ -339,7 +361,9 @@ public class RadarChart extends RdChart {
 	 */
 	private int getPlotAgentNumber()
 	{
-		if(null == categoryAxis)return 0;
+		if(null == categoryAxis) {
+            return 0;
+        }
 		return categoryAxis.getDataSet().size();
 	}
 	
@@ -416,7 +440,9 @@ public class RadarChart extends RdChart {
 				}
 		          		        
 		        //记下每个标签对应的圆心角
-		        if(0 == i) mArrayLabelAgent[j] =  currAgent ;
+		        if(0 == i) {
+                    mArrayLabelAgent[j] =  currAgent ;
+                }
 		        
 		        //外围标签位置
 		        MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,labelRadius, currAgent);
@@ -622,7 +648,9 @@ public class RadarChart extends RdChart {
 	 */
 	protected void renderPlot(Canvas canvas)
 	{
-		if(!validateParams()) return;
+		if(!validateParams()) {
+            return;
+        }
 		calcAllPoints();
 		renderGridLines(canvas);
 		

@@ -38,15 +38,18 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
     private static Logger LOG = Logger.getLogger(FullContainerBox.class.getName());
     BoxParser boxParser;
 
+    @Override
     public void setBoxes(List<Box> boxes) {
         this.boxes = new LinkedList<Box>(boxes);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz) {
         return getBoxes(clazz, false);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends Box> List<T> getBoxes(Class<T> clazz, boolean recursive) {
         List<T> boxesToBeReturned = new ArrayList<T>(2);
@@ -64,6 +67,7 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
         //return (T[]) boxesToBeReturned.toArray();
     }
 
+    @Override
     protected long getContentSize() {
         long contentSize = 4; // flags and version
         for (Box boxe : boxes) {
@@ -86,6 +90,7 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
         super(type);
     }
 
+    @Override
     public List<Box> getBoxes() {
         return boxes;
     }
@@ -118,6 +123,7 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
         }
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append(this.getClass().getSimpleName()).append("[");
@@ -132,6 +138,7 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
     }
 
 
+    @Override
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         writeChildBoxes(byteBuffer);
@@ -150,6 +157,7 @@ public abstract class FullContainerBox extends AbstractFullBox implements Contai
         }
     }
 
+    @Override
     public long getNumOfBytesToFirstChild() {
         long sizeOfChildren = 0;
         for (Box box : boxes) {

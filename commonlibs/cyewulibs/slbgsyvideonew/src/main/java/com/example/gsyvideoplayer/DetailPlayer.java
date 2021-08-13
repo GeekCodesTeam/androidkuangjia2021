@@ -128,7 +128,7 @@ public class DetailPlayer extends AppCompatActivity {
         //ProxyCacheManager.DEFAULT_MAX_SIZE = 1024 * 1024 * 1024 * 1024;
         //ProxyCacheManager.DEFAULT_MAX_COUNT = 8;
 
-        Map<String, String> header = new HashMap<>();
+        Map<String, String> header = new HashMap<>(16);
         header.put("ee", "33");
         header.put("allowCrossProtocolRedirects", "true");
         header.put("User-Agent", "GSY");
@@ -263,8 +263,9 @@ public class DetailPlayer extends AppCompatActivity {
             getCurPlay().release();
         }
         //GSYPreViewManager.instance().releaseMediaPlayer();
-        if (orientationUtils != null)
+        if (orientationUtils != null) {
             orientationUtils.releaseListener();
+        }
     }
 
 
@@ -371,7 +372,9 @@ public class DetailPlayer extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (data == null || resultCode != Activity.RESULT_OK) return;
+        if (data == null || resultCode != Activity.RESULT_OK) {
+            return;
+        }
         if (requestCode == READ_REQUEST_CODE) {
             getPathForSearch(data.getData());
         }

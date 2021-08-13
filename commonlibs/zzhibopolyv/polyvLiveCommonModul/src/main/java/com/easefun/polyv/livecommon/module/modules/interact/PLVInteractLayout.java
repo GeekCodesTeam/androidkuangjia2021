@@ -308,6 +308,7 @@ public class PLVInteractLayout extends FrameLayout implements IPLVInteractLayout
             FrameLayout content = activity.findViewById(android.R.id.content);
             mChildOfContent = content.getChildAt(0);
             mChildOfContent.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
                 public void onGlobalLayout() {
                     possiblyResizeChildOfContent();
                 }

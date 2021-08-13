@@ -71,7 +71,7 @@ public class DragFloatActionButton extends androidx.appcompat.widget.AppCompatIm
                 //这里修复一些华为和三星曲面屏手机无法触发点击事件
                 int distance = (int) Math.sqrt(dx * dx + dy * dy);
 //                if (distance == 0) {
-                if (distance == 0||distance<10) {
+                if (distance == 0 || distance < 10) {
                     isDrag = false;
                     break;
                 }
@@ -95,6 +95,8 @@ public class DragFloatActionButton extends androidx.appcompat.widget.AppCompatIm
                 } else {
                     myRunable();
                 }
+                break;
+            default:
                 break;
         }
         //如果是拖拽则消s耗事件，否则正常传递即可。

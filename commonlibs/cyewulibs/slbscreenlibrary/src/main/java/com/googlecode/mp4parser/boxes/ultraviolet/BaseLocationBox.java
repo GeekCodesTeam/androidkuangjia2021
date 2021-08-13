@@ -82,14 +82,21 @@ public class BaseLocationBox extends AbstractFullBox {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         BaseLocationBox that = (BaseLocationBox) o;
 
-        if (baseLocation != null ? !baseLocation.equals(that.baseLocation) : that.baseLocation != null) return false;
-        if (purchaseLocation != null ? !purchaseLocation.equals(that.purchaseLocation) : that.purchaseLocation != null)
+        if (baseLocation != null ? !baseLocation.equals(that.baseLocation) : that.baseLocation != null) {
             return false;
+        }
+        if (purchaseLocation != null ? !purchaseLocation.equals(that.purchaseLocation) : that.purchaseLocation != null) {
+            return false;
+        }
 
         return true;
     }

@@ -2,8 +2,7 @@ apply from: './../../commonlibsapks.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:acommon:baselibrary')
-    implementation project(':commonlibs:acommon:libbase')
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.0'
     implementation project(':yewulibs1:yewulibs1-appcomm')
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')

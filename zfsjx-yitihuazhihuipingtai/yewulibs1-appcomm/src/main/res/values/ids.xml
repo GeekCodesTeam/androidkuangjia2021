@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="custom_full_id" type="id" />
+    <item name="custom_small_id" type="id" />
+
+    <item name="statusbar_view" type="id"/>
+    <item name="translucent_view" type="id"/>
+
+
+
+</resources>

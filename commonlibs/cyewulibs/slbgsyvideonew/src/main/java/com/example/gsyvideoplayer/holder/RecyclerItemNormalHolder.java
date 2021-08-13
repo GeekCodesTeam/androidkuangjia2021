@@ -54,7 +54,7 @@ public class RecyclerItemNormalHolder extends RecyclerItemBaseHolder {
         }
 
 
-        Map<String, String> header = new HashMap<>();
+        Map<String, String> header = new HashMap<>(16);
         header.put("ee", "33");
 
         //防止错位，离开释放

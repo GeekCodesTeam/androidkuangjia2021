@@ -1,4 +1,4 @@
-package com.example.gsyvideoplayer.utils.floatUtil;
+package com.example.gsyvideoplayer.utils.floatutil;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -34,7 +34,7 @@ public class IFloatWindowImpl extends IFloatWindow {
     IFloatWindowImpl(FloatWindow.B b) {
         mB = b;
         if (mB.mMoveType == MoveType.fixed) {
-            if (Build.VERSION.SDK_INT >=25) {
+            if (Build.VERSION.SDK_INT >= 25) {
                 mFloatView = new FloatPhone(b.mApplicationContext);
             } else {
                 mFloatView = new FloatToast(b.mApplicationContext);
@@ -71,7 +71,9 @@ public class IFloatWindowImpl extends IFloatWindow {
             once = false;
             isShow = true;
         } else {
-            if (isShow) return;
+            if (isShow) {
+                return;
+            }
             getView().setVisibility(View.VISIBLE);
             isShow = true;
         }
@@ -79,7 +81,9 @@ public class IFloatWindowImpl extends IFloatWindow {
 
     @Override
     public void hide() {
-        if (once || !isShow) return;
+        if (once || !isShow) {
+            return;
+        }
         getView().setVisibility(View.INVISIBLE);
         isShow = false;
     }
@@ -141,7 +145,9 @@ public class IFloatWindowImpl extends IFloatWindow {
     }
 
     void postHide() {
-        if (once || !isShow) return;
+        if (once || !isShow) {
+            return;
+        }
         getView().post(new Runnable() {
             @Override
             public void run() {
@@ -215,9 +221,12 @@ public class IFloatWindowImpl extends IFloatWindow {
                                         });
                                         startAnimator();
                                         break;
+                                    default:
+                                        break;
                                 }
                                 break;
-
+                            default:
+                                break;
                         }
                         return false;
                     }

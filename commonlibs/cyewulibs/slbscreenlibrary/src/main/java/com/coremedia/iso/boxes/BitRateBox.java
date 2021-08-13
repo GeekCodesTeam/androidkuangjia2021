@@ -47,6 +47,7 @@ public final class BitRateBox extends AbstractBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 12;
     }

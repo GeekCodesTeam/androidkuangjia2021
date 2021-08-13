@@ -12,10 +12,10 @@ import android.widget.Button;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gsyvideoplayer.utils.floatUtil.FloatWindow;
-import com.example.gsyvideoplayer.utils.floatUtil.MoveType;
-import com.example.gsyvideoplayer.utils.floatUtil.Screen;
-import com.example.gsyvideoplayer.utils.floatUtil.UtilGSY;
+import com.example.gsyvideoplayer.utils.floatutil.FloatWindow;
+import com.example.gsyvideoplayer.utils.floatutil.MoveType;
+import com.example.gsyvideoplayer.utils.floatutil.Screen;
+import com.example.gsyvideoplayer.utils.floatutil.UtilGSY;
 import com.example.gsyvideoplayer.view.FloatPlayerView;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 

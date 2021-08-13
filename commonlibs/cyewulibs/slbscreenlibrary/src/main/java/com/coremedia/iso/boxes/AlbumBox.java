@@ -71,6 +71,7 @@ public class AlbumBox extends AbstractFullBox {
         this.trackNumber = trackNumber;
     }
 
+    @Override
     protected long getContentSize() {
         return 6 + Utf8.utf8StringLengthInBytes(albumTitle) + 1 + (trackNumber == -1 ? 0 : 1);
     }
@@ -99,6 +100,7 @@ public class AlbumBox extends AbstractFullBox {
         }
     }
 
+    @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append("AlbumBox[language=").append(getLanguage()).append(";");

@@ -45,22 +45,25 @@ public class BTree {
         char charAt = path.charAt(0);
         BTree branch;
         if (charAt == '0') {
-            if (zero == null)
+            if (zero == null) {
                 zero = new BTree();
+            }
             branch = zero;
         } else {
-            if (one == null)
+            if (one == null) {
                 one = new BTree();
+            }
             branch = one;
         }
         branch.addString(path.substring(1), value);
     }
 
     public BTree down(int b) {
-        if (b == 0)
+        if (b == 0) {
             return zero;
-        else
+        } else {
             return one;
+        }
     }
 
     public Object getValue() {

@@ -19,7 +19,7 @@ import com.lljjcoder.bean.DistrictBean;
 import com.lljjcoder.bean.ProvinceBean;
 import com.lljjcoder.citywheel.CityConfig;
 import com.lljjcoder.citywheel.CityParseHelper;
-import com.lljjcoder.style.citylist.Toast.ToastUtils;
+import com.lljjcoder.style.citylist.toast.ToastUtils;
 import com.lljjcoder.style.citypickerview.widget.CanShow;
 import com.lljjcoder.style.citypickerview.widget.wheel.OnWheelChangedListener;
 import com.lljjcoder.style.citypickerview.widget.wheel.WheelView;
@@ -323,7 +323,7 @@ public class CityPickerView implements CanShow, OnWheelChangedListener {
         mViewProvince.setViewAdapter(arrayWheelAdapter);
 
         //自定义item
-        if (config.getCustomItemLayout() != CityConfig.NONE && config.getCustomItemTextViewId() != CityConfig.NONE) {
+        if (!config.getCustomItemLayout().equals(CityConfig.NONE) && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
             arrayWheelAdapter.setItemResource(config.getCustomItemLayout());
             arrayWheelAdapter.setItemTextResource(config.getCustomItemTextViewId());
         } else {
@@ -401,7 +401,7 @@ public class CityPickerView implements CanShow, OnWheelChangedListener {
         ArrayWheelAdapter cityWheel = new ArrayWheelAdapter<CityBean>(context, cities);
 
         //自定义item
-        if (config.getCustomItemLayout() != CityConfig.NONE && config.getCustomItemTextViewId() != CityConfig.NONE) {
+        if (!config.getCustomItemLayout().equals(CityConfig.NONE) && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
             cityWheel.setItemResource(config.getCustomItemLayout());
             cityWheel.setItemTextResource(config.getCustomItemTextViewId());
         } else {
@@ -456,8 +456,8 @@ public class CityPickerView implements CanShow, OnWheelChangedListener {
                 ArrayWheelAdapter districtWheel = new ArrayWheelAdapter<DistrictBean>(context, areas);
 
                 //自定义item
-                if (config.getCustomItemLayout() != CityConfig.NONE
-                        && config.getCustomItemTextViewId() != CityConfig.NONE) {
+                if (!config.getCustomItemLayout().equals(CityConfig.NONE)
+                        && !config.getCustomItemTextViewId().equals(CityConfig.NONE)) {
                     districtWheel.setItemResource(config.getCustomItemLayout());
                     districtWheel.setItemTextResource(config.getCustomItemTextViewId());
                 } else {

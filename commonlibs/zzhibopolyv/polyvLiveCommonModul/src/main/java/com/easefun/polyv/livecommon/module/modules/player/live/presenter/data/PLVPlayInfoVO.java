@@ -7,6 +7,11 @@ public class PLVPlayInfoVO {
     private boolean isPlaying;
     private boolean isSubVideoViewPlaying;
 
+    @Override
+    public String toString() {
+        return "Super{" + "firstName=" + isPlaying + '\'' + '}';
+    }
+
     private PLVPlayInfoVO(Builder builder) {
         isPlaying = builder.isPlaying;
         isSubVideoViewPlaying = builder.isSubVideoViewPlaying;
@@ -22,9 +27,10 @@ public class PLVPlayInfoVO {
 
     public static final class Builder {
         private boolean isPlaying = false;
-        private boolean isSubVideoViewPlaying =false;
+        private boolean isSubVideoViewPlaying = false;
 
-        public Builder() { }
+        public Builder() {
+        }
 
         public Builder isPlaying(boolean val) {
             isPlaying = val;

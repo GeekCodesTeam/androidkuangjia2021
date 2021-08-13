@@ -60,6 +60,8 @@ public final class DecodeHandler extends Handler {
                 running = false;
                 Looper.myLooper().quit();
                 break;
+            default:
+                break;
         }
     }
 

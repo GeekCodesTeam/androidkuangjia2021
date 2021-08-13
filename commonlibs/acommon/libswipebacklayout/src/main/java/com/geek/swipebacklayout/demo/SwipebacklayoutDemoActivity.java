@@ -109,6 +109,8 @@ public class SwipebacklayoutDemoActivity extends SwipeBackActivity implements Vi
             case SwipeBackLayout.EDGE_ALL:
                 mTrackingModeGroup.check(R.id.mode_all);
                 break;
+            default:
+                break;
         }
     }
 
@@ -130,7 +132,7 @@ public class SwipebacklayoutDemoActivity extends SwipeBackActivity implements Vi
     private int[] getColors() {
         if (mBgColors == null) {
             Resources resource = getResources();
-            mBgColors = new int[] {
+            mBgColors = new int[]{
                     resource.getColor(R.color.androidColorA),
                     resource.getColor(R.color.androidColorB),
                     resource.getColor(R.color.androidColorC),

@@ -3,6 +3,7 @@
  */
 package com.fosung.lighthouse.test;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -76,25 +77,22 @@ public class YewuApplicationAndroid extends AndroidApplication {
         if (!AppUtils.isProcessAs(getPackageName(), this)) {
             return;
         }
-        new Handler(Looper.myLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //TODO commonbufen
-                configBugly(BanbenCommonUtils.banben_comm, "3aeeb18e5e");
-                configHios();
-                configmmkv();
-                configShipei();
-                configRetrofitNet();
-                //TODO 业务bufen
-                //初始化极光分享
+        //TODO commonbufen
+        configBugly(BanbenCommonUtils.banben_comm, "bcc64f431b");
+        configHios();
+        configmmkv();
+        configShipei();
+        configRetrofitNet();
+        //TODO 业务bufen
+        //初始化极光分享
 //        configShare();
-                //初始化极光统计
+        //初始化极光统计
 //        configTongji();
-                //初始化极光推送
+        //初始化极光推送
 //        configTuisong();
-                // 播放听书
+        // 播放听书
 //        startService(new Intent(BaseApp.get(), ListenMusicPlayerService.class));
-                // 电话监听
+        // 电话监听
 //        Intent intent = new Intent(this, PhoneService.class);
 //        startService(intent);
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -102,28 +100,26 @@ public class YewuApplicationAndroid extends AndroidApplication {
 //        } else {
 //            startService(intent);
 //        }
-                //初始化mob
-                configMob();
-                //初始化Umeng统计
-                configUmengTongji();
-                // ndk
-                configNDK();
-                //在app切到后台,activity被后台回收的场景下,需要主动初始化下
+        //初始化mob
+        configMob();
+        //初始化Umeng统计
+        configUmengTongji();
+        // ndk
+        configNDK();
+        //在app切到后台,activity被后台回收的场景下,需要主动初始化下
 //        GenseeLive.initConfiguration(getApplicationContext());
-                // 业务-> 上传多张图片
-                initImagePicker();
-                // 环信IM
-                initHx();
-                // TencentIM
-                initTencentIM();
-                // GSY
-                initGSY();
-                // pgyer
-                initpgyer();
-                // 组件快捷方式bufen
-                MmkvUtils.getInstance().set_xiancheng("App.isLogined", false);
-            }
-        }, 100);
+        // 业务-> 上传多张图片
+        initImagePicker();
+        // 环信IM
+        initHx();
+        // TencentIM
+        initTencentIM();
+        // GSY
+        initGSY();
+        // pgyer
+        initpgyer();
+        // 组件快捷方式bufen
+        MmkvUtils.getInstance().set_xiancheng("App.isLogined", false);
         others();
     }
 
@@ -202,10 +198,6 @@ public class YewuApplicationAndroid extends AndroidApplication {
     }
 
     private void initTencentIM() {
-        // bugly上报
-        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
-        strategy.setAppVersion(V2TIMManager.getInstance().getVersion());
-        CrashReport.initCrashReport(getApplicationContext(), PrivateConstants.BUGLY_APPID, true, strategy);
         TXLiveBase.getInstance().setLicence(this, "licenceUrl", "licenseKey");
         /**
          * TUIKit的初始化函数
@@ -358,7 +350,7 @@ public class YewuApplicationAndroid extends AndroidApplication {
                 Method declaredMethod = cls.getDeclaredMethod("currentActivityThread");
                 declaredMethod.setAccessible(true);
                 Object activityThread = declaredMethod.invoke(null);
-                Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown");
+                @SuppressLint("SoonBlockedPrivateApi") Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown");
                 mHiddenApiWarningShown.setAccessible(true);
                 mHiddenApiWarningShown.setBoolean(activityThread, true);
             } catch (Exception e) {

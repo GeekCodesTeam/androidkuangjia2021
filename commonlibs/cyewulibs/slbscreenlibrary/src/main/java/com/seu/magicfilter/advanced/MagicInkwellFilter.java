@@ -21,8 +21,9 @@ public class MagicInkwellFilter extends GPUImageFilter{
     protected void onDestroy() {
         super.onDestroy();
         GLES20.glDeleteTextures(1, inputTextureHandles, 0);
-        for(int i = 0; i < inputTextureHandles.length; i++)
+        for(int i = 0; i < inputTextureHandles.length; i++) {
             inputTextureHandles[i] = -1;
+        }
     }
 
     @Override
@@ -59,6 +60,7 @@ public class MagicInkwellFilter extends GPUImageFilter{
         super.onInitialized();
         setFloat(mGLStrengthLocation, 1.0f);
         runOnDraw(new Runnable(){
+            @Override
             public void run(){
                 inputTextureHandles[0] = OpenGLUtils.loadTexture(getContext(), "filter/inkwellmap.png");
             }

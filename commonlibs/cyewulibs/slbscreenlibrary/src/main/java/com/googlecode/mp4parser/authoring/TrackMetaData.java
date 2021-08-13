@@ -130,6 +130,7 @@ public class TrackMetaData implements Cloneable {
         this.group = group;
     }
 
+    @Override
     public Object clone() {
         try {
             return super.clone();

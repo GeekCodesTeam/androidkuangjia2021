@@ -82,6 +82,8 @@ public class ImageViewWrapper extends AppCompatImageView {
                     ViewCompat.postInvalidateOnAnimation(this);
                 }
                 break;
+            default:
+                break;
         }
         return super.onTouchEvent(event);
     }

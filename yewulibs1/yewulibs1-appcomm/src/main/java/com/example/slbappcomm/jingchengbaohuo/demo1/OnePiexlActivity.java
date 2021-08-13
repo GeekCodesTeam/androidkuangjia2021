@@ -55,7 +55,7 @@ public class OnePiexlActivity extends Activity {
     private void checkScreen() {
 
         PowerManager pm = (PowerManager) OnePiexlActivity.this.getSystemService(Context.POWER_SERVICE);
-        boolean isScreenOn = pm.isScreenOn();
+        boolean isScreenOn = pm.isInteractive();
         if (isScreenOn) {
             finish();
         }

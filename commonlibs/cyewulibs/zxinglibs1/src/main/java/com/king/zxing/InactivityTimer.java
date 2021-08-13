@@ -53,7 +53,7 @@ final class InactivityTimer {
         cancel();
         inactivityTask = new InactivityAsyncTask(activity);
         try {
-            inactivityTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            inactivityTask.execute(AsyncTask.THREAD_POOL_EXECUTOR);
         } catch (RejectedExecutionException ree) {
              LogUtils.w( "Couldn't schedule inactivity task; ignoring");
         }

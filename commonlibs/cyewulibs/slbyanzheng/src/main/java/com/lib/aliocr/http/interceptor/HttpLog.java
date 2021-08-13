@@ -146,7 +146,9 @@ public class HttpLog implements Interceptor {
                 }
 
                 if (logBody && HttpHeaders.hasBody(clone)) {
-                    if (responseBody == null) return response;
+                    if (responseBody == null) {
+                        return response;
+                    }
 
                     if (isPrintBinaryBody || isPlaintext(responseBody.contentType())) {
                         byte[] bytes = IOUtils.toByteArray(responseBody.byteStream());
@@ -175,15 +177,19 @@ public class HttpLog implements Interceptor {
      * of code points to detect unicode control characters commonly used in binary file signatures.
      */
     private static boolean isPlaintext(MediaType mediaType) {
-        if (mediaType == null) return false;
-        if (mediaType.type() != null && mediaType.type().equals("text")) {
+        if (mediaType == null) {
+            return false;
+        }
+        if (mediaType.type() != null && "text".equals(mediaType.type())) {
             return true;
         }
         String subtype = mediaType.subtype();
         if (subtype != null) {
             subtype = subtype.toLowerCase();
             if (subtype.contains("x-www-form-urlencoded") || subtype.contains("json") || subtype.contains("xml") || subtype.contains("html")) //
+            {
                 return true;
+            }
         }
         return false;
     }
@@ -193,7 +199,9 @@ public class HttpLog implements Interceptor {
         try {
             Request copy = request.newBuilder().build();
             RequestBody body = copy.body();
-            if (body == null) return "";
+            if (body == null) {
+                return "";
+            }
             Buffer buffer = new Buffer();
             body.writeTo(buffer);
             Charset charset = getCharset(body.contentType());
@@ -207,7 +215,9 @@ public class HttpLog implements Interceptor {
 
     private static Charset getCharset(MediaType contentType) {
         Charset charset = contentType != null ? contentType.charset(UTF8) : UTF8;
-        if (charset == null) charset = UTF8;
+        if (charset == null) {
+            charset = UTF8;
+        }
         return charset;
     }
 

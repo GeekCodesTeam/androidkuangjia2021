@@ -166,6 +166,7 @@ public class RefreshContentWrapper implements RefreshContent {
     //</editor-fold>
 
     //<editor-fold desc="implements">
+    @Override
     @NonNull
     public View getView() {
         return mContentView;

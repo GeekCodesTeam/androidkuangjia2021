@@ -93,6 +93,8 @@ public abstract class BaseRecyclerViewAdapter<T,S,VH extends BaseViewHolder> ext
             case VIEW_TYPE_CHILD:
                 view = getChildView(parent);
                 break;
+            default:
+                break;
         }
         return createRealViewHolder(ctx, view, viewType);
     }

@@ -10,7 +10,7 @@ import android.view.Window;
 import android.widget.ScrollView;
 
 import com.easefun.polyv.livecommon.ui.widget.PLVMessageRecyclerView;
-import com.easefun.polyv.livecommon.ui.widget.imageScan.PLVChatImageViewerFragment;
+import com.easefun.polyv.livecommon.ui.widget.imagescan.PLVChatImageViewerFragment;
 import com.easefun.polyv.livecommon.ui.widget.itemview.PLVBaseViewData;
 import com.plv.socket.event.PLVBaseEvent;
 import com.plv.thirdpart.blankj.utilcode.util.ConvertUtils;

@@ -118,7 +118,7 @@ public class TaurusHeader extends View implements RefreshHeader/*, SizeDefinitio
         setMinimumHeight(DensityUtil.dp2px(100));
 
         mMatrix = new Matrix();
-        mWinds = new HashMap<>();
+        mWinds = new HashMap<>(16);
         mRandom = new Random();
 
         mWindPaint = new Paint();

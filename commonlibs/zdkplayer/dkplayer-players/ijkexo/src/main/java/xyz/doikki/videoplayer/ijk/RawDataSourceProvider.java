@@ -32,8 +32,9 @@ public class RawDataSourceProvider implements IMediaDataSource {
             length = size;
         } else {
             length = (int) (mMediaBytes.length - position);
-            if (length > buffer.length)
+            if (length > buffer.length) {
                 length = buffer.length;
+            }
 
             length--;
         }
@@ -56,8 +57,9 @@ public class RawDataSourceProvider implements IMediaDataSource {
 
     @Override
     public void close() throws IOException {
-        if (mDescriptor != null)
+        if (mDescriptor != null) {
             mDescriptor.close();
+        }
 
         mDescriptor = null;
         mMediaBytes = null;

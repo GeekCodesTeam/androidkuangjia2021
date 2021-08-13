@@ -36,52 +36,64 @@ public class DivideTimeScaleTrack implements Track {
         this.timeScaleDivisor = timeScaleDivisor;
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return source.getSampleDescriptionBox();
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return adjustTts();
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return adjustCtts();
     }
 
+    @Override
     public long[] getSyncSamples() {
         return source.getSyncSamples();
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return source.getSampleDependencies();
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         TrackMetaData trackMetaData = (TrackMetaData) source.getTrackMetaData().clone();
         trackMetaData.setTimescale(source.getTrackMetaData().getTimescale() / this.timeScaleDivisor);
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return source.getHandler();
     }
 
+    @Override
     public boolean isEnabled() {
         return source.isEnabled();
     }
 
+    @Override
     public boolean isInMovie() {
         return source.isInMovie();
     }
 
+    @Override
     public boolean isInPreview() {
         return source.isInPreview();
     }
 
+    @Override
     public boolean isInPoster() {
         return source.isInPoster();
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return source.getSamples();
     }
@@ -109,10 +121,12 @@ public class DivideTimeScaleTrack implements Track {
         return entries2;
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return source.getMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return source.getSubsampleInformationBox();
     }

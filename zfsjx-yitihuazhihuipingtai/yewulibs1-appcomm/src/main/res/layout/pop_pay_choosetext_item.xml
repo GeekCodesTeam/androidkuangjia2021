@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="6mm"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv1_poppay"
+        android:layout_width="62mm"
+        android:layout_height="62mm"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_pop_pay2"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="40mm"
+        android:visibility="visible" />
+
+    <com.geek.libglide47.base.GlideImageView
+        android:id="@+id/iv1_poppay"
+        android:layout_width="50mm"
+        android:layout_height="50mm"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

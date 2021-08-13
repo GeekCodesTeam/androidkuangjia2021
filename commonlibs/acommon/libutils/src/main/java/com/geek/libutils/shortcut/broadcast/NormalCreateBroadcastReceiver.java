@@ -12,6 +12,7 @@ public final class NormalCreateBroadcastReceiver extends BroadcastReceiver {
 
     public static final String ACTION = "com.shortcut.core.normal_create";
 
+    @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         MyLogUtil.e("Shortcut", "onReceive: " + action);

@@ -34,5 +34,5 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.blankj
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.0'
 }

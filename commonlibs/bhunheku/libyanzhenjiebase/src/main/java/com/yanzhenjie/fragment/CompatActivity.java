@@ -156,8 +156,9 @@ public abstract class CompatActivity extends AppCompatActivity {
      * @param <T>         {@link NoFragment}.
      */
     public final <T extends NoFragment> void startFragmentForResult(Class<T> clazz, int requestCode) {
-        if (requestCode == REQUEST_CODE_INVALID)
+        if (requestCode == REQUEST_CODE_INVALID) {
             throw new IllegalArgumentException("The requestCode must be positive integer.");
+        }
         try {
             NoFragment targetFragment = clazz.newInstance();
             startFragment(null, targetFragment, true, requestCode);
@@ -174,8 +175,9 @@ public abstract class CompatActivity extends AppCompatActivity {
      * @param <T>            {@link NoFragment}.
      */
     public final <T extends NoFragment> void startFragmentForResult(T targetFragment, int requestCode) {
-        if (requestCode == REQUEST_CODE_INVALID)
+        if (requestCode == REQUEST_CODE_INVALID) {
             throw new IllegalArgumentException("The requestCode must be positive integer.");
+        }
         startFragment(null, targetFragment, true, requestCode);
     }
 

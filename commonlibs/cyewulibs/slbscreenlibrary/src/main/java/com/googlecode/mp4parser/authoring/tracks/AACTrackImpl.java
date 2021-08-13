@@ -128,7 +128,8 @@ public class AACTrackImpl extends AbstractTrack {
 
         avgBitRate = (int) (8 * dataSize / duration);
 
-        bufferSizeDB = 1536; /* TODO: Calcultate this somehow! */
+        /* TODO: Calcultate this somehow! */
+        bufferSizeDB = 1536;
 
         sampleDescriptionBox = new SampleDescriptionBox();
         AudioSampleEntry audioSampleEntry = new AudioSampleEntry("mp4a");
@@ -172,42 +173,52 @@ public class AACTrackImpl extends AbstractTrack {
         trackMetaData.setTimescale(samplerate); // Audio tracks always use samplerate as timescale
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return null;
     }
 
+    @Override
     public long[] getSyncSamples() {
         return null;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return null;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "soun";
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return samples;
     }
 
+    @Override
     public Box getMediaHeaderBox() {
         return new SoundMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }

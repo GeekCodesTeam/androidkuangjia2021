@@ -43,6 +43,7 @@ public class LyricsUriBox extends AbstractFullBox {
         this.lyricsUri = lyricsUri;
     }
 
+    @Override
     protected long getContentSize() {
         return Utf8.utf8StringLengthInBytes(lyricsUri) + 5;
     }
@@ -60,6 +61,7 @@ public class LyricsUriBox extends AbstractFullBox {
         byteBuffer.put((byte) 0);
     }
 
+    @Override
     public String toString() {
         return "LyricsUriBox[lyricsUri=" + getLyricsUri() + "]";
     }

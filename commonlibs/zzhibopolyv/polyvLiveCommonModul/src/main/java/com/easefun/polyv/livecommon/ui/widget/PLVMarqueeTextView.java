@@ -122,8 +122,9 @@ public class PLVMarqueeTextView extends AppCompatTextView {
      * 继续滚动
      */
     public void resumeScroll() {
-        if (!mPaused)
+        if (!mPaused) {
             return;
+        }
         // 设置水平滚动
         setHorizontallyScrolling(true);
 
@@ -151,8 +152,9 @@ public class PLVMarqueeTextView extends AppCompatTextView {
     }
 
     private void scroll() {
-        if (mXPaused == 0)
+        if (mXPaused == 0) {
             mXPaused = -1 * getWidth();
+        }
         int scrollingLen = calculateScrollingLen();
         //滚动的距离
         int distance = scrollingLen - mXPaused;
@@ -163,10 +165,11 @@ public class PLVMarqueeTextView extends AppCompatTextView {
         int tmpDistance = distance;
         rollDuration = (int) durationDouble;
         if (isStopToCenter && mXPaused < 0) {
-            if (scrollingLen >= getWidth())
+            if (scrollingLen >= getWidth()) {
                 distance = Math.abs(mXPaused);
-            else
+            } else {
                 distance = Math.abs(mXPaused) - (getWidth() - scrollingLen) / 2;
+            }
             rollDuration = (int) (rollDuration / (tmpDistance * 1.0f / distance));
         }
         if (isStopToCenter) {
@@ -211,11 +214,13 @@ public class PLVMarqueeTextView extends AppCompatTextView {
      * 暂停滚动
      */
     public void pauseScroll() {
-        if (null == mScroller)
+        if (null == mScroller) {
             return;
+        }
 
-        if (mPaused)
+        if (mPaused) {
             return;
+        }
 
         mPaused = true;
 
@@ -254,7 +259,9 @@ public class PLVMarqueeTextView extends AppCompatTextView {
     @Override
     public void computeScroll() {
         super.computeScroll();
-        if (null == mScroller) return;
+        if (null == mScroller) {
+            return;
+        }
         if (mScroller.isFinished() && (!mPaused)) {
             if (mScrollMode == SCROLL_ONCE) {
                 stopScroll();

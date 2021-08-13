@@ -20,7 +20,6 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-
 import com.example.slbappcomm.R;
 
 import java.io.IOException;
@@ -115,9 +114,10 @@ public class UploadImgClipViewLayout extends RelativeLayout {
         //需要等到imageView绘制完毕再初始化原图
         ViewTreeObserver observer = imageView.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
             public void onGlobalLayout() {
                 initSrcPic(uri);
-                imageView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                imageView.getViewTreeObserver().addOnGlobalLayoutListener(this);
             }
         });
     }
@@ -213,6 +213,8 @@ public class UploadImgClipViewLayout extends RelativeLayout {
                     case ExifInterface.ORIENTATION_ROTATE_270:
                         degree = 270;
                         break;
+                    default:
+                        break;
                 }
 
             }
@@ -283,6 +285,8 @@ public class UploadImgClipViewLayout extends RelativeLayout {
                     }
                 }
                 imageView.setImageMatrix(matrix);
+                break;
+            default:
                 break;
         }
         return true;
@@ -440,14 +444,15 @@ public class UploadImgClipViewLayout extends RelativeLayout {
             // requested height and width.
             int ratio = heightRatio < widthRatio ? heightRatio : widthRatio;
             // inSampleSize只能是2的次幂  将ratio就近取2的次幂的值
-            if (ratio < 3)
+            if (ratio < 3) {
                 inSampleSize = ratio;
-            else if (ratio < 6.5)
+            } else if (ratio < 6.5) {
                 inSampleSize = 4;
-            else if (ratio < 8)
+            } else if (ratio < 8) {
                 inSampleSize = 8;
-            else
+            } else {
                 inSampleSize = ratio;
+            }
         }
 
         return inSampleSize;

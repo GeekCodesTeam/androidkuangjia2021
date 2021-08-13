@@ -127,18 +127,22 @@ public class H264TrackImpl extends AbstractTrack {
         trackMetaData.setHeight(height);
     }
 
+    @Override
     public SampleDescriptionBox getSampleDescriptionBox() {
         return sampleDescriptionBox;
     }
 
+    @Override
     public List<TimeToSampleBox.Entry> getDecodingTimeEntries() {
         return stts;
     }
 
+    @Override
     public List<CompositionTimeToSample.Entry> getCompositionTimeEntries() {
         return ctts;
     }
 
+    @Override
     public long[] getSyncSamples() {
         long[] returns = new long[stss.size()];
         for (int i = 0; i < stss.size(); i++) {
@@ -147,26 +151,32 @@ public class H264TrackImpl extends AbstractTrack {
         return returns;
     }
 
+    @Override
     public List<SampleDependencyTypeBox.Entry> getSampleDependencies() {
         return sdtp;
     }
 
+    @Override
     public TrackMetaData getTrackMetaData() {
         return trackMetaData;
     }
 
+    @Override
     public String getHandler() {
         return "vide";
     }
 
+    @Override
     public List<ByteBuffer> getSamples() {
         return samples;
     }
 
+    @Override
     public AbstractMediaHeaderBox getMediaHeaderBox() {
         return new VideoMediaHeaderBox();
     }
 
+    @Override
     public SubSampleInformationBox getSubsampleInformationBox() {
         return null;
     }
@@ -296,8 +306,8 @@ public class H264TrackImpl extends AbstractTrack {
 
                 case END:
                     return true;
-
-
+                default:
+                    break;
             }
             pos = newpos;
             reader.seek(currentScSize);
@@ -468,7 +478,8 @@ public class H264TrackImpl extends AbstractTrack {
                 case 9:
                     slice_type = SliceType.SI;
                     break;
-
+                default:
+                    break;
             }
             pic_parameter_set_id = reader.readUE("SliceHeader: pic_parameter_set_id");
             if (sps.residual_color_transform_flag) {

@@ -893,6 +893,8 @@ public class PLVLCLinkMicLayout extends FrameLayout implements IPLVLinkMicContra
                 //纯视频下，初始化时RTC列表没人，因此隐藏横屏RTC列表
                 changeShowOrHideLandscapeLayoutState(false);
                 break;
+            default:
+                break;
         }
     }
 

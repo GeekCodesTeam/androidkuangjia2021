@@ -35,7 +35,7 @@ import com.easefun.polyv.livecommon.module.utils.imageloader.glide.progress.PLVM
 import com.easefun.polyv.livecommon.module.utils.listener.IPLVOnDataChangedListener;
 import com.easefun.polyv.livecommon.ui.widget.PLVMessageRecyclerView;
 import com.easefun.polyv.livecommon.ui.widget.PLVSimpleSwipeRefreshLayout;
-import com.easefun.polyv.livecommon.ui.widget.imageScan.PLVChatImageViewerFragment;
+import com.easefun.polyv.livecommon.ui.widget.imagescan.PLVChatImageViewerFragment;
 import com.easefun.polyv.livecommon.ui.widget.itemview.PLVBaseViewData;
 import com.easefun.polyv.livescenes.chatroom.PolyvLocalMessage;
 import com.easefun.polyv.livescenes.chatroom.send.custom.PolyvCustomEvent;

@@ -184,11 +184,15 @@ public class PointerRender extends Pointer {
 		{
 			case TRIANGLE:
 				renderTriangle(canvas);
-				if(isShowBaseCircle())renderCircle(canvas);
+				if(isShowBaseCircle()) {
+                    renderCircle(canvas);
+                }
 				break;
 			case LINE:
 				renerLine(canvas);
-				if(isShowBaseCircle())renderCircle(canvas);
+				if(isShowBaseCircle()) {
+                    renderCircle(canvas);
+                }
 				break;
 			default:
 				break;

@@ -43,6 +43,7 @@ public class VideoMediaHeaderBox extends AbstractMediaHeaderBox {
         return opcolor;
     }
 
+    @Override
     protected long getContentSize() {
         return 12;
     }
@@ -67,6 +68,7 @@ public class VideoMediaHeaderBox extends AbstractMediaHeaderBox {
         }
     }
 
+    @Override
     public String toString() {
         return "VideoMediaHeaderBox[graphicsmode=" + getGraphicsmode() + ";opcolor0=" + getOpcolor()[0] + ";opcolor1=" + getOpcolor()[1] + ";opcolor2=" + getOpcolor()[2] + "]";
     }

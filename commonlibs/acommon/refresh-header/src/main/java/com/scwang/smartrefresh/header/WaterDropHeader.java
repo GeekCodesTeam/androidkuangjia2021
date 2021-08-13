@@ -6,12 +6,17 @@
  */
 package com.scwang.smartrefresh.header;
 
+import static android.view.View.MeasureSpec.AT_MOST;
+import static android.view.View.MeasureSpec.EXACTLY;
+import static android.view.View.MeasureSpec.getSize;
+import static android.view.View.MeasureSpec.makeMeasureSpec;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
-
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,12 +35,6 @@ import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.internal.ProgressDrawable;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
-
-import static android.view.View.MeasureSpec.AT_MOST;
-import static android.view.View.MeasureSpec.EXACTLY;
-import static android.view.View.MeasureSpec.getSize;
-import static android.view.View.MeasureSpec.makeMeasureSpec;
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 
 public class WaterDropHeader extends ViewGroup implements RefreshHeader {
@@ -80,13 +79,13 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
         mWaterDropView.updateComleteState(0);
 
         mProgressDrawable = new ProgressDrawable();
-        mProgressDrawable.setBounds(0,0, density.dip2px(20), density.dip2px(20));
+        mProgressDrawable.setBounds(0, 0, density.dip2px(20), density.dip2px(20));
 
         mImageView = new ImageView(context);
         mProgress = new MaterialProgressDrawable(context, mImageView);
         mProgress.setBackgroundColor(0xffffffff);
         mProgress.setAlpha(255);
-        mProgress.setColorSchemeColors(0xffffffff,0xff0099cc,0xffff4444,0xff669900,0xffaa66cc,0xffff8800);
+        mProgress.setColorSchemeColors(0xffffffff, 0xff0099cc, 0xffff4444, 0xff669900, 0xffaa66cc, 0xffff8800);
         mImageView.setImageDrawable(mProgress);
         addView(mImageView, density.dip2px(30), density.dip2px(30));
     }
@@ -136,10 +135,10 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
         if (mState == RefreshState.Refreshing) {
             canvas.save();
             canvas.translate(
-                    getWidth()/2-mProgressDrawable.width()/2,
+                    getWidth() / 2 - mProgressDrawable.width() / 2,
                     mWaterDropView.getMaxCircleRadius()
-                            +mWaterDropView.getPaddingTop()
-                            -mProgressDrawable.height()/2
+                            + mWaterDropView.getPaddingTop()
+                            - mProgressDrawable.height() / 2
             );
             canvas.rotate(mProgressDegree, mProgressDrawable.width() / 2, mProgressDrawable.height() / 2);
             mProgressDrawable.draw(canvas);
@@ -213,6 +212,8 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
             case RefreshFinish:
                 mWaterDropView.setVisibility(View.GONE);
                 break;
+            default:
+                break;
         }
     }
 
@@ -223,6 +224,7 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
             @Override
             public void onAnimationEnd(Animator animation) {
                 mWaterDropView.animate().alpha(0).setListener(new AnimatorListenerAdapter() {
+                    @Override
                     public void onAnimationEnd(Animator animation) {
                         mWaterDropView.setVisibility(GONE);
                         mWaterDropView.setAlpha(1);
@@ -240,7 +242,7 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
                     layout.getLayout().postDelayed(this, 100);
                 }
             }
-        },100);
+        }, 100);
     }
 
     @Override
@@ -253,8 +255,9 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
         return 0;
     }
 
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mWaterDropView.setIndicatorColor(colors[0]);
         }

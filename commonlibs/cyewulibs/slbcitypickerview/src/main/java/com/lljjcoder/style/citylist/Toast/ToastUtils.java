@@ -1,4 +1,4 @@
-package com.lljjcoder.style.citylist.Toast;
+package com.lljjcoder.style.citylist.toast;
 
 import android.app.Activity;
 import android.content.Context;
@@ -39,6 +39,7 @@ public class ToastUtils {
     public static void showMomentToast(final Activity activity, final Context context, final String showMsg)
     {
         activity.runOnUiThread(new Runnable() {
+            @Override
             public void run() {
                 if (null == alarmDialog)
                 {
@@ -54,6 +55,7 @@ public class ToastUtils {
                 }
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
+                    @Override
                     public void run() {
                         if(null != alarmDialog)
                         {

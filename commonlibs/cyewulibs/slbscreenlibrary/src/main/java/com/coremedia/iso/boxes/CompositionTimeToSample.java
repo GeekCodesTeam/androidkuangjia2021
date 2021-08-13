@@ -51,6 +51,7 @@ public class CompositionTimeToSample extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 8 + 8 * entries.size();
     }

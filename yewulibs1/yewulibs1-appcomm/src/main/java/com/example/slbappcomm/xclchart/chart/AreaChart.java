@@ -107,14 +107,16 @@ public class AreaChart extends LnChart {
 
 	@Override
 	protected void categoryAxisDefaultSetting() {
-		if (null != categoryAxis)
-			categoryAxis.setHorizontalTickAlign(Align.CENTER);
+		if (null != categoryAxis) {
+            categoryAxis.setHorizontalTickAlign(Align.CENTER);
+        }
 	}
 
 	@Override
 	protected void dataAxisDefaultSetting() {
-		if (null != dataAxis)
-			dataAxis.setHorizontalTickAlign(Align.LEFT);
+		if (null != dataAxis) {
+            dataAxis.setHorizontalTickAlign(Align.LEFT);
+        }
 	}
 
 	/**
@@ -124,8 +126,9 @@ public class AreaChart extends LnChart {
 	 *            分类集
 	 */
 	public void setCategories(List<String> categories) {
-		if (null != categoryAxis)
-			categoryAxis.setDataBuilding(categories);
+		if (null != categoryAxis) {
+            categoryAxis.setDataBuilding(categories);
+        }
 	}
 
 	/**
@@ -196,8 +199,9 @@ public class AreaChart extends LnChart {
 				.getDataSet().size() - 1));
 
 		int count = chartValues.size();
-		if (count <= 0)
-			return false;
+		if (count <= 0) {
+            return false;
+        }
 
 		for (int i = 0; i < count; i++) {
 			double bv = chartValues.get(i);
@@ -211,9 +215,10 @@ public class AreaChart extends LnChart {
 				lineStartY = lineStopY;
 
 				if (2 < count) {
-					if (Double.compare(bv, dataAxis.getAxisMin()) != 0)
-						lstPathPoints.add(new PointF(plotArea.getLeft(),
-								plotArea.getBottom()));
+					if (Double.compare(bv, dataAxis.getAxisMin()) != 0) {
+                        lstPathPoints.add(new PointF(plotArea.getLeft(),
+                                plotArea.getBottom()));
+                    }
 				}
 
 				lstPathPoints.add(new PointF(lineStartX, lineStartY));
@@ -248,16 +253,18 @@ public class AreaChart extends LnChart {
                                      Path bezierPath, AreaData areaData, List<PointF> lstPathPoints) {
 		int count = lstPathPoints.size();
 
-		if (count < 3)
-			return false; // 没有或仅一个点就不需要了
+		if (count < 3) {
+            return false; // 没有或仅一个点就不需要了
+        }
 
 		// 设置当前填充色
 		paintAreaFill.setColor(areaData.getAreaFillColor());
 
 		// 仅两点
 		if (count == 3) {
-			if (null == bezierPath)
-				bezierPath = new Path();
+			if (null == bezierPath) {
+                bezierPath = new Path();
+            }
 
 			bezierPath.moveTo(lstPathPoints.get(0).x, plotArea.getBottom());
 			bezierPath.lineTo(lstPathPoints.get(0).x, lstPathPoints.get(0).y);
@@ -312,8 +319,9 @@ public class AreaChart extends LnChart {
 		float axisMinValue = plotArea.getBottom();
 
 		for (int i = 0; i < count; i++) {
-			if (i < 3)
-				continue;
+			if (i < 3) {
+                continue;
+            }
 
 			// 连续两个值都为0,控制点有可能会显示在轴以下，则此种情况下，将其处理为直线
 			if (lstPathPoints.get(i - 1).y >= axisMinValue
@@ -432,8 +440,9 @@ public class AreaChart extends LnChart {
 	private boolean renderArea(Canvas canvas, Paint paintAreaFill,
                                Path pathArea, AreaData areaData, List<PointF> lstPathPoints) {
 		int count = lstPathPoints.size();
-		if (count < 3)
-			return false; // 没有或仅一个点就不需要了
+		if (count < 3) {
+            return false; // 没有或仅一个点就不需要了
+        }
 		// 设置当前填充色
 		paintAreaFill.setColor(areaData.getAreaFillColor());
 
@@ -460,8 +469,9 @@ public class AreaChart extends LnChart {
 
 		// 仅两点
 		if (count == 3) {
-			if (null == pathArea)
-				pathArea = new Path();
+			if (null == pathArea) {
+                pathArea = new Path();
+            }
 
 			pathArea.moveTo(lstPathPoints.get(0).x, plotArea.getBottom());
 			pathArea.lineTo(lstPathPoints.get(0).x, lstPathPoints.get(0).y);
@@ -495,8 +505,9 @@ public class AreaChart extends LnChart {
 			List<PointF> lstPoints) {
 		int count = lstPoints.size();
 		for (int i = 0; i < count; i++) {
-			if (0 == i)
-				continue;
+			if (0 == i) {
+                continue;
+            }
 			PointF pointStart = lstPoints.get(i - 1);
 			PointF pointStop = lstPoints.get(i);
 
@@ -572,14 +583,16 @@ public class AreaChart extends LnChart {
 
 		for (int i = 0; i < count; i++) {
 			if (Y_MAX == type) {
-				if (lineMaxY < lstPathPoints.get(i).y)
-					lineMaxY = lstPathPoints.get(i).y;
+				if (lineMaxY < lstPathPoints.get(i).y) {
+                    lineMaxY = lstPathPoints.get(i).y;
+                }
 			} else if (Y_MIN == type) {
 				if (0 == i) {
 					lineMinY = lstPathPoints.get(0).y;
 				} else {
-					if (lineMinY > lstPathPoints.get(i).y)
-						lineMinY = lstPathPoints.get(i).y;
+					if (lineMinY > lstPathPoints.get(i).y) {
+                        lineMinY = lstPathPoints.get(i).y;
+                    }
 				}
 			}
 		}
@@ -597,8 +610,9 @@ public class AreaChart extends LnChart {
 		}
 
 		//this.initPaint();
-		if (null == mPathArea)
-			mPathArea = new Path();
+		if (null == mPathArea) {
+            mPathArea = new Path();
+        }
 
 		// 透明度。其取值范围是0---255,数值越小，越透明，颜色上表现越淡
 		// mPaintAreaFill.setAlpha( mAreaAlpha );

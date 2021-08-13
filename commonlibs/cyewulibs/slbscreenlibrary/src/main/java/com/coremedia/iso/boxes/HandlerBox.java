@@ -99,6 +99,7 @@ public class HandlerBox extends AbstractFullBox {
         return readableTypes.get(handlerType) != null ? readableTypes.get(handlerType) : "Unknown Handler Type";
     }
 
+    @Override
     protected long getContentSize() {
         if (zeroTerm) {
             return 25 + Utf8.utf8StringLengthInBytes(name);
@@ -145,6 +146,7 @@ public class HandlerBox extends AbstractFullBox {
         }
     }
 
+    @Override
     public String toString() {
         return "HandlerBox[handlerType=" + getHandlerType() + ";name=" + getName() + "]";
     }

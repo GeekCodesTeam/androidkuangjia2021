@@ -74,6 +74,7 @@ public class TextSampleEntry extends SampleEntry {
     }
 
 
+    @Override
     protected long getContentSize() {
         long contentSize = 18;
         contentSize += boxRecord.getSize();
@@ -84,6 +85,7 @@ public class TextSampleEntry extends SampleEntry {
         return contentSize;
     }
 
+    @Override
     public String toString() {
         return "TextSampleEntry";
     }

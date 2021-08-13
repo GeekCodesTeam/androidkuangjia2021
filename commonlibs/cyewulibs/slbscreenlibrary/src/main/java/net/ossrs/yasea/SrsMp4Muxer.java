@@ -708,10 +708,12 @@ public class SrsMp4Muxer {
         private ByteBuffer header = ByteBuffer.allocateDirect(16);
         private long contentSize = 1024 * 1024 * 1024;
 
+        @Override
         public ContainerBox getParent() {
             return parent;
         }
 
+        @Override
         public void setParent(ContainerBox parent) {
             this.parent = parent;
         }
@@ -724,10 +726,12 @@ public class SrsMp4Muxer {
             return contentSize;
         }
 
+        @Override
         public String getType() {
             return "mdat";
         }
 
+        @Override
         public long getSize() {
             return header.limit() + contentSize;
         }
@@ -740,6 +744,7 @@ public class SrsMp4Muxer {
             return (contentSize + header.limit()) < 4294967296L;
         }
 
+        @Override
         public void getBox(WritableByteChannel writableByteChannel) {
             header.rewind();
             long size = getSize();

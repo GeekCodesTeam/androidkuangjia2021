@@ -51,6 +51,7 @@ public class TimeToSampleBox extends AbstractFullBox {
         super(TYPE);
     }
 
+    @Override
     protected long getContentSize() {
         return 8 + entries.size() * 8;
     }
@@ -85,6 +86,7 @@ public class TimeToSampleBox extends AbstractFullBox {
         this.entries = entries;
     }
 
+    @Override
     public String toString() {
         return "TimeToSampleBox[entryCount=" + entries.size() + "]";
     }

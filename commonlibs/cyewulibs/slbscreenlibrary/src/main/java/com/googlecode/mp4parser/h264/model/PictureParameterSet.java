@@ -101,17 +101,18 @@ public class PictureParameterSet extends BitstreamElement {
             pps.top_left = new int[pps.num_slice_groups_minus1 + 1];
             pps.bottom_right = new int[pps.num_slice_groups_minus1 + 1];
             pps.run_length_minus1 = new int[pps.num_slice_groups_minus1 + 1];
-            if (pps.slice_group_map_type == 0)
-                for (int iGroup = 0; iGroup <= pps.num_slice_groups_minus1; iGroup++)
+            if (pps.slice_group_map_type == 0) {
+                for (int iGroup = 0; iGroup <= pps.num_slice_groups_minus1; iGroup++) {
                     pps.run_length_minus1[iGroup] = reader
                             .readUE("PPS: run_length_minus1");
-            else if (pps.slice_group_map_type == 2)
+                }
+            } else if (pps.slice_group_map_type == 2) {
                 for (int iGroup = 0; iGroup < pps.num_slice_groups_minus1; iGroup++) {
                     pps.top_left[iGroup] = reader.readUE("PPS: top_left");
                     pps.bottom_right[iGroup] = reader
                             .readUE("PPS: bottom_right");
                 }
-            else if (pps.slice_group_map_type == 3
+            } else if (pps.slice_group_map_type == 3
                     || pps.slice_group_map_type == 4
                     || pps.slice_group_map_type == 5) {
                 pps.slice_group_change_direction_flag = reader
@@ -120,12 +121,13 @@ public class PictureParameterSet extends BitstreamElement {
                         .readUE("PPS: slice_group_change_rate_minus1");
             } else if (pps.slice_group_map_type == 6) {
                 int NumberBitsPerSliceGroupId;
-                if (pps.num_slice_groups_minus1 + 1 > 4)
+                if (pps.num_slice_groups_minus1 + 1 > 4) {
                     NumberBitsPerSliceGroupId = 3;
-                else if (pps.num_slice_groups_minus1 + 1 > 2)
+                } else if (pps.num_slice_groups_minus1 + 1 > 2) {
                     NumberBitsPerSliceGroupId = 2;
-                else
+                } else {
                     NumberBitsPerSliceGroupId = 1;
+                }
                 int pic_size_in_map_units_minus1 = reader
                         .readUE("PPS: pic_size_in_map_units_minus1");
                 pps.slice_group_id = new int[pic_size_in_map_units_minus1 + 1];
@@ -186,6 +188,7 @@ public class PictureParameterSet extends BitstreamElement {
         return pps;
     }
 
+    @Override
     public void write(OutputStream out) throws IOException {
         CAVLCWriter writer = new CAVLCWriter(out);
 
@@ -217,12 +220,13 @@ public class PictureParameterSet extends BitstreamElement {
                         "PPS: slice_group_change_rate_minus1");
             } else if (slice_group_map_type == 6) {
                 int NumberBitsPerSliceGroupId;
-                if (num_slice_groups_minus1 + 1 > 4)
+                if (num_slice_groups_minus1 + 1 > 4) {
                     NumberBitsPerSliceGroupId = 3;
-                else if (num_slice_groups_minus1 + 1 > 2)
+                } else if (num_slice_groups_minus1 + 1 > 2) {
                     NumberBitsPerSliceGroupId = 2;
-                else
+                } else {
                     NumberBitsPerSliceGroupId = 1;
+                }
                 writer.writeUE(slice_group_id.length, "PPS: ");
                 for (int i = 0; i <= slice_group_id.length; i++) {
                     writer.writeU(slice_group_id[i], NumberBitsPerSliceGroupId);
@@ -316,62 +320,89 @@ public class PictureParameterSet extends BitstreamElement {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         PictureParameterSet other = (PictureParameterSet) obj;
-        if (!Arrays.equals(bottom_right, other.bottom_right))
+        if (!Arrays.equals(bottom_right, other.bottom_right)) {
             return false;
-        if (chroma_qp_index_offset != other.chroma_qp_index_offset)
+        }
+        if (chroma_qp_index_offset != other.chroma_qp_index_offset) {
             return false;
-        if (constrained_intra_pred_flag != other.constrained_intra_pred_flag)
+        }
+        if (constrained_intra_pred_flag != other.constrained_intra_pred_flag) {
             return false;
-        if (deblocking_filter_control_present_flag != other.deblocking_filter_control_present_flag)
+        }
+        if (deblocking_filter_control_present_flag != other.deblocking_filter_control_present_flag) {
             return false;
-        if (entropy_coding_mode_flag != other.entropy_coding_mode_flag)
+        }
+        if (entropy_coding_mode_flag != other.entropy_coding_mode_flag) {
             return false;
+        }
         if (extended == null) {
-            if (other.extended != null)
+            if (other.extended != null) {
                 return false;
-        } else if (!extended.equals(other.extended))
+            }
+        } else if (!extended.equals(other.extended)) {
             return false;
-        if (num_ref_idx_l0_active_minus1 != other.num_ref_idx_l0_active_minus1)
+        }
+        if (num_ref_idx_l0_active_minus1 != other.num_ref_idx_l0_active_minus1) {
             return false;
-        if (num_ref_idx_l1_active_minus1 != other.num_ref_idx_l1_active_minus1)
+        }
+        if (num_ref_idx_l1_active_minus1 != other.num_ref_idx_l1_active_minus1) {
             return false;
-        if (num_slice_groups_minus1 != other.num_slice_groups_minus1)
+        }
+        if (num_slice_groups_minus1 != other.num_slice_groups_minus1) {
             return false;
-        if (pic_init_qp_minus26 != other.pic_init_qp_minus26)
+        }
+        if (pic_init_qp_minus26 != other.pic_init_qp_minus26) {
             return false;
-        if (pic_init_qs_minus26 != other.pic_init_qs_minus26)
+        }
+        if (pic_init_qs_minus26 != other.pic_init_qs_minus26) {
             return false;
-        if (pic_order_present_flag != other.pic_order_present_flag)
+        }
+        if (pic_order_present_flag != other.pic_order_present_flag) {
             return false;
-        if (pic_parameter_set_id != other.pic_parameter_set_id)
+        }
+        if (pic_parameter_set_id != other.pic_parameter_set_id) {
             return false;
-        if (redundant_pic_cnt_present_flag != other.redundant_pic_cnt_present_flag)
+        }
+        if (redundant_pic_cnt_present_flag != other.redundant_pic_cnt_present_flag) {
             return false;
-        if (!Arrays.equals(run_length_minus1, other.run_length_minus1))
+        }
+        if (!Arrays.equals(run_length_minus1, other.run_length_minus1)) {
             return false;
-        if (seq_parameter_set_id != other.seq_parameter_set_id)
+        }
+        if (seq_parameter_set_id != other.seq_parameter_set_id) {
             return false;
-        if (slice_group_change_direction_flag != other.slice_group_change_direction_flag)
+        }
+        if (slice_group_change_direction_flag != other.slice_group_change_direction_flag) {
             return false;
-        if (slice_group_change_rate_minus1 != other.slice_group_change_rate_minus1)
+        }
+        if (slice_group_change_rate_minus1 != other.slice_group_change_rate_minus1) {
             return false;
-        if (!Arrays.equals(slice_group_id, other.slice_group_id))
+        }
+        if (!Arrays.equals(slice_group_id, other.slice_group_id)) {
             return false;
-        if (slice_group_map_type != other.slice_group_map_type)
+        }
+        if (slice_group_map_type != other.slice_group_map_type) {
             return false;
-        if (!Arrays.equals(top_left, other.top_left))
+        }
+        if (!Arrays.equals(top_left, other.top_left)) {
             return false;
-        if (weighted_bipred_idc != other.weighted_bipred_idc)
+        }
+        if (weighted_bipred_idc != other.weighted_bipred_idc) {
             return false;
-        if (weighted_pred_flag != other.weighted_pred_flag)
+        }
+        if (weighted_pred_flag != other.weighted_pred_flag) {
             return false;
+        }
         return true;
     }
 

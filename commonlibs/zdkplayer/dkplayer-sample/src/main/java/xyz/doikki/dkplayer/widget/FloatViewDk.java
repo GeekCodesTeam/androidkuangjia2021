@@ -136,6 +136,8 @@ public class FloatViewDk extends FrameLayout{
                 intercepted = absDeltaX > ViewConfiguration.get(getContext()).getScaledTouchSlop() ||
                         absDeltaY > ViewConfiguration.get(getContext()).getScaledTouchSlop();
                 break;
+            default:
+                break;
         }
         return intercepted;
     }
@@ -149,6 +151,8 @@ public class FloatViewDk extends FrameLayout{
                 mParams.x = x - mDownX;
                 mParams.y = y - mDownY;
                 mWindowManager.updateViewLayout(this, mParams);
+                break;
+            default:
                 break;
         }
         return super.onTouchEvent(event);

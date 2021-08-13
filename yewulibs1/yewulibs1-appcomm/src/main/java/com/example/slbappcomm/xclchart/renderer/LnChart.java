@@ -130,8 +130,9 @@ public class LnChart extends AxesChart {
      * @param customLineDataset 定制线数据集合
      */
     public void setCustomLines(List<CustomLineData> customLineDataset) {
-        if (null == mCustomLine)
+        if (null == mCustomLine) {
             mCustomLine = new PlotCustomLine();
+        }
         mCustomLine.setCustomLines(customLineDataset);
     }
 
@@ -151,7 +152,9 @@ public class LnChart extends AxesChart {
             Log.e(TAG, "数据源个数为0!");
             return;
         } else if (1 == tickCount) // label仅一个时右移
+        {
             labeltickCount = tickCount - 1;
+        }
 
         // 标签轴(X 轴)
         float axisX = 0.0f, axisY = 0.0f, currentX = 0.0f, currentY = 0.0f;
@@ -228,6 +231,8 @@ public class LnChart extends AxesChart {
                             .toString(currentTickLabel)));
 
                     break;
+                default:
+                    break;
             } // switch end
         } // end for
     }
@@ -261,7 +266,9 @@ public class LnChart extends AxesChart {
     protected void drawClipCategoryAxisGridlines(Canvas canvas) {
         // 得到标签轴数据集
         List<String> dataSet = categoryAxis.getDataSet();
-        if (null == dataSet) return;
+        if (null == dataSet) {
+            return;
+        }
         // 与柱形图不同，无须多弄一个
         float XSteps = 0.0f, YSteps = 0.0f;
         int j = 0;
@@ -315,14 +322,17 @@ public class LnChart extends AxesChart {
                     drawHorizontalGridLines(canvas, plotArea.getLeft(),
                             plotArea.getRight(), i, tickCount, YSteps, currentY);
 
-                    if (!categoryAxis.isShowAxisLabels())
+                    if (!categoryAxis.isShowAxisLabels()) {
                         continue;
+                    }
                     //mLstCateTick.add(new PlotAxisTick(axisX, currentY, dataSet.get(i)));
 
                     labelX = axisX;
                     labelY = currentY;
                     if (mXCoordFirstTickmarksBegin && XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
-                        if (i == tickCount - 1) showTicks = false;
+                        if (i == tickCount - 1) {
+                            showTicks = false;
+                        }
                         labelY = add(currentY, div(YSteps, 2));
                     }
 
@@ -343,17 +353,22 @@ public class LnChart extends AxesChart {
                     drawVerticalGridLines(canvas, plotArea.getTop(),
                             plotArea.getBottom(), i, tickCount, XSteps, currentX);
 
-                    if (!categoryAxis.isShowAxisLabels())
+                    if (!categoryAxis.isShowAxisLabels()) {
                         continue;
+                    }
 
                     labelX = currentX;
                     labelY = axisY;
                     if (mXCoordFirstTickmarksBegin && XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
-                        if (i == tickCount - 1) showTicks = false;
+                        if (i == tickCount - 1) {
+                            showTicks = false;
+                        }
                         labelX = sub(currentX, div(XSteps, 2));
                     }
                     mLstCateTick.add(new PlotAxisTick(currentX, axisY, dataSet.get(i), labelX, labelY, showTicks));
 
+                    break;
+                default:
                     break;
             } // switch end
             j++;
@@ -363,16 +378,20 @@ public class LnChart extends AxesChart {
 
     @Override
     public boolean isPlotClickArea(float x, float y) {
-        if (!getListenItemClickStatus())
+        if (!getListenItemClickStatus()) {
             return false;
+        }
 
-        if (Float.compare(x, getLeft()) == -1)
+        if (Float.compare(x, getLeft()) == -1) {
             return false;
-        if (Float.compare(x, getRight()) == 1)
+        }
+        if (Float.compare(x, getRight()) == 1) {
             return false;
+        }
 
-        if (Float.compare(y, getPlotArea().getTop()) == -1)
+        if (Float.compare(y, getPlotArea().getTop()) == -1) {
             return false;
+        }
         return Float.compare(y, getPlotArea().getBottom()) != 1;
     }
 
@@ -390,17 +409,20 @@ public class LnChart extends AxesChart {
     // 遍历曲线
     protected void renderBezierCurveLine(Canvas canvas, Paint paint,
                                          Path bezierPath, List<PointF> lstPoints) {
-        if (null == BezierControls)
+        if (null == BezierControls) {
             BezierControls = new PointF[2];
+        }
         paint.setStyle(Style.STROKE);
 
         int count = lstPoints.size();
-        if (count <= 2)
+        if (count <= 2) {
             return; // 没有或仅一个点就不需要了
+        }
 
         if (count == 3) {
-            if (null == bezierPath)
+            if (null == bezierPath) {
                 bezierPath = new Path();
+            }
             bezierPath.moveTo(lstPoints.get(0).x, lstPoints.get(0).y);
 
             PointF ctl3 = PointHelper.percent(lstPoints.get(1), 0.5f,
@@ -416,8 +438,9 @@ public class LnChart extends AxesChart {
         float axisMinValue = plotArea.getBottom();
 
         for (int i = 0; i < count; i++) {
-            if (i < 3)
+            if (i < 3) {
                 continue;
+            }
 
             // 连续两个值都为0,控制点有可能会显示在轴以下，则此种情况下，将其处理为直线
             if (lstPoints.get(i - 1).y >= axisMinValue
@@ -477,8 +500,9 @@ public class LnChart extends AxesChart {
     // 绘制曲线
     private void renderBezierCurvePath(Canvas canvas, Paint paint,
                                        Path bezierPath, PointF start, PointF stop, PointF[] bezierControls) {
-        if (null == bezierPath)
+        if (null == bezierPath) {
             bezierPath = new Path();
+        }
         bezierPath.reset();
         bezierPath.moveTo(start.x, start.y);
 

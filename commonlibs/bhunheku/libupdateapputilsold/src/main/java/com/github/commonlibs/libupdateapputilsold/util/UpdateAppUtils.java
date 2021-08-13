@@ -96,8 +96,9 @@ public class UpdateAppUtils {
 
     public UpdateAppUtils showProgress(boolean showProgress) {
         UpdateAppUtils.showProgress = showProgress;
-        if (showNotification)
+        if (showNotification) {
             mProgressDialog = new AppUpdateProgressDialog(activity);
+        }
         return this;
     }
 
@@ -159,6 +160,8 @@ public class UpdateAppUtils {
                     Log.i(TAG, "当前版本是最新版本" + serverVersionCode + "/" + serverVersionName);
                 }
                 break;
+            default:
+                break;
         }
 
     }
@@ -174,7 +177,9 @@ public class UpdateAppUtils {
             public void callback(int position) {
                 switch (position) {
                     case 0:  //cancle
-                        if (isForce) System.exit(0);
+                        if (isForce) {
+                            System.exit(0);
+                        }
                         break;
 
                     case 1:  //sure
@@ -188,7 +193,9 @@ public class UpdateAppUtils {
                                         if (position == 1) {
                                             DownloadAppUtils.download(activity, apkPath, apkLocalPath);
                                         } else {
-                                            if (isForce) activity.finish();
+                                            if (isForce) {
+                                                activity.finish();
+                                            }
                                         }
                                     }
                                 }).setContent("目前手机不是WiFi状态\n确认是否继续下载更新？").setTitle("友情提示").show();
@@ -196,6 +203,8 @@ public class UpdateAppUtils {
                         } else if (downloadBy == DOWNLOAD_BY_BROWSER) {
                             DownloadAppUtils.downloadForWebView(activity, apkPath);
                         }
+                        break;
+                    default:
                         break;
                 }
             }

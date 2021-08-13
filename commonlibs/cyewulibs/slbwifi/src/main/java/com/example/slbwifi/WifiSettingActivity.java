@@ -206,7 +206,7 @@ public class WifiSettingActivity extends AppCompatActivity implements ShowWifiIn
             return;
         }
 
-        if (WifiUtil.getEncryptString(res.capabilities).equals("OPEN")) {
+        if ("OPEN".equals(WifiUtil.getEncryptString(res.capabilities))) {
             long startTime = SystemClock.uptimeMillis();
             WifiUtil.addNetWorkThread(WifiUtil.createWifiConfig(res.SSID, "", WifiUtil.getWifiCipher(res.capabilities)), WifiSettingActivity.this);
             Log.d(TAG + "time", "addNetWorkTime2   " + (SystemClock.uptimeMillis() - startTime));
@@ -272,10 +272,11 @@ public class WifiSettingActivity extends AppCompatActivity implements ShowWifiIn
             maps.put(mScanResults.get(i).SSID, mScanResults.get(i));
         }
         Collection<ScanResult> collections = maps.values();
-        if (collections instanceof List)
+        if (collections instanceof List) {
             mScanResults = (List) collections;
-        else
+        } else {
             mScanResults = new ArrayList(collections);
+        }
     }
 
     public String getCurrentResultCap(WifiInfo mInfo) {
@@ -473,7 +474,9 @@ public class WifiSettingActivity extends AppCompatActivity implements ShowWifiIn
                     if (mScanResults.get(i).SSID.equals(mScanResults.get(j).SSID)) {
                         if (mScanResults.get(i).level > mScanResults.get(j).level) {
                             mScanResults.remove(j);
-                        } else mScanResults.remove(i);
+                        } else {
+                            mScanResults.remove(i);
+                        }
                     }
                 }
             }
@@ -484,18 +487,21 @@ public class WifiSettingActivity extends AppCompatActivity implements ShowWifiIn
     public void onStart() {
         super.onStart();
         getScanResult();
-        if (mWifiActionReceiver != null && mFilter1 != null)
+        if (mWifiActionReceiver != null && mFilter1 != null) {
             registerReceiver(mWifiActionReceiver, mFilter1);
+        }
 
-        if (mWifiActionReceiver != null && mFilter2 != null)
+        if (mWifiActionReceiver != null && mFilter2 != null) {
             registerReceiver(mWifiActionReceiver, mFilter2);
+        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mWifiActionReceiver != null)
+        if (mWifiActionReceiver != null) {
             unregisterReceiver(mWifiActionReceiver);
+        }
     }
 
     @Override

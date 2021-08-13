@@ -75,13 +75,13 @@ public class PLVWebViewHelper {
 
         // 允许通过 file url 加载的 Javascript 读取其他的本地文件,Android 4.1 之前默认是true，在 Android 4.1 及以后默认是false,也就是禁止
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            webSettings.setAllowFileAccessFromFileURLs(false);
+            webSettings.setAllowFileAccess(false);
         }
         // 允许通过 file url 加载的 Javascript 可以访问其他的源，包括其他的文件和 http，https 等其他的源，
         // Android 4.1 之前默认是true，在 Android 4.1 及以后默认是false,也就是禁止
         // 如果此设置是允许，则 setAllowFileAccessFromFileURLs 不起做用
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            webSettings.setAllowUniversalAccessFromFileURLs(false);
+            webSettings.setAllowFileAccess(false);
         }
         /**
          * ///暂时保留该代码

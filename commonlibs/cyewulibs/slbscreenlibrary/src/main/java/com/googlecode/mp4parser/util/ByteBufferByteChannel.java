@@ -30,6 +30,7 @@ public class ByteBufferByteChannel implements ByteChannel {
         this.byteBuffer = byteBuffer;
     }
 
+    @Override
     public int read(ByteBuffer dst) throws IOException {
         byte[] b = dst.array();
         int r = dst.remaining();
@@ -41,13 +42,16 @@ public class ByteBufferByteChannel implements ByteChannel {
         }
     }
 
+    @Override
     public boolean isOpen() {
         return true;
     }
 
+    @Override
     public void close() throws IOException {
     }
 
+    @Override
     public int write(ByteBuffer src) throws IOException {
         int r = src.remaining();
         byteBuffer.put(src);

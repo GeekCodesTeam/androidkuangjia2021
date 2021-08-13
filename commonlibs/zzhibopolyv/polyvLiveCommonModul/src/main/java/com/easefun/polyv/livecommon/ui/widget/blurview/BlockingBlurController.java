@@ -283,6 +283,7 @@ final class BlockingBlurController implements BlurController {
         return this;
     }
 
+    @Override
     public BlurViewFacade setBlurAutoUpdate(final boolean enabled) {
         blurView.getViewTreeObserver().removeOnPreDrawListener(drawListener);
         if (enabled) {

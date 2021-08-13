@@ -108,7 +108,9 @@ public class PlotGridRender extends PlotGrid {
 									 startX, startY, stopX, stopY,
 									canvas, getHorizontalLinePaint());
 			 
-			 if(mMajorTickLine)getHorizontalLinePaint().setStrokeWidth(initWidth);
+			 if(mMajorTickLine) {
+                 getHorizontalLinePaint().setStrokeWidth(initWidth);
+             }
 		 }
 	}
 	
@@ -136,7 +138,9 @@ public class PlotGridRender extends PlotGrid {
 												 startX, startY, stopX, stopY,
 												canvas, getVerticalLinePaint());
 			
-			 if(mMajorTickLine)getVerticalLinePaint().setStrokeWidth(initWidth);
+			 if(mMajorTickLine) {
+                 getVerticalLinePaint().setStrokeWidth(initWidth);
+             }
 			
 		 }
 	}
