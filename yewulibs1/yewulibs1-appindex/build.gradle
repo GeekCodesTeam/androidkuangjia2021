@@ -3,7 +3,7 @@ apply from: './../../commonlibsapks.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.0'
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.4'
     implementation project(':yewulibs1:yewulibs1-appcomm')
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu1')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu1')
@@ -16,8 +16,6 @@ dependencies {
 //    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
 //    /**rep*/implementation (name:'biz3hxktindex_bxnt_nation', ext:'aar')
 //    /**rep*/implementation (name:'biz3hxktdetail_bxnt_nation', ext:'aar')
-    // 业务
-
 
 }
 

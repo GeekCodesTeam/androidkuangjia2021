@@ -1,21 +1,23 @@
 package com.necer.calendar;
 
 import android.content.Context;
-import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.necer.adapter.BaseCalendarAdapter;
-import com.necer.adapter.WeekCalendarAdapter;
-import com.necer.painter.CalendarPainter;
-import com.necer.utils.Attrs;
+import android.util.AttributeSet;
+
+import com.necer.adapter.BasePagerAdapter;
+import com.necer.adapter.WeekPagerAdapter;
 import com.necer.utils.CalendarUtil;
 
 import org.joda.time.LocalDate;
 
+
 /**
- * Created by necer on 2018/9/11.
+ *
+ * @author necer
+ * @date 2018/9/11
  * qq群：127278900
  */
 public class WeekCalendar extends BaseCalendar {
@@ -25,8 +27,8 @@ public class WeekCalendar extends BaseCalendar {
     }
 
     @Override
-    protected BaseCalendarAdapter getCalendarAdapter(Context context, LocalDate startDate, LocalDate endDate, LocalDate initializeDate, Attrs attrs) {
-        return new WeekCalendarAdapter(context, startDate, endDate, initializeDate, attrs);
+    protected BasePagerAdapter getPagerAdapter(Context context, BaseCalendar baseCalendar) {
+        return new WeekPagerAdapter(context, baseCalendar);
     }
 
     @Override
@@ -38,6 +40,5 @@ public class WeekCalendar extends BaseCalendar {
     protected LocalDate getIntervalDate(LocalDate localDate, int count) {
         return localDate.plusWeeks(count);
     }
-
 
 }

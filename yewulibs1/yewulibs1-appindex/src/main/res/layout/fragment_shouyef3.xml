@@ -117,6 +117,18 @@
                     android:textColor="@color/gray4A4A4A"
                     android:textSize="12mm" />
 
+                <TextView
+                    android:id="@+id/tv19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="6.业务-发消息到搜索组件"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
 
                 <TextView
                     android:id="@+id/tv8"

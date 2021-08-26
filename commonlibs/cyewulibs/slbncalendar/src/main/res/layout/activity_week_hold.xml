@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#38AE80">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:onClick="monthCalendar"
+            android:padding="15dp"
+            android:text="点击展开日历"
+            android:textColor="#ffffff" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="周状态保持"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+
+        <com.necer.view.WeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+
+    <com.necer.calendar.Miui9Calendar
+        android:id="@+id/miui9Calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:calendarHeight="300dp"
+        app:defaultCalendar="month">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#cccccc"
+                android:tag="@string/N_factual_scroll_view" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </com.necer.calendar.Miui9Calendar>
+
+
+</LinearLayout>

@@ -44,7 +44,7 @@ public abstract class Source {
     private static final String OP_ACCESS_NOTIFICATIONS = "OP_ACCESS_NOTIFICATIONS";
     private static final String OP_WRITE_SETTINGS = "OP_WRITE_SETTINGS";
 
-    private int mtargetSdk;
+    private int mtargetSdkVersion;
     private String mPackageName;
     private PackageManager mPackageManager;
     private AppOpsManager mAppOpsManager;
@@ -58,11 +58,11 @@ public abstract class Source {
 
     public abstract boolean isShowRationalePermission(String permission);
 
-    public int gettargetSdk() {
-        if (mtargetSdk < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            mtargetSdk = getContext().getApplicationInfo().targetSdkVersion;
+    public int gettargetSdkVersion() {
+        if (mtargetSdkVersion < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            mtargetSdkVersion = getContext().getApplicationInfo().targetSdkVersion;
         }
-        return mtargetSdk;
+        return mtargetSdkVersion;
     }
 
     public String getPackageName() {
@@ -100,7 +100,7 @@ public abstract class Source {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (gettargetSdk() < Build.VERSION_CODES.O) {
+            if (gettargetSdkVersion() < Build.VERSION_CODES.O) {
                 return reflectionOps(OP_REQUEST_INSTALL_PACKAGES);
             }
             return getPackageManager().canRequestPackageInstalls();
@@ -111,7 +111,7 @@ public abstract class Source {
     public final boolean canDrawOverlays() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Context context = getContext();
-            if (gettargetSdk() >= Build.VERSION_CODES.M) {
+            if (gettargetSdkVersion() >= Build.VERSION_CODES.M) {
                 return Settings.canDrawOverlays(context);
             }
 
@@ -143,7 +143,7 @@ public abstract class Source {
     public final boolean canWriteSetting() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Context context = getContext();
-            if (gettargetSdk() >= Build.VERSION_CODES.M) {
+            if (gettargetSdkVersion() >= Build.VERSION_CODES.M) {
                 return Settings.System.canWrite(context);
             }
 

@@ -1,9 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_namelibutils" tools:ignore="MissingTranslation">SwipeBackDemo</string>
-    <string name="language_cn">中文</string>
-    <string name="language_en">ENGLISH</string>
-    <string name="language_auto">自动</string>
-    <string name="language_traditional">繁體</string>
-    <string name="language_select">当前选择的语言: %s</string>
-    <string name="user_select_language">当前用户选择语言: %s</string>
-</resources>

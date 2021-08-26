@@ -1,21 +1,26 @@
 package com.necer.calendar;
 
 import android.content.Context;
-import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.necer.adapter.BaseCalendarAdapter;
-import com.necer.adapter.MonthCalendarAdapter;
-import com.necer.painter.CalendarPainter;
+import android.util.AttributeSet;
+
+import com.necer.adapter.BasePagerAdapter;
+import com.necer.adapter.MonthPagerAdapter;
+import com.necer.enumeration.CalendarBuild;
 import com.necer.utils.Attrs;
 import com.necer.utils.CalendarUtil;
 
 import org.joda.time.LocalDate;
 
+import java.util.List;
+
 /**
- * Created by necer on 2018/9/11.
+ *
+ * @author necer
+ * @date 2018/9/11
  * qq群：127278900
  */
 public class MonthCalendar extends BaseCalendar {
@@ -25,8 +30,8 @@ public class MonthCalendar extends BaseCalendar {
     }
 
     @Override
-    protected BaseCalendarAdapter getCalendarAdapter(Context context, LocalDate startDate, LocalDate endDate, LocalDate initializeDate, Attrs attrs) {
-        return new MonthCalendarAdapter(context, startDate, endDate, initializeDate, attrs);
+    protected BasePagerAdapter getPagerAdapter(Context context, BaseCalendar baseCalendar) {
+        return new MonthPagerAdapter(context,baseCalendar);
     }
 
     @Override
@@ -36,7 +41,7 @@ public class MonthCalendar extends BaseCalendar {
 
     @Override
     protected LocalDate getIntervalDate(LocalDate localDate, int count) {
-        LocalDate date = localDate.plusMonths(count);
-        return date;
+        return localDate.plusMonths(count);
     }
+
 }

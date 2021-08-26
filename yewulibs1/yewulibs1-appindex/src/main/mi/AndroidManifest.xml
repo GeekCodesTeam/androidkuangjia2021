@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:label="@string/app_nameappindex"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeBase"
+        android:theme="@style/AppThemeBase2"
         tools:replace="android:label">
         <activity android:name="mi.LauncherActivity">
             <intent-filter>

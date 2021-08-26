@@ -361,9 +361,10 @@ public class GSYDefaultHttpDataSource extends BaseDataSource implements HttpData
                         "Error reading non-2xx response body", e, dataSpec, HttpDataSourceException.TYPE_OPEN);
             }
             closeConnectionQuietly();
+            IOException cause = new IOException();
             InvalidResponseCodeException exception =
                     new InvalidResponseCodeException(
-                            responseCode, responseMessage, headers, dataSpec, errorResponseBody);
+                            responseCode, responseMessage, cause,headers, dataSpec, errorResponseBody);
 
             if (responseCode == 416) {
                 exception.initCause(new DataSourceException(DataSourceException.POSITION_OUT_OF_RANGE));

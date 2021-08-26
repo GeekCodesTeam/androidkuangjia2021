@@ -15,14 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.geek.libbase.base.SlbBaseLazyFragmentNew;
-import com.geek.libbase.plugins.PluginConst;
-import com.geek.libbase.plugins.PluginManager;
-import com.geek.libbase.utils.ApkDownloadUtils;
-import com.geek.libbase.widgets.GridSpacingItemDecoration;
 import com.example.slbappindex.R;
 import com.example.slbappindex.adapters.ShouyeF4Adapter1;
 import com.example.slbappindex.adapters.ShouyeF4Bean1;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.plugins.PluginManager;
+import com.geek.libbase.plugins.proxy.ProxyActivity;
+import com.geek.libbase.utils.ApkDownloadUtils;
+import com.geek.libbase.widgets.GridSpacingItemDecoration;
 import com.geek.libglide47.base.util.DisplayUtil;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
@@ -155,7 +155,7 @@ public class ShouyeF4 extends SlbBaseLazyFragmentNew {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     //
-//                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("dataability://cs.znclass.com/" + AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivity"));
+//                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("dataability://cs.znclass.com/" + AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivityUpdate"));
 //                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                    startActivity(intent);
                 } else if (bean1.getTab_tag().contains("others")) {
@@ -212,14 +212,13 @@ public class ShouyeF4 extends SlbBaseLazyFragmentNew {
 //                                startActivity(i);
                                     // test2
 //                                String savepath = LoadUtils.setpath1(MainAct.this,"libyewu-ezhibu-bxn_nation-release.apk");
-                                    PluginManager.getInstance().init(getActivity());
-                                    PluginManager.getInstance().loadPluginApk(savepath);
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString(PluginConst.query1, "MainAct传值");
-                                    bundle.putString(PluginConst.DEX_PATH, savepath);
-                                    bundle.putString(PluginConst.REALLY_ACTIVITY_NAME, "com.fosung.lighthouse.ezhibu.EzhibuAct");
-                                    bundle.putInt(PluginConst.LAUNCH_MODEL, PluginConst.LaunchModel.STANDARD);
-                                    PluginManager.getInstance().startActivity(getActivity(), bundle);
+                                    //加载插件信息
+                                    PluginManager.getInstance().loadPath(getActivity(), savepath);
+                                    //
+                                    Intent intent = new Intent(getActivity(), ProxyActivity.class);
+//        intent.putExtra("className", PluginManager.getInstance().getPackageInfo().activities[0].name);
+                                    intent.putExtra("className", "com.example.slbappsearch.SecondActivity");
+                                    startActivity(intent);
                                 }
                             }, 100);
                         }
@@ -337,7 +336,7 @@ public class ShouyeF4 extends SlbBaseLazyFragmentNew {
         mList1.add(new ShouyeF4Bean1("33", "http://cdn2.cdn.haier-jiuzhidao.com/libyewu-ezhibu-bxn_nation-release.apk", "load", "灯塔2.0", false));
         mList1.add(new ShouyeF4Bean1("44", "com.example.gsyvideoplayer.GSYMainActivity", "act2", "鸿蒙智慧屏", false));
         mList1.add(new ShouyeF4Bean1("55", "com.tencent.mm", "others", "微信", false));
-        mList1.add(new ShouyeF4Bean1("66", AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivity", "hios", "灯塔通平台", false));
+        mList1.add(new ShouyeF4Bean1("66", AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivityUpdate", "hios", "灯塔通平台", false));
         mList1.add(new ShouyeF4Bean1("77", "http://zwfw.sd.gov.cn", "http", "华为会议", false));
         mList1.add(new ShouyeF4Bean1("88", "com.tencent.tmgp.sgame", "others", "王者荣耀", false));
         mList1.add(new ShouyeF4Bean1("66", AppUtils.getAppPackageName() + ".hs.act.slbapp.ChangeIconActivity", "hios", "党的节日", false));

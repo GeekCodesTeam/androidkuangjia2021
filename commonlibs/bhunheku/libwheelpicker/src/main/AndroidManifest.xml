@@ -5,6 +5,14 @@
         android:allowBackup="true"
         android:label="@string/appnamelibwheelpicker"
         android:supportsRtl="true">
-
+        <activity
+            android:name=".WheelpickerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.WheelpickerActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

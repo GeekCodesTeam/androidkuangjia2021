@@ -11,7 +11,8 @@ import androidx.annotation.Nullable;
 import com.example.slbappcomm.R;
 import com.necer.calendar.BaseCalendar;
 import com.necer.calendar.MonthCalendar;
-import com.necer.enumeration.SelectedModel;
+import com.necer.enumeration.CheckModel;
+import com.necer.enumeration.DateChangeBehavior;
 import com.necer.listener.OnCalendarChangedListener;
 import com.necer.listener.OnCalendarMultipleChangedListener;
 import com.necer.painter.InnerPainter;
@@ -25,6 +26,7 @@ public class RiliActDemo extends Activity {
     protected final static String TAG = "RiliAct";
     private TextView tv_result;
     private MonthCalendar monthCalendar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +35,8 @@ public class RiliActDemo extends Activity {
 
 
         monthCalendar = findViewById(R.id.monthCalendar);
-        monthCalendar.setSelectedMode(SelectedModel.SINGLE_UNSELECTED);
-        monthCalendar.setDefaultSelectFitst(false);
+        monthCalendar.setCheckMode(CheckModel.SINGLE_DEFAULT_UNCHECKED);
+        monthCalendar.setDefaultCheckedFirstDate(false);
         List<String> pointList = Arrays.asList("2019-9-01", "2019-9-19", "2019-9-20", "2019-09-23", "2019-10-01");
         InnerPainter innerPainter = (InnerPainter) monthCalendar.getCalendarPainter();
         innerPainter.setPointList(pointList);
@@ -45,10 +47,9 @@ public class RiliActDemo extends Activity {
                 monthCalendar.toToday();
             }
         });
-
         monthCalendar.setOnCalendarChangedListener(new OnCalendarChangedListener() {
             @Override
-            public void onCalendarChange(BaseCalendar baseCalendar, int year, int month, LocalDate localDate) {
+            public void onCalendarChange(BaseCalendar baseCalendar, int year, int month, LocalDate localDate, DateChangeBehavior dateChangeBehavior) {
                 tv_result.setText(year + "年" + month + "月" + "   当前页面选中 " + localDate);
 
                 Log.d(TAG, "setOnCalendarChangedListener:::" + year + "年" + month + "月" + "   当前页面选中 " + localDate);
@@ -57,7 +58,7 @@ public class RiliActDemo extends Activity {
 
         monthCalendar.setOnCalendarMultipleChangedListener(new OnCalendarMultipleChangedListener() {
             @Override
-            public void onCalendarChange(BaseCalendar baseCalendar, int year, int month, List<LocalDate> currectSelectList, List<LocalDate> allSelectList) {
+            public void onCalendarChange(BaseCalendar baseCalendar, int year, int month, List<LocalDate> currectSelectList, List<LocalDate> allSelectList, DateChangeBehavior dateChangeBehavior) {
                 tv_result.setText(year + "年" + month + "月" + " 当前页面选中 " + currectSelectList.size() + "个  总共选中" + allSelectList.size() + "个");
 
                 Log.d(TAG, year + "年" + month + "月");

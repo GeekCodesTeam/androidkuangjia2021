@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -27,6 +28,7 @@ import com.example.bizyewu1.view.CheckverionView;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libbase.plugins.PluginManager;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
@@ -94,6 +96,14 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
             }
         }
     }
+    //
+    private final static String ACTION = "com.example.receiver.action";
+    public BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(ShouyeActivity.this, "我是宿主，收到插件消息", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     private final Shortcut.Callback callback = new Shortcut.Callback() {
         @Override
@@ -141,6 +151,10 @@ public class ShouyeActivity extends SlbBaseActivity implements CheckverionView {
             mFragment4 = (ShouyeF4) mFragmentManager.findFragmentByTag(LIST_TAG4);
         }
         super.onCreate(savedInstanceState);
+        // 插件bufen
+        PluginManager.getInstance().setContext(this);
+        //宿主中正常注册广播
+        registerReceiver(mReceiver, new IntentFilter(ACTION));
     }
 
     @Override

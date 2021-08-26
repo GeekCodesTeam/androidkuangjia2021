@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="首页"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shouyef1_tv101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="1.权限申请"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="2.饿了么分类列表"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="3.图片点击离子效果"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="4.线程大全(handler)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="5.布局状态静态切换(EmptyView)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="6.动态布局切换(NetEmptyView)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="7.列表大全(RecycleView)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="8.购物车点击动画效果"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="9.多样列表(RecycleView)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="10.阻尼布局"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="11.系统音效"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="12.国际化"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="13.隐私协议布局联动"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="14.制造信息(ANROOMCrash)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="15.音乐播放器"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="16.显隐列表(Expandable)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="17.系统文件处理用法(Assets)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="18.购物车动效(ShoppingCar)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shouyef1_tv18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="19.按钮动效(全局)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="20.常用弹出层"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="21.弹窗广告"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="22.弹窗广告2"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="23.日历(详情页面)"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="24.扫码"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="25.上传头像"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="26.多图上传"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="27.播放器DEMO"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="28.ViewPage1分类"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="29.ViewPage1分类2"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="30.轮播图1"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+
+                <TextView
+                    android:id="@+id/shouyef1_tv20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="31.轮播图2"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+
+                <TextView
+                    android:id="@+id/shouyef1_tv32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="32.轮播图3汇总"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+
+                <TextView
+                    android:id="@+id/shouyef1_tv31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="33.滚轮选择器"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="34.键盘输入框"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="35.SwitchButton"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="36.Android启动鸿蒙组件"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv36"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="37.鸿蒙启动Android组件"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+
+                <TextView
+                    android:id="@+id/shouyef1_tv37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12mm"
+                    android:layout_marginTop="12mm"
+                    android:layout_marginRight="12mm"
+                    android:gravity="left"
+                    android:text="38.后台切换节日图标"
+                    android:textColor="@color/gray4A4A4A"
+                    android:textSize="12mm" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

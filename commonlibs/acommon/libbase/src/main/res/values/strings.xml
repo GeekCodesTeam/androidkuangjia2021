@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_namelibbase" translatable="false">libbase</string>
-
-    <string name="retry_text" translatable="false">重试</string>
-    <string name="yhzc_tip1" translatable="false">获取验证码</string>
-    <string name="yhzc_tip2" translatable="false">%1$ds后重新获取</string>
-
-</resources>

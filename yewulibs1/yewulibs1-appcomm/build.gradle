@@ -16,29 +16,10 @@ def librarys = rootProject.ext.dependencies //
 //        }
 //    }
 //}
-android {
-    defaultConfig {
-        def stValue = "ceshi"
-        manifestPlaceholders = [
-                // DEMO2_CONFIG_VALUE: ".demo2.factorys.MkDemo2Factory1",
-                DEMO2_CONFIG_VALUE: "com.example.slbappcomm.fragmentsgeek.demo2.factorys.MkDemo2Factory2",
-                DEMO3_CONFIG_VALUE: "com.example.slbappcomm.fragmentsgeek.demo3.factorys.MkDemo3Factory",
-                DEMO4_CONFIG_VALUE: "com.example.slbappcomm.fragmentsgeek.demo4.factorys.MkDemo4Factory",
-                STATISTICS_VALUE  : stValue
-        ]
-    }
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //TODO common libs
-    api 'com.github.GeekCodesTeam:geeklibs:1.5.0'
-    // jitpack不支持aar+aar
-//    api project(':commonlibs:bhunheku:libagentweb')
+    api 'com.github.GeekCodesTeam:geeklibs:1.6.4'
     // 支持分版本网络请求
     bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
     bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
@@ -46,10 +27,10 @@ dependencies {
     // https://github.com/yanzhenjie/NoFragment
     api project(':commonlibs:bhunheku:libyanzhenjiebase')
     // https://github.com/li-xiaojun/XPopup
-    api project(':commonlibs:cyewulibs:slbxpopup')
+//    api project(':commonlibs:cyewulibs:slbxpopup')
     // https://github.com/yanzhenjie/AndPermission
 //    api 'com.yanzhenjie:permission:2.0.3'
-    api project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+//    api project(':commonlibs:bhunheku:libyanzhenjieandpermission')
     // https://github.com/hongyangAndroid/FlowLayout
 //    api 'com.hyman:flowlayout-lib:1.1.2'
     // https://github.com/AigeStudio/WheelPicker
@@ -60,9 +41,9 @@ dependencies {
     api project(':commonlibs:bhunheku:llibbottomdialog')
     // https://github.com/KunMinX/Linkage-RecyclerView
 //    api 'com.kunminx.linkage:linkage-recyclerview:2.3.5'
-    api project(':commonlibs:bhunheku:liblinkagerecyclerview')
+//    api project(':commonlibs:bhunheku:liblinkagerecyclerview')
     // https://github.com/LuckSiege/PictureSelector
-    api project(':commonlibs:cyewulibs:slbpictureselector')
+//    api project(':commonlibs:cyewulibs:slbpictureselector')
     // https://github.com/ethanhua/Skeleton
 //    api 'com.ethanhua:skeleton:1.1.2'
     // https://github.com/team-supercharge/ShimmerLayout
@@ -70,9 +51,9 @@ dependencies {
     api project(':commonlibs:bhunheku:libskeleton')
     // https://github.com/drawthink/ExpandableRecyclerView
 //    api 'com.drawthink:expandable-recyclerview:0.0.3'
-    api project(':commonlibs:bhunheku:libexpandablerecyclerview')
+//    api project(':commonlibs:bhunheku:libexpandablerecyclerview')
     // app升级
-    api project(':commonlibs:bhunheku:libupdateapputilsold')
+//    api project(':commonlibs:bhunheku:libupdateapputilsold')
     // https://github.com/teprinciple/UpdateAppUtils
 //    api 'com.teprinciple:updateapputilsx:2.3.0'
     api project(':commonlibs:bhunheku:libupdateapputilsnew')
@@ -90,13 +71,11 @@ dependencies {
     // slbbluetooth
     api project(':commonlibs:cyewulibs:slbbluetooth')
     // ncalendar
-    api project(':commonlibs:cyewulibs:slbncalendar')
+//    api project(':commonlibs:cyewulibs:slbncalendar')
     // slbota
     api project(':commonlibs:cyewulibs:slbota')
     // slbwifi
     api project(':commonlibs:cyewulibs:slbwifi')
-    // uploadpic
-    api project(':commonlibs:cyewulibs:slbimagepicker')
     // https://github.com/jenly1314/ZXingLite
     // api 'com.king.zxing:zxing-lite:1.1.4-androidx'
     api project(':commonlibs:cyewulibs:zxinglibs1')
@@ -112,24 +91,28 @@ dependencies {
     // https://github.com/Jzvd/JZVideo
     api project(':commonlibs:cyewulibs:slbjiaozvideonew')
     // https://github.com/Doikki/DKVideoPlayer
-    api project(':commonlibs:zdkplayer:dkplayer-sample')
+//    api project(':commonlibs:zdkplayer:dkplayer-sample')
+//    api 'com.github.GeekCodesTeam.geeklibs:zdkplayer:dkplayer:1.6.4'
+//    api('com.github.GeekCodesTeam.geeklibs:zdkplayer:1.6.4') {
+//        exclude module: 'gsyVideoPlayer-armv5'
+//        exclude module: 'gsyVideoPlayer-armv7a'
+//        exclude module: 'gsyVideoPlayer-armv64'
+//        exclude module: 'gsyVideoPlayer-x86'
+//        exclude module: 'gsyVideoPlayer-x86_64'
+//    }
     // okhttputils
-    api project(':commonlibs:bhunheku:libokhttputils')
+//    api project(':commonlibs:bhunheku:libokhttputils')
     // 指纹验证
-    api project(':commonlibs:cyewulibs:slbyanzheng')
-    //TODO aar
-//    /**rep*/implementation (name:'biz3slbappcomm_bxnt_nation', ext:'aar')
-    // test
-//    bxnt_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
-//    bxny_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
-//    bxn_nationImplementation project(':yewulibs1:yewulibs1-bizyewu2')
-    //业务bufen
+//    api project(':commonlibs:cyewulibs:slbyanzheng')
+    // TODO 业务bufen
     // 环信IM
     // api project(':commonlibs:huanxin:huanxinim')
     // 保利威直播1
-    api project(':commonlibs:zzhibopolyv:demo')
+//    api project(':commonlibs:zzhibopolyv:demo')
     // TencentIm
     api project(':commonlibs:ztencent:tencentim')
     // RongCloudIM
 //    api project(':commonlibs:rongcloud:rongcloudim')
+    // 业务
+//    api 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.4'
 }

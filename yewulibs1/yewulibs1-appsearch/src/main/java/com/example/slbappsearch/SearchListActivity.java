@@ -23,13 +23,13 @@ import com.example.bizyewu2.bean.SNew1SearchBean1;
 import com.example.bizyewu2.bean.SNew1SearchBean2;
 import com.example.bizyewu2.presenter.SNew1SearchPresenter;
 import com.example.bizyewu2.view.SNew1SearchView;
-import com.geek.libbase.base.SlbBaseActivity;
-import com.geek.libbase.emptyview.NiubiEmptyViewNew;
-import com.geek.libbase.widgets.XRecyclerView;
 import com.example.slbappsearch.part1.SearchBean;
 import com.example.slbappsearch.part1.searchhuancun.SearchCommManager;
 import com.example.slbappsearch.part2.SearchKeyListAdapter;
 import com.example.slbappsearch.part3.SearchListAdapter;
+import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.emptyview.NiubiEmptyViewNew;
+import com.geek.libbase.widgets.XRecyclerView;
 import com.haier.cellarette.baselibrary.flowlayout.FlowLayout;
 import com.haier.cellarette.baselibrary.flowlayout.TagAdapter;
 import com.haier.cellarette.baselibrary.flowlayout.TagFlowLayout;
@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SearchListActivity extends SlbBaseActivity implements View.OnClickListener, SNew1SearchView {
+//public class SearchListActivity extends SlbPluginBaseActivity implements View.OnClickListener, SNew1SearchView {
 
     private LinearLayout llbg3;
     private TextView tv_del2;
@@ -74,13 +75,6 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
 
 
     @Override
-    protected void onResume() {
-//        MobclickAgent.onEvent(this, "SearchListActivity");
-        super.onResume();
-    }
-
-
-    @Override
     protected int getLayoutId() {
         return R.layout.activity_search_list;
     }
@@ -92,6 +86,8 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
         findview();
         onclick();
         donetwork();
+
+
     }
 
     private void donetwork() {
@@ -436,10 +432,11 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
     }
 
     @Override
-    protected void onDestroy() {
-        presenter.onDestory();
+    public void onDestroy() {
+        if (presenter != null) {
+            presenter.onDestory();
+        }
         super.onDestroy();
-
     }
 
     /**
@@ -496,5 +493,10 @@ public class SearchListActivity extends SlbBaseActivity implements View.OnClickL
         if (i == 3) {
             niubiEmptyView3.errornet("网络异常，请检查网络连接！");
         }
+    }
+
+    @Override
+    public String getIdentifier() {
+        return null;
     }
 }

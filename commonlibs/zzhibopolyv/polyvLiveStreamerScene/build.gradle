@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdk 30
+    compileSdkVersion 30
     defaultConfig {
-        minSdk 21
-        targetSdk 30
+        minSdkVersion 21
+        targetSdkVersion 30
         consumerProguardFiles "proguard-rules.pro"
     }
     buildTypes {

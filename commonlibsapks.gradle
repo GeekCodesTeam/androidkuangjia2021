@@ -32,11 +32,11 @@ android {
         pickFirst 'lib/x86/librsjni.so'
 
     }
-    compileSdk config.compileSdk
+    compileSdkVersion config.compileSdkVersion
 
     defaultConfig {
-        minSdk config.minSdk
-        targetSdk config.targetSdk
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true

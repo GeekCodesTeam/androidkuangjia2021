@@ -11,11 +11,9 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.bizyewu2.presenter.HTuichudengluPresenter;
 import com.example.bizyewu2.view.HTuichudengluView;
-import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libutils.SlbLoginUtil;
-import com.geek.libutils.data.MmkvUtils;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.impl.LoadingPopupView;
 
@@ -84,12 +82,12 @@ public class SlbLoginOutActivity extends SlbBaseActivity implements HTuichudengl
      */
     private void donetloginout() {
         //step 请求服务器成功后清除sp中的数据
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_SEX);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_IMG);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TEL);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_NAME);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_forceLogin);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TOKEN);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_SEX);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_IMG);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TEL);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_NAME);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_forceLogin);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TOKEN);
         onLoginSuccess();
     }
 

@@ -6,4 +6,5 @@ def librarys = rootProject.ext.dependencies //依赖
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 }

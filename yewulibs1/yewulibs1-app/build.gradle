@@ -59,12 +59,12 @@ android {
     }
 //    ndkVersion "major.minor.build" // e.g.,  ndkVersion '21.3.6528147'
     ndkVersion "22.1.7171670" // e.g.,  ndkVersion '21.3.6528147'
-    compileSdk config.compileSdk
+    compileSdkVersion config.compileSdkVersion
 //    buildToolsVersion config.buildToolsVersion
     defaultConfig {
         applicationId "com.fosung.lighthouse.test"
-        minSdk config.minSdk
-        targetSdk config.targetSdk
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true
@@ -241,7 +241,7 @@ dependencies {
     // 鸿蒙bufen
     implementation files('./libs/abilityshell_ide_java.jar')
     // TODO common库
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.0'
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.4'
     // TODO 业务
     implementation project(':yewulibs1:yewulibs1-appcomm')
     implementation project(':yewulibs1:yewulibs1-appindex')

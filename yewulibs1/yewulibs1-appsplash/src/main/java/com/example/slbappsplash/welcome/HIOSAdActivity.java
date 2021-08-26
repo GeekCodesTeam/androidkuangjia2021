@@ -8,12 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.example.bizyewu1.bean.VersionInfoBean;
-import com.example.bizyewu1.presenter.CheckverionPresenter;
-import com.example.bizyewu1.view.CheckverionView;
+import com.example.slbappsplash.R;
 import com.geek.libbase.utils.CommonUtils;
 import com.geek.libbase.widgets.NavigationBarUtil;
-import com.example.slbappsplash.R;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.haier.cellarette.libwebview.base.WebViewActivity;
@@ -24,13 +21,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
+public class HIOSAdActivity extends WebViewActivity {
 
     private TextView tv_adJump;
     private ScheduledExecutorService mExecutorService;
     int time = 5;
     private String url;
-    private CheckverionPresenter hSettingPresenter;
+//    private CheckverionPresenter hSettingPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +58,9 @@ public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
             }
         });
         // 接口部分
-        hSettingPresenter = new CheckverionPresenter();
-        hSettingPresenter.onCreate(this);
-        hSettingPresenter.checkVerion("android");
+//        hSettingPresenter = new CheckverionPresenter();
+//        hSettingPresenter.onCreate(this);
+//        hSettingPresenter.checkVerion("android");
     }
 
     private void setTime() {
@@ -173,39 +170,39 @@ public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
     private String bbbb;
     private String cccc;
 
-    @Override
-    public void OnUpdateVersionSuccess(VersionInfoBean versionInfoBean) {
-//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_forceLogin, hSettingBean.getForceLogin());
-//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_serviceProtocol, hSettingBean.getServiceProtocol());
-//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_privacyPolicy, hSettingBean.getPrivacyPolicy());
-        // 加载webview 开始倒计时bufen
-        url = "https://blog.51cto.com/liangxiao";
-        loadUrl(url);
-        setTime();
-    }
-
-    @Override
-    public void OnUpdateVersionNodata(String bean) {
-        startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity"));
-        finish();
-    }
-
-    @Override
-    public void OnUpdateVersionFail(String msg) {
+//    @Override
+//    public void OnUpdateVersionSuccess(VersionInfoBean versionInfoBean) {
+////        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_forceLogin, hSettingBean.getForceLogin());
+////        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_serviceProtocol, hSettingBean.getServiceProtocol());
+////        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_privacyPolicy, hSettingBean.getPrivacyPolicy());
+//        // 加载webview 开始倒计时bufen
+//        url = "https://blog.51cto.com/liangxiao";
+//        loadUrl(url);
+//        setTime();
+//    }
+//
+//    @Override
+//    public void OnUpdateVersionNodata(String bean) {
 //        startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity"));
 //        finish();
-        // 加载webview 开始倒计时bufen
-//        url = "https://syzs.qq.com/campaign/3977.html";
-//        url = "file:///android_asset/html/test.html";
-        url = "https://blog.51cto.com/liangxiao";
-        loadUrl(url);
-        setTime();
-    }
-
-    @Override
-    public String getIdentifier() {
-        return System.currentTimeMillis() + "";
-    }
+//    }
+//
+//    @Override
+//    public void OnUpdateVersionFail(String msg) {
+////        startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity"));
+////        finish();
+//        // 加载webview 开始倒计时bufen
+////        url = "https://syzs.qq.com/campaign/3977.html";
+////        url = "file:///android_asset/html/test.html";
+//        url = "https://blog.51cto.com/liangxiao";
+//        loadUrl(url);
+//        setTime();
+//    }
+//
+//    @Override
+//    public String getIdentifier() {
+//        return System.currentTimeMillis() + "";
+//    }
 
 
     @Override
@@ -214,9 +211,9 @@ public class HIOSAdActivity extends WebViewActivity implements CheckverionView {
         if (mExecutorService != null) {
             mExecutorService.shutdown();
         }
-        if (hSettingPresenter != null) {
-            hSettingPresenter.onDestory();
-        }
+//        if (hSettingPresenter != null) {
+//            hSettingPresenter.onDestory();
+//        }
         super.onDestroy();
     }
 }

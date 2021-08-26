@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 27
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "com.app.hubert.newbieguide"
-        minSdk 14
-        targetSdk 27
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

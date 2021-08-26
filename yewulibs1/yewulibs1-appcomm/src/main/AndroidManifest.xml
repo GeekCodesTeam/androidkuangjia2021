@@ -240,37 +240,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragmentsgeek.demo1.MkDemo1Activity" />
-        <activity android:name=".fragmentsgeek.demo2.MkDemo2Activity" />
-        <!--demo2 config start-->
-        <meta-data
-            android:name="DEMO2_CONFIG"
-            android:value="${DEMO2_CONFIG_VALUE}" />
-        <meta-data
-            android:name="STATISTICS"
-            android:value="${STATISTICS_VALUE}" />
-        <!--demo2 config end-->
 
-        <!--demo3 config start-->
-        <activity android:name=".fragmentsgeek.demo3.MkDemo3Activity" />
-        <meta-data
-            android:name="DEMO3_CONFIG"
-            android:value="${DEMO3_CONFIG_VALUE}" />
-        <!--demo3 config end-->
-
-        <!--demo4 config start-->
-        <activity android:name=".fragmentsgeek.demo4.MkDemo4Activity" />
-        <meta-data
-            android:name="DEMO4_CONFIG"
-            android:value="${DEMO4_CONFIG_VALUE}" />
-        <!--demo4 config end-->
-        <activity android:name=".fragmentsgeek.demo5.MkDemo5Activity" />
-        <activity android:name=".fragmentsgeek.NkMainActivity">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.NkMainActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name="com.geek.libbase.zhiwen.ZhiwenAct">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct" />

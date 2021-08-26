@@ -1,0 +1,201 @@
+apply plugin: 'com.android.application'
+def config = rootProject.ext //
+def library = rootProject.ext.dependencies //
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+//    kotlinOptions {
+//        jvmTarget = "11"
+//    }
+
+    packagingOptions {
+        pickFirst 'lib/armeabi/libRSSupport.so'
+        pickFirst 'lib/armeabi/librsjni_androidx.so'
+        pickFirst 'lib/armeabi/librsjni.so'
+        pickFirst 'lib/armeabi-v7a/libRSSupport.so'
+        pickFirst 'lib/armeabi-v7a/librsjni_androidx.so'
+        pickFirst 'lib/armeabi-v7a/librsjni.so'
+        pickFirst 'lib/arm64-v8a/librsjni.so'
+        pickFirst 'lib/arm64-v8a/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/libRSSupport.so'
+        pickFirst 'lib/x86_64/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/librsjni.so'
+        pickFirst 'lib/x86/librsjni_androidx.so'
+        pickFirst 'lib/x86/libRSSupport.so'
+        pickFirst 'lib/x86/librsjni.so'
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'META-INF/LICENSE'
+//        exclude 'META-INF/LICENSE.txt'
+//        exclude 'META-INF/license.txt'
+//        exclude 'META-INF/NOTICE'
+//        exclude 'META-INF/NOTICE.txt'
+//        exclude 'META-INF/notice.txt'
+//        exclude 'META-INF/ASL2.0'
+//        exclude("META-INF/*.kotlin_module")
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    ndkVersion "22.1.7171670" // e.g.,  ndkVersion '21.3.6528147'
+    compileSdkVersion config.compileSdkVersion
+//    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        applicationId "com.github.geekcodesteam.app"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.appversionCode
+        versionName config.appversionName
+        multiDexEnabled true
+        renderscriptTargetApi 30
+        renderscriptSupportModeEnabled true
+        externalNativeBuild {
+            cmake {
+                version "3.18.1"
+                cppFlags "-std=c++11 -frtti -fexceptions"
+                arguments "-DANDROID_ARM_NEON=TRUE",
+                        "-DANDROID_CPP_FEATURES=rtti exceptions"
+                abiFilters "arm64-v8a"
+            }
+        }
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.18.1"
+        }
+    }
+    flavorDimensions "keep"
+    productFlavors {
+        bxn_nation {
+            dimension "keep"
+            applicationId "com.github.geekcodesteam.app"
+            manifestPlaceholders = [
+                    JSHARE_PKGNAME: "com.github.geekcodesteam.app",
+                    JPUSH_PKGNAME : "com.github.geekcodesteam.app",
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                    // 设置manifest.xml中的变量
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
+                    TENCENT_APPID : "1106011004",
+                    MTA_APPKEY    : "注册应用的appkey",
+                    MTA_CHANNEL   : "渠道名称",
+                    app_name      : "移动端框架",
+                    app_icon      : "@mipmap/ic_launcher"
+            ]
+        }
+        bxnt_nation {
+            dimension "keep"
+            applicationId "com.github.geekcodesteam.app"
+            manifestPlaceholders = [
+                    JSHARE_PKGNAME: "com.github.geekcodesteam.app",
+                    JPUSH_PKGNAME : "com.github.geekcodesteam.app",
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                    // 设置manifest.xml中的变量
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
+                    TENCENT_APPID : "1106011004",
+                    MTA_APPKEY    : "注册应用的appkey",
+                    MTA_CHANNEL   : "渠道名称",
+                    app_name      : "移动端框架-测试",
+                    app_icon      : "@mipmap/ic_launcher"
+            ]
+        }
+        bxny_nation {
+            dimension "keep"
+            applicationId "com.github.geekcodesteam.app"
+            manifestPlaceholders = [
+                    JSHARE_PKGNAME: "com.github.geekcodesteam.app",
+                    JPUSH_PKGNAME : "com.github.geekcodesteam.app",
+                    JPUSH_APPKEY  : "b5333edf8469ecdec9d3ad73", //JPush 上注册的包名对应的 key.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                    // 设置manifest.xml中的变量
+                    XIAOMI_APPKEY : "MI-5871985930878", // 小米平台注册的key,注意不要将前缀去掉 MI-key
+                    XIAOMI_APPID  : "MI-2882303761519859878", // 小米平台注册的id，注意不要将前缀去掉 MI-id
+                    TENCENT_APPID : "1106011004",
+                    MTA_APPKEY    : "注册应用的appkey",
+                    MTA_CHANNEL   : "渠道名称",
+                    app_name      : "移动端框架-预生产",
+                    app_icon      : "@mipmap/ic_launcher"
+            ]
+        }
+    }
+    android.applicationVariants.all { variant ->
+        def outputApkName = "dtapp2.0-${variant.flavorName}-release.apk"
+        variant.outputs.all {
+            outputFileName = outputApkName
+        }
+    }
+    signingConfigs {
+        //TODO harmonybufen
+        release {
+            storeFile file('./../../releasekey/harmonyandroid.jks')
+            keyAlias 'harmonyandroid'
+            keyPassword 'HarmonyAndroid'
+            storePassword 'HarmonyAndroid'
+        }
+        debug {
+            storeFile file('./../../releasekey/harmonyandroid.jks')
+            keyAlias 'harmonyandroid'
+            keyPassword 'HarmonyAndroid'
+            storePassword 'HarmonyAndroid'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+//            zipAlignEnabled false
+//            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+//            zipAlignEnabled false
+//            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // TODO 鸿蒙bufen
+    implementation files('./libs/abilityshell_ide_java.jar')
+    // TODO common库
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.4'
+    // TODO 业务
+    // 支持分版本网络请求
+    bxnt_nationImplementation project(':ademo:appvariants')
+    bxny_nationImplementation project(':ademo:appvariants')
+    bxn_nationImplementation project(':ademo:appvariants')
+    implementation project(':ademo:appsplash')
+//    implementation project(':yewulibs1:yewulibs1-appcomm')
+    implementation project(':ademo:appindex')
+    implementation project(':ademo:applogin')
+//    implementation project(':ademo:appsearch')
+    // TODO 接口
+
+}
+
+// TODO Wallet打包
+apply from: './multiple-channel.gradle'
+// TODO mob
+apply from: './../MobSDK.gradle'

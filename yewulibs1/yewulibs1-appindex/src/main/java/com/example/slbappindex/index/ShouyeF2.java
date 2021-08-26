@@ -9,15 +9,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.example.slbappindex.R;
+import com.geek.libbase.base.SlbBaseLazyFragmentNew;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.geek.libutils.shortcut.ShortcutUtils;
 import com.mob.MobSDK;
 
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -203,7 +201,7 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef2_tv9) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivity_BlueTooth"));
         } else if (id == R.id.shouyef2_tv10) {
-            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivity"));
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.JavaDemoActivityUpdate"));
         } else if (id == R.id.shouyef2_tv11) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PayDemoActivity"));
         } else if (id == R.id.shouyef2_tv12) {
@@ -260,13 +258,13 @@ public class ShouyeF2 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef2_tv31) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.ExpandableTextViewAct"));
         } else if (id == R.id.shouyef2_tv32) {
-
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.MainActivitylibxuanzeqi"));
         } else if (id == R.id.shouyef2_tv33) {
-
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.RiliMainActivity"));
         } else if (id == R.id.shouyef2_tv34) {
 
         } else if (id == R.id.shouyef2_tv35) {
-            
+
         }
     }
 

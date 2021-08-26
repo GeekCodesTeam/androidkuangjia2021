@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -14,6 +17,9 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.slbappindex.R;
 import com.geek.libbase.base.SlbBaseLazyFragmentNew;
+import com.geek.libbase.plugins.PluginManager;
+import com.geek.libbase.plugins.proxy.ProxyActivity;
+import com.geek.libbase.plugins.utils.AssetUtil;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
 import com.haier.cellarette.baselibrary.zothers.ComeraAutomation;
@@ -181,9 +187,32 @@ public class ShouyeF3 extends SlbBaseLazyFragmentNew {
         rootView.findViewById(R.id.tv6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.SearchListActivity");
-                intent.putExtra("search_key", "搜索");
-                startActivity(intent);
+                // old lib
+//                Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.SearchListActivity");
+//                intent.putExtra("search_key", "搜索");
+//                startActivity(intent);
+                // new apk
+                //加载插件信息
+                String name = "yewulibs1-appsearch-bxn_nation-release.apk";
+                PluginManager.getInstance().loadPath(getActivity(), AssetUtil.copyAssetToCache(getActivity(), name));
+                //
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(getActivity(), ProxyActivity.class);
+//        intent.putExtra("className", PluginManager.getInstance().getPackageInfo().activities[0].name);
+//                        intent.putExtra("className", "com.example.slbappsearch.SearchListActivity");
+                        intent.putExtra("className", "com.example.slbappsearch.SecondActivity");
+                        startActivity(intent);
+                    }
+                }, 3000);
+            }
+        });
+        rootView.findViewById(R.id.tv19).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "我是宿主，插件收到请回答", Toast.LENGTH_SHORT).show();
+                getActivity().sendBroadcast(new Intent("action1"));
             }
         });
         rootView.findViewById(R.id.tv7).setOnClickListener(new View.OnClickListener() {

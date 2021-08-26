@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:label="@string/app_nameappsearch"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeBase"
+        android:theme="@style/Theme.PluginStandard_That"
         tools:replace="android:label">
         <activity android:name="mi.LauncherActivity">
             <intent-filter>
@@ -21,9 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SearchListActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".SearchListActivity">
             <!--            android:windowSoftInputMode="stateVisible|adjustPan"-->
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.SearchListActivity" />

@@ -1,19 +1,20 @@
 package com.necer.calendar;
 
 import android.content.Context;
-import android.util.AttributeSet;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import android.util.AttributeSet;
 
 import com.necer.enumeration.CalendarState;
-import com.necer.utils.Attrs;
 
 import org.joda.time.LocalDate;
 
 
 /**
- * Created by necer on 2018/11/15.
+ * 仿miui日历抽象类
+ *
+ * @author necer
+ * @date 2018/11/12
  */
 public abstract class MiuiCalendar extends NCalendar {
 
@@ -31,7 +32,7 @@ public abstract class MiuiCalendar extends NCalendar {
         float end;
         if (calendarState == CalendarState.MONTH) {
             //月  月日历有选中则选中为 中心点，如果没有选中则第一行
-            end = -monthCalendar.getPivotDistanceFromTop(); //结束位置
+            end = -monthCalendar.getPivotDistanceFromTop();
         } else {
             //周的情况，按照周的第一个数据为中心点
             end = -monthCalendar.getDistanceFromTop(weekCalendar.getFirstDate());

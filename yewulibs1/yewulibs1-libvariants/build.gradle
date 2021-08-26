@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 def config = rootProject.ext //
 def librarys = config.dependencies //
 android {
-    compileSdk config.compileSdk
+    compileSdkVersion config.compileSdkVersion
 
     defaultConfig {
-        minSdk config.minSdk
-        targetSdk config.targetSdk
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
         multiDexEnabled true
         //添加如下配置就OK了
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -34,5 +34,5 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.0'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.6.4'
 }

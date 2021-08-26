@@ -3,6 +3,7 @@ def librarys = config.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation librarys.blankj
+    implementation librarys.eventbus
     implementation librarys.glide47
     implementation librarys.annotationProcessorglide47compiler
     //    https://github.com/scwang90/SmartRefreshLayout
@@ -21,10 +22,12 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.9.1"//3.9.1
 //    implementation librarys.okhttpVersion
 //    implementation "com.zhy:okhttputils:2.6.2"
-    implementation project(':commonlibs:bhunheku:libokhttputils')
     implementation 'pub.devrel:easypermissions:3.0.0'
 //    implementation 'com.yanzhenjie:permission:2.0.3'
-    implementation project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+//    implementation project(':commonlibs:bhunheku:libokhttputils')
+//    implementation project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+    implementation 'com.github.GeekCodesTeam.geeklibs:libokhttputils:1.6.4'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.6.4'
     implementation "com.github.permissions-dispatcher:permissionsdispatcher:4.8.0"
     annotationProcessor "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
 //    implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
@@ -38,31 +41,23 @@ dependencies {
     api 'com.alivc.conan:AlivcConan:0.9.5'
     // 解决冲突bufen
     api 'cn.jzvd:jiaozivideoplayer:7.5.0'
-    api "com.google.android.exoplayer:exoplayer:2.14.1"
+    api "com.google.android.exoplayer:exoplayer:2.15.0"
 //    api 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
 //    api "com.google.android.exoplayer:exoplayer-core:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-dash:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-smoothstreaming:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-hls:2.13.2"
-    api "com.google.android.exoplayer:exoplayer-rtsp:2.14.1"
-    api "com.google.android.exoplayer:extension-rtmp:2.14.1"
+    api "com.google.android.exoplayer:exoplayer-rtsp:2.15.0"
+    api "com.google.android.exoplayer:extension-rtmp:2.15.0"
     api "com.github.CarGuo:GSYIjkJava:1.0.0"
-    if (config.isMIMode.toBoolean()) {
-        api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
-            exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
-            exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
-            exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
-        }
-    } else {
-        api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
-            exclude module: 'gsyVideoPlayer-armv5'
-            exclude module: 'gsyVideoPlayer-armv7a'
-            exclude module: 'gsyVideoPlayer-armv64'
-            exclude module: 'gsyVideoPlayer-x86'
-            exclude module: 'gsyVideoPlayer-x86_64'
-            exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
-            exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
-            exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
-        }
+    api('com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.5-jitpack') {
+//            exclude module: 'gsyVideoPlayer-armv5'
+//            exclude module: 'gsyVideoPlayer-armv7a'
+//            exclude module: 'gsyVideoPlayer-armv64'
+//            exclude module: 'gsyVideoPlayer-x86'
+//            exclude module: 'gsyVideoPlayer-x86_64'
+        exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
+        exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
+        exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
     }
 }

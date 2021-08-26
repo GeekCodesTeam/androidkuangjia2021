@@ -11,10 +11,10 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.gsydemo.JumpVideoPlayUtils;
-import com.example.gsydemo.SimplePlayer;
 import com.example.slbappcomm.R;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.interfaces.OnCancelListener;
 import com.lxj.xpopup.interfaces.OnConfirmListener;
 
 
@@ -93,7 +93,7 @@ public class VideoPlayActivity extends SlbBaseActivity implements View.OnClickLi
     }
 
     private void setvideoplay2() {
-        Intent intent = new Intent(AppUtils.getAppPackageName() +".hs.act.slbapp.JiaoZiVideoActivity2");
+        Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.JiaoZiVideoActivity2");
         intent.putExtra("query1", "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4");
         intent.putExtra("query2", "测试");
         startActivity(intent);
@@ -104,14 +104,26 @@ public class VideoPlayActivity extends SlbBaseActivity implements View.OnClickLi
         JumpVideoPlayUtils.goToPlayEmptyControlActivity(this, tv1);
     }
 
+    private boolean isChange;
+
     private void setxpop() {
-        new XPopup.Builder(this).asConfirm("我是标题", "我是内容",
-                new OnConfirmListener() {
-                    @Override
-                    public void onConfirm() {
-                        ToastUtils.showLong("click confirm");
-                    }
-                })
+        if (!isChange) {
+            return;
+        }
+        new XPopup.Builder(this)
+                .asConfirm("我是标题", "我是内容",
+                        new OnConfirmListener() {
+                            @Override
+                            public void onConfirm() {
+                                ToastUtils.showLong("click confirm");
+                            }
+                        },
+                        new OnCancelListener() {
+                            @Override
+                            public void onCancel() {
+                                ToastUtils.showLong("click confirm");
+                            }
+                        })
                 .show();
     }
 

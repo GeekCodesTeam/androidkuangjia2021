@@ -11,6 +11,7 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.github.commonlibs.libupdateapputilsold.R;
 
 import java.io.File;
@@ -64,8 +65,8 @@ public class UpdateAppReceiver extends BroadcastReceiver {
                 notificationManager.createNotificationChannel(mChannel);
                 notification = new NotificationCompat.Builder(context, UpdateAppReceiver_CHANNEL_ID)
                         .setChannelId(UpdateAppReceiver_CHANNEL_ID)
-                        .setContentTitle("合象课堂")
-                        .setContentText("正在下载 ")
+                        .setContentTitle(AppUtils.getAppName())
+                        .setContentText("正在更新")
                         .setSmallIcon(R.drawable.icon_update)
                         .setProgress(100, progress, false)
                         .build();
@@ -73,8 +74,8 @@ public class UpdateAppReceiver extends BroadcastReceiver {
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, UpdateAppReceiver_CHANNEL_ID)
                         .setOngoing(true)
                         .setSmallIcon(R.drawable.icon_update)
-                        .setContentTitle("合象课堂")
-                        .setContentText("正在下载 ")
+                        .setContentTitle(AppUtils.getAppName())
+                        .setContentText("正在更新")
                         .setProgress(100, progress, false)
                         .setChannelId(UpdateAppReceiver_CHANNEL_ID);//无效
                 notification = notificationBuilder.build();

@@ -1,11 +1,11 @@
 def config = rootProject.ext //配置
 def librarys = config.dependencies //
 android {
-    compileSdk config.compileSdk
+    compileSdkVersion config.compileSdkVersion
 
     defaultConfig {
-        minSdk config.minSdk
-        targetSdk config.targetSdk
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
         multiDexEnabled true
         renderscriptTargetApi 30
         renderscriptSupportModeEnabled true

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tv0"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="退出登录"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="1.业务-不带参登录https"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="2.业务-带参登录https"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="3.业务-不带参登录Action"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="4.业务-带参登录Action"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="5.业务-不带参登录HIOS"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="6.业务-带参登录HIOS"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="7.业务-弹窗登录验证"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

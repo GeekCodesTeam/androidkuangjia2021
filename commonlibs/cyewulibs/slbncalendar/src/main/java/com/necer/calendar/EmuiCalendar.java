@@ -1,22 +1,21 @@
 package com.necer.calendar;
 
 import android.content.Context;
-import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import android.util.AttributeSet;
+
 import com.necer.enumeration.CalendarState;
-import com.necer.utils.Attrs;
-import com.necer.utils.AttrsUtil;
 
 import org.joda.time.LocalDate;
 
-import java.util.List;
-
 /**
- * 华为日历
- * Created by necer on 2018/11/14.
+ * 仿华为日历
+ *
+ * @author necer
+ * @date 2018/11/14
  */
 public class EmuiCalendar extends NCalendar {
     public EmuiCalendar(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -25,7 +24,7 @@ public class EmuiCalendar extends NCalendar {
 
     @Override
     protected float getMonthCalendarAutoWeekEndY() {
-        return -monthHeight * 4 / 5;
+        return -monthHeight * 4.0f / 5.0f;
     }
 
     @Override
@@ -71,6 +70,4 @@ public class EmuiCalendar extends NCalendar {
             weekCalendar.setVisibility(INVISIBLE);
         }
     }
-
-
 }

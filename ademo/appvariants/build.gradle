@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext //
+def librarys = config.dependencies //
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        multiDexEnabled true
+    }
+    flavorDimensions "keep"
+    productFlavors {
+        bxnt_nation {
+            dimension "keep"
+        }
+        bxny_nation {
+            dimension "keep"
+        }
+        bxn_nation {
+            dimension "keep"
+        }
+    }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${project.name}_${variant.flavorName}.aar"
+        }
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.6.4'
+}

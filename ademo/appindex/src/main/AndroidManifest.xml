@@ -1,0 +1,54 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.appindex">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_nameappindex"
+        android:supportsRtl="true">
+        <activity
+            android:name=".index.ShouyeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppThemeBase2">
+            <!--            android:windowSoftInputMode="stateVisible|adjustPan"-->
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ShouyeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--Polyv TEST-->
+        <activity android:name=".polyv.PolyvActList1">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.PolyvActList1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--login TEST-->
+        <activity android:name=".logindemo.LoginActDemo">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.LoginActDemo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".logindemo.AdLoginActDemo">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.AdLoginActDemo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".logindemo.AdLoginImgActDemo"
+            android:exported="false"
+            android:theme="@style/ad_common_dialogstyle1">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.AdLoginImgActDemo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--MOBID TEST-->
+        <service
+            android:name=".services.MOBIDservices"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name=".services.MOBIDServicesBg" />
+    </application>
+</manifest>

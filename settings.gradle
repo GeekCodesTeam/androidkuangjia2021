@@ -34,6 +34,19 @@ include ':yewulibs1',
         ':yewulibs1:yewulibs1-libvariants'
 // end app
 
+// start app11
+include ':ademo',
+        ':ademo:app',
+        ':ademo:appsplash',
+        ':ademo:applogin',
+        ':ademo:appsearch',
+        ':ademo:appplugin',
+        ':ademo:appindex',
+        ':ademo:zbiz1',
+        ':ademo:appvariants'
+
+// start app11
+
 //include ':commonbiz',
 //        ':commonbiz:bizfxzteachercomm'
 
@@ -60,35 +73,26 @@ include ':commonlibs',
         ':commonlibs:bhunheku:liblocations',
         ':commonlibs:bhunheku:libapppay',
         ':commonlibs:bhunheku:libappumengstatistics',
-        ':commonlibs:bhunheku:libexpandablerecyclerview',
-        ':commonlibs:bhunheku:liblinkagerecyclerview',
-        ':commonlibs:bhunheku:libokhttputils',
+//        ':commonlibs:bhunheku:libexpandablerecyclerview',
+//        ':commonlibs:bhunheku:liblinkagerecyclerview',
         ':commonlibs:bhunheku:libskeleton',
-        ':commonlibs:bhunheku:libupdateapputilsold',
+//        ':commonlibs:bhunheku:libupdateapputilsold',
         ':commonlibs:bhunheku:libupdateapputilsnew',
         ':commonlibs:bhunheku:libwheelpicker',
         ':commonlibs:bhunheku:llibbottomdialog',
-        ':commonlibs:bhunheku:libyanzhenjieandpermission',
         ':commonlibs:bhunheku:libyanzhenjiebase',
-//        ':commonlibs:bhunheku:libappjpush',
-//        ':commonlibs:bhunheku:libappjpushshare',
-//        ':commonlibs:bhunheku:libappjpushstatistics',
-//        ':commonlibs:huanxin:huanxinim',
-//        ':commonlibs:huanxin:ease-im-kit',
-//        ':commonlibs:huanxin:ease-call-kit',
         ':commonlibs:cyewulibs:slbcitypickerview',
         ':commonlibs:cyewulibs:slbscreenlibrary',
         ':commonlibs:cyewulibs:slbbluetooth',
-        ':commonlibs:cyewulibs:slbimagepicker',
         ':commonlibs:cyewulibs:slbjiaozivideoplayer',
         ':commonlibs:cyewulibs:slbjiaozvideonew',
         ':commonlibs:cyewulibs:slbgsyvideonew',
-        ':commonlibs:cyewulibs:slbyanzheng',
-        ':commonlibs:cyewulibs:slbpictureselector',
-        ':commonlibs:cyewulibs:slbncalendar',
+//        ':commonlibs:cyewulibs:slbyanzheng',
+//        ':commonlibs:cyewulibs:slbpictureselector',
+//        ':commonlibs:cyewulibs:slbncalendar',
         ':commonlibs:cyewulibs:slbota',
         ':commonlibs:cyewulibs:slbwifi',
-        ':commonlibs:cyewulibs:slbxpopup',
+//        ':commonlibs:cyewulibs:slbxpopup',
         ':commonlibs:cyewulibs:zxinglibs1',
         ':commonlibs:cyewulibs:zxinglibs2',
         ':commonlibs:zzhibopolyv:polyvLiveCloudClassScene',
@@ -96,13 +100,21 @@ include ':commonlibs',
         ':commonlibs:zzhibopolyv:polyvLiveEcommerceScene',
         ':commonlibs:zzhibopolyv:polyvLiveStreamerScene',
         ':commonlibs:zzhibopolyv:demo',
+        ':commonlibs:ztencent:tencentim'
 //        ':commonlibs:rongcloud:rongcloudim',
-        ':commonlibs:ztencent:tencentim',
-        ':commonlibs:zdkplayer:dkplayer-java',
-        ':commonlibs:zdkplayer:dkplayer-players:ijkexo',
-        ':commonlibs:zdkplayer:dkplayer-sample',
-        ':commonlibs:zdkplayer:dkplayer-ui',
-        ':commonlibs:zdkplayer:dkplayer-videocache'
+//        ':commonlibs:bhunheku:libappjpush',
+//        ':commonlibs:bhunheku:libappjpushshare',
+//        ':commonlibs:bhunheku:libappjpushstatistics',
+//        ':commonlibs:huanxin:huanxinim',
+//        ':commonlibs:huanxin:ease-im-kit',
+//        ':commonlibs:huanxin:ease-call-kit',
+//        ':commonlibs:zdkplayer:dkplayer-java',
+//        ':commonlibs:zdkplayer:dkplayer-players:ijkexo',
+//        ':commonlibs:zdkplayer:dkplayer-sample',
+//        ':commonlibs:zdkplayer:dkplayer-ui',
+//        ':commonlibs:bhunheku:libokhttputils',
+//        ':commonlibs:bhunheku:libyanzhenjieandpermission',
+//        ':commonlibs:zdkplayer:dkplayer-videocache'
 
 // commonlibs
 
@@ -127,15 +139,15 @@ include ':zfsjx-commonlibs',
 // end app1
 
 // start app2
-include ':zfsjx-yitihuazhihuipingtai',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-app',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appcomm',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appindex',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appsplash',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-applogin',
-        ':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants'
+//include ':zfsjx-yitihuazhihuipingtai',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu1',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-bizyewu2',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-app',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appcomm',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appindex',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-appsplash',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-applogin',
+//        ':zfsjx-yitihuazhihuipingtai:yewulibs1-libvariants'
 // end app2
 
 // start app3
@@ -144,6 +156,7 @@ include ':zfsjx-dengta20-fenzhi1',
         ':zfsjx-dengta20-fenzhi1:libyewu-appsplash',
         ':zfsjx-dengta20-fenzhi1:libyewu-appsearch',
         ':zfsjx-dengta20-fenzhi1:libyewu-appindex',
+        ':zfsjx-dengta20-fenzhi1:libyewu-appindexapi',
         ':zfsjx-dengta20-fenzhi1:libyewu-applogin',
         ':zfsjx-dengta20-fenzhi1:libFrame',
         ':zfsjx-dengta20-fenzhi1:libyewu-ezhibu',
@@ -154,7 +167,7 @@ include ':zfsjx-dengta20-fenzhi1',
         ':zfsjx-dengta20-fenzhi1:libyewu-yonghudenglu',
         ':zfsjx-dengta20-fenzhi1:libyewu-my',
         ':zfsjx-dengta20-fenzhi1:libyewu-common',
-        ':zfsjx-dengta20-fenzhi1:libyewu-biz1',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-biz1',
         ':zfsjx-dengta20-fenzhi1:libyewu-biz2',
         ':zfsjx-dengta20-fenzhi1:libyewu-eduapi',
         ':zfsjx-dengta20-fenzhi1:libyewu-myapi',
@@ -163,3 +176,4 @@ include ':zfsjx-dengta20-fenzhi1',
 //        ':zfsjx-dengta20-fenzhi1:mylibyewu1',
         ':zfsjx-dengta20-fenzhi1:libyewu-variants'
 // start app3
+

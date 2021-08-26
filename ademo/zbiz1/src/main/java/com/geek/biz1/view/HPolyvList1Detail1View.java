@@ -1,0 +1,14 @@
+package com.geek.biz1.view;
+
+import com.geek.biz1.bean.SPolyvList1Detail1Bean1;
+import com.geek.libmvp.IView;
+
+public interface HPolyvList1Detail1View extends IView {
+
+    void OnPolyvList1Detail1Success(SPolyvList1Detail1Bean1 bean);
+
+    void OnPolyvList1Detail1Nodata(String bean);
+
+    void OnPolyvList1Detail1Fail(String msg);
+
+}

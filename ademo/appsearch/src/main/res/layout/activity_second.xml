@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="100mm"
+        android:layout_height="100mm"
+        android:gravity="center"
+        android:text="@string/search"
+        android:textColor="@color/blue1"
+        android:textSize="30mm" />
+
+    <ImageView
+        android:layout_width="200mm"
+        android:layout_height="200mm"
+        android:src="@drawable/slb_ljx" />
+</LinearLayout>

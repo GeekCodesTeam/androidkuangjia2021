@@ -35,22 +35,19 @@ import com.example.bizyewu2.presenter.HYonghudengluPresenter;
 import com.example.bizyewu2.view.HErweimaView;
 import com.example.bizyewu2.view.HUserInfoView;
 import com.example.bizyewu2.view.HYonghudengluView;
-import com.geek.libbase.base.SlbBaseActivity;
-import com.example.slbappcomm.utils.CommonUtils;
 import com.example.slbapplogin.R;
 import com.example.slbapplogin.msg.AppPermissionUtil;
 import com.example.slbapplogin.msg.SMSBroadcastReceiver;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libbase.utils.YanzhengUtil;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MyLogUtil;
-import com.geek.libutils.data.MmkvUtils;
 import com.google.android.material.textfield.TextInputLayout;
 import com.haier.cellarette.baselibrary.loading.ShowLoadingUtil;
 import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
 import com.haier.cellarette.baselibrary.widget.AlertView;
 import com.haier.cellarette.baselibrary.zothers.SpannableStringUtils;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
-import com.umeng.analytics.MobclickAgent;
 
 import java.util.List;
 
@@ -96,7 +93,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
         onclick();
         donetwork();
         //
-        MobclickAgent.onEvent(this, "Loginpage");
+//        MobclickAgent.onEvent(this, "Loginpage");
     }
 
     private void donetwork() {
@@ -145,11 +142,11 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
         tv_tips12.setMovementMethod(LinkMovementMethod.getInstance());
 
         //
-        if (TextUtils.equals("1", SPUtils.getInstance().getString(CommonUtils.MMKV_forceLogin))) {
-            iv1.setVisibility(View.INVISIBLE);
-        } else {
-            iv1.setVisibility(View.VISIBLE);
-        }
+//        if (TextUtils.equals("1", SPUtils.getInstance().getString(CommonUtils.MMKV_forceLogin))) {
+//            iv1.setVisibility(View.INVISIBLE);
+//        } else {
+//            iv1.setVisibility(View.VISIBLE);
+//        }
         presenter = new HYonghudengluPresenter();
         presenter.onCreate(this);
         presentercode = new HErweimaPresenter();
@@ -348,7 +345,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
         if (i == R.id.tv1) {
             // 登录bufen
             //
-            MobclickAgent.onEvent(this, "Loginpage_button");
+//            MobclickAgent.onEvent(this, "Loginpage_button");
             if (!is_login()) {
                 return;
             }
@@ -450,7 +447,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
         presentercode.onDestory();
         userInfoPresenter.onDestory();
         YanzhengUtil.timer_des();
-        SPUtils.getInstance().put(CommonUtils.APP_VERSION_CODE, AppUtils.getAppVersionCode());
+//        SPUtils.getInstance().put(CommonUtils.APP_VERSION_CODE, AppUtils.getAppVersionCode());
         if (mHandler != null) {
             mHandlerThread.quit();
             mHandler.removeCallbacksAndMessages(null);
@@ -466,7 +463,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
 //        if (true) {
 //            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity"));
 //        }
-        MobclickAgent.onEvent(this, "Loginpage_closebutton");
+//        MobclickAgent.onEvent(this, "Loginpage_closebutton");
         no_denglu();
         super.onBackPressed();
     }
@@ -502,7 +499,7 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
 //        jPushDengluUtils.shouquan(other_login_name);
         ShowLoadingUtil.showLoading(SlbLoginActivity.this, "", null);
         // test 可注掉
-        SPUtils.getInstance().put(CommonUtils.MMKV_TOKEN, "token");
+        SPUtils.getInstance().put("token", "token");
         onLoginSuccess();
     }
 
@@ -524,8 +521,8 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
 
     @Override
     public void OnYonghudengluSuccess(HLoginBean hLoginBean) {
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_forceLogin, "0");
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TOKEN, hLoginBean.getToken());
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_forceLogin, "0");
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TOKEN, hLoginBean.getToken());
         userInfoPresenter.get_userinfo();
 //        onLoginSuccess();
     }
@@ -546,20 +543,20 @@ public class SlbLoginActivity extends SlbBaseActivity implements View.OnClickLis
 
     private void set_token_out() {
         ToastUtils.showLong("登录失效，请重新登录！");
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_SEX);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_IMG);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TEL);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_NAME);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_forceLogin);
-        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TOKEN);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_SEX);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_IMG);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TEL);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_NAME);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_forceLogin);
+//        MmkvUtils.getInstance().remove_common(CommonUtils.MMKV_TOKEN);
     }
 
     @Override
     public void OnUserInfoSuccess(HUserInfoBean bean) {
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_SEX, bean.getChildGender());
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_IMG, bean.getChildAvatar());
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_NAME, bean.getNikeName());
-        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TEL, bean.getPhone());
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_SEX, bean.getChildGender());
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_IMG, bean.getChildAvatar());
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_NAME, bean.getNikeName());
+//        MmkvUtils.getInstance().set_common(CommonUtils.MMKV_TEL, bean.getPhone());
         onLoginSuccess();
     }
 

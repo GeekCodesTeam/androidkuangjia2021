@@ -26,10 +26,10 @@
                 android:resource="@xml/update_file_paths" />
         </provider>
         <activity
-            android:name="ui.JavaDemoActivity"
-            android:taskAffinity="${applicationId}.hs.act.slbapp.JavaDemoActivity">
+            android:name="ui.JavaDemoActivityUpdate"
+            android:taskAffinity="${applicationId}.hs.act.slbapp.JavaDemoActivityUpdate">
             <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.JavaDemoActivity" />
+                <action android:name="${applicationId}.hs.act.slbapp.JavaDemoActivityUpdate" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
@@ -40,7 +40,7 @@
 
                 <data
                     android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:path="/${applicationId}.hs.act.slbapp.JavaDemoActivityUpdate"
                     android:scheme="dataability" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
@@ -51,7 +51,7 @@
 
                 <data
                     android:host="cs.znclass.com"
-                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivityUpdate"
                     android:scheme="http" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
@@ -62,7 +62,7 @@
 
                 <data
                     android:host="cs.znclass.com"
-                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivity"
+                    android:pathPattern="/${applicationId}.hs.act.slbapp.JavaDemoActivityUpdate"
                     android:scheme="https" />
             </intent-filter>
         </activity>

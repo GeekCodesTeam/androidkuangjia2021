@@ -6,7 +6,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation librarys.glide47
     implementation librarys.gsonJson
-    implementation project(':commonlibs:bhunheku:libyanzhenjieandpermission')
+    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.6.4'
     api project(':commonlibs:zdkplayer:dkplayer-java')
     api project(':commonlibs:zdkplayer:dkplayer-ui')
     api project(path: ':commonlibs:zdkplayer:dkplayer-players:ijkexo')

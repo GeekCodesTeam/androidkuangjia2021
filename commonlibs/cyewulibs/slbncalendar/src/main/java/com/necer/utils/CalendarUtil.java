@@ -2,7 +2,6 @@ package com.necer.utils;
 
 import android.content.Context;
 import android.util.TypedValue;
-import android.view.WindowManager;
 
 import com.necer.entity.CalendarDate;
 import com.necer.entity.Lunar;
@@ -22,65 +21,8 @@ public class CalendarUtil {
 
 
     /**
-     * 屏幕宽度
-     *
-     * @param context
-     * @return
+     * 两个日期是否同月
      */
-    public static int getScreenWith(Context context) {
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        return windowManager.getDefaultDisplay().getWidth();
-    }
-
-
-    /**
-     *
-     * @param color 原来的颜色
-     * @param alpha 透明度，小数
-     * @return
-     */
-/*
-    public static int getAlphaColor(int color, double alpha) {
-        int a = (int) Math.round(alpha * 255);
-        String hex = Integer.toHexString(a).toUpperCase();
-        if (hex.length() == 1) hex = "0" + hex;
-        String hexCode = "#" + hex + String.format("%06X", Integer.valueOf(16777215 & color));
-        int newColor;
-        try {
-            newColor = Color.parseColor(hexCode);
-        } catch (Throwable throwable) {
-            newColor = color;
-        }
-        return newColor;
-    }
-*/
-
-
-    /**
-     * dp转px
-     *
-     * @param context
-     * @param
-     * @return
-     */
-    public static float dp2px(Context context, int dpVal) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                dpVal, context.getResources().getDisplayMetrics());
-    }
-
-    /**
-     * sp转px
-     *
-     * @param context
-     * @param spVal
-     * @return
-     */
-    public static float sp2px(Context context, float spVal) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
-                spVal, context.getResources().getDisplayMetrics());
-    }
-
-    //是否同月
     public static boolean isEqualsMonth(LocalDate date1, LocalDate date2) {
         return date1.getYear() == date2.getYear() && date1.getMonthOfYear() == date2.getMonthOfYear();
     }
@@ -154,7 +96,6 @@ public class CalendarUtil {
      */
     public static boolean isToday(LocalDate date) {
         return new LocalDate().equals(date);
-
     }
 
     /**
@@ -279,7 +220,12 @@ public class CalendarUtil {
     }
 
 
-    //转化一周从周日开始
+    /**
+     * 转化一周从周日开始
+     *
+     * @param date
+     * @return
+     */
     public static LocalDate getSunFirstDayOfWeek(LocalDate date) {
         if (date.dayOfWeek().get() == 7) {
             return date;
@@ -288,13 +234,23 @@ public class CalendarUtil {
         }
     }
 
-    //转化一周从周一开始
+    /**
+     * 转化一周从周一开始
+     *
+     * @param date
+     * @return
+     */
     public static LocalDate getMonFirstDayOfWeek(LocalDate date) {
         return date.dayOfWeek().withMinimumValue();
     }
 
 
-    //获取CalendarDate  CalendarDate包含需要显示的信息 农历，节气等
+    /**
+     * 获取CalendarDate  CalendarDate包含需要显示的信息 农历，节气等
+     *
+     * @param localDate
+     * @return
+     */
     public static CalendarDate getCalendarDate(LocalDate localDate) {
         CalendarDate calendarDate = new CalendarDate();
         int solarYear = localDate.getYear();
@@ -302,13 +258,14 @@ public class CalendarUtil {
         int solarDay = localDate.getDayOfMonth();
         Lunar lunar = LunarUtil.getLunar(solarYear, solarMonth, solarDay);
 
-        if (solarYear != 1900) {
-            calendarDate.lunar = lunar;
-            calendarDate.localDate = localDate;
-            calendarDate.solarTerm = SolarTermUtil.getSolatName(solarYear, (solarMonth < 10 ? ("0" + solarMonth) : (solarMonth + "")) + solarDay);
-            calendarDate.solarHoliday = HolidayUtil.getSolarHoliday(solarYear, solarMonth, solarDay);
-            calendarDate.lunarHoliday = HolidayUtil.getLunarHoliday(lunar.lunarYear, lunar.lunarMonth, lunar.lunarDay);
-        }
+        LocalDate nextLocalDate = localDate.plusDays(1);
+        Lunar nextLunar = LunarUtil.getLunar(nextLocalDate.getYear(), nextLocalDate.getMonthOfYear(), nextLocalDate.getDayOfMonth());
+
+        calendarDate.lunar = lunar;
+        calendarDate.localDate = localDate;
+        calendarDate.solarTerm = SolarTermUtil.getSolatName(solarYear, (solarMonth < 10 ? ("0" + solarMonth) : (solarMonth + "")) + solarDay);
+        calendarDate.solarHoliday = HolidayUtil.getSolarHoliday(solarYear, solarMonth, solarDay);
+        calendarDate.lunarHoliday = HolidayUtil.getLunarHoliday(lunar, nextLunar);
 
         return calendarDate;
     }

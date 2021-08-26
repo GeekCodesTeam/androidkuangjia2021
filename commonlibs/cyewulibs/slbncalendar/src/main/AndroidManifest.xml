@@ -1,2 +1,80 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.necer" />
+    package="com.necer">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_nameslbncalendar"
+        android:supportsRtl="true">
+        <activity android:name=".ncalendar.activity.RiliMainActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.RiliMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ncalendar.activity.TestMiui9Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.TestMiui10Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".ncalendar.TestActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.TestEmuiActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".ncalendar.activity.TestWeekHoldActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.TestAddViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.CustomCalendarActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!--一下为新-->
+
+
+        <activity
+            android:name=".ncalendar.activity.TestMonthActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".ncalendar.activity.TestWeekActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".ncalendar.activity.TestViewPagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.TestGeneralActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".ncalendar.activity.TestStretchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!--        <activity-->
+        <!--            android:name=".TestActivity"-->
+        <!--            android:configChanges="orientation|screenSize|keyboardHidden" />-->
+
+
+        <activity
+            android:name=".ncalendar.activity.GeneralAdapterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.TestAdapterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".ncalendar.activity.DingAdapterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+
+    </application>
+</manifest>

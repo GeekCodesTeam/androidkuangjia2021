@@ -270,7 +270,7 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef1_tv25) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.UploadImgMainActivity"));
         } else if (id == R.id.shouyef1_tv26) {
-            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.UploadPicActivity"));
+//            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.UploadPicActivity"));
         } else if (id == R.id.shouyef1_tv27) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.VideoPlayActivity"));
         } else if (id == R.id.shouyef1_tv28) {
@@ -280,7 +280,7 @@ public class ShouyeF1 extends SlbBaseLazyFragmentNew implements View.OnClickList
         } else if (id == R.id.shouyef1_tv30) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.BannerDemoActivity"));
         } else if (id == R.id.shouyef1_tv31) {
-            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.SlbLoginInfoActivity"));
+            startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.WheelpickerActivity"));
         } else if (id == R.id.shouyef1_tv32) {
             startActivity(new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.LunboMainActivity"));
         } else if (id == R.id.shouyef1_tv33) {

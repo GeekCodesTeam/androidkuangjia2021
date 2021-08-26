@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.LocaleList;
-import android.os.Looper;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -18,10 +17,9 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.example.gsyvideoplayer.exosource.GSYExoHttpDataSourceFactory;
-import com.geek.libbase.AndroidApplication;
-import com.example.slbappcomm.uploadimg2.GlideImageLoader2;
 import com.example.slbappcomm.utils.BanbenCommonUtils;
 import com.example.slbappindex.services.MOBIDservices;
+import com.geek.libbase.AndroidApplication;
 import com.geek.libutils.app.AppUtils;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
@@ -29,8 +27,6 @@ import com.geek.libutils.data.MmkvUtils;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.TransferListener;
-import com.lzy.imagepicker.ImagePicker;
-import com.lzy.imagepicker.view.CropImageView;
 import com.meituan.android.walle.WalleChannelReader;
 import com.mob.MobSDK;
 import com.mob.OperationCallback;
@@ -38,7 +34,6 @@ import com.mob.PrivacyPolicy;
 import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCallback;
 import com.pgyer.pgyersdk.PgyerSDKManager;
-import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.imsdk.v2.V2TIMCallback;
 import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.imsdk.v2.V2TIMMessage;
@@ -47,7 +42,6 @@ import com.tencent.qcloud.tim.demo.signature.GenerateTestUserSig;
 import com.tencent.qcloud.tim.demo.thirdpush.HUAWEIHmsMessageService;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
 import com.tencent.qcloud.tim.demo.utils.MessageNotification;
-import com.tencent.qcloud.tim.demo.utils.PrivateConstants;
 import com.tencent.qcloud.tim.uikit.TUIKit;
 import com.tencent.qcloud.tim.uikit.base.IMEventListener;
 import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationManagerKit;
@@ -108,8 +102,6 @@ public class YewuApplicationAndroid extends AndroidApplication {
         configNDK();
         //在app切到后台,activity被后台回收的场景下,需要主动初始化下
 //        GenseeLive.initConfiguration(getApplicationContext());
-        // 业务-> 上传多张图片
-        initImagePicker();
         // 环信IM
         initHx();
         // TencentIM
@@ -357,22 +349,6 @@ public class YewuApplicationAndroid extends AndroidApplication {
                 e.printStackTrace();
             }
         }
-    }
-
-    private void initImagePicker() {
-        ImagePicker imagePicker = ImagePicker.getInstance();
-//        imagePicker.setImageLoader(new ClassTest1GlideImageLoader());    //设置图片加载器
-        imagePicker.setImageLoader(new GlideImageLoader2());    //设置图片加载器
-        imagePicker.setShowCamera(true);                       //显示拍照按钮
-        imagePicker.setMultiMode(true);                       //是否多选
-        imagePicker.setCrop(true);                             //允许裁剪（单选才有效）
-        imagePicker.setSaveRectangle(true);                    //是否按矩形区域保存
-        imagePicker.setSelectLimit(9);              //选中数量限制
-        imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(1000);                        //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setFocusHeight(1000);                       //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(1000);                          //保存文件的宽度。单位像素
-        imagePicker.setOutPutY(1000);                          //保存文件的高度。单位像素
     }
 
     private void configNDK() {
